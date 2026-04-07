@@ -1,0 +1,31 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Region/BanditMountain)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Marklicht)
+
+autosave()
+
+fadeFg(0;false)
+
+if(mainQuest_4 = 0){
+	load(Marklicht/Mountain/MainQuest4)
+	return()
+}
+
+if(marklichtQuest_4 = 0){
+	load(Marklicht/Mountain/MarklichtQuest4)
+	return()
+}
+
+
+load(Marklicht/Mountain/Interaction)

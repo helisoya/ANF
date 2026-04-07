@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_AboutYou Kalia/City/BarMax/GUARD_AboutYou
+	Choice_AboutSect Kalia/City/BarMax/GUARD_AboutSect
+	Choice_Nothing Kalia/City/BarMax/GUARD_Exit

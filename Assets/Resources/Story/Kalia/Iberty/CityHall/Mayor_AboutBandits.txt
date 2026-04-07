@@ -1,0 +1,9 @@
+# Talks about the bandits
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutBandits_1)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutBandits_2)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutBandits_3)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutBandits_4)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutBandits_5)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutBandits_6)
+
+load(Kalia/Iberty/CityHall/Mayor)

@@ -1,0 +1,107 @@
+# -----------------------------------------------------------
+# --------------- Characters --------------------------------
+# -----------------------------------------------------------
+
+Char_Harold = Harold
+Char_??? = ???
+Char_GUARD = GUARD
+Char_Courier = Courier
+Char_Bandit = Bandit
+Char_Doctor = Doctor
+Char_Salesman = Shopkeeper
+Char_Fisherman = Fisherman
+Char_Mayor = Mayor
+Char_Soldier = Soldier
+Char_Priest = Priest
+Char_Merchant = Merchant
+Char_Sword = Sword
+Char_Ace = Ace
+Char_Waiter = Waiter
+Char_Waitress = Waitress
+Char_Man = Man
+Char_Woman = Woman
+Char_Bos = Bos
+Char_Anna = Anna
+Char_Amanda = Amanda
+Char_Jackwell = Jackwell
+Char_Northman = Northman
+Char_Elder = Elder
+Char_Sam = Sam
+Char_Owner = Owner
+Char_Prosecutor = Prosecutor
+Char_Chief = Chief
+Char_Felix = Right
+Char_Judge = Judge
+Char_Simon = Simon
+Char_Keeper = Keeper
+Char_Lame = Lame
+Char_Lara = Lara
+Char_Pal = Pal
+Char_Robertus = Robertus
+Char_Ogden = Ogden
+
+# -----------------------------------------------------------
+# --------------- Choices -----------------------------------
+# -----------------------------------------------------------
+
+Choice_Generic = What will you do ?
+Choice_Chat = What will you talk about ?
+Choice_Road = Which road should you take ?
+
+Choice_Map = Map
+Choice_CheckArea = Check area
+Choice_Nothing = Nothing (Leave)
+Choice_MoveOut = Continue
+Choice_Buy = Buy...
+Choice_Sleep = Sleep
+Choice_OrderSomething = Order something
+
+Choice_Yes = Yes
+Choice_No = No
+Choice_GreenTea = Green Tea
+Choice_HotChocolate = Hot Chocolate
+Choice_Bread = Bread
+
+Choice_Ideas = Any ideas ?
+Choice_AboutRegion = About the region
+Choice_AboutYou = About you
+Choice_AboutJob = About your job
+Choice_Heal = I need healing
+Choice_NeedHelp = Do you need help ?
+Choice_AboutTask = About the task
+Choice_AboutCity = About the city
+Choice_AboutBandits = About the bandits
+Choice_GivePackage = <i>Give package</i>
+Choice_AboutCamp = About the camp
+Choice_AboutKalibu = About Kalibu
+Choice_AboutOrkva = About Orkva
+Choice_AboutMarklicht = About Marklicht
+Choice_AboutSect = About the sect
+Choice_AboutRebellion = About the rebellion
+Choice_AboutKalia = About Kalia
+Choice_AboutContinent = About the continent
+Choice_AboutVillage = About the village
+Choice_AboutFisherman = About the fisherman
+Choice_AboutOrder = About the order
+
+Choice_Left = Go left
+Choice_Right = Go right
+
+Choice_Accept = Accept
+Choice_Refuse = Refuse
+
+Choice_Ready = I'm ready
+Choice_NotYet = Not yet
+
+Choice_GoBack = Go Back
+
+Choice_UseBoat = Could I use your boat ?
+
+# ---------------------------------------------------------
+# ------------------- Common ------------------------------
+# ---------------------------------------------------------
+
+Common_DontNeedToGoThere_1 = I don't need to go there.
+
+Common_FastForwardDay_1 = <color=blue>It is now daytime.</color>
+Common_FastForwardNight_1 = <color=blue>It is now nighttime.</color> 

@@ -1,0 +1,6 @@
+setCharacterAlpha(Citizen2;0;true)
+setCharacterPosition(Citizen2;Mayor)
+setCharacterRotation(Citizen2;Mayor)
+setCharacterAlpha(Citizen2;1;false)
+
+load(Orkva/Vorlan/CityHall/MayorRoom)

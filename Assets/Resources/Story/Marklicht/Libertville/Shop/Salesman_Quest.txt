@@ -1,0 +1,31 @@
+if(secondaryQuest_Libertville_Shop = -1){
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestStart_1)
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestStart_2)
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestStart_3)
+	dialog([MC];_;false;Libertville_Shop_Shopkeeper_QuestStart_4)
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestStart_5)
+	variable(secondaryQuest_Libertville_Shop;0)
+
+	load(Marklicht/Libertville/Shop/Salesman)
+	return()
+}
+
+if(secondaryQuest_Libertville_Shop = 1){
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestEnd_1)
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestEnd_2)
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestEnd_3)
+
+	variable(secondaryQuest_Libertville_Shop;100)
+	addExpToAll(10)
+	addGold(15)
+
+	dialog(narrator;_;false;Libertville_Shop_Shopkeeper_QuestEnd_4)
+	dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestEnd_5)
+
+	load(Marklicht/Libertville/Shop/Salesman)
+	return()
+}
+
+dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_QuestDuring_1)
+
+load(Marklicht/Libertville/Shop/Salesman)

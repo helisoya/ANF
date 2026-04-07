@@ -1,0 +1,15 @@
+dialog([MC];_;false;NorthVillage_Elder_EndArcQuest2_1)
+
+dialog(Elder;Northman1;false;NorthVillage_Elder_EndArcQuest2_2)
+dialog(Elder;Northman1;false;NorthVillage_Elder_EndArcQuest2_3)
+dialog(Elder;Northman1;false;NorthVillage_Elder_EndArcQuest2_4)
+dialog(Elder;Northman1;false;NorthVillage_Elder_EndArcQuest2_5)
+dialog(Elder;Northman1;false;NorthVillage_Elder_EndArcQuest2_6)
+dialog(Elder;Northman1;false;NorthVillage_Elder_EndArcQuest2_7)
+
+variable(arcQuest_Dragon_2;100)
+variable(arcQuest_Dragon_3;0)
+
+addExpToAll(25)
+
+load(Forest/Village/Elder)

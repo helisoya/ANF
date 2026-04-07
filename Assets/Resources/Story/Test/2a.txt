@@ -1,0 +1,2 @@
+dialog(narrator;_;false;2_A)
+variable(random;1)

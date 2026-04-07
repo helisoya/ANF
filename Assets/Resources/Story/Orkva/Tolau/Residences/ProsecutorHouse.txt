@@ -1,0 +1,8 @@
+setInteractionCsetInteractionHiddenhapter(Exit;true)
+setInteractionChapter(Book;Orkva/Tolau/Residences/ProsecutorHouse_Book)
+setInteractionChapter(Bookshelf;Orkva/Tolau/Residences/ProsecutorHouse_Bookshelf)
+setInteractionChapter(Painting;Orkva/Tolau/Residences/ProsecutorHouse_Painting)
+setInteractionChapter(Wall;Orkva/Tolau/Residences/ProsecutorHouse_Wall)
+setInteractionChapter(Statue;Orkva/Tolau/Residences/ProsecutorHouse_Statue)
+
+interact

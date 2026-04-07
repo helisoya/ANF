@@ -1,0 +1,13 @@
+if(secondaryQuest_HopeHarbor_Inn = -1){
+choice Choice_Chat
+	Choice_AboutYou MirageIsland/HopeHarbor/Inn/Owner_AboutYou
+	Choice_AboutCity MirageIsland/HopeHarbor/Inn/Owner_AboutCity
+	Choice_NeedHelp MirageIsland/HopeHarbor/Inn/Owner_StartQuest
+	Choice_Nothing MirageIsland/HopeHarbor/Inn/Owner_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutYou MirageIsland/HopeHarbor/Inn/Owner_AboutYou
+	Choice_AboutCity MirageIsland/HopeHarbor/Inn/Owner_AboutCity
+	Choice_Nothing MirageIsland/HopeHarbor/Inn/Owner_Exit
+}

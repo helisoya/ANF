@@ -1,0 +1,14 @@
+setCharacterAlpha(GUARD;0;true)
+setCharacterPosition(GUARD;Front)
+setCharacterRotation(GUARD;Front)
+setCharacterAlpha(GUARD;1;false)
+
+dialog(GUARD;GUARD;false;Kalia_Plaza_GUARDArcQuest2_GUARD_1)
+dialog(GUARD;GUARD;false;Kalia_Plaza_GUARDArcQuest2_GUARD_2)
+
+setCharacterAlpha(GUARD;0;true)
+setCharacterPosition(GUARD;Bookshelf)
+setCharacterRotation(GUARD;Bookshelf)
+setCharacterAlpha(GUARD;1;false)
+
+load(Kalia/City/Plaza/GUARDArcQuest2)

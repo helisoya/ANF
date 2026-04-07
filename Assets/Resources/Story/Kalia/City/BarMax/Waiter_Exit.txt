@@ -1,0 +1,6 @@
+setCharacterAlpha(Waiter1;0;true)
+setCharacterPosition(Waiter1;Waiter)
+setCharacterRotation(Waiter1;Waiter)
+setCharacterAlpha(Waiter1;1;false)
+
+load(Kalia/City/BarMax/Interaction)

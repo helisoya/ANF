@@ -1,0 +1,13 @@
+setCharacterAlpha(SecretPolice;0;true)
+setCharacterPosition(SecretPolice;Front)
+setCharacterRotation(SecretPolice;Front)
+setCharacterAlpha(SecretPolice;1;false)
+
+dialog(Soldier;SecretPolice;false;Vorlan_CityHall_Soldier_No_1)
+
+setCharacterAlpha(SecretPolice;0;true)
+setCharacterPosition(SecretPolice;Soldier)
+setCharacterRotation(SecretPolice;Soldier)
+setCharacterAlpha(SecretPolice;1;false)
+
+load(Orkva/Vorlan/CityHall/MayorRoom)

@@ -1,0 +1,6 @@
+setCharacterAlpha(OrderChief;0;true)
+setCharacterPosition(OrderChief;Desk)
+setCharacterRotation(OrderChief;Desk)
+setCharacterAlpha(OrderChief;1;false)
+
+load(Forest/OrderHQ/Interaction)

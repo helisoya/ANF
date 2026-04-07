@@ -1,0 +1,6 @@
+setCharacterAlpha(MayorIberty;0;true)
+setCharacterPosition(MayorIberty;MayorSpot)
+setCharacterRotation(MayorIberty;MayorSpot)
+setCharacterAlpha(MayorIberty;1;false)
+
+load(Kalia/Iberty/CityHall/Interaction)

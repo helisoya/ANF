@@ -1,0 +1,14 @@
+fadeBg(1;true)
+
+setBackground(HaroldSalon;true)
+if(rain = 1) changeSkybox(Cloud)
+
+addCharacter(Harold;false)
+setCharacterPosition(Harold;Couch)
+setCharacterRotation(Harold;Couch)
+setCharacterBody(Harold;Couch;true)
+setInteractionChapter(Harold;ChezHarold/Harold_Check)
+
+fadeBg(0;false)
+
+load(ChezHarold/Salon)

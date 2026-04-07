@@ -1,0 +1,6 @@
+if(shopQuest = 0) SouvenirShop/Waldo_ShopQuest0
+if(shopQuest = 2) SouvenirShop/Waldo_ShopQuest2
+
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest1_1)
+
+load(SouvenirShop/Waldo_Default)

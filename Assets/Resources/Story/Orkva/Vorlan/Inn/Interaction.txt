@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Vorlan-City_Vorlan_Inn)
+setInteractionChapter(Citizen6;Orkva/Vorlan/Inn/Waiter_Enter)
+
+interact

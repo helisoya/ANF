@@ -1,0 +1,6 @@
+# You need to talk to the shopkeeper before starting any fighting quest
+dialog(Fisherman;_;false;Iberty_Port_Fisherman_Quest_Cant_1)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Cant_2)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Cant_3)
+
+load(Kalia/Iberty/Port/Fisherman)

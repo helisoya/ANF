@@ -1,0 +1,30 @@
+if(secondaryQuest_Libertville_Academy = -1){
+	dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_QuestStart_1)
+	dialog([MC];_;false;Libertville_MilitaryAcademy_Soldier_QuestStart_2)
+	dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_QuestStart_3)
+	dialog([MC];_;false;Libertville_MilitaryAcademy_Soldier_QuestStart_4)
+	variable(secondaryQuest_Libertville_Academy;0)
+
+	load(Marklicht/Libertville/MilitaryAcademy/Soldier)
+	return()
+}
+
+if(secondaryQuest_Libertville_Academy = 1){
+	dialog([MC];_;false;Libertville_MilitaryAcademy_Soldier_QuestEnd_1)
+	dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_QuestEnd_2)
+	dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_QuestEnd_3)
+	dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_QuestEnd_4)
+
+	variable(secondaryQuest_Libertville_Academy;100)
+	addExpToAll(10)
+	addGold(20)
+
+	dialog(narrator;_;false;Libertville_MilitaryAcademy_Soldier_QuestEnd_5)
+
+	load(Marklicht/Libertville/MilitaryAcademy/Soldier)
+	return()
+}
+
+dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_QuestDuring_1)
+
+load(Marklicht/Libertville/MilitaryAcademy/Soldier)

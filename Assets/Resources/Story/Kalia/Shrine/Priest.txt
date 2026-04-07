@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_AboutKalibu Kalia/Shrine/Priest_AboutKalibu
+	Choice_AboutOrkva Kalia/Shrine/Priest_AboutOrkva
+	Choice_AboutYou Kalia/Shrine/Priest_AboutYou
+	Choice_Nothing Kalia/Shrine/Priest_Exit

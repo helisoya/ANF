@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_Buy Forest/Village/Trader_Shop
+	Choice_AboutYou Forest/Village/Trader_AboutYou
+	Choice_Nothing Forest/Village/Trader_Exit

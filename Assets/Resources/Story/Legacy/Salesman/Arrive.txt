@@ -1,0 +1,15 @@
+if(mainQuest != 5) playMusic(Exploration_Rickey)
+if(mainQuest = 5) playMusic(Exploration2_Rickey)
+
+removeAllCharacters()
+setBackground(RickeyLandSalesman;false)
+if(rain = 1) changeSkybox(Rain)
+
+if(mainQuest > 4) load(Salesman/Interaction)
+
+addCharacter(Salesman;false)
+setCharacterPosition(Salesman;Target)
+setCharacterRotation(Salesman;Target)
+setInteractionChapter(Salesman;Salesman/Salesman_Enter)
+
+load(Salesman/Interaction)

@@ -1,0 +1,8 @@
+setCharacterAlpha(Citizen4;0;true)
+setCharacterPosition(Citizen4;Front)
+setCharacterRotation(Citizen4;Front)
+setCharacterAlpha(Citizen4;1;false)
+
+dialog(Woman;Citizen4;false;MirageCottage_Woman_Greetings_1)
+
+load(MirageIsland/Cottage/Woman)

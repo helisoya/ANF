@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Vorlan/Shop)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Vorlan)
+
+if(night = 0){
+	addCharacter(Salesman2;false)
+	setCharacterPosition(Salesman2;Salesman)
+	setCharacterRotation(Salesman2;Salesman)
+	setInteractionChapter(Salesman2;Orkva/Vorlan/Shop/Salesman_Enter)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Orkva/Vorlan/Shop/Interaction)

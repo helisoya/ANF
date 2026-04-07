@@ -1,0 +1,4 @@
+# Shop of the Kalia's salesman
+shop(KaliaSalesman)
+
+load(Kalia/City/Shop/Salesman)

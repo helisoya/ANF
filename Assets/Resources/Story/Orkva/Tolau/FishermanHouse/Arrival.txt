@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Tolau/FishermanHouse)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Tolau)
+
+if(night = 0){
+	addCharacter(Fisherman2;false)
+	setCharacterPosition(Fisherman2;Fisherman)
+	setCharacterRotation(Fisherman2;Fisherman)
+	setInteractionChapter(Fisherman2;Orkva/Tolau/FishermanHouse/Fisherman_Enter)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Orkva/Tolau/FishermanHouse/Interaction)

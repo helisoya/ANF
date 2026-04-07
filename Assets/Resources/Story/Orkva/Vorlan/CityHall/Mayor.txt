@@ -1,0 +1,22 @@
+if(secondaryQuest_Vorlan_Mayor = -1){
+choice Choice_Chat
+	Choice_AboutCity Orkva/Vorlan/CityHall/Mayor_AboutCity
+	Choice_AboutYou Orkva/Vorlan/CityHall/Mayor_AboutYou
+	Choice_NeedHelp Orkva/Vorlan/CityHall/Mayor_SecondaryQuestCheck
+	Choice_Nothing Orkva/Vorlan/CityHall/Mayor_Exit
+}
+else{
+if(secondaryQuest_Vorlan_Mayor <= 1){
+choice Choice_Chat
+	Choice_AboutCity Orkva/Vorlan/CityHall/Mayor_AboutCity
+	Choice_AboutYou Orkva/Vorlan/CityHall/Mayor_AboutYou
+	Choice_AboutTask Orkva/Vorlan/CityHall/Mayor_SecondaryQuestCheck
+	Choice_Nothing Orkva/Vorlan/CityHall/Mayor_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutCity Orkva/Vorlan/CityHall/Mayor_AboutCity
+	Choice_AboutYou Orkva/Vorlan/CityHall/Mayor_AboutYou
+	Choice_Nothing Orkva/Vorlan/CityHall/Mayor_Exit
+}
+}

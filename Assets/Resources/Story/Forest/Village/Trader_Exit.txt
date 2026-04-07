@@ -1,0 +1,6 @@
+setCharacterAlpha(Northman2;0;true)
+setCharacterPosition(Northman2;Spot2)
+setCharacterRotation(Northman2;Spot2)
+setCharacterAlpha(Northman2;1;false)
+
+load(Forest/Village/Interaction)

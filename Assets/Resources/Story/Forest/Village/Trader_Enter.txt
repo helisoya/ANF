@@ -1,0 +1,8 @@
+setCharacterAlpha(Northman2;0;true)
+setCharacterPosition(Northman2;Front)
+setCharacterRotation(Northman2;Front)
+setCharacterAlpha(Northman2;1;false)
+
+dialog(Northman;Northman2;false;NorthVillage_Trader_Greetings_1)
+
+load(Forest/Village/Trader)

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6483632e00eced24994d2f0fe22942a1, type: 3}
+  m_Name: Default
+  m_EditorClassIdentifier: 
+  HEALTH_BASE: 25
+  HEALTH_MULT_LEVEL: 5
+  HEALTH_MULT_BONUS: 2.5
+  ATTACK_BASE: 5
+  ATTACK_MULT_LEVEL: 5
+  ATTACK_MULT_FORCE: 10
+  EVASION_BASE: 0.05
+  EVASION_MULT_AGILITY: 105
+  SP_BASE: 5
+  SP_MULT_LEVEL: 1.25
+  SP_MULT_STRATEGY: 0.75
+  PRICE_BASE: 1
+  PRICE_MULT_CHARISMA: 175
+  DEFENSE_BASE: 2
+  DEFENSE_MULT_LEVEL: 6
+  DEFENSE_MULT_RESILIENCE: 12
+  EXP_BASE: 20

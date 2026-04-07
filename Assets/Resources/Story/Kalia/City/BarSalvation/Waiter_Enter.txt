@@ -1,0 +1,18 @@
+setCharacterAlpha(AnnaDisguise;0;true)
+setCharacterBody(AnnaDisguise;Normal;true)
+setCharacterPosition(AnnaDisguise;Front)
+setCharacterRotation(AnnaDisguise;Front)
+setCharacterAlpha(AnnaDisguise;1;false)
+
+
+if(rebelQuest_0 = 100){
+# already joined
+	dialog(Anna;AnnaDisguise;false;Kalia_BarSalvation_Waiter_Joined_1)
+	load(Kalia/City/BarSalvation/Waiter_Exit)
+}
+else{
+# not joined yet
+	dialog(Waitress;AnnaDisguise;false;Kalia_BarSalvation_Waiter_Greetings_1)
+	load(Kalia/City/BarSalvation/Waiter)
+}
+

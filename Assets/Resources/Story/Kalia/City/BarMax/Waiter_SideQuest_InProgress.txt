@@ -1,0 +1,3 @@
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_SideQuest_InProgress_1)
+
+load(Kalia/City/BarMax/Waiter)

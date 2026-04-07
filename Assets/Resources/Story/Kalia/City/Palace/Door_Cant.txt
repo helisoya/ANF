@@ -1,0 +1,2 @@
+dialog(narrator;_;false;Kalia_Palace_Door_Cant_1)
+load(Kalia/City/Palace/Interaction)

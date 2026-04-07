@@ -1,0 +1,3 @@
+# Displays Day / Night Only
+if(night = 1) changeSkybox(Night)
+if(night = 0) changeSkybox(Default)

@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Kalia-City_Kalia_RebelHQ)
+setInteractionChapter(SecretDoor;Kalia/City/BarSalvation/Door_Check)
+
+interact

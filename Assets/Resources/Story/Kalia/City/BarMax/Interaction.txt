@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Kalia-City_Kalia_BarGUARD)
+setInteractionChapter(Waiter1;Kalia/City/BarMax/Waiter_Enter)
+
+interact

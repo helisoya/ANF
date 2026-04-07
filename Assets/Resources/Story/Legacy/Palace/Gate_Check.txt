@@ -1,0 +1,9 @@
+if(mainQuest < 4) Palace/AttractionsNotDone
+if(mainQuest = 4) Palace/MainQuest4_Confirm
+if(mainQuest = 5) Palace/MainQuest5
+
+dialog(narrator;_;false;Palace_Done)
+
+load(Palace/Interaction)
+
+

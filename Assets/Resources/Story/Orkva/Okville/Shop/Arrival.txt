@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaHigh)
+removeAllCharacters()
+setBackground(Orkva/Okville/Shop)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Vorlan)
+
+if(night = 0){
+	addCharacter(Citizen3;false)
+	setCharacterPosition(Citizen3;Owner)
+	setCharacterRotation(Citizen3;Owner)
+	setInteractionChapter(Citizen3;Orkva/Okville/Shop/Salesman_Enter)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Orkva/Okville/Shop/Interaction)

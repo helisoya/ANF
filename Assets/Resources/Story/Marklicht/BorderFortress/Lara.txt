@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_AboutYou Marklicht/BorderFortress/Lara_AboutYou
+	Choice_AboutMarklicht Marklicht/BorderFortress/Lara_AboutMarklicht
+	Choice_AboutOrkva Marklicht/BorderFortress/Lara_AboutOrkva
+	Choice_Nothing Marklicht/BorderFortress/Lara_Exit

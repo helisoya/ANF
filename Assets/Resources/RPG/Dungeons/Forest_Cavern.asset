@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054cacc03761b40be47bb0c9a48b98, type: 3}
+  m_Name: Forest_Cavern
+  m_EditorClassIdentifier: 
+  ID: Forest_Cavern
+  locationID: Location_WhiteForest
+  floorsAmount: 5
+  endChapter: Forest/Cavern/DungeonEnd
+  musicName: Dungeon_Generic
+  canExitEarly: 0
+  earlyExitChapter: 
+  encounters:
+  - {fileID: 11400000, guid: 163a725b09cef1247a5795efb439bea6, type: 2}
+  - {fileID: 11400000, guid: 14bbfbcaafa31c34683d4b826add6af4, type: 2}
+  battleBackground: Cavern
+  size: {x: 15, y: 15}
+  roomCount: 4
+  roomMaxSize: {x: 5, y: 5}
+  cellPrefab: {fileID: 8148160245439542551, guid: 0a24cf1336fcbb7448db4bb747797f9c,
+    type: 3}
+  stairsPrefab: {fileID: 2695139049142173575, guid: 255f38eebb4070d43aef3b1065c7802f,
+    type: 3}
+  propsToPlace: []

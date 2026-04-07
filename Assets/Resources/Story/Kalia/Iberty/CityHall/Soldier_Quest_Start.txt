@@ -1,0 +1,14 @@
+# Start of Iberty's Soldier Quest
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Start_1)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Start_2)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Start_3)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Start_4)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Start_5)
+
+dialog([MC];_;false;Iberty_CityHall_Soldier_Quest_Start_6)
+
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Start_7)
+
+variable(secondaryQuest_Iberty_Catacombs;0)
+
+load(Kalia/Iberty/CityHall/Soldier)

@@ -1,0 +1,3 @@
+dialog(narrator;_;false;Kalia_Plaza_GUARDArcQuest2_Painting_1)
+
+load(Kalia/City/Plaza/GUARDArcQuest2)

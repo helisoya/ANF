@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Okville-City_Okville_CityHall)
+setInteractionChapter(Door;Orkva/Okville/CityHall/Door)
+
+interact

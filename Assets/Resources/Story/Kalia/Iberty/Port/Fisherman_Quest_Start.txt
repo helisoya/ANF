@@ -1,0 +1,23 @@
+# Start of the Iberty Fisherman quest
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_1)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_2)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_3)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_4)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_5)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_6)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_7)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_8)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_9)
+
+dialog(narrator;_;false;Iberty_Port_Fisherman_Quest_Start_10)
+dialog([MC];_;false;Iberty_Port_Fisherman_Quest_Start_11)
+
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_12)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_13)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_14)
+
+variable(secondaryQuest_Iberty_Port;0)
+
+choice Choice_Generic
+	Choice_Ready Kalia/Iberty/Port/Fisherman_Quest_Do
+	Choice_NotYet Kalia/Iberty/Port/Fisherman

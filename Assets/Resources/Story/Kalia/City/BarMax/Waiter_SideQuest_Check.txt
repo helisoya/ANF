@@ -1,0 +1,6 @@
+# Checks for the secondary quest of the waiter Max
+switch secondaryQuest_Kalia_Max
+	-1 Kalia/City/BarMax/Waiter_SideQuest_Start
+	0 Kalia/City/BarMax/Waiter_SideQuest_InProgress
+	1 Kalia/City/BarMax/Waiter_SideQuest_End
+	100 Kalia/City/BarMax/Waiter_SideQuest_Done

@@ -1,0 +1,7 @@
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_AboutCity_1)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_AboutCity_2)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_AboutCity_3)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_AboutCity_4)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_AboutCity_5)
+
+load(Orkva/Tolau/Inn/Waiter)

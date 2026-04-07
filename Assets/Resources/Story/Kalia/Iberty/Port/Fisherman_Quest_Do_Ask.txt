@@ -1,0 +1,7 @@
+# Ask if the player really want to go
+
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Do_1)
+
+choice Choice_Generic
+	Choice_Ready Kalia/Iberty/Port/Fisherman_Quest_Do
+	Choice_NotYet Kalia/Iberty/Port/Fisherman_Quest_Do_Decline

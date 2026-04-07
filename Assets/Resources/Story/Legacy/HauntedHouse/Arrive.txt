@@ -1,0 +1,16 @@
+if(mainQuest != 5) playMusic(Exploration_Rickey)
+if(mainQuest = 5) playMusic(Exploration2_Rickey)
+
+removeAllCharacters()
+setBackground(RickeyLandHauntedHouse)
+
+if(rain = 1) changeSkybox(Rain)
+
+if(mainQuest > 4) load(HauntedHouse/Interaction)
+
+addCharacter(Waldo;false)
+setCharacterPosition(Waldo;WaldoSpot)
+setCharacterRotation(Waldo;WaldoSpot)
+setInteractionChapter(Waldo;HauntedHouse/Waldo_Enter)
+
+load(HauntedHouse/Interaction)

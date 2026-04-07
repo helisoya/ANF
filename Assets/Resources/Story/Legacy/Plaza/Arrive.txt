@@ -1,0 +1,11 @@
+if(mainQuest != 5) playMusic(Exploration_Rickey)
+if(mainQuest = 5) playMusic(Exploration2_Rickey)
+
+removeAllCharacters()
+setBackground(RickeyLandPlaza)
+
+if(rain = 1) changeSkybox(Rain)
+
+if(horseRaceQuest = 1) load(Plaza/AddHorse)
+
+load(Plaza/Interaction)

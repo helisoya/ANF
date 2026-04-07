@@ -1,0 +1,9 @@
+# Doctor talks about himself
+
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_AboutYou_1)
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_AboutYou_2)
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_AboutYou_3)
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_AboutYou_4)
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_AboutYou_5)
+
+load(Kalia/Iberty/Doctor/Doctor)

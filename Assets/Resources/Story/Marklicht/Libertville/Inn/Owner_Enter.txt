@@ -1,0 +1,8 @@
+setCharacterAlpha(Citizen6;0;true)
+setCharacterPosition(Citizen6;Front)
+setCharacterRotation(Citizen6;Front)
+setCharacterAlpha(Citizen6;1;false)
+
+dialog(Owner;Citizen6;false;Libertville_Inn_Innkeeper_Greetings_1)
+
+load(Marklicht/Libertville/Inn/Owner)

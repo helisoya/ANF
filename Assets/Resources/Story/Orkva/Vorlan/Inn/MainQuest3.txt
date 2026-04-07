@@ -1,0 +1,40 @@
+# Main Quest 3 (Sequence 1 & 2)
+# You talk to the bandit and he attacks you
+# Fight starts only if you talked to the inn's owner beforehand
+
+setCharacterAlpha(Bandit3;0;true)
+setCharacterBody(Bandit3;Normal;true)
+setCharacterPosition(Bandit3;Front)
+setCharacterRotation(Bandit3;Front)
+setCharacterAlpha(Bandit3;1;false)
+
+dialog(Man;Bandit3;false;Vorlan_Inn_MainQuest3_1_1)
+
+if(mainQuest_3 != 2){
+	# You didn't talk to the owner of the inn 
+	setCharacterAlpha(Bandit3;0;true)
+	setCharacterBody(Bandit3;Sit;true)
+	setCharacterPosition(Bandit3;Chair)
+	setCharacterRotation(Bandit3;Chair)
+	setCharacterAlpha(Bandit3;1;false)
+	load(Orkva/Vorlan/Inn/Interaction)
+	return()
+}
+
+dialog([MC];_;false;Vorlan_Inn_MainQuest3_1_2)
+
+dialog(Man;Bandit3;false;Vorlan_Inn_MainQuest3_1_3)
+
+dialog([MC];_;false;Vorlan_Inn_MainQuest3_1_4)
+
+dialog(Man;_;false;Vorlan_Inn_MainQuest3_1_5)
+dialog(Man;Bandit3;false;Vorlan_Inn_MainQuest3_1_6)
+dialog(Man;Bandit3;false;Vorlan_Inn_MainQuest3_1_7)
+dialog(Man;Bandit3;false;Vorlan_Inn_MainQuest3_1_8)
+
+setCharacterAlpha(Citizen6;0;false)
+
+dialog(narrator;_;false;Vorlan_Inn_MainQuest3_1_9)
+dialog(narrator;_;false;Vorlan_Inn_MainQuest3_1_10)
+
+battle(BATTLE_MainQuest_VorlanInn;Planks;Orkva/Vorlan/Inn/MainQuest3_End)

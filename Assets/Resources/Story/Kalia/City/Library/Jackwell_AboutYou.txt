@@ -1,0 +1,13 @@
+# Talks about himself
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_1)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_2)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_3)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_4)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_5)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_6)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_7)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_8)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_9)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutYou_10)
+
+load(Kalia/City/Library/Jackwell)

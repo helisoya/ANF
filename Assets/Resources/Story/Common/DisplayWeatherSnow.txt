@@ -1,0 +1,5 @@
+# Displays Snow
+if(rain = 1 & night = 1) changeSkybox(NightSnow)
+if(rain = 0 & night = 1) changeSkybox(Night)
+if(rain = 1 & night = 0) changeSkybox(Snow)
+if(rain = 0 & night = 0) changeSkybox(Default)

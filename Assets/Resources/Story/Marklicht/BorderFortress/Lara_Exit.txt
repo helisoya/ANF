@@ -1,0 +1,6 @@
+setCharacterAlpha(Lara;0;true)
+setCharacterRotation(Lara;Desk)
+setCharacterPosition(Lara;Desk)
+setCharacterAlpha(Lara;1;false)
+
+load(Marklicht/BorderFortress/Room)

@@ -1,0 +1,8 @@
+dialog(Lame;Lame;false;BorderFortress_Join_No_1)
+
+setCharacterAlpha(Lame;0;true)
+setCharacterPosition(Lame;Sentry)
+setCharacterRotation(Lame;Sentry)
+setCharacterAlpha(Lame;1;false)
+
+load(Marklicht/BorderFortress/Interaction)

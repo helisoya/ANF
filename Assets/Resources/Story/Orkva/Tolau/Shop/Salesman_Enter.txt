@@ -1,0 +1,8 @@
+setCharacterAlpha(Citizen6;0;true)
+setCharacterPosition(Citizen6;Front)
+setCharacterRotation(Citizen6;Front)
+setCharacterAlpha(Citizen6;1;false)
+
+dialog(Owner;Citizen6;false;Tolau_Shop_Greetings_1)
+
+load(Orkva/Tolau/Shop/Salesman)

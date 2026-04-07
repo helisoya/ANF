@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_Forest-Region_Forest_Camp2)
+
+interact

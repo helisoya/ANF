@@ -1,0 +1,7 @@
+addCharacter(Northman1;false)
+setCharacterPosition(Northman1;Spot1)
+setCharacterRotation(Northman1;Spot1)
+
+addCharacter(Northman2;false)
+setCharacterPosition(Northman2;Spot2)
+setCharacterRotation(Northman2;Spot2)

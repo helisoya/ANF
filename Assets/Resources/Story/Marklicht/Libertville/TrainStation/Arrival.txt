@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Libertville/TrainStation)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Libertville)
+
+autosave()
+
+if(night = 0){
+	addCharacter(Citizen2;false)
+	setCharacterPosition(Citizen2;Courier)
+	setCharacterRotation(Citizen2;Courier)
+	setInteractionChapter(Citizen2;Marklicht/Libertville/TrainStation/Courier_Enter)
+}
+
+fadeFg(0;false)
+
+load(Marklicht/Libertville/TrainStation/Interaction)

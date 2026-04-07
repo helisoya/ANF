@@ -1,0 +1,15 @@
+setFg(1)
+
+playMusic(Exploration_Marklicht)
+setBackground(Marklicht/Libertville/Plaza)
+load(Common/DisplayWeatherRain)
+setLocation(Location_Libertville)
+
+fadeFg(0;false)
+
+dialog(narrator;null;false;Libertville_Plaza_Quest_4)
+dialog(narrator;null;false;Libertville_Plaza_Quest_5)
+
+variable(secondaryQuest_Libertville_Academy;1)
+
+load(Marklicht/Libertville/Plaza/Interaction)

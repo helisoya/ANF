@@ -1,0 +1,19 @@
+# Talks about his life
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_1)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_2)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_3)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_4)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_5)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_6)
+
+dialog([MC];_;false;Iberty_CityHall_Soldier_AboutCamp_7)
+
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_8)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_9)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_10)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_11)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutCamp_12)
+
+dialog([MC];_;false;Iberty_CityHall_Soldier_AboutCamp_13)
+
+load(Kalia/Iberty/CityHall/Soldier)

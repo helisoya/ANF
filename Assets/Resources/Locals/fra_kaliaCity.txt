@@ -1,0 +1,1302 @@
+# ---------------------------------------------------------
+# ---------------- Kalia - Shop ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Shop_Greetings_1 = Bonjour. Comment puis-je vous aider ?
+
+Kalia_Shop_AboutYou_1 = Ma famille vend des biens divers depuis des siècles.
+Kalia_Shop_AboutYou_2 = Mon arrière-arrière-arrière grand-père est le fondateur de cette boutique.
+Kalia_Shop_AboutYou_3 = A l'époque, il ne vendait que des pommes et autres produits d'Iberty.
+Kalia_Shop_AboutYou_4 = De nos jours, on vend principalement des armes aux fous qui vont s'aventurer dans la Forêt Blanche.
+Kalia_Shop_AboutYou_5 = J'aurais aimé continuer de commercer avec Iberty, mais le Marchand ne le veux pas...
+
+Kalia_Shop_StartSubQuest_1 = En réalité, j'ai besoin d'aide.
+Kalia_Shop_StartSubQuest_2 = Je suspecte que quelqu'un rode aux alentours de ma boutique la nuit, mais je ne peux pas le prouver.
+Kalia_Shop_StartSubQuest_3 = Pourriez-vous mener l'enquête ?
+Kalia_Shop_StartSubQuest_4 = Je ne suis pas un combattant. Si c'est vraiment un voleur, je ne vais rien pouvoir faire.
+Kalia_Shop_StartSubQuest_5 = Je vois. Je vais essayer de trouver votre mystérieux individu.
+Kalia_Shop_StartSubQuest_6 = Je devrais revenir la nuit. Je pourrais passer le temps dans une auberge ou un bar.
+Kalia_Shop_StartSubQuest_7 = Merci. Je vous récompenserai si vous trouvez quelque chose.
+
+Kalia_Shop_SubQuest_1 = J'arrive à la boutique.
+Kalia_Shop_SubQuest_2 = Le commerçant veut que je mène l'enquête pour savoir s'il y a ou pas un voleur dans les parages.
+Kalia_Shop_SubQuest_3 = ...Et on dirait qu'il avait raison.
+Kalia_Shop_SubQuest_4 = Quelqu'un sort des ténèbres de la nuit, et s'approche de la boutique.
+Kalia_Shop_SubQuest_5 = Cette personne va probablement essayer de voler quelque chose.
+Kalia_Shop_SubQuest_6 = Je l'intercepte avant que quelque chose ne puisse arriver.
+Kalia_Shop_SubQuest_7 = Qu- D'ou est-ce que tu sort ?
+Kalia_Shop_SubQuest_8 = Que voulez-vous faire ici ?
+Kalia_Shop_SubQuest_9 = ... Ca !
+
+Kalia_Shop_SubQuest_10 = J'ai entendu une commotion.
+Kalia_Shop_SubQuest_11 = Le commerçant arrive en courant. Il a probablement été réveillé par le combat.
+Kalia_Shop_SubQuest_12 = Je vais bien. J'ai attrapé votre voleur.
+Kalia_Shop_SubQuest_13 = Je... Je vois. Merci.
+Kalia_Shop_SubQuest_14 = Maintenant, je vais pouvoir dormir plus facilement.
+Kalia_Shop_SubQuest_15 = Oh, et voilà votre paie.
+Kalia_Shop_SubQuest_16 = <color=blue>J'ai reçu 10 or du commerçant.</color>
+Kalia_Shop_SubQuest_17 = Si vous avez besoin de vivres, n'hésitez pas à passer par ma boutique.
+Kalia_Shop_SubQuest_18 = Le commerçant rentre chez lui. Je suppose que j'ai fini ici.
+
+# ---------------------------------------------------------
+# -------------- Kalia - Palace ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Palace_Door_Cant_1 = Je ne devrais pas entrer pour le moment.
+
+Kalia_Palace_MainQuest1_1_1 = ... Il est temps de faire mon rapport, je suppose.
+Kalia_Palace_MainQuest1_1_2 = Le Marchand ne va pas être content en apprenant que j'ai perdu le colis.
+Kalia_Palace_MainQuest1_1_3 = Il pourrait même me virer, maintenant que j'y pense...
+Kalia_Palace_MainQuest1_1_4 = Eh bien, allons-y...
+Kalia_Palace_MainQuest1_1_5 = Je toque à la porte, et entre dans son bureau.
+Kalia_Palace_MainQuest1_1_6 = Le voilà, le consul de la république de Kalia, mon patron.
+Kalia_Palace_MainQuest1_1_7 = Hmm ? Qui est-ce ?
+Kalia_Palace_MainQuest1_1_8 = Bouclier, c'est vous ?
+Kalia_Palace_MainQuest1_1_9 = Oui monsieur... Je suis venu faire mon rapport.
+Kalia_Palace_MainQuest1_1_10 = 'Bouclier'... Mon nom de code dans la garde.
+Kalia_Palace_MainQuest1_1_11 = Je n'aime pas l'utiliser. Je le trouve inutile de nos jours.
+Kalia_Palace_MainQuest1_1_12 = Où étiez-vous ?! Le colis devait arriver la nuit dernière !
+Kalia_Palace_MainQuest1_1_13 = Il y a eu des... complications, monsieur. J'ai bien peur d'avoir perdu le colis.
+Kalia_Palace_MainQuest1_1_14 = Perdu ?! Quoi ?! COMMENT ?!
+Kalia_Palace_MainQuest1_1_15 = Pourquoi est-ce que je vous paye ? Vous savez à quel point ce colis était précieux ?
+Kalia_Palace_MainQuest1_1_16 = Mon-
+Kalia_Palace_MainQuest1_1_17 = Depuis l'incident, vous deux ne faites que rater chaques opérations !
+Kalia_Palace_MainQuest1_1_18 = Est-ce que vous pourriez essayer, juste une fois dans votre vie ?
+Kalia_Palace_MainQuest1_1_19 = Je vous ai demandé d'escorter un postier, rien de plus !
+Kalia_Palace_MainQuest1_1_20 = Mais vous avez quand même réussi à perdre le colis ?
+Kalia_Palace_MainQuest1_1_21 = Monsieur, des bandits nous ont embusqués et-
+Kalia_Palace_MainQuest1_1_22 = Des bandits ! C'est toujours des bandits, non ?
+Kalia_Palace_MainQuest1_1_23 = 'Des bandits ont attaqué l'usine', 'Des bandits ont détruit le poste de garde'...
+Kalia_Palace_MainQuest1_1_24 = On dirait que ces... trucs... sont juste l'excuse parfaite pour les fainéants de nos jours.
+Kalia_Palace_MainQuest1_1_25 = Eh bien, il y a un léger problème de bandit dans la forêt, oui...
+Kalia_Palace_MainQuest1_1_26 = Mais bonne chance pour le lui faire comprendre.
+Kalia_Palace_MainQuest1_1_27 = Qu'est-ce que des bandits voudraient faire de mon colis dans tous les cas ?
+Kalia_Palace_MainQuest1_1_28 = C'est juste un artefact que j'ai obtenu du Musée National du Marklicht.
+Kalia_Palace_MainQuest1_1_29 = Juste ça ?! Bon sang, ça doit au moins valoir une fortune.
+Kalia_Palace_MainQuest1_1_30 = Monsieur, j'ai un plan pour retrouver le colis.
+Kalia_Palace_MainQuest1_1_31 = Si vous me laissez simplement utiliser le chien, je pour-
+Kalia_Palace_MainQuest1_1_32 = Un chien ? Bien sûr que vous êtes un chien, idiot !
+Kalia_Palace_MainQuest1_1_33 = Et vous le resterez tant que vous resterez aussi fainéant !
+Kalia_Palace_MainQuest1_1_34 = Oubliez le chien de la garde ! Oubliez le colis !
+Kalia_Palace_MainQuest1_1_35 = Je vais donner cette affaire à quelqu'un de normalement plus compétent.
+Kalia_Palace_MainQuest1_1_36 = Epée ! Venez ici, mon larbin.
+Kalia_Palace_MainQuest1_1_37 = Monsieur ?
+Kalia_Palace_MainQuest1_1_38 = Voilà Epée, mon seul collègue dans la garde républicaine.
+Kalia_Palace_MainQuest1_1_39 = Epée est, bien sûr, son nom de code. Je ne connais pas son vrai nom.
+Kalia_Palace_MainQuest1_1_40 = Vous devez retrouver mon colis perdu. Ne me décevez pas.
+Kalia_Palace_MainQuest1_1_41 = Perdu ? Vous voulez dire que Bouclier l'a perdu ?
+Kalia_Palace_MainQuest1_1_42 = Oui ! Cet idiot a dû penser que ça serait drôle... Non.
+Kalia_Palace_MainQuest1_1_43 = Ah ! Je savais qu'il échouerait tôt ou tard.
+Kalia_Palace_MainQuest1_1_44 = N'ayez crainte, monsieur. Je vais retrouver le colis.
+Kalia_Palace_MainQuest1_1_45 = L'Ordre traque les mouvements des bandits de la Forêt Blanche.
+Kalia_Palace_MainQuest1_1_46 = Je suis sûr qu'ils savent quelque chose sur le colis.
+Kalia_Palace_MainQuest1_1_47 = Peu importe. Je veux mon colis, Epée.
+Kalia_Palace_MainQuest1_1_48 = Vous l'aurez bientôt !
+Kalia_Palace_MainQuest1_1_49 = Epée quitte la pièce, ça ne sent pas bon.
+Kalia_Palace_MainQuest1_1_50 = Il me déteste, et a tendance à se mettre dans des situations dangereuses.
+Kalia_Palace_MainQuest1_1_51 = Avec un peu de chance, je vais devoir le sortir d'un camp de bandits une fois de plus...
+Kalia_Palace_MainQuest1_1_52 = Mais pour le moment...
+Kalia_Palace_MainQuest1_1_53 = Et moi, monsieur ? Devrais-je rester au repos pour le moment ?
+Kalia_Palace_MainQuest1_1_54 = Vous pensez déjà à dormir ? Pas de chance !
+Kalia_Palace_MainQuest1_1_55 = J'ai une tâche pour vous. C'est à propos des rebelles.
+Kalia_Palace_MainQuest1_1_56 = Après être resté dans l'ombre pendant des années, mes espions en ont trouvé un.
+Kalia_Palace_MainQuest1_1_57 = Il est aux docks. Occupez-vous de lui et obtenez ses secrets.
+Kalia_Palace_MainQuest1_1_58 = Ca sera fait, monsieur.
+Kalia_Palace_MainQuest1_1_59 = N'échouez pas, Bouclier. C'est votre dernière chance.
+Kalia_Palace_MainQuest1_1_60 = Je quitte la pièce. Ca aurait pu mieux se passer.
+Kalia_Palace_MainQuest1_1_61 = Le Marchand va avoir ma tête si j'échoue.
+Kalia_Palace_MainQuest1_1_62 = Les rebelles... Depuis combien de temps est-ce qu'ils existent ? Environ 20 ans ?
+Kalia_Palace_MainQuest1_1_63 = Quand le Marchand a commencé à s'accrocher au pouvoir, des gens ont commencé à se révolter.
+Kalia_Palace_MainQuest1_1_64 = La garde s'en est occupée pendant un temps. Puis l'incident est arrivé.
+Kalia_Palace_MainQuest1_1_65 = Puis-je les vaincre seul ? Des centaines n'ont même pas suffit...
+Kalia_Palace_MainQuest1_1_66 = Est-ce que je combats seulement les bonnes personnes ? N'ont-ils pas raison au final ?
+Kalia_Palace_MainQuest1_1_67 = ... Non. Je ne peux pas me poser ces questions maintenant.
+Kalia_Palace_MainQuest1_1_68 = Je dois aller aux docks, et trouver ce rebelle.
+
+Kalia_Palace_MainQuest2_1_1 = ...Je n'arrive pas à croire que je suis déjà de retour...
+Kalia_Palace_MainQuest2_1_2 = J'entre dans le bureau du Marchand.
+Kalia_Palace_MainQuest2_1_3 = Monsieur. Je suis venu faire mon rapport.
+Kalia_Palace_MainQuest2_1_4 = Ah ! Enfin !
+Kalia_Palace_MainQuest2_1_5 = Donc, avez-vous tué le rebelle ? Avez-vous trouvé ses secrets ?
+Kalia_Palace_MainQuest2_1_6 = Je... je me suis occupé de lui, oui.
+Kalia_Palace_MainQuest2_1_7 = J'ai aussi réussi à trouver une cache d'armes de la rebellion.
+Kalia_Palace_MainQuest2_1_8 = Je ne peux pas lui dire ce qui est vraiment arrivé. 
+Kalia_Palace_MainQuest2_1_9 = Bien, bien. Vous avez réussi à sauver votre tête, Bouclier.
+Kalia_Palace_MainQuest2_1_10 = Je commençais à croire que j'allais devoir utiliser l'article 7 sur vous.
+Kalia_Palace_MainQuest2_1_11 = Ca ne sera pas nécessaire, monsieur. Je... J'ai appris de mes erreurs.
+Kalia_Palace_MainQuest2_1_12 = Bien ! Car j'ai une nouvelle mission pour vous.
+Kalia_Palace_MainQuest2_1_13 = Oh ?
+Kalia_Palace_MainQuest2_1_14 = Ce bon à rien d'Epée a rompu le contact. Je n'arrive pas à le joindre via la radio.
+Kalia_Palace_MainQuest2_1_15 = Peut-être qu'il a rencontré des bandits ?
+Kalia_Palace_MainQuest2_1_16 = Je n'en ai rien à faire ! Tout ce que je veux, c'est mon colis. Et il ne m'aide pas.
+Kalia_Palace_MainQuest2_1_17 = Alors je veux que vous alliez le trouver, ainsi que mon précieux paquet.
+Kalia_Palace_MainQuest2_1_18 = Bien sûr, monsieur. Ca sera fait.
+Kalia_Palace_MainQuest2_1_19 = Je quitte la salle. Ce n'est pas bon du tout.
+Kalia_Palace_MainQuest2_1_20 = Epée a une radio qu'il peut utiliser pour communiquer avec le palais.
+Kalia_Palace_MainQuest2_1_21 = Et s'il ne répond plus...
+Kalia_Palace_MainQuest2_1_22 = Je vais devoir le trouver. Je devrais commencer par me rendre au QG de l'ordre dans la Forêt Blanche.
+Kalia_Palace_MainQuest2_1_23 = C'est un groupe de soldats fondé par Kalia et le pays voisin du Marklicht.
+Kalia_Palace_MainQuest2_1_24 = Leur but est de résoudre le problème de bandits dans la forêt.
+Kalia_Palace_MainQuest2_1_25 = Epée est allé les voir au sujet du colis.
+Kalia_Palace_MainQuest2_1_26 = Peu importe ce qui est arrivé, ils doivent savoir quelque chose.
+Kalia_Palace_MainQuest2_1_27 = Wof !
+Kalia_Palace_MainQuest2_1_28 = !
+Kalia_Palace_MainQuest2_1_29 = Oh. C'est toi, Ace.
+Kalia_Palace_MainQuest2_1_30 = C'est le chien de la garde. C'est un peu notre mascotte.
+Kalia_Palace_MainQuest2_1_31 = ...Peut-être que je devrais l'amener avec moi.
+Kalia_Palace_MainQuest2_1_32 = La forêt est dangereuse, et il est entrainé au combat.
+Kalia_Palace_MainQuest2_1_33 = Qu'est-ce que tu en penses, Ace ? Tu veux m'aider à trouver Epée ?
+Kalia_Palace_MainQuest2_1_34 = Wof !
+Kalia_Palace_MainQuest2_1_35 = Ah. Très bien, allons-y.
+Kalia_Palace_MainQuest2_1_36 = <color=blue>Ace ajouté au groupe.</color>
+
+Kalia_Palace_MerchantQuest1Start_1 = Bouclier, enfin !
+Kalia_Palace_MerchantQuest1Start_2 = Que faisiez-vous ? Epée est arrivé il y a longtemps avec l'artefact.
+Kalia_Palace_MerchantQuest1Start_3 = Il m'a dit qu'il avait combattu des brigands seul et l'a récupéré.
+Kalia_Palace_MerchantQuest1Start_4 = Pourquoi je vous paie... Espèce d'incompétent.
+Kalia_Palace_MerchantQuest1Start_5 = Je suppose qu'Epée ne lui a pas parlé de sa blessure.
+Kalia_Palace_MerchantQuest1Start_6 = Je m'excuse pour ce retard. Epée est revenu avant moi avec l'artefact. Nous avons combattu les bandits ensemble.
+Kalia_Palace_MerchantQuest1Start_7 = Hmm ? ....
+Kalia_Palace_MerchantQuest1Start_8 = ...
+Kalia_Palace_MerchantQuest1Start_9 = Epée... Je déteste les menteurs plus que de perdre de l'argent. Ne me décevez pas à nouveau.
+Kalia_Palace_MerchantQuest1Start_10 = Oui, monsieur.
+Kalia_Palace_MerchantQuest1Start_11 = Telle est ma vie. Je vais quelque chose. Epée s'approprie les mérites, et quelques fois, il est réprimandé.
+Kalia_Palace_MerchantQuest1Start_12 = Le Marchand examine l'artefact. Il a l'air content.
+Kalia_Palace_MerchantQuest1Start_13 = Oh, mon cher artefact... J'ai l'endroit parfait pour toi, juste à côté de cette statue en bronze.
+Kalia_Palace_MerchantQuest1Start_14 = Vous avez... réussi, mes gardes loyaux. Vous avez retrouvé un artefact magnifique.
+Kalia_Palace_MerchantQuest1Start_15 = Mais il reste tant à faire. Je dois encore trouver plus d'artefacts.
+Kalia_Palace_MerchantQuest1Start_16 = Mes artefacts... Je les veux tous !
+Kalia_Palace_MerchantQuest1Start_17 = Monsieur ?
+Kalia_Palace_MerchantQuest1Start_18 = Ce fou... Robertus ! Il ose en avoir plus que moi !
+Kalia_Palace_MerchantQuest1Start_19 = Robertus... C'est le partenaire de travail du Marchand à l'époque, non ?
+Kalia_Palace_MerchantQuest1Start_20 = Enfin, avant qu'il ne devienne consul.
+Kalia_Palace_MerchantQuest1Start_21 = Pire encore... Il ose questionner mon règne !
+Kalia_Palace_MerchantQuest1Start_22 = Quoi ?
+Kalia_Palace_MerchantQuest1Start_23 = J'ai entendu dire qu'il parle positivement des rebelles.
+Kalia_Palace_MerchantQuest1Start_24 = Il a même osé dire que j'étais un tyran, et que je m'accrochais au pouvoir.
+Kalia_Palace_MerchantQuest1Start_25 = Des idioties !
+Kalia_Palace_MerchantQuest1Start_26 = ...
+Kalia_Palace_MerchantQuest1Start_27 = Oui, oui. Je ne suis pas un tyran. Ils sont tous des radicaux, des fous !
+Kalia_Palace_MerchantQuest1Start_28 = J'ai dissous le parlement. Et alors ? Ils m'empêchaient de faire du commerce.
+Kalia_Palace_MerchantQuest1Start_29 = J'ai rendu le commerce plus simple à faire, pour moi et mes loyaux compagnons.
+Kalia_Palace_MerchantQuest1Start_30 = Et qui peut s'en plaindre ? L'économie de Kalia se porte à merveille !
+Kalia_Palace_MerchantQuest1Start_31 = Peu importe si quelques paysans Ibertiens n'arrivent pas à vendre ici. Ils n'ont pas assez d'argent.
+Kalia_Palace_MerchantQuest1Start_32 = Grr... De mon temps, je voyageais à travers le continent tout entier pour vendre.
+Kalia_Palace_MerchantQuest1Start_33 = "Monsieur, vos articles sont si incroyables. Laissez-nous en acheter plus.", qu'ils disaient.
+Kalia_Palace_MerchantQuest1Start_34 = Euh, monsieur. Où voulez-vous en venir ? A propos de Robertus.
+Kalia_Palace_MerchantQuest1Start_35 = Robertus ?! Ce fou radicalisé... Quelqu'un doit s'occuper de son cas.
+Kalia_Palace_MerchantQuest1Start_36 = Non seulement il a plus d'artefacts Lonasien que moi, mais il ose aussi remettre en question mon règne.
+Kalia_Palace_MerchantQuest1Start_37 = On a déjà entendu cette ligne de dialogue.
+Kalia_Palace_MerchantQuest1Start_38 = N'ayez crainte, nous allons nous occuper de ce vil forban.
+Kalia_Palace_MerchantQuest1Start_39 = Grr.... Je le veux mort ! Epée, Bouclier. Tuez. Le.
+Kalia_Palace_MerchantQuest1Start_40 = Bien sûr. Et nous allons aussi confisquer sa collection d'artefacts.
+Kalia_Palace_MerchantQuest1Start_41 = Oui, oui ! Il les a probablement volés de toute façon !
+Kalia_Palace_MerchantQuest1Start_42 = Vous devez mettre un terme à ses crimes !
+Kalia_Palace_MerchantQuest1Start_43 = Bien sûr. Allons-y, mon larbin.
+Kalia_Palace_MerchantQuest1Start_44 = Euh, oui.
+Kalia_Palace_MerchantQuest1Start_45 = Je vais me charger de récupérer la collection.
+Kalia_Palace_MerchantQuest1Start_46 = Occupes-toi de Robertus.
+Kalia_Palace_MerchantQuest1Start_47 = J'ai entendu dire qu'il aime aller boire dans des bars assez souvent.
+Kalia_Palace_MerchantQuest1Start_48 = C-Compris.
+Kalia_Palace_MerchantQuest1Start_49 = Je ne suis pas à l'aise avec une assassination politique. Mais désobéir à des ordres serait la fin pour moi.
+Kalia_Palace_MerchantQuest1Start_50 = Il est temps de trouver Robertus.
+
+Kalia_Palace_MerchantQuest1End_1 = J'ai réussi, monsieur.
+Kalia_Palace_MerchantQuest1End_2 = Ah, Epée. Je savais que je pouvais vous faire confiance.
+Kalia_Palace_MerchantQuest1End_3 = Euh... C'est Bouclier, monsieur.
+Kalia_Palace_MerchantQuest1End_4 = Hein ? Bouclier ? Vous êtes là depuis quand ?
+Kalia_Palace_MerchantQuest1End_5 = Je... Je viens d'arriver.
+Kalia_Palace_MerchantQuest1End_6 = Eh bien, parlez ! Vous vous êtes occupé de Robertus ?
+Kalia_Palace_MerchantQuest1End_7 = Bien sûr. Il m'a attaqué et est mort par la suite.
+Kalia_Palace_MerchantQuest1End_8 = Grr... Je savais que Manf- Robertus était un serpent. Il a toujours été un électron libre.
+Kalia_Palace_MerchantQuest1End_9 = Vous avez bien agi... garde.
+Kalia_Palace_MerchantQuest1End_10 = Vous avez besoin de quelque chose d'autre ? Ou devrais-je aller aider Epée ?
+Kalia_Palace_MerchantQuest1End_11 = Non, non. Epée est en train de finir de transporter les artefacts.
+Kalia_Palace_MerchantQuest1End_12 = J'ai une autre mission pour vous. C'est à propos des... des...
+Kalia_Palace_MerchantQuest1End_13 = Des rebelles ! Oui. Je veux leurs têtes sur mon bureau !
+Kalia_Palace_MerchantQuest1End_14 = Je veux que vous trouviez où ils se cachent.
+Kalia_Palace_MerchantQuest1End_15 = J'ai reçu des informations à un moment. Quelque chose à propos d'un bar et du salut.
+Kalia_Palace_MerchantQuest1End_16 = Non, non. Je suis sûr qu'ils ont fui dans la campagne.
+Kalia_Palace_MerchantQuest1End_17 = Je peux le sentir dans mes os... S'agitant...
+Kalia_Palace_MerchantQuest1End_18 = Monsieur ?
+Kalia_Palace_MerchantQuest1End_19 = Allez au phare. Un de mes associés y vis.
+Kalia_Palace_MerchantQuest1End_20 = Il pourra vous dire où ils sont partis. Il sait tout.
+Kalia_Palace_MerchantQuest1End_21 = Ep- Bouclier. S'il demande un paiement, acceptez.
+Kalia_Palace_MerchantQuest1End_22 = C'est comme ça que ça marche.
+Kalia_Palace_MerchantQuest1End_23 = Je comprends. Je vais le faire, monsieur.
+Kalia_Palace_MerchantQuest1End_24 = Ce Robertus... Comment a-t-il pu...
+Kalia_Palace_MerchantQuest1End_25 = Je quitte la salle. Le Marchand est en train de marmonner dans sa barbe.
+Kalia_Palace_MerchantQuest1End_26 = Depuis quand est-ce que son état mental se dégrade aussi vite ?
+Kalia_Palace_MerchantQuest1End_27 = J'espère ne pas m'être trompé d'allégence...
+Kalia_Palace_MerchantQuest1End_28 = Bon, il est temps de trouver ce mystérieux associé.
+
+Kalia_Palace_MerchantQuest2End_1 = Epée est déjà là. J'imagine qu'il a fini de déplacer les artefacts.
+Kalia_Palace_MerchantQuest2End_2 = Épée, vous voilà enfin !
+Kalia_Palace_MerchantQuest2End_3 = Monsieur, c'est Bouclier.
+Kalia_Palace_MerchantQuest2End_4 = Hein ? À qui je parlais déjà ?
+Kalia_Palace_MerchantQuest2End_5 = Chef. Nous parlions des artefacts.
+Kalia_Palace_MerchantQuest2End_6 = J'ai fini de les déplacer dans la salle à manger, comme demandé.
+Kalia_Palace_MerchantQuest2End_7 = Hein ? Des artefacts ? Ah oui ! J'adore les artefacts ! 
+Kalia_Palace_MerchantQuest2End_8 = Mon précieux colis... Quand il arrivera...
+Kalia_Palace_MerchantQuest2End_9 = ...
+Kalia_Palace_MerchantQuest2End_10 = ...
+Kalia_Palace_MerchantQuest2End_11 = Monsieur...
+Kalia_Palace_MerchantQuest2End_12 = Bouclier ! Depuis quand vous êtes là ?
+Kalia_Palace_MerchantQuest2End_13 = Avez-vous éliminé Robertus ?
+Kalia_Palace_MerchantQuest2End_14 = Monsieur, c'est déjà fait. Il est mort, vous vous souvenez ?
+Kalia_Palace_MerchantQuest2End_15 = Vous m'avez envoyé au pha-
+Kalia_Palace_MerchantQuest2End_16 = Monsieur, si vous me le permettez. J'ai des informations concernant un artefact inestimable qui pourrait vous intéresser. 
+Kalia_Palace_MerchantQuest2End_17 = Hein ? Oui, oui.
+Kalia_Palace_MerchantQuest2End_18 = C'est un vieux sceptre qui se trouve dans la forêt de l'Île Mirage.
+Kalia_Palace_MerchantQuest2End_19 = Robertus avait des documents à son sujet dans son bureau.
+Kalia_Palace_MerchantQuest2End_20 = Robertus...
+Kalia_Palace_MerchantQuest2End_21 = Hmm... Très bien ! Allez chercher ce sceptre.
+Kalia_Palace_MerchantQuest2End_22 = Je ne veux pas que vous vous prélassiez en attendant des ordres.
+Kalia_Palace_MerchantQuest2End_23 = Cet artefact sera un bel ajout à ma collection.
+Kalia_Palace_MerchantQuest2End_24 = Alors c'est décidé, viens, mon larbin. 
+Kalia_Palace_MerchantQuest2End_25 = Je ne suis pas ton larbin, Épée.
+Kalia_Palace_MerchantQuest2End_26 = Comme tu veux. Retrouvons-nous aux quais de Tolau, si tu insistes à ne pas me suivre.
+Kalia_Palace_MerchantQuest2End_27 = Épée quitte précipitamment la pièce.
+Kalia_Palace_MerchantQuest2End_28 = C'était lunaire. Que se passe-t-il ?
+Kalia_Palace_MerchantQuest2End_29 = Monsieur. Êtes-vous sûr de cela ?
+Kalia_Palace_MerchantQuest2End_30 = Hein ? Qui êtes-vous ?
+Kalia_Palace_MerchantQuest2End_31 = Euh... Je suis Bouclier, monsieur. Vous savez, le garde ? 
+Kalia_Palace_MerchantQuest2End_32 = Bien sûr que je sais qui vous êtes !
+Kalia_Palace_MerchantQuest2End_33 = Monsieur, si je peux me permettre, vous vous sentez bien ?
+Kalia_Palace_MerchantQuest2End_34 = Vous avez des hauts et des bas depuis notre retour avec l'artefact.
+Kalia_Palace_MerchantQuest2End_35 = ...
+Kalia_Palace_MerchantQuest2End_36 = Épée, Bouclier. Je me fais vieux.
+Kalia_Palace_MerchantQuest2End_37 = Parfois, j'ai du mal à me souvenir de quoi que ce soit.
+Kalia_Palace_MerchantQuest2End_38 = C'est pour ça que je vous ai, vous et Épée. Comme ça, je ne peux rien oublier.
+Kalia_Palace_MerchantQuest2End_39 = Mais si ça continue... Quel est le plan ? 
+Kalia_Palace_MerchantQuest2End_40 = Que ferons-nous si vous devenez trop vieux ou pire, si vous mourez ?
+Kalia_Palace_MerchantQuest2End_41 = Vous n'avez jamais désigné de successeur. Est-ce que de nouvelles élections seront organisées ?
+Kalia_Palace_MerchantQuest2End_42 = ...
+Kalia_Palace_MerchantQuest2End_43 = Bouclier. J'en désignerai un, n'ayez crainte.
+Kalia_Palace_MerchantQuest2End_44 = Quant à l'avenir, je m'en fiche.
+Kalia_Palace_MerchantQuest2End_45 = J'ai utilisé l'État pour accomplir ce que je voulais.
+Kalia_Palace_MerchantQuest2End_46 = Mon successeur pourra faire de même. Peu importe ce qu'il veut. 
+Kalia_Palace_MerchantQuest2End_47 = Je vois.
+Kalia_Palace_MerchantQuest2End_48 = Au fait, Epée se comporte bizarrement ces derniers temps, vous ne trouvez pas ?
+Kalia_Palace_MerchantQuest2End_49 = Hmm ? Peut-être ? Il a toujours été un fauteur de troubles.
+Kalia_Palace_MerchantQuest2End_50 = Je sais. Mais je ne suis pas trop sûr... Il semble... mijoter quelque chose ?
+Kalia_Palace_MerchantQuest2End_51 = C'est comme cette histoire d'artefact. Etes-vous sûr de vouloir laisser les rebelles tranquilles ?
+Kalia_Palace_MerchantQuest2End_52 = Bouclier. Il s'amuse. Laisse-le faire de temps en temps.
+Kalia_Palace_MerchantQuest2End_53 = Et peu importe s'il prépare quelque chose. De toute façon, il ne peut pas faire grand-chose. 
+Kalia_Palace_MerchantQuest2End_54 = Quant aux rebelles... Avez-vous appris quelque chose de mon associé ?
+Kalia_Palace_MerchantQuest2End_55 = Oui. Ils se sont réfugiés da-
+Kalia_Palace_MerchantQuest2End_56 = Non, non... Gardez ça pour vous pour le moment.
+Kalia_Palace_MerchantQuest2End_57 = Nous nous occuperons d'eux quand vous aurez trouvé le sceptre.
+Kalia_Palace_MerchantQuest2End_58 = Allez-y, Epée vous attend.
+Kalia_Palace_MerchantQuest2End_59 = Grr... J'aurais préféré que vous vous entendiez un peu.
+Kalia_Palace_MerchantQuest2End_60 = Oui, oui. Je vais y aller.
+Kalia_Palace_MerchantQuest2End_61 = Toute la souffrance qu'il a causée. Et il s'en fiche...
+Kalia_Palace_MerchantQuest2End_62 = Il s'accroche au pouvoir par pure cupidité. Il se moque de ce qu'il laissera derrière lui.
+Kalia_Palace_MerchantQuest2End_63 = Je crains le jour de sa mort. Le vide engendré pourrait être dangereux.
+Kalia_Palace_MerchantQuest2End_64 = Mais ce n'est pas comme si je voulais devenir consul...
+Kalia_Palace_MerchantQuest2End_65 = Pour être franc, je préférerais disparaître dans la campagne Koskyienne.
+Kalia_Palace_MerchantQuest2End_66 = Ca serait une bonne pause après tout ça.
+Kalia_Palace_MerchantQuest2End_67 = Enfin, je dois retrouver Epée.
+
+Kalia_Palace_MerchantQuest3End_1 = Chef, on a trouvé le sceptre.
+Kalia_Palace_MerchantQuest3End_2 = Bien, bien. Placez-le avec les autres.
+Kalia_Palace_MerchantQuest3End_3 = Quelle est notre mission maintenant ?
+Kalia_Palace_MerchantQuest3End_4 = Il est temps d'en finir avec les rebelles.
+Kalia_Palace_MerchantQuest3End_5 = Allez avec Epée à leur planque, et tuez-les.
+Kalia_Palace_MerchantQuest3End_6 = Ces radicaux ne peuvent pas être laissés seuls. Ils vont voler ma collection.
+Kalia_Palace_MerchantQuest3End_7 = Bien sûr. Nous allons aller à Iberty dès maintenant.
+Kalia_Palace_MerchantQuest3End_8 = Chef, je ne vais pas vous décevoir ! Je vais personnellement tuer ces rebelles !
+Kalia_Palace_MerchantQuest3End_9 = Bien. Allez-y.
+Kalia_Palace_MerchantQuest3End_10 = Bon, il est temps d'aller aux catacombes d'Iberty.
+
+Kalia_Palace_MerchantQuest4End_1 = Bouclier ! Venez ici, mon garçon.
+Kalia_Palace_MerchantQuest4End_2 = Où est Epée ?
+Kalia_Palace_MerchantQuest4End_3 = Hmm... Je me le demande.
+Kalia_Palace_MerchantQuest4End_4 = Monsieur, les rebelles ont été...
+Kalia_Palace_MerchantQuest4End_5 = Décimés, je sais. Epée m'a dit qu'il les avait tué.
+Kalia_Palace_MerchantQuest4End_6 = Il m'a aussi dit que vous n'avez pas pris part aux opérations ?
+Kalia_Palace_MerchantQuest4End_7 = Très peu. Je voulais les capturer, mais...
+Kalia_Palace_MerchantQuest4End_8 = Mon garçon, j'ai pris une décision.
+Kalia_Palace_MerchantQuest4End_9 = Que se passe-t-il ? Il ne m'a jamais appelé comme ça auparavent.
+Kalia_Palace_MerchantQuest4End_10 = Je l'ai déjà annoncé à Epée et il est parti en colère. Ca n'a pas d'importance au final.
+Kalia_Palace_MerchantQuest4End_11 = Qu'est-ce que vous lui avez dis.
+Kalia_Palace_MerchantQuest4End_12 = J'ai réfléchi à ce que vous m'avez dit. A propos de mon héritier.
+Kalia_Palace_MerchantQuest4End_13 = J'ai atteint une conclusion. Je sais qui va diriger après ma mort.
+Kalia_Palace_MerchantQuest4End_14 = Vous n'avez pas besoin de vous précipiter. Vous n'êtes pas mourant.
+Kalia_Palace_MerchantQuest4End_15 = Je peux le sentir... Mon heure est venu.
+Kalia_Palace_MerchantQuest4End_16 = Bouclier, non... [MC].
+Kalia_Palace_MerchantQuest4End_17 = Monsieur ?
+Kalia_Palace_MerchantQuest4End_18 = Je veux que tu diriges après ma mort.
+Kalia_Palace_MerchantQuest4End_19 = Non... Je veux que tu diriges dès maintenant.
+Kalia_Palace_MerchantQuest4End_20 = Quoi ? Mais je n'ai pas bien suivi les ordres jusqu'à maintenant.
+Kalia_Palace_MerchantQuest4End_21 = Epée est celui qu-
+Kalia_Palace_MerchantQuest4End_22 = [MC], mon garçon. Tu me l'as dit toi-même, non ? "Il planifie quelque chose".
+Kalia_Palace_MerchantQuest4End_23 = Et bien...
+Kalia_Palace_MerchantQuest4End_24 = Epée est un bon à rien. Il ne veut qu'être vénéré par les autres.
+Kalia_Palace_MerchantQuest4End_25 = Toi, au contraire. Tu as du jugement.
+Kalia_Palace_MerchantQuest4End_26 = Le prochain dirigeant de Kalia devra en avoir pour savoir quoi faire.
+Kalia_Palace_MerchantQuest4End_27 = Est-ce que la vieillesse l'a enfin touché ? Pourquoi il fait ça ?
+Kalia_Palace_MerchantQuest4End_28 = Monsieur, je comprends. Avez-vous des ordres pour moi, pour quand je serais consul ?
+Kalia_Palace_MerchantQuest4End_29 = Tu l'es déjà, mon garçon. Fais ce que tu penses être le meilleur.
+Kalia_Palace_MerchantQuest4End_30 = Et pour ma part, laisse-moi mourir ici.
+Kalia_Palace_MerchantQuest4End_31 = J'ai bien peur de ne pas tenir jusqu'à la prochaine aube.
+Kalia_Palace_MerchantQuest4End_32 = Donc laisse-moi mourir à coté de ma collection.
+Kalia_Palace_MerchantQuest4End_33 = Je comprends. Je suis honoré de votre confiance.
+Kalia_Palace_MerchantQuest4End_34 = Va, la ville a besoin de toi. Puisse-tu diriger mieux que moi.
+Kalia_Palace_MerchantQuest4End_35 = C'était quoi ça ? Je suis vraiment le consul maintenant ?
+Kalia_Palace_MerchantQuest4End_36 = Pas étonnant qu'Epée n'était pas content. Il n'a pas eu ce qu'il cherchait depuis le début.
+Kalia_Palace_MerchantQuest4End_37 = Je pensais qu'il voulait lui lécher les bottes. Mais il voulait devenir l'héritier.
+Kalia_Palace_MerchantQuest4End_38 = Ce qui veut dire qu'il est un rival maintenant.
+Kalia_Palace_MerchantQuest4End_39 = ... Et dire que le responsable de tout ce chaos m'a juste donné le pouvoir comme ça.
+Kalia_Palace_MerchantQuest4End_40 = Je m'inquiéterais de Kalia plus tard. Je dois m'occuper d'Epée.
+Kalia_Palace_MerchantQuest4End_41 = Je me demande où il est ?
+Kalia_Palace_MerchantQuest4End_42 = Je peux toujours demander aux passants.
+Kalia_Palace_MerchantQuest4End_43 = La grande place devrait avoir quelques indices.
+
+# ---------------------------------------------------------
+# -------------- Kalia - Docks ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Docks_Hangar_Locked_1 = C'est verrouillé...
+
+Kalia_Docks_MainQuest2_0_1 = Voilà les docks...
+Kalia_Docks_MainQuest2_0_2 = Des bateaux de tout le continent s'arrêtent ici.
+Kalia_Docks_MainQuest2_0_3 = Mais aujourd'hui, je cherche un rebelle.
+Kalia_Docks_MainQuest2_0_4 = Où est-ce qu'il se cache ? Et qu'est-ce qu'il fait ici ?
+Kalia_Docks_MainQuest2_0_5 = Peut-être qu'ils cherchent à trafiquer des armes pour lutter contre le consul ?
+Kalia_Docks_MainQuest2_0_6 = !
+Kalia_Docks_MainQuest2_0_7 = Je remarque quelqu'un au loin. Je le reconnais.
+Kalia_Docks_MainQuest2_0_8 = C'est le rebelle que les espions ont vu ! J'en suis sur.
+Kalia_Docks_MainQuest2_0_9 = Et le connaissant, il n'est pas là pour rigoler.
+Kalia_Docks_MainQuest2_0_10 = Le rebelle regarde autour de lui, puis disparaît dans un bâtiment adjacent.
+Kalia_Docks_MainQuest2_0_11 = Je le suis. Je ne peux pas le laisser s'échapper. Pas à nouveau.
+Kalia_Docks_MainQuest2_0_12 = J'entre dans le bâtiment, mais quelque chose cloche...
+Kalia_Docks_MainQuest2_0_13 = C'est... c'est une planque pour les rebelles. Probablement une sorte de dépot.
+Kalia_Docks_MainQuest2_0_14 = Ce rebelle est caché quelque part ici. Je dois le trouver.
+
+Kalia_Docks_MainQuest2_0_15 = J'arrive au final dans une pièce sombre.
+Kalia_Docks_MainQuest2_0_16 = Je suis sûr que le rebelle est proche.
+Kalia_Docks_MainQuest2_0_17 = Ne bouge pas.
+Kalia_Docks_MainQuest2_0_18 = !
+Kalia_Docks_MainQuest2_0_19 = Je sais qui tu es, [MC].
+Kalia_Docks_MainQuest2_0_20 = Et je sais qui tu cherches : moi.
+Kalia_Docks_MainQuest2_0_21 = Mais tu ne penses pas que c'était un peu trop simple ?
+Kalia_Docks_MainQuest2_0_22 = ...
+Kalia_Docks_MainQuest2_0_23 = Donc c'était un piège ?
+Kalia_Docks_MainQuest2_0_24 = Pas vraiment. Je voulais simplement parler.
+Kalia_Docks_MainQuest2_0_25 = Je ne parle pas avec des rebelles.
+Kalia_Docks_MainQuest2_0_26 = Vraiment ? Ne vois-tu donc pas que tu es dans le mauvais camp ?
+Kalia_Docks_MainQuest2_0_27 = ...
+Kalia_Docks_MainQuest2_0_28 = Il y a deux ans, tu m'as laissé le faire.
+Kalia_Docks_MainQuest2_0_29 = Je ne vois pas de quoi vous parlez.
+Kalia_Docks_MainQuest2_0_30 = Tu aurais pu m'arrêter, mais tu ne l'as pas fait.
+Kalia_Docks_MainQuest2_0_31 = ...Je pensais que vous feriez quelque chose d'autre. J'ai eu tord.
+Kalia_Docks_MainQuest2_0_32 = Vous avez tué beaucoup de mes camarades. Vous ne méritez pas de sympathie.
+Kalia_Docks_MainQuest2_0_33 = Comme tu veux.
+Kalia_Docks_MainQuest2_0_34 = Si tu changes d'avis, trouves le salut.
+Kalia_Docks_MainQuest2_0_35 = Il aura la forme d'une tasse de thé vert.
+Kalia_Docks_MainQuest2_0_36 = Penses-y. Au moins, fais-le pour elle.
+Kalia_Docks_MainQuest2_0_37 = Je peux sentir le rebelle disparaître dans l'ombre.
+Kalia_Docks_MainQuest2_0_38 = Donc c'était juste une ruse pour m'atteindre...
+Kalia_Docks_MainQuest2_0_39 = Je devrais faire mon rapport au Marchand.
+Kalia_Docks_MainQuest2_0_40 = ...
+Kalia_Docks_MainQuest2_0_41 = Il y a deux ans, à quoi je pensais ?
+Kalia_Docks_MainQuest2_0_42 = Ce fou les a quasiment tous tués. Pourquoi est-ce que je l'ai laissé ?
+Kalia_Docks_MainQuest2_0_43 = ...Qu'est-ce que j'espérais qu'il fasse à la place ?
+Kalia_Docks_MainQuest2_0_44 = ...
+Kalia_Docks_MainQuest2_0_45 = Peut-être que je devrais réaliser moi-même ce voeu.
+Kalia_Docks_MainQuest2_0_46 = Peut-être que je devrais faire comme il m'a dit, chercher la salvation.
+Kalia_Docks_MainQuest2_0_47 = ...
+Kalia_Docks_MainQuest2_0_48 = Devrais-je ?
+Kalia_Docks_MainQuest2_0_49 = En pensant à cela, je quitte le batiment.
+Kalia_Docks_MainQuest2_0_50 = Il est clair que je dois penser à ma loyauté.
+Kalia_Docks_MainQuest2_0_51 = Qu'est-ce qui est meilleur pour moi. Pour elle...
+
+Kalia_Docks_GUARDArcQuest1_1 = Voilà le hangar dont GARDE m'a parlé.
+Kalia_Docks_GUARDArcQuest1_2 = La porte est ouverte, je peux voir quelqu'un à l'intérieur.
+Kalia_Docks_GUARDArcQuest1_3 = Ah, vous voilà. Je viens seulement d'ouvrir cette porte.
+Kalia_Docks_GUARDArcQuest1_4 = Etes-vous prêt à mener l'enquête dans ce lieu ?
+Kalia_Docks_GUARDArcQuest1_5 = Oui, je suis prêt.
+Kalia_Docks_GUARDArcQuest1_6 = Bien. Je vais vous laisser passer en avant alors.
+Kalia_Docks_GUARDArcQuest1_7 = <color=blue>GARDE ajouté au groupe.</color>
+Kalia_Docks_GUARDArcQuest1_8 = Très bien, il est l'heure de mener l'enquête...
+
+Kalia_Docks_GUARDArcQuest1_9 = ... Toujours rien, hein ?
+Kalia_Docks_GUARDArcQuest1_10 = On a passé le hangar au peigne fin, mais on n'a rien trouvé...
+Kalia_Docks_GUARDArcQuest1_11 = J'étais pourtant sûr que c'était leur "quartier général".
+Kalia_Docks_GUARDArcQuest1_12 = Peut-être qu'ils utilisent ce hangar pour entreposer des objets ?
+Kalia_Docks_GUARDArcQuest1_13 = Ca serait moins suspect en tout cas.
+Kalia_Docks_GUARDArcQuest1_14 = Hmm... C'est vrai. Je n'y avais pas pensé.
+Kalia_Docks_GUARDArcQuest1_15 = Attendez, laissez-moi vérifier... 
+Kalia_Docks_GUARDArcQuest1_16 = Je le savais ! Ils cachaient quelque chose dans les caisses.
+Kalia_Docks_GUARDArcQuest1_17 = GARDE revient d'une caisse proche avec des armes dans ses mains.
+Kalia_Docks_GUARDArcQuest1_18 = Ils cachent des armes ici ?
+Kalia_Docks_GUARDArcQuest1_19 = On dirait bien. Ce n'est pas bon du tout.
+Kalia_Docks_GUARDArcQuest1_20 = Je savais qu'ils ne présageaient rien de bon, mais quand même.
+Kalia_Docks_GUARDArcQuest1_21 = Dans le pire des cas, ils veulent prendre le pouvoir.
+Kalia_Docks_GUARDArcQuest1_22 = Ils n'oseraient pas.
+Kalia_Docks_GUARDArcQuest1_23 = Ils étaient assez fous pour tuer le meneur d'une investigation qui portait sur eux.
+Kalia_Docks_GUARDArcQuest1_24 = Cependant, ça ne nous aide pas beaucoup. On ne sait toujours pas qui ils sont ni ou ils sont.
+Kalia_Docks_GUARDArcQuest1_25 = Peut-être qu'on devrait essayer de chercher les gens de votre liste ?
+Kalia_Docks_GUARDArcQuest1_26 = C'est vrai, mais comment les trouver ? Je ne connais aucun nom sur la liste.
+Kalia_Docks_GUARDArcQuest1_27 = Laissez-moi voir.
+Kalia_Docks_GUARDArcQuest1_28 = Je prends la liste de GARDE et commence à regarder les noms.
+Kalia_Docks_GUARDArcQuest1_29 = Il doit y en avoir une trentaine, je n'en reconnais aucun.
+Kalia_Docks_GUARDArcQuest1_30 = Au moins, je suis sûr qu'ils ne font pas partie de l'armée.
+Kalia_Docks_GUARDArcQuest1_31 = Oh ? Je connais ce nom.
+Kalia_Docks_GUARDArcQuest1_32 = William Sualibu, c'est un marchand plutôt connu dans le coin.
+Kalia_Docks_GUARDArcQuest1_33 = Il a fait fortune en vendant des produits de Kosky.
+Kalia_Docks_GUARDArcQuest1_34 = Kosky ? Il pourrait être connecté à la secte.
+Kalia_Docks_GUARDArcQuest1_35 = Savez-vous où trouver cet homme ? Il pourrait avoir des informations sur eux.
+Kalia_Docks_GUARDArcQuest1_36 = Je ne sais pas exactement, mais en général, les gens connus vivent dans la ville haute.
+Kalia_Docks_GUARDArcQuest1_37 = C'est la zone à l'intérieur des vieux remparts de Kalia. On y trouve aussi la grande place et le palace du consul.
+Kalia_Docks_GUARDArcQuest1_38 = Je vois où c'est.
+Kalia_Docks_GUARDArcQuest1_39 = Très bien, on va se retrouver à la grande place.
+Kalia_Docks_GUARDArcQuest1_40 = Vous pouvez y aller, j'ai encore des choses à vérifier ici.
+Kalia_Docks_GUARDArcQuest1_41 = Très bien, faites comme vous voulez.
+Kalia_Docks_GUARDArcQuest1_42 = <color=blue>GARDE retiré de l'équipe.</color>
+Kalia_Docks_GUARDArcQuest1_43 = Je quitte le hangar en utilisant la porte à l'arrière.
+Kalia_Docks_GUARDArcQuest1_44 = Je pourrais aller directement à la grande place, ou faire d'autres choses.
+Kalia_Docks_GUARDArcQuest1_45 = Au final, c'est à moi de choisir.
+
+Kalia_Docks_RebelQuest2_1 = Ok, reprenons cet entrepot.
+
+Kalia_Docks_RebelQuest2_2 = Après quelques combats, nous arrivons à reprendre le contrôle de l'entrepot.
+Kalia_Docks_RebelQuest2_3 = Ca devrait rendre la chef contente.
+Kalia_Docks_RebelQuest2_4 = Oui, ma soeur adore quand on prend le contrôle de trucs !
+Kalia_Docks_RebelQuest2_5 = Vraiment ?
+Kalia_Docks_RebelQuest2_6 = Je te le jure ! On pourrait penser qu'elle est toujours mécontente, mais c'est faux.
+Kalia_Docks_RebelQuest2_7 = Rien que la vue de la rébellion gagnant du terrain est suffisante pour la faire sourrir.
+Kalia_Docks_RebelQuest2_8 = Si tu le dis.
+Kalia_Docks_RebelQuest2_9 = Enfin, rentrons.
+
+# ---------------------------------------------------------
+# ------------ Kalia - Max's Bar --------------------------
+# ---------------------------------------------------------
+
+Kalia_BarMax_Waiter_Greetings_1 = Bonjour. Vous avez besoin de quelque chose ?
+
+Kalia_BarMax_Waiter_Sleep_1 = Bien sûr, laissez-moi vous montrer votre chambre.
+
+Kalia_BarMax_Waiter_AboutYou_1 = Je suis Max, la propriétaire du bar.
+Kalia_BarMax_Waiter_AboutYou_2 = J'ai tenu cet endroit toute ma vie.
+Kalia_BarMax_Waiter_AboutYou_3 = Ca fait beaucoup de temps. Vous pensez partir à la retraite un jour ?
+Kalia_BarMax_Waiter_AboutYou_4 = J'aimerais. Mais je n'ai pas de successeur pour le moment.
+Kalia_BarMax_Waiter_AboutYou_5 = J'espérais que mes petits-enfants le feraient, mais ils préfèrent leur travail respectif...
+
+Kalia_BarMax_Waiter_SideQuest_Done_1 = Pas pour le moment, non.
+
+Kalia_BarMax_Waiter_SideQuest_Start_1 = J'aurais besoin d'un peu d'aide, oui.
+Kalia_BarMax_Waiter_SideQuest_Start_2 = Un de mes petits-fils me doit de l'argent. Il doit toujours me payer.
+Kalia_BarMax_Waiter_SideQuest_Start_3 = Pourriez-vous lui dire de le faire bientôt ?
+Kalia_BarMax_Waiter_SideQuest_Start_4 = Je vais voir ce que je peux faire.
+Kalia_BarMax_Waiter_SideQuest_Start_5 = Merci, vous le trouverez dans le parc de la ville.
+
+Kalia_BarMax_Waiter_SideQuest_InProgress_1 = Vous trouverez mon petit-fils dans le parc de la ville.
+
+Kalia_BarMax_Waiter_SideQuest_End_1 = Mon petit-fils est venu me rendre mon argent. Je suppose que vous étiez impliqué ?
+Kalia_BarMax_Waiter_SideQuest_End_2 = Oui, je lui ai parlé.
+Kalia_BarMax_Waiter_SideQuest_End_3 = Merci, vous pouvez garder un peu de change pour m'avoir aidé.
+Kalia_BarMax_Waiter_SideQuest_End_4 = <color=blue>J'ai reçu 10 or de la serveuse.</color>
+Kalia_BarMax_Waiter_SideQuest_End_5 = Vous aviez besoin de quelque chose d'autre ?
+
+Kalia_BarMax_GUARD_Greetings_ArcQuest1_1 = Salut. N'oubliez pas de me retrouver aux docks.
+
+Kalia_BarMax_GUARD_Greetings_ArcQuest3_1 = Vous avez du nouveau avec la bombe ?
+
+Kalia_BarMax_GUARD_ArcQuest1_Start_1 = Hé, vous.
+Kalia_BarMax_GUARD_ArcQuest1_Start_2 = Un homme étrange commence à me parler.
+Kalia_BarMax_GUARD_ArcQuest1_Start_3 = Chercheriez-vous du travail par hasard ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_4 = Pas vraiment, j'ai déjà beaucoup de travail. Mais essayez quand même.
+Kalia_BarMax_GUARD_ArcQuest1_Start_5 = Eh bien, c'est assez long en vérité. Je suis sur une sorte de mission secrète.
+Kalia_BarMax_GUARD_ArcQuest1_Start_6 = Je viens de la province de Vlatyr, dans les Provinces Unis de Kosky.
+Kalia_BarMax_GUARD_ArcQuest1_Start_7 = Le pays à l'Ouest du Marklicht.
+Kalia_BarMax_GUARD_ArcQuest1_Start_8 = C'est bien ça. Pour faire simple, on a une sorte de secte là bas. Elle est vraiment louche.
+Kalia_BarMax_GUARD_ArcQuest1_Start_9 = Elle était impliquée dans le meurtre d'un homme politique il y a pas si longtemps.
+Kalia_BarMax_GUARD_ArcQuest1_Start_10 = Après avoir enquêté un peu, j'ai réussi à trouver une liste.
+Kalia_BarMax_GUARD_ArcQuest1_Start_11 = Elle contient des noms de personnes vivant à Kalia. Je ne suis pas sûr de son sens.
+Kalia_BarMax_GUARD_ArcQuest1_Start_12 = Donc vous êtes venu regarder par vous-même ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_13 = Oui. La secte des "Invocateurs" n'est jamais un bon signe.
+Kalia_BarMax_GUARD_ArcQuest1_Start_14 = J'ai besoin de savoir à quoi correspond la liste. Ca pourrait être aussi bien des cibles que des membres.
+Kalia_BarMax_GUARD_ArcQuest1_Start_15 = Vous voulez que j'aille enquêter sur eux ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_16 = Non, pas encore. En fait, j'ai une autre piste.
+Kalia_BarMax_GUARD_ArcQuest1_Start_17 = Il y a un hangar aux docks qui est très suspect.
+Kalia_BarMax_GUARD_ArcQuest1_Start_18 = Officiellement, il est utilisé pour le commerce avec Kosky. Mais je sais que ce n'est pas tout.
+Kalia_BarMax_GUARD_ArcQuest1_Start_19 = J'ai vu des membres de la secte entrer et quitter l'endroit.
+Kalia_BarMax_GUARD_ArcQuest1_Start_20 = J'ai besoin d'y aller, et de savoir ce qu'ils y font.
+Kalia_BarMax_GUARD_ArcQuest1_Start_21 = Donc pour le moment, je cherche en réalité de l'aide.
+Kalia_BarMax_GUARD_ArcQuest1_Start_22 = ... Je vois.
+Kalia_BarMax_GUARD_ArcQuest1_Start_23 = Même si je n'ai pas beaucoup de temps à y consacrer, cette secte ne présage rien de bon.
+Kalia_BarMax_GUARD_ArcQuest1_Start_24 = Peut-être que je devrais l'aider. Ca pourrait m'économiser des problèmes plus tard.
+Kalia_BarMax_GUARD_ArcQuest1_Start_25 = Très bien, je vais voir ce que je peux faire pour vous aider.
+Kalia_BarMax_GUARD_ArcQuest1_Start_26 = Vraiment ?! Merci beaucoup !
+Kalia_BarMax_GUARD_ArcQuest1_Start_27 = Quand vous serez prêt, retrouvez-moi aux docks.
+Kalia_BarMax_GUARD_ArcQuest1_Start_28 = Je serais probablement déjà dans le hangar quand vous arriverez.
+Kalia_BarMax_GUARD_ArcQuest1_Start_29 = En attendant, n'hésitez pas à me poser des questions.
+Kalia_BarMax_GUARD_ArcQuest1_Start_30 = Oh, et je suis GARDE d'ailleurs.
+
+Kalia_BarMax_GUARD_ArcQuest3_End_1 = Oh, vous êtes de retour.
+Kalia_BarMax_GUARD_ArcQuest3_End_2 = Oui, j'ai trouvé la bombe dont vous avez besoin.
+Kalia_BarMax_GUARD_ArcQuest3_End_3 = Laissez-moi voir...
+Kalia_BarMax_GUARD_ArcQuest3_End_4 = Oui... C'est bien ça.
+Kalia_BarMax_GUARD_ArcQuest3_End_5 = Cette bombe sera largement suffisante pour détruire la forteresse.
+Kalia_BarMax_GUARD_ArcQuest3_End_6 = Maintenant nous avons simplement besoin d'un avion pour voyager jusqu'à Vlatyr.
+Kalia_BarMax_GUARD_ArcQuest3_End_7 = Je peux aider sur cette partie. 
+Kalia_BarMax_GUARD_ArcQuest3_End_8 = Retrouvez-moi au Camp Espoir. Je vais nous obtenir un avion.
+Kalia_BarMax_GUARD_ArcQuest3_End_9 = Compris.
+Kalia_BarMax_GUARD_ArcQuest3_End_10 = Et n'oubliez pas d'acheter des vivres avant.
+Kalia_BarMax_GUARD_ArcQuest3_End_11 = Une fois que nous serons partis, il n'y aura pas de retour en arrière.
+Kalia_BarMax_GUARD_ArcQuest3_End_12 = Nous ne reviendrons qu'une fois la secte détruite une bonne fois pour toute.
+
+Kalia_BarMax_GUARD_AboutYou_1 = GARDE n'est que mon nom de code. Je l'utilisais il y a encore quelques temps quand j'étais garde du corps.
+Kalia_BarMax_GUARD_AboutYou_2 = Je protégeais un homme politique... et vous pouvez deviner ce qui s'est passé.
+Kalia_BarMax_GUARD_AboutYou_3 = La secte l'a tué ?
+Kalia_BarMax_GUARD_AboutYou_4 = Exactement. Il menait une enquête sur eux, donc ils l'ont tué en représaille.
+Kalia_BarMax_GUARD_AboutYou_5 = Depuis ce jour, j'ai arrêté d'être garde du corps. On m'a ridiculisé pour mon incompétence.
+Kalia_BarMax_GUARD_AboutYou_6 = J'ai donc juré de me venger. Je les détruirais.
+
+Kalia_BarMax_GUARD_AboutSect_1 = La secte des Invocateurs est plutôt discrète.
+Kalia_BarMax_GUARD_AboutSect_2 = Ils se spécialisent apparemment dans l'invocation.
+Kalia_BarMax_GUARD_AboutSect_3 = L'invocation de quoi ? Je n'en suis pas sûr, mais ça ne présage rien de bon.
+Kalia_BarMax_GUARD_AboutSect_4 = J'ai aussi appris qu'ils prient le dieu du chaos : le Seigneur Cerf.
+Kalia_BarMax_GUARD_AboutSect_5 = Leurs intentions ne peuvent qu'être néfastes. Ils doivent être arrêté.
+
+# ---------------------------------------------------------
+# ---------------- Kalia - Park ---------------------------
+# ---------------------------------------------------------
+
+Kalia_KalibuPark_SecondaryQuest_1 = Etes-vous le petit-fils de la propriétaire du bar de Max ?
+Kalia_KalibuPark_SecondaryQuest_2 = Oui, pourquoi ?
+Kalia_KalibuPark_SecondaryQuest_3 = Elle voulait vous rappeler que vous lui devez de l'argent.
+Kalia_KalibuPark_SecondaryQuest_4 = ... Oh ! C'est vrai. Comment ai-je pu oublier ?
+Kalia_KalibuPark_SecondaryQuest_5 = Merci de m'avoir fait passer le message, je vais aller la voir de suite.
+Kalia_KalibuPark_SecondaryQuest_6 = L'homme disparait au loin. Je devrais retourner au bar moi aussi.
+
+Kalia_KalibuPark_DeliveryQuest_1 = Que faites-vous ici à une telle heure ?
+Kalia_KalibuPark_DeliveryQuest_2 = ...
+Kalia_KalibuPark_DeliveryQuest_3 = Euh... Bonsoir ?
+Kalia_KalibuPark_DeliveryQuest_4 = Hein ?! Oh, bonjour, monsieur.
+Kalia_KalibuPark_DeliveryQuest_5 = Que faites-vous ici ?
+Kalia_KalibuPark_DeliveryQuest_6 = Oh ? Il est déjà si tard ?
+Kalia_KalibuPark_DeliveryQuest_7 = Qu'est-ce que vous voulez dire ?
+Kalia_KalibuPark_DeliveryQuest_8 = Je... Je voulais donner cette lettre à la dame qui possède la ferme juste en dehors de la ville.
+Kalia_KalibuPark_DeliveryQuest_9 = Mais... Je suppose que je n'ai pas pu le faire...
+Kalia_KalibuPark_DeliveryQuest_10 = Quoi ? Vous avez rencontré des bandits ? Vous avez besoin d'aide ?
+Kalia_KalibuPark_DeliveryQuest_11 = Non, non ! Je n'ai pas... Je veux dire... Peut-être que...
+Kalia_KalibuPark_DeliveryQuest_12 = Pourriez-vous lui donner cette lettre ? Je vais même vous payer pour ça !
+Kalia_KalibuPark_DeliveryQuest_13 = Attendez un instant. De quoi pa-
+Kalia_KalibuPark_DeliveryQuest_14 = L'homme me donne la lettre et même de l'or.
+Kalia_KalibuPark_DeliveryQuest_15 = Voilà votre paie. J'ai confiance en vous !
+Kalia_KalibuPark_DeliveryQuest_16 = L'homme prend la fuite. C'était quoi ça ?
+Kalia_KalibuPark_DeliveryQuest_17 = ... Je suppose que je vais devoir livrer cette lettre alors. C'est si génant...
+
+# ---------------------------------------------------------
+# --------------- Kalia - Plaza ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Plaza_GUARDArcQuest2_Start_1 = Ah, vous voila.
+Kalia_Plaza_GUARDArcQuest2_Start_2 = Je me suis permis de vérifier l'adresse de notre cible.
+Kalia_Plaza_GUARDArcQuest2_Start_3 = En fait, je peux même vous dire qu'il n'est pas en ville.
+Kalia_Plaza_GUARDArcQuest2_Start_4 = Peut-être qu'il est parti pour le travail ?
+Kalia_Plaza_GUARDArcQuest2_Start_5 = Peut-être. Mais au moins sa maison est vide.
+Kalia_Plaza_GUARDArcQuest2_Start_6 = Vous voulez vous infiltrer à l'intérieur ?
+Kalia_Plaza_GUARDArcQuest2_Start_7 = Oui. Sa maison devrait abriter quelques indices.
+Kalia_Plaza_GUARDArcQuest2_Start_8 = Je veux savoir sa connexion à la secte.
+Kalia_Plaza_GUARDArcQuest2_Start_9 = Il pourrait être une cible, ou bien un membre. Ne l'oubliez pas.
+Kalia_Plaza_GUARDArcQuest2_Start_10 = Très bien, essayons de nous introduire à l'intérieur alors.
+Kalia_Plaza_GUARDArcQuest2_Start_11 = Je suis GARDE jusqu'à la maison du marchant.
+Kalia_Plaza_GUARDArcQuest2_Start_12 = C'est une maison bien entretenue, au moins à l'exterieur.
+Kalia_Plaza_GUARDArcQuest2_Start_13 = On peut sentir la richesse de cet homme juste en la regardant.
+Kalia_Plaza_GUARDArcQuest2_Start_14 = GARDE sort un crochet, et commence à ouvrir la porte.
+Kalia_Plaza_GUARDArcQuest2_Start_15 = Pendant ce temps, je surveille la rue. Nous ne pouvons pas être vu ici.
+Kalia_Plaza_GUARDArcQuest2_Start_16 = Après quelques minutes, la porte est ouverte.
+Kalia_Plaza_GUARDArcQuest2_Start_17 = Nous entrons alors dans la maison, et commençons notre recherche.
+Kalia_Plaza_GUARDArcQuest2_Start_18 = Hmm... Voilà son bureau.
+Kalia_Plaza_GUARDArcQuest2_Start_19 = Mais où trouver des indices ?
+Kalia_Plaza_GUARDArcQuest2_Start_20 = Séparons-nous. On devrait en trouver plus rapidement.
+
+Kalia_Plaza_GUARDArcQuest2_Painting_1 = Un tableau. Il ne va pas nous aider.
+
+Kalia_Plaza_GUARDArcQuest2_Bookshelf_1 = Il y a beaucoup de livres ici.
+Kalia_Plaza_GUARDArcQuest2_Bookshelf_2 = Ce marchand a l'air d'être intéressé par l'occulte, de ce que je vois.
+
+Kalia_Plaza_GUARDArcQuest2_Note_1 = Il a laissé une note sur la table.
+Kalia_Plaza_GUARDArcQuest2_Note_2 = Code : 0064 (Je devrais le changer un jour)
+Kalia_Plaza_GUARDArcQuest2_Note_3 = Ca pourrait être utile...
+
+Kalia_Plaza_GUARDArcQuest2_GUARD_1 = Notre homme a l'air d'être intéressé par l'occulte.
+Kalia_Plaza_GUARDArcQuest2_GUARD_2 = Il pourrait être plus connecté à la secte que je ne pensais...
+
+Kalia_Plaza_GUARDArcQuest2_Safe_1 = C'est un coffre-fort. Je me demande comment l'ouvrir.
+
+Kalia_Plaza_GUARDArcQuest2_End_1 = Peut-être que je devrais utiliser le code de la note.
+Kalia_Plaza_GUARDArcQuest2_End_2 = 0064... Ca a fonctionné !
+Kalia_Plaza_GUARDArcQuest2_End_3 = Le coffre-fort s'ouvre, et ses secrets nous sont révélés.
+Kalia_Plaza_GUARDArcQuest2_End_4 = Ah ! Vous avez trouvé quelque chose.
+Kalia_Plaza_GUARDArcQuest2_End_5 = Voyons voir...
+Kalia_Plaza_GUARDArcQuest2_End_6 = Des papiers de vente pour la plupart, il fallait s'y attendre.
+Kalia_Plaza_GUARDArcQuest2_End_7 = ... Oh ?
+Kalia_Plaza_GUARDArcQuest2_End_8 = GARDE prend une lettre de la pile. Elle a l'air différente des autres.
+Kalia_Plaza_GUARDArcQuest2_End_9 = ...
+Kalia_Plaza_GUARDArcQuest2_End_10 = A mon ami, William Sualibu.
+Kalia_Plaza_GUARDArcQuest2_End_11 = Un congrès va avoir lieu la semaine prochaine à la forteresse Braise.
+Kalia_Plaza_GUARDArcQuest2_End_12 = Nous parlerons enfin de nous débarrasser de vos opposants, et de faire de vous le consul véritable de Kalia.
+Kalia_Plaza_GUARDArcQuest2_End_13 = J'attends votre arrivée avec impatience, H.
+Kalia_Plaza_GUARDArcQuest2_End_14 = Ce n'est pas bon signe.
+Kalia_Plaza_GUARDArcQuest2_End_15 = Je savais que quelque chose n'allait pas. Ils veulent faire un coup d'êtat.
+Kalia_Plaza_GUARDArcQuest2_End_16 = Et une fois qu'ils l'auront fait, ils metteront cet homme au pouvoir.
+Kalia_Plaza_GUARDArcQuest2_End_17 = Oui, c'est plutôt mauvais. On doit faire quelque chose.
+Kalia_Plaza_GUARDArcQuest2_End_18 = Par chance, je sais où ils vont tenir ce congrès.
+Kalia_Plaza_GUARDArcQuest2_End_19 = Vraiment ?
+Kalia_Plaza_GUARDArcQuest2_End_20 = Oui. La forteresse Braise est une vieille forteresse à Vlatyr, Kosky.
+Kalia_Plaza_GUARDArcQuest2_End_21 = Il n'y a pas si longtemps, un dragon y vivait.
+Kalia_Plaza_GUARDArcQuest2_End_22 = Mais quelqu'un l'a tué, et il a été cru qu'elle était abandonnée depuis.
+Kalia_Plaza_GUARDArcQuest2_End_23 = Que voulez-vous faire ? Voyager à Vlatyr prendrait des jours.
+Kalia_Plaza_GUARDArcQuest2_End_24 = .... J'ai une idée.
+Kalia_Plaza_GUARDArcQuest2_End_25 = Camp Espoir à Kalia possède des avions, non ?
+Kalia_Plaza_GUARDArcQuest2_End_26 = Ne me dites pas... Vous voulez en voler un ?
+Kalia_Plaza_GUARDArcQuest2_End_27 = Non, on va simplement... en emprunter un.
+Kalia_Plaza_GUARDArcQuest2_End_28 = Eh bien, je connais la personne qui gère les avions.
+Kalia_Plaza_GUARDArcQuest2_End_29 = Avec un peu de chance, on va pouvoir voler un avion sans se faire repérer.
+Kalia_Plaza_GUARDArcQuest2_End_30 = Incroyable. L'armée Kalienne est aussi défectueuse que les rumeurs le disent.
+Kalia_Plaza_GUARDArcQuest2_End_31 = Hé, on fait de notre mieux.
+Kalia_Plaza_GUARDArcQuest2_End_32 = Je sais, je sais.
+Kalia_Plaza_GUARDArcQuest2_End_33 = Dans tous les cas, j'ai une autre mission avant cela.
+Kalia_Plaza_GUARDArcQuest2_End_34 = Pour en finir une bonne fois pour toute avec la secte, on va utiliser une bombe.
+Kalia_Plaza_GUARDArcQuest2_End_35 = Kalia ne produit pas d'explosifs aussi puissant.
+Kalia_Plaza_GUARDArcQuest2_End_36 = Bien sûr, mais Orkva si.
+Kalia_Plaza_GUARDArcQuest2_End_37 = J'aimerais que vous voliez une bombe Orkvienne du Fort Muraille.
+Kalia_Plaza_GUARDArcQuest2_End_38 = Ils ont un grand entrepôt d'armes la-bas. Ils ne pleureront pas la disparition d'une bombe.
+Kalia_Plaza_GUARDArcQuest2_End_39 = Je vois. Je vais faire ce que je peux pour la récupérer.
+Kalia_Plaza_GUARDArcQuest2_End_40 = Retrouvez-moi au bar de Max une fois que vous l'avez.
+Kalia_Plaza_GUARDArcQuest2_End_41 = Tandis que nous parlons de notre dernière mission, nous quittons la maison.
+Kalia_Plaza_GUARDArcQuest2_End_42 = C'est cependant à moi de choisir ma prochaine action.
+
+Kalia_Plaza_RebelQuest4_1 = Ok. Distribuons ces tracts.
+Kalia_Plaza_RebelQuest4_2 = C'est risqué de le faire ici, mais le peuple doit savoir.
+Kalia_Plaza_RebelQuest4_3 = Le faire montrera notre force. Nous n'avons pas peur du Marchand.
+Kalia_Plaza_RebelQuest4_4 = Pour être honnête, il n'y a même pas besoin de distribuer quoi que ce soit.
+Kalia_Plaza_RebelQuest4_5 = Une simple commotion ferait l'affaire.
+Kalia_Plaza_RebelQuest4_6 = Au fur et à mesure que l'on distribue les tracts, de plus en plus de gens arrivent.
+Kalia_Plaza_RebelQuest4_7 = Je suppose qu'ils veulent voir la réaction du Marchand. Nous sommes sous sa fenêtre après tout.
+Kalia_Plaza_RebelQuest4_8 = Hé ! Que faites-vous la ?
+Kalia_Plaza_RebelQuest4_9 = Cette zone est restrei- Attends...
+Kalia_Plaza_RebelQuest4_10 = Des rebelles ! Et le traître est avec eux !
+Kalia_Plaza_RebelQuest4_11 = Ouvrez le feu !
+
+Kalia_Plaza_RebelQuest4_12 = Les soldats du Marchand sont au sol.
+Kalia_Plaza_RebelQuest4_13 = Tu as vu ça ?
+Kalia_Plaza_RebelQuest4_14 = Les rebelles ont peut-être une chance de gagner.
+Kalia_Plaza_RebelQuest4_15 = Oui. Il serait peut-être sage de les soutenir. Ils peuvent nous défendre.
+Kalia_Plaza_RebelQuest4_16 = Bien. Le peuple commence à nous faire confiance.
+Kalia_Plaza_RebelQuest4_17 = Retournons voir Amanda. Je me demande quelle est la prochaine étape.
+
+Kalia_Plaza_MerchantQuest5_1 = C'est étrange. Il y a beaucoup de gens aujourd'hui.
+Kalia_Plaza_MerchantQuest5_2 = Tu as entendu la nouvelle ?
+Kalia_Plaza_MerchantQuest5_3 = Non, de quoi tu parles ?
+Kalia_Plaza_MerchantQuest5_4 = Les rebelles ont été écrasés. En plus de ça, le Marchand est mort !
+Kalia_Plaza_MerchantQuest5_5 = Quoi ? Comment ?
+Kalia_Plaza_MerchantQuest5_6 = C'est une grande nouvelle ! On va pouvoir faire une élection ?
+Kalia_Plaza_MerchantQuest5_7 = Des élections... On en a pas eu depuis des décenies.
+Kalia_Plaza_MerchantQuest5_8 = Qui va vouloir se présenter ? J'ai entendu dire que l'armée va peut-être faire un coup d'état.
+Kalia_Plaza_MerchantQuest5_9 = Enfin, c'est pas comme s'il restait beaucoup en termes de gouvernement.
+Kalia_Plaza_MerchantQuest5_10 = Ce n'est pas bon signe. Comment les nouvelles se sont répandues aussi vite ?
+Kalia_Plaza_MerchantQuest5_11 = Je m'excuse, monsieur. Pourrais-je vous poser quelques questions ?
+Kalia_Plaza_MerchantQuest5_12 = Vous... L'autre type nous a parlé de vous.
+Kalia_Plaza_MerchantQuest5_13 = Moi ? Vous voulez parler de l'autre garde républicain.
+Kalia_Plaza_MerchantQuest5_14 = Je suppose que c'était lui. Il nous a dit que vous aviez tué le Marchand. Il va au Camp Espoir pour préparer un coup d'état.
+Kalia_Plaza_MerchantQuest5_15 = Quoi ? Je n'ai rien fait de la sorte. C'est vrai que je suis le consul par intérim de Kalia, mais je n'ai pas tué pour avoir la position.
+Kalia_Plaza_MerchantQuest5_16 = Dites à tous vos amis que des élections libres auront bientôt lieu.
+Kalia_Plaza_MerchantQuest5_17 = Faites savoir que l'armée ne fera pas de coup d'état. Ils devront passer par moi avant.
+Kalia_Plaza_MerchantQuest5_18 = Et en ce qui concerne l'autre garde républicain. Considérez-le comme un traître. Arrêtez-le s'il revient par ici.
+Kalia_Plaza_MerchantQuest5_19 = O-Oui, monsieur !
+Kalia_Plaza_MerchantQuest5_20 = Les quelques personnes qui m'écoutaient partent vers d'autres groupes.
+Kalia_Plaza_MerchantQuest5_21 = Les nouvelles vont se répandre vite.
+Kalia_Plaza_MerchantQuest5_22 = En attendant, je devrais aller au Camp Espoir et confronter mon vieil ami.
+Kalia_Plaza_MerchantQuest5_23 = Il ne fera pas de coup d'état. C'est notre seule chance pour trouver le salut après toutes ces péripéties.
+
+# ---------------------------------------------------------
+# ------------ Kalia - Lighthouse -------------------------
+# ---------------------------------------------------------
+
+Kalia_Lighthouse_Door_Locked_1 = Fermée...
+
+Kalia_Lighthouse_JackwellArcQuest4_1 = C'est ici que Jackwell veut que je nage...
+Kalia_Lighthouse_JackwellArcQuest4_2 = Allons-y...
+Kalia_Lighthouse_JackwellArcQuest4_3 = Après quelques minutes, j'ai fini de nager autour du phare.
+Kalia_Lighthouse_JackwellArcQuest4_4 = Jackwell devrait être content maintenant. Je devrais rentrer.
+
+Kalia_Lighthouse_MerchantQuest2Start_1 = C'est ici que l'associé du Marchand vie.
+Kalia_Lighthouse_MerchantQuest2Start_2 = Je ne sais pas qui il est, mais j'ai entendu des rumeurs sur le phare.
+Kalia_Lighthouse_MerchantQuest2Start_3 = Des gens très louches entrent et sortent du phare la nuit.
+Kalia_Lighthouse_MerchantQuest2Start_4 = A tel point qu'il n'est plus utilisé pour guider les bateaux.
+Kalia_Lighthouse_MerchantQuest2Start_5 = Je ne peux qu'imaginer l'identité de ce mystérieux associé.
+Kalia_Lighthouse_MerchantQuest2Start_6 = J'entre dans le phare. Il est mal éclairé et je n'y vois pas grand chose.
+Kalia_Lighthouse_MerchantQuest2Start_7 = Je monte au sommet du phare. Il a été fermé de l'extérieur.
+Kalia_Lighthouse_MerchantQuest2Start_8 = Une seule lumière éclaire l'entrée. C'est comme si elle était là pour cacher la personne vivant ici et m'exposer.
+Kalia_Lighthouse_MerchantQuest2Start_9 = Un visiteur ? Vous n'avez pas l'air d'être un habitué.
+Kalia_Lighthouse_MerchantQuest2Start_10 = Le consul m'envoie. Nous avons besoin de vos services.
+Kalia_Lighthouse_MerchantQuest2Start_11 = Oh. Je savais que ce moment allait arriver tôt ou tard.
+Kalia_Lighthouse_MerchantQuest2Start_12 = Il cherche les rebelles, par hasard ?
+Kalia_Lighthouse_MerchantQuest2Start_13 = O- Oui.
+Kalia_Lighthouse_MerchantQuest2Start_14 = Fuh fuh. Je le savais. Après tout, ils ont fui la ville.
+Kalia_Lighthouse_MerchantQuest2Start_15 = Vous savez où ils sont maintenant ?
+Kalia_Lighthouse_MerchantQuest2Start_16 = Peut-être...
+Kalia_Lighthouse_MerchantQuest2Start_17 = Mais cette connaissance aura un prix.
+Kalia_Lighthouse_MerchantQuest2Start_18 = Nous pouvons payer. L'argent n'est pas un problème.
+Kalia_Lighthouse_MerchantQuest2Start_19 = Pas avec le Marchand, non. Mais je ne suis pas intéressé.
+Kalia_Lighthouse_MerchantQuest2Start_20 = Ce que je recherche en guise de paiement est... votre aide.
+Kalia_Lighthouse_MerchantQuest2Start_21 = Mon aide ?
+Kalia_Lighthouse_MerchantQuest2Start_22 = J'ai été l'associé du Marchand pendant longtemps.
+Kalia_Lighthouse_MerchantQuest2Start_23 = C'est moi qui lui ai proposé de devenir consul. C'est moi qui lui ai dit de dissoudre le parlement.
+Kalia_Lighthouse_MerchantQuest2Start_24 = Tout ça, bien sûr, pour nous enrichir.
+Kalia_Lighthouse_MerchantQuest2Start_25 = Je lui donnai les informations dont il avait besoin, et il me payait d'une manière ou d'une autre.
+Kalia_Lighthouse_MerchantQuest2Start_26 = Rien à Kalia était hors de ma portée. Sauf une chose, une toute petite chose...
+Kalia_Lighthouse_MerchantQuest2Start_27 = Camp Espoir est en train de créer un prototype pour une nouvelle arme depuis quelque temps.
+Kalia_Lighthouse_MerchantQuest2Start_28 = J'ai demandé encore et encore, mais le Marchant n'arrivait pas à me l'obtenir.
+Kalia_Lighthouse_MerchantQuest2Start_29 = Je veux que vous obteniez ce prototype pour moi. Vous avez sûrement les autorisations.
+Kalia_Lighthouse_MerchantQuest2Start_30 = Mais ça nous poserait problème. Et que voulez-vous faire avec ?
+Kalia_Lighthouse_MerchantQuest2Start_31 = Des affaires, bien sûr ! Et pour vos problèmes, valent-ils la connaissance de la position des rebelles ?
+Kalia_Lighthouse_MerchantQuest2Start_32 = ....
+Kalia_Lighthouse_MerchantQuest2Start_33 = Bon, bon. Je vais aller récupérer le prototype pour vous.
+Kalia_Lighthouse_MerchantQuest2Start_34 = Alors j'attends avec impatience votre retour.
+Kalia_Lighthouse_MerchantQuest2Start_35 = Je quitte le phare. Ca a l'air d'une arnaque.
+Kalia_Lighthouse_MerchantQuest2Start_36 = Il abuse du fait que nous ayons besoin de l'information pour mettre la main sur le prototype.
+Kalia_Lighthouse_MerchantQuest2Start_37 = Je ne sais pas beaucoup de choses à son propos. Mais je suis certain que cet homme va le vendre au meilleur acheteur.
+Kalia_Lighthouse_MerchantQuest2Start_38 = Grr... Je n'ai pas le choix. Je dois aller à Camp Espoir. 
+
+Kalia_Lighthouse_MerchantQuest2End_1 = J'entre dans le phare et me dirige vers le sommet immédiatement.
+Kalia_Lighthouse_MerchantQuest2End_2 = Vous êtes de retour. Bien.
+Kalia_Lighthouse_MerchantQuest2End_3 = Et vous avez même obtenu le prototype. Parfait.
+Kalia_Lighthouse_MerchantQuest2End_4 = Posez-le sur le sol. J'irai le récupérer plus tard.
+Kalia_Lighthouse_MerchantQuest2End_5 = Vous restez dans l'ombre, hein ?
+Kalia_Lighthouse_MerchantQuest2End_6 = Fuh fuh. Je dois rester caché. C'est... mieux dans mon domaine.
+Kalia_Lighthouse_MerchantQuest2End_7 = Vous avez ce que vous vouliez. Que savez-vous sur les rebelles ?
+Kalia_Lighthouse_MerchantQuest2End_8 = Bien, bien. Je suppose que je dois vous en parler.
+Kalia_Lighthouse_MerchantQuest2End_9 = Les rebelles ont fui la ville après qu'un dénommé Robertus est mort.
+Kalia_Lighthouse_MerchantQuest2End_10 = Vous devriez le connaitre. Après tout, vous l'avez tué.
+Kalia_Lighthouse_MerchantQuest2End_11 = ...
+Kalia_Lighthouse_MerchantQuest2End_12 = Ils ont fuis la ville, et aux dernières nouvelles, ils ont pris le contrôle des catacombes d'Iberty.
+Kalia_Lighthouse_MerchantQuest2End_13 = J'espère que cette information vous sera utile.
+Kalia_Lighthouse_MerchantQuest2End_14 = Elle l'est. Merci.
+Kalia_Lighthouse_MerchantQuest2End_15 = Je quitte le phare. Maintenant, nous savons où sont les rebelles.
+Kalia_Lighthouse_MerchantQuest2End_16 = Et dire qu'ils se cachent dans les halles des morts...
+Kalia_Lighthouse_MerchantQuest2End_17 = Bon. Je devrais retourner au palais.
+
+# ---------------------------------------------------------
+# ------------ Kalia - Salvation Bar ----------------------
+# ---------------------------------------------------------
+
+Kalia_BarSalvation_Door_Locked_1 = Ce tonneau est utilisé pour stocker de l'aclool.
+
+Kalia_BarSalvation_Waiter_Greetings_1 = Ca va ?
+
+Kalia_BarSalvation_Waiter_AboutYou_1 = Moi ? Je suis juste une serveuse. Besoin de quelque chose ?
+
+Kalia_BarSalvation_Waiter_NeedYou_1 = Non !
+
+Kalia_BarSalvation_Waiter_Order_1 = Tu veux commander quelque chose ?
+
+Kalia_BarSalvation_Waiter_Wrong_1 = Tiens !
+
+Kalia_BarSalvation_Waiter_Good_1 = ... Tu es sur ?
+Kalia_BarSalvation_Waiter_Good_2 = Ce n'est pas un breuvage très commun.
+Kalia_BarSalvation_Waiter_Good_3 = <color=red>Cela va vous vérrouiller dans la route rebelle. Etes-vous sûr de continuer ?<color>
+
+Kalia_BarSalvation_Waiter_Refuse_1 = Je vois !
+
+Kalia_BarSalvation_Waiter_Joined_1 = Si tu veux parler à ma soeur, tu peux entrer dans la... salle.
+
+Kalia_BarSalvation_JoinRebels_1 = ...
+Kalia_BarSalvation_JoinRebels_2 = Suis-moi.
+Kalia_BarSalvation_JoinRebels_3 = La serveuse s'avance vers le grand tonneau à ma droite.
+Kalia_BarSalvation_JoinRebels_4 = Elle tourne un mécanisme étrange que je n'avais pas vu, et une porte secrète est révélée.
+Kalia_BarSalvation_JoinRebels_5 = Entres.
+Kalia_BarSalvation_JoinRebels_6 = J'obéis. Je suppose que j'avais raison.
+Kalia_BarSalvation_JoinRebels_7 = La pièce dans laquelle j'entre est plongée dans le noir.
+Kalia_BarSalvation_JoinRebels_8 = Où suis-je ? Est-ce le quartier général des rebelles ?
+Kalia_BarSalvation_JoinRebels_9 = Je sens des gens à côté de moi. Qui sont-ils ?
+Kalia_BarSalvation_JoinRebels_10 = Est-ce lui, Bos ?
+Kalia_BarSalvation_JoinRebels_11 = Oui. Je l'ai conduit ici.
+Kalia_BarSalvation_JoinRebels_12 = Je vois. Alors tu penses qu'il...
+Kalia_BarSalvation_JoinRebels_13 = Sauf votre respect, je pense qu'il est capable de répondre tout seul.
+Kalia_BarSalvation_JoinRebels_14 = C'est vrai.
+Kalia_BarSalvation_JoinRebels_15 = [MC], ou devrais-je dire "Bouclier" ?
+Kalia_BarSalvation_JoinRebels_16 = Veuillez ne plus jamais utiliser ce nom de code.
+Kalia_BarSalvation_JoinRebels_17 = Savez-vous où vous êtes ?
+Kalia_BarSalvation_JoinRebels_18 = Le quartier général des rebelles ?
+Kalia_BarSalvation_JoinRebels_19 = ...
+Kalia_BarSalvation_JoinRebels_20 = Et que ferait un membre de la garde républicaine ici ?
+Kalia_BarSalvation_JoinRebels_21 = Je... Je souhaite rejoindre la rébellion.
+Kalia_BarSalvation_JoinRebels_22 = Vraiment ? Et pourquoi ?
+Kalia_BarSalvation_JoinRebels_23 = Il est possible que vous essayiez d'infiltrer nos rangs.
+Kalia_BarSalvation_JoinRebels_24 = Le Marchand doit être arrêté.
+Kalia_BarSalvation_JoinRebels_25 = Ah oui ? Pourquoi ?
+Kalia_BarSalvation_JoinRebels_26 = ...
+Kalia_BarSalvation_JoinRebels_27 = C'est... personnel.
+Kalia_BarSalvation_JoinRebels_28 = Personnel ne suffira pas ici, [MC].
+Kalia_BarSalvation_JoinRebels_29 = Je... Je n'ai jamais été convaincu par sa politique.
+Kalia_BarSalvation_JoinRebels_30 = Et depuis l'incident, je... Hé bien...
+Kalia_BarSalvation_JoinRebels_31 = L'incident ? Oh, vous voulez dire l'opération de Bos ?
+Kalia_BarSalvation_JoinRebels_32 = ... J'ai beaucoup de questions à vous poser à ce sujet.
+Kalia_BarSalvation_JoinRebels_33 = Qu'est-il arrivé aux gardes ensuite ? On les voit à peine.
+Kalia_BarSalvation_JoinRebels_34 = Êtes-vous tous enfermés dans le palais ?
+Kalia_BarSalvation_JoinRebels_35 = ... Nous ne sommes plus que deux.
+Kalia_BarSalvation_JoinRebels_36 = C'est logique...
+Kalia_BarSalvation_JoinRebels_37 = On a donc réussi, Bos.
+Kalia_BarSalvation_JoinRebels_38 = Oui, on dirait.
+Kalia_BarSalvation_JoinRebels_39 = Ce que je ne comprends pas, c'est pourquoi vous êtes venu nous voir.
+Kalia_BarSalvation_JoinRebels_40 = Pourquoi le survivant de l'incident se joindrait-il à nous ?
+Kalia_BarSalvation_JoinRebels_41 = Nous avons tué tous vos camarades. Nous devrions être ennemis.
+Kalia_BarSalvation_JoinRebels_42 = Je... enfin...
+Kalia_BarSalvation_JoinRebels_43 = Amanda, je peux t'éclairer si tu veux.
+Kalia_BarSalvation_JoinRebels_44 = Hmm ?
+Kalia_BarSalvation_JoinRebels_45 = Sa mère était la meneuse originelle de la rébellion.
+Kalia_BarSalvation_JoinRebels_46 = Tu sais, la marche sur le palais.
+Kalia_BarSalvation_JoinRebels_47 = Oh... je vois.
+Kalia_BarSalvation_JoinRebels_48 = Racontez-moi, [MC]. Parlez-moi de votre mère.
+Kalia_BarSalvation_JoinRebels_49 = ...
+Kalia_BarSalvation_JoinRebels_50 = Que dire ? Vous en savez probablement plus que moi.
+Kalia_BarSalvation_JoinRebels_51 = Je venais de m'engager dans l'armée quand elle a commencé la marche.
+Kalia_BarSalvation_JoinRebels_52 = À ce moment-là, la rébellion n'avait pas encore commencé.
+Kalia_BarSalvation_JoinRebels_53 = C'était une manifestation pacifique, mais le Marchand ne l'a pas vue ainsi.
+Kalia_BarSalvation_JoinRebels_54 = L'armée... a ouvert le feu sur les manifestants.
+Kalia_BarSalvation_JoinRebels_55 = Ils ont tué ma mère. Elle n'était pas armée.
+Kalia_BarSalvation_JoinRebels_56 = Je n'étais pas en ville à ce moment-là, je m'entraînais dans la Forêt Blanche avec l'Ordre.
+Kalia_BarSalvation_JoinRebels_57 = Après cela, j'ai été promu à la garde républicaine.
+Kalia_BarSalvation_JoinRebels_58 = Je ne savais pas vraiment quoi faire. Ils venaient de tuer ma mère.
+Kalia_BarSalvation_JoinRebels_59 = Mais... Peut-être naïvement, j'ai cru pouvoir changer les choses de l'intérieur.
+Kalia_BarSalvation_JoinRebels_60 = De toute façon, ça n'a jamais vraiment abouti à quelque chose...
+Kalia_BarSalvation_JoinRebels_61 = ...
+Kalia_BarSalvation_JoinRebels_62 = Bos, ton avis ?
+Kalia_BarSalvation_JoinRebels_63 = Je pense qu'il pourrait nous être précieux.
+Kalia_BarSalvation_JoinRebels_64 = Il connaît l'armée et l'agencement du palais.
+Kalia_BarSalvation_JoinRebels_65 = De plus, j'ai vérifié ses antécédents. Il n'a pas menti.
+Kalia_BarSalvation_JoinRebels_66 = ...
+Kalia_BarSalvation_JoinRebels_67 = [MC], êtes-vous conscient des implications de votre adhésion ?
+Kalia_BarSalvation_JoinRebels_68 = Oui, je vais devoir quitter la garde. Je vais devoir combattre mes anciens camarades.
+Kalia_BarSalvation_JoinRebels_69 = Je serai catalogué comme traître.
+Kalia_BarSalvation_JoinRebels_70 = ...
+Kalia_BarSalvation_JoinRebels_71 = D'accord. Bos, allume la lumière.
+Kalia_BarSalvation_JoinRebels_72 = Tandis que la femme dit cela, la pièce s'illumine.
+Kalia_BarSalvation_JoinRebels_73 = Bon, je suppose que tu as réussi, [MC].
+Kalia_BarSalvation_JoinRebels_74 = Je te souhaite la bienvenue, nouveau membre de la rébellion.
+Kalia_BarSalvation_JoinRebels_75 = Notre rôle est de renverser le tyran connu sous le nom du Marchand.
+Kalia_BarSalvation_JoinRebels_76 = Je suis Amanda, la cheffe de ce mouvement.
+Kalia_BarSalvation_JoinRebels_77 = Et voici Bos, mon bras droit.
+Kalia_BarSalvation_JoinRebels_78 = ...
+Kalia_BarSalvation_JoinRebels_79 = ...
+Kalia_BarSalvation_JoinRebels_80 = Mauvaise relation entre vous deux ?
+Kalia_BarSalvation_JoinRebels_81 = Vous trouverez bien une solution un jour.
+Kalia_BarSalvation_JoinRebels_82 = Pour l'instant, nous avons des préoccupations plus importantes.
+Kalia_BarSalvation_JoinRebels_83 = Avez-vous une mission pour moi, chef ?
+Kalia_BarSalvation_JoinRebels_84 = Oui et non. Quelle est ta mission actuelle pour le gouvernement ?
+Kalia_BarSalvation_JoinRebels_85 = Je dois sécuriser un colis important qui a été volé par des bandits.
+Kalia_BarSalvation_JoinRebels_86 = ... Je vois. As-tu une idée de son contenu ?
+Kalia_BarSalvation_JoinRebels_87 = Apparemment, un artefact qu'il a trouvé dans un musée Marklichtien.
+Kalia_BarSalvation_JoinRebels_88 = Hmm...
+Kalia_BarSalvation_JoinRebels_89 = Très bien, voilà ta première mission pour la rébellion.
+Kalia_BarSalvation_JoinRebels_90 = Récupères ce colis et rapportes-le-nous.
+Kalia_BarSalvation_JoinRebels_91 = Restes discret pour l'instant. Nous ne voulons pas que le gouvernement sache que tu as changé de camp.
+Kalia_BarSalvation_JoinRebels_92 = Très bien. Ce sera fait.
+Kalia_BarSalvation_JoinRebels_93 = Le bar du salut est notre cachette. Viens ici si tu as besoin de quoi que ce soit.
+Kalia_BarSalvation_JoinRebels_94 = Le bar lui-même nous appartient également. Ma sœur est la serveuse.
+Kalia_BarSalvation_JoinRebels_95 = Alors n'hésites pas à te cacher ici si besoin.
+Kalia_BarSalvation_JoinRebels_96 = ... Je pourrais faire appel à vos services après votre mission.
+Kalia_BarSalvation_JoinRebels_97 = J'ai des missions que seul un soldat entraîné serait capable d'accomplir.
+Kalia_BarSalvation_JoinRebels_98 = Et nous manquons de personnel dans ce domaine pour le moment.
+Kalia_BarSalvation_JoinRebels_99 = ...
+Kalia_BarSalvation_JoinRebels_100 = Je m'en souviendrai.
+Kalia_BarSalvation_JoinRebels_101 = Pour l'instant, je sors de la pièce.
+Kalia_BarSalvation_JoinRebels_102 = Je vais sécuriser le colis, puis je le ramènerai ici.
+Kalia_BarSalvation_JoinRebels_103 = Je suppose que c'est ce qu'elle aurait voulu.
+Kalia_BarSalvation_JoinRebels_104 = Je pensais pouvoir changer les choses de l'intérieur, mais...
+Kalia_BarSalvation_JoinRebels_105 = Je suppose que non...
+Kalia_BarSalvation_JoinRebels_106 = Oh, hé.
+Kalia_BarSalvation_JoinRebels_107 = La serveuse commence à me parler à mon retour.
+Kalia_BarSalvation_JoinRebels_108 = Tu es revenu vivant. Je suppose que tu es embauché ?
+Kalia_BarSalvation_JoinRebels_109 = Oui. J'ai entendu dire que tu étais la sœur du patron ?
+Kalia_BarSalvation_JoinRebels_110 = Oui ! Je suis Anna. Enchantée de te rencontrer, euh...
+Kalia_BarSalvation_JoinRebels_111 = [MC].
+Kalia_BarSalvation_JoinRebels_112 = Ah, oui !
+Kalia_BarSalvation_JoinRebels_113 = Bon, je ne te retiens pas plus longtemps.
+Kalia_BarSalvation_JoinRebels_114 = Je suis sûre qu'on t'a confié une tâche difficile.
+Kalia_BarSalvation_JoinRebels_115 = Mais n'hésites pas à venir nous voir si tu as besoin de quoi que ce soit.
+Kalia_BarSalvation_JoinRebels_116 = Même si tu devrais plutôt parler à ma soeur pour tout ce qui concerne notre... travail.
+
+Kalia_BarSalvation_Amanda_Greetings_1 = Bonjour, [MC].
+
+Kalia_BarSalvation_Amanda_AboutYou_1 = Je suis la plus vieille de trois soeurs.
+Kalia_BarSalvation_Amanda_AboutYou_2 = Tu as déjà rencontré la plus jeune, Anna.
+Kalia_BarSalvation_Amanda_AboutYou_3 = Mon autre soeur n'est en réalité pas en ville.
+Kalia_BarSalvation_Amanda_AboutYou_4 = Elle suit les traces de notre père. Je ne lui en veux pas.
+Kalia_BarSalvation_Amanda_AboutYou_5 = On se retrouve de temps en temps, mais relativement peu ces derniers temps.
+Kalia_BarSalvation_Amanda_AboutYou_6 = Je ne peux pas socialiser pendant que je prépare une révolution...
+
+Kalia_BarSalvation_Amanda_AboutRebellion_1 = Cette rébellion a été commencée par ta mère il y a quelques années.
+Kalia_BarSalvation_Amanda_AboutRebellion_2 = Il y a toujours eu de la résistance au Marchand par le passé, bien sûr.
+Kalia_BarSalvation_Amanda_AboutRebellion_3 = Mais la plupart du temps, ce n'était pas très bien organisé et n'aboutissait à rien.
+Kalia_BarSalvation_Amanda_AboutRebellion_4 = Elle, au contraire, a quasiment fait chuter le gouvernement.
+Kalia_BarSalvation_Amanda_AboutRebellion_5 = Elle a organisé une grande manifestation devant le palais.
+Kalia_BarSalvation_Amanda_AboutRebellion_6 = Cependant, l'armée a commencé à tirer sur les manifestants.
+Kalia_BarSalvation_Amanda_AboutRebellion_7 = Depuis, la rébellion gagne de l'élan dans le coeur du peuple.
+Kalia_BarSalvation_Amanda_AboutRebellion_8 = Peu veulent prendre les armes, mais les Kaliens nous suivront si nous gagnons.
+
+Kalia_BarSalvation_Quest1Start_1 = Vous êtes de retour. Je commençais à me demander si vous nous aviez trahis.
+Kalia_BarSalvation_Quest1Start_2 = J'ai obtenu le colis, chef.
+Kalia_BarSalvation_Quest1Start_3 = Bien. Montrez-moi.
+Kalia_BarSalvation_Quest1Start_4 = Je lui donne le colis. Elle inspecte l'artefact avec précision.
+Kalia_BarSalvation_Quest1Start_5 = Hmm... Ca à l'air d'être un original... Donc il l'a vraiment volé.
+Kalia_BarSalvation_Quest1Start_6 = J'ai demandé à Bos de vérifier votre histoire.
+Kalia_BarSalvation_Quest1Start_7 = Il a trouvé que l'artefact a été volé. Le Marchand ne l'a pas acheté.
+Kalia_BarSalvation_Quest1Start_8 = Je m'en doutais...
+Kalia_BarSalvation_Quest1Start_9 = Donc, quel est le plan ? Qu'est-ce qu'on en fait ?
+Kalia_BarSalvation_Quest1Start_10 = Hmm... Laissez-moi réflechir...
+Kalia_BarSalvation_Quest1Start_11 = Le Marchand sait-il que vous avez changé de camp ?
+Kalia_BarSalvation_Quest1Start_12 = Oui. J'ai dû attaquer un collègue de la garde républicaine.
+Kalia_BarSalvation_Quest1Start_13 = Retourner au palais maintenant est du suicide.
+Kalia_BarSalvation_Quest1Start_14 = Je vois. Eh bien, vous faites maintenant complètement partie de la rébellion.
+Kalia_BarSalvation_Quest1Start_15 = Je ne m'arrêterai pas avant la chute du gouvernement.
+Kalia_BarSalvation_Quest1Start_16 = Bien. J'ai en réalité une tâche pour vous.
+Kalia_BarSalvation_Quest1Start_17 = Oui ?
+Kalia_BarSalvation_Quest1Start_18 = Cet artefact. Amenez-le à la Générale Lara, à la Forteresse Frontalière du Marklicht.
+Kalia_BarSalvation_Quest1Start_19 = Utilisez le comme outil de persuasion. L'artefact contre des cargaisons d'armes.
+Kalia_BarSalvation_Quest1Start_20 = Et si elle refuse ?
+Kalia_BarSalvation_Quest1Start_21 = Elle ne le fera pas. Bos m'a dit qu'elle a été assignée sur le vol de l'artefact.
+Kalia_BarSalvation_Quest1Start_22 = Si elle voit une opportunité pour l'obtenir, elle la prendra.
+Kalia_BarSalvation_Quest1Start_23 = Je vois. Je vais essayer alors.
+Kalia_BarSalvation_Quest1Start_24 = Oh, et une chose de plus. C'est à propos de ma petite sœur.
+Kalia_BarSalvation_Quest1Start_25 = La serveuse ?
+Kalia_BarSalvation_Quest1Start_26 = Oui. Amenez-la avec vous. Elle a besoin de sortir de cet endroit.
+Kalia_BarSalvation_Quest1Start_27 = Compris.
+Kalia_BarSalvation_Quest1Start_28 = Et s'il lui arrive quelque chose...
+Kalia_BarSalvation_Quest1Start_29 = Rien de mal n'arrivera !
+Kalia_BarSalvation_Quest1Start_30 = Ceci étant dit, je quitte la salle.
+Kalia_BarSalvation_Quest1Start_31 = Elle peut faire peur quand elle le veut.
+Kalia_BarSalvation_Quest1Start_32 = Voyons voir voir... Ou-
+Kalia_BarSalvation_Quest1Start_33 = Wahou ! Une aventure !
+Kalia_BarSalvation_Quest1Start_34 = Hé, hé. Qu'est-ce qu'il se passe.
+Kalia_BarSalvation_Quest1Start_35 = J'ai écouté ta conversation avec ma sœur.
+Kalia_BarSalvation_Quest1Start_36 = On part à l'aventure !
+Kalia_BarSalvation_Quest1Start_37 = Calmes-toi. On va juste parler à la Générale Lara, rien de plus.
+Kalia_BarSalvation_Quest1Start_38 = Ah... Pas de chasse au dragon ?
+Kalia_BarSalvation_Quest1Start_39 = Bien sûr que non ! Tu dois revenir en un seul morceau.
+Kalia_BarSalvation_Quest1Start_40 = Ok...
+Kalia_BarSalvation_Quest1Start_41 = <color=blue>Anna ajoutée au groupe.</color>
+Kalia_BarSalvation_Quest1Start_42 = Eh bien. Il est temps de partir pour le Marklicht alors.
+
+Kalia_BarSalvation_Quest1End_1 = Ma soeur, on est revenu !
+Kalia_BarSalvation_Quest1End_2 = Hmm ? Oh, bonjour, Anna. Je suppose que tout s'est bien passé ?
+Kalia_BarSalvation_Quest1End_3 = Bien sûr ! Aucune problème !
+Kalia_BarSalvation_Quest1End_4 = Celle-la...
+Kalia_BarSalvation_Quest1End_5 = La Générale veut que vous lui disiez ou déposer les armes.
+Kalia_BarSalvation_Quest1End_6 = Ah oui. A ce propos.
+Kalia_BarSalvation_Quest1End_7 = Nous allons avoir un problème.
+Kalia_BarSalvation_Quest1End_8 = En temps normal, on aurait utilisé l'entrepôt que vous avez attaqué l'autre jour.
+Kalia_BarSalvation_Quest1End_9 = Cependant, il semblerait qu'un gang en ait profité pour en prendre le contrôle.
+Kalia_BarSalvation_Quest1End_10 = Vous n'avez pas de gardes la bas ?
+Kalia_BarSalvation_Quest1End_11 = J'ai bien peur que vous les ayez tués lors de votre incursion.
+Kalia_BarSalvation_Quest1End_12 = Oh... Désolé...
+Kalia_BarSalvation_Quest1End_13 = Bref, allez le reprendre.
+Kalia_BarSalvation_Quest1End_14 = Oui, chef.
+Kalia_BarSalvation_Quest1End_15 = Anna, aide-le pour le moment.
+Kalia_BarSalvation_Quest1End_16 = Plus d'aventure ? Oh, oui !
+Kalia_BarSalvation_Quest1End_17 = Juste, soit prudente...
+Kalia_BarSalvation_Quest1End_18 = Par ailleurs, j'ai envoyé Bos sur une mission.
+Kalia_BarSalvation_Quest1End_19 = Votre ami le garde républicain est sorti de la ville.
+Kalia_BarSalvation_Quest1End_20 = Je lui ai demandé de le suivre.
+Kalia_BarSalvation_Quest1End_21 = Avec un peu de chance, il nous mènera à quelque chose d'important aux yeux du Marchand.
+Kalia_BarSalvation_Quest1End_22 = Epée a quitté la ville ? Je me demande ce qu'il manigance.
+Kalia_BarSalvation_Quest1End_23 = Je vois. Bien... Viens, Anna. Allons reprendre cet entrepot.
+Kalia_BarSalvation_Quest1End_24 = On s'inquiétera des trouvailles de Bos plus tard.
+Kalia_BarSalvation_Quest1End_25 = Je te suis.
+
+Kalia_BarSalvation_Quest2End_1 = Ca a été fait.
+Kalia_BarSalvation_Quest2End_2 = Bien, et juste à temps.
+Kalia_BarSalvation_Quest2End_3 = Je vais m'occuper du transfert d'armes. Vous avez une nouvelle mission.
+Kalia_BarSalvation_Quest2End_4 = Bos vient de m'envoyer une lettre. Il a trouvé ou est parti votre ami.
+Kalia_BarSalvation_Quest2End_5 = Où est-il allé ?
+Kalia_BarSalvation_Quest2End_6 = L'Ile Mirage. Bos m'a aussi dit qu'il vous attendait au phare de Tolau.
+Kalia_BarSalvation_Quest2End_7 = Apparemment, il a des choses à dire qui sont plus simples à dire à l'orale.
+Kalia_BarSalvation_Quest2End_8 = Je comprends. Nous allons y aller sur-le-champ.
+Kalia_BarSalvation_Quest2End_9 = Qu'est-ce que tu fais ?
+Kalia_BarSalvation_Quest2End_10 = Oh ? J'écris juste ce qu'on doit faire, au cas où j'oublie.
+Kalia_BarSalvation_Quest2End_11 = Pourquoi est-ce que tu oublierais ? Oh, attends. Laisses-moi le faire !
+Kalia_BarSalvation_Quest2End_12 = Attend-
+Kalia_BarSalvation_Quest2End_13 = ... Voilà ! J'ai écrit ce qu'on doit faire !
+Kalia_BarSalvation_Quest2End_14 = Je n'ai pas envie de savoir ce qu'elle a écrit...
+Kalia_BarSalvation_Quest2End_15 = ....
+Kalia_BarSalvation_Quest2End_16 = On.... va y aller, ma soeur.
+Kalia_BarSalvation_Quest2End_17 = Bien.
+
+Kalia_BarSalvation_Quest3End_1 = Vous êtes de retour.
+Kalia_BarSalvation_Quest3End_2 = Nous avons découvert que le Marchand voulait voler cet artefact.
+Kalia_BarSalvation_Quest3End_3 = Par Kalibu ! Est-ce que je pense ?
+Kalia_BarSalvation_Quest3End_4 = Amanda récupère le sceptre et l'éxamine.
+Kalia_BarSalvation_Quest3End_5 = Il a été considéré comme perdu pendant des siècles.
+Kalia_BarSalvation_Quest3End_6 = Qu'est-ce donc ?
+Kalia_BarSalvation_Quest3End_7 = Vous ne le savez pas ? Oh, vous n'avez probablement pas fait d'études théologiques.
+Kalia_BarSalvation_Quest3End_8 = Il y a longtemps, au tout début...
+Kalia_BarSalvation_Quest3End_9 = Les légendes racontent que ceci est le sceptre sacré, utilisé par le vieux conclave.
+Kalia_BarSalvation_Quest3End_10 = Ah, oui. Je connais cette histoire.
+Kalia_BarSalvation_Quest3End_11 = C'était un conclave de vieillards en tout genre, qui régnaient sur les Suoris.
+Kalia_BarSalvation_Quest3End_12 = Mais ils ont disparu un jour sans laisser de trace.
+Kalia_BarSalvation_Quest3End_13 = Oui. Ils utilisaient ce sceptre pour signifier leur droit au pouvoir.
+Kalia_BarSalvation_Quest3End_14 = L'histoire raconte qu'ils ont fui le continent après la scission des Montagnards.
+Kalia_BarSalvation_Quest3End_15 = Le choc de voir la moitié de leurs sujets se tourner vers une autre religion les a fait fuir.
+Kalia_BarSalvation_Quest3End_16 = Les historiens pensent qu'ils sont partis loin à l'est. Mais il est possible qu'ils se soient arrêtés à l'Ile Mirage pendant un moment.
+Kalia_BarSalvation_Quest3End_17 = Je vois. Mais en quoi cela nous aide ?
+Kalia_BarSalvation_Quest3End_18 = C'est énorme, [MC].
+Kalia_BarSalvation_Quest3End_19 = Ce sceptre peut nous permettre d'être reconnu dans et à l'extérieur de Kalia.
+Kalia_BarSalvation_Quest3End_20 = Je suis sûr que le Marchand voulait l'utiliser pour renforcer son règne.
+Kalia_BarSalvation_Quest3End_21 = Nous allons l'utiliser pour le faire chuter.
+Kalia_BarSalvation_Quest3End_22 = Quels sont mes ordres ?
+Kalia_BarSalvation_Quest3End_23 = ... Allez à la grande place. Distribuez des tracts.
+Kalia_BarSalvation_Quest3End_24 = Le moment est venu. Le peuple doit savoir que nous sommes prêts à renverser le tyrant.
+Kalia_BarSalvation_Quest3End_25 = Ca sera fait. 
+Kalia_BarSalvation_Quest3End_26 = D'ailleurs, [MC].
+Kalia_BarSalvation_Quest3End_27 = Oui ?
+Kalia_BarSalvation_Quest3End_28 = Si on a du temps libre, est-ce qu'on peut aller à l'autel prêt d'Iberty ?
+Kalia_BarSalvation_Quest3End_29 = Il y a quelqu'un que je dois voir ?
+Kalia_BarSalvation_Quest3End_30 = Une sage décision, Anna. Dis-lui bonjour de ma part.
+Kalia_BarSalvation_Quest3End_31 = Très bien, je vais y penser.
+
+Kalia_BarSalvation_Quest4End_1 = [MC] ? Que Kalibu soit béni, vous êtes de retour !
+Kalia_BarSalvation_Quest4End_2 = Quelque chose ne va pas ?
+Kalia_BarSalvation_Quest4End_3 = C'est Bos... Il a été capturé.
+Kalia_BarSalvation_Quest4End_4 = Quoi ? Comment ?
+Kalia_BarSalvation_Quest4End_5 = Apparemment votre ami de la garde républicaine l'a pris par surprise.
+Kalia_BarSalvation_Quest4End_6 = Ce fou... Il a dû le garder à l'oeil depuis notre excursion à l'ile.
+Kalia_BarSalvation_Quest4End_7 = Où est-il ? On doit le sauver.
+Kalia_BarSalvation_Quest4End_8 = C'est la partie étrange. On sait que Bos a été capturé car Epée nous a dit où il était.
+Kalia_BarSalvation_Quest4End_9 = Quoi ?
+Kalia_BarSalvation_Quest4End_10 = Je viens de recevoir une lettre. Elle stipule que Bos est au camp Espoir.
+Kalia_BarSalvation_Quest4End_11 = Elle dit aussi que tu dois y aller. Sinon, il va l'executer.
+Kalia_BarSalvation_Quest4End_12 = Je suppose qu'il veut se venger des deux fois ou je l'ai vaincu.
+Kalia_BarSalvation_Quest4End_13 = Ok. C'est de ma faute. Bos a été capturé à cause de moi.
+Kalia_BarSalvation_Quest4End_14 = Je vais le rammener.
+Kalia_BarSalvation_Quest4End_15 = Bonne chance...
+Kalia_BarSalvation_Quest4End_16 = Hé ! Je viens quand même avec toi !
+Kalia_BarSalvation_Quest4End_17 = Tu peux me suivre jusqu'à l'entrée du camp. Mais je vais devoir y entrer seul.
+Kalia_BarSalvation_Quest4End_18 = Tu pourras garder un oeil sur Ace pendant ce temps.
+Kalia_BarSalvation_Quest4End_19 = ... Compris.
+
+Kalia_BarSalvation_Quest6Start_1 = [MC] ! J'ai eu la nouvelle par Bos. Est-ce vrai qu'Orkva planifie une invasion ?
+Kalia_BarSalvation_Quest6Start_2 = Oui, patron. On va peut-être devoir se dépêcher avec nos plans contre le Marchand.
+Kalia_BarSalvation_Quest6Start_3 = L'armée Orkvienne est bien armée. Je n'ai aucun doute qu'elle arrivera à vaincre celle de Kalia.
+Kalia_BarSalvation_Quest6Start_4 = Alors c'est décidé. Nous allons prendre le palais dès que possible.
+Kalia_BarSalvation_Quest6Start_5 = Il est temps de libérer cette ville et ses citoyens.
+Kalia_BarSalvation_Quest6Start_6 = Assurez-vous d'avoir des stocks. C'est votre dernière chance avant la bataille finale.
+Kalia_BarSalvation_Quest6Start_7 = Parlez-moi quand vous êtes prêt.
+
+Kalia_BarSalvation_Quest6Ask_1 = Etes-vous prêt à renverser le Marchand ?
+Kalia_BarSalvation_Quest6Ask_2 = <color=red>Cela va amener à la fin du jeu. Continuer ?</color>
+
+Kalia_BarSalvation_Quest6Ask_3 = Je suis prêt.
+Kalia_BarSalvation_Quest6Ask_4 = Bien. Allons-y. Au palais !
+
+Kalia_BarSalvation_MarklichtQuest1_1 = C'est bien ici, mais où sont les rebelles ?
+Kalia_BarSalvation_MarklichtQuest1_2 = Peut-être... Attends...
+Kalia_BarSalvation_MarklichtQuest1_3 = Ce tonneau est en réalité une porte. J'aurais dû m'en douter.
+Kalia_BarSalvation_MarklichtQuest1_4 = J'entre dans le tonneau. La pièce est dans le noir.
+Kalia_BarSalvation_MarklichtQuest1_5 = C'est ici ?
+Kalia_BarSalvation_MarklichtQuest1_6 = Soudain, je sens une arme dans mon dos.
+Kalia_BarSalvation_MarklichtQuest1_7 = Ne bouge pas.
+Kalia_BarSalvation_MarklichtQuest1_8 = Je viens en paix. Je suis avec le Marklicht.
+Kalia_BarSalvation_MarklichtQuest1_9 = Le Marklicht ? Vous êtes de la garde républicaine, non ?
+Kalia_BarSalvation_MarklichtQuest1_10 = J'ai changé de camp. Ma supérieure m'envoie vous parler.
+Kalia_BarSalvation_MarklichtQuest1_11 = Qu'est-ce qu'elle nous veut ?
+Kalia_BarSalvation_MarklichtQuest1_12 = Tout est dans cette lettre. Nous avons une offre pour vous.
+Kalia_BarSalvation_MarklichtQuest1_13 = Le Marklicht prépare une invasion de Kalia. Nous vous offrons des positions dans l'administration si vous nous aidez.
+Kalia_BarSalvation_MarklichtQuest1_14 = Quoi ? Laissez-moi voir.
+Kalia_BarSalvation_MarklichtQuest1_15 = ...
+Kalia_BarSalvation_MarklichtQuest1_16 = Hmm...
+Kalia_BarSalvation_MarklichtQuest1_17 = Je déteste l'idée de perdre notre indépendance, mais cette offre...
+Kalia_BarSalvation_MarklichtQuest1_18 = Hmm... Je vais y réfléchir avec mes camarades.
+Kalia_BarSalvation_MarklichtQuest1_19 = Qui est votre responsable ?
+Kalia_BarSalvation_MarklichtQuest1_20 = C'est la Générale Lara de la Forteresse Frontalière.
+Kalia_BarSalvation_MarklichtQuest1_21 = ... Très bien. Je lui enverrai une réponse quand nous aurons fait notre choix.
+Kalia_BarSalvation_MarklichtQuest1_22 = Maintenant, pars. Tu n'es pas la bienvenue, traître.
+Kalia_BarSalvation_MarklichtQuest1_23 = Sans hésitation, je quitte la salle.
+Kalia_BarSalvation_MarklichtQuest1_24 = Eh bien... Ca s'est plutôt bien déroulé.
+Kalia_BarSalvation_MarklichtQuest1_25 = Je devrais retourner à la forteresse.
+
+Kalia_BarSalvation_MerchantQuest1_1 = Robertus est bien ici. Il boit une biere.
+Kalia_BarSalvation_MerchantQuest1_2 = Oh. Vous êtes...
+Kalia_BarSalvation_MerchantQuest1_3 = Monsieur, je vais devoir vous demander de venir avec moi.
+Kalia_BarSalvation_MerchantQuest1_4 = Ah. Je savais que ce jour viendrait.
+Kalia_BarSalvation_MerchantQuest1_5 = On dirait qu'il a décidé de se débarrasser de moi une bonne fois pour toute.
+Kalia_BarSalvation_MerchantQuest1_6 = Je...
+Kalia_BarSalvation_MerchantQuest1_7 = Qu'il en soit ainsi. Je ne vais pas me rendre.
+Kalia_BarSalvation_MerchantQuest1_8 = Tout ça pour quoi ? Pour qu'il devienne encore plus riche ?
+Kalia_BarSalvation_MerchantQuest1_9 = Pourquoi il vous a envoyé ? Est-ce que j'ai fait du mal à son égo ? Suis-je meilleur en affaire ?
+Kalia_BarSalvation_MerchantQuest1_10 = Monsieur...
+Kalia_BarSalvation_MerchantQuest1_11 = Il est trop tard maintenant.
+Kalia_BarSalvation_MerchantQuest1_12 = Je meurs en sachant que j'ai choisi le bon chemin.
+Kalia_BarSalvation_MerchantQuest1_13 = Pouvez-vous dire de même ?
+Kalia_BarSalvation_MerchantQuest1_14 = Pas vraiment...
+Kalia_BarSalvation_MerchantQuest1_15 = Alors laissez-moi vous aider à trouver le salut.
+Kalia_BarSalvation_MerchantQuest1_16 = Robertus sort une arme. Je dois contre-attaquer, et vite !
+
+Kalia_BarSalvation_MerchantQuest1_17 = ... Je me sens mal.
+Kalia_BarSalvation_MerchantQuest1_18 = Je devrais partir. J'en ai assez fait.
+Kalia_BarSalvation_MerchantQuest1_19 = Le Marchand saura quoi faire par la suite.
+
+# ---------------------------------------------------------
+# ----------------- Kalia - Jackwell ----------------------
+# ---------------------------------------------------------
+
+Kalia_Library_Jackwell_Greetings_1 = Bonjour, mon ami.
+
+Kalia_Library_StartArcQuest_1 = C'est l'une des bibliothèques les plus célèbres de Kalia.
+Kalia_Library_StartArcQuest_2 = Elle a été créée et gérée par la famille Jackwell pendant plus d'un siècle.
+Kalia_Library_StartArcQuest_3 = J'ai entendu dire qu'ils étaient des sortes de chasseurs de trésors ou quelque chose comme ça.
+Kalia_Library_StartArcQuest_4 = Oh ! Êtes-vous bien celui que je crois ?
+Kalia_Library_StartArcQuest_5 = Je regarde autour de moi et je vois un homme en armure à côté de moi.
+Kalia_Library_StartArcQuest_6 = Euh ? Qui êtes-vous ?
+Kalia_Library_StartArcQuest_7 = Oh, pardonnez-moi mes manières. Je suis Jackwell, l'actuel propriétaire de cette bibliothèque.
+Kalia_Library_StartArcQuest_8 = Attends, c'est lui le propriétaire de cet endroit ?
+Kalia_Library_StartArcQuest_9 = Je n'ai pas pu m'empêcher de remarquer votre uniforme.
+Kalia_Library_StartArcQuest_10 = Vous êtes membre de la garde républicaine, n'est-ce pas ?
+Kalia_Library_StartArcQuest_11 = Oui. Avez-vous quelque chose à voir avec l'armée ?
+Kalia_Library_StartArcQuest_12 = Oh non. Je n'ai simplement pas pu résister à le faire remarquer.
+Kalia_Library_StartArcQuest_13 = J'ai ouvert une petite section musée à la bibliothèque, et il y a tellement d'uniformes.
+Kalia_Library_StartArcQuest_14 = Je... je vois.
+Kalia_Library_StartArcQuest_15 = Alors, c'est quoi cette armure ?
+Kalia_Library_StartArcQuest_16 = Oh, je suis ravie que vous l'ayez remarqué !
+Kalia_Library_StartArcQuest_17 = C'est une armure originale du lointain pays de Lonas.
+Kalia_Library_StartArcQuest_18 = Lonas ? Je n'en ai jamais entendu parler.
+Kalia_Library_StartArcQuest_19 = Je ne peux pas vous en vouloir, c'est loin à l'ouest. Encore plus loin que les anciens pays impériaux.
+Kalia_Library_StartArcQuest_20 = Bref, je suis tellement contente d'avoir cette armure.
+Kalia_Library_StartArcQuest_21 = Je l'ai achetée à un homme de la province Koskyenne de Runan.
+Kalia_Library_StartArcQuest_22 = Il se faisait appeler le Chevalier de Runan, ou quelque chose comme ça.
+Kalia_Library_StartArcQuest_23 = Je... je suppose.
+Kalia_Library_StartArcQuest_24 = Regardez-moi parler, vous êtes complètement perdu, n'est-ce pas ?
+Kalia_Library_StartArcQuest_25 = ... Maintenant que j'y pense.
+Kalia_Library_StartArcQuest_26 = J'aurai peut-être besoin des services d'un guerrier aussi fort que vous.
+Kalia_Library_StartArcQuest_27 = Euh ?
+Kalia_Library_StartArcQuest_28 = Puisque je gère cet endroit, j'ai décidé d'y contribuer un peu.
+Kalia_Library_StartArcQuest_29 = J'ai décidé d'écrire un livre sur la survie en milieu sauvage.
+Kalia_Library_StartArcQuest_30 = J'ai entendu des marins parler d'une nouvelle terre mystérieuse à l'est, alors me voilà.
+Kalia_Library_StartArcQuest_31 = Et où avez-vous besoin de moi ?
+Kalia_Library_StartArcQuest_32 = Je ne suis pas expert en survie. J'ai besoin d'aide.
+Kalia_Library_StartArcQuest_33 = J'ai juste besoin que vous fassiez quelques petites choses pour moi. Ça m'aidera à confirmer mes hypothèses.
+Kalia_Library_StartArcQuest_34 = Je te paierai à la demande, bien sûr.
+Kalia_Library_StartArcQuest_35 = ... D'accord. Je ferai ce que je peux.
+Kalia_Library_StartArcQuest_36 = Splendide. Mais attendez une seconde.
+Kalia_Library_StartArcQuest_37 = Jackwell déséquipe son armure, elle semble encombrante.
+Kalia_Library_StartArcQuest_38 = Bien, où en étais-je ? Ah, oui.
+Kalia_Library_StartArcQuest_39 = Pour votre première tâche, j'ai besoin que vous cueilliez quelques herbes.
+Kalia_Library_StartArcQuest_40 = Vous savez, les herbes médicinales.
+Kalia_Library_StartArcQuest_41 = Oh, vous parlez des longues pâtes ?
+Kalia_Library_StartArcQuest_42 = C'est comme ça que vous les appellez ?
+Kalia_Library_StartArcQuest_43 = Euh... Oui...
+Kalia_Library_StartArcQuest_44 = Bref, j'ai juste besoin que vous en trouviez.
+Kalia_Library_StartArcQuest_45 = Je vous récompenserai à la livraison.
+Kalia_Library_StartArcQuest_46 = D'accord.
+Kalia_Library_StartArcQuest_47 = Des longues pâtes... Je crois en avoir vu là où j'ai perdu le colis.
+Kalia_Library_StartArcQuest_48 = Cela vaut la peine d'essayer.
+
+Kalia_Library_ArcQuest1End_1 = Ah ! Je vois que vous avez trouvé les herbes.
+Kalia_Library_ArcQuest1End_2 = Comment elles s'appellent déjà ? Toucher de Kalibu ou quelque chose comme ça ?
+Kalia_Library_ArcQuest1End_3 = O.. Oui.
+Kalia_Library_ArcQuest1End_4 = Je ne peux pas lui dire leur vrai nom.
+Kalia_Library_ArcQuest1End_5 = Bref, qu'est-ce que vous voulez faire avec ?
+Kalia_Library_ArcQuest1End_6 = Oh, oui. J'ai oublié de vous dire ce que je voulais en faire, pas vrai ?
+Kalia_Library_ArcQuest1End_7 = Je voulais simplement les voir par moi-même, et essayer une recette que j'ai trouvé.
+Kalia_Library_ArcQuest1End_8 = Jackwell prend les plantes, et les ajoute à une mixture étrange.
+Kalia_Library_ArcQuest1End_9 = Des herbes seules ne servent à rien. Il faut les mixer avant.
+Kalia_Library_ArcQuest1End_10 = Voilà, on dirait que j'ai réussi.
+Kalia_Library_ArcQuest1End_11 = Il me donne une mixture étrange, mais familière.
+Kalia_Library_ArcQuest1End_12 = C'est techniquement un de ces "herbes médicinales" que vous pouvez acheter au marché.
+Kalia_Library_ArcQuest1End_13 = J'ai ajouté quelques autres plantes et du poivre.
+Kalia_Library_ArcQuest1End_14 = Du poivre ?
+Kalia_Library_ArcQuest1End_15 = Pourquoi pas ? En attendant, j'ai besoin de votre aide à nouveau.
+Kalia_Library_ArcQuest1End_16 = Maintenant que je sais comment traiter des blessures, j'aimerais que vous vous mettiez en "danger".
+Kalia_Library_ArcQuest1End_17 = Il y a une grotte dans la Forêt Blanche qui abrite beaucoup de loups.
+Kalia_Library_ArcQuest1End_18 = Allez là-bas, et tuez en quelques uns.
+Kalia_Library_ArcQuest1End_19 = Oh, et voilà votre paie pour m'avoir aidé.
+Kalia_Library_ArcQuest1End_20 = <color=blue>J'ai reçu 15 or de Jackwell.</color>
+Kalia_Library_ArcQuest1End_21 = Je devrais aller à la Forêt Blanche alors. 
+
+Kalia_Library_ArcQuest2End_1 = Avez-vous tué les loups ?
+Kalia_Library_ArcQuest2End_2 = Oui, mais je n'arrive pas à savoir comment cela vous aide.
+Kalia_Library_ArcQuest2End_3 = N'importe quoi. C'est tout ce dont j'ai besoin. Vous avez survécu dans une grotte remplie de loups.
+Kalia_Library_ArcQuest2End_4 = J'ai entendu dire que cette terre en était remplie. Alors j'ai besoin de savoir comment les vaincre.
+Kalia_Library_ArcQuest2End_5 = Les frapper a l'air suffisant.
+Kalia_Library_ArcQuest2End_6 = ... Incroyable !
+Kalia_Library_ArcQuest2End_7 = Vous pouvez me dire quelque chose d'autre sur votre île incroyable ?
+Kalia_Library_ArcQuest2End_8 = Oh, et bien... Apparemment, elle est plutôt montagneuse.
+Kalia_Library_ArcQuest2End_9 = J'aimerais que vous m'aidiez avec ça, par ailleurs.
+Kalia_Library_ArcQuest2End_10 = Prenez ces équipements, et montez au sommet du mont Vasalia.
+Kalia_Library_ArcQuest2End_11 = Vous êtes sérieux ?
+Kalia_Library_ArcQuest2End_12 = Oui. Maintenant, allez-y ! Pour la science !
+Kalia_Library_ArcQuest2End_13 = Oh, et avant ça, voilà votre paie.
+Kalia_Library_ArcQuest2End_14 = <color=blue>J'ai reçu 15 or de Jackwell.</color>
+Kalia_Library_ArcQuest2End_15 = Laissez-moi aussi vous soigner après votre combat avec les loups.
+Kalia_Library_ArcQuest2End_16 = <color=blue>J'ai gagné 2 points en "PV Bonus".</color>
+Kalia_Library_ArcQuest2End_17 = Bon, je devrais aller gravir une montagne maintenant...
+
+Kalia_Library_ArcQuest3End_1 = Avez-vous grimpé au sommet du mont Vasalia.
+Kalia_Library_ArcQuest3End_2 = Oui, mais il y avait un chemin. Je n'ai pas eu besoin de vos outils au final.
+Kalia_Library_ArcQuest3End_3 = Je vois... les autochtones peuvent créer des chemins pour vous...
+Kalia_Library_ArcQuest3End_4 = Mais de quoi il parle ?
+Kalia_Library_ArcQuest3End_5 = Tenez, voilà votre paie pour m'avoir aidé.
+Kalia_Library_ArcQuest3End_6 = <color=blue>J'ai reçu 15 or de Jackwell.</color>
+Kalia_Library_ArcQuest3End_7 = Oh, et j'ai fait de la recherche sur des méthodes d'escalade. Laissez-moi vous les enseigner.
+Kalia_Library_ArcQuest3End_8 = <color=blue>J'ai gagné 2 points en "Agilité".</color>
+Kalia_Library_ArcQuest3End_9 = C'est tout ce dont vous avez besoin pour votre livre ?
+Kalia_Library_ArcQuest3End_10 = Pas tout à fait. J'ai encore besoin de recherches pour mon dernier chapitre.
+Kalia_Library_ArcQuest3End_11 = Comme cette île est... une île, je me suis dit qu'il serait intéressant d'écrire à propos de la nage.
+Kalia_Library_ArcQuest3End_12 = Pourriez-vous aller au phare et nager un peu ?
+Kalia_Library_ArcQuest3End_13 = Je... Je suppose que oui.
+Kalia_Library_ArcQuest3End_14 = Ca devient de plus en plus ridicule...
+Kalia_Library_ArcQuest3End_15 = Fantastique. J'attends votre retour avec impatience.
+
+Kalia_Library_ArcQuest4End_1 = Alors ?
+Kalia_Library_ArcQuest4End_2 = Eh bien... Je sais nager ?
+Kalia_Library_ArcQuest4End_3 = Incroyable !
+Kalia_Library_ArcQuest4End_4 = Laissez-moi noter ça... "Les humains flottent"...
+Kalia_Library_ArcQuest4End_5 = J'ai peur pour la qualité de son livre.
+Kalia_Library_ArcQuest4End_6 = Ah ! Avec cela, ma recherche est finie. Je vais pouvoir commencer à écrire mon livre.
+Kalia_Library_ArcQuest4End_7 = Tenez, voici votre récompense.
+Kalia_Library_ArcQuest4End_8 = <color=blue>J'ai reçu 30 or de Jackwell.</color>
+Kalia_Library_ArcQuest4End_9 = Oh, et laissez-moi vous apprendre quelques trucs que j'ai appris sur la survie.
+Kalia_Library_ArcQuest4End_10 = <color=blue>J'ai gagné 2 points en "Resilience".</color>
+Kalia_Library_ArcQuest4End_11 = Donc, mon travail ici est fini ?
+Kalia_Library_ArcQuest4End_12 = Oui, je vais dès à présent commencer à écrire mon livre.
+Kalia_Library_ArcQuest4End_13 = Mais n'ayez crainte. Vous aurez une copie gratuite quand je l'aurai finie.
+Kalia_Library_ArcQuest4End_14 = Je vois... merci.
+Kalia_Library_ArcQuest4End_15 = Pas que j'en ai besoin...
+Kalia_Library_ArcQuest4End_16 = Bref, content d'en avoir fini.
+
+Kalia_Library_Jackwell_AboutYou_1 = Je suis le quatrième propriétaire de la bibliothèque Jackwell de Kalia.
+Kalia_Library_Jackwell_AboutYou_2 = Mon arrière-grand-père a créé cette bibliothèque pour permettre aux Kaliens d'apprendre sur tous les sujets.
+Kalia_Library_Jackwell_AboutYou_3 = On y vient pour apprendre la géographie, la nature et bien plus encore.
+Kalia_Library_Jackwell_AboutYou_4 = Mon arrière-grand-père, lui, avait un faible pour l'histoire et l'archéologie.
+Kalia_Library_Jackwell_AboutYou_5 = Avec son collègue Archibald von Ramos, il partit en expédition vers une ruine au nord.
+Kalia_Library_Jackwell_AboutYou_6 = Ils y trouvèrent des artefacts que vous pouvez voir dans cette bibliothèque.
+Kalia_Library_Jackwell_AboutYou_7 = Hélas, il est mort sur le chemin du retour.
+Kalia_Library_Jackwell_AboutYou_8 = Ils étaient assez loin au nord, et il est mort dans une tempête de neige.
+Kalia_Library_Jackwell_AboutYou_9 = Mon grand-père est ensuite devenu propriétaire de la bibliothèque et a continué à l'entretenir.
+Kalia_Library_Jackwell_AboutYou_10 = Aujourd'hui, j'en suis le propriétaire. Mais je ne partirai pas en expédition de sitôt.
+
+Kalia_Library_Jackwell_AboutKalia_1 = Kalia a été fondée il y a bien longtemps.
+Kalia_Library_Jackwell_AboutKalia_2 = Comme aujourd'hui, elle était principalement axée sur le commerce.
+Kalia_Library_Jackwell_AboutKalia_3 = Au bout d'un moment, elle a créé une sorte de confédération avec les villes voisines.
+Kalia_Library_Jackwell_AboutKalia_4 = Vorlan, Tolau et l'Île Mirage faisaient partie de cette confédération.
+Kalia_Library_Jackwell_AboutKalia_5 = Un jour, le lointain Empire Central arriva et fit de Kalia son protectorat.
+Kalia_Library_Jackwell_AboutKalia_6 = Cependant, rien ne changea vraiment pour la population.
+Kalia_Library_Jackwell_AboutKalia_7 = Plus tard, l'Empire sombra dans une guerre civile. Ce fut le chaos.
+Kalia_Library_Jackwell_AboutKalia_8 = Les pays voisins d'Orkva et, à l'époque, de Licht en profitèrent pour envahir le pays.
+Kalia_Library_Jackwell_AboutKalia_9 = Après un bref conflit, seules Kalia et l'Île du Mirage restèrent dans la confédération.
+Kalia_Library_Jackwell_AboutKalia_10 = Des rumeurs disent qu'Orkva veut envahir à nouveau. On verra bien où l'avenir nous mènera.
+
+Kalia_Library_Jackwell_AboutContinent_1 = Notre grand continent s'appelle Vasia.
+Kalia_Library_Jackwell_AboutContinent_2 = Kalia est située sur sa côte est.
+Kalia_Library_Jackwell_AboutContinent_3 = Nos voisins directs sont Orkva et le Marklicht. Je suppose que nous sommes aussi presque voisins des Nordiens.
+Kalia_Library_Jackwell_AboutContinent_4 = Le continent a longtemps été dominé par deux puissances : Alhaunia et l'Empire Central.
+Kalia_Library_Jackwell_AboutContinent_5 = Ils ont mené de nombreuses guerres à l'ouest du continent pour le contrôle de régions clés.
+Kalia_Library_Jackwell_AboutContinent_6 = De nos jours, Alhaunia est en déclin et l'Empire Central a été désintégré par une guerre civile.
+Kalia_Library_Jackwell_AboutContinent_7 = Géographiquement, les plus hautes montagnes du continent sont les Montagnes Blanches.
+Kalia_Library_Jackwell_AboutContinent_8 = Elles s'étendent des plaines centrales jusqu'à la province Koskyenne de Vlatyr.

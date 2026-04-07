@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(DoctorIberty;Kalia/Iberty/Doctor/Doctor_Enter)
+setInteractionChapter(Exit;MAP-City_Iberty-City_Iberty_Doctor)
+
+interact

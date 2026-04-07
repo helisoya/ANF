@@ -1,0 +1,9 @@
+# Talks about himself
+dialog(Owner;Citizen6;false;Tolau_Shop_AboutYou_1)
+dialog(Owner;Citizen6;false;Tolau_Shop_AboutYou_2)
+dialog(Owner;Citizen6;false;Tolau_Shop_AboutYou_3)
+dialog(Owner;Citizen6;false;Tolau_Shop_AboutYou_4)
+dialog(Owner;Citizen6;false;Tolau_Shop_AboutYou_5)
+
+
+load(Orkva/Tolau/Shop/Salesman)

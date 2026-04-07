@@ -1,0 +1,24 @@
+# Progress the secondary quest for the Max's Bar Waiter
+
+setCharacterAlpha(Citizen1;0;true)
+setCharacterPosition(Citizen1;Front)
+setCharacterRotation(Citizen1;Front)
+setCharacterAlpha(Citizen1;1;false)
+
+dialog([MC];_;false;Kalia_KalibuPark_SecondaryQuest_1)
+
+dialog(Man;Citizen1;false;Kalia_KalibuPark_SecondaryQuest_2)
+
+dialog([MC];_;false;Kalia_KalibuPark_SecondaryQuest_3)
+
+dialog(Man;Citizen1;false;Kalia_KalibuPark_SecondaryQuest_4)
+dialog(Man;Citizen1;false;Kalia_KalibuPark_SecondaryQuest_5)
+
+setCharacterAlpha(Citizen1;0;true)
+removeCharacter(Citizen1)
+
+dialog(narrator;_;false;Kalia_KalibuPark_SecondaryQuest_6)
+
+variable(secondaryQuest_Kalia_Max;1)
+
+load(Kalia/City/KalibuPark/Interaction)

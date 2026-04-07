@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_Marklicht-Region_Marklicht_BorderFortress)
+setInteractionChapter(Door;Marklicht/BorderFortress/Door_Check)
+
+interact

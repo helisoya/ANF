@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054cacc03761b40be47bb0c9a48b98, type: 3}
+  m_Name: Orkva_Vorlan_Railway
+  m_EditorClassIdentifier: 
+  ID: Orkva_Vorlan_Railway
+  locationID: Location_Orkva
+  floorsAmount: 4
+  endChapter: Orkva/Vorlan/CityHall/RailwayDungeonEnd
+  musicName: Dungeon_Orkva
+  canExitEarly: 0
+  earlyExitChapter: 
+  encounters:
+  - {fileID: 11400000, guid: b4c4e3e1c6800fb4d9e9179111ee8287, type: 2}
+  - {fileID: 11400000, guid: cef5a517ad4cba84c8b7cabd7acc8340, type: 2}
+  - {fileID: 11400000, guid: 606c6f07a4e1415458cebebd395a5b55, type: 2}
+  battleBackground: Underground
+  size: {x: 15, y: 15}
+  roomCount: 4
+  roomMaxSize: {x: 1, y: 8}
+  cellPrefab: {fileID: 8148160245439542551, guid: 8da3a4a9fc109b042b8d146482d46eb0,
+    type: 3}
+  stairsPrefab: {fileID: 2695139049142173575, guid: 618ccb67afd2b2e44a5a1b57a90f50fc,
+    type: 3}
+  propsToPlace: []

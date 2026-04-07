@@ -1,0 +1,6 @@
+setCharacterAlpha(Citizen3;0;true)
+setCharacterPosition(Citizen3;Owner)
+setCharacterRotation(Citizen3;Owner)
+setCharacterAlpha(Citizen3;1;false)
+
+load(Orkva/Okville/Shop/Interaction)

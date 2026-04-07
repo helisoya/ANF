@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_HopeHarbor-City_HopeHarbor_Docks)
+setInteractionChapter(Fisherman2;MirageIsland/HopeHarbor/Docks/Fisherman_Ask)
+
+interact

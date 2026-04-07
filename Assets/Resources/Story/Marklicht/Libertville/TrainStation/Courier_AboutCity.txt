@@ -1,0 +1,5 @@
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_AboutCity_1)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_AboutCity_2)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_AboutCity_3)
+
+load(Marklicht/Libertville/Trainstation/Courier)

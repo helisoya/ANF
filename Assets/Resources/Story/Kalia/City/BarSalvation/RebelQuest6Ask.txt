@@ -1,0 +1,7 @@
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Quest6Ask_1)
+
+dialog(narrator;_;false;Kalia_BarSalvation_Quest6Ask_2)
+
+choice Choice_Generic
+	Choice_Yes Kalia/City/BarSalvation/RebelQuest6AskGood
+	Choice_No Kalia/City/BarSalvation/Amanda_Exit

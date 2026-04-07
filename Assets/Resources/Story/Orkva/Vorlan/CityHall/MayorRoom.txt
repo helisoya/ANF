@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;Orkva/Vorlan/CityHall/MayorRoom_Exit)
+setInteractionChapter(Citizen2;Orkva/Vorlan/CityHall/Mayor_Enter)
+
+interact

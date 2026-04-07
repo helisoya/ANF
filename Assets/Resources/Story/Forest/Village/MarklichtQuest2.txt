@@ -1,0 +1,17 @@
+dialog([MC];_;false;NorthVillage_Elder_MarklichtQuest2_1)
+
+dialog(Elder;Northman1;false;NorthVillage_Elder_MarklichtQuest2_2)
+dialog(Elder;Northman1;false;NorthVillage_Elder_MarklichtQuest2_3)
+
+dialog([MC];_;false;NorthVillage_Elder_MarklichtQuest2_4)
+dialog([MC];_;false;NorthVillage_Elder_MarklichtQuest2_5)
+dialog([MC];_;false;NorthVillage_Elder_MarklichtQuest2_6)
+
+dialog(Elder;Northman1;false;NorthVillage_Elder_MarklichtQuest2_7)
+dialog(Elder;Northman1;false;NorthVillage_Elder_MarklichtQuest2_8)
+
+variable(marklichtQuest_2;2)
+
+dialog(narrator;_;false;NorthVillage_Elder_MarklichtQuest2_9)
+
+load(Forest/Village/Elder_Exit)

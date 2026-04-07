@@ -1,0 +1,7 @@
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutBandits_1)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutBandits_2)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutBandits_3)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutBandits_4)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutBandits_5)
+
+load(Forest/OrderHQ/Chief)

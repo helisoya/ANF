@@ -1,0 +1,7 @@
+dialog(Waldo;Waldo;false;Souvenir_Waldo_AboutYou_1)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_AboutYou_2)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_AboutYou_3)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_AboutYou_4)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_AboutYou_5)
+
+load(SouvenirShop/Waldo_Default)

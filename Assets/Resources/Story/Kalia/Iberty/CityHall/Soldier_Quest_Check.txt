@@ -1,0 +1,10 @@
+if(mainQuest_1 < 1) load(Kalia/Iberty/CityHall/Soldier_Quest_Cant)
+else{
+	switch secondaryQuest_Iberty_Catacombs
+		-1 Kalia/Iberty/CityHall/Soldier_Quest_Start
+		0 Kalia/Iberty/CityHall/Soldier_Quest_During
+		1 Kalia/Iberty/CityHall/Soldier_Quest_End
+		100 Kalia/Iberty/CityHall/Soldier_Quest_Done
+
+}
+

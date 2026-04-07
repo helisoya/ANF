@@ -1,0 +1,13 @@
+# You can only enter the cavern if you need to
+if(arcQuest_Jackwell_2 = 0){
+	dungeon(Forest_Cavern;0)
+	return()
+}
+
+if(arcQuest_Dragon_1 >= 0 & arcQuest_Dragon_1 < 5){
+	dungeon(Forest_Cavern;0)
+	return()
+}
+
+dialog(narrator;_;false;ForestCavern_Enter_Cant_1)
+load(Forest/Cavern/Interaction)

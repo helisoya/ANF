@@ -1,0 +1,19 @@
+setCharacterAlpha(SecretPolice;0;true)
+setCharacterPosition(SecretPolice;Front)
+setCharacterRotation(SecretPolice;Front)
+setCharacterAlpha(SecretPolice;1;false)
+
+dialog(Soldier;SecretPolice;false;Vorlan_Plaza_Soldier_Default_1)
+
+# Start battle if quest is 0
+if(secondaryQuest_Vorlan_Mayor = 0){
+	load(Orkva/Vorlan/Plaza/Soldier_MayorQuest)
+	return()
+}
+
+setCharacterAlpha(SecretPolice;0;true)
+setCharacterPosition(SecretPolice;ByFountain)
+setCharacterRotation(SecretPolice;ByFountain)
+setCharacterAlpha(SecretPolice;1;false)
+
+load(Orkva/Vorlan/Plaza/Interaction)

@@ -1,0 +1,8 @@
+setCharacterAlpha(SoldierKalia1;0;true)
+setCharacterPosition(SoldierKalia1;Front)
+setCharacterRotation(SoldierKalia1;Front)
+setCharacterAlpha(SoldierKalia1;1;false)
+
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_Greetings_1)
+
+load(Kalia/Outpost/Soldier)

@@ -1,0 +1,40 @@
+clearStack()
+setFg(1)
+
+setLocals(forest)
+
+playMusic(Exploration_Forest)
+removeAllCharacters()
+setBackground(Forest/Road)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_WhiteForest)
+
+autosave()
+
+
+if(arcQuest_Jackwell_1 = 0){
+	fadeFg(0;false)
+	load(Forest/Field/JackwellArcQuest1_0)
+	return()
+} 
+
+if(arcQuest_Dragon_3 = 0){
+	fadeFg(0;false)
+	load(Forest/Field/DragonArcQuest3_0)
+	return()
+}
+
+if(arcQuest_Order_4 = 100){
+	addCharacter(OrderSoldier;false)
+	setCharacterPosition(OrderSoldier;OrderSoldier)
+	setCharacterRotation(OrderSoldier;OrderSoldier)
+	setInteractionChapter(OrderSoldier;Forest/Field/OrderSoldier)
+}
+
+fadeFg(0;false)
+
+load(Forest/Field/Interaction)

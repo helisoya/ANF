@@ -1,0 +1,11 @@
+# Doctor heals you
+
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_Heal_1)
+
+fadeBg(1;true)
+healAllFollowers()
+fadeBg(0;false)
+
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_Heal_2)
+
+load(Kalia/Iberty/Doctor/Doctor)

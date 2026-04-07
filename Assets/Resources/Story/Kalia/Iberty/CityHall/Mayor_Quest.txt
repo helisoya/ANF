@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_AboutCity Kalia/Iberty/CityHall/Mayor_AboutCity
+	Choice_AboutBandits Kalia/Iberty/CityHall/Mayor_AboutBandits
+	Choice_GivePackage Kalia/Iberty/CityHall/Mayor_DoctorQuest0
+	Choice_Nothing Kalia/Iberty/CityHall/Mayor_Exit

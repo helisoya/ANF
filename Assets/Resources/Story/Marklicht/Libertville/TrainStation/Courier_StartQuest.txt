@@ -1,0 +1,11 @@
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_StartQuest_1)
+dialog([MC];_;false;Libertville_TrainStation_Courier_StartQuest_2)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_StartQuest_3)
+
+variable(secondaryQuest_Libertville_Courier;0)
+addGold(20)
+
+dialog(narrator;_;false;Libertville_TrainStation_Courier_StartQuest_4)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_StartQuest_5)
+
+load(Marklicht/Libertville/Trainstation/Courier)

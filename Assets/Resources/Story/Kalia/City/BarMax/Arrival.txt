@@ -1,0 +1,32 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/BarMax)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Kalia)
+
+autosave()
+
+addCharacter(Waiter1;false)
+setCharacterPosition(Waiter1;Waiter)
+setCharacterRotation(Waiter1;Waiter)
+
+if(arcQuest_Guard_2 != 0 & arcQuest_Guard_4 = -1){
+	addCharacter(GUARD;false)
+	setCharacterPosition(GUARD;GUARD)
+	setCharacterRotation(GUARD;GUARD)
+	setCharacterBody(GUARD;Sit;true)
+	setInteractionChapter(GUARD;Kalia/City/BarMax/GUARD_Enter)
+}
+
+fadeFg(0;false)
+
+load(Kalia/City/BarMax/Interaction)

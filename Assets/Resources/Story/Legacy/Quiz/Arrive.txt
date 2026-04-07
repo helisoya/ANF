@@ -1,0 +1,15 @@
+if(mainQuest != 5) playMusic(Exploration_Rickey)
+if(mainQuest = 5) playMusic(Exploration2_Rickey)
+
+removeAllCharacters()
+setBackground(RickeyLandWaldoQuiz)
+if(rain = 1) changeSkybox(Cloud)
+
+if(mainQuest > 4) load(Quiz/Interaction)
+
+addCharacter(Waldo;false)
+setCharacterPosition(Waldo;Desk)
+setCharacterRotation(Waldo;Desk)
+setInteractionChapter(Waldo;Quiz/Waldo_Enter)
+
+load(Quiz/Interaction)

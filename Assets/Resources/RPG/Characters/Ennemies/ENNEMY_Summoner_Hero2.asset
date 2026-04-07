@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f974e9b21989644b86a9cf2ecc893c, type: 3}
+  m_Name: ENNEMY_Summoner_Hero2
+  m_EditorClassIdentifier: 
+  data:
+    ID: ENNEMY_Summoner_Hero2
+    modelID: Hero2
+    stats:
+      _serializedList:
+      - Key: 0
+        Value: 20
+      - Key: 1
+        Value: 12
+      - Key: 2
+        Value: 12
+      - Key: 3
+        Value: 0
+      - Key: 4
+        Value: 15
+      - Key: 5
+        Value: 30
+    weapon: TWOHANDED_KATANA
+    armor: ARMOR_HERO2
+    level: 1
+    currentHP: 0
+    currentSP: 0
+    exp: 20
+    canChangeEquipement: 1
+  constants: {fileID: 11400000, guid: d5d2cceb8bb533f46a86f844720a7e29, type: 2}

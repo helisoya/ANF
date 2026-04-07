@@ -1,0 +1,7 @@
+dialog(Waldo;Waldo;false;Quiz_Waldo_End_Normal_1)
+dialog(Waldo;Waldo;false;Quiz_Waldo_End_Normal_2)
+
+if(shopQuest = -1) load(HauntedHouse/MiniGame_Shop)
+
+playMusic(Exploration_Rickey)
+load(HauntedHouse/Waldo_Exit)

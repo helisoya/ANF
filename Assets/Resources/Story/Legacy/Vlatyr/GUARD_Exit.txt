@@ -1,0 +1,8 @@
+setCharacterAlpha(GUARD;0;true)
+
+setCharacterPosition(GUARD;NPCSpot)
+setCharacterRotation(GUARD;NPCSpot)
+
+setCharacterAlpha(GUARD;1;false)
+
+load(Vlatyr/Interaction)

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054cacc03761b40be47bb0c9a48b98, type: 3}
+  m_Name: Kalia_MarklichtQuest6
+  m_EditorClassIdentifier: 
+  ID: Kalia_MarklichtQuest6
+  locationID: Location_Kalia
+  floorsAmount: 5
+  endChapter: Endings/Marklicht_B
+  musicName: Dungeon_Kalia
+  canExitEarly: 0
+  earlyExitChapter: 
+  encounters:
+  - {fileID: 11400000, guid: 5e6fa07b4e105a84d9d46c364b880752, type: 2}
+  - {fileID: 11400000, guid: 7c2ad589e2caec445919d9da98a6b975, type: 2}
+  - {fileID: 11400000, guid: 4f9cc242010e8cd48b4aabbb7ce987a2, type: 2}
+  - {fileID: 11400000, guid: a96f1d5df37666f4480ba023814dcc14, type: 2}
+  battleBackground: Planks
+  size: {x: 20, y: 20}
+  roomCount: 4
+  roomMaxSize: {x: 4, y: 4}
+  cellPrefab: {fileID: 8148160245439542551, guid: edb22482b92065e4a9e6b2e36a08521a,
+    type: 3}
+  stairsPrefab: {fileID: 2695139049142173575, guid: 618ccb67afd2b2e44a5a1b57a90f50fc,
+    type: 3}
+  propsToPlace: []

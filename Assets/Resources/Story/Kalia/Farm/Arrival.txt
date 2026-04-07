@@ -1,0 +1,21 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaRegion)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/Region/Farm)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_KaliaFarm)
+
+autosave()
+
+fadeFg(0;false)
+
+if(secondaryQuest_Kalia_Delivery = 0) load(Kalia/Farm/SecondaryQuest)
+else load(Kalia/Farm/Interaction)

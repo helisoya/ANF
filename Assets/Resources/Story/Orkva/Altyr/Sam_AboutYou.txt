@@ -1,0 +1,6 @@
+dialog(Sam;Sam;false;Altyr_Sam_AboutYou_1)
+dialog(Sam;Sam;false;Altyr_Sam_AboutYou_2)
+dialog(Sam;Sam;false;Altyr_Sam_AboutYou_3)
+dialog(Sam;Sam;false;Altyr_Sam_AboutYou_4)
+
+load(Orkva/Altyr/Sam)

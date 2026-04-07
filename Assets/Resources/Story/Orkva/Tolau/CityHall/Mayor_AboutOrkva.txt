@@ -1,0 +1,8 @@
+# Talks about Orkva
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_AboutOrkva_1)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_AboutOrkva_2)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_AboutOrkva_3)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_AboutOrkva_4)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_AboutOrkva_5)
+
+load(Orkva/Tolau/CityHall/Mayor)

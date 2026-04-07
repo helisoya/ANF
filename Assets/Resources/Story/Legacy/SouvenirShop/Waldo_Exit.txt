@@ -1,0 +1,8 @@
+setCharacterAlpha(Waldo;0;true)
+
+setCharacterPosition(Waldo;WaldoSpot)
+setCharacterRotation(Waldo;WaldoSpot)
+
+setCharacterAlpha(Waldo;1;false)
+
+load(SouvenirShop/Interaction)

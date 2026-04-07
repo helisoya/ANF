@@ -1,0 +1,5 @@
+# Shop of the Tolau's salesman
+
+shop(TolauSalesman)
+
+load(Orkva/Tolau/Shop/Salesman)

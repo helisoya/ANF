@@ -1,0 +1,11 @@
+# Checks for the hangar
+
+# Launch the dungeon for GUARD's Arc (Quest 1)
+if(arcQuest_Guard_1 = 0){
+	load(Kalia/City/Docks/GUARDArcQuest1)
+	return()
+}
+
+
+dialog(narrator;_;false;Kalia_Docks_Hangar_Locked_1)
+load(Kalia/City/Docks/Interaction)

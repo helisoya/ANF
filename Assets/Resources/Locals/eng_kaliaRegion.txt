@@ -1,0 +1,530 @@
+# ---------------------------------------------------------
+# ------------------- Iberty ------------------------------
+# ---------------------------------------------------------
+
+Iberty_Doctor_Greetings_1 = Hi. How can I help you ?
+
+Iberty_Doctor_Heal_1 = Of course. Let me check your injuries...
+Iberty_Doctor_Heal_2 = There, you are now all patched up.
+
+Iberty_Doctor_AboutYou_1 = I'm the only doctor of Iberty.
+Iberty_Doctor_AboutYou_2 = Actually, I guess I'm the only Kalian doctor outside the city.
+Iberty_Doctor_AboutYou_3 = Still, my job is quite easy for the most part.
+Iberty_Doctor_AboutYou_4 = I just need to help the sick from the village and its surroundings.
+Iberty_Doctor_AboutYou_5 = I you ever need treatment, don't hesitate.
+
+Iberty_Doctor_SideQuest_Done_1 = Not at this time, no.
+
+Iberty_Doctor_SideQuest_Start_1 = Actually, you might be able to help me with something.
+Iberty_Doctor_SideQuest_Start_2 = I need to deliver this medicine to the mayor. It's for his cold.
+Iberty_Doctor_SideQuest_Start_3 = Sadly, I am currently occupied with a patient that needs my undivided attention.
+Iberty_Doctor_SideQuest_Start_4 = Could you deliver it for me ? I'll pay you upon delivery.
+Iberty_Doctor_SideQuest_Start_5 = Alright, I'll see what I can do. 
+Iberty_Doctor_SideQuest_Start_6 = Thanks, you'll find the mayor in the city hall.
+
+Iberty_Doctor_SideQuest_InProgress_1 = You'll find the mayor in the city hall.
+
+Iberty_Doctor_SideQuest_End_1 = I delivered the medicine.
+Iberty_Doctor_SideQuest_End_2 = Ah, I can't thank you enough.
+Iberty_Doctor_SideQuest_End_3 = Here, take this for your troubles.
+Iberty_Doctor_SideQuest_End_4 = <color=blue>I received 10 gold from the doctor.</color>
+Iberty_Doctor_SideQuest_End_5 = Did you need anything else ?
+
+Iberty_Shop_Greetings_1 = Hello ! Welcome to my shop.
+
+Iberty_Shop_MainQuest1_0_1 = Wait... I recognize you.
+Iberty_Shop_MainQuest1_0_2 = You were the one I found this morning near the forest, right ?
+Iberty_Shop_MainQuest1_0_3 = Are you alright ? You took quite a beating.
+Iberty_Shop_MainQuest1_0_4 = Yes, yes... I'm fine, thank you.
+Iberty_Shop_MainQuest1_0_5 = I have something to ask you, though.
+Iberty_Shop_MainQuest1_0_6 = Did you happen to see a courier near me ?
+Iberty_Shop_MainQuest1_0_7 = Or anything out of the ordinary ?
+Iberty_Shop_MainQuest1_0_8 = Hmm... Let me see...
+Iberty_Shop_MainQuest1_0_9 = You were alone. That, I'm sure.
+Iberty_Shop_MainQuest1_0_10 = If there was a courier, they moved him before I came by.
+Iberty_Shop_MainQuest1_0_11 = This doesn't help me at all.
+Iberty_Shop_MainQuest1_0_12 = But hold on... I did find something odd.
+Iberty_Shop_MainQuest1_0_13 = He takes a piece of clothing from his pocket.
+Iberty_Shop_MainQuest1_0_14 = I found this near you. Maybe it belongs to your courier friend ?
+Iberty_Shop_MainQuest1_0_15 = I take the clothing...
+Iberty_Shop_MainQuest1_0_16 = I don't know for sure. But all I know is that it's not mine.
+Iberty_Shop_MainQuest1_0_17 = So it could be the courier's, or our attacker's.
+Iberty_Shop_MainQuest1_0_18 = Do you mind if I take this with me ?
+Iberty_Shop_MainQuest1_0_19 = Not at all. You'll have more use for this than me.
+Iberty_Shop_MainQuest1_0_20 = Hmm... I think I could use the dog back at the palace to find the owner of this clothing.
+Iberty_Shop_MainQuest1_0_21 = At least, if the Merchant lets me go on a mission ever again...
+Iberty_Shop_MainQuest1_0_22 = I should make my report. To the palace in the big city I go...
+Iberty_Shop_MainQuest1_0_23 = By the way, before I forget.
+Iberty_Shop_MainQuest1_0_24 = The shopkeeper takes out a knife from behind his counter.
+Iberty_Shop_MainQuest1_0_25 = Take this. I think the bandits stole your belongings, including your weapons.
+Iberty_Shop_MainQuest1_0_26 = Thank you.
+Iberty_Shop_MainQuest1_0_27 = Rusty, but it will keep me safe.
+Iberty_Shop_MainQuest1_0_28 = <color=blue>I can equip weapons and armors in the party menu.</color>
+Iberty_Shop_MainQuest1_0_29 = My shop is always open during the day. So don't hesitate to come see my wares.
+Iberty_Shop_MainQuest1_0_30 = I sell weapons, armors, and other things you might find useful.
+Iberty_Shop_MainQuest1_0_31 = The bandits stole all my money, but it couldn't hurt to take a look.
+
+Iberty_Shop_AboutYou_1 = I'm just a traveling shopkeeper.
+Iberty_Shop_AboutYou_2 = I usually travel between Iberty and Vlatyr, in the west.
+Iberty_Shop_AboutYou_3 = It's a nice journey. I even come back with exclusive Koskian wares from Vlatyr.
+Iberty_Shop_AboutYou_4 = Of course, I also bring wares from Kalia to Vlatyr.
+Iberty_Shop_AboutYou_5 = The only downside of this travel is the White Forest, as you can imagine.
+Iberty_Shop_AboutYou_6 = Too many bandits... You can't go through without at least one bodyguard.
+
+Iberty_Port_Fisherman_Greetings_1 = .... Hi....
+
+Iberty_Port_Fisherman_AboutYou_1 = ..............
+Iberty_Port_Fisherman_AboutYou_2 = ...Me ? I'm just a local fisherman.
+Iberty_Port_Fisherman_AboutYou_3 = Simply catching fish to feed my family...
+Iberty_Port_Fisherman_AboutYou_4 = Before... I could even sell the excess to the big city...
+Iberty_Port_Fisherman_AboutYou_5 = But that was before... before the Merchant...
+
+Iberty_Port_Fisherman_Quest_Cant_1 = ........
+Iberty_Port_Fisherman_Quest_Cant_2 = Maybe.... But not now....
+Iberty_Port_Fisherman_Quest_Cant_3 = ...I need someone that can fight.
+
+Iberty_Port_Fisherman_Quest_Start_1 = ..... Actually...
+Iberty_Port_Fisherman_Quest_Start_2 = You seem strong... I have a bandit problem.
+Iberty_Port_Fisherman_Quest_Start_3 = I was fishing along the coast the other day.
+Iberty_Port_Fisherman_Quest_Start_4 = I caught the biggest fish I had ever seen.
+Iberty_Port_Fisherman_Quest_Start_5 = .... I also caught a nice bandit.
+Iberty_Port_Fisherman_Quest_Start_6 = He stole my catch, and I had to run away.
+Iberty_Port_Fisherman_Quest_Start_7 = Even today, he's still lurking at that fishing spot.
+Iberty_Port_Fisherman_Quest_Start_8 = Could you... deal with him ?
+Iberty_Port_Fisherman_Quest_Start_9 = I'll even pay you... 5 coins...
+Iberty_Port_Fisherman_Quest_Start_10 = That's not a lot, but it could make good practice.
+Iberty_Port_Fisherman_Quest_Start_11 = Okay, I'll see what I can do.
+Iberty_Port_Fisherman_Quest_Start_12 = .... Good.
+Iberty_Port_Fisherman_Quest_Start_13 = Tell me when you're ready...
+Iberty_Port_Fisherman_Quest_Start_14 = I'll guide you to the fishing spot.
+
+Iberty_Port_Fisherman_Quest_Do_1 = ....Ready to go deal with that bandit ?
+Iberty_Port_Fisherman_Quest_Do_2 = ... Good. Follow me...
+Iberty_Port_Fisherman_Quest_Do_3 = I follow the fisherman along the coast.
+Iberty_Port_Fisherman_Quest_Do_4 = ... After about half an hour, we finally managed to get to his fishing spot.
+Iberty_Port_Fisherman_Quest_Do_5 = And sure enough, the bandit is still there.
+Iberty_Port_Fisherman_Quest_Do_6 = Hey ! Who are you ?
+Iberty_Port_Fisherman_Quest_Do_7 = This is my place ! You need to pay to use it.
+Iberty_Port_Fisherman_Quest_Do_8 = 500 gold, that sounds like a fair price, no ?
+Iberty_Port_Fisherman_Quest_Do_9 = Leave.
+Iberty_Port_Fisherman_Quest_Do_10 = Oh, you wanna play tough ?
+Iberty_Port_Fisherman_Quest_Do_11 = Fine ! Don't say I didn't warn you.
+Iberty_Port_Fisherman_Quest_Do_12 = The bandit is on the ground.
+Iberty_Port_Fisherman_Quest_Do_13 = ... Eh... I knew you could do it.
+Iberty_Port_Fisherman_Quest_Do_14 = Here, take your gold.
+Iberty_Port_Fisherman_Quest_Do_15 = <color=blue>You received 5 gold.</color>
+Iberty_Port_Fisherman_Quest_Do_16 = I'll stay here... I have some fish to catch...
+Iberty_Port_Fisherman_Quest_Do_17 = Alright. I'll head back then.
+Iberty_Port_Fisherman_Quest_Do_18 = Try not to get attacked by bandits again.
+Iberty_Port_Fisherman_Quest_Do_19 = I part ways with the fisherman and head back to Iberty.
+
+Iberty_Port_Fisherman_Quest_Done_1 = ... Not at this time, no...
+
+Iberty_CityHall_Mayor_Greetings_1 = Hello. Welcome to Iberty's city hall.
+
+Iberty_CityHall_Mayor_AboutCity_1 = The town of Iberty has existed for almost as long as the city of Kalia.
+Iberty_CityHall_Mayor_AboutCity_2 = We mainly subsisted by selling our fish and wood to the big city.
+Iberty_CityHall_Mayor_AboutCity_3 = But about 20 years ago, the Merchant told us we couldn't anymore.
+Iberty_CityHall_Mayor_AboutCity_4 = "Find somewhere else to sell your wares." He told us.
+Iberty_CityHall_Mayor_AboutCity_5 = We couldn't. Not with the bandits in the forest. Not with the naval blockade down south.
+Iberty_CityHall_Mayor_AboutCity_6 = The town then began its long decline.
+Iberty_CityHall_Mayor_AboutCity_7 = Many people left. Some went to the big city, others went as far West as Kosky.
+Iberty_CityHall_Mayor_AboutCity_8 = In the end, only those who couldn't afford to move remained.
+Iberty_CityHall_Mayor_AboutCity_9 = ... 20 years ago, Iberty was twice as big. Can you imagine ?
+
+Iberty_CityHall_Mayor_AboutBandits_1 = There is famously a bandit infestation in the White Forest.
+Iberty_CityHall_Mayor_AboutBandits_2 = If you ever decide to go to the Marklicht, or Orkva for that matter, you are bound to encounter at least a few groups.
+Iberty_CityHall_Mayor_AboutBandits_3 = It got so bad that Kalia and the Marklicht even decided to create an anti-bandit organisation.
+Iberty_CityHall_Mayor_AboutBandits_4 = They are called "The Kalian-Marklichtian Order Againt Bandits". Or the Order for short.
+Iberty_CityHall_Mayor_AboutBandits_5 = If you ever feel like helping them clear the forest, feel free to go see them.
+Iberty_CityHall_Mayor_AboutBandits_6 = Their HQ is located in a remote part of the White Forest.
+
+Iberty_CityHall_Mayor_DoctorQuest0_1 = I have your medicine that the doctor wanted to give you.
+Iberty_CityHall_Mayor_DoctorQuest0_2 = He was busy, so he asked me to come.
+Iberty_CityHall_Mayor_DoctorQuest0_3 = Oh, right ! Thank you very much.
+Iberty_CityHall_Mayor_DoctorQuest0_4 = I caught a cold recently. This medicine will help me recover nicely.
+Iberty_CityHall_Mayor_DoctorQuest0_5 = I should go back to the doctor now.
+Iberty_CityHall_Mayor_DoctorQuest0_6 = Anything else ?
+
+Iberty_CityHall_Soldier_Greetings_1 = Nothing to report, sir.
+
+Iberty_CityHall_Soldier_AboutYou_1 = I'm actually a local.
+Iberty_CityHall_Soldier_AboutYou_2 = My father is a fisherman, maybe you have already seen him.
+Iberty_CityHall_Soldier_AboutYou_3 = I enrolled in the army about 20 years ago.
+Iberty_CityHall_Soldier_AboutYou_4 = That was when the sanctions on Iberty came into effect.
+Iberty_CityHall_Soldier_AboutYou_5 = As everyone left, bandits started to venture into the area.
+Iberty_CityHall_Soldier_AboutYou_6 = I couldn't bear it, so I asked for permission and came back.
+Iberty_CityHall_Soldier_AboutYou_7 = Now, my job is to make sure bandits don't attack us again.
+Iberty_CityHall_Soldier_AboutYou_8 = It's not stimulating, but it's a needed job.
+
+Iberty_CityHall_Soldier_AboutCamp_1 = The camp, or camp "Hope", is the HQ of the Kalian military.
+Iberty_CityHall_Soldier_AboutCamp_2 = Everyone joining the military goes to the camp.
+Iberty_CityHall_Soldier_AboutCamp_3 = After vigorous training, you may be selected to relocate to the big city.
+Iberty_CityHall_Soldier_AboutCamp_4 = If you do very well, you may even be asked to join the republican guard.
+Iberty_CityHall_Soldier_AboutCamp_5 = But... You already knew that, don't you ?
+Iberty_CityHall_Soldier_AboutCamp_6 = Your uniform, your rank. You are a republican guard, no ?
+Iberty_CityHall_Soldier_AboutCamp_7 = Hmm... You may be the first one to actually recognize me.
+Iberty_CityHall_Soldier_AboutCamp_8 = Well, to be fair... Soldiers barely come to these parts.
+Iberty_CityHall_Soldier_AboutCamp_9 = And the republican guard hasn't made any official outings since... the incident 2 years ago.
+Iberty_CityHall_Soldier_AboutCamp_10 = ... It was a real nightmare...
+Iberty_CityHall_Soldier_AboutCamp_11 = The official story was that the guard merely reorganized and is now stationed in the Merchant's palace.
+Iberty_CityHall_Soldier_AboutCamp_12 = But I wonder, is it the truth, sir ?
+Iberty_CityHall_Soldier_AboutCamp_13 = Ignorance is bliss...
+
+Iberty_CityHall_Soldier_Quest_Cant_1 = Actually, I might.
+Iberty_CityHall_Soldier_Quest_Cant_2 = But you need to be equipped for that.
+Iberty_CityHall_Soldier_Quest_Cant_3 = Come back once you have a weapon.
+
+Iberty_CityHall_Soldier_Quest_Start_1 = Actually, I'm in trouble.
+Iberty_CityHall_Soldier_Quest_Start_2 = Bandits entered the town's catacombs, and I can't get them out.
+Iberty_CityHall_Soldier_Quest_Start_3 = Whenever I try, city hall gets attacked by another group.
+Iberty_CityHall_Soldier_Quest_Start_4 = I think there is a group of bandits in the nearby cliffs, watching me.
+Iberty_CityHall_Soldier_Quest_Start_5 = So, could you clear the catacombs for me ? I'll be guarding the town in the meantime.
+Iberty_CityHall_Soldier_Quest_Start_6 = Okay, I'll see what I can do.
+Iberty_CityHall_Soldier_Quest_Start_7 = Thank you, sir.
+
+Iberty_CityHall_Soldier_Quest_During_1 = You need to clear the town's catacombs.
+
+Iberty_CityHall_Soldier_Quest_End_1 = I cleared the catacombs.
+Iberty_CityHall_Soldier_Quest_End_2 = Fantastic, that'll teach them.
+Iberty_CityHall_Soldier_Quest_End_3 = I asked the mayor and managed to get some money for you.
+Iberty_CityHall_Soldier_Quest_End_4 = Here. It's not much, but it's to thank you for your help.
+Iberty_CityHall_Soldier_Quest_End_5 = <color=blue>I received 10 gold.</color>
+Iberty_CityHall_Soldier_Quest_End_6 = Anyway. Anything else, sir ?
+
+Iberty_CityHall_Soldier_Quest_Done_1 = Not at this time, sir.
+
+Iberty_Catacombs_Quest_1 = Bandits are hiding in here.
+Iberty_Catacombs_Quest_2 = Am I ready to enter ?
+Iberty_Catacombs_Quest_3 = I enter the catacombs...
+
+Iberty_Catacombs_Quest_4 = After walking for a bit, I finally find the bandits.
+Iberty_Catacombs_Quest_5 = Hey, who are you ?!
+Iberty_Catacombs_Quest_6 = Damn... I thought the others would take care of it.
+Iberty_Catacombs_Quest_7 = Whatever, don't expect to come out alive !
+Iberty_Catacombs_Quest_8 = The bandits attack me.
+
+Iberty_Catacombs_Quest_9 = The bandits are on the ground.
+Iberty_Catacombs_Quest_10 = It seems they were trying to steal some valuables from the corpses.
+Iberty_Catacombs_Quest_11 = ... Let's go back to the city hall.
+Iberty_Catacombs_Quest_12 = That guard will want to know I dealt with the problem. 
+
+Iberty_Catacombs_MerchantQuest4_1 = Okay, this is where the rebels are hiding.
+Iberty_Catacombs_MerchantQuest4_2 = Time to take them out for good.
+Iberty_Catacombs_MerchantQuest4_3 = ... I guess.
+Iberty_Catacombs_MerchantQuest4_4 = Hey, what's that supposed to mean ?
+Iberty_Catacombs_MerchantQuest4_5 = We are protecting the boss, remember ?
+Iberty_Catacombs_MerchantQuest4_6 = ...
+Iberty_Catacombs_MerchantQuest4_7 = When he dies. Who will be in charge ?
+Iberty_Catacombs_MerchantQuest4_8 = If the rebels are dead, who will be left ?
+Iberty_Catacombs_MerchantQuest4_9 = Me ? Sword ?
+Iberty_Catacombs_MerchantQuest4_10 = Alright. I'm going in !
+Iberty_Catacombs_MerchantQuest4_11 = Wait ! You can't just-
+Iberty_Catacombs_MerchantQuest4_12 = You are compromised, Shield. I can feel it.
+Iberty_Catacombs_MerchantQuest4_13 = I'll kill those rebels no matter what.
+Iberty_Catacombs_MerchantQuest4_14 = The safety of the boss is in jeopardy.
+Iberty_Catacombs_MerchantQuest4_15 = Sword storms the catacombs. I should follow him.
+Iberty_Catacombs_MerchantQuest4_16 = <color=blue>Sword removed from the party.</color>
+
+Iberty_Catacombs_MerchantQuest4_17 = I get to a large room.
+Iberty_Catacombs_MerchantQuest4_18 = Bodies of rebels are lying on the ground.
+Iberty_Catacombs_MerchantQuest4_19 = I guess Sword came through here.
+Iberty_Catacombs_MerchantQuest4_20 = Still, to think he would be able to kill them all.
+Iberty_Catacombs_MerchantQuest4_21 = It seems he also managed to kill the rebel leaders on his own.
+Iberty_Catacombs_MerchantQuest4_22 = I look at one of the leader's body. I can see something in her pocket.
+Iberty_Catacombs_MerchantQuest4_23 = I take it out. It's a letter.
+Iberty_Catacombs_MerchantQuest4_24 = ...
+Iberty_Catacombs_MerchantQuest4_25 = It is destined to the local shrine's priest.
+Iberty_Catacombs_MerchantQuest4_26 = I'm not going to read it. It seems like a farewell letter.
+Iberty_Catacombs_MerchantQuest4_27 = Maybe I could deliver it if I get the time.
+Iberty_Catacombs_MerchantQuest4_28 = What are you doing ?
+Iberty_Catacombs_MerchantQuest4_29 = You did a nasty job here.
+Iberty_Catacombs_MerchantQuest4_30 = So what ? I did what I had to do !
+Iberty_Catacombs_MerchantQuest4_31 = Are you saying I should have let them live ?
+Iberty_Catacombs_MerchantQuest4_32 = We could have arrested and interrogated them.
+Iberty_Catacombs_MerchantQuest4_33 = Murder is never the only awnser.
+Iberty_Catacombs_MerchantQuest4_34 = Murder ? Listen to yourself. You are sounding like the rebels.
+Iberty_Catacombs_MerchantQuest4_35 = I'm thinking about the future. You should do the same.
+Iberty_Catacombs_MerchantQuest4_36 = What will we do when the boss dies ? Nobody has the strength to take his place.
+Iberty_Catacombs_MerchantQuest4_37 = He'll never die ! He has a plan. Trust him.
+Iberty_Catacombs_MerchantQuest4_38 = I fear your optimism.
+Iberty_Catacombs_MerchantQuest4_39 = Grr... What's wrong with you ? You're all sentimental all of a sudden.
+Iberty_Catacombs_MerchantQuest4_40 = He may be going senile, but this doesn't have to mean anything.
+Iberty_Catacombs_MerchantQuest4_41 = I'll go back to Kalia. You should do the same and appologise.
+Iberty_Catacombs_MerchantQuest4_42 = ... I wonder.
+Iberty_Catacombs_MerchantQuest4_43 = Maybe I could deliver that letter beforehand.
+Iberty_Catacombs_MerchantQuest4_44 = I exit the catacombs.
+
+# ---------------------------------------------------------
+# ------------------------ Farm ---------------------------
+# ---------------------------------------------------------
+
+KaliaFarm_SecondaryQuest_1 = This is the place I'm supposed to deliver this letter to.
+KaliaFarm_SecondaryQuest_2 = I put the letter in the mailbox.
+KaliaFarm_SecondaryQuest_3 = At least now I don't have to worry about this anymore.
+KaliaFarm_SecondaryQuest_4 = I wonder what this was all about...
+
+# ---------------------------------------------------------
+# ------------- Kalibu's Shrine ---------------------------
+# ---------------------------------------------------------
+
+KalibuShrine_Priest_Greetings_1 = Kalibu bless you.
+
+KalibuShrine_Priest_AboutKalibu_1 = In the Suori faith, we believe the continent was created by the great Kalibu.
+KalibuShrine_Priest_AboutKalibu_2 = Taking the form of a Caribou, he shaped the world in many ways.
+KalibuShrine_Priest_AboutKalibu_3 = First, by raising mountains and planting forests.
+KalibuShrine_Priest_AboutKalibu_4 = Then, by watching over us, by shielding us from disaster.
+KalibuShrine_Priest_AboutKalibu_5 = In one instance, he banished Lord Elk, instigator of chaos.
+KalibuShrine_Priest_AboutKalibu_6 = In another, he helped a knight defeat a demon.
+KalibuShrine_Priest_AboutKalibu_7 = Whatever we do, wherever we go, Kalibu knows.
+KalibuShrine_Priest_AboutKalibu_8 = Please remember this, as you go through your life.
+
+KalibuShrine_Priest_AboutOrkva_1 = The Suori pray to Kalibu, but not everyone is happy with that.
+KalibuShrine_Priest_AboutOrkva_2 = The perfidious Orkvians invaded the land down south centuries ago.
+KalibuShrine_Priest_AboutOrkva_3 = Their goal was greed, of course. The cities of Tolau and Vorlan were at the time quite rich.
+KalibuShrine_Priest_AboutOrkva_4 = But they soon realized that the local Suoris wouldn't accept their rule.
+KalibuShrine_Priest_AboutOrkva_5 = So they decided to starve them and colonize the land with "good Orkvians".
+KalibuShrine_Priest_AboutOrkva_6 = Of course, our oppressed brothers and sisters held on, further infuriating the Orkvians.
+KalibuShrine_Priest_AboutOrkva_7 = Now, the cities are under a blockade. You can't get goods in anymore. Let alone people.
+KalibuShrine_Priest_AboutOrkva_8 = You'd think they would just have killed them off.
+KalibuShrine_Priest_AboutOrkva_9 = But apparently, they want the cities intact. Ironic...
+KalibuShrine_Priest_AboutOrkva_10 = The effects of the blockade are also felt outside Orkva.
+KalibuShrine_Priest_AboutOrkva_11 = Places like Mirage Island are cut off from the world due to the battleships roaming around.
+KalibuShrine_Priest_AboutOrkva_12 = To say people used to go there to pray at the local shrine...
+
+KalibuShrine_Priest_AboutYou_1 = Me ? I'm barely worth mentioning...
+KalibuShrine_Priest_AboutYou_2 = But if you must know, I'm from the big city.
+KalibuShrine_Priest_AboutYou_3 = I lived there with my two sisters and my mother until a few years ago.
+KalibuShrine_Priest_AboutYou_4 = My father was the previous priest of this shrine.
+KalibuShrine_Priest_AboutYou_5 = We couldn't live nearby because of the bandits, so we came on sundays.
+KalibuShrine_Priest_AboutYou_6 = When he died, I decided to continue his life's work by becoming a priest.
+KalibuShrine_Priest_AboutYou_7 = As for my family, they still live in the city. They come by from time to time.
+KalibuShrine_Priest_AboutYou_8 = I just wish my sisters wouldn't do such dangerous things...
+
+KalibuShrine_Priest_RebelFactionQuest1_1 = Oh, hello, Anna.
+KalibuShrine_Priest_RebelFactionQuest1_2 = Hi, sis !
+KalibuShrine_Priest_RebelFactionQuest1_3 = Other sis told me to greet you too.
+KalibuShrine_Priest_RebelFactionQuest1_4 = I see. Are you both doing well ?
+KalibuShrine_Priest_RebelFactionQuest1_5 = Yep ! Sis is preparing the usual. You know...
+KalibuShrine_Priest_RebelFactionQuest1_6 = I know. It's important to her.
+KalibuShrine_Priest_RebelFactionQuest1_7 = Still, I hope you would be more careful.
+KalibuShrine_Priest_RebelFactionQuest1_8 = But we have to do it...
+KalibuShrine_Priest_RebelFactionQuest1_9 = I know, I know...
+KalibuShrine_Priest_RebelFactionQuest1_10 = By the way... Who's he ?
+KalibuShrine_Priest_RebelFactionQuest1_11 = Oh, he's the new recruit in the rebellion.
+KalibuShrine_Priest_RebelFactionQuest1_12 = I'm just here to make sure she doesn't get hurt.
+KalibuShrine_Priest_RebelFactionQuest1_13 = Ah, yes. Amanda has been very protective every since father's death.
+KalibuShrine_Priest_RebelFactionQuest1_14 = ... Actually...
+KalibuShrine_Priest_RebelFactionQuest1_15 = Do you need help with anything ?
+KalibuShrine_Priest_RebelFactionQuest1_16 = Yes. I just received a letter from a colleague in Orkva.
+KalibuShrine_Priest_RebelFactionQuest1_17 = He's operating illegaly and Orkva wants him dead.
+KalibuShrine_Priest_RebelFactionQuest1_18 = In his letter, he told me that the army found out his position.
+KalibuShrine_Priest_RebelFactionQuest1_19 = This is bad. We have to save him !
+KalibuShrine_Priest_RebelFactionQuest1_20 = Would you ? I don't want you to put yourself in too much danger.
+KalibuShrine_Priest_RebelFactionQuest1_21 = It's alright. We'll deal with those soldiers.
+KalibuShrine_Priest_RebelFactionQuest1_22 = Thank you. He hides at the old shrine near Vorlan.
+KalibuShrine_Priest_RebelFactionQuest1_23 = Let's go save him !
+
+KalibuShrine_Priest_MerchantQuest1_1 = I can't bring myself to do it...
+KalibuShrine_Priest_MerchantQuest1_2 = Still, I must.
+KalibuShrine_Priest_MerchantQuest1_3 = I give the letter to the priest. She seems rather disturbed.
+KalibuShrine_Priest_MerchantQuest1_4 = I go away as soon as I'm done. I don't want to know what was in it.
+KalibuShrine_Priest_MerchantQuest1_5 = The priest seems rather sad...
+KalibuShrine_Priest_MerchantQuest1_6 = Am I destined to do this forever ?
+KalibuShrine_Priest_MerchantQuest1_7 = Innocents are dying. And I'm just helping the man responsible.
+KalibuShrine_Priest_MerchantQuest1_8 = What should I do ? What can I do ?
+
+# ---------------------------------------------------------
+# -------------- Kalia's Outpost --------------------------
+# ---------------------------------------------------------
+
+KaliaOutpost_Soldier_Greetings_1 = Nothing to report, sir.
+
+KaliaOutpost_Soldier_AboutYou_1 = I'm in charge of this outpost.
+KaliaOutpost_Soldier_AboutYou_2 = My job is to make sure bandits from the forest don't come near the nearby cities.
+KaliaOutpost_Soldier_AboutYou_3 = Most of the time, nothing happens. So I write in my journal.
+
+KaliaOutpost_Soldier_NeedHelp_1 = No, I'm fine. Thank you.
+KaliaOutpost_Soldier_NeedHelp_2 = But if you want to help with the bandits, you should go to the Order's HQ in the forest.
+KaliaOutpost_Soldier_NeedHelp_3 = Last I heard, they are in need of manpower to fight back the bandits.
+
+# ---------------------------------------------------------
+# -------------------- Camp Hope --------------------------
+# ---------------------------------------------------------
+
+CampHope_GUARD_ArcQuest4Start_1 = Hey. Are you ready to go ?
+CampHope_GUARD_ArcQuest4Start_2 = Good.
+CampHope_GUARD_ArcQuest4Start_3 = So, how do you plan to get us a plane ?
+CampHope_GUARD_ArcQuest4Start_4 = I know the guy in charge of the camp's planes.
+CampHope_GUARD_ArcQuest4Start_5 = In fact, I know him well enough that I could "borrow" a plane without him noticing.
+CampHope_GUARD_ArcQuest4Start_6 = Really ?
+CampHope_GUARD_ArcQuest4Start_7 = Yes. He leaves the planes unattended during his breaks.
+CampHope_GUARD_ArcQuest4Start_8 = And when I say breaks, I mean he leaves the camp for a short while.
+CampHope_GUARD_ArcQuest4Start_9 = Which gives us an opportunity to come in, take a plane, fill it for takeoff, and leave.
+CampHope_GUARD_ArcQuest4Start_10 = I...
+CampHope_GUARD_ArcQuest4Start_11 = I'm afraid for your military, you know ?
+CampHope_GUARD_ArcQuest4Start_12 = Well... Let's get this over with...
+CampHope_GUARD_ArcQuest4Start_13 = We enter the camp.
+CampHope_GUARD_ArcQuest4Start_14 = Since I'm wearing the republican guard uniform, nobody questions our presence.
+CampHope_GUARD_ArcQuest4Start_15 = As I predicted, the officer in charge of the planes is on break.
+CampHope_GUARD_ArcQuest4Start_16 = I enter his office and fill out the paperwork allowing our plane to leave.
+CampHope_GUARD_ArcQuest4Start_17 = The way the system works is that they'll never question the paperworks.
+CampHope_GUARD_ArcQuest4Start_18 = When we'll take off, the camp's staff will check the paperworks.
+CampHope_GUARD_ArcQuest4Start_19 = Since the officer in charge is absent, they'll just think it was scheduled.
+CampHope_GUARD_ArcQuest4Start_20 = By doing that, we'll be out of Kalia before he gets back to his post.
+CampHope_GUARD_ArcQuest4Start_21 = I'll just need to return the plane while he's on his break, and they'll be none the wiser.
+CampHope_GUARD_ArcQuest4Start_22 = We execute our plan and take one of the old planes out of its hangar.
+CampHope_GUARD_ArcQuest4Start_23 = We manage to take off without problems. The camp seems to have been fooled.
+CampHope_GUARD_ArcQuest4Start_24 = Now all we need to do is to get to Vlatyr.
+
+CampHope_RebelQuest5_1 = This is it. Camp Hope...
+CampHope_RebelQuest5_2 = Are you sure you want to go alone ?
+CampHope_RebelQuest5_3 = I must. Bos might get hurt otherwise.
+CampHope_RebelQuest5_4 = Take care of Ace for me.
+CampHope_RebelQuest5_5 = Sure thing ! Good luck.
+CampHope_RebelQuest5_6 = I enter the camp. It is weirdly deserted.
+CampHope_RebelQuest5_7 = Something's up. But it's not a trap.
+CampHope_RebelQuest5_8 = Sword is not that thoughtful.
+CampHope_RebelQuest5_9 = Shield !
+CampHope_RebelQuest5_10 = There you are. I was beginning to think you ran away.
+CampHope_RebelQuest5_11 = Why would I flee from a fight ?
+CampHope_RebelQuest5_12 = By the way. Where are the soldiers ?
+CampHope_RebelQuest5_13 = None of your business !
+CampHope_RebelQuest5_14 = Kalia may be going down, but I'll bring you with me !
+CampHope_RebelQuest5_15 = ?
+CampHope_RebelQuest5_16 = Going down ? What is he talking about.
+CampHope_RebelQuest5_17 = Where's Bos ?
+CampHope_RebelQuest5_18 = In this tent. You'll get to see him soon...
+CampHope_RebelQuest5_19 = I guess we fight until one of use bleed out ?
+CampHope_RebelQuest5_20 = That you're right ! I'll crush you like an insect !
+CampHope_RebelQuest5_21 = This time, I'll win !
+CampHope_RebelQuest5_22 = No backstabs, no dogs, no little girls ! Victory is assured !
+CampHope_RebelQuest5_23 = Sure, now get ready.
+
+CampHope_RebelQuest5_24 = This time, it's over. Sword is dead.
+CampHope_RebelQuest5_25 = His arrogance was his downfall...
+CampHope_RebelQuest5_26 = Quick. I have to free Bos before the camp's soldiers come back.
+CampHope_RebelQuest5_27 = I enter the nearby tent, and sure enough, Bos is there.
+CampHope_RebelQuest5_28 = [MC]. You actually did it.
+CampHope_RebelQuest5_29 = Save it for later. We have to get out before the soldiers come back.
+CampHope_RebelQuest5_30 = They won't be coming back.
+CampHope_RebelQuest5_31 = What ?
+CampHope_RebelQuest5_32 = [MC], you don't know how I got captured, do you ?
+CampHope_RebelQuest5_33 = I was following Sword, when he stumbled upon something.
+CampHope_RebelQuest5_34 = He discovered a dead platoon of Orkvian soldiers in the White Forest. Killed by bandits, I think.
+CampHope_RebelQuest5_35 = One of them had their orders on paper.
+CampHope_RebelQuest5_36 = I couldn't read it. But Sword started yelling about an invasion.
+CampHope_RebelQuest5_37 = An invasion ? Orkva wants to invade Kalia ?
+CampHope_RebelQuest5_38 = That's madness. They can barely hold on to Vorlan and Tolau.
+CampHope_RebelQuest5_39 = I guess the higher ups think they can salvage this by stealing Kalia's resources or something.
+CampHope_RebelQuest5_40 = Anyway, after that happened, I got jumped by a bandit.
+CampHope_RebelQuest5_41 = I fought back, but I alerted Sword. He captured me shortly after.
+CampHope_RebelQuest5_42 = I see. This is bad.
+CampHope_RebelQuest5_43 = I'll go to Amanda right now. We have to speed up our plans.
+CampHope_RebelQuest5_44 = The Merchant needs to fall and Orkva reppelled.
+CampHope_RebelQuest5_45 = I'll go with you.
+CampHope_RebelQuest5_46 = Before you do, I have an assignment for you.
+CampHope_RebelQuest5_47 = Go to Tolau's Farm and set it on fire.
+CampHope_RebelQuest5_48 = But that will starve the population.
+CampHope_RebelQuest5_49 = That's my point. With any luck, it will divert some of Orkva's soldiers to containing the fire and its resulting unrest.
+CampHope_RebelQuest5_50 = The fewer soldiers we have to worry about, the better.
+CampHope_RebelQuest5_51 = I'll see what I can do. But it's possible we don't have time for this.
+CampHope_RebelQuest5_52 = True. I'll leave that up to you.
+CampHope_RebelQuest5_53 = Come to the HQ when you're ready. The final battle is about to begin.
+CampHope_RebelQuest5_54 = Oh, and... Thanks.
+CampHope_RebelQuest5_55 = I know you don't like me. And to be frank, I don't trust you fully either.
+CampHope_RebelQuest5_56 = But I guess I'm at least glad you're on our side for now.
+CampHope_RebelQuest5_57 = ... I get it. Thanks.
+CampHope_RebelQuest5_58 = Sometimes, you have to do drastic things. Even if it means bending a few rules and killing innocents.
+CampHope_RebelQuest5_59 = That's my personal policy. You're free not to adhere to it.
+CampHope_RebelQuest5_60 = Bos goes back to Kalia. I should weigh my next move.
+CampHope_RebelQuest5_61 = I just saw Bos leave. Are you okay ?
+CampHope_RebelQuest5_62 = Yeah. Sword is no more.
+CampHope_RebelQuest5_63 = Also, Orkva might be invading soon. We have to hurry.
+CampHope_RebelQuest5_64 = Uh ? Uh, right behind you then !
+
+CampHope_MerchantQuest2_1 = Alright. Time to get that prototype.
+CampHope_MerchantQuest2_2 = I enter the camp and go to the testing grounds.
+CampHope_MerchantQuest2_3 = I used to guard the area near the prototype at some point. So I know where to go.
+CampHope_MerchantQuest2_4 = I meet with the officer in charge and explain that I need to take the prototype.
+CampHope_MerchantQuest2_5 = I lie to him and explain that the Merchant want to see it in his office.
+CampHope_MerchantQuest2_6 = The officer seems perplexed. But accepts in the end.
+CampHope_MerchantQuest2_7 = With the prototype in hand, it's time I go back to the lighthouse.
+
+CampHope_MerchantQuest5_1 = Back so soon...
+CampHope_MerchantQuest5_2 = I hope Sword didn't manage to convince the entire military.
+CampHope_MerchantQuest5_3 = They have never been too happy to have the Merchant in charge.
+CampHope_MerchantQuest5_4 = But I'm not sure if they are that interested in restoring democracy.
+CampHope_MerchantQuest5_5 = I enter the camp.
+CampHope_MerchantQuest5_6 = Soldiers are gathered at the center. They are listening to someone.
+CampHope_MerchantQuest5_7 = I move towards them without being noticed.
+CampHope_MerchantQuest5_8 = At the center, Sword is giving a speech.
+CampHope_MerchantQuest5_9 = I guess he's trying to convince them to support his coup.
+CampHope_MerchantQuest5_10 = Brothers ! We have to do something !
+CampHope_MerchantQuest5_11 = Shield, the traitor, killed our beloved leader.
+CampHope_MerchantQuest5_12 = He usurped the title that should have gone to me.
+CampHope_MerchantQuest5_13 = With him, instability is inevitable.
+CampHope_MerchantQuest5_14 = Come with me, and let's march to the palace.
+CampHope_MerchantQuest5_15 = We can't let the peasants think they can take advantage of the situation.
+CampHope_MerchantQuest5_16 = The rebels may very well return with new leaders.
+CampHope_MerchantQuest5_17 = I don't know. I never liked the Merchant anyway.
+CampHope_MerchantQuest5_18 = My family was part of the rebel movement. No way I'll support this idiot.
+CampHope_MerchantQuest5_19 = Eh ! If I can bash some skulls, count me in !
+CampHope_MerchantQuest5_20 = The soldiers start arguing between themselfs.
+CampHope_MerchantQuest5_21 = It seems not a lot of people support him in the end.
+CampHope_MerchantQuest5_22 = I make my way towards the center.
+CampHope_MerchantQuest5_23 = You... Shield !
+CampHope_MerchantQuest5_24 = Hello, Sword. Nice party you're having.
+CampHope_MerchantQuest5_25 = I listened to your words. Do you ever not lie ?
+CampHope_MerchantQuest5_26 = The Merchant told you before me that I was to become the heir.
+CampHope_MerchantQuest5_27 = This isn't fair ! I worked the hardest. It was supposed to be my role !
+CampHope_MerchantQuest5_28 = We don't need to fight, Sword. Surrender.
+CampHope_MerchantQuest5_29 = Surrender, and I'll promise you won't face too much consequences.
+CampHope_MerchantQuest5_30 = I'll even overlook that whole "scheming to take power" thing.
+CampHope_MerchantQuest5_31 = Grr...
+CampHope_MerchantQuest5_32 = The soldiers look confused. It seems even less people support him.
+CampHope_MerchantQuest5_33 = I'll show you what I'm capable of !
+CampHope_MerchantQuest5_34 = Fighting in the middle of a military camp ?
+CampHope_MerchantQuest5_35 = All of those who support my bid to power, to me !
+CampHope_MerchantQuest5_36 = A few dozen soldiers out the entire Kalian military moves to his side.
+CampHope_MerchantQuest5_37 = Not a lot of support, uh ?
+CampHope_MerchantQuest5_38 = Shut up !
+CampHope_MerchantQuest5_39 = Let's end this, once and for all.
+CampHope_MerchantQuest5_40 = Sure. I'll show you I don't need expendable pawns to win.
+
+CampHope_MerchantQuest5_41 = How ?
+CampHope_MerchantQuest5_42 = I don't understand.
+CampHope_MerchantQuest5_43 = You weren't the best of us. Why ?
+CampHope_MerchantQuest5_44 = Sometimes, using your head is more important.
+CampHope_MerchantQuest5_45 = The late boss understood that.
+CampHope_MerchantQuest5_46 = You lack vision. What would you have done if you had defeated me ?
+CampHope_MerchantQuest5_47 = What would have been the future of Kalia under your rule ?
+CampHope_MerchantQuest5_48 = ...
+CampHope_MerchantQuest5_49 = Shut up !
+CampHope_MerchantQuest5_50 = This isn't the end. Far from it.
+CampHope_MerchantQuest5_51 = I have allies in Orkva. I'll join them.
+CampHope_MerchantQuest5_52 = Soon, I'll come back with a gigantic army. You'll see !
+CampHope_MerchantQuest5_53 = Sword runs off with the few men loyal to him.
+CampHope_MerchantQuest5_54 = Sir. Are you sure you want to let them loose ?
+CampHope_MerchantQuest5_55 = It doesn't really matter in the end.
+CampHope_MerchantQuest5_56 = I'm more worried about that whole Orkva talk.
+CampHope_MerchantQuest5_57 = Sir, about that.
+CampHope_MerchantQuest5_58 = Our intelligence network suggested that Orkva might be planning an invasion.
+CampHope_MerchantQuest5_59 = What ? When ?
+CampHope_MerchantQuest5_60 = We aren't sure. But, what are your orders ?
+CampHope_MerchantQuest5_61 = ... I'll go to Fort Wall, to talk to them.
+CampHope_MerchantQuest5_62 = Have the army on high alert, and positioned near the border.
+CampHope_MerchantQuest5_63 = If they enter our territory, shoot first.
+CampHope_MerchantQuest5_64 = Yes sir.
+CampHope_MerchantQuest5_65 = Also, sir. About the men that fled with Sword.
+CampHope_MerchantQuest5_66 = They are part of a special operative squad. They were always rather extreme.
+CampHope_MerchantQuest5_67 = Hmm... They could be problematic.
+CampHope_MerchantQuest5_68 = If you want to deal with them, I think I know where to find them.
+CampHope_MerchantQuest5_69 = Where, then ?
+CampHope_MerchantQuest5_70 = They have a hideout near Mount Vasalia.
+CampHope_MerchantQuest5_71 = I'm sure you'll find them here.
+CampHope_MerchantQuest5_72 = Okay. Its worth a try.
+CampHope_MerchantQuest5_73 = I can't forget that my top priority is to meet with the Orkvian at Fort Wall.
+CampHope_MerchantQuest5_74 = Maybe I can convince them not to attack ?
+CampHope_MerchantQuest5_75 = Then again, they may just capture me...
+CampHope_MerchantQuest5_76 = Oh well. Its worth a try.

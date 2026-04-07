@@ -1,0 +1,7 @@
+setCharacterAlpha(OrderChief;0;true)
+setCharacterBody(OrderChief;SitCuffs;true)
+setCharacterPosition(OrderChief;Couch)
+setCharacterRotation(OrderChief;Couch)
+setCharacterAlpha(OrderChief;1;false)
+
+load(Orkva/Tolau/Courthouse/Interaction)

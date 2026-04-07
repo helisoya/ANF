@@ -1,0 +1,11 @@
+setCharacterAlpha(Lame;0;true)
+setCharacterPosition(Lame;Front)
+setCharacterRotation(Lame;Front)
+setCharacterAlpha(Lame;1;false)
+
+dialog(Lame;Lame;false;BorderFortress_Join_1)
+dialog(Lame;Lame;false;BorderFortress_Join_2)
+
+choice Choice_Generic
+	Choice_Yes Marklicht/BorderFortress/JoinQuest
+	Choice_No Marklicht/BorderFortress/JoinQuest_No

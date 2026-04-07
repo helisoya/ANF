@@ -1,0 +1,7 @@
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_AboutCity_1)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_AboutCity_2)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_AboutCity_3)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_AboutCity_4)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_AboutCity_5)
+
+load(MirageIsland/HopeHarbor/Inn/Owner)

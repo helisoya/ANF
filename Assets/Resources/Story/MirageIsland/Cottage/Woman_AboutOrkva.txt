@@ -1,0 +1,5 @@
+dialog(Woman;Citizen4;false;MirageCottage_Woman_AboutOrkva_1)
+dialog(Woman;Citizen4;false;MirageCottage_Woman_AboutOrkva_2)
+dialog(Woman;Citizen4;false;MirageCottage_Woman_AboutOrkva_3)
+
+load(MirageIsland/Cottage/Woman)

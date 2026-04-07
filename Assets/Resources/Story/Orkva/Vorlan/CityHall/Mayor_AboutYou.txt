@@ -1,0 +1,14 @@
+# Talks about himself
+if(secondaryQuest_Vorlan_Mayor = 100){
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_Saved_1)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_Saved_2)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_Saved_3)
+}
+else{
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_1)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_2)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_3)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutYou_4)
+}
+
+load(Orkva/Vorlan/CityHall/Mayor)

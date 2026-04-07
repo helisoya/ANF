@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_OrderSomething Kalia/City/BarSalvation/Waiter_OrderSomething
+	Choice_NeedHelp Kalia/City/BarSalvation/Waiter_NeedHelp
+	Choice_AboutYou Kalia/City/BarSalvation/Waiter_AboutYou
+	Choice_Nothing Kalia/City/BarSalvation/Waiter_Exit

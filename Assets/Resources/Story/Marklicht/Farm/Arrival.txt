@@ -1,0 +1,25 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Region/Farm)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Marklicht)
+
+autosave()
+
+fadeFg(0;false)
+
+if(secondaryQuest_Libertville_Courier = 0){
+	load(Marklicht/Farm/CourierQuest)
+}
+else{
+	load(Marklicht/Farm/Interaction)
+}

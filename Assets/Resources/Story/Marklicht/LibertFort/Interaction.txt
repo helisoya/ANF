@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_Marklicht-Region_Marklicht_LibertFort)
+
+interact

@@ -1,0 +1,37 @@
+clearStack()
+setFg(1)
+
+setLocals(islandRegion)
+
+playMusic(null)
+setBackground(MirageIsland/Region/TempleInside)
+
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_MirageIsland)
+
+setBg(1)
+fadeFg(0;false)
+
+dialog(narrator;_;false;MirageForest_Temple_11)
+dialog(narrator;_;false;MirageForest_Temple_12)
+dialog(narrator;_;false;MirageForest_Temple_13)
+dialog(narrator;_;false;MirageForest_Temple_14)
+dialog(narrator;_;false;MirageForest_Temple_15)
+dialog(narrator;_;false;MirageForest_Temple_16)
+dialog(narrator;_;false;MirageForest_Temple_17)
+
+if(rebelQuest_3 > -1){
+	load(MirageIsland/Forest/Temple_Rebel)
+	return()
+}
+
+if(marklichtQuest_3 > -1){
+	load(MirageIsland/Forest/Temple_Marklicht)
+	return()
+}
+
+if(merchantQuest_3 > -1){
+	load(MirageIsland/Forest/Temple_Merchant)
+	return()
+}

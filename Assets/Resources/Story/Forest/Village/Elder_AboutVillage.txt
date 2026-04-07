@@ -1,0 +1,9 @@
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_1)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_2)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_3)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_4)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_5)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_6)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutVillage_7)
+
+load(Forest/Village/Elder)

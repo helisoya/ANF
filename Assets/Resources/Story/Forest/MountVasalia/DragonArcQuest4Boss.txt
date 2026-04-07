@@ -1,0 +1,20 @@
+# Encounter event for the boss of the Monster Hunter Arc (Quest 4)
+playMusic(null)
+
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_1)
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_2)
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_3)
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_4)
+
+cameraRotation(-20;0;0;false;false)
+addCharacter(Dragon;true)
+setCharacterPosition(Dragon;Front)
+setCharacterRotation(Dragon;Front)
+setCharacterAlpha(Dragon;1;false)
+
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_5)
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_6)
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_7)
+dialog(narrator;_;false;MountVasalia_DragonArcQuest4_8)
+
+battle(BATTLE_DragonArc_Dragon2;Grass;Forest/MountVasalia/DragonArcQuest4BossEnd)

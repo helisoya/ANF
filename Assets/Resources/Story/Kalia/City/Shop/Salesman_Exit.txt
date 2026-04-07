@@ -1,0 +1,6 @@
+setCharacterAlpha(Salesman2;0;true)
+setCharacterPosition(Salesman2;SalesmanSpot)
+setCharacterRotation(Salesman2;SalesmanSpot)
+setCharacterAlpha(Salesman2;1;false)
+
+load(Kalia/City/Shop/Interaction)

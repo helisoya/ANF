@@ -1,0 +1,8 @@
+dialog(Soldier;OrderSoldier;false;BanditMine_OrderArcQuest4_No_1)
+
+setCharacterAlpha(OrderSoldier;0;true)
+setCharacterPosition(OrderSoldier;OrderSoldier)
+setCharacterRotation(OrderSoldier;OrderSoldier)
+setCharacterAlpha(OrderSoldier;1;false)
+
+load(Forest/BanditMine/Interaction)

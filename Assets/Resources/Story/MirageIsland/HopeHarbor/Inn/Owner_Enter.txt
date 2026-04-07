@@ -1,0 +1,8 @@
+setCharacterAlpha(Citizen4;0;true)
+setCharacterPosition(Citizen4;Front)
+setCharacterRotation(Citizen4;Front)
+setCharacterAlpha(Citizen4;1;false)
+
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_Greetings_1)
+
+load(MirageIsland/HopeHarbor/Inn/Owner)

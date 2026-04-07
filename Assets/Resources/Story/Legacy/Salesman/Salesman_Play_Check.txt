@@ -1,0 +1,5 @@
+if(shootSalesmanQuest = 0) Salesman/Salesman_Play
+
+dialog(Salesman;Salesman;false;Salesman_Salesman_Done_1)
+
+load(Salesman/Salesman_Default)

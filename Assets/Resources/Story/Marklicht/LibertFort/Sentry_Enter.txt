@@ -1,0 +1,13 @@
+setCharacterAlpha(MarklichtSoldier2;0;true)
+setCharacterPosition(MarklichtSoldier2;Front)
+setCharacterRotation(MarklichtSoldier2;Front)
+setCharacterAlpha(MarklichtSoldier2;1;false)
+
+dialog(Soldier;MarklichtSoldier2;false;FortLibert_Sentry_Greetings_1)
+
+if(arcQuest_Order_3 = 1){
+	load(Marklicht/LibertFort/OrderArcQuest3)
+}
+else{
+	load(Marklicht/LibertFort/Sentry_Exit)
+}

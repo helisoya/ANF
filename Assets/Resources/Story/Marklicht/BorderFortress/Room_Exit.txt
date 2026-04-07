@@ -1,0 +1,19 @@
+fadeBg(1;true)
+
+playMusic(Exploration_Marklicht)
+removeCharacter(Lara)
+setBackground(Marklicht/Region/BorderFortressOutside)
+load(Common/DisplayWeatherRain)
+
+if(marklichtQuest_2 = 0){
+	load(Marklicht/BorderFortress/MarklichtQuest2_0)
+	return()
+}
+
+if(marklichtQuest_2 = 100 & factionQuest_Marklicht_1 = -1){
+	load(Marklicht/BorderFortress/MarklichtFactionQuest1)
+	return()
+}
+
+fadeBg(0;false)
+load(Marklicht/BorderFortress/Interaction)

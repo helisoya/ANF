@@ -1,0 +1,2 @@
+clearStack()
+map(Test2;ToMap1)

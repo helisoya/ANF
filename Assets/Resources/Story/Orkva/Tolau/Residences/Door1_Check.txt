@@ -1,0 +1,8 @@
+dialog(narrator;_;false;Tolau_Residences_Door1_Default_1)
+
+if(arcQuest_Order_1 = 1){
+	load(Orkva/Tolau/Residences/Door1_ArcQuest)
+}
+else{
+	load(Orkva/Tolau/Residences/Interaction)
+}

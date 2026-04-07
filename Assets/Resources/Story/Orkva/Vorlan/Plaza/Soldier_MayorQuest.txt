@@ -1,0 +1,5 @@
+dialog([MC];_;false;Vorlan_Plaza_Soldier_MayorQuest_1)
+dialog(Soldier;SecretPolice;false;Vorlan_Plaza_Soldier_MayorQuest_2)
+dialog(Soldier;SecretPolice;false;Vorlan_Plaza_Soldier_MayorQuest_3)
+
+battle(BATTLE_Quest_VorlanGovernor;CityStreet;Orkva/Vorlan/Plaza/Soldier_MayorQuestEnd)

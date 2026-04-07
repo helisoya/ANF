@@ -1,0 +1,15 @@
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_SideQuest_End_1)
+
+dialog([MC];_;false;Kalia_BarMax_Waiter_SideQuest_End_2)
+
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_SideQuest_End_3)
+
+addGold(10)
+addExpToAll(10)
+
+dialog(narrator;_;false;Kalia_BarMax_Waiter_SideQuest_End_4)
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_SideQuest_End_5)
+
+variable(secondaryQuest_Kalia_Max;100)
+
+load(Kalia/City/BarMax/Waiter)

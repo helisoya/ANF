@@ -1,0 +1,4 @@
+# The quest is already done
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Done_1)
+
+load(Kalia/Iberty/CityHall/Soldier)

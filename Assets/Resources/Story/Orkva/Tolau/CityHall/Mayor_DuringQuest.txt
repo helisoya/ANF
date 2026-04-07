@@ -1,0 +1,5 @@
+# During Mayor quest
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestDuring_1)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestDuring_2)
+
+load(Orkva/Tolau/CityHall/Mayor)

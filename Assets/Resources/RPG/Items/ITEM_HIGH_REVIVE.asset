@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bf3ace21a563142a072badf6cfa261, type: 3}
+  m_Name: ITEM_HIGH_REVIVE
+  m_EditorClassIdentifier: 
+  ID: ITEM_HIGH_REVIVE
+  sellValue: 50
+  type: 2
+  targetType: 2
+  damageType: 2
+  attackEquation: 1
+  defenseEquation: 1
+  attackValue: 50
+  defenseValue: 0
+  costSP: 0
+  animationName: Attack1
+  audioName: 
+  linkedStatus: 0
+  statusEffect: 0
+  statusLength: 0
+  statusChance: 0
+  weaponType: 0
+  statsValue: 5
+  weaponSkills: []
+  linkedAnimatior: 

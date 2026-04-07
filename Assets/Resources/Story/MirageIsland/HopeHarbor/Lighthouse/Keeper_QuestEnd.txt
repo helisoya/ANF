@@ -1,0 +1,14 @@
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_EndQuest_1)
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_EndQuest_2)
+
+dialog(narrator;_;false;HopeHarbor_Lighthouse_Keeper_EndQuest_3)
+
+addExpToAll(10)
+addGold(20)
+variable(secondaryQuest_HopeHarbor_Keeper;100)
+
+dialog(narrator;_;false;HopeHarbor_Lighthouse_Keeper_EndQuest_4)
+
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_EndQuest_5)
+
+load(MirageIsland/HopeHarbor/Lighthouse/Keeper)

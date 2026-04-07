@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_AboutYou Orkva/Tolau/Courthouse/Jade_AboutYou
+	Choice_AboutOrkva Orkva/Tolau/Courthouse/Jade_AboutOrkva
+	Choice_AboutOrder Orkva/Tolau/Courthouse/Jade_AboutOrder
+	Choice_Nothing Orkva/Tolau/Courthouse/Jade_Exit

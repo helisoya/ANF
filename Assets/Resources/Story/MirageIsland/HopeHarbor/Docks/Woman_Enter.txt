@@ -1,0 +1,11 @@
+setCharacterAlpha(Citizen4;0;true)
+setCharacterPosition(Citizen4;Front)
+setCharacterRotation(Citizen4;Front)
+setCharacterAlpha(Citizen4;1;false)
+
+switch secondaryQuest_HopeHarbor_Cottage
+	-1 MirageIsland/HopeHarbor/Docks/Woman_Start
+	0 MirageIsland/HopeHarbor/Docks/Woman_During
+	1 MirageIsland/HopeHarbor/Docks/Woman_End
+	default MirageIsland/HopeHarbor/Docks/Woman_During
+

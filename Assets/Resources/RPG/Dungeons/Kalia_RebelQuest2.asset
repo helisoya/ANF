@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054cacc03761b40be47bb0c9a48b98, type: 3}
+  m_Name: Kalia_RebelQuest2
+  m_EditorClassIdentifier: 
+  ID: Kalia_RebelQuest2
+  locationID: Location_Kalia
+  floorsAmount: 4
+  endChapter: Kalia/City/Docks/RebelQuest2_End
+  musicName: Dungeon_Kalia
+  canExitEarly: 0
+  earlyExitChapter: 
+  encounters:
+  - {fileID: 11400000, guid: 3cef9a01dacc9e64c9dc88d9c1831713, type: 2}
+  - {fileID: 11400000, guid: 593d969b14ea2854d9466ff4471ef037, type: 2}
+  - {fileID: 11400000, guid: 8dd1a5ca0cbf58b46b3d0825b4cc4a97, type: 2}
+  battleBackground: Planks
+  size: {x: 15, y: 15}
+  roomCount: 4
+  roomMaxSize: {x: 5, y: 5}
+  cellPrefab: {fileID: 8148160245439542551, guid: f47150bf2df87424480370a023ee086d,
+    type: 3}
+  stairsPrefab: {fileID: 2695139049142173575, guid: 618ccb67afd2b2e44a5a1b57a90f50fc,
+    type: 3}
+  propsToPlace:
+  - {fileID: 2695139049142173574, guid: 8f2a8b2045fadd54e9c29be3e87273e2, type: 3}
+  - {fileID: 2695139049142173574, guid: 8f2a8b2045fadd54e9c29be3e87273e2, type: 3}
+  - {fileID: 2695139049142173574, guid: 8f2a8b2045fadd54e9c29be3e87273e2, type: 3}
+  - {fileID: 2695139049142173574, guid: 8f2a8b2045fadd54e9c29be3e87273e2, type: 3}

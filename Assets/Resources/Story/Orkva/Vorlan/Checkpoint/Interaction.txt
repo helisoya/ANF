@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Vorlan-City_Vorlan_Checkpoint)
+setInteractionChapter(OrkvaSoldier;Orkva/Vorlan/Checkpoint/Soldier_Enter)
+
+interact

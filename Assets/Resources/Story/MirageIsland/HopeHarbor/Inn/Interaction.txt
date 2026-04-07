@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_HopeHarbor-City_HopeHarbor_Inn)
+setInteractionChapter(Citizen4;MirageIsland/HopeHarbor/Inn/Owner_Enter)
+
+interact

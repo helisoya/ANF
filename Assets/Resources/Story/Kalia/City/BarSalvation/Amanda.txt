@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_AboutRebellion Kalia/City/BarSalvation/Amanda_AboutRebellion
+	Choice_AboutYou Kalia/City/BarSalvation/Amanda_AboutYou
+	Choice_Nothing Kalia/City/BarSalvation/Amanda_Exit

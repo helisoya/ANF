@@ -1,0 +1,11 @@
+# Talks about the Continent
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_1)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_2)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_3)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_4)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_5)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_6)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_7)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutContinent_8)
+
+load(Kalia/City/Library/Jackwell)

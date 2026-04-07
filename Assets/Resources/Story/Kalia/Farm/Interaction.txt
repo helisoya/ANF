@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_Kalia-Region_Kalia_Farm)
+
+interact

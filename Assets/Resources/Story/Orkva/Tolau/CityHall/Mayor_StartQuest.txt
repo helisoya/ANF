@@ -1,0 +1,20 @@
+# Start Mayor quest
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_1)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_2)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_3)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_4)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_5)
+
+dialog([MC];_;false;Tolau_CityHall_Mayor_QuestStart_6)
+
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_7)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_8)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_9)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_10)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestStart_11)
+
+dialog([MC];_;false;Tolau_CityHall_Mayor_QuestStart_12)
+
+variable(secondaryQuest_Tolau_Mayor;0)
+
+load(Orkva/Tolau/CityHall/Mayor)

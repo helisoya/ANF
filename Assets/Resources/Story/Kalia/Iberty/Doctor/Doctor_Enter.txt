@@ -1,0 +1,8 @@
+setCharacterAlpha(DoctorIberty;0;true)
+setCharacterPosition(DoctorIberty;Front)
+setCharacterRotation(DoctorIberty;Front)
+setCharacterAlpha(DoctorIberty;1;false)
+
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_Greetings_1)
+
+load(Kalia/Iberty/Doctor/Doctor)

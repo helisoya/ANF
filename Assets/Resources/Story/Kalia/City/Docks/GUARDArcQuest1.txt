@@ -1,0 +1,27 @@
+# Starts the dungeon of GUARD's Arc quest
+
+dialog(narrator;_;false;Kalia_Docks_GUARDArcQuest1_1)
+dialog(narrator;_;false;Kalia_Docks_GUARDArcQuest1_2)
+
+addCharacter(GUARD;true)
+setCharacterPosition(GUARD;Front)
+setCharacterRotation(GUARD;Front)
+setCharacterAlpha(GUARD;1;false)
+
+dialog(GUARD;GUARD;false;Kalia_Docks_GUARDArcQuest1_3)
+dialog(GUARD;GUARD;false;Kalia_Docks_GUARDArcQuest1_4)
+
+dialog([MC];_;false;Kalia_Docks_GUARDArcQuest1_5)
+
+dialog(GUARD;GUARD;false;Kalia_Docks_GUARDArcQuest1_6)
+
+setCharacterAlpha(GUARD;0;true)
+removeCharacter(GUARD)
+
+alignToCharacterLevel(GUARD;PLAYER)
+addFollower(GUARD)
+
+dialog(narrator;_;false;Kalia_Docks_GUARDArcQuest1_7)
+dialog([MC];_;false;Kalia_Docks_GUARDArcQuest1_8)
+
+dungeon(Kalia_GUARDArc1;0)

@@ -1,0 +1,25 @@
+# Ends the GUARD arc Quest 3 & Starts the Quest 4
+
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_1)
+
+dialog([MC];_;false;Kalia_BarMax_GUARD_ArcQuest3_End_2)
+
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_3)
+dialog(GUARD;GUARD;true;Kalia_BarMax_GUARD_ArcQuest3_End_4)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_5)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_6)
+
+dialog([MC];_;false;Kalia_BarMax_GUARD_ArcQuest3_End_7)
+dialog([MC];_;false;Kalia_BarMax_GUARD_ArcQuest3_End_8)
+
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_9)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_10)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_11)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_ArcQuest3_End_12)
+
+variable(arcQuest_Guard_3;100)
+variable(arcQuest_Guard_4;0)
+
+addExpToAll(25)
+
+load(Kalia/City/BarMax/GUARD)

@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_Buy Orkva/Okville/Shop/Salesman_Shop
+	Choice_AboutYou Orkva/Okville/Shop/Salesman_AboutYou
+	Choice_Nothing Orkva/Okville/Shop/Salesman_Exit
+

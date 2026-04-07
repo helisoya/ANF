@@ -1,0 +1,22 @@
+if(secondaryQuest_Libertville_Academy = 100){
+choice Choice_Chat
+	Choice_AboutYou Marklicht/Libertville/MilitaryAcademy/Soldier_AboutYou
+	Choice_AboutCity Marklicht/Libertville/MilitaryAcademy/Soldier_AboutCity
+	Choice_Nothing Marklicht/Libertville/MilitaryAcademy/Soldier_Exit
+}
+else{
+if(secondaryQuest_Libertville_Academy = -1){
+choice Choice_Chat
+	Choice_AboutYou Marklicht/Libertville/MilitaryAcademy/Soldier_AboutYou
+	Choice_AboutCity Marklicht/Libertville/MilitaryAcademy/Soldier_AboutCity
+	Choice_NeedHelp Marklicht/Libertville/MilitaryAcademy/Soldier_Quest
+	Choice_Nothing Marklicht/Libertville/MilitaryAcademy/Soldier_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutYou Marklicht/Libertville/MilitaryAcademy/Soldier_AboutYou
+	Choice_AboutCity Marklicht/Libertville/MilitaryAcademy/Soldier_AboutCity
+	Choice_AboutTask Marklicht/Libertville/MilitaryAcademy/Soldier_Quest
+	Choice_Nothing Marklicht/Libertville/MilitaryAcademy/Soldier_Exit
+}
+}

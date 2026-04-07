@@ -1,0 +1,25 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaHigh)
+removeAllCharacters()
+setBackground(Orkva/Okville/CityHall)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Okville)
+
+autosave()
+
+fadeFg(0;false)
+
+if(marklichtQuest_4 = 2){
+	load(Orkva/Okville/CityHall/MarklichtQuest4)
+	return()
+}
+
+load(Orkva/Okville/CityHall/Interaction)

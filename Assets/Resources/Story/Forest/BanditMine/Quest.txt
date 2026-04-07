@@ -1,0 +1,4 @@
+dialog(Soldier;OrderSoldier;false;BanditMine_OrderArcQuest4_3)
+dialog(narrator;_;false;BanditMine_OrderArcQuest4_4)
+
+dungeon(Forest_Mine;0)

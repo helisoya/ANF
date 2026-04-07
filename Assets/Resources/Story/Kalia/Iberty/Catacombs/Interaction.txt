@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Door;Kalia/Iberty/Catacombs/Door_Check)
+setInteractionChapter(Exit;MAP-City_Iberty-City_Iberty_Catacombs)
+
+interact

@@ -1,0 +1,11 @@
+addCharacter(RickeyLandGuard;true)
+setCharacterPosition(RickeyLandGuard;Front)
+setCharacterRotation(RickeyLandGuard;Front)
+setCharacterAlpha(RickeyLandGuard;1;false)
+
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsNotDone_1)
+
+setCharacterAlpha(RickeyLandGuard;0;true)
+removeCharacter(RickeyLandGuard)
+
+load(Palace/Interaction)

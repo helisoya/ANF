@@ -1,0 +1,23 @@
+if(secondaryQuest_Tolau_Inn = -1){
+choice Choice_Chat
+	Choice_Sleep Orkva/Tolau/Inn/Waiter_Sleep
+	Choice_NeedHelp Orkva/Tolau/Inn/Waiter_SideQuestCheck
+	Choice_AboutCity Orkva/Tolau/Inn/Waiter_AboutCity
+	Choice_Nothing Orkva/Tolau/Inn/Waiter_Exit
+}
+else{
+if(secondaryQuest_Tolau_Inn < 100){
+choice Choice_Chat
+	Choice_Sleep Orkva/Tolau/Inn/Waiter_Sleep
+	Choice_AboutTask Orkva/Tolau/Inn/Waiter_SideQuestCheck
+	Choice_AboutCity Orkva/Tolau/Inn/Waiter_AboutCity
+	Choice_Nothing Orkva/Tolau/Inn/Waiter_Exit
+}
+else{
+choice Choice_Chat
+	Choice_Sleep Orkva/Tolau/Inn/Waiter_Sleep
+	Choice_AboutCity Orkva/Tolau/Inn/Waiter_AboutCity
+	Choice_Nothing Orkva/Tolau/Inn/Waiter_Exit
+}
+}
+

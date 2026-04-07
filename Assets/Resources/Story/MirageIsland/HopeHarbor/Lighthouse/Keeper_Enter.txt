@@ -1,0 +1,8 @@
+setCharacterAlpha(LighthouseKeeper;0;true)
+setCharacterPosition(LighthouseKeeper;Front)
+setCharacterRotation(LighthouseKeeper;Front)
+setCharacterAlpha(LighthouseKeeper;1;false)
+
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_Greetings_1)
+
+load(MirageIsland/HopeHarbor/Lighthouse/Keeper)

@@ -1,0 +1,12 @@
+dialog(narrator;_;false;3_1)
+dialog(narrator;_;false;3_2)
+
+choice ID_TEXT
+	ID_CHOICE1 Test/3a
+	ID_CHOICE2 Test/3b
+
+dialog(narrator;_;false;3_3)
+
+choice ID_TEXT
+	ID_CHOICE1 Test/3a
+	ID_CHOICE2 Test/3b

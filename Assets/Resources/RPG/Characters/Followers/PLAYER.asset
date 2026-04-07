@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f974e9b21989644b86a9cf2ecc893c, type: 3}
+  m_Name: PLAYER
+  m_EditorClassIdentifier: 
+  data:
+    ID: PLAYER
+    modelID: PLAYER
+    stats:
+      _serializedList:
+      - Key: 0
+        Value: 5
+      - Key: 1
+        Value: 3
+      - Key: 2
+        Value: 2
+      - Key: 3
+        Value: 0
+      - Key: 4
+        Value: 4
+      - Key: 5
+        Value: 0
+    weapon: 
+    armor: 
+    level: 1
+    currentHP: 0
+    currentSP: 0
+    exp: 0
+  constants: {fileID: 11400000, guid: 8f0a82b07992ef842bdd0575e36bfa45, type: 2}

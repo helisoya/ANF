@@ -1,0 +1,28 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Libertville/Shop)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Libertville)
+
+autosave()
+
+if(night = 0){
+	addCharacter(Salesman2;false)
+	setCharacterPosition(Salesman2;Salesman)
+	setCharacterRotation(Salesman2;Salesman)
+	setInteractionChapter(Salesman2;Marklicht/Libertville/Shop/Salesman_Enter)
+}
+
+
+fadeFg(0;false)
+
+load(Marklicht/Libertville/Shop/Interaction)

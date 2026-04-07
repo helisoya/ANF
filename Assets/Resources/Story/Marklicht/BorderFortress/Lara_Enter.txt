@@ -1,0 +1,40 @@
+if(marklichtQuest_2 = 2){
+	load(Marklicht/BorderFortress/MarklichtQuest2End)
+	return()
+}
+
+if(marklichtQuest_3 = 2){
+	load(Marklicht/BorderFortress/MarklichtQuest3End)
+	return()
+}
+
+if(marklichtQuest_5 = 1){
+	load(Marklicht/BorderFortress/MarklichtQuest5End)
+	return()
+}
+
+if(marklichtQuest_6 = 0){
+	load(Marklicht/BorderFortress/MarklichtQuest6_Ask)
+	return()
+}
+
+setCharacterAlpha(Lara;0;true)
+setCharacterRotation(Lara;Front)
+setCharacterPosition(Lara;Front)
+setCharacterAlpha(Lara;1;false)
+
+if(marklichtQuest_1 = 0){
+	load(Marklicht/BorderFortress/MarklichtQuest1Start)
+	return()
+}
+
+if(marklichtQuest_1 = 2){
+	load(Marklicht/BorderFortress/MarklichtQuest1End)
+	return()
+}
+
+
+
+dialog(Lara;Lara;false;BorderFortress_Lara_Greetings_1)
+
+load(Marklicht/BorderFortress/Lara)

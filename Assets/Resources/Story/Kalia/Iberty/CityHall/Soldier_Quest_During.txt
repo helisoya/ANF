@@ -1,0 +1,4 @@
+# The quest has already started
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_During_1)
+
+load(Kalia/Iberty/CityHall/Soldier)

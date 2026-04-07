@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_Play Salesman/Salesman_Play_Check
+	Choice_Rules Salesman/Salesman_Rules
+	Choice_AboutYou Salesman/Salesman_AboutYou
+	Choice_Nothing Salesman/Salesman_Exit

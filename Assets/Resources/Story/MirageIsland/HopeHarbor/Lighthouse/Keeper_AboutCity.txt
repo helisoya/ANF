@@ -1,0 +1,7 @@
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_AboutCity_1)
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_AboutCity_2)
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_AboutCity_3)
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_AboutCity_4)
+dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_AboutCity_5)
+
+load(MirageIsland/HopeHarbor/Lighthouse/Keeper)

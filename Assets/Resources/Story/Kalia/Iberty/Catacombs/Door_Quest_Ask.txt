@@ -1,0 +1,8 @@
+# Asks if ready before starting dungeon
+
+dialog(narrator;_;false;Iberty_Catacombs_Quest_1)
+dialog(narrator;_;false;Iberty_Catacombs_Quest_2)
+
+choice Choice_Generic
+	Choice_Ready Kalia/Iberty/Catacombs/Door_Quest_Start
+	Choice_NotYet Kalia/Iberty/Catacombs/Interaction

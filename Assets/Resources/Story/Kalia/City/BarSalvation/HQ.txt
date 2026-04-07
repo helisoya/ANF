@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;Kalia/City/BarSalvation/HQ_Exit)
+setInteractionChapter(Amanda;Kalia/City/BarSalvation/Amanda_Enter)
+
+interact

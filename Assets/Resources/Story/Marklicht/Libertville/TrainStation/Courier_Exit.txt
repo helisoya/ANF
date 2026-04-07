@@ -1,0 +1,6 @@
+setCharacterAlpha(Citizen2;0;true)
+setCharacterPosition(Citizen2;Courier)
+setCharacterRotation(Citizen2;Courier)
+setCharacterAlpha(Citizen2;1;false)
+
+load(Marklicht/Libertville/Trainstation/Interaction)

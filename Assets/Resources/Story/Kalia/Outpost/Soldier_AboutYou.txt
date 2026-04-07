@@ -1,0 +1,6 @@
+# Talks about himself
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_AboutYou_1)
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_AboutYou_2)
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_AboutYou_3)
+
+load(Kalia/Outpost/Soldier)

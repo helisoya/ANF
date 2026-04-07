@@ -1,0 +1,14 @@
+# Increment the day / night cycle
+variable(nightIncrement;++)
+if(nightIncrement = 10 & night = 0){
+	warn(Switching to night)
+	variable(nightIncrement;0)
+	variable(night;1)
+}
+else{
+	if(nightIncrement = 4 & night = 1){
+		warn(Switching to day)
+		variable(nightIncrement;0)
+		variable(night;0)
+	}
+}

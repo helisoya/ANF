@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61bf3ace21a563142a072badf6cfa261, type: 3}
+  m_Name: SKILL_ELKTOUCH
+  m_EditorClassIdentifier: 
+  ID: SKILL_ELKTOUCH
+  sellValue: 0
+  type: 2
+  targetType: 4
+  damageType: 0
+  attackEquation: 0
+  defenseEquation: 0
+  attackValue: 0.75
+  defenseValue: 1
+  costSP: 4
+  animationName: Attack1
+  linkedStatus: 0
+  statusEffect: 1
+  statusLength: 3
+  statusChance: 0.2
+  weaponType: 0
+  statsValue: 5
+  weaponSkills: []
+  linkedAnimatior: 

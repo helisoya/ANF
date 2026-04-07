@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_AboutYou Orkva/Shrine/Priest_AboutYou
+	Choice_AboutRegion Orkva/Shrine/Priest_AboutRegion
+	Choice_Nothing Orkva/Shrine/Priest_Exit

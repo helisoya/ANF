@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Tolau-City_Tolau_Inn)
+setInteractionChapter(Citizen5;Orkva/Tolau/Inn/Waiter_Enter)
+
+interact

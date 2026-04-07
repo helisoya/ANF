@@ -1,0 +1,6 @@
+dialog(Fisherman;Fisherman2;false;HopeHarbor_Docks_Fisherman_Ask_2)
+
+fadeFg(1;true)
+setBg(0)
+
+load(Orkva/Tolau/FishermanHouse/Arrival)

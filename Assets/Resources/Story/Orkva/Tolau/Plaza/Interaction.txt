@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Tolau-City_Tolau_Plaza)
+
+interact

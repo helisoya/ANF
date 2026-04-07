@@ -1,0 +1,30 @@
+# If it is the first time you finish the dungeon, start a small cutscene
+# Else, just load the arrival for the village
+
+setFg(1)
+
+unlockLog(Log_Northmen;true)
+
+if(canTravel_Region_Forest_Village = 1){
+	load(Forest/Village/Arrival)
+}
+else{
+
+	playMusic(Exploration_Forest)
+	setBackground(Forest/NorthVillage)
+
+	load(Common/ProcessDayNight)
+	load(Common/ProcessWeather)
+	load(Common/DisplayWeatherSnow)
+	load(Forest/Village/Decorate)
+
+	setLocation(Location_WhiteForest)
+
+	fadeFg(0;false)
+
+	dialog(narrator;_;false;CragPass_FinishDungeon_1)
+
+	variable(canTravel_Region_Forest_Village;1)
+
+	load(Forest/Village/Interaction)
+}

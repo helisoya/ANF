@@ -1,0 +1,14 @@
+setCharacterBody(Harold;Mug;false)
+setCharacterAlpha(Harold;0;true)
+
+setCharacterPosition(Harold;Front)
+setCharacterRotation(Harold;Front)
+setCharacterAlpha(Harold;1;false)
+
+playMusic(Harold)
+
+if(mainQuest = 6) ChezHarold/Harold_MainQuest6
+
+dialog(Harold;Harold;false;ChezHarold_Harold_Default)
+
+load(ChezHarold/Harold_Default)

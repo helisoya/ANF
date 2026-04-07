@@ -1,0 +1,8 @@
+dialog(Waitress;AnnaDisguise;false;Kalia_BarSalvation_Waiter_Good_1)
+dialog(Waitress;AnnaDisguise;false;Kalia_BarSalvation_Waiter_Good_2)
+dialog(narrator;_;false;Kalia_BarSalvation_Waiter_Good_3)
+
+
+choice Choice_Generic
+	Choice_Yes Kalia/City/BarSalvation/JoinRebels
+	Choice_No Kalia/City/BarSalvation/Waiter_Refuse

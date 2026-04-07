@@ -1,0 +1,10 @@
+setCharacterAlpha(Fisherman2;0;true)
+setCharacterPosition(Fisherman2;Front)
+setCharacterRotation(Fisherman2;Front)
+setCharacterAlpha(Fisherman2;1;false)
+
+dialog(Fisherman;Fisherman2;false;HopeHarbor_Docks_Fisherman_Ask_1)
+
+choice Choice_Generic
+	Choice_Yes MirageIsland/HopeHarbor/Docks/Fisherman_Transition
+	Choice_No MirageIsland/HopeHarbor/Docks/Fisherman_Exit

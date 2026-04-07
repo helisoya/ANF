@@ -1,0 +1,30 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaHigh)
+removeAllCharacters()
+setBackground(Orkva/Okville/Shrine)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Okville)
+
+autosave()
+
+if(marklichtQuest_5 = 0){
+	load(Orkva/Okville/Shrine/MarklichtQuest5_A)
+	return()
+}
+
+if(factionQuest_Marklicht_2 = 0){
+	load(Orkva/Okville/Shrine/MarklichtFactionQuest2)
+	return()
+}
+
+fadeFg(0;false)
+
+load(Orkva/Okville/Shrine/Interaction)

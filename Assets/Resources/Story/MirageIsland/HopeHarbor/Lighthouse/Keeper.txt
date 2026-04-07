@@ -1,0 +1,14 @@
+if(secondaryQuest_HopeHarbor_Keeper = -1 | secondaryQuest_HopeHarbor_Keeper = 100){
+choice Choice_Chat
+	Choice_AboutYou MirageIsland/HopeHarbor/Lighthouse/Keeper_AboutYou
+	Choice_AboutCity MirageIsland/HopeHarbor/Lighthouse/Keeper_AboutCity
+	Choice_NeedHelp MirageIsland/HopeHarbor/Lighthouse/Keeper_QuestCheck
+	Choice_Nothing MirageIsland/HopeHarbor/Lighthouse/Keeper_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutYou MirageIsland/HopeHarbor/Lighthouse/Keeper_AboutYou
+	Choice_AboutCity MirageIsland/HopeHarbor/Lighthouse/Keeper_AboutCity
+	Choice_AboutTask MirageIsland/HopeHarbor/Lighthouse/Keeper_QuestCheck
+	Choice_Nothing MirageIsland/HopeHarbor/Lighthouse/Keeper_Exit
+}

@@ -1,0 +1,5 @@
+switch secondaryQuest_HopeHarbor_Keeper
+	-1 MirageIsland/HopeHarbor/Lighthouse/Keeper_QuestStart
+	0 MirageIsland/HopeHarbor/Lighthouse/Keeper_QuestDuring
+	1 MirageIsland/HopeHarbor/Lighthouse/Keeper_QuestEnd
+	default MirageIsland/HopeHarbor/Lighthouse/Keeper_QuestDone

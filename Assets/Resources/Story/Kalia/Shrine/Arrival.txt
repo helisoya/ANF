@@ -1,0 +1,34 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaRegion)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/Region/Shrine)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_KalibuShrine)
+
+if(night = 0 & factionQuest_Merchant_1 < 100){
+	addCharacter(KalibuPriest;false)
+	setCharacterPosition(KalibuPriest;PriestSpot)
+	setCharacterRotation(KalibuPriest;PriestSpot)
+	setInteractionChapter(KalibuPriest;Kalia/Shrine/Priest_Enter)
+}
+
+unlockLog(Log_Suori;true)
+
+autosave()
+
+fadeFg(0;false)
+
+if(factionQuest_Merchant_1 = 0){
+	load(Kalia/Shrine/MerchantFactionQuest1)
+	return()
+}
+
+load(Kalia/Shrine/Interaction)

@@ -1,0 +1,15 @@
+if(arcQuest_Order_1 < 100){
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_Before_1)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_Before_2)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_Before_3)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_Before_4)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_Before_5)
+}
+else{
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_After_1)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_After_2)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_After_3)
+	dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrder_After_4)
+}
+
+load(Orkva/Tolau/Courthouse/Jade)

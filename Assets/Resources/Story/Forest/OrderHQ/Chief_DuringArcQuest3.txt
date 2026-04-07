@@ -1,0 +1,3 @@
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3During_1)
+
+load(Forest/OrderHQ/Chief)

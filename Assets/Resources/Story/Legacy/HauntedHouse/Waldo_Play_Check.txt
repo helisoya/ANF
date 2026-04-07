@@ -1,0 +1,5 @@
+if(hauntedHouseQuest = 0) HauntedHouse/Waldo_Play
+
+dialog(Waldo;Waldo;false;Quiz_Waldo_Done_1)
+
+load(HauntedHouse/Waldo_Default)

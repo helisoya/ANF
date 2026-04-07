@@ -1,0 +1,4 @@
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_13)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Start_14)
+
+load(Kalia/Iberty/Port/Fisherman)

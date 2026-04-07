@@ -1,0 +1,13 @@
+setCharacterAlpha(Northman1;0;true)
+setCharacterPosition(Northman1;Front)
+setCharacterRotation(Northman1;Front)
+setCharacterAlpha(Northman1;1;false)
+
+if(marklichtQuest_2 = 1){
+	load(Forest/Village/MarklichtQuest2)
+	return()
+}
+
+dialog(Elder;Northman1;false;NorthVillage_Elder_Greetings_1)
+
+load(Forest/Village/Elder)

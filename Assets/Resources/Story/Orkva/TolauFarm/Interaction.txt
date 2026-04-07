@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_Orkva-Region_Orkva_Farm)
+
+interact

@@ -1,0 +1,2 @@
+dialog(narrator;_;false;Iberty_Catacombs_Quest_3)
+dungeon(IbertyCatacombs_SecondaryQuest;0)

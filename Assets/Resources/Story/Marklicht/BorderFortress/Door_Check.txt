@@ -1,0 +1,13 @@
+if(rebelQuest_1 = 1){
+	load(Marklicht/BorderFortress/RebelQuest1)
+	return()
+}
+
+if(marklichtQuest_1 >= 0){
+	load(Marklicht/BorderFortress/Room_Enter)
+	return()
+}
+
+dialog(narrator;_;false;BorderFortress_Door_No_1)
+
+load(Marklicht/BorderFortress/Interaction)

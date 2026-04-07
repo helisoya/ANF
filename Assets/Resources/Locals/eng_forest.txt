@@ -1,0 +1,353 @@
+
+# ---------------------------------------------------------
+# --------------- Forest - Field --------------------------
+# ---------------------------------------------------------
+
+ForestField_JackwellArcQuest1_1 = This is where Jackwell told me I could find long legs.
+ForestField_JackwellArcQuest1_2 = ...
+ForestField_JackwellArcQuest1_3 = There they are.
+ForestField_JackwellArcQuest1_4 = I forage some plants off the ground.
+ForestField_JackwellArcQuest1_5 = People insist these medicinal plants are called "Touch of Kalibu".
+ForestField_JackwellArcQuest1_6 = But I know better. They are called "Long Legs" because they're so long.
+ForestField_JackwellArcQuest1_7 = ... At least it's a cooler name... right ?
+ForestField_JackwellArcQuest1_8 = Anyway ! I should go back to Jackwell.
+
+ForestField_DragonArcQuest3_1 = Apparently, I can find a dangerous bear around here.
+ForestField_DragonArcQuest3_2 = If I can kill it, I'll be ready to fight the dragon.
+ForestField_DragonArcQuest3_3 = I'm not sure about this... It all feels so... I don't know...
+ForestField_DragonArcQuest3_4 = Well, I'm doing this for the country anyway. Let's get this over with.
+ForestField_DragonArcQuest3_5 = I search for the bear...
+ForestField_DragonArcQuest3_6 = After a while, I manage to find it. It attacks me instantly.
+
+ForestField_DragonArcQuest3_7 = I killed the bear.
+ForestField_DragonArcQuest3_8 = Time to head back to the Northmen village.
+
+# ---------------------------------------------------------
+# --------------- Forest - Cavern -------------------------
+# ---------------------------------------------------------
+
+ForestCavern_Enter_Cant_1 = I don't need to go in there.
+
+ForestCavern_End_Jackwell_1 = Jackwell should be happy now. I should go back to him.
+
+# ---------------------------------------------------------
+# --------------- Forest - Mount Vasalia ------------------
+# ---------------------------------------------------------
+
+MountVasalia_JackwellArcQuest3_1 = So this is Mount Vasalia...
+MountVasalia_JackwellArcQuest3_2 = People say it's the highest point around Kalia.
+MountVasalia_JackwellArcQuest3_3 = In the end, I don't know why Jackwell gave me these ropes.
+MountVasalia_JackwellArcQuest3_4 = There was a path going to the mountain's submit.
+MountVasalia_JackwellArcQuest3_5 = I guess this is a somewhat popular place.
+MountVasalia_JackwellArcQuest3_6 = Alright, I should go back to Jackwell. There's no sense in staying here for too long.
+
+MountVasalia_DragonArcQuest4_1 = So the dragon was last seen somewhere around here...
+MountVasalia_DragonArcQuest4_2 = I look around. I can't see anything.
+MountVasalia_DragonArcQuest4_3 = Maybe it moved away before I could get here.
+MountVasalia_DragonArcQuest4_4 = If that's the case, where did it go ?
+MountVasalia_DragonArcQuest4_5 = As if it were responding to my thoughts, the dragon appears from below.
+MountVasalia_DragonArcQuest4_6 = It must have found a cavern to hide into.
+MountVasalia_DragonArcQuest4_7 = Like at the village, it looks at me as if I'm the biggest threat here.
+MountVasalia_DragonArcQuest4_8 = This is the end. Let's get this over with...
+
+MountVasalia_DragonArcQuest4_9 = Finally, the dragon is dead.
+MountVasalia_DragonArcQuest4_10 = Now Kalia and the village should be safe.
+MountVasalia_DragonArcQuest4_11 = I should head back. The elder said she wanted to reward me.
+
+MountVasalia_MerchantFaction2_1 = This is where the rogue squad's hideout should be.
+MountVasalia_MerchantFaction2_2 = I just hope they are here and that they didn't go to Orkva.
+MountVasalia_MerchantFaction2_3 = I look around, and sure enough, I find them.
+MountVasalia_MerchantFaction2_4 = They notice me immediately, and a fight ensue.
+
+MountVasalia_MerchantFaction2_5 = I defeated the rogue soldiers.
+MountVasalia_MerchantFaction2_6 = It seems Sword asked them to ambush our forces if they ever came through the White Forest.
+MountVasalia_MerchantFaction2_7 = Good riddance. This will be one less problem to worry about if Orkva attacks us.
+
+# ---------------------------------------------------------
+# ------------------- Forest - Crag Pass ------------------
+# ---------------------------------------------------------
+
+CragPass_FinishDungeon_1 = After crossing the pass, I managed to arrive at the Northmen village.
+
+# ---------------------------------------------------------
+# -------------- Forest - Northmen Village ----------------
+# ---------------------------------------------------------
+
+NorthVillage_Trader_Greetings_1 = Hello, traveler. Interested in my wares ?
+
+NorthVillage_Trader_AboutYou_1 = Why would I trust your kind, traveler ?
+
+NorthVillage_Trader_AboutYou_Arc_1 = Well... You did save our village.
+NorthVillage_Trader_AboutYou_Arc_2 = But I still don't trust you...
+
+NorthVillage_Elder_Greetings_1 = May the moon guide your steps, traveler.
+
+NorthVillage_Elder_AboutYou_1 = I am the village's elder.
+NorthVillage_Elder_AboutYou_2 = Because of this, I am the referent for important decisions around here.
+NorthVillage_Elder_AboutYou_3 = For instance, if a trader wants to open shop here, they'll have to talk to me first.
+
+NorthVillage_Elder_AboutVillage_1 = Our little village is part of the loose Northmen Confederacy.
+NorthVillage_Elder_AboutVillage_2 = Big political decisions are made in the capital city near the great frozen lake, far up north.
+NorthVillage_Elder_AboutVillage_3 = But with daily matters, it is I who takes decisions.
+NorthVillage_Elder_AboutVillage_4 = We've had troublesome relations with neighboring countries in the past.
+NorthVillage_Elder_AboutVillage_5 = There is a strong distrust between our two peoples, as you can probably guess.
+NorthVillage_Elder_AboutVillage_6 = The incident with Marklicht didn't help with this distrust.
+NorthVillage_Elder_AboutVillage_7 = It was an accident, a communication failure, but still... The damage was done.
+
+NorthVillage_Elder_StartArc_1 = Actually, we require the services of a strong warrior.
+NorthVillage_Elder_StartArc_2 = A great dragon has been sighted further north-west.
+NorthVillage_Elder_StartArc_3 = We fear that it might come here, so we need protection.
+NorthVillage_Elder_StartArc_4 = You want me to kill it ? I'm not sure whether I can handle that.
+NorthVillage_Elder_StartArc_5 = I'll train you, and I'll even pay you upon defeating this beast.
+NorthVillage_Elder_StartArc_6 = This is really dangerous, but I don't think that letting a dragon loose nearby is a good idea.
+NorthVillage_Elder_StartArc_7 = Alright, I'll help you.
+NorthVillage_Elder_StartArc_8 = Thank you, kind traveler.
+NorthVillage_Elder_StartArc_9 = Now, let us start your training.
+NorthVillage_Elder_StartArc_10 = What you will be facing will not be your average bandit.
+NorthVillage_Elder_StartArc_11 = You need to learn how to defeat animals.
+
+NorthVillage_Elder_EndArcQuest1_1 = I killed the wolves.
+NorthVillage_Elder_EndArcQuest1_2 = Good, good.
+NorthVillage_Elder_EndArcQuest1_3 = Now that you understand how to fight animals, let's up the stakes a little.
+NorthVillage_Elder_EndArcQuest1_4 = Go back to the Crag Pass and kill 3 bears.
+NorthVillage_Elder_EndArcQuest1_5 = Wolves are a good start, but a dragon is much more vicious than that.
+NorthVillage_Elder_EndArcQuest1_6 = The Crag's bears on the other end are much more vicious. 
+NorthVillage_Elder_EndArcQuest1_7 = Nobody really knows why. Maybe it's the environment.
+
+NorthVillage_Elder_EndArcQuest2_1 = I killed the bears.
+NorthVillage_Elder_EndArcQuest2_2 = Good, you're almost ready, I think.
+NorthVillage_Elder_EndArcQuest2_3 = And not too soon, our scouts reported to me that the dragon is moving towards us.
+NorthVillage_Elder_EndArcQuest2_4 = I still have a last trial for you, to truly test your strength.
+NorthVillage_Elder_EndArcQuest2_5 = Go to the fields in the eastern part of the forest.
+NorthVillage_Elder_EndArcQuest2_6 = You'll find a bear rumored to be legendary for its aggressivity.
+NorthVillage_Elder_EndArcQuest2_7 = Kill it, and your training will be complete.
+
+NorthVillage_Elder_EndArcQuest3_1 = When I arrive at the village, I find it empty.
+NorthVillage_Elder_EndArcQuest3_2 = Don't tell me...
+NorthVillage_Elder_EndArcQuest3_3 = Traveler, this is terrible !
+NorthVillage_Elder_EndArcQuest3_4 = The dragon is upon us. We need to act, now !
+NorthVillage_Elder_EndArcQuest3_5 = I look up, and I see it. The dragon.
+NorthVillage_Elder_EndArcQuest3_6 = It's smaller than I thought, but it's still a formidable creature.
+NorthVillage_Elder_EndArcQuest3_7 = I need to protect the village and Kalia. I need to defeat it.
+NorthVillage_Elder_EndArcQuest3_8 = The dragon seems to recognize me as a threat. I better be ready for this...
+
+NorthVillage_Elder_EndArcQuest3_9 = Although I did not kill the dragon, I managed to repel it.
+NorthVillage_Elder_EndArcQuest3_10 = Incredible, thank you for your help, traveler.
+NorthVillage_Elder_EndArcQuest3_11 = But the fight is not over yet. You need to kill that creature.
+NorthVillage_Elder_EndArcQuest3_12 = Our scouts are currently locating the beast, and they last saw it going to Mount Vasalia.
+NorthVillage_Elder_EndArcQuest3_13 = I see. I'll go there and kill that dragon.
+NorthVillage_Elder_EndArcQuest3_14 = Thank you. Once you are done, I'll reward you for your work.
+NorthVillage_Elder_EndArcQuest3_15 = Well, guess I have to go to Mount Vasalia now.
+
+NorthVillage_Elder_EndArc_1 = I killed the dragon.
+NorthVillage_Elder_EndArc_2 = Thank the elders ! You actually did it.
+NorthVillage_Elder_EndArc_3 = Thanks to your efforts, our village is now safe from this beast.
+NorthVillage_Elder_EndArc_4 = Well, I didn't do it only for you...
+NorthVillage_Elder_EndArc_5 = As promised, here is your reward.
+NorthVillage_Elder_EndArc_6 = The elder hands me a rather large battle axe.
+NorthVillage_Elder_EndArc_7 = Looking at you fight the dragon, I realized you might need that on your journey.
+NorthVillage_Elder_EndArc_8 = Back in the days, our ancestors would fight. But we don't do much of that nowadays.
+NorthVillage_Elder_EndArc_9 = So you can take it. You'll find a better use for it than me.
+NorthVillage_Elder_EndArc_10 = Thank you.
+NorthVillage_Elder_EndArc_11 = If you ever need anything, our village's doors are open to you.
+
+NorthVillage_Elder_ReminderQuest1_1 = There is a cavern full of wolves in the forest.
+NorthVillage_Elder_ReminderQuest1_2 = Go there and kill 5 wolves.
+
+NorthVillage_Elder_ReminderQuest2_1 = Please, go and kill 3 bears in the good old Crag Pass.
+
+NorthVillage_Elder_ReminderQuest3_1 = The bear is located at the field at the eastern side of the forest.
+
+NorthVillage_Elder_ReminderQuest4_1 = The dragon was last seen near Mount Vasalia. You need to kill it.
+
+NorthVillage_Elder_QuestDone_1 = No. You've helped us enough already, kind traveler.
+
+NorthVillage_Elder_MarklichtQuest2_1 = Elder. We are from Marklicht's military.
+NorthVillage_Elder_MarklichtQuest2_2 = Hmm... I recognized your friend's uniform.
+NorthVillage_Elder_MarklichtQuest2_3 = What is it ? What do you want with my people.
+NorthVillage_Elder_MarklichtQuest2_4 = Marklicht is currently preparing an attack on Kalia.
+NorthVillage_Elder_MarklichtQuest2_5 = Because of this, our soldiers will go through the White Forest.
+NorthVillage_Elder_MarklichtQuest2_6 = We just wanted to notify you.
+NorthVillage_Elder_MarklichtQuest2_7 = Hmm... I see.
+NorthVillage_Elder_MarklichtQuest2_8 = Thank you for telling me. This will reassure my people.
+NorthVillage_Elder_MarklichtQuest2_9 = Okay. That's done. Let's go back to the fortress.
+
+# ---------------------------------------------------------
+# --------------- Forest - Order's HQ ---------------------
+# ---------------------------------------------------------
+
+OrderHQ_MainQuest3_1 = The order's HQ is quite... out of shape.
+OrderHQ_MainQuest3_2 = Did they get attacked ? Or is this what it usually looks like ?
+OrderHQ_MainQuest3_3 = Nobody is here. In fact, it's hard to think that this is the headquarters of any type of military organisation.
+OrderHQ_MainQuest3_4 = ...
+OrderHQ_MainQuest3_5 = While looking around, I spot someone searching through bookshelfs.
+OrderHQ_MainQuest3_6 = Sword...
+OrderHQ_MainQuest3_7 = Hmm ? Oh, Shield.
+OrderHQ_MainQuest3_8 = The boss sent me. Apparently you took too long.
+OrderHQ_MainQuest3_9 = Pff... And you're going to solve the problem ?
+OrderHQ_MainQuest3_10 = Look around. This place was ransacked not too long ago.
+OrderHQ_MainQuest3_11 = Bandits ?
+OrderHQ_MainQuest3_12 = Worse, Orkva.
+OrderHQ_MainQuest3_13 = They were never too keen on a joint Kalia-Marklicht force residing near their border.
+OrderHQ_MainQuest3_14 = So they came here a few days ago and arrested everyone.
+OrderHQ_MainQuest3_15 = They even confiscated a few things and damaged the building.
+OrderHQ_MainQuest3_16 = Word is, they are currently being held prisoner in Tolau and awaiting trial.
+OrderHQ_MainQuest3_17 = Trial for what ? They haven't done anything wrong.
+OrderHQ_MainQuest3_18 = My best guess ? They're going to forge evidence to convict them of something.
+OrderHQ_MainQuest3_19 = Hmm... Maybe I could go to Tolau one of these days...
+OrderHQ_MainQuest3_20 = But if they are in custody, then they couldn't have seen the bandits.
+OrderHQ_MainQuest3_21 = Actually, that's not true.
+OrderHQ_MainQuest3_22 = I've been looking through their files.
+OrderHQ_MainQuest3_23 = It seems they were arrested the morning after you failed miserably to protect the package.
+OrderHQ_MainQuest3_24 = So, if I'm right. Yes !
+OrderHQ_MainQuest3_25 = Here's a report about bandits carrying a package the night you were attacked.
+OrderHQ_MainQuest3_26 = That's them.
+OrderHQ_MainQuest3_27 = ... It seems they were last seen going to Orkva.
+OrderHQ_MainQuest3_28 = The report says they probably ended up in Vorlan.
+OrderHQ_MainQuest3_29 = Makes sense. It's the first city you come across in Orkva.
+OrderHQ_MainQuest3_30 = So, let's go to Vorlan, Sword.
+OrderHQ_MainQuest3_31 = No.
+OrderHQ_MainQuest3_32 = No ?
+OrderHQ_MainQuest3_33 = No. I don't trust you.
+OrderHQ_MainQuest3_34 = You failed time and time again.
+OrderHQ_MainQuest3_35 = I can't trust you with finding the package.
+OrderHQ_MainQuest3_36 = That's harsh.
+OrderHQ_MainQuest3_37 = If you really want to search for it, then do it without me.
+OrderHQ_MainQuest3_38 = With any luck, I'll have found it by the time you get to Vorlan.
+OrderHQ_MainQuest3_39 = Saying that, he leaves the building.
+OrderHQ_MainQuest3_40 = I never liked him...
+OrderHQ_MainQuest3_41 = When the Merchant told me he broke radio contact, there were actually two possibilities.
+OrderHQ_MainQuest3_42 = The most obvious would be that he got attacked by bandits.
+OrderHQ_MainQuest3_43 = But I know Sword. I know how he operates.
+OrderHQ_MainQuest3_44 = Sometimes, he just does that when he's too immersed in his investigation.
+OrderHQ_MainQuest3_45 = He's smart for thinking about the Order's logs.
+OrderHQ_MainQuest3_46 = But he probably spent too much time reading all of them.
+OrderHQ_MainQuest3_47 = If I let him search alone, he'll check every house in Vorlan for a package that probably isn't there.
+OrderHQ_MainQuest3_48 = With that being said, I should go to Vorlan.
+
+OrderHQ_Chief_Greetings_1 = Greetings, [MC].
+
+OrderHQ_Chief_ArcQuest2Start_1 = Oh, hi. You came.
+OrderHQ_Chief_ArcQuest2Start_2 = Is everything going alright over here ?
+OrderHQ_Chief_ArcQuest2Start_3 = Well.... Not really.
+OrderHQ_Chief_ArcQuest2Start_4 = When we came back, we realized that bandits had set up camp in the lower sections of the bunker.
+OrderHQ_Chief_ArcQuest2Start_5 = The worst is that they stole our weapon caches.
+OrderHQ_Chief_ArcQuest2Start_6 = Do you require help dislodging them ?
+OrderHQ_Chief_ArcQuest2Start_7 = I would be grateful if you'd help us.
+OrderHQ_Chief_ArcQuest2Start_8 = Alright, I'll see what I can do.
+OrderHQ_Chief_ArcQuest2Start_9 = Give me the signal when you are ready.
+
+OrderHQ_Chief_ArcQuest2End_1 = I'm ready.
+OrderHQ_Chief_ArcQuest2End_2 = Good, let's go.
+OrderHQ_Chief_ArcQuest2End_3 = Good job. We managed to secure the bunker.
+OrderHQ_Chief_ArcQuest2End_4 = At least now you can sleep easy, knowing you don't have bandits living underneath you.
+OrderHQ_Chief_ArcQuest2End_5 = Yeah, that's a relief.
+OrderHQ_Chief_ArcQuest2End_6 = Hmm... Actually...
+OrderHQ_Chief_ArcQuest2End_7 = Do you require more help ?
+OrderHQ_Chief_ArcQuest2End_8 = I might. Come back when you have time to kill.
+OrderHQ_Chief_ArcQuest2End_9 = I think I know who those bandits were.
+
+OrderHQ_Chief_ArcQuest3Start_1 = So you think you know who those bandits were ?
+OrderHQ_Chief_ArcQuest3Start_2 = Yeah. They're from a gang that took over a mine not far from here.
+OrderHQ_Chief_ArcQuest3Start_3 = I think we need to pay them a visit.
+OrderHQ_Chief_ArcQuest3Start_4 = But before that, we need supplies. Marklichtian supplies.
+OrderHQ_Chief_ArcQuest3Start_5 = The bandits stole most of our guns. We must get new ones.
+OrderHQ_Chief_ArcQuest3Start_6 = Could you go to Fort Libert and get us some supplies ?
+OrderHQ_Chief_ArcQuest3Start_7 = We need to stay here and defend the bunker from further attacks.
+OrderHQ_Chief_ArcQuest3Start_8 = Okay, I'll do it.
+OrderHQ_Chief_ArcQuest3Start_9 = Thank you. I promise the reward will be worth it.
+
+OrderHQ_Chief_ArcQuest3During_1 = Fort Libert has the supplies we need. You need to go and get it for us.
+
+OrderHQ_Chief_ArcQuest3End_1 = Here are the supplies.
+OrderHQ_Chief_ArcQuest3End_2 = Great. And just in time, too.
+OrderHQ_Chief_ArcQuest3End_3 = I just finished deciding on the plan for taking out the gang that attacked us.
+OrderHQ_Chief_ArcQuest3End_4 = Are you in ? For old time's sake.
+OrderHQ_Chief_ArcQuest3End_5 = ... Okay, okay. For old time's sake.
+OrderHQ_Chief_ArcQuest3End_6 = Good. Come, I'll show you.
+OrderHQ_Chief_ArcQuest3End_7 = You see the mine to the North of our position ?
+OrderHQ_Chief_ArcQuest3End_8 = That's the enemy stronghold. We will storm it.
+OrderHQ_Chief_ArcQuest3End_9 = Once you're ready, rendez-vous with our troops at the mine's entrance.
+OrderHQ_Chief_ArcQuest3End_10 = Okay. Is there anything I should know about those bandits ?
+OrderHQ_Chief_ArcQuest3End_11 = Not much. There truly are your average bandits.
+OrderHQ_Chief_ArcQuest3End_12 = However, they are quite numerous. Be careful while in combat.
+OrderHQ_Chief_ArcQuest3End_13 = By the way. They had set up a small camp not far from our bunker.
+OrderHQ_Chief_ArcQuest3End_14 = I had a team go take them down while you were out getting supplies.
+OrderHQ_Chief_ArcQuest3End_15 = I see. Well, I'll see you at the mines then.
+OrderHQ_Chief_ArcQuest3End_16 = Yes. It will be nice to fight alongside you again.
+
+OrderHQ_Chief_ArcQuest4During_1 = When you are ready, rendez-vous with our forces at the mine's entrance. 
+
+OrderHQ_Chief_AboutBandits_1 = Banditry was always a problem in the region.
+OrderHQ_Chief_AboutBandits_2 = But it got worse in the years following the invasions and the Union war.
+OrderHQ_Chief_AboutBandits_3 = Some people were desperate. Some people wanted to get richer.
+OrderHQ_Chief_AboutBandits_4 = They formed various gangs and hid in the undisturbed forest.
+OrderHQ_Chief_AboutBandits_5 = As time went on, their numbers grew. Most of them came from the impoverished Orkvian land.
+
+OrderHQ_Chief_AboutOrder_1 = The Order is actually sponsored by both Marklich and Kalia.
+OrderHQ_Chief_AboutOrder_2 = The original chief of the Order came from high places. It was easy to get people onboard.
+OrderHQ_Chief_AboutOrder_3 = He hired fresh recruits from the Marklichtian Military Academy and erected this bunker.
+OrderHQ_Chief_AboutOrder_4 = He actually died not long after you left for Kalia.
+OrderHQ_Chief_AboutOrder_5 = It's a shame what happened to your mother. I'm sorry.
+OrderHQ_Chief_AboutOrder_6 = I hope you are doing well nowadays.
+
+# ---------------------------------------------------------
+# -------------- Forest - Lake Gang Camp ------------------
+# ---------------------------------------------------------
+
+LakeGangCamp_Quest_1 = This is the Lake gang's camp.
+LakeGangCamp_Quest_2 = Bandits surround me. They don't like me being here.
+LakeGangCamp_Quest_3 = Oh well. Time to get what I came here for.
+
+LakeGangCamp_Quest_4 = I managed to defeat the gang.
+LakeGangCamp_Quest_5 = After searching for a bit, I find the fisherman's clock.
+LakeGangCamp_Quest_6 = With this, maybe he'll reconsider my offer.
+
+# ---------------------------------------------------------
+# ----------------- Forest - Bandit Camp ------------------
+# ---------------------------------------------------------
+
+BanditCamp_Quest_1 = This is the camp the lighthouse keeper told me about.
+BanditCamp_Quest_2 = Bandits surround me. They don't like me being here.
+BanditCamp_Quest_3 = Oh well. Time to get what I came here for.
+
+BanditCamp_Quest_4 = I managed to defeat the bandits.
+BanditCamp_Quest_5 = After searching for a bit, I find the keeper's "treasure".
+BanditCamp_Quest_6 = I should head back to Hope Harbor.
+
+# ---------------------------------------------------------
+# -------------- Forest - Bandit Mine ---------------------
+# ---------------------------------------------------------
+
+BanditMine_OrderArcQuest4_1 = Sir ! There you are.
+BanditMine_OrderArcQuest4_2 = Are you ready to attack ?
+
+BanditMine_OrderArcQuest4_No_1 = We are waiting for your signal.
+
+BanditMine_OrderArcQuest4_3 = Good. Let's go, sir.
+BanditMine_OrderArcQuest4_4 = We enter the mines. We are sure to encounter bandits in there.
+
+BanditMine_OrderArcQuest4_5 = After a few fights, we manage to gain control over the mines.
+BanditMine_OrderArcQuest4_6 = We won !
+BanditMine_OrderArcQuest4_7 = Thank you for your hard work, [MC].
+BanditMine_OrderArcQuest4_8 = We could have never won today without you.
+BanditMine_OrderArcQuest4_9 = Helping friends is always a good thing.
+BanditMine_OrderArcQuest4_10 = Yeah, true.
+BanditMine_OrderArcQuest4_11 = Now that this gang has been dealt with, we'll be able to deal with others.
+BanditMine_OrderArcQuest4_12 = I won't hold you any longer. You seem to have plenty on your plate already.
+BanditMine_OrderArcQuest4_13 = Which reminds me, here is your reward.
+BanditMine_OrderArcQuest4_14 = The chief shows me a heavy riot shield. I recognize it.
+BanditMine_OrderArcQuest4_15 = It was... the previous chief's shield, right ?
+BanditMine_OrderArcQuest4_16 = Yeah... Nobody has been using it ever since, so...
+BanditMine_OrderArcQuest4_17 = You can have it.
+BanditMine_OrderArcQuest4_18 = Thank you.
+BanditMine_OrderArcQuest4_19 = If you ever want to talk, I'll be in the bunker.
+BanditMine_OrderArcQuest4_20 = For now, goodbye, friend.
+BanditMine_OrderArcQuest4_21 = Well... That's one thing dealt with.
+BanditMine_OrderArcQuest4_22 = I wouldn't be surprised to see the Order's soldiers patrol the forest from now on.
+
+# ---------------------------------------------------------
+# ------------------- Forest - Common ---------------------
+# ---------------------------------------------------------
+
+Forest_Common_OrderSoldier_1 = Nothing to report yet, sir.

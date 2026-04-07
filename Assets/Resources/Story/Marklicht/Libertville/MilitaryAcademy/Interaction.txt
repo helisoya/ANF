@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Libertville-City_Libertville_MilitaryAcademy)
+
+interact

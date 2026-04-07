@@ -1,0 +1,20 @@
+fadeBg(1;true)
+
+removeAllCharacters()
+setBackground(Orkva/Vorlan/MayorRoom)
+
+addCharacter(Citizen2;false)
+setCharacterPosition(Citizen2;Mayor)
+setCharacterRotation(Citizen2;Mayor)
+
+if(secondaryQuest_Vorlan_Mayor < 1 & night = 0){
+	addCharacter(SecretPolice;false)
+	setCharacterPosition(SecretPolice;Soldier)
+	setCharacterRotation(SecretPolice;Soldier)
+	setInteractionChapter(SecretPolice;Orkva/Vorlan/CityHall/Soldier_Enter)
+}
+
+
+fadeBg(0;false)
+
+load(Orkva/Vorlan/CityHall/MayorRoom)

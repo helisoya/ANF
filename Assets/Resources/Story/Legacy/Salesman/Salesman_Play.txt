@@ -1,0 +1,3 @@
+dialog(Salesman;Salesman;false;Salesman_Salesman_Play_1)
+
+loadScene(STS)

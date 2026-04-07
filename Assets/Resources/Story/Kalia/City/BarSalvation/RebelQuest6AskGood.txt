@@ -1,0 +1,4 @@
+dialog([MC];_;false;Kalia_BarSalvation_Quest6Ask_3)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Quest6Ask_4)
+
+load(Endings/Rebels_A)

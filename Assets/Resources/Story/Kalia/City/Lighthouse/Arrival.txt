@@ -1,0 +1,25 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/Lighthouse)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Kalia)
+
+autosave()
+
+fadeFg(0;false)
+
+if(arcQuest_Jackwell_4 = 0){
+	load(Kalia/City/Lighthouse/JackwellArcQuest4)
+	return()
+}
+
+load(Kalia/City/Lighthouse/Interaction)

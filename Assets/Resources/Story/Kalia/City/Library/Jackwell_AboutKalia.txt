@@ -1,0 +1,15 @@
+# Talks about Kalia
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_1)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_2)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_3)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_4)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_5)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_6)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_7)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_8)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_9)
+dialog(Jackwell;Jackwell;false;Kalia_Library_Jackwell_AboutKalia_10)
+
+unlockLog(Log_ImperialCivilWar;true)
+
+load(Kalia/City/Library/Jackwell)

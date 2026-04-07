@@ -1,0 +1,7 @@
+playMusic(Exploration_2)
+removeAllCharacters()
+
+setBackground(BraiseBridgeDestroyed)
+if(rain = 1) changeSkybox(FortressRain)
+
+load(BraiseFortress/Interaction)

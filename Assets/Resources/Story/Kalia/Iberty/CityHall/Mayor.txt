@@ -1,0 +1,2 @@
+if(secondaryQuest_Iberty_Doctor = 0) load(Kalia/Iberty/CityHall/Mayor_Quest)
+else load(Kalia/Iberty/CityHall/Mayor_Default)

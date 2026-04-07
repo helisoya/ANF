@@ -1,0 +1,8 @@
+dialog(Lara;Lara;false;BorderFortress_Lara_AboutYou_1)
+dialog(Lara;Lara;false;BorderFortress_Lara_AboutYou_2)
+dialog(Lara;Lara;false;BorderFortress_Lara_AboutYou_3)
+dialog(Lara;Lara;false;BorderFortress_Lara_AboutYou_4)
+dialog(Lara;Lara;false;BorderFortress_Lara_AboutYou_5)
+dialog(Lara;Lara;false;BorderFortress_Lara_AboutYou_6)
+
+load(Marklicht/BorderFortress/Lara)

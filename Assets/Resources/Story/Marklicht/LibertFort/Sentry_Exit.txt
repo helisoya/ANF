@@ -1,0 +1,6 @@
+setCharacterAlpha(MarklichtSoldier2;0;true)
+setCharacterPosition(MarklichtSoldier2;Sentry)
+setCharacterRotation(MarklichtSoldier2;Sentry)
+setCharacterAlpha(MarklichtSoldier2;1;false)
+
+load(Marklicht/LibertFort/Interaction)

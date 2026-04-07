@@ -1,0 +1,14 @@
+dialog([MC];_;false;Libertville_TrainStation_Courier_HopeHarborQuest_1)
+
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_HopeHarborQuest_2)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_HopeHarborQuest_3)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_HopeHarborQuest_4)
+
+variable(secondaryQuest_HopeHarbor_Inn;100)
+addGold(20)
+addExpToAll(10)
+
+dialog(narrator;_;false;Libertville_TrainStation_Courier_HopeHarborQuest_5)
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_HopeHarborQuest_6)
+
+load(Marklicht/Libertville/Trainstation/Courier)

@@ -1,0 +1,11 @@
+setCharacterAlpha(Waldo;0;true)
+
+setCharacterPosition(Waldo;FrontWaldo)
+setCharacterRotation(Waldo;FrontWaldo)
+
+setCharacterAlpha(Waldo;1;false)
+
+dialog(Waldo;Waldo;false;Souvenir_Waldo_Normal)
+
+
+load(SouvenirShop/Waldo_Default)

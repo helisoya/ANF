@@ -1,0 +1,6 @@
+addCharacter(Horse;false)
+setCharacterPosition(Horse;Horse)
+setCharacterRotation(Horse;Horse)
+setInteractionChapter(Horse;Horse/Horse)
+
+load(Horse/Interaction)

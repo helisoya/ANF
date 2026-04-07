@@ -1,0 +1,14 @@
+if(arcQuest_Sam_1 = -1 | arcQuest_Sam_4 = 100){
+choice Choice_Chat
+	Choice_AboutYou Orkva/Altyr/Sam_AboutYou
+	Choice_AboutRegion Orkva/Altyr/Sam_AboutRegion
+	Choice_NeedHelp Orkva/Altyr/Sam_ArcQuest_Check
+	Choice_Nothing Orkva/Altyr/Sam_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutYou Orkva/Altyr/Sam_AboutYou
+	Choice_AboutRegion Orkva/Altyr/Sam_AboutRegion
+	Choice_AboutTask Orkva/Altyr/Sam_ArcQuest_Check
+	Choice_Nothing Orkva/Altyr/Sam_Exit
+}

@@ -1,0 +1,35 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/KalibuPark)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Kalia)
+
+if(secondaryQuest_Kalia_Max = 0 & night = 0){
+	addCharacter(Citizen1;false)
+	setCharacterPosition(Citizen1;Lake)
+	setCharacterRotation(Citizen1;Lake)
+	setInteractionChapter(Citizen1;Kalia/City/KalibuPark/SecondaryQuestBarMax)
+}
+else{
+	if(night = 1 & secondaryQuest_Kalia_Max != 0 & secondaryQuest_Kalia_Delivery = -1){
+		addCharacter(Citizen2;false)
+		setCharacterPosition(Citizen2;Lake)
+		setCharacterRotation(Citizen2;Lake)
+		setInteractionChapter(Citizen2;Kalia/City/KalibuPark/SecondaryQuestDelivery)
+	}
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Kalia/City/KalibuPark/Interaction)

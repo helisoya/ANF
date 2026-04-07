@@ -1,0 +1,6 @@
+# Talks about the order
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_NeedHelp_1)
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_NeedHelp_2)
+dialog(Soldier;SoldierKalia1;false;KaliaOutpost_Soldier_NeedHelp_3)
+
+load(Kalia/Outpost/Soldier)

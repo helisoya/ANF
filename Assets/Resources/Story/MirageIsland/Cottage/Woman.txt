@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_AboutYou MirageIsland/Cottage/Woman_AboutYou
+	Choice_AboutOrkva MirageIsland/Cottage/Woman_AboutOrkva
+	Choice_Nothing MirageIsland/Cottage/Woman_Exit

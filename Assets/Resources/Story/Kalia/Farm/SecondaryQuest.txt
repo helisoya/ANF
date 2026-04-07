@@ -1,0 +1,10 @@
+dialog(narrator;_;false;KaliaFarm_SecondaryQuest_1)
+dialog(narrator;_;false;KaliaFarm_SecondaryQuest_2)
+dialog(narrator;_;false;KaliaFarm_SecondaryQuest_3)
+dialog(narrator;_;false;KaliaFarm_SecondaryQuest_4)
+
+addExpToAll(10)
+
+variable(secondaryQuest_Kalia_Delivery;100)
+
+load(Kalia/Farm/Interaction)

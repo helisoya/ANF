@@ -1,0 +1,30 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/Shop)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Kalia)
+
+if(night = 0){
+	addCharacter(Salesman2;false)
+	setCharacterPosition(Salesman2;SalesmanSpot)
+	setCharacterRotation(Salesman2;SalesmanSpot)
+	setInteractionChapter(Salesman2;Kalia/City/Shop/Salesman_Enter)
+}
+else{
+	if(secondaryQuest_Kalia_Shop = 0) load(Kalia/City/Shop/SubQuest)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Kalia/City/Shop/Interaction)

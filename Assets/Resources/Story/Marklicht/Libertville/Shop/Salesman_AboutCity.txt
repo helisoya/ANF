@@ -1,0 +1,4 @@
+dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_AboutCity_1)
+dialog(Salesman;Salesman2;false;Libertville_Shop_Shopkeeper_AboutCity_2)
+
+load(Marklicht/Libertville/Shop/Salesman)

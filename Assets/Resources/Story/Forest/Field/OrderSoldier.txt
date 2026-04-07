@@ -1,0 +1,13 @@
+setCharacterAlpha(OrderSoldier;0;true)
+setCharacterPosition(OrderSoldier;Front)
+setCharacterRotation(OrderSoldier;Front)
+setCharacterAlpha(OrderSoldier;1;false)
+
+dialog(Soldier;OrderSoldier;false;Forest_Common_OrderSoldier_1)
+
+setCharacterAlpha(OrderSoldier;0;true)
+setCharacterPosition(OrderSoldier;OrderSoldier)
+setCharacterRotation(OrderSoldier;OrderSoldier)
+setCharacterAlpha(OrderSoldier;1;false)
+
+load(Forest/Field/Interaction)

@@ -1,0 +1,31 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Region/BorderFortressOutside)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Marklicht)
+
+autosave()
+
+if(marklichtQuest_0 = -1 & rebelQuest_0 < 100 & mainQuest_4 < 100){
+	load(Marklicht/BorderFortress/JoinQuest_Start)
+}
+else{
+	if(marklichtQuest_0 = 0){
+		addCharacter(Lame;false)
+		setCharacterPosition(Lame;Sentry)
+		setCharacterRotation(Lame;Sentry)
+		setInteractionChapter(Lame;Marklicht/BorderFortress/JoinQuest_Ask)
+	}
+
+	fadeFg(0;false)
+	load(Marklicht/BorderFortress/Interaction)
+}

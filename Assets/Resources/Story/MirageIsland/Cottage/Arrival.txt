@@ -1,0 +1,32 @@
+clearStack()
+setFg(1)
+
+setLocals(islandRegion)
+
+playMusic(Exploration_Island)
+removeAllCharacters()
+setBackground(MirageIsland/Region/Cottage)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_MirageIsland)
+
+autosave()
+
+if(secondaryQuest_HopeHarbor_Cottage = 100){
+	addCharacter(Citizen4;false)
+	setCharacterPosition(Citizen4;Citizen)
+	setCharacterRotation(Citizen4;Citizen)
+	setInteractionChapter(Citizen4;MirageIsland/Cottage/Woman_Enter)
+}
+
+fadeFg(0;false)
+
+if(secondaryQuest_HopeHarbor_Cottage = 0){
+	load(MirageIsland/Cottage/SecondaryQuest)
+}
+else{
+	load(MirageIsland/Cottage/Interaction)
+}

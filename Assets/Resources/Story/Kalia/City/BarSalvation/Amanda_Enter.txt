@@ -1,0 +1,45 @@
+if(rebelQuest_2 = 0){
+	load(Kalia/City/BarSalvation/RebelQuest1End)
+	return()
+}
+
+if(rebelQuest_2 = 2){
+	load(Kalia/City/BarSalvation/RebelQuest2End)
+	return()
+}
+
+if(rebelQuest_3 = 2){
+	load(Kalia/City/BarSalvation/RebelQuest3End)
+	return()
+}
+
+if(rebelQuest_4 = 1){
+	load(Kalia/City/BarSalvation/RebelQuest4End)
+	return()
+}
+
+if(rebelQuest_6 = 0){
+	load(Kalia/City/BarSalvation/RebelQuest6Start)
+	return()
+}
+
+setCharacterAlpha(Amanda;0;true)
+setCharacterBody(Amanda;Normal;true)
+setCharacterPosition(Amanda;Front)
+setCharacterRotation(Amanda;Front)
+setCharacterAlpha(Amanda;1;false)
+
+if(rebelQuest_1 = 0){
+	load(Kalia/City/BarSalvation/RebelQuest1Start)
+	return()
+}
+
+if(rebelQuest_6 = 1){
+	load(Kalia/City/BarSalvation/RebelQuest6Ask)
+	return()
+}
+
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_Greetings_1)
+
+load(Kalia/City/BarSalvation/Amanda)
+

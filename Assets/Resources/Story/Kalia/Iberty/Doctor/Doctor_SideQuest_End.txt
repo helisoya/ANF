@@ -1,0 +1,14 @@
+dialog([MC];_;false;Iberty_Doctor_SideQuest_End_1)
+
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_SideQuest_End_2)
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_SideQuest_End_3)
+
+addGold(10)
+addExpToAll(10)
+
+dialog(narrator;_;false;Iberty_Doctor_SideQuest_End_4)
+dialog(Doctor;DoctorIberty;false;Iberty_Doctor_SideQuest_End_5)
+
+variable(secondaryQuest_Iberty_Doctor;100)
+
+load(Kalia/Iberty/Doctor/Doctor)

@@ -1,0 +1,8 @@
+setCharacterAlpha(Citizen3;0;true)
+setCharacterPosition(Citizen3;Front)
+setCharacterRotation(Citizen3;Front)
+setCharacterAlpha(Citizen3;1;false)
+
+dialog(Owner;Citizen3;false;Okville_Shop_Greetings_1)
+
+load(Orkva/Okville/Shop/Salesman)

@@ -1,0 +1,6 @@
+dialog(Waitress;AnnaDisguise;false;Kalia_BarSalvation_Waiter_Order_1)
+
+choice Choice_Generic
+	Choice_Bread Kalia/City/BarSalvation/Waiter_Wrong
+	Choice_HotChocolate Kalia/City/BarSalvation/Waiter_Wrong
+	Choice_GreenTea Kalia/City/BarSalvation/Waiter_AskConfirmation

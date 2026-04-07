@@ -1,0 +1,14 @@
+setBackground(RickeyLandSalesman)
+
+addCharacter(Salesman;false)
+setCharacterPosition(Salesman;Target)
+setCharacterRotation(Salesman;Target)
+
+variable(shootSalesmanQuest;100)
+
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_1)
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_2)
+
+if(waldoQuizQuest = 100 & horseRaceQuest = 100 & shootSalesmanQuest = 100 & hauntedHouseQuest = 100) load(Salesman/MiniGame_AllDone)
+
+load(Salesman/MiniGame_NotAllDone)

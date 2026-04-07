@@ -1,0 +1,10 @@
+# Fast forwards Day / Night Cycle
+variable(nightIncrement;0)
+if(night = 0){
+	variable(night;1)
+	dialog(narrator;_;false;Common_FastForwardNight_1)
+}
+else{
+	variable(night;0)
+	dialog(narrator;_;false;Common_FastForwardDay_1)
+}

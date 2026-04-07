@@ -1,0 +1,6 @@
+dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrkva_1)
+dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrkva_2)
+dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrkva_3)
+dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutOrkva_4)
+
+load(Orkva/Tolau/Courthouse/Jade)

@@ -1,0 +1,11 @@
+# Iberty's Doctor Quest - Marker 0 to 1
+dialog([MC];_;false;Iberty_CityHall_Mayor_DoctorQuest0_1)
+dialog([MC];_;false;Iberty_CityHall_Mayor_DoctorQuest0_2)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_DoctorQuest0_3)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_DoctorQuest0_4)
+dialog(narrator;_;false;Iberty_CityHall_Mayor_DoctorQuest0_5)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_DoctorQuest0_6)
+
+variable(secondaryQuest_Iberty_Doctor;1)
+
+load(Kalia/Iberty/CityHall/Mayor_Default)

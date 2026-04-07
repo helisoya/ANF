@@ -1,0 +1,6 @@
+setCharacterAlpha(MarklichtSoldier;0;true)
+setCharacterPosition(MarklichtSoldier;Soldier)
+setCharacterRotation(MarklichtSoldier;Soldier)
+setCharacterAlpha(MarklichtSoldier;1;false)
+
+load(Marklicht/Libertville/MilitaryAcademy/Interaction)

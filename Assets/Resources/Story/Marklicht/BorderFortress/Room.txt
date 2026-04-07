@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Exit;Marklicht/BorderFortress/Room_Exit)
+setInteractionChapter(Lara;Marklicht/BorderFortress/Lara_Enter)
+
+interact

@@ -1,0 +1,8 @@
+setCharacterAlpha(Citizen2;0;true)
+setCharacterPosition(Citizen2;Front)
+setCharacterRotation(Citizen2;Front)
+setCharacterAlpha(Citizen2;1;false)
+
+dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_Greetings_1)
+
+load(Orkva/Vorlan/CityHall/Mayor)

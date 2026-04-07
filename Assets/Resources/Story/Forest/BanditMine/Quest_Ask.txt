@@ -1,0 +1,11 @@
+setCharacterAlpha(OrderSoldier;0;true)
+setCharacterPosition(OrderSoldier;Front)
+setCharacterRotation(OrderSoldier;Front)
+setCharacterAlpha(OrderSoldier;1;false)
+
+dialog(Soldier;OrderSoldier;false;BanditMine_OrderArcQuest4_1)
+dialog(Soldier;OrderSoldier;false;BanditMine_OrderArcQuest4_2)
+
+choice Choice_Generic
+	Choice_Yes Forest/BanditMine/Quest
+	Choice_No Forest/BanditMine/Quest_No

@@ -1,0 +1,13 @@
+setCharacterAlpha(GUARD;0;true)
+
+setCharacterPosition(GUARD;Front)
+setCharacterRotation(GUARD;Front)
+
+setCharacterAlpha(GUARD;1;false)
+
+if(guardQuest = -1) Vlatyr/GUARD_QuestStart
+if(guardQuest = 1) Vlatyr/GUARD_QuestEnd
+
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_Normal)
+
+load(Vlatyr/GUARD_Default)

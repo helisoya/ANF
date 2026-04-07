@@ -1,0 +1,8 @@
+if(shopQuest = 100) load(SouvenirShop/Waldo_QuestDone) 
+if(shopQuest = -1) load(SouvenirShop/Waldo_QuestDone) 
+
+choice Choice_Chat
+	Choice_Products SouvenirShop/Waldo_Products_Check
+	Choice_AboutYou SouvenirShop/Waldo_AboutYou
+	Choice_AboutRickey SouvenirShop/Waldo_AboutRickey
+	Choice_Nothing SouvenirShop/Waldo_Exit

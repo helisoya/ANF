@@ -1,0 +1,7 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Vorlan-City_Vorlan_CityHall)
+setInteractionChapter(Railway;Orkva/Vorlan/CityHall/Railway_Check)
+setInteractionChapter(Door;Orkva/Vorlan/CityHall/MayorRoom_Enter)
+
+interact

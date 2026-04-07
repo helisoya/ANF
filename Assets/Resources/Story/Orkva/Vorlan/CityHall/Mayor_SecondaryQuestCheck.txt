@@ -1,0 +1,19 @@
+# Checks for the mayor's secondary quest
+
+# Quest not started
+if(secondaryQuest_Vorlan_Mayor = -1){
+	load(Orkva/Vorlan/CityHall/Mayor_SecondaryQuest_Start)
+	return()
+}
+
+# Quest in progress
+if(secondaryQuest_Vorlan_Mayor = 0){
+	load(Orkva/Vorlan/CityHall/Mayor_SecondaryQuest_0)
+	return()
+}
+
+# Quest End
+if(secondaryQuest_Vorlan_Mayor = 1){
+	load(Orkva/Vorlan/CityHall/Mayor_SecondaryQuest_End)
+	return()
+}

@@ -1,0 +1,7 @@
+dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_AboutYou_1)
+dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_AboutYou_2)
+dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_AboutYou_3)
+dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_AboutYou_4)
+dialog(Soldier;MarklichtSoldier;false;Libertville_MilitaryAcademy_Soldier_AboutYou_5)
+
+load(Marklicht/Libertville/MilitaryAcademy/Soldier)

@@ -1,0 +1,8 @@
+setCharacterAlpha(Fisherman1;0;true)
+setCharacterPosition(Fisherman1;Front)
+setCharacterRotation(Fisherman1;Front)
+setCharacterAlpha(Fisherman1;1;false)
+
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Greetings_1)
+
+load(Kalia/Iberty/Port/Fisherman)

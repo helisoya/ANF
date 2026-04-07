@@ -1,0 +1,15 @@
+# Checks for the lighthouse
+
+if(merchantQuest_2 = 0){
+	load(Kalia/City/Lighthouse/MerchantQuest2Start)
+	return()
+}
+
+if(merchantQuest_2 = 2){
+	load(Kalia/City/Lighthouse/MerchantQuest2End)
+	return()
+}
+
+dialog(narrator;_;false;Kalia_Lighthouse_Door_Locked_1)
+
+load(Kalia/City/Lighthouse/Interaction)

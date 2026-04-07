@@ -1,0 +1,8 @@
+setCharacterAlpha(SoldierKalia2;0;true)
+setCharacterPosition(SoldierKalia2;Front)
+setCharacterRotation(SoldierKalia2;Front)
+setCharacterAlpha(SoldierKalia2;1;false)
+
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Greetings_1)
+
+load(Kalia/Iberty/CityHall/Soldier)

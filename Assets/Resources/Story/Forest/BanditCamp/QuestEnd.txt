@@ -1,0 +1,15 @@
+setFg(1)
+
+setBackground(Forest/BanditCamp)
+
+load(Common/DisplayWeatherRain)
+
+fadeFg(0;false)
+
+dialog(narrator;_;false;BanditCamp_Quest_4)
+dialog(narrator;_;false;BanditCamp_Quest_5)
+dialog(narrator;_;false;BanditCamp_Quest_6)
+
+variable(secondaryQuest_HopeHarbor_Keeper;1)
+
+load(Forest/BanditCamp/Interaction)

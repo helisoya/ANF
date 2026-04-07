@@ -1,0 +1,4 @@
+dialog(Chief;OrderChief;false;Tolau_Courthouse_Chief_ArcQuest1_1)
+dialog(Chief;OrderChief;false;Tolau_Courthouse_Chief_ArcQuest1_2)
+
+load(Orkva/Tolau/Courthouse/Chief_Exit)

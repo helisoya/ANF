@@ -1,0 +1,8 @@
+if(mainQuest_1 < 1) load(Kalia/Iberty/Port/Fisherman_Quest_Cant)
+else{
+	switch secondaryQuest_Iberty_Port
+		-1 Kalia/Iberty/Port/Fisherman_Quest_Start
+		0 Kalia/Iberty/Port/Fisherman_Quest_Do_Ask
+		100 Kalia/Iberty/Port/Fisherman_Quest_Done
+
+}

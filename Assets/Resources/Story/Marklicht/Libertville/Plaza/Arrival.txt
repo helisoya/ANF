@@ -1,0 +1,25 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Libertville/Plaza)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Libertville)
+
+autosave()
+
+fadeFg(0;false)
+
+if(secondaryQuest_Libertville_Academy = 0){
+	load(Marklicht/Libertville/Plaza/Quest)
+}
+else{
+	load(Marklicht/Libertville/Plaza/Interaction)
+}

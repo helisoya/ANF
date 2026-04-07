@@ -1,0 +1,14 @@
+dialog([MC];_;false;Souvenir_Waldo_ShopQuest2_1)
+
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_2)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_3)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_4)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_5)
+dialog(narrator;_;false;Souvenir_Waldo_ShopQuest2_6)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_7)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_8)
+dialog(Waldo;Waldo;false;Souvenir_Waldo_ShopQuest2_9)
+
+variable(shopQuest;100)
+
+load(SouvenirShop/Waldo_QuestDone)

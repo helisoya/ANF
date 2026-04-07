@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054cacc03761b40be47bb0c9a48b98, type: 3}
+  m_Name: BraiseFortress_Arc
+  m_EditorClassIdentifier: 
+  ID: BraiseFortress_Arc
+  locationID: Location_BraiseFortress
+  floorsAmount: 7
+  endChapter: BraiseFortress/DungeonEnd
+  musicName: Dungeon_Fortress
+  canExitEarly: 0
+  earlyExitChapter: 
+  encounters:
+  - {fileID: 11400000, guid: 194da1712c3f9a74596a07fd71deae6c, type: 2}
+  - {fileID: 11400000, guid: 1265a7da420a5b449b06b7c01a11cf0d, type: 2}
+  - {fileID: 11400000, guid: b2efcf442c833fa459e0b777db4decee, type: 2}
+  battleBackground: Fortress
+  size: {x: 15, y: 15}
+  roomCount: 4
+  roomMaxSize: {x: 5, y: 5}
+  cellPrefab: {fileID: 8148160245439542551, guid: ae3a938b9d7c55e428b10a568692f93b,
+    type: 3}
+  stairsPrefab: {fileID: 2695139049142173575, guid: 19d0f0de092f09f419864cd2a9518382,
+    type: 3}
+  propsToPlace: []

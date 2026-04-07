@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/BarSalvation)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Kalia)
+
+autosave()
+
+if(merchantQuest_1 = 1){
+	load(Kalia/City/BarSalvation/MerchantQuest1)
+	return()	
+}
+
+load(Kalia/City/BarSalvation/PopulateBar)
+
+fadeFg(0;false)
+
+load(Kalia/City/BarSalvation/Interaction)

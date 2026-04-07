@@ -1,0 +1,6 @@
+setCharacterAlpha(Jade;0;true)
+setCharacterPosition(Jade;Prosecutor)
+setCharacterRotation(Jade;Prosecutor)
+setCharacterAlpha(Jade;1;false)
+
+load(Orkva/Tolau/Courthouse/Interaction)

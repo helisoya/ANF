@@ -1,0 +1,32 @@
+clearStack()
+setFg(1)
+
+setLocals(forest)
+
+playMusic(Exploration_Forest)
+removeAllCharacters()
+setBackground(Forest/BanditCamp)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_WhiteForest)
+
+autosave()
+
+if(secondaryQuest_HopeHarbor_Keeper = 0){
+	fadeFg(0;false)
+	load(Forest/BanditCamp/Quest)
+}
+else{
+
+	if(arcQuest_Order_4 = 100){
+		addCharacter(OrderSoldier;false)
+		setCharacterPosition(OrderSoldier;OrderSoldier)
+		setCharacterRotation(OrderSoldier;OrderSoldier)
+		setInteractionChapter(OrderSoldier;Forest/BanditCamp/OrderSoldier)
+	}
+	fadeFg(0;false)
+	load(Forest/BanditCamp/Interaction)
+}

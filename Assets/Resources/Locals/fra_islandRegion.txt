@@ -1,0 +1,227 @@
+# ---------------------------------------------------------
+# ----------------------- Forest --------------------------
+# ---------------------------------------------------------
+
+MirageForest_No_1 = Je vais me perdre si j'entre dans ces bois.
+
+MirageForest_Temple_1 = La voilà. Voici l'entrée de la Forêt Mirage
+MirageForest_Temple_2 = Les gens disent qu'on peut se perdre facilement dans ces bois.
+MirageForest_Temple_3 = Apparemment, c'est dû à une sorte de brouillard.
+MirageForest_Temple_4 = Enfin... On va quand même devoir naviguer à l'intérieur.
+MirageForest_Temple_5 = Le temple qu'on recherche devrait être au centre de la forêt.
+
+MirageForest_Temple_6 = Après avoir marché pour ce qu'il semble être des heures, nous arrivons enfin au temple.
+MirageForest_Temple_7 = Il a l'air vieux. Je me demande quand il a été construit.
+MirageForest_Temple_8 = Peu de personnes vivent à l'Ile Mirage.
+MirageForest_Temple_9 = En fait, si peu de personnes y vivent que les gens ont pensé au début qu'elle était inhabité.
+MirageForest_Temple_10 = Enfin. Il est temps d'explorer cet endroit.
+
+MirageForest_Temple_11 = Pendant que nous marchons, les couloirs du temple commencent à faire plus de sens.
+MirageForest_Temple_12 = C'est comme si les tronçons précédents étaient le résultat d'éboulements.
+MirageForest_Temple_13 = Je regarde les murs. Il y a différentes écritures dessus.
+MirageForest_Temple_14 = C'était un temple Suori, et un vieux.
+MirageForest_Temple_15 = Avec les dessins de Kalibu le Grand, on peut trouver des représentations du Seigneur Cerf, Dieu du Chaos.
+MirageForest_Temple_16 = Je me demande quand ce temple a été crée.
+MirageForest_Temple_17 = A un moment, nous arrivons dans une grande salle.
+
+MirageForest_Temple_Rebel_1 = Et bien sûr, Epée y est.
+MirageForest_Temple_Rebel_2 = Grr ! Où est-il ?
+MirageForest_Temple_Rebel_3 = Le patron m'a dit que le sceptre est ici... Où est-il ?
+MirageForest_Temple_Rebel_4 = Il cherche un artefact. Je le savais.
+MirageForest_Temple_Rebel_5 = Eh bien. Il est temps de lui dire bonjour.
+MirageForest_Temple_Rebel_6 = Besoin d'aide ?
+MirageForest_Temple_Rebel_7 = Ouaih, ça serait pas de refus.
+MirageForest_Temple_Rebel_8 = ...
+MirageForest_Temple_Rebel_9 = Attends une seconde- Bouclier !
+MirageForest_Temple_Rebel_10 = Espèce de traître ! Tu m'as laissé pour mort !
+MirageForest_Temple_Rebel_11 = Et qui est-ce à tes côtés ? Une rebelle ?
+MirageForest_Temple_Rebel_12 = Rien de personnel, Epée. J'ai simplement exécuté mes ordres.
+MirageForest_Temple_Rebel_13 = Tu... Tu aurais au moins pu rendre le chien !
+MirageForest_Temple_Rebel_14 = Traître... Je suppose que tu es ici pour le sceptre ?
+MirageForest_Temple_Rebel_15 = Maintenant, oui.
+MirageForest_Temple_Rebel_16 = Hé, hé ! Tu ne me vaincra pas !
+
+MirageForest_Temple_Rebel_17 = C'était un peu anti-climatique.
+MirageForest_Temple_Rebel_18 = C'était un 3 contre 1.
+MirageForest_Temple_Rebel_19 = Vite, trouvons ce sceptre avant qu'il ne se reveille.
+MirageForest_Temple_Rebel_20 = Compris !
+MirageForest_Temple_Rebel_21 = Nous cherchons la salle pour ce sceptre. Peu importe ce que c'est, le Marchant le veut.
+MirageForest_Temple_Rebel_22 = Trouvé !
+MirageForest_Temple_Rebel_23 = Bien. Montres-moi ça.
+MirageForest_Temple_Rebel_24 = Ce sceptre... Je suis sûr de l'avoir déjà vu.
+MirageForest_Temple_Rebel_25 = Il faut demander à ma soeur. Elle connaît bien la religion.
+MirageForest_Temple_Rebel_26 = Oui. Je pense que c'est quelque chose d'important.
+MirageForest_Temple_Rebel_27 = Bien. Rentrons.
+MirageForest_Temple_Rebel_28 = Après quelques heures, nous arrivons de nouveau à l'entrée de la forêt.
+MirageForest_Temple_Rebel_29 = Pauvre Epée... Il va encore devoir rentrer les mains vides.
+
+MirageForest_Temple_Marklicht_1 = Et bien sûr, Epée y est.
+MirageForest_Temple_Marklicht_2 = Grr ! Où est-il ?
+MirageForest_Temple_Marklicht_3 = Le patron m'a dit que le sceptre est ici... Où est-il ?
+MirageForest_Temple_Marklicht_4 = Il cherche un artefact. Je le savais.
+MirageForest_Temple_Marklicht_5 = Eh bien. Il est temps de lui dire bonjour.
+MirageForest_Temple_Marklicht_6 = Besoin d'aide ?
+MirageForest_Temple_Marklicht_7 = Ouaih, ça serait pas de refus.
+MirageForest_Temple_Marklicht_8 = ...
+MirageForest_Temple_Marklicht_9 = Attends une seconde- Bouclier !
+MirageForest_Temple_Marklicht_10 = Espèce de traître ! Tu m'as laissé pour mort !
+MirageForest_Temple_Marklicht_11 = Et qui est-ce à tes côtés ? Il ne fait pas partie des rebelles.
+MirageForest_Temple_Marklicht_12 = Rien de personnel, Epée. J'ai simplement éxecuté mes ordres.
+MirageForest_Temple_Marklicht_13 = Tu... Tu aurais au moins pu rendre le chien !
+MirageForest_Temple_Marklicht_14 = Traître... Je suppose que tu es ici pour le sceptre ?
+MirageForest_Temple_Marklicht_15 = Maintenant, oui.
+MirageForest_Temple_Marklicht_16 = Hé, hé ! Tu ne me vaincra pas !
+
+MirageForest_Temple_Marklicht_17 = C'était difficile.
+MirageForest_Temple_Marklicht_18 = C'était un 3 contre 1.
+MirageForest_Temple_Marklicht_19 = Vite, trouvons ce sceptre avant qu'il ne se reveille.
+MirageForest_Temple_Marklicht_20 = Compris !
+MirageForest_Temple_Marklicht_21 = Nous cherchons la salle pour ce sceptre. Peu importe ce que c'est, le Marchant le veut.
+MirageForest_Temple_Marklicht_22 = Trouvé !
+MirageForest_Temple_Marklicht_23 = Bien. Montres-moi ça.
+MirageForest_Temple_Marklicht_24 = Ce sceptre... Je suis sûr de l'avoir déjà vu.
+MirageForest_Temple_Marklicht_25 = Peut-être que la Générale en sait plus que nous.
+MirageForest_Temple_Marklicht_26 = Oui. Je pense que c'est quelque chose d'important.
+MirageForest_Temple_Marklicht_27 = Bien. Rentrons.
+MirageForest_Temple_Marklicht_28 = Après quelques heures, nous arrivons de nouveau à l'entrée de la forêt.
+MirageForest_Temple_Marklicht_29 = Pauvre Epée... Il va encore devoir rentrer les mains vides.
+
+MirageForest_Temple_Merchant_1 = Voilà. Le sceptre devrait être ici.
+MirageForest_Temple_Merchant_2 = Epée commence à chercher la salle. Je reste en arrière.
+MirageForest_Temple_Merchant_3 = Cet endroit est ancien. Je me demande quand il a été construit.
+MirageForest_Temple_Merchant_4 = Trouvé !
+MirageForest_Temple_Merchant_5 = Epée revient avec un grand bâton. Ca doit être l'artefact.
+MirageForest_Temple_Merchant_6 = Quel magnifique artefact. Le patron sera content.
+MirageForest_Temple_Merchant_7 = ...
+MirageForest_Temple_Merchant_8 = Hé, euh...
+MirageForest_Temple_Merchant_9 = Tu l'as aussi remarqué ?
+MirageForest_Temple_Merchant_10 = Oui. Quand tu n'étais pas là, il m'a confondu avec toi pendant 10 minutes.
+MirageForest_Temple_Merchant_11 = Je lui ai parlé avant de venir. A propos du futur.
+MirageForest_Temple_Merchant_12 = Il n'avait pas l'air inquiet de sa santé. Il m'a dit qu'il n'en avait rien à faire de ce qui se passerait après sa mort.
+MirageForest_Temple_Merchant_13 = Comment oses-tu mal parler de lui ? Il a un plan, j'en suis sur.
+MirageForest_Temple_Merchant_14 = J'espère.
+MirageForest_Temple_Merchant_15 = D'ailleurs, pourquoi avoir insisté pour venir ici ?
+MirageForest_Temple_Merchant_16 = ... Bouclier. N'oublie pas que nous sommes rivaux.
+MirageForest_Temple_Merchant_17 = Je veux gagner la guerre pour devenir le favori du patron.
+MirageForest_Temple_Merchant_18 = Je ne savais pas qu'il y avait une telle chose.
+MirageForest_Temple_Merchant_19 = Avec cet artefact, il va me reconnaitre comme son favori. J'en suis sur.
+MirageForest_Temple_Merchant_20 = Si tu le dis.
+MirageForest_Temple_Merchant_21 = Je me demande. Si Epée devenait le prochain consul...
+MirageForest_Temple_Merchant_22 = Non... Il ne ferait qu'apporter le chaos à Kalia.
+MirageForest_Temple_Merchant_23 = Enfin. C'est une possibilité. Peut-être que le favori du Marchand deviendra son héritier.
+MirageForest_Temple_Merchant_24 = Hé ! Bouclier.
+MirageForest_Temple_Merchant_25 = Oh, désolé.
+MirageForest_Temple_Merchant_26 = Ne commence pas à devenir sénile comme le patron.
+MirageForest_Temple_Merchant_27 = Ne sois pas ridicule.
+MirageForest_Temple_Merchant_28 = Viens, rentrons.
+MirageForest_Temple_Merchant_29 = Nous quittons le temple et retournons à l'entrée de la forêt.
+MirageForest_Temple_Merchant_30 = Il est temps de retourner à Kalia.
+
+# ---------------------------------------------------------
+# ---------------------- Cottage --------------------------
+# ---------------------------------------------------------
+
+MirageCottage_SecondaryQuest_1 = Donc voilà la fameuse maisonnette.
+MirageCottage_SecondaryQuest_2 = Elle n'a pas menti. Il y a des soldats, ici.
+MirageCottage_SecondaryQuest_3 = Ils ont érigé des barricades de fortune.
+MirageCottage_SecondaryQuest_4 = Eh bien, il est temps de nettoyer tout ça.
+
+MirageCottage_SecondaryQuest_5 = Bien, ça devrait le faire.
+MirageCottage_SecondaryQuest_6 = Je devrais retourner à Port Espoir et prévenir la dame.
+
+MirageCottage_Woman_Greetings_1 = Tant à nettoyer...
+
+MirageCottage_Woman_AboutYou_1 = Oh, je ne fais que vivre isolée dans ma maisonnette. Enfin, quand elle n'est pas contrôllée par des soldats.
+MirageCottage_Woman_AboutYou_2 = Le port est trop bruyant. Je préfère le calme des collines.
+
+MirageCottage_Woman_AboutOrkva_1 = Orkva essaie de prendre le contrôle de l'île depuis des décénies.
+MirageCottage_Woman_AboutOrkva_2 = Mais ironiquement, ils n'avaient jamais tenté d'attaquer avant aujourd'hui.
+MirageCottage_Woman_AboutOrkva_3 = J'ai entendu dire qu'il y a eu une mutinerie dans l'armée. Les gens n'étaient pas contents d'être stationnés dans la région.
+
+# ---------------------------------------------------------
+# ---------------------- Hope Harbor ----------------------
+# ---------------------------------------------------------
+
+HopeHarbor_Docks_Fisherman_Ask_1 = Tu es prêt à repartir ?
+HopeHarbor_Docks_Fisherman_Ask_2 = Je vois. Allons-y.
+
+HopeHarbor_Docks_Woman_StartQuest_1 = Hé, Hé !
+HopeHarbor_Docks_Woman_StartQuest_2 = Une femme commence à me parler dès mon arrivée.
+HopeHarbor_Docks_Woman_StartQuest_3 = Que voulez-vous ?
+HopeHarbor_Docks_Woman_StartQuest_4 = Vous êtes un soldat, pas vrai ? Mon message est arrivé !
+HopeHarbor_Docks_Woman_StartQuest_5 = Quel message ?
+HopeHarbor_Docks_Woman_StartQuest_6 = Des soldats Orkviens ont pris le contrôle de ma maisonnette, vous devez les faire partir.
+HopeHarbor_Docks_Woman_StartQuest_7 = Attendez, vous-
+HopeHarbor_Docks_Woman_StartQuest_8 = Vous pourrez la trouver dans les collines à l'extérieur de la ville.
+HopeHarbor_Docks_Woman_StartQuest_9 = Je vais attendre ici votre retour.
+HopeHarbor_Docks_Woman_StartQuest_10 = Je... Quoi ?
+HopeHarbor_Docks_Woman_StartQuest_11 = Je suppose que je peux toujours aller y faire un tour si j'ai le temps.
+HopeHarbor_Docks_Woman_StartQuest_12 = La présence d'Orkvien ne présage rien de bon.
+
+HopeHarbor_Docks_Woman_DuringQuest_1 = Ma maison est dans les collines juste en dehors de la ville.
+
+HopeHarbor_Docks_Woman_EndQuest_1 = Votre maison est maintenant libérée.
+HopeHarbor_Docks_Woman_EndQuest_2 = C'est pas trop tôt.
+HopeHarbor_Docks_Woman_EndQuest_3 = Merci, monsieur.
+HopeHarbor_Docks_Woman_EndQuest_4 = Attend, quoi ?
+HopeHarbor_Docks_Woman_EndQuest_5 = Bon, il n'y aura pas de paie pour ce boulot...
+
+HopeHarbor_Lighthouse_Keeper_Greetings_1 = Oh oh ! Salut, petit gars.
+
+HopeHarbor_Lighthouse_Keeper_AboutYou_1 = Je m'occupe de ce phare depuis la nuit des temps.
+HopeHarbor_Lighthouse_Keeper_AboutYou_2 = Enfin, peut-etre pas autant. Oh oh !
+HopeHarbor_Lighthouse_Keeper_AboutYou_3 = Pendant plus de 60 ans, aucun bateau n'a amarré ici sans que je le sache.
+HopeHarbor_Lighthouse_Keeper_AboutYou_4 = Et bien sûr, je ne compte pas m'arrêter de sitôt.
+
+HopeHarbor_Lighthouse_Keeper_AboutCity_1 = Port Espoir est notre petit trésor. Notre petite ville.
+HopeHarbor_Lighthouse_Keeper_AboutCity_2 = Elle a été fondée quand des Toliens sont partis de la ville il y a longtemps.
+HopeHarbor_Lighthouse_Keeper_AboutCity_3 = Ils ont débarqué ici, et ont fait de la ville leur nouvelle maison.
+HopeHarbor_Lighthouse_Keeper_AboutCity_4 = Enfin, c'est pas comme s'il pouvait partir.
+HopeHarbor_Lighthouse_Keeper_AboutCity_5 = Les légendes disent que leur bateau était cassé à leur arrivé.
+
+HopeHarbor_Lighthouse_Keeper_NoQuest_1 = Oh, non.
+
+HopeHarbor_Lighthouse_Keeper_StartQuest_1 = En fait... Oui...
+HopeHarbor_Lighthouse_Keeper_StartQuest_2 = Un trésor m'a été volé il y a longtemps.
+HopeHarbor_Lighthouse_Keeper_StartQuest_3 = Avant d'être gardien de phare, j'étais aventurier.
+HopeHarbor_Lighthouse_Keeper_StartQuest_4 = J'ai traversé Kalia et sa région à la recherche d'un peu d'argent.
+HopeHarbor_Lighthouse_Keeper_StartQuest_5 = Un jour, je revenais du village Nordien au-delà du Passe-Falaise.
+HopeHarbor_Lighthouse_Keeper_StartQuest_6 = De nulle part, des bandits m'ont attaqué et m'ont volé mon trésor.
+HopeHarbor_Lighthouse_Keeper_StartQuest_7 = J'ai essayé de le reprendre, mais j'ai échoué.
+HopeHarbor_Lighthouse_Keeper_StartQuest_8 = Les bandits l'ont gardé comme une sorte de trophé.
+HopeHarbor_Lighthouse_Keeper_StartQuest_9 = Enfin... Ma carrière était finie. J'ai pris ma retraite après cet incident.
+HopeHarbor_Lighthouse_Keeper_StartQuest_10 = Vous voulez que je retrouve votre trésor ?
+HopeHarbor_Lighthouse_Keeper_StartQuest_11 = Oui, oui ! Tu es un garçon malin.
+HopeHarbor_Lighthouse_Keeper_StartQuest_12 = Ma précieuse collection de coquillages va bientôt revenir à la maison !
+HopeHarbor_Lighthouse_Keeper_StartQuest_13 = Des coquillages ?
+HopeHarbor_Lighthouse_Keeper_StartQuest_14 = Ah, oui. J'ai oublié de dire ce qu'est mon trésor.
+HopeHarbor_Lighthouse_Keeper_StartQuest_15 = C'est une collection de magnifiques coquillages. Je les veux !
+HopeHarbor_Lighthouse_Keeper_StartQuest_16 = Je... Je vais voir ce que je peux faire.
+HopeHarbor_Lighthouse_Keeper_StartQuest_17 = Bien !
+HopeHarbor_Lighthouse_Keeper_StartQuest_18 = Je devrais chercher un camp de bandits vers le Passe Falaise, dans la Forêt Blanche.
+
+HopeHarbor_Lighthouse_Keeper_DuringQuest_1 = Mon trésor ! Où est-il ?
+
+HopeHarbor_Lighthouse_Keeper_EndQuest_1 = Tu l'as ! Tu as réussi !
+HopeHarbor_Lighthouse_Keeper_EndQuest_2 = Prends mes pièces. Rends-les moi !
+HopeHarbor_Lighthouse_Keeper_EndQuest_3 = Le vieillard me donne rapidement de l'argent, avant de reprendre les coquillages.
+HopeHarbor_Lighthouse_Keeper_EndQuest_4 = <color=blue>Vous avez obtenu 20 or.</color>
+HopeHarbor_Lighthouse_Keeper_EndQuest_5 = Mon précieux trésor...
+
+HopeHarbor_Inn_Owner_Greetings_1 = Bienvenue.
+
+HopeHarbor_Inn_Owner_AboutYou_1 = Les affaires vont bien.
+HopeHarbor_Inn_Owner_AboutYou_2 = Comme je gère le seul endroit dans le coin où on peut boire, j'ai toujours des clients.
+HopeHarbor_Inn_Owner_AboutYou_3 = Bien sûr, il n'y a pas énormément de personnes qui restent la nuit entière.
+
+HopeHarbor_Inn_Owner_AboutCity_1 = Port Espoir est... un endroit intéressant.
+HopeHarbor_Inn_Owner_AboutCity_2 = La plupart des gens ici vivent de la pêche et du commerce.
+HopeHarbor_Inn_Owner_AboutCity_3 = A part le blocus, on vit en général coupé du monde.
+HopeHarbor_Inn_Owner_AboutCity_4 = Ce qui me fait penser, n'ayez crainte de certains de nos locaux.
+HopeHarbor_Inn_Owner_AboutCity_5 = Ils peuvent avoir l'air méchant, ou... fou. Mais ils ne voient pas grand monde de l'extérieur, ou tout court.
+
+HopeHarbor_Inn_Owner_Quest_1 = ... Oui.
+HopeHarbor_Inn_Owner_Quest_2 = Si vous allez à Libertville, pourriez-vous donner cette lettre au maitre postier ?
+HopeHarbor_Inn_Owner_Quest_3 = Avec le blocus, je ne peux pas l'envoyer par les méthodes usuelles.
+HopeHarbor_Inn_Owner_Quest_4 = Je suis sûr qu'il vous donnera un peu d'argent pour vous payer.
+HopeHarbor_Inn_Owner_Quest_5 = Très bien, je vais voir ce que je peux faire.

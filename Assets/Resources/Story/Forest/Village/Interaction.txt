@@ -1,0 +1,7 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_Forest-Region_Forest_Village)
+setInteractionChapter(Northman1;Forest/Village/Elder_Enter)
+setInteractionChapter(Northman2;Forest/Village/Trader_Enter)
+
+interact

@@ -1,0 +1,26 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaHigh)
+removeAllCharacters()
+setBackground(Orkva/Okville/TrainStation)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Okville)
+
+autosave()
+
+
+
+if(arcQuest_Sam_4 = 0){
+	load(Orkva/Okville/TrainStation/SamArcQuest4)
+}
+else{
+	fadeFg(0;false)
+	load(Orkva/Okville/TrainStation/Interaction)
+}

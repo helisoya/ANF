@@ -1,0 +1,8 @@
+# Talks about the sect
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutSect_1)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutSect_2)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutSect_3)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutSect_4)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutSect_5)
+
+load(Kalia/City/BarMax/GUARD)

@@ -1,0 +1,5 @@
+setCharacterAlpha(Lara;0;false)
+setCharacterAlpha(Lame;0;true)
+removeCharacter(Lame)
+
+load(Marklicht/BorderFortress/Lara_Exit)

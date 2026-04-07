@@ -1,0 +1,7 @@
+clearStack()
+unlockLog(Log_Okville;true)
+random(0;3)
+if(random = 0) map(City_Okville;City_Okville_ToOrkva1)
+if(random = 1) map(City_Okville;City_Okville_ToOrkva2)
+if(random = 2) map(City_Okville;City_Okville_ToOrkva3)
+

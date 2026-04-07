@@ -1,0 +1,11 @@
+if(mainQuest != 5) playMusic(Exploration_Rickey)
+if(mainQuest = 5) playMusic(Exploration2_Rickey)
+
+removeAllCharacters()
+setBackground(RickeyLandSouvenirInside)
+
+addCharacter(Waldo;false)
+setCharacterPosition(Waldo;WaldoSpot)
+setCharacterRotation(Waldo;WaldoSpot)
+
+load(SouvenirShop/Interaction)

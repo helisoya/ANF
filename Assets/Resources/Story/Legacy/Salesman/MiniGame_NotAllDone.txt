@@ -1,0 +1,7 @@
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Normal_1)
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Normal_2)
+
+if(shopQuest = -1) load(Salesman/MiniGame_Shop)
+
+playMusic(Exploration_Rickey)
+load(Salesman/Salesman_Exit)

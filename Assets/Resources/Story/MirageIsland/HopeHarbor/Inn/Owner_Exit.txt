@@ -1,0 +1,6 @@
+setCharacterAlpha(Citizen4;0;true)
+setCharacterPosition(Citizen4;Waiter)
+setCharacterRotation(Citizen4;Waiter)
+setCharacterAlpha(Citizen4;1;false)
+
+load(MirageIsland/HopeHarbor/Inn/Interaction)

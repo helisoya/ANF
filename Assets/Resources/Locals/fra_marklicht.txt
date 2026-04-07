@@ -1,0 +1,581 @@
+# -----------------------------------------------------------
+# --------------- Border Fortress ---------------------------
+# -----------------------------------------------------------
+
+BorderFortress_StartJoinQuest_1 = J'arrive à la forteresse frontalière du Marklicht.
+BorderFortress_StartJoinQuest_2 = Dire que je suis revenu après tout ce temps...
+BorderFortress_StartJoinQuest_3 = Ça fait combien de temps ? Au moins deux ans...
+BorderFortress_StartJoinQuest_4 = La dernière fois que je suis venu, j'étais à-
+BorderFortress_StartJoinQuest_5 = Oh ! [MC], c'est toi ?
+BorderFortress_StartJoinQuest_6 = Lame ?
+BorderFortress_StartJoinQuest_7 = Lame était mon collègue à l'académie militaire. On a travaillé ensemble à de multiples reprises.
+BorderFortress_StartJoinQuest_8 = Que fais-tu ici ? Je croyais que tu étais resté dans l'Ordre.
+BorderFortress_StartJoinQuest_9 = Non, non. Les choses sont devenues trop chaotiques après ton départ.
+BorderFortress_StartJoinQuest_10 = Le chef est mort, on a été débordés.
+BorderFortress_StartJoinQuest_11 = J'ai décidé de partir quand les choses se sont un peu calmées.
+BorderFortress_StartJoinQuest_12 = Quand même, dire que le Marklicht accepterait un Kalien dans ses rangs.
+BorderFortress_StartJoinQuest_13 = Ne t'inquiète pas. Les Suoris sont des frères, peu importe le pays.
+BorderFortress_StartJoinQuest_14 = Tu te souviens de la générale Lara ? C'est elle qui m'a recruté.
+BorderFortress_StartJoinQuest_15 = Ah, je vois. J'imagine qu'elle a vu ton potentiel à l'académie.
+BorderFortress_StartJoinQuest_16 = Hé, [MC].
+BorderFortress_StartJoinQuest_17 = Quoi ? 
+BorderFortress_StartJoinQuest_18 = Comment ça va ? Sérieusement.
+BorderFortress_StartJoinQuest_19 = Tu sais... Avec la mort de ta mère et tout ça...
+BorderFortress_StartJoinQuest_20 = Je ne veux pas remuer le couteau dans la plaie... Mais tu réalises bien que tu travailles pour l'homme responsable de sa mort, n'est-ce pas ?
+BorderFortress_StartJoinQuest_21 = .....
+BorderFortress_StartJoinQuest_22 = Alors euh... J'ai une... proposition à te faire.
+BorderFortress_StartJoinQuest_23 = Pourquoi ne pas... nous rejoindre ?
+BorderFortress_StartJoinQuest_24 = Le Marklicht est un pays plus agréable que Kalia. Au moins, il n'est pas dirigé par un vieux fou.
+BorderFortress_StartJoinQuest_25 = Nous, on s'est débarrassés de nos oppresseurs il y a longtemps.
+BorderFortress_StartJoinQuest_26 = .....
+BorderFortress_StartJoinQuest_27 = J'y réfléchirai.
+BorderFortress_StartJoinQuest_28 = Mon ami, je serai toujours là pour toi.
+BorderFortress_StartJoinQuest_29 = Tu n'es pas obligé de travailler pour LUI indéfiniment. Avec ou sans promotion.
+BorderFortress_StartJoinQuest_30 = Si jamais tu changes d'avis, dis-le-moi. Je suis sûr que la générale Lara t'accueillera bien.
+
+BorderFortress_Join_1 = [MC] ! Tu as changé d'avis ?
+BorderFortress_Join_2 = Tu veux nous rejoindre ?
+
+BorderFortress_Join_No_1 = Dis moi si tu changes d'avis, mon ami.
+
+BorderFortress_Join_3 = Oui. Je le veux.
+BorderFortress_Join_4 = D'accord ! Je vais te conduire à la générale.
+BorderFortress_Join_5 = Nous entrons dans la forteresse. Elle est bien équipée.
+BorderFortress_Join_6 = Lame me conduit à une pièce simple : la salle des opérations.
+BorderFortress_Join_7 = Générale ? Je suis revenu comme promis.
+BorderFortress_Join_8 = Hmm ? Ah.
+BorderFortress_Join_9 = Pour une fois, Lame, vous avez tenu parole.
+BorderFortress_Join_10 = Quand vous m'avez dit qu'un membre de la garde républicaine pouvait passer de notre côté, je n'y croyais pas.
+BorderFortress_Join_11 = ... Attendez, vous êtes... [MC] ?
+BorderFortress_Join_12 = Oui, Générale. 
+BorderFortress_Join_13 = Ah... Je comprends maintenant.
+BorderFortress_Join_14 = J'espère que Lame ne vous a pas harcelé pour vous convaincre de venir.
+BorderFortress_Join_15 = Oh non. C'était mon choix.
+BorderFortress_Join_16 = Vous voulez vraiment faire ça ? Vous êtes conscient des conséquences ?
+BorderFortress_Join_17 = Kalia pourrait devenir une zone interdite pour vous. C'est de la trahison, après tout.
+BorderFortress_Join_18 = Eh bien... J'étais déjà en train de regarder mes possibilités, alors...
+BorderFortress_Join_19 = Je pense que c'est la meilleure solution pour moi.
+BorderFortress_Join_20 = Alors notre pays deviendra votre nouvelle patrie.
+BorderFortress_Join_21 = Enfin... Bientôt. 
+BorderFortress_Join_22 = Je vais devoir remplir des papiers pour... justifier... votre présence parmi nous.
+BorderFortress_Join_23 = Ça, et une autre affaire sur laquelle je travaille actuellement.
+BorderFortress_Join_24 = Un vol au musée. C'est moi, de toutes les personnes du pays, qui ai été chargé de vérifier si des bandits auraient pu le voler.
+BorderFortress_Join_25 = Euh... Justement, à ce propos...
+BorderFortress_Join_26 = Vous savez quelque chose ?
+BorderFortress_Join_27 = Il est possible que le Marchand... l'ait volé.
+BorderFortress_Join_28 = Il m'avait chargé d'escorter un postier transportant l'artefact.
+BorderFortress_Join_29 = Quoi ? Alors ce... vieillard... l'a pris ?
+BorderFortress_Join_30 = Euh, des bandits nous ont attaqués. Ils l'ont maintenant.
+BorderFortress_Join_31 = Waouh ! Je n'arrive pas à y croire. Tu as vraiment été vaincu ?
+BorderFortress_Join_32 = Attendez, attendez. Laissez-moi bien comprendre.
+BorderFortress_Join_33 = Le consul de la République de Kalia est responsable du vol d'un artefact Marklichtien très précieux ?
+BorderFortress_Join_34 = Oui, Générale.
+BorderFortress_Join_35 = J'ai besoin d'un verre.
+BorderFortress_Join_36 = [MC]. Voici votre premier objectif en tant que membre de l'Armée de Libération Marklichtienne.
+BorderFortress_Join_37 = Récupérez. Cet. Artefact.
+BorderFortress_Join_38 = Ça complique tout. Je dois parler à mes supérieurs.
+BorderFortress_Join_39 = Oui, Générale. Ca sera fait.
+BorderFortress_Join_40 = Je sors de la pièce avec Lame. 
+BorderFortress_Join_41 = Eh bien, c'était inattendu.
+BorderFortress_Join_42 = Dire que le vieux l'a vraiment volé...
+BorderFortress_Join_43 = Zut... J'avais parié avec un collègue que c'était un Koskyien...
+BorderFortress_Join_44 = Bon... dommage...
+BorderFortress_Join_45 = Je vais récupérer cet artefact. Ne t'inquiète pas.
+BorderFortress_Join_46 = Je te crois. Au moins, ça s'est bien passé avec le Général.
+BorderFortress_Join_47 = Oui. Je suis enfin libre des griffes du Marchand.
+BorderFortress_Join_48 = Enfin... Je dois encore faire semblant d'être de leur côté pour l'instant.
+BorderFortress_Join_49 = Mais une fois l'artefact en ma possession, je leur mettrai un couteau dans le dos s'il le faut. 
+BorderFortress_Join_50 = Je vois.
+BorderFortress_Join_51 = En attendant, je retourne à la cantine.
+BorderFortress_Join_52 = On se revoit quand ta mission sera terminée.
+
+BorderFortress_Door_No_1 = Je n'ai aucune raison d'entrer dans la forteresse.
+
+BorderFortress_RebelQuest1_1 = Est-ce la fameuse Forteresse Frontalière ?
+BorderFortress_RebelQuest1_2 = Oui. Elle marque la frontière entre Kalia et le Marklicht.
+BorderFortress_RebelQuest1_3 = La Générale Lara est à l'intérieur. Nous allons lui parler.
+BorderFortress_RebelQuest1_4 = Restes derrière moi...
+BorderFortress_RebelQuest1_5 = Le premier arrivé a gagné !
+BorderFortress_RebelQuest1_6 = Attends ! C'est une base militaire ! On n'a pas encore signalé notre présence !
+BorderFortress_RebelQuest1_7 = Par Kalibu... Je dois la suivre.
+BorderFortress_RebelQuest1_8 = Je la suis jusqu'à la salle des opérations. Pour le moment, ça ne sent pas bon...
+BorderFortress_RebelQuest1_9 = Bonjour, Générale !
+BorderFortress_RebelQuest1_10 = ... Qui êtes-vous ?
+BorderFortress_RebelQuest1_11 = Euh...
+BorderFortress_RebelQuest1_12 = [MC]... Je suppose que cet enfant est avec vous ? 
+BorderFortress_RebelQuest1_13 = Eh bien... oui. Toutes mes excuses, Générale.
+BorderFortress_RebelQuest1_14 = Vous avez toujours été un fauteur de troubles. Ça ne devrait pas m'étonner.
+BorderFortress_RebelQuest1_15 = Je devrais demander aux gardes de vous expulser. Mais je suis de bonne humeur aujourd'hui.
+BorderFortress_RebelQuest1_16 = Alors, quel est le problème ? Pourquoi êtes-vous venu ici sans y être invité ?
+BorderFortress_RebelQuest1_17 = Elle est de bonne humeur ? Je préfère ne pas savoir ce qui se serait passé si elle ne l'avait pas été.
+BorderFortress_RebelQuest1_18 = Nous sommes des membres de la rébellion Kalienne. Nous avons besoin de ravitaillements.
+BorderFortress_RebelQuest1_19 = Vous, membre de la rébellion ? Le monde marche sur la tête ?
+BorderFortress_RebelQuest1_20 = Enfin. Pourquoi risquerais-je d'armer des rebelles ?
+BorderFortress_RebelQuest1_21 = La dernière chose que je souhaite, ce sont des problèmes avec le vieux.
+BorderFortress_RebelQuest1_22 = À ce propos, j'ai quelque chose qui pourrait vous intéresser.
+BorderFortress_RebelQuest1_23 = Je sors l'artefact.
+BorderFortress_RebelQuest1_24 = C'est... Où l'avez-vous trouvé ?
+BorderFortress_RebelQuest1_25 = Le Marchand l'a volé à votre musée. Nous l'avons récupéré.
+BorderFortress_RebelQuest1_26 = Que diriez-vous d'une transaction, Générale ? L'artefact contre des armes.
+BorderFortress_RebelQuest1_27 = ...
+BorderFortress_RebelQuest1_28 = Vous... Bon, d'accord.
+BorderFortress_RebelQuest1_29 = Je vais assurer un approvisionnement régulier en armes pour votre groupe. 
+BorderFortress_RebelQuest1_30 = Dites à vos supérieurs de me fournir une zone de livraison sûre.
+BorderFortress_RebelQuest1_31 = Nous le ferons immédiatement.
+BorderFortress_RebelQuest1_32 = Je remets l'artefact à la Générale.
+BorderFortress_RebelQuest1_33 = Dire que ce vieillard l'a volé...
+BorderFortress_RebelQuest1_34 = J'ai fouillé toute la région, en vain.
+BorderFortress_RebelQuest1_35 = Des semaines et des semaines... Je ne l'ai pas trouvé.
+BorderFortress_RebelQuest1_36 = Et vous, vous débarquez comme ça...
+BorderFortress_RebelQuest1_37 = Je suis désolé pour votre perte, Général.
+BorderFortress_RebelQuest1_38 = Partez avant que je n'appelle les gardes.
+BorderFortress_RebelQuest1_39 = Et assurez-vous que la fille soit surveillée.
+BorderFortress_RebelQuest1_40 = Oui, Général.
+BorderFortress_RebelQuest1_41 = Grr... J'ai besoin d'un verre...
+BorderFortress_RebelQuest1_42 = Nous quittons la forteresse.
+BorderFortress_RebelQuest1_43 = Eh bien, ça s'est bien passé.
+BorderFortress_RebelQuest1_44 = Nous avons nos armes, et le Général a l'air contente.
+BorderFortress_RebelQuest1_45 = Contente ? Tu n'es pas exigante...
+BorderFortress_RebelQuest1_46 = Elle n'a pas appelé les gardes.
+BorderFortress_RebelQuest1_47 = Hé. La prochaine fois, laisses-moi gérer ça.
+BorderFortress_RebelQuest1_48 = Ça aurait pu très mal tourner. 
+BorderFortress_RebelQuest1_49 = Oui, oui. Désolé...
+BorderFortress_RebelQuest1_50 = Allons. Nous devrions retourner à Kalia.
+BorderFortress_RebelQuest1_51 = Ta soeur doit savoir quoi faire pour la suite.
+
+BorderFortress_Lara_MarklichtQuest2_0_1 = [MC] !
+BorderFortress_Lara_MarklichtQuest2_0_2 = Oh. Salut, Lame.
+BorderFortress_Lara_MarklichtQuest2_0_3 = Désolé de ne pas être venu avant. Je devais préparer des munitions pour des tests.
+BorderFortress_Lara_MarklichtQuest2_0_4 = Et bien... Tu n'as raté grand chose. J'ai retrouvé l'artefact, et je pense que les rebelles vont supporter notre invasion.
+BorderFortress_Lara_MarklichtQuest2_0_5 = On envahi quelqu'un ? Qui ? Ou ? Quand ? Je dois prendre mon fusil !
+BorderFortress_Lara_MarklichtQuest2_0_6 = Ah, oui. La Générale n'a pas encore dû l'annoncer.
+BorderFortress_Lara_MarklichtQuest2_0_7 = Nous allons envahir Kalia en rétaliation du vol.
+BorderFortress_Lara_MarklichtQuest2_0_8 = Je... vois...
+BorderFortress_Lara_MarklichtQuest2_0_9 = Je suppose qu'il y a une vraie raison, mais je ne vais pas la demander.
+BorderFortress_Lara_MarklichtQuest2_0_10 = Dis, tu fais quoi en ce moment ?
+BorderFortress_Lara_MarklichtQuest2_0_11 = Je vais au village Nordien au Nord du Passe Falaise.
+BorderFortress_Lara_MarklichtQuest2_0_12 = Oh ! Ca a l'air cool. Je peux venir ?
+BorderFortress_Lara_MarklichtQuest2_0_13 = Tu n'as pas de travail à faire ?
+BorderFortress_Lara_MarklichtQuest2_0_14 = Pff. La Générale m'a dit "Lame, prends ta journée. En fait, prend une semaine. Ne t'approche juste plus jamais des explosifs."
+BorderFortress_Lara_MarklichtQuest2_0_15 = Oh. Je vois.
+BorderFortress_Lara_MarklichtQuest2_0_16 = Eh bien. Je suppose que tu peux venir.
+BorderFortress_Lara_MarklichtQuest2_0_17 = Super ! Allons-y, mon ami !
+BorderFortress_Lara_MarklichtQuest2_0_18 = Ca fait si longtemps qu'on a travaillé ensemble.
+BorderFortress_Lara_MarklichtQuest2_0_19 = <color=blue>Lame ajouté à l'équipe.</color>
+
+BorderFortress_Lara_Greetings_1 = [MC]. Au rapport.
+
+BorderFortress_Lara_AboutYou_1 = [MC]. Je vous connais depuis des années, vous et Lame.
+BorderFortress_Lara_AboutYou_2 = Quand vous avez mis les pieds dans mon académie, je le savais.
+BorderFortress_Lara_AboutYou_3 = Je savais que vous n'alliez me causer que des ennuis.
+BorderFortress_Lara_AboutYou_4 = Et j'avais raison. Vous n'avez fait que ça.
+BorderFortress_Lara_AboutYou_5 = Que ça soit faire exploser des charges accidentellement, ou s'éclipser pendant la nuit. Vous avez tout fait.
+BorderFortress_Lara_AboutYou_6 = C'est un miracle que vous soyez toujours en vie aujourd'hui.
+
+BorderFortress_Lara_AboutMarklicht_1 = Le Marklicht que nous connaissons aujourd'hui est une construction plutôt récente.
+BorderFortress_Lara_AboutMarklicht_2 = Avant la révolution, nous étions gouvernés par un roi : le roi de Licht.
+BorderFortress_Lara_AboutMarklicht_3 = Vous connaissez l'histoire. Je vous l'ai fait apprendre en classe.
+BorderFortress_Lara_AboutMarklicht_4 = Oui, oui. Je sais.
+BorderFortress_Lara_AboutMarklicht_5 = Licht oppressait ses sujets Suori.
+BorderFortress_Lara_AboutMarklicht_6 = Un jour, le Général Mark a fait un coup d'état pour y mettre un terme.
+BorderFortress_Lara_AboutMarklicht_7 = Il a transformé le royaume en une république : Le Marklicht.
+BorderFortress_Lara_AboutMarklicht_8 = C'est ça. Mais il y avait aussi Orkva.
+BorderFortress_Lara_AboutMarklicht_9 = A l'époque, les relations entre les deux royaumes étaient plus que cordiales.
+BorderFortress_Lara_AboutMarklicht_10 = Ils voulaient même unir les deux couronnes.
+BorderFortress_Lara_AboutMarklicht_11 = Les officiers Lichtiens n'ont pas aimé l'idée, et c'est ainsi que le coup d'état vit le jour.
+BorderFortress_Lara_AboutMarklicht_12 = De nos jours, les Suoris sont mieux représentés au parlement.
+BorderFortress_Lara_AboutMarklicht_13 = En fait, nous sommes plus nombreux que les Luori de la capitale.
+
+BorderFortress_Lara_AboutOrkva_1 = Orkva et le Marklicht étaient en guerre il n'y a pas si longtemps.
+BorderFortress_Lara_AboutOrkva_2 = La guerre des Unions. Je l'ai étudié à l'académie.
+BorderFortress_Lara_AboutOrkva_3 = Oui. Avec la révolution au Marklicht menaçant l'union des deux couronnes, Orkva a décidé d'envahir.
+BorderFortress_Lara_AboutOrkva_4 = D'un côté, le Marklicht représentait la nouvelle union entre Suori et Luori.
+BorderFortress_Lara_AboutOrkva_5 = Orkva, d'un autre côté, représentait l'union entre les deux couronnes.
+BorderFortress_Lara_AboutOrkva_6 = Techniquement, le roi de Licht a abdiqué en faveur du roi Orkvien.
+BorderFortress_Lara_AboutOrkva_7 = Ah oui. Le nom complet d'Orkva est "Le Royaume Unis d'Orkva-Licht".
+BorderFortress_Lara_AboutOrkva_8 = Ils ne contrôlent quasiment pas de terres Lichtiennes, mais ils utilisent quand même le titre.
+BorderFortress_Lara_AboutOrkva_9 = Ces foutu royalistes...
+
+BorderFortress_Lara_MarklichtQuest1Start_1 = J'ai retrouvé l'artefact, Général.
+BorderFortress_Lara_MarklichtQuest1Start_2 = Bien. Je vais le renvoyer à la capitale.
+BorderFortress_Lara_MarklichtQuest1Start_3 = En attendant... Les choses ont changés.
+BorderFortress_Lara_MarklichtQuest1Start_4 = J'ai longement parlé avec les supérieurs. Ils ont décidé de procéder à une action punitive contre Kalia.
+BorderFortress_Lara_MarklichtQuest1Start_5 = Une action punitive ?
+BorderFortress_Lara_MarklichtQuest1Start_6 = Pour être franc, nous allons envahir et annexer la ville.
+BorderFortress_Lara_MarklichtQuest1Start_7 = L'incident diplomatique a donné confiance aux militaires de la capitale.
+BorderFortress_Lara_MarklichtQuest1Start_8 = Attaquer Kalia, tuer le Marchand, je comprends. Mais l'annexer...
+BorderFortress_Lara_MarklichtQuest1Start_9 = C'est la politique. Le parti au pouvoir est favorable au Pan-Suorisme.
+BorderFortress_Lara_MarklichtQuest1Start_10 = Pour eux, c'est juste une excuse pour unir plus de Suori sous leur bannière.
+BorderFortress_Lara_MarklichtQuest1Start_11 = En tant que soldats de l'armée de libération, nous devons suivre les orders.
+BorderFortress_Lara_MarklichtQuest1Start_12 = De toute manière, nous serons de meilleurs dirigeants que le Marchand.
+BorderFortress_Lara_MarklichtQuest1Start_13 = Nous n'oppressons pas notre peuple, nous.
+BorderFortress_Lara_MarklichtQuest1Start_14 = Je... Oui, Général.
+BorderFortress_Lara_MarklichtQuest1Start_15 = Ce qui m'amène à votre prochaine tache.
+BorderFortress_Lara_MarklichtQuest1Start_16 = Allez à Kalia et parlez aux rebelles locaux.
+BorderFortress_Lara_MarklichtQuest1Start_17 = Quand le moment sera venu, je veux qu'ils nous aident à attaquer Kalia.
+BorderFortress_Lara_MarklichtQuest1Start_18 = Pourquoi est-ce qu'ils accepteraient ?
+BorderFortress_Lara_MarklichtQuest1Start_19 = Eh. Donnez leur cette lettre. Je leur ai fait une offre impossible à refuser.
+BorderFortress_Lara_MarklichtQuest1Start_20 = Kalia sera sous notre contrôle, oui. Mais la ville elle-même sera administrée par les rebelles.
+BorderFortress_Lara_MarklichtQuest1Start_21 = Ah, je comprend.
+BorderFortress_Lara_MarklichtQuest1Start_22 = Mes espions m'ont rapporté qu'ils se cachent dans le bar du salut. Etrange comme nom.
+BorderFortress_Lara_MarklichtQuest1Start_23 = Je vais m'assurer qu'ils acceptent votre offre.
+BorderFortress_Lara_MarklichtQuest1Start_24 = Bien. Et revenez une fois cela fait. J'ai une autre tâche pour vous.
+
+BorderFortress_Lara_MarklichtQuest1End_1 = J'ai livré la lettre.
+BorderFortress_Lara_MarklichtQuest1End_2 = Bien. Maintenant nous n'avons plus qu'à attendre.
+BorderFortress_Lara_MarklichtQuest1End_3 = Vous aviez dit que vous aviez une autre tache pour moi ?
+BorderFortress_Lara_MarklichtQuest1End_4 = Ah, oui. Je veux que vous alliez au village Nordien au nord de Passe Falaise.
+BorderFortress_Lara_MarklichtQuest1End_5 = A cause de protocoles, nous devons les notifier que nous allons déplacer notre armée par la forêt.
+BorderFortress_Lara_MarklichtQuest1End_6 = Ah. L'incident Tolstyr... Je comprend.
+BorderFortress_Lara_MarklichtQuest1End_7 = Je vais le faire, Général. Leur doyen sera notifié.
+BorderFortress_Lara_MarklichtQuest1End_8 = Merci. Garder des relations à peu près cordiales est très important depuis l'incident.
+
+BorderFortress_Lara_MarklichtQuest2End_1 = J'ai prévenu la doyenne, Générale.
+BorderFortress_Lara_MarklichtQuest2End_2 = Ah, et vous avez emmené Lame avec vous.
+BorderFortress_Lara_MarklichtQuest2End_3 = Générale !
+BorderFortress_Lara_MarklichtQuest2End_4 = Avec ça, les préparations pour la guerre peuvent continuer.
+BorderFortress_Lara_MarklichtQuest2End_5 = On peut aider ?
+BorderFortress_Lara_MarklichtQuest2End_6 = Oui, bien sûr. Je voulais vous envoyer sur une mission d'espionnage.
+BorderFortress_Lara_MarklichtQuest2End_7 = Mes espions m'ont rapporté qu'Epée, votre collègue de la garde républicaine, a été vu à Tolau.
+BorderFortress_Lara_MarklichtQuest2End_8 = Qu'est-ce qu'il fait la bas ?
+BorderFortress_Lara_MarklichtQuest2End_9 = Je ne sais pas. Mais je veux que vous le découvrez.
+BorderFortress_Lara_MarklichtQuest2End_10 = Peut-être qu'il mijote quelque chose.
+BorderFortress_Lara_MarklichtQuest2End_11 = D'expérience, soit il essaie de me trouver, soit il essaie de voler un nouvel artefact.
+BorderFortress_Lara_MarklichtQuest2End_12 = Dans tous les cas, allez à Tolau et découvrez ce qu'il manigance.
+BorderFortress_Lara_MarklichtQuest2End_13 = Oh, et emmenez Lame avec vous.
+BorderFortress_Lara_MarklichtQuest2End_14 = Générale !
+BorderFortress_Lara_MarklichtQuest2End_15 = Assurez-vous juste qu'il ne s'occupe pas de matériaux dangereux.
+BorderFortress_Lara_MarklichtQuest2End_16 = Je dois toujours nettoyer le bazar qu'il a fait dans le hangar.
+BorderFortress_Lara_MarklichtQuest2End_17 = Générale...
+BorderFortress_Lara_MarklichtQuest2End_18 = Compris. Viens, Lame, on y va.
+BorderFortress_Lara_MarklichtQuest2End_19 = Ah. Ca me rappelle. Faites attention à Orkva.
+BorderFortress_Lara_MarklichtQuest2End_20 = Quelque chose ne va pas. Mais je ne sais pas encore quoi.
+
+BorderFortress_MarklichtFactionQuest1Start_1 = D'ailleurs, [MC].
+BorderFortress_MarklichtFactionQuest1Start_2 = Oui ? 
+BorderFortress_MarklichtFactionQuest1Start_3 = Ca fait du bien de travailler avec toi à nouveau.
+BorderFortress_MarklichtFactionQuest1Start_4 = De même.
+BorderFortress_MarklichtFactionQuest1Start_5 = Dis... Si on a le temps, est-ce qu'on peut aller au mur de frontière ?
+BorderFortress_MarklichtFactionQuest1Start_6 = Il y a quelque chose que je dois faire.
+BorderFortress_MarklichtFactionQuest1Start_7 = Ah, oui...
+BorderFortress_MarklichtFactionQuest1Start_8 = Ok. On va y aller quand on le pourra.
+
+BorderFortress_Lara_MarklichtQuest3End_1 = Générale. Nous avons trouvé l'objectif de l'ennemi.
+BorderFortress_Lara_MarklichtQuest3End_2 = Est-ce que ça a à voir avec ce sceptre géant que porte Lame ?
+BorderFortress_Lara_MarklichtQuest3End_3 = Euh, oui.
+BorderFortress_Lara_MarklichtQuest3End_4 = Epée voulait le voler pour le Marchand.
+BorderFortress_Lara_MarklichtQuest3End_5 = Nous ne savons pas son utilité.
+BorderFortress_Lara_MarklichtQuest3End_6 = Moi non plus. Envoyons-le à la capitale.
+BorderFortress_Lara_MarklichtQuest3End_7 = Je suis sûre que quelqu'un va pouvoir nous dire ce que ce truc est.
+BorderFortress_Lara_MarklichtQuest3End_8 = Même mieux, peut-être qu'on pourra l'utiliser pour quelque chose.
+BorderFortress_Lara_MarklichtQuest3End_9 = En attendant, j'ai besoin de votre aide sur un nouveau sujet.
+BorderFortress_Lara_MarklichtQuest3End_10 = Oui ?
+BorderFortress_Lara_MarklichtQuest3End_11 = J'ai eu vent d'une incursion Orkvienne dans les montagnes proches de la frontière.
+BorderFortress_Lara_MarklichtQuest3End_12 = Je veux savoir ce qu'il se passe.
+BorderFortress_Lara_MarklichtQuest3End_13 = Orkva veut commencer une nouvelle guerre ?
+BorderFortress_Lara_MarklichtQuest3End_14 = C'est peu probable. J'ai l'impression que quelque chose d'autre est en train de se dérouler.
+BorderFortress_Lara_MarklichtQuest3End_15 = On va mener l'enquête.
+BorderFortress_Lara_MarklichtQuest3End_16 = Vous avez l'autorisation de poursuivre l'ennemi s'il bat en retraite.
+BorderFortress_Lara_MarklichtQuest3End_17 = Compris.
+
+BorderFortress_Lara_MarklichtQuest5End_1 = [MC], au rapport. Qu'est-ce qu'il se passe ?
+BorderFortress_Lara_MarklichtQuest5End_2 = J'ai eu vent qu'Orkva menace d'executer des prisonniers si nous faisons quelque chose.
+BorderFortress_Lara_MarklichtQuest5End_3 = Ca fait partie d'une sorte de stratagème diplomatique.
+BorderFortress_Lara_MarklichtQuest5End_4 = Orkva veut aussi envahir Kalia. L'incident est leur façon de s'assurer que l'on n'intervienne pas.
+BorderFortress_Lara_MarklichtQuest5End_5 = Les prisonniers n'existent pas. C'est juste un mensonge pour nous mettre la pression.
+BorderFortress_Lara_MarklichtQuest5End_6 = ... Je ne devrais pas être surprise. J'avais l'impression qu'ils planifiaient quelque chose de gros.
+BorderFortress_Lara_MarklichtQuest5End_7 = Mais quand même... Une telle opération juste pour nous retarder dans nos plans.
+BorderFortress_Lara_MarklichtQuest5End_8 = Que va-t-on faire ?
+BorderFortress_Lara_MarklichtQuest5End_9 = On envahit comme prévu. Ils n'oseront pas attaquer si on y va en premier.
+BorderFortress_Lara_MarklichtQuest5End_10 = Orkva n'en a pas l'air, mais ils ont beaucoup de problèmes internes.
+BorderFortress_Lara_MarklichtQuest5End_11 = Ils ne sont pas prêts pour un conflit ouvert avec nous.
+BorderFortress_Lara_MarklichtQuest5End_12 = Au mieux, ils exécuteront leurs prisonniers fantômes et c'est tout.
+BorderFortress_Lara_MarklichtQuest5End_13 = Donc nous partons dès que possible ?
+BorderFortress_Lara_MarklichtQuest5End_14 = Oui. Le moment est venu. Nous allons lancer l'invasion.
+BorderFortress_Lara_MarklichtQuest5End_15 = Parlez-moi quand vous serez prêt.
+BorderFortress_Lara_MarklichtQuest5End_16 = Assurez-vous d'avoir des ravitaillements avant cela.
+
+BorderFortress_Lara_MarklichtQuest6Start_1 = Etes-vous prêt à partir ?
+BorderFortress_Lara_MarklichtQuest6Start_2 = <color=red>Cela va amener à la fin du jeu.</color>
+BorderFortress_Lara_MarklichtQuest6Start_3 = Suis-je prêt à en finir une bonne fois pour toute ?
+
+# -----------------------------------------------------------
+# ------------------- Border Wall ---------------------------
+# -----------------------------------------------------------
+
+BorderWall_Sign_1 = "Le 8 mars, 135ème année de la quatrième Ere, arriva l'Incident Tolstyr."
+BorderWall_Sign_2 = "Le Général Tolstyr ouvrit le feu sur des civils Nordiens et en tua 21."
+BorderWall_Sign_3 = Je m'en souviens. On en avait parlé à l'académie militaire.
+BorderWall_Sign_4 = C'était durant la guerre des Unions. Orkva envahissait le pays.
+BorderWall_Sign_5 = Tolstyr avait été assigné à la frontière nord du pays.
+BorderWall_Sign_6 = Même si les Nordiens n'étaient pas en guerre, ils avaient des traités avec Orkva.
+BorderWall_Sign_7 = Il a confondu un convoi civil avec une armée, et a ouvert le feu.
+BorderWall_Sign_8 = Après ça, les Nordiens ont commencé à se préparer à la guerre.
+BorderWall_Sign_9 = Heureusement, le pays voisin de Kosky a réussi à convaincre les Nordiens d'arrêter.
+BorderWall_Sign_10 = Après tout cela, un mur a été construit et Tolstyr a été limogé.
+
+BorderWall_MarklichtFactionQuest1_1 = Nous arrivons au mur.
+BorderWall_MarklichtFactionQuest1_2 = Ce qui est important n'est pas le mur, mais ce qu'il représente.
+BorderWall_MarklichtFactionQuest1_3 = Hé, [MC].
+BorderWall_MarklichtFactionQuest1_4 = Est-ce qu'on est dans le bon camp.
+BorderWall_MarklichtFactionQuest1_5 = Qu'est-ce que tu veux dire ?
+BorderWall_MarklichtFactionQuest1_6 = Notre camp est responsable de la mort d'innocents.
+BorderWall_MarklichtFactionQuest1_7 = Et en ce moment même, la Générale est en train de planifier une invasion juste parce que des politiques l'ont demandé.
+BorderWall_MarklichtFactionQuest1_8 = Peut-être que j'aurais mieux fait de ne pas te demander de changer de camp...
+BorderWall_MarklichtFactionQuest1_9 = Ne dis pas ça. Si tu n'avais pas été là, j'aurais simplement rejoint les rebelles.
+BorderWall_MarklichtFactionQuest1_10 = Et les innocents. On essaie de réparer nos erreurs du mieux qu'on peut.
+BorderWall_MarklichtFactionQuest1_11 = Peut-être pas pour l'invasion de Kalia... Mais pour les Nordiens.
+BorderWall_MarklichtFactionQuest1_12 = Depuis l'incident, la Générale les notifie sur tous nos mouvements.
+BorderWall_MarklichtFactionQuest1_13 = Ils ne verront même pas notre armée, comme ils vivent derrière le Passe-Falaise.
+BorderWall_MarklichtFactionQuest1_14 = Mais elle les prévient quand même. Pour essayer de se racheter.
+BorderWall_MarklichtFactionQuest1_15 = Et pour le Marchand... Son heure est venue de toute façon.
+BorderWall_MarklichtFactionQuest1_16 = La rébellion gagne du terrain. Sa poigne sur l'armée diminue de jour en jour.
+BorderWall_MarklichtFactionQuest1_17 = Je ne lui donne pas un an.
+BorderWall_MarklichtFactionQuest1_18 = Je suppose.
+BorderWall_MarklichtFactionQuest1_19 = ?
+BorderWall_MarklichtFactionQuest1_20 = Lame regarde sur le côté. Il semblerait que des soldats se soient regroupés vers le panneau memoriel.
+BorderWall_MarklichtFactionQuest1_21 = Pff ! C'est une réponse de faible.
+BorderWall_MarklichtFactionQuest1_22 = Je ne comprends pas pourquoi on s'est prosterné devant les Nordiens. Ils sont faible.
+BorderWall_MarklichtFactionQuest1_23 = Notre peuple est supérieur, c'est eux qui devraient se prosterner.
+BorderWall_MarklichtFactionQuest1_24 = Peut-être qu'on pourrait faire une petite incursion... La Générale n'a pas besoin de savoir.
+BorderWall_MarklichtFactionQuest1_25 = Ah ça non !
+BorderWall_MarklichtFactionQuest1_26 = Oh, et qui voila...
+BorderWall_MarklichtFactionQuest1_27 = Lame... Je pensais que la Générale t'avait viré après que tu avais fait exploser le hangar.
+BorderWall_MarklichtFactionQuest1_28 = Eh bien, je...
+BorderWall_MarklichtFactionQuest1_29 = Et toi ? Qui est-tu ?
+BorderWall_MarklichtFactionQuest1_30 = [MC]. Vous aviez l'air de parler de trahison.
+BorderWall_MarklichtFactionQuest1_31 = Oh. Et bien quoi ? Tu vas nous dénoncer ?
+BorderWall_MarklichtFactionQuest1_32 = Non. On va faire ça !
+
+BorderWall_MarklichtFactionQuest1_33 = Il semblerait qu'on a réussi à les faire fuir.
+BorderWall_MarklichtFactionQuest1_34 = Ca devrait les décourager de continuer leur plan.
+BorderWall_MarklichtFactionQuest1_35 = Hé, [MC].
+BorderWall_MarklichtFactionQuest1_36 = Merci de m'avoir aidé.
+BorderWall_MarklichtFactionQuest1_37 = Il semblerait que tous nos collègues ne partagent pas notre point de vue.
+BorderWall_MarklichtFactionQuest1_38 = Mais nous devons nous battre jusqu'à ce que tout le monde l'accepte.
+BorderWall_MarklichtFactionQuest1_39 = Nous sommes l'armée de Libération, pas l'armée d'Invasion.
+BorderWall_MarklichtFactionQuest1_40 = Oui.
+BorderWall_MarklichtFactionQuest1_41 = Bien. Je suppose qu'il est temps de rentrer.
+
+# -----------------------------------------------------------
+# ------------------- Fort Libert ---------------------------
+# -----------------------------------------------------------
+
+FortLibert_Sentry_Greetings_1 = Monsieur ? C'est une zone restrainte.
+
+FortLibert_Sentry_OrderArc_1 = Je suis avec l'Ordre. On a besoin de ravitaillements.
+FortLibert_Sentry_OrderArc_2 = ... Oh. Oui. J'ai entendu ce qui s'est passé.
+FortLibert_Sentry_OrderArc_3 = Vous avez réussi à sortir en vie d'Orkva ? Je suis impressioné.
+FortLibert_Sentry_OrderArc_4 = La Générale voulait intervenir, mais le Maréchal lui a ordonné de ne rien faire.
+FortLibert_Sentry_OrderArc_5 = Enfin. C'est bon de savoir que vous êtes toujours prêt au combat.
+FortLibert_Sentry_OrderArc_6 = Venez, je vais vous donner vos ravitaillements.
+FortLibert_Sentry_OrderArc_7 = Je suis le soldat. Il me donne tout ce dont nous avons besoin pour continuer le combat.
+FortLibert_Sentry_OrderArc_8 = Des armes, des explosifs, des rations... Ce fort contient beaucoup de choses.
+FortLibert_Sentry_OrderArc_9 = Je suppose que je devrais retourner au bunker.
+
+# -----------------------------------------------------------
+# -------------- Libertville Farm ---------------------------
+# -----------------------------------------------------------
+
+LibertvilleFarm_CourierQuest_1 = C'est ici que je dois livrer cette lettre.
+LibertvilleFarm_CourierQuest_2 = ... Ok, c'est bon.
+
+# -----------------------------------------------------------
+# ------------------- Libert Forest -------------------------
+# -----------------------------------------------------------
+
+LibertForest_Quest_1 = C'est ici que je dois tuer un ours.
+LibertForest_Quest_2 = En avant, je suppose.
+
+LibertForest_Quest_3 = Ca devrait être suffisant.
+LibertForest_Quest_4 = Je devrais retourner à Libertville.
+
+# -----------------------------------------------------------
+# ------------------- Libertville ---------------------------
+# -----------------------------------------------------------
+
+Libertville_TrainStation_Courier_Greetings_1 = Bonjour. Je suis le maître postier. Vous avez quelque chose pour moi ?
+
+Libertville_TrainStation_Courier_HopeHarborQuest_1 = J'ai une lettre pour vous. C'est de la part de l'aubergiste de Port Espoir.
+Libertville_TrainStation_Courier_HopeHarborQuest_2 = Ma cousine ? Qu'est-ce qu'elle me veut, encore ?
+Libertville_TrainStation_Courier_HopeHarborQuest_3 = ... Je vois.
+Libertville_TrainStation_Courier_HopeHarborQuest_4 = Tenez, prenez ces pièces comme paiment.
+Libertville_TrainStation_Courier_HopeHarborQuest_5 = <color=blue>J'ai reçu 20 pièces de la part du maître postier.</color>
+Libertville_TrainStation_Courier_HopeHarborQuest_6 = Enfin bon...
+
+Libertville_TrainStation_Courier_AboutYou_1 = Je suis le maître postier de Libertville.
+Libertville_TrainStation_Courier_AboutYou_2 = Et... Bientôt, je serai en charge de la gare.
+Libertville_TrainStation_Courier_AboutYou_3 = Le bâtiment est terminé, mais pas le chemin de fer.
+
+Libertville_TrainStation_Courier_AboutCity_1 = Liberville est une petite communauté.
+Libertville_TrainStation_Courier_AboutCity_2 = Pendant la guerre des Unions, la majorité de la population a fui face à l'avancée Orkvienne.
+Libertville_TrainStation_Courier_AboutCity_3 = Après la guerre, ils sont restés dans leurs nouvelles maisons, dans les différentes régions montagneuses du Marklicht Occidental.
+
+Libertville_TrainStation_Courier_StartQuest_1 = En fait, j'ai besoin d'aide pour livrer une lettre.
+Libertville_TrainStation_Courier_StartQuest_2 = Je peux aider.
+Libertville_TrainStation_Courier_StartQuest_3 = Bien. La voilà, et voici votre paie.
+Libertville_TrainStation_Courier_StartQuest_4 = <color=blue>J'ai reçu 20 pièces de la part du maître postier.</color>
+Libertville_TrainStation_Courier_StartQuest_5 = Cette lettre doit être livrée à la ferme à l'extérieur de la ville.
+
+Libertville_MilitaryAcademy_Soldier_Greetings_1 = Monsieur ?
+
+Libertville_MilitaryAcademy_Soldier_AboutYou_1 = Ca faisait longtemps, [MC].
+Libertville_MilitaryAcademy_Soldier_AboutYou_2 = Vous vous souvenez de moi ? J'étais à l'académie avec vous.
+Libertville_MilitaryAcademy_Soldier_AboutYou_3 = Après avoir eu leur diplôme, la plupart des gens sont allés avec l'Ordre ou l'Armée de Libération.
+Libertville_MilitaryAcademy_Soldier_AboutYou_4 = Moi, je suis resté travailler à l'académie.
+Libertville_MilitaryAcademy_Soldier_AboutYou_5 = Ce n'est pas aussi triste qu'il n'y parait. C'est... paisible, ironiquement.
+
+Libertville_MilitaryAcademy_Soldier_AboutCity_1 = Notre petite communauté est toujours menacée par Orkva.
+Libertville_MilitaryAcademy_Soldier_AboutCity_2 = L'année dernière, nous avons trouvé des espions Orkviens à la mairie.
+Libertville_MilitaryAcademy_Soldier_AboutCity_3 = Nous devons faire attention.
+
+Libertville_MilitaryAcademy_Soldier_QuestStart_1 = En fait, j'ai des informations sur des espions Orkviens.
+Libertville_MilitaryAcademy_Soldier_QuestStart_2 = Vous voulez que je m'en occupe ?
+Libertville_MilitaryAcademy_Soldier_QuestStart_3 = Oui. J'ai entendu dire qu'ils se regroupent souvent à la place centrale.
+Libertville_MilitaryAcademy_Soldier_QuestStart_4 = Je vais aller jeter un oeil.
+
+Libertville_MilitaryAcademy_Soldier_QuestDuring_1 = Mes renseignements me disent que les espions sont à la place centrale.
+
+Libertville_MilitaryAcademy_Soldier_QuestEnd_1 = Je me suis occupé des espions. Vous aviez raison.
+Libertville_MilitaryAcademy_Soldier_QuestEnd_2 = Merci, [MC].
+Libertville_MilitaryAcademy_Soldier_QuestEnd_3 = Je ne pouvais pas quitter mon poste. L'académie serait sans défense.
+Libertville_MilitaryAcademy_Soldier_QuestEnd_4 = Tenez, voici votre récompense.
+Libertville_MilitaryAcademy_Soldier_QuestEnd_5 = <color=blue>J'ai reçu 20 pièces de la part du soldat.</color>
+
+Libertville_Plaza_Quest_1 = Une fois arrivé, je remarque immédiatement les espions dont m'a parlé mon ami.
+Libertville_Plaza_Quest_2 = Ils n'essayent même pas en réalité. Ils sont toujours en uniforme.
+Libertville_Plaza_Quest_3 = Bien... Il est temps de s'en occuper.
+
+Libertville_Plaza_Quest_4 = J'ai vaincu les soldats.
+Libertville_Plaza_Quest_5 = Je devrais retourner à l'académie.
+
+Libertville_Shop_Shopkeeper_Greetings_1 = Bonjour. Que puis-je faire pour vous ?
+
+Libertville_Shop_Shopkeeper_AboutYou_1 = Je préfère ne pas trop parler de moi. Désolé.
+Libertville_Shop_Shopkeeper_AboutYou_2 = Allez à l'auberge si vous voulez écouter des histoires.
+
+Libertville_Shop_Shopkeeper_AboutCity_1 = Libertville se porte bien de nos jours.
+Libertville_Shop_Shopkeeper_AboutCity_2 = Enfin, si on oublie les incursions Orkiennes occasionelles.
+
+Libertville_Shop_Shopkeeper_QuestStart_1 = Est-ce que vous allez souvent dans des endroits dangereux ?
+Libertville_Shop_Shopkeeper_QuestStart_2 = Il y a une forêt proche de la ville qui est peuplée d'ours.
+Libertville_Shop_Shopkeeper_QuestStart_3 = Je veux que vous alliez en tuer quelques uns. Leurs peaux et leurs viandes se vendront bien.
+Libertville_Shop_Shopkeeper_QuestStart_4 = Je... D'accord.
+Libertville_Shop_Shopkeeper_QuestStart_5 = Bien. Je vous récompenserai en cas de réussite.
+
+Libertville_Shop_Shopkeeper_QuestDuring_1 = J'ai besoin que vous alliez tuer des ours dans les bois alentours.
+
+Libertville_Shop_Shopkeeper_QuestEnd_1 = Vous avez l'ours ? Bon travail.
+Libertville_Shop_Shopkeeper_QuestEnd_2 = Avec ça, je vais pouvoir me faire encore plus d'argent.
+Libertville_Shop_Shopkeeper_QuestEnd_3 = Ahem... Voici votre paie, comme promis.
+Libertville_Shop_Shopkeeper_QuestEnd_4 = <color=blue>J'ai reçu 15 d'or de la part du marchand.</color>
+Libertville_Shop_Shopkeeper_QuestEnd_5 = Enfin bon. Et si vous utilisiez ça pour m'acheter quelque chose ?
+
+Libertville_Inn_Innkeeper_Greetings_1 = Bienvenue. Vous avez besoin d'une chambre ?
+
+Libertville_Inn_Innkeeper_AboutYou_1 = Je n'ai pas grand chose à dire sur moi.
+Libertville_Inn_Innkeeper_AboutYou_2 = Juste, faites attention à mon frère.
+Libertville_Inn_Innkeeper_AboutYou_3 = Il tient une boutique dans la ville. J'ai entendu des choses louches sur lui.
+Libertville_Inn_Innkeeper_AboutYou_4 = Ca, et je le connais...
+
+Libertville_Inn_Innkeeper_AboutCity_1 = Libertville était bien plus grand à l'origine.
+Libertville_Inn_Innkeeper_AboutCity_2 = Avec la guerre des Unions, la plupart des civils ont pris la fuite.
+Libertville_Inn_Innkeeper_AboutCity_3 = Les Orkviens ont occupé une partie de la ville, et détruit le reste.
+Libertville_Inn_Innkeeper_AboutCity_4 = Leur QG était dans ce qui est maintenant l'académie militaire.
+Libertville_Inn_Innkeeper_AboutCity_5 = Après la guerre, seule une fraction de civils est revenue. Tout était à reconstruire.
+
+Libertville_Inn_Innkeeper_Sleep_1 = Par ici...
+
+# -----------------------------------------------------------
+# ------------------- Bandit Mountain -----------------------
+# -----------------------------------------------------------
+
+BanditMountain_MainQuest4_1 = M'y voila.
+BanditMountain_MainQuest4_2 = Voilà le camp de bandits dont l'homme de Vorlan m'a parlé.
+BanditMountain_MainQuest4_3 = Je devrais pouvoir trouver le colis à l'intérieur.
+BanditMountain_MainQuest4_4 = ... S'ils l'ont toujours.
+BanditMountain_MainQuest4_5 = Hé, hé ! Arrêtes-toi !
+BanditMountain_MainQuest4_6 = Je me retourne. Epée est en train de courir dans ma direction.
+BanditMountain_MainQuest4_7 = Oh, tu as eu la même piste que moi ?
+BanditMountain_MainQuest4_8 = Bien sûr !
+BanditMountain_MainQuest4_9 = J'ai passé un savon à tous les bandits de Vorlan jusqu'à ce qu'un d'entre eux me dise ou aller.
+BanditMountain_MainQuest4_10 = C'est si... lui...
+BanditMountain_MainQuest4_11 = Reste en arrière, je vais retrouver le colis.
+BanditMountain_MainQuest4_12 = Tu es sérieux, Epée ?
+BanditMountain_MainQuest4_13 = Il va y avoir plusieurs bandits bien armés à l'intérieur.
+BanditMountain_MainQuest4_14 = Je ne pense pas que tu puisses faire ça tout seul.
+BanditMountain_MainQuest4_15 = Tu oses remettre en question mes capacités, Bouclier ?
+BanditMountain_MainQuest4_16 = Je vais te montrer de quel bois je me chauffe !
+BanditMountain_MainQuest4_17 = Epée fonce et entre dans la caverne.
+BanditMountain_MainQuest4_18 = Cet idiot, il va se blesser s'il ne fait pas attention.
+BanditMountain_MainQuest4_19 = Je devrais le suivre.
+
+BanditMountain_MainQuest4_20 = J'ai réussi à atteindre une sorte de salle de contrôle.
+BanditMountain_MainQuest4_21 = Ils se sont bien servi de cette caverne. Si ce n'était pas une plaque de bandits, je l'aurais même trouvé jolie.
+BanditMountain_MainQuest4_22 = Argh....
+BanditMountain_MainQuest4_23 = Je vois Epée au sol. Je le savais.
+BanditMountain_MainQuest4_24 = Tu es blessé, pas vrai ?
+BanditMountain_MainQuest4_25 = Laisses-moi voir... Une blessure par balle au genou ?
+BanditMountain_MainQuest4_26 = Dépêches...
+BanditMountain_MainQuest4_27 = Oui, oui. Attends un instant...
+BanditMountain_MainQuest4_28 = Je le soigne avec une trousse de soin.
+BanditMountain_MainQuest4_29 = Comment tu as pu te blesser comme ça ?
+BanditMountain_MainQuest4_30 = Tu as tué ton assaillant ?
+BanditMountain_MainQuest4_31 = ... Derrière toi...
+BanditMountain_MainQuest4_32 = Je me retourne pour faire face à une tête familière.
+BanditMountain_MainQuest4_33 = Oh, toi.
+BanditMountain_MainQuest4_34 = Vous...  Vous êtes l'homme de Vorlan.
+BanditMountain_MainQuest4_35 = Oui. Enfin, en vérité, je suis le patron, ici.
+BanditMountain_MainQuest4_36 = Tu m'as peut-être vaincu la dernière fois, mais pas cette fois.
+BanditMountain_MainQuest4_37 = Tu es sur mon territoire. Mes hommes sont plus nombreux.
+BanditMountain_MainQuest4_38 = Ton ami est même blessé. Comment comptes-tu gagner ?
+BanditMountain_MainQuest4_39 = ... Comme ça.
+
+BanditMountain_MainQuest4_40 = J'ai réussi à vaincre le bandit et ses larbins.
+BanditMountain_MainQuest4_41 = ... Argh... Cool...
+BanditMountain_MainQuest4_42 = Epée, fais attention avec ta blessure.
+BanditMountain_MainQuest4_43 = La ferme !
+BanditMountain_MainQuest4_44 = Eh eh eh ! Au final, j'ai gagné !
+BanditMountain_MainQuest4_45 = Gagné quoi ? Je ne savais pas qu'il y avait une compétition.
+BanditMountain_MainQuest4_46 = Je sais où se trouve le colis, Bouclier. Pas toi.
+BanditMountain_MainQuest4_47 = Epée se rue vers une caisse en bois.
+BanditMountain_MainQuest4_48 = Elle est déjà ouverte. Je suppose qu'il s'est fait tirer dessus en essayant de prendre le colis.
+BanditMountain_MainQuest4_49 = Il le brandit triomphalement.
+BanditMountain_MainQuest4_50 = He he he ! Le Marchand va me récompenser cette fois !
+BanditMountain_MainQuest4_51 = Il reconnaitra enfin que je suis le meilleur.
+
+BanditMountain_MainQuest4_StayLoyal_1 = Oui, enfin... Oublies pas de ne pas lui dire comment tu t'es blessé.
+BanditMountain_MainQuest4_StayLoyal_2 = Il nous attend, allons-y.
+BanditMountain_MainQuest4_StayLoyal_3 = Hé, hé ! C'est moi la personne importante ici. C'est moi qui ai le colis.
+BanditMountain_MainQuest4_StayLoyal_4 = Donc que devrait-on faire ?
+BanditMountain_MainQuest4_StayLoyal_5 = Eh bien, voyons-voir. On devrait aller voir le patron pour commencer.
+BanditMountain_MainQuest4_StayLoyal_6 = Oui, c'est une bonne idée. On se voit au palais, loser !
+BanditMountain_MainQuest4_StayLoyal_7 = Quel gamin. Je suppose que je devrai faire de même. Le patron nous attend.
+
+BanditMountain_MainQuest4_Disloyal_1 = C'est le moment. Il a le dos tourné.
+BanditMountain_MainQuest4_Disloyal_2 = Je frappe Epée par derrière. Il tombe dans les pommes immédiatement.
+BanditMountain_MainQuest4_Disloyal_3 = La douleur de sa blessure au genou devait être très forte.
+BanditMountain_MainQuest4_Disloyal_4 = Eh bien, il vivra. Difficilement, mais il vivra.
+BanditMountain_MainQuest4_Disloyal_5 = J'attrape le colis. C'est ce que je cherchais depuis si longtemps.
+BanditMountain_MainQuest4_Disloyal_6 = Je devrais retourner auprès de mes nouveaux compatriotes.
+BanditMountain_MainQuest4_Disloyal_7 = Ils vont vouloir voir cet artefact.
+
+BanditMountain_MainQuest4_Out_1 = Après quelques minutes, je suis sorti des cavernes.
+
+BanditMountain_MarklichtQuest4_1 = C'est ici que la Générale a reporté une incursion.
+BanditMountain_MarklichtQuest4_2 = Ah, enfin ! La Générale a envoyé des renforts.
+BanditMountain_MarklichtQuest4_3 = Que s'est-il passé ? Nous sommes ici pour mener l'enquête.
+BanditMountain_MarklichtQuest4_4 = Des Orkviens ont traversé la rivière au sud de notre position il y a quelques heures.
+BanditMountain_MarklichtQuest4_5 = Nous avons riposté, et ils ont battu en retraite.
+BanditMountain_MarklichtQuest4_6 = Vous savez quel était leur objectif ?
+BanditMountain_MarklichtQuest4_7 = Non. Mais j'ai l'impression qu'ils voulaient atteindre le fort.
+BanditMountain_MarklichtQuest4_8 = Hmm... Je vois.
+BanditMountain_MarklichtQuest4_9 = Bon travail, camarade. Nous allons continuer notre invasion.
+BanditMountain_MarklichtQuest4_10 = Notifiez la Générale si quelque chose se produit à nouveau.
+BanditMountain_MarklichtQuest4_11 = Compris !
+BanditMountain_MarklichtQuest4_12 = Bien. Je pense qu'il est temps pour nous de faire notre propre incursion.
+BanditMountain_MarklichtQuest4_13 = Nous allons au sud, et traversons la rivière.
+BanditMountain_MarklichtQuest4_14 = Après quelque temps, nous arrivons à Altyr.
+BanditMountain_MarklichtQuest4_15 = Je ne comprends pas. D'où est-ce qu'ils viennent ?
+BanditMountain_MarklichtQuest4_16 = C'est une maison, pas une base militaire.
+BanditMountain_MarklichtQuest4_17 = ... Peut-être que le propriétaire peut nous aider.

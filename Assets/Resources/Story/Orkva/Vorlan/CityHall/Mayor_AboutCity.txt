@@ -1,0 +1,14 @@
+# Talks about the city
+if(secondaryQuest_Vorlan_Mayor = 100){
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_Saved_1)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_Saved_2)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_Saved_3)
+}
+else{
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_1)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_2)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_3)
+	dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_AboutCity_4)
+}
+
+load(Orkva/Vorlan/CityHall/Mayor)

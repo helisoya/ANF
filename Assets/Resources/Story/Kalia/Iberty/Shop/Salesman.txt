@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_Buy Kalia/Iberty/Shop/Salesman_Shop
+	Choice_AboutYou Kalia/Iberty/Shop/Salesman_AboutYou
+	Choice_Nothing Kalia/Iberty/Shop/Salesman_Exit

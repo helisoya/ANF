@@ -1,0 +1,7 @@
+setCharacterAlpha(AnnaDisguise;0;true)
+setCharacterPosition(AnnaDisguise;Waiter)
+setCharacterRotation(AnnaDisguise;Waiter)
+setCharacterBody(AnnaDisguise;Bar;true)
+setCharacterAlpha(AnnaDisguise;1;false)
+
+load(Kalia/City/BarSalvation/Interaction)

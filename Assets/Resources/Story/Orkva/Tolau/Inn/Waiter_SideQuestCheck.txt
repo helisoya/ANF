@@ -1,0 +1,17 @@
+# Start Quest
+if(secondaryQuest_Tolau_Inn = -1){
+	load(Orkva/Tolau/Inn/Waiter_SideQuestStart)
+	return()
+}
+
+# During Quest
+if(secondaryQuest_Tolau_Inn = 0){
+	load(Orkva/Tolau/Inn/Waiter_SideQuestDuring)
+	return()
+}
+
+# End Quest
+if(secondaryQuest_Tolau_Inn = 1){
+	load(Orkva/Tolau/Inn/Waiter_SideQuestEnd)
+	return()
+}

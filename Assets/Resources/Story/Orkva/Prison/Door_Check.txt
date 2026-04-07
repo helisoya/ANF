@@ -1,0 +1,3 @@
+dialog(narrator;_;false;Prison_Door_Dont_1)
+
+load(Orkva/Prison/Interaction)

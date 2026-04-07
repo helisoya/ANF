@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_Play HauntedHouse/Waldo_Play_Check
+	Choice_Rules HauntedHouse/Waldo_Rules
+	Choice_Nothing HauntedHouse/Waldo_Exit

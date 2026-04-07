@@ -1,0 +1,10 @@
+dialog([MC];_;false;Palace_AttractionsDone_Stamp_1)
+dialog(narrator;_;false;Palace_AttractionsDone_Stamp_2)
+
+dialog(Security;_;false;Palace_AttractionsDone_Stamp_3)
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_Stamp_4)
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_Stamp_5)
+
+dialog([MC];_;false;Palace_AttractionsDone_Stamp_6)
+
+load(Palace/MainQuest4)

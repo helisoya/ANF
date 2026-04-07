@@ -1,0 +1,6 @@
+addCharacter(Runcan;false)
+setCharacterPosition(Runcan;NPCSpot)
+setCharacterRotation(Runcan;NPCSpot)
+setInteractionChapter(Runcan;Vlatyr/ShopQuest1)
+
+load(Vlatyr/Interaction)

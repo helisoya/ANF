@@ -1,0 +1,16 @@
+addCharacter(Lame;false)
+setCharacterPosition(Lame;Front)
+setCharacterRotation(Lame;Front)
+
+fadeFg(0;false)
+
+dialog(Lame;Lame;false;Okville_Shrine_MarklichtQuest5_1)
+
+dialog(narrator;_;false;Okville_Shrine_MarklichtQuest5_2)
+
+dialog(Lame;Lame;false;Okville_Shrine_MarklichtQuest5_3)
+
+dialog([MC];_;false;Okville_Shrine_MarklichtQuest5_4)
+dialog([MC];_;false;Okville_Shrine_MarklichtQuest5_5)
+
+battle(BATTLE_MarklichtQuest_Quest5_Truck;CityStreet;Orkva/Okville/Shrine/MarklichtQuest5_B)

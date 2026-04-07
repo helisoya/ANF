@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Kalia-City_Kalia_Plaza)
+
+interact

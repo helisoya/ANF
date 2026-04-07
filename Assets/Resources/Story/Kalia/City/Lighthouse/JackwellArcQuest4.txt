@@ -1,0 +1,8 @@
+dialog(narrator;_;false;Kalia_Lighthouse_JackwellArcQuest4_1)
+dialog(narrator;_;false;Kalia_Lighthouse_JackwellArcQuest4_2)
+dialog(narrator;_;false;Kalia_Lighthouse_JackwellArcQuest4_3)
+dialog(narrator;_;false;Kalia_Lighthouse_JackwellArcQuest4_4)
+
+variable(arcQuest_Jackwell_4;1)
+
+load(Kalia/City/Lighthouse/Interaction)

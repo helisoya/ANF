@@ -1,0 +1,976 @@
+# ---------------------------------------------------------
+# --------------------- Fort Wall -------------------------
+# ---------------------------------------------------------
+
+FortWall_Door_Dont_1 = I have no reason to enter this fort.
+
+FortWall_GUARDArcQuest3_1 = I can find the bomb GUARD needs stored somewhere in there.
+FortWall_GUARDArcQuest3_2 = Fort Wall is known as a weapons depot in Orkva.
+FortWall_GUARDArcQuest3_3 = It's close to the border to better handle supplies to the Orkvian troops.
+FortWall_GUARDArcQuest3_4 = And somewhere in there, I'll find that bomb.
+
+FortWall_GUARDArcQuest3_5 = After exploring the fort, I manage to find the bomb.
+FortWall_GUARDArcQuest3_6 = GUARD will be satisfied. I should bring it back to him.
+
+FortWall_Door_MerchantQuest6_1 = This is it.
+FortWall_Door_MerchantQuest6_2 = I'll go ask for a meeting with this fort's commander.
+FortWall_Door_MerchantQuest6_3 = Maybe they can clarify their stance on this whole "invasion" thing.
+FortWall_Door_MerchantQuest6_4 = Hell, maybe I can dissuade them from attacking.
+FortWall_Door_MerchantQuest6_5 = Still, this may very well be my very last mission.
+FortWall_Door_MerchantQuest6_6 = Am I sure I want to proceed ?
+FortWall_Door_MerchantQuest6_7 = <color=red>This will lead to the end of the game.</color>
+
+# ---------------------------------------------------------
+# ---------------------- Altyr ----------------------------
+# ---------------------------------------------------------
+
+Altyr_Sam_SecondaryQuestSoldier0_1 = Sam ? I've got a letter for you.
+Altyr_Sam_SecondaryQuestSoldier0_2 = Oh, thank you.
+Altyr_Sam_SecondaryQuestSoldier0_3 = I didn't realize you were a mailman. The uniform is too different.
+Altyr_Sam_SecondaryQuestSoldier0_4 = Oh, no. The soldier guarding the checkpoint in Vorlan told me to give it to you.
+Altyr_Sam_SecondaryQuestSoldier0_5 = ... Oh ! Him. I get it.
+Altyr_Sam_SecondaryQuestSoldier0_6 = The poor guy. He can never leave his post...
+Altyr_Sam_SecondaryQuestSoldier0_7 = Not since they put the city on lockdown.
+Altyr_Sam_SecondaryQuestSoldier0_8 = Do you know him well ?
+Altyr_Sam_SecondaryQuestSoldier0_9 = Well, yes.
+Altyr_Sam_SecondaryQuestSoldier0_10 = We were working together a few years ago on the railway project.
+Altyr_Sam_SecondaryQuestSoldier0_11 = Orkva wanted me to help create a railway between Okville and Tolau.
+Altyr_Sam_SecondaryQuestSoldier0_12 = And he was assigned to my protection.
+Altyr_Sam_SecondaryQuestSoldier0_13 = When I finished my work, I came back here, and we got separated.
+Altyr_Sam_SecondaryQuestSoldier0_14 = But since we got along well, we decided to keep talking over letters.
+Altyr_Sam_SecondaryQuestSoldier0_15 = ...Anyway. If you'll excuse me....
+Altyr_Sam_SecondaryQuestSoldier0_16 = ............
+Altyr_Sam_SecondaryQuestSoldier0_17 = What ? ..... No.......
+Altyr_Sam_SecondaryQuestSoldier0_18 = This... This is bad...
+Altyr_Sam_SecondaryQuestSoldier0_19 = Something's wrong ?
+Altyr_Sam_SecondaryQuestSoldier0_20 = Oh, well.... I can't tell you, sorry...
+Altyr_Sam_SecondaryQuestSoldier0_21 = I... I have to think about this letter...
+
+Altyr_Sam_Greetings_1 = Hi, how can Sam help you ?
+
+Altyr_Sam_AboutYou_1 = I am an old engineer specialized in railways.
+Altyr_Sam_AboutYou_2 = I helped create the railway system of Orkva.
+Altyr_Sam_AboutYou_3 = My last job was the creation of the railway between Okville and Tolau.
+Altyr_Sam_AboutYou_4 = Nowadays, I'm retired. I just tend to my garden.
+
+Altyr_Sam_AboutRegion_1 = You want to know about the region ?
+Altyr_Sam_AboutRegion_2 = I'm sorry. I guess you should ask the shrine's priest about that.
+
+Altyr_Sam_ArcQuest_Nothing_1 = No, thank you.
+
+Altyr_Sam_ArcQuest_During0_1 = Please, investigate the threat at Vorlan's city hall.
+
+Altyr_Sam_ArcQuest_During1_1 = The greatest heist of all ? What could they mean by that ?
+
+Altyr_Sam_Start_1 = Well... Actually...
+Altyr_Sam_Start_2 = I might need some help, yes.
+Altyr_Sam_Start_3 = It's about the letter you gave me.
+Altyr_Sam_Start_4 = My friend in Vorlan told me that shady people are lurking near the railway lines.
+Altyr_Sam_Start_5 = He tried to investigate, but he got lost in the tunnels beneath the city.
+Altyr_Sam_Start_6 = So he asked me to have a look since I created the railway lines.
+Altyr_Sam_Start_7 = However...
+Altyr_Sam_Start_8 = You're not a soldier. This is quite dangerous.
+Altyr_Sam_Start_9 = Yes.
+Altyr_Sam_Start_10 = You seem capable. Would you do it for me ?
+Altyr_Sam_Start_11 = I'll reward you with a piece of equipment if you succeed.
+Altyr_Sam_Start_12 = Alright. I'll investigate the train tracks.
+Altyr_Sam_Start_13 = Thank you. You'll find the entrance to the train tracks in the city hall.
+Altyr_Sam_Start_14 = And here. Take this map of the tunnels. You'll need.
+
+Altyr_Sam_End_1 = I succeeded.
+Altyr_Sam_End_2 = Bandits were planning to rob a military train full of gold.
+Altyr_Sam_End_3 = I went undercover and stopped them.
+Altyr_Sam_End_4 = I see... Well, thanks.
+Altyr_Sam_End_5 = I wouldn't have been able to do this on my own.
+Altyr_Sam_End_6 = To think that people would sabotage the railways...
+Altyr_Sam_End_7 = Well, anyway. Don't worry about a potential Orkvian investigation.
+Altyr_Sam_End_8 = I'll make sure to "forget" that I hired you.
+Altyr_Sam_End_9 = If they ask what happened. I'll just say I prevented the sabotage and the bandits killed each other.
+Altyr_Sam_End_10 = Which reminds me. Here is your "payment".
+Altyr_Sam_End_11 = Sam motions me towards some sort of battle armor.
+Altyr_Sam_End_12 = Orkva asked me to create this back in the days.
+Altyr_Sam_End_13 = They wanted to better equip their soldiers, but it was too costly.
+Altyr_Sam_End_14 = You can have it. This is the only working prototype.
+Altyr_Sam_End_15 = Thank you.
+Altyr_Sam_End_16 = In the meantime...
+
+Altyr_Sam_MarklichtQuest4_1 = Sam, we need your help.
+Altyr_Sam_MarklichtQuest4_2 = Orkvian soldiers came here, didn't they ? Do you know where they're from ?
+Altyr_Sam_MarklichtQuest4_3 = You... You are with Marklicht, uh ?
+Altyr_Sam_MarklichtQuest4_4 = The military would have my head if I talked.
+Altyr_Sam_MarklichtQuest4_5 = But... No one is listening, so...
+Altyr_Sam_MarklichtQuest4_6 = Hmm...
+Altyr_Sam_MarklichtQuest4_7 = Okay, I'll tell you.
+Altyr_Sam_MarklichtQuest4_8 = They come from Okville. They're the local garison.
+Altyr_Sam_MarklichtQuest4_9 = More than that, I don't know.
+Altyr_Sam_MarklichtQuest4_10 = I see. That's pretty helpful.
+Altyr_Sam_MarklichtQuest4_11 = Something is up with the soldiers these days. I feel like they are plotting something.
+Altyr_Sam_MarklichtQuest4_12 = We'll get to the bottom of this, don't worry. 
+
+# ---------------------------------------------------------
+# --------------------- Vorlan ----------------------------
+# ---------------------------------------------------------
+
+Vorlan_EntranceCutscene_1 = So this is the city of Vorlan...
+Vorlan_EntranceCutscene_2 = Orkva put the city on lockdown a few years ago.
+Vorlan_EntranceCutscene_3 = Almost no one can enter this place without authorisation.
+
+Vorlan_EntranceCutscene_NeedToEnterVorlan_1 = But there is a chance the bandits I'm looking for are in there.
+Vorlan_EntranceCutscene_NeedToEnterVorlan_2 = I have to find a way in. One way or another.
+
+Vorlan_EntranceCutscene_NoNeedToEnterVorlan_1 = I have no reason to enter Vorlan for now.
+Vorlan_EntranceCutscene_NoNeedToEnterVorlan_2 = But I guess I can always check out a way in, just in case.
+
+Vorlan_EntranceCutscene_4 = Hey, you.
+Vorlan_EntranceCutscene_5 = The soldier starts walking in my direction.
+Vorlan_EntranceCutscene_6 = What are you looking at ? Where are your identifications ?
+Vorlan_EntranceCutscene_7 = I... Well...
+Vorlan_EntranceCutscene_8 = What do I do ? I can't think of any excuse.
+Vorlan_EntranceCutscene_9 = I'm a traveler. I was thinking of stopping here for the day.
+Vorlan_EntranceCutscene_10 = Pff ! Stopping here of all places ?
+Vorlan_EntranceCutscene_11 = Look. I don't know your deal, but I can't let you in.
+Vorlan_EntranceCutscene_12 = Can't you make an exception ?
+Vorlan_EntranceCutscene_13 = ....
+Vorlan_EntranceCutscene_14 = Well... I guess I could.
+Vorlan_EntranceCutscene_15 = On one condition.
+Vorlan_EntranceCutscene_16 = There is a small village near lake Victory, Altyr.
+Vorlan_EntranceCutscene_17 = You'll find an old friend of mine there. His name is Sam.
+Vorlan_EntranceCutscene_18 = Give him this letter. It's private correspondance.
+Vorlan_EntranceCutscene_19 = I would have gone there, but I need to stand guard here.
+Vorlan_EntranceCutscene_20 = Do this for me, and I'll let you through.
+Vorlan_EntranceCutscene_21 = Alright, alright.
+Vorlan_EntranceCutscene_22 = I take the letter. At least I have a way in now.
+
+Vorlan_Checkpoint_Soldier_Default_1 = Sorry. I can't be seen talking to you.
+
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_1 = I delivered the letter.
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_2 = Good. Its content are really important.
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_3 = As I promised, I'll let you in now.
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_4 = Just make sure not to encounter too many soldiers inside.
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_5 = I don't want them to know I let you in without authorisation.
+
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_MainQuest_1 = Good. I can now search for the bandits.
+Vorlan_Checkpoint_Soldier_SecondaryQuestEnd_MainQuest_2 = Maybe stopping by the local inn could give me hints.
+
+Vorlan_Inn_Owner_Sleep_1 = Of course. Let me show you to your room.
+
+Vorlan_Inn_Owner_AboutCity_1 = Vorlan is in a dire state.
+Vorlan_Inn_Owner_AboutCity_2 = The Orkvian government decided to put the city on lockdown a few years ago.
+Vorlan_Inn_Owner_AboutCity_3 = It started after a huge riot by the Suori community of Vorlan.
+Vorlan_Inn_Owner_AboutCity_4 = Orkva wanted to suppress our culture but ultimately failed.
+Vorlan_Inn_Owner_AboutCity_5 = The lockdown is just a way for them to shut us off from the world.
+
+Vorlan_Inn_Owner_AboutBandits_1 = Bandits ? They are seriously getting on my nerves.
+Vorlan_Inn_Owner_AboutBandits_2 = They got a deal with the previous owner. Something about a tunnel underneath the inn.
+Vorlan_Inn_Owner_AboutBandits_3 = I don't know where it leads, but it sure is somewhere out of here.
+Vorlan_Inn_Owner_AboutBandits_4 = They keep getting stuff in and out of the city, right under my nose.
+Vorlan_Inn_Owner_AboutBandits_5 = Are they threatning you ?
+Vorlan_Inn_Owner_AboutBandits_6 = Yeah... I tried telling them off once. Didn't work...
+Vorlan_Inn_Owner_AboutBandits_7 = I could help with that.
+Vorlan_Inn_Owner_AboutBandits_8 = ... See that guy over there ? He's one of them.
+Vorlan_Inn_Owner_AboutBandits_9 = Let's just say I wouldn't mind them disappearing from my inn...
+
+Vorlan_Inn_Owner_StartSecondaryQuest_1 = ...
+Vorlan_Inn_Owner_StartSecondaryQuest_2 = You... Can I trust you ?
+Vorlan_Inn_Owner_StartSecondaryQuest_3 = Yes. Do you need help ?
+Vorlan_Inn_Owner_StartSecondaryQuest_4 = ...
+Vorlan_Inn_Owner_StartSecondaryQuest_5 = Actually, I do.
+Vorlan_Inn_Owner_StartSecondaryQuest_6 = Since you entered Vorlan, I assume you have authorization to enter and leave the city.
+Vorlan_Inn_Owner_StartSecondaryQuest_7 = I need to deliver some food supplies to a... friend. Could you do it ?
+Vorlan_Inn_Owner_StartSecondaryQuest_8 = I guess I could. How much do you pay ?
+Vorlan_Inn_Owner_StartSecondaryQuest_9 = Here. Take this pay, and deliver the food to the shrine just outside the city.
+Vorlan_Inn_Owner_StartSecondaryQuest_10 = <color=blue>The owner gave me 15 gold.</color>
+Vorlan_Inn_Owner_StartSecondaryQuest_11 = Oh, and my friend only shows up at night.
+
+Vorlan_Inn_MainQuest3_1_1 = What do you want ?
+Vorlan_Inn_MainQuest3_1_2 = I'm looking for bandits. They came from the White Forest and have stolen a valuable package.
+Vorlan_Inn_MainQuest3_1_3 = And why would I be concerned, friend ?
+Vorlan_Inn_MainQuest3_1_4 = Let's just say I have my reasons to think you are working with them.
+Vorlan_Inn_MainQuest3_1_5 = ...
+Vorlan_Inn_MainQuest3_1_6 = Well, well, well. You think you're smart ?
+Vorlan_Inn_MainQuest3_1_7 = Arnold told me about you. He thought you died.
+Vorlan_Inn_MainQuest3_1_8 = Guess I'll just have to rectify that. Guys !
+Vorlan_Inn_MainQuest3_1_9 = Bandits come out of the back of the inn.
+Vorlan_Inn_MainQuest3_1_10 = The owner takes cover. This is going to get ugly.
+
+Vorlan_Inn_MainQuest3_1_11 = Okay, okay ! I surrender !
+Vorlan_Inn_MainQuest3_1_12 = Arnold. Was he the one who attacked me ?
+Vorlan_Inn_MainQuest3_1_13 = Yeah, I swear ! He came here not too long ago with a package.
+Vorlan_Inn_MainQuest3_1_14 = He went to smuggle it to the HQ in the mountains.
+Vorlan_Inn_MainQuest3_1_15 = And where is this HQ ?
+Vorlan_Inn_MainQuest3_1_16 = The tunnels under this inn lead directly to it.
+Vorlan_Inn_MainQuest3_1_17 = We use them to smuggle goods from and to the HQ.
+Vorlan_Inn_MainQuest3_1_18 = I mean, which mountains ? You could be leading me to a trap.
+Vorlan_Inn_MainQuest3_1_19 = No, I swear ! The main entrance of the HQ is on the Marklichtian side of the White Forest mountains.
+Vorlan_Inn_MainQuest3_1_20 = Marklicht ? How far does this tunnel go ? This sounds fishy.
+Vorlan_Inn_MainQuest3_1_21 = Guide me through it. I don't trust you.
+Vorlan_Inn_MainQuest3_1_22 = Okay, okay. I'll do it.
+Vorlan_Inn_MainQuest3_1_23 = The bandit gets up. He dusts his jacket, then...
+Vorlan_Inn_MainQuest3_1_24 = ... Runs off. I am an idiot.
+Vorlan_Inn_MainQuest3_1_25 = Ah, ah ! You fool ! You'll never get to our HQ !
+Vorlan_Inn_MainQuest3_1_26 = I run after him to the basement.
+Vorlan_Inn_MainQuest3_1_27 = However, before I can even enter the tunnel...
+Vorlan_Inn_MainQuest3_1_28 = Its entrance explodes. It must have been rigged to cover their traces.
+Vorlan_Inn_MainQuest3_1_29 = Damn ! I just lost my lead.
+Vorlan_Inn_MainQuest3_1_30 = He talked about an entrance in the Marklichtian mountains. I should go there.
+Vorlan_Inn_MainQuest3_1_31 = I'll have my revenge on that guy in due time.
+Vorlan_Inn_MainQuest3_1_32 = I go upstairs. The owner came back and muttered "Thanks".
+Vorlan_Inn_MainQuest3_1_33 = I can enter Marklichtian territory by going left in the White Forest.
+
+Vorlan_Shop_Greetings_1 = Welcome to my shop.
+
+Vorlan_Shop_AboutYou_1 = Look, I'm just trying to survive.
+Vorlan_Shop_AboutYou_2 = Back in the days, I traveled between here and Tolau to sell my wares.
+Vorlan_Shop_AboutYou_3 = Nowadays, with the lockdown, I can only sell things here.
+Vorlan_Shop_AboutYou_4 = The worst is that nobody can afford to buy most of my stuff.
+Vorlan_Shop_AboutYou_5 = Besides, what use do you have for military equipment when nobody can leave town ?
+
+Vorlan_Shop_AboutFisherman_1 = I come from your friend, the shopkeeper in Tolau.
+Vorlan_Shop_AboutFisherman_2 = Ah... I see. She must have never gotten my reply, right ?
+Vorlan_Shop_AboutFisherman_3 = Damn lockdown. Sometimes it feels like half the letters sent in and out disappear for no reason.
+Vorlan_Shop_AboutFisherman_4 = Did you find anything of the fisherman ?
+Vorlan_Shop_AboutFisherman_5 = Oh, yes. I found out something interresting.
+Vorlan_Shop_AboutFisherman_6 = He was forced to leave because he had problems with some bandits.
+Vorlan_Shop_AboutFisherman_7 = Bandits ? From the White Forest ?
+Vorlan_Shop_AboutFisherman_8 = Yeah. Apparently, he owed them money. So they took a precious heirloom from him.
+Vorlan_Shop_AboutFisherman_9 = After that, he ran off. 'Thought he could get out of their reach, which worked.
+Vorlan_Shop_AboutFisherman_10 = This heirloom, do you know anything about it ? Which gang took it ?
+Vorlan_Shop_AboutFisherman_11 = It was a clock. And from what I gathered, it was the Lake gang.
+Vorlan_Shop_AboutFisherman_12 = I see, thank you.
+Vorlan_Shop_AboutFisherman_13 = The Lake gang is a small gang from the White Forest. I'm sure I can get the clock back from them.
+Vorlan_Shop_AboutFisherman_14 = Anyway, enough about that. I don't want any troubles.
+
+Vorlan_Plaza_Soldier_Default_1 = Hey ! The curfew is in effect. Go back inside, or I'll arrest you.
+
+Vorlan_Plaza_Soldier_MayorQuest_1 = ...
+Vorlan_Plaza_Soldier_MayorQuest_2 = Tough guy, uh ?
+Vorlan_Plaza_Soldier_MayorQuest_3 = I warned you. This will get ugly.
+Vorlan_Plaza_Soldier_MayorQuest_4 = ... The governor was dealt with.
+Vorlan_Plaza_Soldier_MayorQuest_5 = I take time to try and make it look like an accident.
+Vorlan_Plaza_Soldier_MayorQuest_6 = ... There. This should be fine.
+Vorlan_Plaza_Soldier_MayorQuest_7 = I need to go back to the mayor now.
+
+Vorlan_CityHall_Soldier_No_1 = What do you want ? I'm busy.
+
+Vorlan_CityHall_Mayor_Greetings_1 = Welcome to Vorlan's City Hall. How may I help you ?
+
+Vorlan_CityHall_Mayor_AboutCity_1 = Some would say Vorlan is in ruins. That the Orkvian government wants to destroy us.
+Vorlan_CityHall_Mayor_AboutCity_2 = I disagree.
+Vorlan_CityHall_Mayor_AboutCity_3 = The lockdown is simply here to protect us from... criminals.
+Vorlan_CityHall_Mayor_AboutCity_4 = So please, enjoy your stay in Vorlan.
+
+Vorlan_CityHall_Mayor_AboutCity_Saved_1 = Vorlan is in ruins because of the lockdown.
+Vorlan_CityHall_Mayor_AboutCity_Saved_2 = But with the military governor gone, maybe we could manage to come back.
+Vorlan_CityHall_Mayor_AboutCity_Saved_3 = We just need to smuggle goods in and out without being seen.
+
+Vorlan_CityHall_Mayor_AboutYou_1 = I have been the mayor of the city for 5 years.
+Vorlan_CityHall_Mayor_AboutYou_2 = In the beginning, I ran as a candidate against the oppression of the Suori culture.
+Vorlan_CityHall_Mayor_AboutYou_3 = But nowadays I... I... I changed my worldview thanks to the Orkvians.
+Vorlan_CityHall_Mayor_AboutYou_4 = They mean us no harm. They are here to help us...
+
+Vorlan_CityHall_Mayor_AboutYou_Saved_1 = I have been the mayor of the city for 5 years.
+Vorlan_CityHall_Mayor_AboutYou_Saved_2 = In the beginning, I ran as a candidate against the oppression of the Suori culture.
+Vorlan_CityHall_Mayor_AboutYou_Saved_3 = However, I was forced to become the lapdog of Orkva after the lockdown came into effect.
+
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_1 = ....
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_2 = Can you keep this a secret ?
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_3 = Yes. Why are you whispering ?
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_4 = Well... I don't want the military governor to hear us.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_5 = As you probably guessed. Vorlan is in shambles.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_6 = After the lockdown, they assigned this military governor to me.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_7 = In theory, she is supposed to only help me with the lockdown.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_8 = But in reality, she is the voice of the Orvkian government.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_9 = I can't do anything she won't allow me to. Which means I can't help the city.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_10 = Alright, but where do I come in ?
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_11 = Please, for Vorlan. Dispose of the governor.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_12 = How ? It's not like I can just kill them like that.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_13 = She likes to patrol the central plaza by herself at night.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_14 = Ambush her there. Make it look like an accident.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_15 = This is sketchy, but I'll try.
+Vorlan_CityHall_Mayor_SecondaryQuest_Start_16 = Remember, I'll pay you a lot if you succeed.
+
+Vorlan_CityHall_Mayor_SecondaryQuest_During_1 = You need to help us with our military governor.
+Vorlan_CityHall_Mayor_SecondaryQuest_During_2 = You'll find her patrolling the central plaza at night.
+
+Vorlan_CityHall_Mayor_SecondaryQuest_End_1 = I heard the news. You succeeded !
+Vorlan_CityHall_Mayor_SecondaryQuest_End_2 = Yes, but don't you fear that they grow suspicious ?
+Vorlan_CityHall_Mayor_SecondaryQuest_End_3 = No worries. Their forces are too dispersed. They won't even bother to send a new one.
+Vorlan_CityHall_Mayor_SecondaryQuest_End_4 = Too much ground to hold, I suppose.
+Vorlan_CityHall_Mayor_SecondaryQuest_End_5 = Yes. I actually received a telegram earlier regarding that.
+Vorlan_CityHall_Mayor_SecondaryQuest_End_6 = They said the soldiers guarding the city will be enough.
+Vorlan_CityHall_Mayor_SecondaryQuest_End_7 = Which means I'll be able to help the citizens of Vorlan now.
+Vorlan_CityHall_Mayor_SecondaryQuest_End_8 = Here. Take this as a token of our gratitude.
+Vorlan_CityHall_Mayor_SecondaryQuest_End_9 = <color=blue>I received 50 gold from the mayor.</color>
+Vorlan_CityHall_Mayor_SecondaryQuest_End_10 = Vorlan now has a chance to crawl back from poverty. We need to seize it.
+
+Vorlan_CityHall_RailwayQuest_1 = This is the entrance of the railway line Sam told me to investigate.
+Vorlan_CityHall_RailwayQuest_2 = Well, here I go.
+
+Vorlan_CityHall_RailwayQuest_3 = While walking in the tunnels, I stumble upon a weird table.
+Vorlan_CityHall_RailwayQuest_4 = It seems out of place. As if it's here for maintenance work.
+Vorlan_CityHall_RailwayQuest_5 = I look at the objects on it. It's quite weird.
+Vorlan_CityHall_RailwayQuest_6 = There is a plan of the tunnels, as well as a letter.
+Vorlan_CityHall_RailwayQuest_7 = I open it and read its content.
+Vorlan_CityHall_RailwayQuest_8 = "Jacky. If you read this, it means it's finally time."
+Vorlan_CityHall_RailwayQuest_9 = "The greatest heist of all is about to begin."
+Vorlan_CityHall_RailwayQuest_10 = "Simon, at Tolau's inn, will have your instructions."
+Vorlan_CityHall_RailwayQuest_11 = "We'll need you in Vorlan for a couple of days."
+Vorlan_CityHall_RailwayQuest_12 = "After which, we will be ready."
+Vorlan_CityHall_RailwayQuest_13 = What could it mean ?
+Vorlan_CityHall_RailwayQuest_14 = Bandits are planning a heist in Vorlan ? No...
+Vorlan_CityHall_RailwayQuest_15 = This seems weird. It must be something bigger.
+Vorlan_CityHall_RailwayQuest_16 = I should probably head to Tolau's inn. "Simon" will surely tell me what he knows...
+
+Vorlan_CityHall_SamArcQuest3_1 = I should recheck the railway.
+Vorlan_CityHall_SamArcQuest3_2 = After about an hour, I'm sure that the railway is safe.
+Vorlan_CityHall_SamArcQuest3_3 = I got lucky. The bandits couldn't do anything.
+Vorlan_CityHall_SamArcQuest3_4 = Now, I should head to Okville's train station.
+Vorlan_CityHall_SamArcQuest3_5 = I'll "help" the bandits. Then I'll put a stop to their plans.
+Vorlan_CityHall_SamArcQuest3_6 = I would have taken this to the Orkvian military. But chances are that they would only arrest me.
+
+# ---------------------------------------------------------
+# --------------------- Shrine ----------------------------
+# ---------------------------------------------------------
+
+OrkvaShrine_Priest_Greetings_1 = ... You don't look like the other Orkvian soldiers...
+
+OrkvaShrine_Priest_SecondaryQuest_1 = These goods. Did she send you ?
+OrkvaShrine_Priest_SecondaryQuest_2 = The innkeeper ? Yes.
+OrkvaShrine_Priest_SecondaryQuest_3 = Good, good. Please put this here.
+OrkvaShrine_Priest_SecondaryQuest_4 = I drop the food next to the man.
+OrkvaShrine_Priest_SecondaryQuest_5 = I suppose she already paid you ? I'm sorry I can't do it myself.
+OrkvaShrine_Priest_SecondaryQuest_6 = Since I am in hiding, I rely on the generosity of the locals to live.
+
+OrkvaShrine_Priest_AboutYou_1 = I'm... the caretaker of the shrine you see before us.
+OrkvaShrine_Priest_AboutYou_2 = My family took care of it for generations.
+OrkvaShrine_Priest_AboutYou_3 = Well... until the Orkvian decided they had had enough.
+OrkvaShrine_Priest_AboutYou_4 = The military came and destroyed the shrine.
+OrkvaShrine_Priest_AboutYou_5 = My grandfather died that day.
+OrkvaShrine_Priest_AboutYou_6 = My mother and I stayed hidden in the shrine afterward. She wanted to stay true to our family's duty.
+OrkvaShrine_Priest_AboutYou_7 = However, she died a few years ago due to an illness. I'm now the sole caretaker of this shrine.
+OrkvaShrine_Priest_AboutYou_8 = Suoris from the region send us food from time to time.
+OrkvaShrine_Priest_AboutYou_9 = Orkva outlawed the practice of our religion, but no one cares.
+OrkvaShrine_Priest_AboutYou_10 = People still come here from time to time to pray.
+
+OrkvaShrine_Priest_AboutRegion_1 = The region was conquered by Orkva long before the Unions War.
+OrkvaShrine_Priest_AboutRegion_2 = At first, they wanted to convert the local population to their ways. But alas...
+OrkvaShrine_Priest_AboutRegion_3 = They quickly grew tired of waiting and of their failed attempts at winning over the population.
+OrkvaShrine_Priest_AboutRegion_4 = The king ordered the Suori starved. Somehow, they still failed.
+OrkvaShrine_Priest_AboutRegion_5 = Nowadays, the region is in constant military occupation.
+OrkvaShrine_Priest_AboutRegion_6 = Tolau is under a naval blockade. A curfew is in effect in Vorlan.
+OrkvaShrine_Priest_AboutRegion_7 = The only success they had so far was the creation of Okville.
+OrkvaShrine_Priest_AboutRegion_8 = It's an all-Orkvian town just down the road.
+OrkvaShrine_Priest_AboutRegion_9 = If you ever go there, you'll see it's... different. Bourgeois, prehaps ?
+
+OrkvaShrine_RebelFactionQuest1_1 = This is where the priest should be.
+OrkvaShrine_RebelFactionQuest1_2 = Wait... Orkvian soldiers are already there !
+OrkvaShrine_RebelFactionQuest1_3 = It seems they already captured the priest and are getting ready to execute him.
+OrkvaShrine_RebelFactionQuest1_4 = Time to stop them.
+
+OrkvaShrine_RebelFactionQuest1_5 = Yay ! We saved the day !
+OrkvaShrine_RebelFactionQuest1_6 = Where is the priest ?
+OrkvaShrine_RebelFactionQuest1_7 = It seems he ran off during our fight.
+OrkvaShrine_RebelFactionQuest1_8 = Well... At least he's doing okay.
+OrkvaShrine_RebelFactionQuest1_9 = Hey, so uh...
+OrkvaShrine_RebelFactionQuest1_10 = Thanks for helping me and my sister.
+OrkvaShrine_RebelFactionQuest1_11 = No worries. You two seemed close. Do you see her much ? 
+OrkvaShrine_RebelFactionQuest1_12 = Yeah. But with the rebellion, I can't see her that much.
+OrkvaShrine_RebelFactionQuest1_13 = Do you regret joining the rebels ?
+OrkvaShrine_RebelFactionQuest1_14 = ... A little bit.
+OrkvaShrine_RebelFactionQuest1_15 = When big sis went to lead the rebels. I had to make a choice.
+OrkvaShrine_RebelFactionQuest1_16 = My big sis, or my not so big sis.
+OrkvaShrine_RebelFactionQuest1_17 = In the end, I decided to join big sis.
+OrkvaShrine_RebelFactionQuest1_18 = But... I left my other sis all alone...
+OrkvaShrine_RebelFactionQuest1_19 = Don't worry. When we've have toppled the Merchant, you'll be able to see her more often.
+OrkvaShrine_RebelFactionQuest1_20 = Right, right.
+OrkvaShrine_RebelFactionQuest1_21 = Let's do our best for the rebellion ! 
+
+# ---------------------------------------------------------
+# --------------------- Prison ----------------------------
+# ---------------------------------------------------------
+
+Prison_Door_Dont_1 = Why would I enter an Orkvian prison ?
+
+# ---------------------------------------------------------
+# --------------------- Prison ----------------------------
+# ---------------------------------------------------------
+
+OrkvaMilitaryBase_Entrance_Dont_1 = This is the Orkvian main military base in the region. 
+
+OrkvaMilitaryBase_Bandit_ArcQuest2_1 = Good, you made it.
+OrkvaMilitaryBase_Bandit_ArcQuest2_2 = Why are we here ?
+OrkvaMilitaryBase_Bandit_ArcQuest2_3 = Eh eh. All in due time.
+OrkvaMilitaryBase_Bandit_ArcQuest2_4 = For now, you just need to know we are going to steal Orkvian uniforms.
+OrkvaMilitaryBase_Bandit_ArcQuest2_5 = A convoy will be leaving soon with Okville as destination.
+OrkvaMilitaryBase_Bandit_ArcQuest2_6 = We'll follow them for a bit, then we'll ambush them.
+OrkvaMilitaryBase_Bandit_ArcQuest2_7 = Once that's done, we'll steal the uniforms and run away.
+OrkvaMilitaryBase_Bandit_ArcQuest2_8 = Of course, you'll be doing the heavy lifting, pal.
+OrkvaMilitaryBase_Bandit_ArcQuest2_9 = I... get it.
+OrkvaMilitaryBase_Bandit_ArcQuest2_10 = Good, because here they come.
+OrkvaMilitaryBase_Bandit_ArcQuest2_11 = A truck exits the base, and we follow it.
+OrkvaMilitaryBase_Bandit_ArcQuest2_12 = Since the roads are bumpy, the truck can't go very fast.
+OrkvaMilitaryBase_Bandit_ArcQuest2_13 = After half an hour of stalking, we finally ambush the convoy.
+
+OrkvaMilitaryBase_Bandit_ArcQuest2_14 = Good job, newbie.
+OrkvaMilitaryBase_Bandit_ArcQuest2_15 = We might have some use for you after all.
+OrkvaMilitaryBase_Bandit_ArcQuest2_16 = I'll get these uniforms to our brothers.
+OrkvaMilitaryBase_Bandit_ArcQuest2_17 = Come tonight to Tolau's lighthouse. We'll be holding a meeting.
+OrkvaMilitaryBase_Bandit_ArcQuest2_18 = You'll finally get a grasp on the operation we are planning.
+OrkvaMilitaryBase_Bandit_ArcQuest2_19 = Yes, sir. I'll be there.
+OrkvaMilitaryBase_Bandit_ArcQuest2_20 = Uniforms ? I don't like this one bit.
+OrkvaMilitaryBase_Bandit_ArcQuest2_21 = I should head to this meeting whenever I can.
+
+
+# ---------------------------------------------------------
+# --------------------- Okville ---------------------------
+# ---------------------------------------------------------
+
+Okville_Shrine_Portrait_1 = A portrait of the Orkvian king.
+Okville_Shrine_Portrait_2 = He's both the head of government and the head of the Orkvian religion.
+
+Okville_Shrine_MarklichtQuest5_1 = Here !
+Okville_Shrine_MarklichtQuest5_2 = As Lame predicted, there is a military truck here.
+Okville_Shrine_MarklichtQuest5_3 = Let's steal it and sneak into the prison.
+Okville_Shrine_MarklichtQuest5_4 = Alright. First, we have to deal with the soldiers.
+Okville_Shrine_MarklichtQuest5_5 = Let's do this.
+
+Okville_Shrine_MarklichtQuest5_6 = After we took care of the soldiers, we hid the bodies in the truck.
+Okville_Shrine_MarklichtQuest5_7 = Okay. Let's enter the prison.
+Okville_Shrine_MarklichtQuest5_8 = We take the truck and drive to the prison.
+Okville_Shrine_MarklichtQuest5_9 = The guards outside don't suspect our presence. We manage to get in.
+Okville_Shrine_MarklichtQuest5_10 = Okay, now all we need to do is to find and save the soldiers.
+
+Okville_Shrine_MarklichtQuest5_11 = I don't get it. Where are the captives ?
+Okville_Shrine_MarklichtQuest5_12 = ... I don't like this.
+Okville_Shrine_MarklichtQuest5_13 = ?
+Okville_Shrine_MarklichtQuest5_14 = We start hearing footsteps around the corner.
+Okville_Shrine_MarklichtQuest5_15 = That's weird. They don't seem like a soldier's.
+Okville_Shrine_MarklichtQuest5_16 = Ah... I had a feeling you were here.
+Okville_Shrine_MarklichtQuest5_17 = Who are you ?
+Okville_Shrine_MarklichtQuest5_18 = Bold of you to ask that when you're here illegaly.
+Okville_Shrine_MarklichtQuest5_19 = I suppose you are here for the captives ?
+Okville_Shrine_MarklichtQuest5_20 = You Marklichtians are so predictable.
+Okville_Shrine_MarklichtQuest5_21 = There are no captives. Not here, at least.
+Okville_Shrine_MarklichtQuest5_22 = What ?
+Okville_Shrine_MarklichtQuest5_23 = But then... What you said at city hall...
+Okville_Shrine_MarklichtQuest5_24 = All a lie. It was part of a diplomatic plot.
+Okville_Shrine_MarklichtQuest5_25 = We know what you are trying to do, Marklichtians.
+Okville_Shrine_MarklichtQuest5_26 = And we also want to do the same.
+Okville_Shrine_MarklichtQuest5_27 = In order to prevent you from attacking Kalia before us, we did this little thing.
+Okville_Shrine_MarklichtQuest5_28 = We attacked you, then pretended that you attacked us first.
+Okville_Shrine_MarklichtQuest5_29 = Thanks to this, your government won't dare to launch their invasion.
+Okville_Shrine_MarklichtQuest5_30 = It would look like we are trying to attack Orkva by going through Kalia.
+Okville_Shrine_MarklichtQuest5_31 = Eh Eh...
+Okville_Shrine_MarklichtQuest5_32 = I just didn't think you'd actually believe we had captives.
+Okville_Shrine_MarklichtQuest5_33 = Why did you tell us this ? Now we know how to respond to your plot.
+Okville_Shrine_MarklichtQuest5_34 = I didn't plan on letting you live alive.
+
+Okville_Shrine_MarklichtQuest5_35 = We did it.
+Okville_Shrine_MarklichtQuest5_36 = I can't believe it ! It was all a lie !
+Okville_Shrine_MarklichtQuest5_37 = They don't have prisoners. They just want to stall us.
+Okville_Shrine_MarklichtQuest5_38 = Well, now we know. We just have to tell the General.
+Okville_Shrine_MarklichtQuest5_39 = In light of this, our attack can go forward without worries.
+Okville_Shrine_MarklichtQuest5_40 = Orkva is not actually planning to attack us.
+Okville_Shrine_MarklichtQuest5_41 = Come. We should exit this place posthaste.
+Okville_Shrine_MarklichtQuest5_42 = It won't be long until they find out their commander is dead.
+Okville_Shrine_MarklichtQuest5_43 = We exit the prison without a problem.
+Okville_Shrine_MarklichtQuest5_44 = Then, we leave the truck in a ditch.
+Okville_Shrine_MarklichtQuest5_45 = We need to go back to General Lara now.
+Okville_Shrine_MarklichtQuest5_46 = Hey, before that...
+Okville_Shrine_MarklichtQuest5_47 = Are you still angry about that whole thing ?
+Okville_Shrine_MarklichtQuest5_48 = Yeah. Could we go back to the shrine ? I have an idea.
+Okville_Shrine_MarklichtQuest5_49 = Okay. If you say so.
+
+Okville_Shrine_MarklichtFactionQuest2_1 = So what did you have in mind ?
+Okville_Shrine_MarklichtFactionQuest2_2 = Simple. Let me show you.
+Okville_Shrine_MarklichtFactionQuest2_3 = Lame goes to the shrine and starts meddling with the portrait.
+Okville_Shrine_MarklichtFactionQuest2_4 = He draws funny looking things on the Orkvian king.
+Okville_Shrine_MarklichtFactionQuest2_5 = He looks ridiculous now.
+Okville_Shrine_MarklichtFactionQuest2_6 = Eh eh eh. [MC], do you know what's so special about Okville ?
+Okville_Shrine_MarklichtFactionQuest2_7 = No ?
+Okville_Shrine_MarklichtFactionQuest2_8 = It's the only city in the region that is almost 100% Orkvian culturally.
+Okville_Shrine_MarklichtFactionQuest2_9 = But they didn't start the town from scratch.
+Okville_Shrine_MarklichtFactionQuest2_10 = You know Altyr, right ? We passed through there on the way.
+Okville_Shrine_MarklichtFactionQuest2_11 = Okville was actually Altyr a long time ago.
+Okville_Shrine_MarklichtFactionQuest2_12 = When Okville started being constructed, they gave a choice to the citizen.
+Okville_Shrine_MarklichtFactionQuest2_13 = Either go to the new "Altyr" up north or stay in the new "Okville" town.
+Okville_Shrine_MarklichtFactionQuest2_14 = Some people went to the new Altyr, but most went to Vorlan and Tolau.
+Okville_Shrine_MarklichtFactionQuest2_15 = And a tiny fraction stayed here in Okville.
+Okville_Shrine_MarklichtFactionQuest2_16 = Okay, but that doesn't anwser why you did this.
+Okville_Shrine_MarklichtFactionQuest2_17 = Eh eh ! Orkvians here are paranoid. They'll even suspect pure Orkvian to be actually Suori in disguise.
+Okville_Shrine_MarklichtFactionQuest2_18 = Ah. I think I get it.
+Okville_Shrine_MarklichtFactionQuest2_19 = By meddling with the shrine, unrest will brew.
+Okville_Shrine_MarklichtFactionQuest2_20 = People will start looking for Suori rebels that aren't here.
+Okville_Shrine_MarklichtFactionQuest2_21 = Exactly. They'll check the local Suori. But they won't find anything.
+Okville_Shrine_MarklichtFactionQuest2_22 = So then, they'll start suspecting each others.
+Okville_Shrine_MarklichtFactionQuest2_23 = Ingenious I must say. And with the local garrison being almost depleted...
+Okville_Shrine_MarklichtFactionQuest2_24 = The Orkvian Royal Army will have to come here to support them.
+Okville_Shrine_MarklichtFactionQuest2_25 = Okay. Okay. For once, you impress me with your idea, Lame.
+Okville_Shrine_MarklichtFactionQuest2_26 = Now we should go. Orkvians could come any moment now.
+
+Okville_Shop_Greetings_1 = What do you want ?
+
+Okville_Shop_Shop_1 = Right...
+
+Okville_Shop_AboutYou_1 = Why would I talk to you, Suori.
+Okville_Shop_AboutYou_2 = If you don't have anything to buy, please leave.
+
+Okville_CityHall_Door_1 = The sign says "No Suori allowed".
+Okville_CityHall_Door_2 = What is this place...
+
+Okville_CityHall_MarklichtQuest4_1 = ?
+Okville_CityHall_MarklichtQuest4_2 = A lot of people are gathered here. I wonder what is going on.
+Okville_CityHall_MarklichtQuest4_3 = My fellow citizen, it is with sadness that I announce the death of 4 of our local troops.
+Okville_CityHall_MarklichtQuest4_4 = The leech that is Marklicht took their lives unjustly.
+Okville_CityHall_MarklichtQuest4_5 = For what reason, you may ask ? None !
+Okville_CityHall_MarklichtQuest4_6 = Marklicht crossed the river and attacked us without warning.
+Okville_CityHall_MarklichtQuest4_7 = This is an act of aggression. We must retaliate.
+Okville_CityHall_MarklichtQuest4_8 = But do not fear. I'm not speaking about armed conflict. Not yet anyway.
+Okville_CityHall_MarklichtQuest4_9 = We have several Marklichtian soldiers in our great prison.
+Okville_CityHall_MarklichtQuest4_10 = Soon, they will be executed.
+Okville_CityHall_MarklichtQuest4_11 = This will show Marklicht what happens when someone deals with us !
+Okville_CityHall_MarklichtQuest4_12 = The crowd cheers. This is bad.
+Okville_CityHall_MarklichtQuest4_13 = That's a lie. Orkva attacked us.
+Okville_CityHall_MarklichtQuest4_14 = Something is not right. Why would they attack us, retreat, and pretend we were the ones who attacked...
+Okville_CityHall_MarklichtQuest4_15 = My gut feeling is that they might be trying to invade again.
+Okville_CityHall_MarklichtQuest4_16 = Yeah, true. That's a classic false flag operation.
+Okville_CityHall_MarklichtQuest4_17 = But we need to investigate further. The General seemed sure that Orkva wouldn't invade.
+Okville_CityHall_MarklichtQuest4_18 = There's also the matter of the captives they want to execute.
+Okville_CityHall_MarklichtQuest4_19 = We can't let that happen.
+Okville_CityHall_MarklichtQuest4_20 = True. But how do we enter the prison ?
+Okville_CityHall_MarklichtQuest4_21 = Hmm... Actually. I might have an idea.
+Okville_CityHall_MarklichtQuest4_22 = Let's go to the shrine. I think I saw a military truck. 
+Okville_CityHall_MarklichtQuest4_23 = Ah. We could use it to sneak into the prison.
+Okville_CityHall_MarklichtQuest4_24 = Good thinking. Let's go.
+
+Okville_TrainStation_ArcQuest_1 = Hey, faster !
+Okville_TrainStation_ArcQuest_2 = Get changed. The train is going to be here soon.
+Okville_TrainStation_ArcQuest_3 = I do as instructed, and we wait for the train.
+Okville_TrainStation_ArcQuest_4 = Once it arrives, we enter it disguised as soldiers.
+Okville_TrainStation_ArcQuest_5 = We leave the city and head towards Vorlan.
+Okville_TrainStation_ArcQuest_6 = Newbie ! It's time to take over the train.
+Okville_TrainStation_ArcQuest_7 = For now, I should help them.
+
+Okville_TrainStation_ArcQuest_8 = Good, good.
+Okville_TrainStation_ArcQuest_9 = In the fight, it seems most of the bandits died.
+Okville_TrainStation_ArcQuest_10 = Only a few remain, including my "boss".
+Okville_TrainStation_ArcQuest_11 = Damn it. We are only 5 left.
+Okville_TrainStation_ArcQuest_12 = We'll have to be quick in Vorlan.
+Okville_TrainStation_ArcQuest_13 = We enter the city's tunnels and... 
+Okville_TrainStation_ArcQuest_14 =  we eventually exit it without a hitch.
+Okville_TrainStation_ArcQuest_15 = What is happening ? Why didn't we stop ?
+Okville_TrainStation_ArcQuest_16 = Newbie ! You- What did you do ?
+Okville_TrainStation_ArcQuest_17 = Hold on...
+Okville_TrainStation_ArcQuest_18 = You aren't one of us, are you ?
+Okville_TrainStation_ArcQuest_19 = YOU killed our brothers in Vorlan. 
+Okville_TrainStation_ArcQuest_20 =  YOU prevented the sabotage.
+Okville_TrainStation_ArcQuest_21 = Are you from Orkva ?
+Okville_TrainStation_ArcQuest_22 = No. I'm just doing a favor for someone.
+Okville_TrainStation_ArcQuest_23 = En garde.
+
+Okville_TrainStation_ArcQuest_24 = I defeated the bandits.
+Okville_TrainStation_ArcQuest_25 = For now, I guess I should drop out of this train.
+Okville_TrainStation_ArcQuest_26 = The folks at the military base will be able to handle the rest.
+Okville_TrainStation_ArcQuest_27 = I jump out and watch the train continue on its course.
+Okville_TrainStation_ArcQuest_28 = I should head back to Sam's house.
+Okville_TrainStation_ArcQuest_29 = He deserves at least an explaination.
+
+# ---------------------------------------------------------
+# ---------------------- Tolau's Farm ---------------------
+# ---------------------------------------------------------
+
+TolauFarm_RebelFactionQuest2_1 = Well. This is the farm Bos wanted me to set fire to.
+TolauFarm_RebelFactionQuest2_2 = I'm not exactly fine with this, but I have no choice.
+TolauFarm_RebelFactionQuest2_3 = If it can divert some Orkvian troops, it's worth it.
+TolauFarm_RebelFactionQuest2_4 = I set fire to the farm with Anna.
+TolauFarm_RebelFactionQuest2_5 = We make sure nobody can see what we're doing.
+TolauFarm_RebelFactionQuest2_6 = Okay. The fire went off faster than expected.
+TolauFarm_RebelFactionQuest2_7 = This should do the trick. Time to head back to Kalia.
+
+# ---------------------------------------------------------
+# ---------------------- Tolau ---------------------------
+# ---------------------------------------------------------
+
+Tolau_FishermanHouse_Fisherman_Greetings_1 = ... Oh, hello.
+
+Tolau_FishermanHouse_Fisherman_AboutYou_1 = What's up with you ? I don't wanna talk.
+Tolau_FishermanHouse_Fisherman_AboutYou_2 = I see your uniform, are you Orkva's ?
+Tolau_FishermanHouse_Fisherman_AboutYou_3 = Then again, maybe not. Too... blue.
+Tolau_FishermanHouse_Fisherman_AboutYou_4 = Anyway, I don't like talking to strangers. No offense, of course.
+
+Tolau_FishermanHouse_Fisherman_UseBoat_1 = Okay, okay. Come with me.
+
+Tolau_FishermanHouse_Fisherman_StartQuest_1 = May I request the use of your boat ?
+Tolau_FishermanHouse_Fisherman_StartQuest_2 = What ? Wait... Hold on a minute.
+Tolau_FishermanHouse_Fisherman_StartQuest_3 = I've heard this one before. You want to use it to go to Mirage Island ?
+Tolau_FishermanHouse_Fisherman_StartQuest_4 = Well... Yes.
+Tolau_FishermanHouse_Fisherman_StartQuest_5 = No. I refuse.
+Tolau_FishermanHouse_Fisherman_StartQuest_6 = I already said it to the local shopkeeper. I won't be smuggling people over there.
+Tolau_FishermanHouse_Fisherman_StartQuest_7 = Sure, I might be undetected by the Orkvian military, but I can't take any chances.
+Tolau_FishermanHouse_Fisherman_StartQuest_8 = Hmm... I could use an access point to Mirage Island, though...
+Tolau_FishermanHouse_Fisherman_StartQuest_9 = Could I not get you to reconsider ? I could get you paid handsomely.
+Tolau_FishermanHouse_Fisherman_StartQuest_10 = As if ! Now get out of my sight.
+Tolau_FishermanHouse_Fisherman_StartQuest_11 = ... Maybe the local shopkeeper could help me with him.
+
+Tolau_FishermanHouse_Fisherman_DuringQuest_1 = ... Let's not talk about that any longer.
+
+Tolau_FishermanHouse_Fisherman_EndQuest_1 = ... Again ?
+Tolau_FishermanHouse_Fisherman_EndQuest_2 = I have an item that might make you reconsider.
+Tolau_FishermanHouse_Fisherman_EndQuest_3 = W-Wait... My grandpa's...
+Tolau_FishermanHouse_Fisherman_EndQuest_4 = Give it to me, please.
+Tolau_FishermanHouse_Fisherman_EndQuest_5 = I'll do anything. Just give it back.
+Tolau_FishermanHouse_Fisherman_EndQuest_6 = Let me use your boat, and I'll give it back.
+Tolau_FishermanHouse_Fisherman_EndQuest_7 = Fine, fine. I'll let you have it.
+Tolau_FishermanHouse_Fisherman_EndQuest_8 = I give back the clock to the fisherman.
+Tolau_FishermanHouse_Fisherman_EndQuest_9 = When you are ready to go, tell me. I'll guide you to the Island.
+
+Tolau_Shop_Greetings_1 = Welcome to my shop. How may I help you ?
+
+Tolau_Shop_AboutYou_1 = I'm just a local trader, nothing more.
+Tolau_Shop_AboutYou_2 = Back in the days, I would trade between the various cities of the region.
+Tolau_Shop_AboutYou_3 = But nowadays... Vorlan is under a lockdown, and the port is blockaded by the military.
+Tolau_Shop_AboutYou_4 = They insist it's to protect us from bandits, but we won't fall for that.
+Tolau_Shop_AboutYou_5 = Anyway... I'm content with just selling my wares in Tolau.
+
+Tolau_Shop_AboutFisherman_1 = I heard you tried to use the fisherman's boat.
+Tolau_Shop_AboutFisherman_2 = How did you- Did he send you ?
+Tolau_Shop_AboutFisherman_3 = No. I just wanted to hear your side of the story.
+Tolau_Shop_AboutFisherman_4 = Well... I guess I could. It was a dead end anyway.
+Tolau_Shop_AboutFisherman_5 = So about a month ago, I figured I could use his boat to sell my wares.
+Tolau_Shop_AboutFisherman_6 = The port is blockaded, but not that little dock of his.
+Tolau_Shop_AboutFisherman_7 = We were both originally from Vorlan, so I know him quite a bit.
+Tolau_Shop_AboutFisherman_8 = I talked to him, and he refused to let me use it.
+Tolau_Shop_AboutFisherman_9 = I was ready to throw in the towel when I remembered something.
+Tolau_Shop_AboutFisherman_10 = I came to Tolau because of work, but this was not the case for him.
+Tolau_Shop_AboutFisherman_11 = He had to leave. He never told me why.
+Tolau_Shop_AboutFisherman_12 = I tried asking my friend who owns a shop in Vorlan via letter.
+Tolau_Shop_AboutFisherman_13 = But with the lockdown, I never heard back.
+Tolau_Shop_AboutFisherman_14 = You thought you could find some leverage in his past ?
+Tolau_Shop_AboutFisherman_15 = Yeah. I thought, maybe I could help him with something.
+Tolau_Shop_AboutFisherman_16 = Maybe then he would have let me use his boat.
+Tolau_Shop_AboutFisherman_17 = ... Maybe there's a chance that could happen.
+Tolau_Shop_AboutFisherman_18 = Well, be my guest. If you can even enter Vorlan to talk to my friend, that is.
+Tolau_Shop_AboutFisherman_19 = I've thrown in the towel. You can have at it if you want.
+
+Tolau_Courthouse_Jade_Greetings_1 = What do you want, Suori ?
+
+Tolau_Courthouse_Jade_AboutYou_1 = I'm the prosecutor assigned to the region.
+Tolau_Courthouse_Jade_AboutYou_2 = Every criminal and Suori dissident will be sentenced. I can assure you.
+Tolau_Courthouse_Jade_AboutYou_3 = Just make sure to behave if you don't want to end up in jail.
+
+Tolau_Courthouse_Jade_AboutOrkva_1 = Orkva is the saviour of this land.
+Tolau_Courthouse_Jade_AboutOrkva_2 = The locals just can't see it yet.
+Tolau_Courthouse_Jade_AboutOrkva_3 = The railways, Okville, trade, ... We brought much to them.
+Tolau_Courthouse_Jade_AboutOrkva_4 = Yet these ungrateful idiots can't see the truth.
+
+Tolau_Courthouse_Jade_AboutOrder_Before_1 = The Order is a plague upon the country.
+Tolau_Courthouse_Jade_AboutOrder_Before_2 = They pretend to be helpful with the bandit problem.
+Tolau_Courthouse_Jade_AboutOrder_Before_3 = But we know the truth. We know they are plotting against us.
+Tolau_Courthouse_Jade_AboutOrder_Before_4 = Think about it. They are armed by our enemies and live right next to us, hidden in the forest.
+Tolau_Courthouse_Jade_AboutOrder_Before_5 = I personally arrested them, and will see them sentenced to death for treason.
+
+Tolau_Courthouse_Jade_AboutOrder_After_1 = I know what you did, Suori.
+Tolau_Courthouse_Jade_AboutOrder_After_2 = You helped the traitors flee justice. I will not forget that.
+Tolau_Courthouse_Jade_AboutOrder_After_3 = You even bought the help of my enemy, Mr. Right.
+Tolau_Courthouse_Jade_AboutOrder_After_4 = Get out of my sight before I arrest you for conspiracy.
+
+Tolau_Courthouse_Chief_ArcQuest0_1 = Are you the Order's chief ?
+Tolau_Courthouse_Chief_ArcQuest0_2 = [MC] ? Is that you ?
+Tolau_Courthouse_Chief_ArcQuest0_3 = Yes, well... I heard you got into troubles.
+Tolau_Courthouse_Chief_ArcQuest0_4 = That's true. Orkva arrested every member of the Order.
+Tolau_Courthouse_Chief_ArcQuest0_5 = Something about conspiring to take over the region.
+Tolau_Courthouse_Chief_ArcQuest0_6 = That's prepostrous.
+Tolau_Courthouse_Chief_ArcQuest0_7 = Well, they were never keen on a Marklicht-Kalian task force right on their doorstep.
+Tolau_Courthouse_Chief_ArcQuest0_8 = I guess they just found an excuse to prosecute us. Our future is bleak.
+Tolau_Courthouse_Chief_ArcQuest0_9 = Do you need help with anything ?
+Tolau_Courthouse_Chief_ArcQuest0_10 = Actually, we need a lawyer. They wouldn't let us see one.
+Tolau_Courthouse_Chief_ArcQuest0_11 = Luckily, I know one in Tolau. His name is Mr. Right.
+Tolau_Courthouse_Chief_ArcQuest0_12 = Ah, I heard of him. Doesn't he live in the northern residences of the city ?
+Tolau_Courthouse_Chief_ArcQuest0_13 = Yes. Could you hire him for us ?
+Tolau_Courthouse_Chief_ArcQuest0_14 = Right. I'll do just that.
+Tolau_Courthouse_Chief_ArcQuest0_15 = Thank you. It's good to see you, friend.
+
+Tolau_Courthouse_Chief_ArcQuest1_1 = Mr. Right lives in the northern residences of Tolau.
+Tolau_Courthouse_Chief_ArcQuest1_2 = Please, go ask him to defend us in court.
+
+Tolau_Courthouse_Chief_ArcQuest2_1 = Mr. Right just talked to me. You did it.
+Tolau_Courthouse_Chief_ArcQuest2_2 = Yeah, I hope this will help you in court.
+Tolau_Courthouse_Chief_ArcQuest2_3 = Don't worry. He's the best lawyer around.
+Tolau_Courthouse_Chief_ArcQuest2_4 = Hey. The trial is about to start. Get going, traitor.
+Tolau_Courthouse_Chief_ArcQuest2_5 = Thank you for everything, [MC]. Leave the rest to Mr. Right.
+Tolau_Courthouse_Chief_ArcQuest2_6 = ... I guess I could stay to watch the trial.
+Tolau_Courthouse_Chief_ArcQuest2_7 = Silence, silence.
+Tolau_Courthouse_Chief_ArcQuest2_8 = I declare open the trial of the Marklichtian-Kalian Order.
+Tolau_Courthouse_Chief_ArcQuest2_9 = I am ready, sir.
+Tolau_Courthouse_Chief_ArcQuest2_10 = Zzz.... Oh right, ready !
+Tolau_Courthouse_Chief_ArcQuest2_11 = Prosecutor, the opening statement, if you please.
+Tolau_Courthouse_Chief_ArcQuest2_12 = Of course.
+Tolau_Courthouse_Chief_ArcQuest2_13 = As you know, the so called Order claims to be working to rid the White Forest of bandits.
+Tolau_Courthouse_Chief_ArcQuest2_14 = But I can prove that they are in fact traitors. They are plotting to take over the region.
+Tolau_Courthouse_Chief_ArcQuest2_15 = Such insolence deserves only one thing : death.
+Tolau_Courthouse_Chief_ArcQuest2_16 = Incredible. I declare them GUILTY-
+Tolau_Courthouse_Chief_ArcQuest2_17 = Hold on, your honor. May I at least defend them ?
+Tolau_Courthouse_Chief_ArcQuest2_18 = ... Oh right. I didn't see you there, Mr. Right.
+Tolau_Courthouse_Chief_ArcQuest2_19 = You can go on.
+Tolau_Courthouse_Chief_ArcQuest2_20 = ... After deliberation, I came to a conclusion.
+Tolau_Courthouse_Chief_ArcQuest2_21 = I find the defendant...
+Tolau_Courthouse_Chief_ArcQuest2_22 = Not Guilty.
+Tolau_Courthouse_Chief_ArcQuest2_23 = The court is dismissed. I have lunch to eat, you known.
+Tolau_Courthouse_Chief_ArcQuest2_24 = Congratulations on your win, chief.
+Tolau_Courthouse_Chief_ArcQuest2_25 = Well, I owe you this one. You were the one to hire Mr. Right.
+Tolau_Courthouse_Chief_ArcQuest2_26 = What will you do now ?
+Tolau_Courthouse_Chief_ArcQuest2_27 = We'll go back to our bunker in the White Forest.
+Tolau_Courthouse_Chief_ArcQuest2_28 = Our fight with the bandits is far from over.
+Tolau_Courthouse_Chief_ArcQuest2_29 = Also, do come visit us when you have the time.
+Tolau_Courthouse_Chief_ArcQuest2_30 = I'll prepare a reward for you once I get back to the bunker.
+Tolau_Courthouse_Chief_ArcQuest2_31 = The chief waves at me and leaves the courthouse.
+
+Tolau_Residences_Door1_Default_1 = "Mr. Right, attorney at law"
+
+Tolau_Residences_Door1_ArcQuest_1 = This is the man the Order's chief wants me to hire.
+Tolau_Residences_Door1_ArcQuest_2 = Here we go, I guess.
+Tolau_Residences_Door1_ArcQuest_3 = I knock on the door and wait a little bit.
+Tolau_Residences_Door1_ArcQuest_4 = Sure enough, Mr. Right opens the door to greet me.
+Tolau_Residences_Door1_ArcQuest_5 = Oh, hello. Are you a client ?
+Tolau_Residences_Door1_ArcQuest_6 = Oh, hi. Yes, I require your services.
+Tolau_Residences_Door1_ArcQuest_7 = Hmm... I'm sorry, I'm just too... tired today.
+Tolau_Residences_Door1_ArcQuest_8 = I was about to close up shop for the day...
+Tolau_Residences_Door1_ArcQuest_9 = Is he serious ? How can he stay in business ?
+Tolau_Residences_Door1_ArcQuest_10 = Wait, wait... I come from the Order's chief. He's in trouble.
+Tolau_Residences_Door1_ArcQuest_11 = The Marklichtian-Kalian Order ?
+Tolau_Residences_Door1_ArcQuest_12 = Yes, I heard you know him.
+Tolau_Residences_Door1_ArcQuest_13 = Ah, yes. He's a good friend.
+Tolau_Residences_Door1_ArcQuest_14 = We raised a turtle together when we were little kids.
+Tolau_Residences_Door1_ArcQuest_15 = Ah, Mr. Potato... Why did you have to headbutt the door and flee ?
+Tolau_Residences_Door1_ArcQuest_16 = Uh... Does that mean you'll help him ?
+Tolau_Residences_Door1_ArcQuest_17 = Yes, of course. When is his trial due ?
+Tolau_Residences_Door1_ArcQuest_18 = Uh... I think it's going to start soon.
+Tolau_Residences_Door1_ArcQuest_19 = The prosecutor looked like she wanted to prosecute him posthaste.
+Tolau_Residences_Door1_ArcQuest_20 = Ah, her. Yeah, I should have guessed she would do it fast.
+Tolau_Residences_Door1_ArcQuest_21 = Thank you for the heads up, I'll go to the courthouse right away.
+Tolau_Residences_Door1_ArcQuest_22 = ... Well. I guess I should check up on the chief once more.
+
+Tolau_Residences_Door2_Default_1 = This is the house of Tolau's prosecutor.
+
+Tolau_Residences_Door2_Start_1 = I need to find secrets inside. Let's go.
+Tolau_Residences_Door2_Start_2 = I make sure the prosecutor isn't home and enter the house.
+Tolau_Residences_Door2_Start_3 = Where would a prosecutor hide her secrets ?
+
+Tolau_Residences_Door2_Wall_1 = A bunch of newspaper articles were pinned to the wall.
+Tolau_Residences_Door2_Wall_2 = ... Most of them involve Mr. Right, attorney at law.
+
+Tolau_Residences_Door2_Statue_1 = A statue of the prosecutor, holding a sword. She's stepping on someone.
+Tolau_Residences_Door2_Statue_2 = What an ego.
+
+Tolau_Residences_Door2_Bookshelf_1 = Law books... History books... A book about sea animals ?
+
+Tolau_Residences_Door2_Painting_1 = This is a painting of the Orkvian king.
+
+Tolau_Residences_Door2_Book_1 = This is a strange book... Is it her diary ?
+Tolau_Residences_Door2_Book_2 = Let's see... Hold on...
+Tolau_Residences_Door2_Book_3 = She embezzled funds meant for the military. All to buy a mansion in Southern Orkva.
+Tolau_Residences_Door2_Book_4 = She also talks about the fake evidence she created in court.
+Tolau_Residences_Door2_Book_5 = This is what the mayor wanted. I should leave now.
+Tolau_Residences_Door2_Book_6 = I exit the house, making sure not to be found.
+Tolau_Residences_Door2_Book_7 = Well, I should head back to the city hall.
+
+
+Tolau_Inn_Owner_Sleep_1 = Right, let me show you to your room.
+
+Tolau_Inn_Owner_AboutCity_1 = Tolau was the most prosperous city in the southern region back.
+Tolau_Inn_Owner_AboutCity_2 = But at some point, Orkva set up a military blockade off our coast.
+Tolau_Inn_Owner_AboutCity_3 = They pretend they want to prevent bandits from boarding ships.
+Tolau_Inn_Owner_AboutCity_4 = Only a fool would believe that, though.
+Tolau_Inn_Owner_AboutCity_5 = They only seek to impoverish us and make us leave.
+
+Tolau_Inn_Owner_QuestStart_1 = To be frank, I do need some help.
+Tolau_Inn_Owner_QuestStart_2 = My brother is a night worker at the docks. I heard he got into troubles.
+Tolau_Inn_Owner_QuestStart_3 = I heard from a client that he is being blackmailed by soldiers.
+Tolau_Inn_Owner_QuestStart_4 = I don't know what is going on, but I need to help him.
+Tolau_Inn_Owner_QuestStart_5 = Could I hire your services ? You seem capable enough.
+Tolau_Inn_Owner_QuestStart_6 = Pretend to be a bandit or something. Make them stop bullying him.
+Tolau_Inn_Owner_QuestStart_7 = He's an idiot, but not a criminal. I don't know what they got on him, but this isn't right.
+Tolau_Inn_Owner_QuestStart_8 = Fine, I'll do it.
+Tolau_Inn_Owner_QuestStart_9 = Good. Come back when you've solved this problem. I'll get the payment ready.
+Tolau_Inn_Owner_QuestStart_10 = I should go to the docks at night.
+
+Tolau_Inn_Owner_QuestDuring_1 = My brother is a night worker at the docks.
+
+Tolau_Inn_Owner_QuestEnd_1 = I did it.
+Tolau_Inn_Owner_QuestEnd_2 = Good. I don't even want to know what happened.
+Tolau_Inn_Owner_QuestEnd_3 = Here, this is your pay.
+Tolau_Inn_Owner_QuestEnd_4 = <color=blue>I got 20 gold from the woman.</color>
+Tolau_Inn_Owner_QuestEnd_5 = A pleasure doing business with you.
+
+Tolau_Inn_ArcQuestSam2_1 = Are you Simon ?
+Tolau_Inn_ArcQuestSam2_2 = Depends, who asks ?
+Tolau_Inn_ArcQuestSam2_3 = Jacky sent me. I'm his replacement.
+Tolau_Inn_ArcQuestSam2_4 = What's with these clothes ?
+Tolau_Inn_ArcQuestSam2_5 = Oh... I stole them off some idiot in the forest. I plan to sell them at some point.
+Tolau_Inn_ArcQuestSam2_6 = ... I see. Well, I'm not that surprised. The setup must be taking longer than expected.
+Tolau_Inn_ArcQuestSam2_7 = So, what's the plan ?
+Tolau_Inn_ArcQuestSam2_8 = The plan ? Eh eh. We don't tell newbies everything.
+Tolau_Inn_ArcQuestSam2_9 = Be assured that you'll get your cut in due time.
+Tolau_Inn_ArcQuestSam2_10 = Since you're here. We can begin.
+Tolau_Inn_ArcQuestSam2_11 = Meet me at the military base outside the city.
+Tolau_Inn_ArcQuestSam2_12 = You'll understand your role in all this in due time.
+Tolau_Inn_ArcQuestSam2_13 = I guess I managed to fool him...
+Tolau_Inn_ArcQuestSam2_14 = Let's see how long I can keep this up.
+
+Tolau_Port_SecondaryQuest_1 = When I arrive, I immediately spot the innkeeper's brother.
+Tolau_Port_SecondaryQuest_2 = He's being harassed by two soldiers. I wonder what is going on...
+Tolau_Port_SecondaryQuest_3 = Where is the money ?
+Tolau_Port_SecondaryQuest_4 = I... I don't have any !
+Tolau_Port_SecondaryQuest_5 = I told you last time, you took everything !
+Tolau_Port_SecondaryQuest_6 = Shut up. I know you have some more.
+Tolau_Port_SecondaryQuest_7 = Or do you want your boss to know what you stole ?
+Tolau_Port_SecondaryQuest_8 = Please ! I can't give you anything.
+Tolau_Port_SecondaryQuest_9 = Time for me to go in, I guess.
+Tolau_Port_SecondaryQuest_10 = Hey, hold on. Who are you ?
+Tolau_Port_SecondaryQuest_11 = His friend. It would be wise for you to go.
+Tolau_Port_SecondaryQuest_12 = Pff ! You heard him, Rick ?
+Tolau_Port_SecondaryQuest_13 = He thinks he can stop us. Does he know who we are ?
+Tolau_Port_SecondaryQuest_14 = I do. But you can't say the same, right ?
+Tolau_Port_SecondaryQuest_15 = It won't matter when you'll be bleeding on the ground.
+
+Tolau_Port_SecondaryQuest_16 = Thanks for helping me.
+Tolau_Port_SecondaryQuest_17 = Why were they blackmailing you ?
+Tolau_Port_SecondaryQuest_18 = Well... I'm not exactly rich.
+Tolau_Port_SecondaryQuest_19 = One day, I stole some food from work.
+Tolau_Port_SecondaryQuest_20 = They saw me and have been blackmailing me ever since.
+Tolau_Port_SecondaryQuest_21 = Well, I don't think they'll be doing that anytime soon.
+Tolau_Port_SecondaryQuest_22 = You should head home and stay out of troubles.
+Tolau_Port_SecondaryQuest_23 = Right ! Thank you.
+Tolau_Port_SecondaryQuest_24 = I should go back to the inn now.
+
+Tolau_Port_MarklichtQuest3_1 = !
+Tolau_Port_MarklichtQuest3_2 = Sword is here. Better hide for now...
+Tolau_Port_MarklichtQuest3_3 = What do you mean I can't use your boat ?
+Tolau_Port_MarklichtQuest3_4 = Sir, you still haven't told me why you want it.
+Tolau_Port_MarklichtQuest3_5 = All you did was yell at me for several minutes.
+Tolau_Port_MarklichtQuest3_6 = I told you ! I want to go visit the Mirage Island's forest.
+Tolau_Port_MarklichtQuest3_7 = I heard there is a nice temple there. I want to pay my respects.
+Tolau_Port_MarklichtQuest3_8 = Uh, what ?
+Tolau_Port_MarklichtQuest3_9 = Okay, sir. I can't let you take my boat.
+Tolau_Port_MarklichtQuest3_10 = This is too dangerous. The army is watching the sea.
+Tolau_Port_MarklichtQuest3_11 = You'll die if you go. And I'll lose my boat.
+Tolau_Port_MarklichtQuest3_12 = I don't care !
+Tolau_Port_MarklichtQuest3_13 = Sword punches the man. He falls on the ground.
+Tolau_Port_MarklichtQuest3_14 = This boat is mine ! I'll get to this Island, you'll see.
+Tolau_Port_MarklichtQuest3_15 = ...
+Tolau_Port_MarklichtQuest3_16 = Well. I guess we know what he's up to now.
+Tolau_Port_MarklichtQuest3_17 = Still, why Mirage Island ?
+Tolau_Port_MarklichtQuest3_18 = The temple he mentioned... It must be another artifact.
+Tolau_Port_MarklichtQuest3_19 = Let's follow him. We can't let him steal another one.
+Tolau_Port_MarklichtQuest3_20 = And the blockade ?
+Tolau_Port_MarklichtQuest3_21 = We'll figure something out.
+
+Tolau_Port_MerchantQuest3_1 = Ah, here is Sword.
+Tolau_Port_MerchantQuest3_2 = Why can't I find a boat ?
+Tolau_Port_MerchantQuest3_3 = There's a blockade. No way anyone would want to go.
+Tolau_Port_MerchantQuest3_4 = Shield. You're finally here.
+Tolau_Port_MerchantQuest3_5 = What were you talking about with the boss ?
+Tolau_Port_MerchantQuest3_6 = ... Nothing too important.
+Tolau_Port_MerchantQuest3_7 = Anyway. I suppose we should find a way to get to the Island and past the blockade ?
+Tolau_Port_MerchantQuest3_8 = Yep. Lead the way, Shield.
+Tolau_Port_MerchantQuest3_9 = I'm not your lackey anymore ?
+Tolau_Port_MerchantQuest3_10 = Relax. That was just a friendly joke.
+Tolau_Port_MerchantQuest3_11 = "Friendly".
+Tolau_Port_MerchantQuest3_12 = Okay, okay. Sorry. Alright ?
+Tolau_Port_MerchantQuest3_13 = Alright.
+Tolau_Port_MerchantQuest3_14 = Let's find our way to Mirage Island's Forest.
+Tolau_Port_MerchantQuest3_15 = ... Wait... Why the forest ?
+Tolau_Port_MerchantQuest3_16 = Is there anything in there ?
+Tolau_Port_MerchantQuest3_17 = Oh, right. There's an old Suori temple right at the center of it.
+Tolau_Port_MerchantQuest3_18 = The artifact is in there.
+Tolau_Port_MerchantQuest3_19 = Alright. Let's go, then.
+Tolau_Port_MerchantQuest3_20 = <color=blue>Sword added to the party.</color>
+
+Tolau_CityHall_Mayor_Greetings_1 = Do you have business with me ?
+
+Tolau_CityHall_Mayor_AboutCity_1 = Tolau was once a prosperous trade city.
+Tolau_CityHall_Mayor_AboutCity_2 = But with the local unrest amongst the Suori population, a blockade came into effect.
+Tolau_CityHall_Mayor_AboutCity_3 = The government assured me it was a precaution against bandits and pirates.
+Tolau_CityHall_Mayor_AboutCity_4 = Sadly, we know they are just trying to get in our way. They want to make us leave the city.
+Tolau_CityHall_Mayor_AboutCity_5 = For now, they are failing.
+
+Tolau_CityHall_Mayor_AboutOrkva_1 = Orkva took over the region centuries ago, during the great invasions.
+Tolau_CityHall_Mayor_AboutOrkva_2 = They used the global political instability to take over the southern Kalian lands.
+Tolau_CityHall_Mayor_AboutOrkva_3 = But they soon understood they couldn't just declare themselves rulers.
+Tolau_CityHall_Mayor_AboutOrkva_4 = Unrest has been brewing for a long time. It's only a matter of time before a full uprising starts.
+Tolau_CityHall_Mayor_AboutOrkva_5 = Of course, I'll support the people. Orkva can end up next to Cerkus.
+
+Tolau_CityHall_Mayor_QuestStart_1 = Actually, I have use for a man like you.
+Tolau_CityHall_Mayor_QuestStart_2 = You may have heard of the prosecutor of Tolau.
+Tolau_CityHall_Mayor_QuestStart_3 = She's a noble from the capital and was assigned by the military.
+Tolau_CityHall_Mayor_QuestStart_4 = Her goal is to curb the unrest in Tolau by any means necessary.
+Tolau_CityHall_Mayor_QuestStart_5 = ... Even if it means forging evidence. She even has the judge in her pocket.
+Tolau_CityHall_Mayor_QuestStart_6 = You want me to kill her ?
+Tolau_CityHall_Mayor_QuestStart_7 = What ? No. I'm not like the folks in Vorlan.
+Tolau_CityHall_Mayor_QuestStart_8 = A woman like her must have secrets. I want to know her weakness.
+Tolau_CityHall_Mayor_QuestStart_9 = I want you to go to her house in the northern residences.
+Tolau_CityHall_Mayor_QuestStart_10 = Search for anything compromising. I need a weapon to use against her.
+Tolau_CityHall_Mayor_QuestStart_11 = I'll pay you handsomely upon your return.
+Tolau_CityHall_Mayor_QuestStart_12 = Fine. I'll see what I can find.
+
+Tolau_CityHall_Mayor_QuestDuring_1 = The prosecutor's house is in the northern residences.
+Tolau_CityHall_Mayor_QuestDuring_2 = Go there and find something incriminating.
+
+Tolau_CityHall_Mayor_QuestEnd_1 = Here is the evidence you wanted.
+Tolau_CityHall_Mayor_QuestEnd_2 = Let me see... Ah, yes.
+Tolau_CityHall_Mayor_QuestEnd_3 = This will be useful when dealing with her, thank you.
+Tolau_CityHall_Mayor_QuestEnd_4 = Here is your reward for helping me.
+Tolau_CityHall_Mayor_QuestEnd_5 = <color=blue>I got 20 gold from the mayor.</color>
+Tolau_CityHall_Mayor_QuestEnd_6 = In the meantime...
+
+Tolau_Lighthouse_SamArcQuest3_1 = There you are. The meeting is about to start.
+Tolau_Lighthouse_SamArcQuest3_2 = I follow the bandit inside the lighthouse.
+Tolau_Lighthouse_SamArcQuest3_3 = The room is dimly lit, I can barely see at all.
+Tolau_Lighthouse_SamArcQuest3_4 = We're all here ? Good.
+Tolau_Lighthouse_SamArcQuest3_5 = I will now explain the heist's details.
+Tolau_Lighthouse_SamArcQuest3_6 = Our goal is to hijack a military train going to the military base.
+Tolau_Lighthouse_SamArcQuest3_7 = It contains a large amount of gold sent for safe keeping.
+Tolau_Lighthouse_SamArcQuest3_8 = We'll stop the train in Vorlan and take our prize.
+Tolau_Lighthouse_SamArcQuest3_9 = As for how we'll get on the train, have a look at this.
+Tolau_Lighthouse_SamArcQuest3_10 = The leader shows the crates of uniforms that I stole earlier.
+Tolau_Lighthouse_SamArcQuest3_11 = We'll board the train in Okville, pretending to be soldiers. Then we'll take over it.
+Tolau_Lighthouse_SamArcQuest3_12 = Our brothers in Vorlan are currently sabotaging the railways.
+Tolau_Lighthouse_SamArcQuest3_13 = Once the train gets there, it will crash, and we'll make our exit.
+Tolau_Lighthouse_SamArcQuest3_14 = There are tunnels underneath Vorlan going to the White Forest. We'll use these.
+Tolau_Lighthouse_SamArcQuest3_15 = Any questions ?
+Tolau_Lighthouse_SamArcQuest3_16 = ... Good. Get your uniforms and go to Okville's train station.
+Tolau_Lighthouse_SamArcQuest3_17 = Newbie !
+Tolau_Lighthouse_SamArcQuest3_18 = Yes ?
+Tolau_Lighthouse_SamArcQuest3_19 = Go to Vorlan and check up on our brothers.
+Tolau_Lighthouse_SamArcQuest3_20 = I haven't got any news ever since you came to Tolau.
+Tolau_Lighthouse_SamArcQuest3_21 = Once you have asserted that everything is in place, come to Okville.
+Tolau_Lighthouse_SamArcQuest3_22 = Of course.
+Tolau_Lighthouse_SamArcQuest3_23 = I exit the lighthouse after the end of the meeting.
+Tolau_Lighthouse_SamArcQuest3_24 = I need to recheck Vorlan's railway.
+Tolau_Lighthouse_SamArcQuest3_25 = The bandits there are dead, but I don't know if they managed to sabotage the railway or not.
+
+Tolau_Lighthouse_RebelQuest3_1 = You came.
+Tolau_Lighthouse_RebelQuest3_2 = ...
+Tolau_Lighthouse_RebelQuest3_3 = ...
+Tolau_Lighthouse_RebelQuest3_4 = Hey, so... uh...
+Tolau_Lighthouse_RebelQuest3_5 = No fighting ? We are on a mission here.
+Tolau_Lighthouse_RebelQuest3_6 = Right. So, what did you want to tell us ?
+Tolau_Lighthouse_RebelQuest3_7 = ... I followed your friend here.
+Tolau_Lighthouse_RebelQuest3_8 = He kept harassing people for a boat. 'Told them he wanted to go to Mirage Island.
+Tolau_Lighthouse_RebelQuest3_9 = In the end, he managed to steal one and went offshore.
+Tolau_Lighthouse_RebelQuest3_10 = With the blockade in place ? Is he crazy ?
+Tolau_Lighthouse_RebelQuest3_11 = Wait... I know the anwser already. I know him...
+Tolau_Lighthouse_RebelQuest3_12 = Do you know his objective ?
+Tolau_Lighthouse_RebelQuest3_13 = I heard something funny at some point.
+Tolau_Lighthouse_RebelQuest3_14 = He was yelling at a dockmaster. Told him he wanted to see the Island's Forest.
+Tolau_Lighthouse_RebelQuest3_15 = Mirage Forest ? That's a dangerous place.
+Tolau_Lighthouse_RebelQuest3_16 = Yeah... Why would he go there ? Then I remembered something.
+Tolau_Lighthouse_RebelQuest3_17 = Beyond the forest are some ruins. I'm sure that's his ultimate goal.
+Tolau_Lighthouse_RebelQuest3_18 = Ruins... Maybe the Merchant wants him to steal another artifact.
+Tolau_Lighthouse_RebelQuest3_19 = That's what I think. But it could be something else.
+Tolau_Lighthouse_RebelQuest3_20 = I want you to investigate whatever he wants to steal.
+Tolau_Lighthouse_RebelQuest3_21 = Alright. We'll do that.
+Tolau_Lighthouse_RebelQuest3_22 = Also, you'll need to find a way past the blockade.
+Tolau_Lighthouse_RebelQuest3_23 = No ships dare to leave port nowadays. But I'm sure you can find one somewhere.
+Tolau_Lighthouse_RebelQuest3_24 = Yeah. I'll see what I can do.
+Tolau_Lighthouse_RebelQuest3_25 = Time to pay a visit to Mirage Island.

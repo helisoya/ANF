@@ -1,0 +1,5 @@
+# Talks about himself
+dialog(Owner;Citizen3;false;Okville_Shop_AboutYou_1)
+dialog(Owner;Citizen3;false;Okville_Shop_AboutYou_2)
+
+load(Orkva/Okville/Shop/Salesman)

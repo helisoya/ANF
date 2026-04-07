@@ -1,0 +1,4 @@
+
+dialog(narrator;_;false;Kalia_Docks_RebelQuest2_1)
+
+dungeon(Kalia_RebelQuest2;0)

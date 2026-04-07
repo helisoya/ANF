@@ -1,0 +1,3 @@
+dialog(Sam;Sam;false;Altyr_Sam_ArcQuest_Nothing_1)
+
+load(Orkva/Altyr/Sam)

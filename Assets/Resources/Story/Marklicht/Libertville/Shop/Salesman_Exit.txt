@@ -1,0 +1,6 @@
+setCharacterAlpha(Salesman2;0;true)
+setCharacterPosition(Salesman2;Salesman)
+setCharacterRotation(Salesman2;Salesman)
+setCharacterAlpha(Salesman2;1;false)
+
+load(Marklicht/Libertville/Shop/Interaction)

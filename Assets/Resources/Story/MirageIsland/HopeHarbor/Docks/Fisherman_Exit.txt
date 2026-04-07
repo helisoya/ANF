@@ -1,0 +1,6 @@
+setCharacterAlpha(Fisherman2;0;true)
+setCharacterPosition(Fisherman2;Fisherman)
+setCharacterRotation(Fisherman2;Fisherman)
+setCharacterAlpha(Fisherman2;1;false)
+
+load(MirageIsland/HopeHarbor/Docks/Interaction)

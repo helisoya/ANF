@@ -1,0 +1,12 @@
+# Quest marker to 1
+setBackground(Kalia/Iberty/CatacombsInside;true)
+
+dialog(narrator;_;false;Iberty_Catacombs_Quest_9)
+dialog(narrator;_;false;Iberty_Catacombs_Quest_10)
+dialog(narrator;_;false;Iberty_Catacombs_Quest_11)
+dialog(narrator;_;false;Iberty_Catacombs_Quest_12)
+
+variable(secondaryQuest_Iberty_Catacombs;1)
+
+fadeFg(1;true)
+load(Kalia/Iberty/Catacombs/Arrival)

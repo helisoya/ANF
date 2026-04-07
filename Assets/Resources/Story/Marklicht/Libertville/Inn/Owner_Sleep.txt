@@ -1,0 +1,15 @@
+dialog(Owner;Citizen6;false;Libertville_Inn_Innkeeper_Sleep_1)
+
+fadeBg(1;true)
+
+setCharacterPosition(Citizen6;Owner)
+setCharacterRotation(Citizen6;Owner)
+
+healAllFollowers()
+load(Common/FastForwardTime)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+fadeBg(0;true)
+
+load(Marklicht/Libertville/Inn/Interaction)

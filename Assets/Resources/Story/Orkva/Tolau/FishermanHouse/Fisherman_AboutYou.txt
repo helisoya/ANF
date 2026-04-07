@@ -1,0 +1,7 @@
+# Talks about himself
+dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_AboutYou_1)
+dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_AboutYou_2)
+dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_AboutYou_3)
+dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_AboutYou_4)
+
+load(Orkva/Tolau/FishermanHouse/Fisherman)

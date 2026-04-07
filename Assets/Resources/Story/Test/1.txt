@@ -1,0 +1,7 @@
+dialog(narrator;_;false;1_1)
+dialog(narrator;_;false;1_2)
+
+load(Test/2)
+
+dialog(narrator;_;false;1_3)
+dialog(narrator;_;false;1_4)

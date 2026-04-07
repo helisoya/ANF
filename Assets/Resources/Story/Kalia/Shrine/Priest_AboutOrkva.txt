@@ -1,0 +1,15 @@
+# Talks about Orkva
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_1)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_2)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_3)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_4)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_5)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_6)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_7)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_8)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_9)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_10)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_11)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutOrkva_12)
+
+load(Kalia/Shrine/Priest)

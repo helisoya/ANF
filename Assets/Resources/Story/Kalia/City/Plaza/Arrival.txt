@@ -1,0 +1,38 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/Plaza)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Kalia)
+
+
+if(rebelQuest_4 = 0){
+	load(Kalia/City/Plaza/RebelQuest4)
+	return()
+}
+
+if(merchantQuest_5 = 0){
+	load(Kalia/City/Plaza/MerchantQuest5)
+	return()
+}
+
+if(arcQuest_Guard_2 = 0){
+	addCharacter(GUARD;false)
+	setCharacterPosition(GUARD;Civilian1)
+	setCharacterRotation(GUARD;Civilian1)
+	setInteractionChapter(GUARD;Kalia/City/Plaza/GUARDArcQuest2_Start)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Kalia/City/Plaza/Interaction)

@@ -1,0 +1,6 @@
+setCharacterAlpha(SoldierKalia1;0;true)
+setCharacterPosition(SoldierKalia1;GuardSpot)
+setCharacterRotation(SoldierKalia1;GuardSpot)
+setCharacterAlpha(SoldierKalia1;1;false)
+
+load(Kalia/Outpost/Interaction)

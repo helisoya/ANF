@@ -1,0 +1,11 @@
+# Talks about his life
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_1)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_2)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_3)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_4)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_5)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_6)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_7)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_AboutYou_8)
+
+load(Kalia/Iberty/CityHall/Soldier)

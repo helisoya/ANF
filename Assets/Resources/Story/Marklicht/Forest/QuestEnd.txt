@@ -1,0 +1,15 @@
+setFg(1)
+
+playMusic(Exploration_Marklicht)
+setBackground(Marklicht/Region/Forest)
+load(Common/DisplayWeatherRain)
+setLocation(Location_Marklicht)
+
+fadeFg(0;false)
+
+dialog(narrator;_;false;LibertForest_Quest_3)
+dialog(narrator;_;false;LibertForest_Quest_4)
+
+variable(secondaryQuest_Libertville_Shop;1)
+
+load(Marklicht/Forest/Interaction)

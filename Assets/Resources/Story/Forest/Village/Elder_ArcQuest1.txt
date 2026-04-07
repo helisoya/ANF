@@ -1,0 +1,4 @@
+dialog(Elder;Northman1;false;NorthVillage_Elder_ReminderQuest1_1)
+dialog(Elder;Northman1;false;NorthVillage_Elder_ReminderQuest1_2)
+
+load(Forest/Village/Elder)

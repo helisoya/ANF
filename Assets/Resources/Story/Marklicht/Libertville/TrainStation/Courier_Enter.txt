@@ -1,0 +1,13 @@
+setCharacterAlpha(Citizen2;0;true)
+setCharacterPosition(Citizen2;Front)
+setCharacterRotation(Citizen2;Front)
+setCharacterAlpha(Citizen2;1;false)
+
+dialog(Courier;Citizen2;false;Libertville_TrainStation_Courier_Greetings_1)
+
+if(secondaryQuest_HopeHarbor_Inn = 0){
+	load(Marklicht/Libertville/Trainstation/Courier_HopeHarborQuest)
+}
+else{
+	load(Marklicht/Libertville/Trainstation/Courier)
+}

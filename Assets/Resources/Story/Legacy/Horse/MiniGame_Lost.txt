@@ -1,0 +1,10 @@
+setBackground(RickeyLandHorse)
+
+addCharacter(Waldo;false)
+setCharacterPosition(Waldo;FrontWaldo)
+setCharacterRotation(Waldo;FrontWaldo)
+
+dialog(Waldo;Waldo;false;Horse_Waldo_Lost_1)
+dialog(Waldo;Waldo;false;Horse_Waldo_Lost_2)
+
+load(Horse/Waldo_Default)

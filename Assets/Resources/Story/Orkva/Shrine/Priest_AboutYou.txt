@@ -1,0 +1,12 @@
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_1)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_2)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_3)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_4)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_5)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_6)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_7)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_8)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_9)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_AboutYou_10)
+
+load(Orkva/Shrine/Priest)

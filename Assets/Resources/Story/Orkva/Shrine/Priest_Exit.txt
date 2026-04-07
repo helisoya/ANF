@@ -1,0 +1,6 @@
+setCharacterAlpha(KalibuPriest2;0;true)
+setCharacterPosition(KalibuPriest2;PriestSpot)
+setCharacterRotation(KalibuPriest2;PriestSpot)
+setCharacterAlpha(KalibuPriest2;1;false)
+
+load(Orkva/Shrine/Interaction)

@@ -1,0 +1,14 @@
+# Talks about himself
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutYou_1)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutYou_2)
+dialog([MC];_;false;Kalia_BarMax_GUARD_AboutYou_3)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutYou_4)
+
+setCharacterBody(GUARD;Fist;true)
+setCharacterMouth(GUARD;Angry)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutYou_5)
+dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_AboutYou_6)
+setCharacterBody(GUARD;Normal;false)
+setCharacterMouth(GUARD;Normal)
+
+load(Kalia/City/BarMax/GUARD)

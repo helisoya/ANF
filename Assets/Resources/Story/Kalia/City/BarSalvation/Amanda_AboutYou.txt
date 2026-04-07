@@ -1,0 +1,8 @@
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutYou_1)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutYou_2)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutYou_3)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutYou_4)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutYou_5)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutYou_6)
+
+load(Kalia/City/BarSalvation/Amanda)

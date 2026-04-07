@@ -1,0 +1,9 @@
+playMusic(Exploration_1)
+removeAllCharacters()
+setBackground(VlatyrBoyardeeExterior)
+
+if(rain = 1) changeSkybox(Rain)
+if(shopQuest = 1) Vlatyr/AddKnight
+if(mainQuest > 3 & guardQuest < 100) Vlatyr/AddGuard
+
+load(Vlatyr/Interaction)

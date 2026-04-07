@@ -1,0 +1,11 @@
+# Talks about Kalibu
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_1)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_2)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_3)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_4)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_5)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_6)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_7)
+dialog(Priest;KalibuPriest;false;KalibuShrine_Priest_AboutKalibu_8)
+
+load(Kalia/Shrine/Priest)

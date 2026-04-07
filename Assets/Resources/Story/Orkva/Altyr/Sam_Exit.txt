@@ -1,0 +1,6 @@
+setCharacterAlpha(Sam;0;true)
+setCharacterPosition(Sam;Spot)
+setCharacterRotation(Sam;Spot)
+setCharacterAlpha(Sam;1;false)
+
+load(Orkva/Altyr/Interaction)

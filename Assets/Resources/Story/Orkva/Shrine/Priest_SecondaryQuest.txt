@@ -1,0 +1,15 @@
+# Secondary Quest for Vorlan's Innkeeper
+
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_SecondaryQuest_1)
+
+dialog([MC];_;false;OrkvaShrine_Priest_SecondaryQuest_2)
+
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_SecondaryQuest_3)
+dialog(narrator;_;false;OrkvaShrine_Priest_SecondaryQuest_4)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_SecondaryQuest_5)
+dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_SecondaryQuest_6)
+
+addExpToAll(10)
+variable(secondaryQuest_Vorlan_Inn;100)
+
+load(Orkva/Shrine/Priest)

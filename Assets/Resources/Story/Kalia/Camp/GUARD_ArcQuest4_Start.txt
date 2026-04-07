@@ -1,0 +1,10 @@
+setCharacterAlpha(GUARD;0;true)
+setCharacterRotation(GUARD;Front)
+setCharacterPosition(GUARD;Front)
+setCharacterAlpha(GUARD;1;false)
+
+dialog(GUARD;GUARD;false;CampHope_GUARD_ArcQuest4Start_1)
+
+choice Choice_Generic
+	Choice_Yes Kalia/Camp/GUARD_ArcQuest4_Transition
+	Choice_No Kalia/Camp/GUARD_Exit

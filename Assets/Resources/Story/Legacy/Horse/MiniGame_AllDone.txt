@@ -1,0 +1,7 @@
+variable(mainQuest;4)
+
+dialog(Waldo;Waldo;false;Quiz_Waldo_End_Done_1)
+dialog(Waldo;Waldo;false;Quiz_Waldo_End_Done_2)
+
+playMusic(Exploration_Rickey)
+load(Horse/Waldo_Exit)

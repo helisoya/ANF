@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_AboutYou Vlatyr/GUARD_AboutYou
+	Choice_AboutSect Vlatyr/GUARD_AboutSect
+	Choice_Nothing Vlatyr/GUARD_Exit

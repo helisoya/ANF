@@ -1,0 +1,7 @@
+# You need to talk to the shopkeeper before starting any fighting quest
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Cant_1)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Cant_2)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_Cant_3)
+
+
+load(Kalia/Iberty/CityHall/Soldier)

@@ -1,0 +1,14 @@
+# Starts his subquest
+dialog(Salesman;Salesman2;false;Kalia_Shop_StartSubQuest_1)
+dialog(Salesman;Salesman2;false;Kalia_Shop_StartSubQuest_2)
+dialog(Salesman;Salesman2;false;Kalia_Shop_StartSubQuest_3)
+dialog(Salesman;Salesman2;false;Kalia_Shop_StartSubQuest_4)
+
+dialog([MC];_;false;Kalia_Shop_StartSubQuest_5)
+dialog(narrator;_;false;Kalia_Shop_StartSubQuest_6)
+
+dialog(Salesman;Salesman2;false;Kalia_Shop_StartSubQuest_7)
+
+variable(secondaryQuest_Kalia_Shop;0)
+
+load(Kalia/City/Shop/Salesman)

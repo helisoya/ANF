@@ -1,0 +1,13 @@
+setCharacterAlpha(OrderChief;0;true)
+setCharacterPosition(OrderChief;Front)
+setCharacterRotation(OrderChief;Front)
+setCharacterAlpha(OrderChief;1;false)
+
+if(arcQuest_Order_2 = 0){
+	load(Forest/OrderHQ/Chief_StartArcQuest2)
+	return()
+}
+
+dialog(Chief;OrderChief;false;OrderHQ_Chief_Greetings_1)
+
+load(Forest/OrderHQ/Chief)

@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Okville-City_Okville_TrainStation)
+
+interact

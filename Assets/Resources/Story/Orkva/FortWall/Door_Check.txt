@@ -1,0 +1,24 @@
+if(arcQuest_Guard_3 = 0){
+# Arc Quest GUARD - Quest 3 (Steal the bomb)
+# Skip dungeon if is part of Orkva
+	dialog(narrator;_;false;FortWall_GUARDArcQuest3_1)
+	dialog(narrator;_;false;FortWall_GUARDArcQuest3_2)
+	dialog(narrator;_;false;FortWall_GUARDArcQuest3_3)
+	dialog(narrator;_;false;FortWall_GUARDArcQuest3_4)
+	fadeFg(1;true)
+
+	if(orkvaQuest_0 = 100) Orkva/FortWall/GUARDArcQuest3_End
+	else dungeon(Orkva_FortWall;0)
+}
+else{
+# No reason to enter 
+
+	if(merchantQuest_6 = 0){
+		load(Orkva/FortWall/MerchantQuest6_Ask)
+		return()
+	}
+
+	dialog(narrator;_;false;FortWall_Door_Dont_1)
+
+	load(Orkva/FortWall/Interaction)
+}

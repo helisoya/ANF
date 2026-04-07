@@ -1,0 +1,15 @@
+if(rebelQuest_0 = 100){
+# Can enter the rebel HQ
+	load(Kalia/City/BarSalvation/HQ_Enter)
+}
+else{
+# Can't enter the HQ, don't know what it is
+	dialog(narrator;_;false;Kalia_BarSalvation_Door_Locked_1)
+
+	if(marklichtQuest_1 = 1){
+		load(Kalia/City/BarSalvation/MarklichtQuest1)
+	}
+	else{
+		load(Kalia/City/BarSalvation/Interaction)
+	}
+}

@@ -1,0 +1,5 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-Region_MirageIsland-Region_MirageIsland_Cottage)
+
+interact

@@ -1,0 +1,2 @@
+dialog(narrator;_;false;1_1)
+battle(BATTLE_Test;Grass;Test/After)

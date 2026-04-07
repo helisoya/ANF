@@ -1,0 +1,36 @@
+clearStack()
+setFg(1)
+
+setLocals(islandRegion)
+
+playMusic(Exploration_Island)
+removeAllCharacters()
+setBackground(MirageIsland/HopeHarbor/Docks)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_HopeHarbor)
+
+autosave()
+
+if(secondaryQuest_HopeHarbor_Cottage < 100){
+	addCharacter(Citizen4;false)
+	setCharacterPosition(Citizen4;Citizen)
+	setCharacterRotation(Citizen4;Citizen)
+	setInteractionChapter(Citizen4;MirageIsland/HopeHarbor/Docks/Woman_Enter)
+}
+
+addCharacter(Fisherman2;false)
+setCharacterPosition(Fisherman2;Fisherman)
+setCharacterRotation(Fisherman2;Fisherman)
+
+fadeFg(0;false)
+
+if(secondaryQuest_HopeHarbor_Cottage = -1){
+	load(MirageIsland/HopeHarbor/Docks/Woman_Enter)
+}
+else{
+	load(MirageIsland/HopeHarbor/Docks/Interaction)
+}

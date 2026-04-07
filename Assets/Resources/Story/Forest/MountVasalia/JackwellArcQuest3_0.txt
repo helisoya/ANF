@@ -1,0 +1,10 @@
+dialog(narrator;_;false;MountVasalia_JackwellArcQuest3_1)
+dialog(narrator;_;false;MountVasalia_JackwellArcQuest3_2)
+dialog(narrator;_;false;MountVasalia_JackwellArcQuest3_3)
+dialog(narrator;_;false;MountVasalia_JackwellArcQuest3_4)
+dialog(narrator;_;false;MountVasalia_JackwellArcQuest3_5)
+dialog([MC];_;false;MountVasalia_JackwellArcQuest3_6)
+
+variable(arcQuest_Jackwell_3;1)
+
+load(Forest/MountVasalia/Interaction)

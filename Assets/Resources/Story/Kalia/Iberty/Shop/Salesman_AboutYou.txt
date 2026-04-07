@@ -1,0 +1,9 @@
+# Talks about himself (He's the HQ-R salesman)
+dialog(Salesman;Salesman1;false;Iberty_Shop_AboutYou_1)
+dialog(Salesman;Salesman1;false;Iberty_Shop_AboutYou_2)
+dialog(Salesman;Salesman1;false;Iberty_Shop_AboutYou_3)
+dialog(Salesman;Salesman1;false;Iberty_Shop_AboutYou_4)
+dialog(Salesman;Salesman1;false;Iberty_Shop_AboutYou_5)
+dialog(Salesman;Salesman1;false;Iberty_Shop_AboutYou_6)
+
+load(Kalia/Iberty/Shop/Salesman)

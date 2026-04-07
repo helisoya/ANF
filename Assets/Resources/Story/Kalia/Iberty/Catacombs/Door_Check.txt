@@ -1,0 +1,12 @@
+if(merchantQuest_4 = 0){
+	load(Kalia/Iberty/Catacombs/MerchantQuest4)
+	return()
+}
+
+# If quest marker at zero, ask for entry
+# Else, display default text
+if(secondaryQuest_Iberty_Catacombs = 0) load(Kalia/Iberty/Catacombs/Door_Quest_Ask)
+else{
+	dialog(narrator;_;false;Common_DontNeedToGoThere_1)
+	load(Kalia/Iberty/Catacombs/Interaction)
+}

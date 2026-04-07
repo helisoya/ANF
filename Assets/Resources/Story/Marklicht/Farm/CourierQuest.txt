@@ -1,0 +1,8 @@
+dialog(narrator;_;false;LibertvilleFarm_CourierQuest_1)
+
+addExpToAll(10)
+variable(secondaryQuest_Libertville_Courier;100)
+
+dialog(narrator;_;false;LibertvilleFarm_CourierQuest_2)
+
+load(Marklicht/Farm/Interaction)

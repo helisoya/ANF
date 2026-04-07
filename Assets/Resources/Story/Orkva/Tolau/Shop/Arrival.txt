@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Tolau/Shop)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Tolau)
+
+if(night = 0){
+	addCharacter(Citizen6;false)
+	setCharacterPosition(Citizen6;Owner)
+	setCharacterRotation(Citizen6;Owner)
+	setInteractionChapter(Citizen6;Orkva/Tolau/Shop/Salesman_Enter)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Orkva/Tolau/Shop/Interaction)

@@ -1,0 +1,8 @@
+dialog(narrator;_;false;Tolau_Residences_Door2_Default_1)
+
+if(secondaryQuest_Tolau_Mayor = 0){
+	load(Orkva/Tolau/Residences/ProsecutorHouse_Start)
+}
+else{
+	load(Orkva/Tolau/Residences/Interaction)
+}

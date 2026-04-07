@@ -1,0 +1,8 @@
+# Talks about himself
+dialog(Salesman;Salesman2;false;Vorlan_Shop_AboutYou_1)
+dialog(Salesman;Salesman2;false;Vorlan_Shop_AboutYou_2)
+dialog(Salesman;Salesman2;false;Vorlan_Shop_AboutYou_3)
+dialog(Salesman;Salesman2;false;Vorlan_Shop_AboutYou_4)
+dialog(Salesman;Salesman2;false;Vorlan_Shop_AboutYou_5)
+
+load(Orkva/Vorlan/Shop/Salesman)

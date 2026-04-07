@@ -1,0 +1,6 @@
+setCharacterAlpha(DoctorIberty;0;true)
+setCharacterPosition(DoctorIberty;DoctorSpot)
+setCharacterRotation(DoctorIberty;DoctorSpot)
+setCharacterAlpha(DoctorIberty;1;false)
+
+load(Kalia/Iberty/Doctor/Interaction)

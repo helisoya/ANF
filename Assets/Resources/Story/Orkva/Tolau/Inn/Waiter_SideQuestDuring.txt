@@ -1,0 +1,3 @@
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestDuring_1)
+
+load(Orkva/Tolau/Inn/Waiter)

@@ -1,0 +1,20 @@
+setCharacterAlpha(GUARD;0;true)
+setCharacterPosition(GUARD;Front)
+setCharacterRotation(GUARD;Front)
+setCharacterBody(GUARD;Normal;true)
+setCharacterAlpha(GUARD;1;false)
+
+if(arcQuest_Guard_1 = -1){
+	load(Kalia/City/BarMax/GUARD_ArcQuest1_Start)
+	return()
+}
+
+if(arcQuest_Guard_3 = 1){
+	load(Kalia/City/BarMax/GUARD_ArcQuest3_End)
+	return()
+}
+
+if(arcQuest_Guard_1 = 0) dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_Greetings_ArcQuest1_1)
+if(arcQuest_Guard_3 = 0) dialog(GUARD;GUARD;false;Kalia_BarMax_GUARD_Greetings_ArcQuest3_1)
+
+load(Kalia/City/BarMax/GUARD)

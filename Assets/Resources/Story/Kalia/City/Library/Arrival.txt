@@ -1,0 +1,30 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaCity)
+
+playMusic(Exploration_Kalia)
+removeAllCharacters()
+setBackground(Kalia/City/Library)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Kalia)
+
+if(arcQuest_Jackwell_1 > -1){
+	addCharacter(Jackwell;false)
+	setCharacterPosition(Jackwell;Bookshelf)
+	setCharacterRotation(Jackwell;Bookshelf)
+}
+else{
+	load(Kalia/City/Library/StartArcQuest1)
+	return()
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Kalia/City/Library/Interaction)

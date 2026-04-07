@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_UseBoat Orkva/Tolau/FishermanHouse/Fisherman_BoatCheck
+	Choice_AboutYou Orkva/Tolau/FishermanHouse/Fisherman_AboutYou
+	Choice_Nothing Orkva/Tolau/FishermanHouse/Fisherman_Exit
+

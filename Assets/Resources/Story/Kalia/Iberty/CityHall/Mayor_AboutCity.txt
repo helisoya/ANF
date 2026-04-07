@@ -1,0 +1,12 @@
+# Talks about the city
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_1)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_2)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_3)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_4)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_5)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_6)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_7)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_8)
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_AboutCity_9)
+
+load(Kalia/Iberty/CityHall/Mayor)

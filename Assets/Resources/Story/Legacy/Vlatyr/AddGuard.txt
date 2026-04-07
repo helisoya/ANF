@@ -1,0 +1,6 @@
+addCharacter(GUARD;false)
+setCharacterPosition(GUARD;NPCSpot)
+setCharacterRotation(GUARD;NPCSpot)
+setInteractionChapter(GUARD;Vlatyr/GUARD_Enter)
+
+load(Vlatyr/Interaction)

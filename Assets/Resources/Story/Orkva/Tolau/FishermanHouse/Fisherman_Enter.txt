@@ -1,0 +1,8 @@
+setCharacterAlpha(Fisherman2;0;true)
+setCharacterPosition(Fisherman2;Front)
+setCharacterRotation(Fisherman2;Front)
+setCharacterAlpha(Fisherman2;1;false)
+
+dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_Greetings_1)
+
+load(Orkva/Tolau/FishermanHouse/Fisherman)

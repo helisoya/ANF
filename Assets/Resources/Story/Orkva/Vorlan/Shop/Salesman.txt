@@ -1,0 +1,14 @@
+if(secondaryQuest_Tolau_Fisherman = 1){
+choice Choice_Chat
+	Choice_Buy Orkva/Vorlan/Shop/Salesman_Shop
+	Choice_AboutYou Orkva/Vorlan/Shop/Salesman_AboutYou
+	Choice_AboutFisherman Orkva/Vorlan/Shop/Salesman_AboutFisherman
+	Choice_Nothing Orkva/Vorlan/Shop/Salesman_Exit
+}
+else{
+choice Choice_Chat
+	Choice_Buy Orkva/Vorlan/Shop/Salesman_Shop
+	Choice_AboutYou Orkva/Vorlan/Shop/Salesman_AboutYou
+	Choice_Nothing Orkva/Vorlan/Shop/Salesman_Exit
+}
+

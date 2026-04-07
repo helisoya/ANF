@@ -1,0 +1,3 @@
+dialog(Woman;Citizen4;false;HopeHarbor_Docks_Woman_DuringQuest_1)
+
+load(MirageIsland/HopeHarbor/Docks/Woman_Exit)

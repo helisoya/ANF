@@ -1,0 +1,23 @@
+if(mainQuest_3 = 1){
+choice Choice_Chat
+	Choice_Sleep Orkva/Vorlan/Inn/Waiter_Sleep
+	Choice_AboutCity Orkva/Vorlan/Inn/Waiter_AboutCity
+	Choice_AboutBandits Orkva/Vorlan/Inn/Waiter_AboutBandits
+	Choice_Nothing Orkva/Vorlan/Inn/Waiter_Exit
+	
+}
+else{
+if(mainQuest_3 > 2 & secondaryQuest_Vorlan_Inn = -1){
+choice Choice_Chat
+	Choice_Sleep Orkva/Vorlan/Inn/Waiter_Sleep
+	Choice_NeedHelp Orkva/Vorlan/Inn/Waiter_StartSideQuest
+	Choice_AboutCity Orkva/Vorlan/Inn/Waiter_AboutCity
+	Choice_Nothing Orkva/Vorlan/Inn/Waiter_Exit
+}
+else{
+choice Choice_Chat
+	Choice_Sleep Orkva/Vorlan/Inn/Waiter_Sleep
+	Choice_AboutCity Orkva/Vorlan/Inn/Waiter_AboutCity
+	Choice_Nothing Orkva/Vorlan/Inn/Waiter_Exit
+}
+}

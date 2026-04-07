@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a054cacc03761b40be47bb0c9a48b98, type: 3}
+  m_Name: Forest_CragPass
+  m_EditorClassIdentifier: 
+  ID: Forest_CragPass
+  locationID: Location_WhiteForest
+  floorsAmount: 5
+  endChapter: Forest/CragPass/DungeonEnd
+  musicName: Dungeon_Generic
+  canExitEarly: 0
+  earlyExitChapter: 
+  encounters:
+  - {fileID: 11400000, guid: 17cd2ed273fbc654ca30f6669386d36c, type: 2}
+  - {fileID: 11400000, guid: 89333aeb2a1a4974591767a31608a1cd, type: 2}
+  - {fileID: 11400000, guid: 0179d982c335cfe4583166385ff79f95, type: 2}
+  battleBackground: Snow
+  size: {x: 15, y: 15}
+  roomCount: 4
+  roomMaxSize: {x: 5, y: 5}
+  cellPrefab: {fileID: 8148160245439542551, guid: 276a7082e1ebb8a41a547f67d1f8e67d,
+    type: 3}
+  stairsPrefab: {fileID: 2695139049142173575, guid: 255f38eebb4070d43aef3b1065c7802f,
+    type: 3}
+  propsToPlace: []

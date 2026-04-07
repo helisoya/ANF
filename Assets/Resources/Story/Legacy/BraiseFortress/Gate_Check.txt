@@ -1,0 +1,7 @@
+if(guardQuest = 0) BraiseFortress/GUARDQuest0
+
+dialog(narrator;_;false;Fortress_Done)
+
+load(BraiseFortress/Interaction)
+
+

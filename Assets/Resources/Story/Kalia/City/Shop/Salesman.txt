@@ -1,0 +1,14 @@
+if(secondaryQuest_Kalia_Shop = -1){
+	choice Choice_Chat
+		Choice_Buy Kalia/City/Shop/Salesman_Shop
+		Choice_AboutYou Kalia/City/Shop/Salesman_AboutYou
+		Choice_NeedHelp Kalia/City/Shop/Salesman_StartSubQuest
+		Choice_Nothing Kalia/City/Shop/Salesman_Exit
+}
+else{
+	choice Choice_Chat
+		Choice_Buy Kalia/City/Shop/Salesman_Shop
+		Choice_AboutYou Kalia/City/Shop/Salesman_AboutYou
+		Choice_Nothing Kalia/City/Shop/Salesman_Exit
+}
+

@@ -1,0 +1,33 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Region/Shrine)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Orkva)
+
+autosave()
+
+if(factionQuest_Rebel_1 = 1){
+	load(Orkva/Shrine/RebelFactionQuest1)
+	return()
+}
+
+if(night = 1){
+	addCharacter(KalibuPriest2;false)
+	setCharacterPosition(KalibuPriest2;PriestSpot)
+	setCharacterRotation(KalibuPriest2;PriestSpot)
+	setInteractionChapter(KalibuPriest2;Orkva/Shrine/Priest_Enter)
+}
+
+
+fadeFg(0;false)
+
+load(Orkva/Shrine/Interaction)

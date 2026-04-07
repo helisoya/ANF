@@ -1,0 +1,17 @@
+# End Mayor quest
+
+dialog([MC];_;false;Tolau_CityHall_Mayor_QuestEnd_1)
+
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestEnd_2)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestEnd_3)
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestEnd_4)
+
+addExpToAll(10)
+addGold(20)
+dialog(narrator;_;false;Tolau_CityHall_Mayor_QuestEnd_5)
+
+dialog(Mayor;MayorIberty;false;Tolau_CityHall_Mayor_QuestEnd_6)
+
+variable(secondaryQuest_Tolau_Mayor;100)
+
+load(Orkva/Tolau/CityHall/Mayor)

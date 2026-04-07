@@ -1,0 +1,3 @@
+dialog(Waldo;Waldo;false;Horse_Waldo_Play_1)
+
+loadScene(HR)

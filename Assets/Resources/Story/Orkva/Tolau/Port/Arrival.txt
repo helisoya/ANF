@@ -1,0 +1,34 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Tolau/Port)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Tolau)
+
+autosave()
+
+if(marklichtQuest_3 = 0){
+	load(Orkva/Tolau/Port/MarklichtQuest3)
+	return()
+}
+
+if(merchantQuest_3 = 0){
+	load(Orkva/Tolau/Port/MerchantQuest3)
+	return()
+}
+
+if(night = 1 & secondaryQuest_Tolau_Inn = 0){
+	load(Orkva/Tolau/Port/SecondaryQuest)
+}
+else{
+	fadeFg(0;false)
+	load(Orkva/Tolau/Port/Interaction)
+}

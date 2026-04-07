@@ -1,0 +1,7 @@
+clearStack()
+
+setInteractionChapter(Exit;MAP-City_Tolau-City_Tolau_Residences)
+setInteractionChapter(Door1;Orkva/Tolau/Residences/Door1_Check)
+setInteractionChapter(Door2;Orkva/Tolau/Residences/Door2_Check)
+
+interact

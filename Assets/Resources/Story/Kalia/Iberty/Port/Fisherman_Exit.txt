@@ -1,0 +1,6 @@
+setCharacterAlpha(Fisherman1;0;true)
+setCharacterPosition(Fisherman1;FishermanSpot)
+setCharacterRotation(Fisherman1;FishermanSpot)
+setCharacterAlpha(Fisherman1;1;false)
+
+load(Kalia/Iberty/Port/Interaction)

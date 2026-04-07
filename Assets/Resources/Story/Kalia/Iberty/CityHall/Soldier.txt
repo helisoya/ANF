@@ -1,0 +1,2 @@
+if(secondaryQuest_Iberty_Catacombs > -1 & secondaryQuest_Iberty_Catacombs < 100) load(Kalia/Iberty/CityHall/Soldier_Quest)
+else load(Kalia/Iberty/CityHall/Soldier_Default)

@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_Play Horse/Waldo_Play_Check
+	Choice_Rules Horse/Waldo_Rules
+	Choice_Nothing Horse/Waldo_Exit

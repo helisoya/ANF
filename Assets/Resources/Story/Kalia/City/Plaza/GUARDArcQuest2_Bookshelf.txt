@@ -1,0 +1,4 @@
+dialog(narrator;_;false;Kalia_Plaza_GUARDArcQuest2_Bookshelf_1)
+dialog(narrator;_;false;Kalia_Plaza_GUARDArcQuest2_Bookshelf_2)
+
+load(Kalia/City/Plaza/GUARDArcQuest2)

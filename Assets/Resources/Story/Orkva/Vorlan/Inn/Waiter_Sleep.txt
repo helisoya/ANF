@@ -1,0 +1,15 @@
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_Sleep_1)
+
+fadeBg(1;true)
+
+setCharacterPosition(Citizen6;Waiter)
+setCharacterRotation(Citizen6;Waiter)
+
+healAllFollowers()
+load(Common/FastForwardTime)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+fadeBg(0;true)
+
+load(Orkva/Vorlan/Inn/Interaction)

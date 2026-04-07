@@ -1,0 +1,19 @@
+dialog(narrator;_;false;Palace_AttractionsDone_4)
+
+addCharacter(RickeyLandGuard;true)
+setCharacterPosition(RickeyLandGuard;Front)
+setCharacterRotation(RickeyLandGuard;Front)
+setCharacterAlpha(RickeyLandGuard;1;false)
+
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_5)
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_6)
+
+dialog([MC];_;false;Palace_AttractionsDone_7)
+dialog(narrator;_;false;Palace_AttractionsDone_8)
+
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_9)
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_10)
+
+if(shopQuest = 100) Palace/MainQuest4_ShopDone
+load(Palace/MainQuest4_ShopNotDone)
+

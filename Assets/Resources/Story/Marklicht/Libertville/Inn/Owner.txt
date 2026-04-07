@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_Sleep Marklicht/Libertville/Inn/Owner_Sleep
+	Choice_AboutYou Marklicht/Libertville/Inn/Owner_AboutYou
+	Choice_AboutCity Marklicht/Libertville/Inn/Owner_AboutCity
+	Choice_Nothing Marklicht/Libertville/Inn/Owner_Exit

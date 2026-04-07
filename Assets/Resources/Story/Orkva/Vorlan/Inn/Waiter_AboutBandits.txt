@@ -1,0 +1,17 @@
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_1)
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_2)
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_3)
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_4)
+
+dialog([MC];_;false;Vorlan_Inn_Owner_AboutBandits_5)
+
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_6)
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_7)
+
+dialog([MC];_;false;Vorlan_Inn_Owner_AboutBandits_8)
+
+dialog(Owner;Citizen6;false;Vorlan_Inn_Owner_AboutBandits_9)
+
+variable(mainQuest_3;2)
+
+load(Orkva/Vorlan/Inn/Waiter)

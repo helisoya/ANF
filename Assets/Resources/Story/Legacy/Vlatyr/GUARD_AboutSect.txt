@@ -1,0 +1,8 @@
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutSect_1)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutSect_2)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutSect_3)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutSect_4)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutSect_5)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutSect_6)
+
+load(Vlatyr/GUARD_Default)

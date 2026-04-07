@@ -1,0 +1,3 @@
+dialog(narrator;_;false;Tolau_Residences_Door2_Bookshelf_1)
+
+load(Orkva/Tolau/Residences/ProsecutorHouse)

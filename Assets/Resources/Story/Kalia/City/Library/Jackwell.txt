@@ -1,0 +1,6 @@
+choice Choice_Chat
+	Choice_AboutYou Kalia/City/Library/Jackwell_AboutYou
+	Choice_AboutKalia Kalia/City/Library/Jackwell_AboutKalia
+	Choice_AboutContinent Kalia/City/Library/Jackwell_AboutContinent
+	Choice_Nothing Kalia/City/Library/Jackwell_Exit
+

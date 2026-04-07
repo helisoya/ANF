@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Jackwell;Kalia/City/Library/Jackwell_Enter)
+setInteractionChapter(Exit;MAP-City_Kalia-City_Kalia_Jackwell)
+
+interact

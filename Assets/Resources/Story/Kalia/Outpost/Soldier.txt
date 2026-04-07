@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_AboutYou Kalia/Outpost/Soldier_AboutYou
+	Choice_NeedHelp Kalia/Outpost/Soldier_NeedHelp
+	Choice_Nothing Kalia/Outpost/Soldier_Exit
+

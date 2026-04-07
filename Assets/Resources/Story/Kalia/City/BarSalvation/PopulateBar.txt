@@ -1,0 +1,10 @@
+# Triggers the start of the rebel quests
+# Should work as it is, but must be checked out later
+# Can't risk starting the questline when another faction was selected
+if(mainQuest_4 < 100 & marklichtQuest_0 < 100){
+	addCharacter(AnnaDisguise;false)
+	setCharacterPosition(AnnaDisguise;Waiter)
+	setCharacterRotation(AnnaDisguise;Waiter)
+	setInteractionChapter(AnnaDisguise;Kalia/City/BarSalvation/Waiter_Enter)
+	setCharacterBody(AnnaDisguise;Bar;true)
+}

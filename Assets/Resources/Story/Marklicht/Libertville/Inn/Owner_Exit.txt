@@ -1,0 +1,6 @@
+setCharacterAlpha(Citizen6;0;true)
+setCharacterPosition(Citizen6;Owner)
+setCharacterRotation(Citizen6;Owner)
+setCharacterAlpha(Citizen6;1;false)
+
+load(Marklicht/Libertville/Inn/Interaction)

@@ -1,0 +1,14 @@
+setBackground(RickeyLandHauntedHouse)
+
+addCharacter(Waldo;false)
+setCharacterPosition(Waldo;FrontWaldo)
+setCharacterRotation(Waldo;FrontWaldo)
+
+variable(hauntedHouseQuest;100)
+
+dialog(Waldo;Waldo;false;HauntedHouse_Waldo_End_1)
+dialog(Waldo;Waldo;false;HauntedHouse_Waldo_End_2)
+
+if(waldoQuizQuest = 100 & horseRaceQuest = 100 & shootSalesmanQuest = 100 & hauntedHouseQuest = 100) load(HauntedHouse/MiniGame_AllDone)
+
+load(HauntedHouse/MiniGame_NotAllDone)

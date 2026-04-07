@@ -1,0 +1,13 @@
+# Mid Quest, launch battle
+setBackground(Kalia/Iberty/CatacombsInside;true)
+addCharacter(Bandit2;false)
+setCharacterPosition(Bandit2;Front)
+setCharacterRotation(Bandit2;Front)
+
+dialog(narrator;_;false;Iberty_Catacombs_Quest_4)
+dialog(Bandit;Bandit2;false;Iberty_Catacombs_Quest_5)
+dialog(Bandit;Bandit2;false;Iberty_Catacombs_Quest_6)
+dialog(Bandit;Bandit2;false;Iberty_Catacombs_Quest_7)
+dialog(narrator;_;false;Iberty_Catacombs_Quest_8)
+
+battle(BATTLE_Quest_IbertyCatacombs;Marble;Kalia/Iberty/Catacombs/Door_Quest_End)

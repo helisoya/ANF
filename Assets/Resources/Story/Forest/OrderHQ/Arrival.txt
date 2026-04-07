@@ -1,0 +1,38 @@
+clearStack()
+setFg(1)
+
+setLocals(forest)
+
+
+removeAllCharacters()
+setBackground(Forest/OrderHQ)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_WhiteForest)
+
+autosave()
+
+
+
+if(mainQuest_3 = 0){
+	fadeFg(0;false)
+	load(Forest/OrderHQ/MainQuest3)
+	return()
+}
+
+if(arcQuest_Order_1 = 100){
+	addCharacter(OrderChief;false)
+	setCharacterPosition(OrderChief;Desk)
+	setCharacterRotation(OrderChief;Desk)
+	setInteractionChapter(OrderChief;Forest/OrderHQ/Chief_Enter)
+	playMusic(Character_Order)
+}
+else{
+	playMusic(Exploration_Forest)
+}
+fadeFg(0;false)
+
+load(Forest/OrderHQ/Interaction)

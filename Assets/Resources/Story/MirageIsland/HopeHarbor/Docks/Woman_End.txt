@@ -1,0 +1,15 @@
+dialog([MC];_;false;HopeHarbor_Docks_Woman_EndQuest_1)
+
+dialog(Woman;Citizen4;false;HopeHarbor_Docks_Woman_EndQuest_2)
+dialog(Woman;Citizen4;false;HopeHarbor_Docks_Woman_EndQuest_3)
+
+setCharacterAlpha(Citizen4;0;true)
+removeCharacter(Citizen4)
+
+dialog(narrator;_;false;HopeHarbor_Docks_Woman_EndQuest_4)
+dialog(narrator;_;false;HopeHarbor_Docks_Woman_EndQuest_5)
+
+variable(secondaryQuest_HopeHarbor_Cottage;100)
+addExpToAll(10)
+
+load(MirageIsland/HopeHarbor/Docks/Interaction)

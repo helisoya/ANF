@@ -1,0 +1,10 @@
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_Quest_1)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_Quest_2)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_Quest_3)
+dialog(Owner;Citizen4;false;HopeHarbor_Inn_Owner_Quest_4)
+
+dialog([MC];_;false;HopeHarbor_Inn_Owner_Quest_5)
+
+variable(secondaryQuest_HopeHarbor_Inn;0)
+
+load(MirageIsland/HopeHarbor/Inn/Owner)

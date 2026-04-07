@@ -1,0 +1,7 @@
+setCharacterAlpha(GUARD;0;true)
+setCharacterPosition(GUARD;GUARD)
+setCharacterRotation(GUARD;GUARD)
+setCharacterBody(GUARD;Sit;true)
+setCharacterAlpha(GUARD;1;false)
+
+load(Kalia/City/BarMax/Interaction)

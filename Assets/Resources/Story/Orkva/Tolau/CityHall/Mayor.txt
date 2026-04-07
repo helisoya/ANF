@@ -1,0 +1,22 @@
+if(secondaryQuest_Tolau_Mayor = 100){
+choice Choice_Chat
+	Choice_AboutCity Orkva/Tolau/CityHall/Mayor_AboutCity
+	Choice_AboutOrkva Orkva/Tolau/CityHall/Mayor_AboutOrkva
+	Choice_Nothing Orkva/Tolau/CityHall/Mayor_Exit
+}
+else{
+if(secondaryQuest_Tolau_Mayor = -1){
+choice Choice_Chat
+	Choice_AboutCity Orkva/Tolau/CityHall/Mayor_AboutCity
+	Choice_AboutOrkva Orkva/Tolau/CityHall/Mayor_AboutOrkva
+	Choice_NeedHelp Orkva/Tolau/CityHall/Mayor_QuestCheck
+	Choice_Nothing Orkva/Tolau/CityHall/Mayor_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutCity Orkva/Tolau/CityHall/Mayor_AboutCity
+	Choice_AboutOrkva Orkva/Tolau/CityHall/Mayor_AboutOrkva
+	Choice_AboutTask Orkva/Tolau/CityHall/Mayor_QuestCheck
+	Choice_Nothing Orkva/Tolau/CityHall/Mayor_Exit
+}
+}

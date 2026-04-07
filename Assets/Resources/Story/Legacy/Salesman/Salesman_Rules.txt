@@ -1,0 +1,5 @@
+dialog(Salesman;Salesman;false;Salesman_Salesman_Rules_1)
+dialog(Salesman;Salesman;false;Salesman_Salesman_Rules_2)
+dialog(Salesman;Salesman;false;Salesman_Salesman_Rules_3)
+
+load(Salesman/Salesman_Default)

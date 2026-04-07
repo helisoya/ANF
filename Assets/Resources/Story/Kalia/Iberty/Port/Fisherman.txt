@@ -1,0 +1,4 @@
+choice Choice_Chat
+	Choice_AboutYou Kalia/Iberty/Port/Fisherman_AboutYou
+	Choice_NeedHelp Kalia/Iberty/Port/Fisherman_Quest_Check
+	Choice_Nothing Kalia/Iberty/Port/Fisherman_Exit

@@ -1,0 +1,4 @@
+dialog(narrator;_;false;Ending_General_1)
+dialog(narrator;_;false;Ending_General_2)
+
+mainMenu()

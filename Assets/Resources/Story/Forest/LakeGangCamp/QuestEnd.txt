@@ -1,0 +1,15 @@
+setFg(1)
+
+setBackground(Forest/LakeGangCamp)
+
+load(Common/DisplayWeatherRain)
+
+fadeFg(0;false)
+
+dialog(narrator;_;false;LakeGangCamp_Quest_4)
+dialog(narrator;_;false;LakeGangCamp_Quest_5)
+dialog(narrator;_;false;LakeGangCamp_Quest_6)
+
+variable(secondaryQuest_Tolau_Fisherman;3)
+
+load(Forest/LakeGangCamp/Interaction)

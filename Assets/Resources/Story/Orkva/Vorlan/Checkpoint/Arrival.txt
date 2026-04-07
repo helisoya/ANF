@@ -1,0 +1,30 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Vorlan/Checkpoint)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Vorlan)
+
+autosave()
+
+
+addCharacter(OrkvaSoldier;false)
+setCharacterPosition(OrkvaSoldier;SoldierSpot)
+setCharacterRotation(OrkvaSoldier;SoldierSpot)
+
+fadeFg(0;false)
+
+if(cutscene_EntranceVorlan = 0){
+	load(Orkva/Vorlan/Checkpoint/CutsceneEntrance)
+}
+else{
+	load(Orkva/Vorlan/Checkpoint/Interaction)
+}

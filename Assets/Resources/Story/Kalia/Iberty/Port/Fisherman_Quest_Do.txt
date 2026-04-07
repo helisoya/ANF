@@ -1,0 +1,28 @@
+# Quest for the Iberty Fisherman
+# Battle
+
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_Quest_Do_2)
+
+fadeBg(1;true)
+removeCharacter(Fisherman1)
+dialog(narrator;_;false;Iberty_Port_Fisherman_Quest_Do_3)
+
+setBackground(Kalia/Iberty/Beach;false)
+fadeBg(0;false)
+dialog(narrator;_;false;Iberty_Port_Fisherman_Quest_Do_4)
+
+addCharacter(Bandit1;true)
+setCharacterPosition(Bandit1;Front)
+setCharacterRotation(Bandit1;Front)
+setCharacterAlpha(Bandit1;1;false)
+dialog(narrator;_;false;Iberty_Port_Fisherman_Quest_Do_5)
+dialog(Bandit;Bandit1;false;Iberty_Port_Fisherman_Quest_Do_6)
+dialog(Bandit;Bandit1;false;Iberty_Port_Fisherman_Quest_Do_7)
+dialog(Bandit;Bandit1;false;Iberty_Port_Fisherman_Quest_Do_8)
+
+dialog([MC];_;false;Iberty_Port_Fisherman_Quest_Do_9)
+
+dialog(Bandit;Bandit1;false;Iberty_Port_Fisherman_Quest_Do_10)
+dialog(Bandit;Bandit1;false;Iberty_Port_Fisherman_Quest_Do_11)
+
+battle(BATTLE_Quest_IbertyFisherman;Grass;Kalia/Iberty/Port/Fisherman_Quest_End)

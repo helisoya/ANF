@@ -1,0 +1,8 @@
+setCharacterAlpha(Waiter1;0;true)
+setCharacterPosition(Waiter1;Front)
+setCharacterRotation(Waiter1;Front)
+setCharacterAlpha(Waiter1;1;false)
+
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_Greetings_1)
+
+load(Kalia/City/BarMax/Waiter)

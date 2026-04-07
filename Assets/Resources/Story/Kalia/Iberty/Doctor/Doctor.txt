@@ -1,0 +1,2 @@
+if(secondaryQuest_Iberty_Doctor > -1 & secondaryQuest_Iberty_Doctor < 100) load(Kalia/Iberty/Doctor/Doctor_QuestInProgress)
+else load(Kalia/Iberty/Doctor/Doctor_Default)

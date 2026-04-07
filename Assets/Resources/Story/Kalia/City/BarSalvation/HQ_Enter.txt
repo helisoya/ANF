@@ -1,0 +1,14 @@
+fadeBg(1;true)
+removeAllCharacters()
+
+playMusic(Character_Rebels)
+
+setBackground(Kalia/City/RebelHQ)
+addCharacter(Amanda;false)
+setCharacterBody(Amanda;Desk;true)
+setCharacterPosition(Amanda;Desk)
+setCharacterRotation(Amanda;Desk)
+
+fadeBg(0;false)
+
+load(Kalia/City/BarSalvation/HQ)

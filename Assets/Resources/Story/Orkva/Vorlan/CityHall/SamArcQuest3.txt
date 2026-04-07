@@ -1,0 +1,17 @@
+dialog(narrator;_;false;Vorlan_CityHall_SamArcQuest3_1)
+
+fadeBg(1;true)
+
+dialog(narrator;_;false;Vorlan_CityHall_SamArcQuest3_2)
+dialog(narrator;_;false;Vorlan_CityHall_SamArcQuest3_3)
+dialog(narrator;_;false;Vorlan_CityHall_SamArcQuest3_4)
+dialog(narrator;_;false;Vorlan_CityHall_SamArcQuest3_5)
+dialog(narrator;_;false;Vorlan_CityHall_SamArcQuest3_6)
+
+fadeBg(0;false)
+
+variable(arcQuest_Sam_3;100)
+variable(arcQuest_Sam_4;0)
+addExpToAll(25)
+
+load(Orkva/Vorlan/CityHall/Interaction)

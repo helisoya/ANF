@@ -1,0 +1,5 @@
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutYou_1)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutYou_2)
+dialog(Elder;Northman1;false;NorthVillage_Elder_AboutYou_3)
+
+load(Forest/Village/Elder)

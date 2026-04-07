@@ -1,0 +1,14 @@
+if(secondaryQuest_Tolau_Mayor = -1){
+	load(Orkva/Tolau/CityHall/Mayor_StartQuest)
+	return()
+}
+
+if(secondaryQuest_Tolau_Mayor = 0){
+	load(Orkva/Tolau/CityHall/Mayor_DuringQuest)
+	return()
+}
+
+if(secondaryQuest_Tolau_Mayor = 1){
+	load(Orkva/Tolau/CityHall/Mayor_EndQuest)
+	return()
+}

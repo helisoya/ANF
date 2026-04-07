@@ -1,0 +1,14 @@
+if(secondaryQuest_Libertville_Courier = -1){
+choice Choice_Chat
+	Choice_AboutYou Marklicht/Libertville/TrainStation/Courier_AboutYou
+	Choice_AboutCity Marklicht/Libertville/TrainStation/Courier_AboutCity
+	Choice_NeedHelp Marklicht/Libertville/TrainStation/Courier_StartQuest
+	Choice_Nothing Marklicht/Libertville/TrainStation/Courier_Exit
+
+}
+else{
+choice Choice_Chat
+	Choice_AboutYou Marklicht/Libertville/TrainStation/Courier_AboutYou
+	Choice_AboutCity Marklicht/Libertville/TrainStation/Courier_AboutCity
+	Choice_Nothing Marklicht/Libertville/TrainStation/Courier_Exit
+}

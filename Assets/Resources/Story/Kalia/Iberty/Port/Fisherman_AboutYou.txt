@@ -1,0 +1,8 @@
+# Talks about himself
+dialog(Fisherman;_;false;Iberty_Port_Fisherman_AboutYou_1)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_AboutYou_2)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_AboutYou_3)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_AboutYou_4)
+dialog(Fisherman;Fisherman1;false;Iberty_Port_Fisherman_AboutYou_5)
+
+load(Kalia/Iberty/Port/Fisherman)

@@ -1,0 +1,8 @@
+if(rebelQuest_3 = 1 | marklichtQuest_3 = 1 | merchantQuest_3 = 1){
+	load(MirageIsland/Forest/Temple_Forest)
+	return()
+}
+
+dialog(narrator;_;false;MirageForest_No_1)
+
+load(MirageIsland/Forest/Interaction)

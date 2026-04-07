@@ -1,0 +1,6 @@
+setCharacterAlpha(Citizen6;0;true)
+setCharacterPosition(Citizen6;Front)
+setCharacterRotation(Citizen6;Front)
+setCharacterAlpha(Citizen6;1;false)
+
+load(Orkva/Vorlan/Inn/Waiter)

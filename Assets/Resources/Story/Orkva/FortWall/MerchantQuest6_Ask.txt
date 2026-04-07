@@ -1,0 +1,11 @@
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_1)
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_2)
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_3)
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_4)
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_5)
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_6)
+dialog(narrator;_;false;FortWall_Door_MerchantQuest6_7)
+
+choice Choice_Generic
+	Choice_Yes Endings/Merchant_A
+	Choice_No Orkva/FortWall/Interaction

@@ -1,0 +1,25 @@
+clearStack()
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Region/Forest)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Marklicht)
+
+autosave()
+
+fadeFg(0;false)
+
+if(secondaryQuest_Libertville_Shop = 0){
+	load(Marklicht/Forest/Quest)
+}
+else{
+	load(Marklicht/Forest/Interaction)
+}

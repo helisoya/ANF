@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_Sleep Kalia/City/BarMax/Waiter_Sleep
+	Choice_AboutTask Kalia/City/BarMax/Waiter_SideQuest_Check
+	Choice_AboutYou Kalia/City/BarMax/Waiter_AboutYou
+	Choice_Nothing Kalia/City/BarMax/Waiter_Exit

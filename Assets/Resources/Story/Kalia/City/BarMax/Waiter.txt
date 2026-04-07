@@ -1,0 +1,2 @@
+if(secondaryQuest_Kalia_Max > -1 & secondaryQuest_Kalia_Max < 100) load(Kalia/City/BarMax/Waiter_QuestInProgress)
+else load(Kalia/City/BarMax/Waiter_Default)

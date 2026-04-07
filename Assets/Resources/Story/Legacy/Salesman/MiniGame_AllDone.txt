@@ -1,0 +1,7 @@
+variable(mainQuest;4)
+
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Done_1)
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Done_2)
+
+playMusic(Exploration_Rickey)
+load(Salesman/Salesman_Exit)

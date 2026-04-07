@@ -1,0 +1,5 @@
+choice Choice_Chat
+	Choice_AboutYou Kalia/Iberty/CityHall/Soldier_AboutYou
+	Choice_AboutCamp Kalia/Iberty/CityHall/Soldier_AboutCamp
+	Choice_NeedHelp Kalia/Iberty/CityHall/Soldier_Quest_Check
+	Choice_Nothing Kalia/Iberty/CityHall/Soldier_Exit

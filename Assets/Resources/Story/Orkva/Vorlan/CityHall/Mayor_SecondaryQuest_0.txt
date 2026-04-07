@@ -1,0 +1,4 @@
+dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_SecondaryQuest_During_1)
+dialog(Mayor;Citizen2;false;Vorlan_CityHall_Mayor_SecondaryQuest_During_2)
+
+load(Orkva/Vorlan/CityHall/Mayor)

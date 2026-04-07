@@ -1,0 +1,16 @@
+dialog([MC];_;false;OrderHQ_Chief_ArcQuest3Start_1)
+
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_2)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_3)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_4)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_5)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_6)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_7)
+
+dialog([MC];_;false;OrderHQ_Chief_ArcQuest3Start_8)
+
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest3Start_9)
+
+variable(arcQuest_Order_3;1)
+
+load(Forest/OrderHQ/Chief)

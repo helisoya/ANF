@@ -1,0 +1,33 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Tolau/Inn)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Tolau)
+
+addCharacter(Citizen5;false)
+setCharacterPosition(Citizen5;Owner)
+setCharacterRotation(Citizen5;Owner)
+
+if(arcQuest_Sam_2 = 0){
+	addCharacter(Bandit3;false)
+	setCharacterBody(Bandit3;Sit;true)
+	setCharacterPosition(Bandit3;Stool)
+	setCharacterRotation(Bandit3;Stool)
+	setInteractionChapter(Bandit3;Orkva/Tolau/Inn/ArcQuestSam2)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Orkva/Tolau/Inn/Interaction)
+

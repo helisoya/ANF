@@ -1,0 +1,9 @@
+if(arcQuest_Dragon_4 = 100){
+	dialog(Northman;Northman2;false;NorthVillage_Trader_AboutYou_Arc_1)
+	dialog(Northman;Northman2;false;NorthVillage_Trader_AboutYou_Arc_2)
+}
+else{
+	dialog(Northman;Northman2;false;NorthVillage_Trader_AboutYou_1)
+}
+
+load(Forest/Village/Trader)

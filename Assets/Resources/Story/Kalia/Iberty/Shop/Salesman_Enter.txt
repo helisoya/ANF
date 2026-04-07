@@ -1,0 +1,9 @@
+setCharacterAlpha(Salesman1;0;true)
+setCharacterPosition(Salesman1;Front)
+setCharacterRotation(Salesman1;Front)
+setCharacterAlpha(Salesman1;1;false)
+
+dialog(Salesman;Salesman1;false;Iberty_Shop_Greetings_1)
+
+if(mainQuest_1 = 0) load(Kalia/Iberty/Shop/MainQuest1_0)
+else load(Kalia/Iberty/Shop/Salesman)

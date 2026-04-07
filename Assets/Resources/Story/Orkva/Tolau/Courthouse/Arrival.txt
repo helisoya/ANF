@@ -1,0 +1,35 @@
+clearStack()
+setFg(1)
+
+setLocals(orkvaRegion)
+
+playMusic(Exploration_OrkvaLow)
+removeAllCharacters()
+setBackground(Orkva/Tolau/CourthouseLobby)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherCloud)
+
+setLocation(Location_Tolau)
+
+if(night = 0){
+	addCharacter(Jade;false)
+	setCharacterPosition(Jade;Prosecutor)
+	setCharacterRotation(Jade;Prosecutor)
+	setInteractionChapter(Jade;Orkva/Tolau/Courthouse/Jade_Enter)
+
+	if(arcQuest_Order_1 < 100){
+		addCharacter(OrderChief;false)
+		setCharacterPosition(OrderChief;Couch)
+		setCharacterRotation(OrderChief;Couch)
+		setCharacterBody(OrderChief;SitCuffs;true)
+		setInteractionChapter(OrderChief;Orkva/Tolau/Courthouse/Chief_Enter)
+	}
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Orkva/Tolau/Courthouse/Interaction)

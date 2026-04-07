@@ -1,0 +1,16 @@
+variable(shopQuest;-1)
+
+dialog([MC];_;false;Palace_AttractionsDone_NoStamp_1)
+
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_NoStamp_2)
+
+dialog([MC];_;false;Palace_AttractionsDone_NoStamp_3)
+
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_NoStamp_4)
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_NoStamp_5)
+dialog(Security;RickeyLandGuard;false;Palace_AttractionsDone_NoStamp_6)
+
+dialog([MC];_;false;Palace_AttractionsDone_NoStamp_7)
+dialog(narrator;_;false;Palace_AttractionsDone_NoStamp_8)
+
+loadScene(QTG)

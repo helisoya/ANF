@@ -1,0 +1,6 @@
+setCharacterAlpha(OrkvaSoldier;0;true)
+setCharacterPosition(OrkvaSoldier;SoldierSpot)
+setCharacterRotation(OrkvaSoldier;SoldierSpot)
+setCharacterAlpha(OrkvaSoldier;1;false)
+
+load(Orkva/Vorlan/Checkpoint/Interaction)

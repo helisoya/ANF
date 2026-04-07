@@ -1,0 +1,92 @@
+setFg(1)
+
+setLocals(marklicht)
+
+playMusic(null)
+removeAllCharacters()
+setBackground(Marklicht/Region/BanditMountainInside)
+load(Common/DisplayWeatherCloud)
+setLocation(Location_Marklicht)
+
+addCharacter(Sword;false)
+setCharacterPosition(Sword;Front)
+setCharacterRotation(Sword;Front)
+
+fadeFg(0;false)
+
+dialog(narrator;_;false;BanditMountain_MainQuest4_40)
+
+addExpToAll(10)
+variable(mainQuest_4;100)
+
+dialog(Sword;Sword;false;BanditMountain_MainQuest4_41)
+
+dialog([MC];_;false;BanditMountain_MainQuest4_42)
+
+dialog(Sword;Sword;false;BanditMountain_MainQuest4_43)
+dialog(Sword;Sword;false;BanditMountain_MainQuest4_44)
+
+dialog([MC];_;false;BanditMountain_MainQuest4_45)
+
+dialog(Sword;Sword;false;BanditMountain_MainQuest4_46)
+dialog(narrator;_;false;BanditMountain_MainQuest4_47)
+dialog(narrator;_;false;BanditMountain_MainQuest4_48)
+dialog(narrator;_;false;BanditMountain_MainQuest4_49)
+dialog(Sword;Sword;false;BanditMountain_MainQuest4_50)
+dialog(Sword;Sword;false;BanditMountain_MainQuest4_51)
+
+if(rebelQuest_0 = 100 | marklichtQuest_0 = 100){
+# Back stab the Merchant
+	dialog(narrator;_;false;BanditMountain_MainQuest4_Disloyal_1)
+	playSound(Frappe)
+	setCharacterAlpha(Sword;0;false)
+	dialog(narrator;_;false;BanditMountain_MainQuest4_Disloyal_2)
+	dialog(narrator;_;false;BanditMountain_MainQuest4_Disloyal_3)
+	dialog(narrator;_;false;BanditMountain_MainQuest4_Disloyal_4)
+	dialog(narrator;_;false;BanditMountain_MainQuest4_Disloyal_6)
+	dialog(narrator;_;false;BanditMountain_MainQuest4_Disloyal_7)
+
+	if(rebelQuest_0 = 100){
+# Joined the rebels
+		variable(rebelQuest_1;0)
+	}
+	else{
+# Joined Marklicht
+		variable(marklichtQuest_1;0)
+	}
+}
+else{
+# Stay loyal to the Merchant
+	dialog([MC];_;false;BanditMountain_MainQuest4_StayLoyal_1)
+	dialog([MC];_;false;BanditMountain_MainQuest4_StayLoyal_2)
+
+	dialog(Sword;Sword;false;BanditMountain_MainQuest4_StayLoyal_3)
+
+	dialog([MC];_;false;BanditMountain_MainQuest4_StayLoyal_4)
+
+	dialog(Sword;Sword;false;BanditMountain_MainQuest4_StayLoyal_5)
+	dialog(Sword;Sword;false;BanditMountain_MainQuest4_StayLoyal_6)
+
+	setCharacterAlpha(Sword;0;false)
+	dialog(narrator;_;false;BanditMountain_MainQuest4_StayLoyal_7)
+
+	variable(marklichtQuest_0;-1)
+	variable(rebelQuest_0;-1)
+	variable(merchantQuest_1;0)
+}
+
+# Common, get out of the dungeon
+
+fadeBg(1;true)
+
+playMusic(Exploration_Marklicht)
+removeAllCharacters()
+setBackground(Marklicht/Region/BanditMountain)
+load(Common/DisplayWeatherRain)
+setLocation(Location_Marklicht)
+
+fadeBg(0;false)
+
+dialog(narrator;_;false;BanditMountain_MainQuest4_Out_1)
+
+load(Marklicht/Mountain/Interaction)

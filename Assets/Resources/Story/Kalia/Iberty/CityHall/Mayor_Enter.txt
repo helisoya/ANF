@@ -1,0 +1,8 @@
+setCharacterAlpha(MayorIberty;0;true)
+setCharacterPosition(MayorIberty;Front)
+setCharacterRotation(MayorIberty;Front)
+setCharacterAlpha(MayorIberty;1;false)
+
+dialog(Mayor;MayorIberty;false;Iberty_CityHall_Mayor_Greetings_1)
+
+load(Kalia/Iberty/CityHall/Mayor)

@@ -1,0 +1,14 @@
+clearStack()
+
+if(cutscene_EntranceVorlan = 0){
+	# First time in Vorlan, player cutscene
+	unlockLog(Log_Vorlan;true)
+	load(Orkva/Vorlan/Checkpoint/Arrival)
+}
+else{
+	# Vorlan was already discovered
+	random(0;3)
+	if(random = 0) map(City_Vorlan;City_Vorlan_ToOrkva1)
+	if(random = 1) map(City_Vorlan;City_Vorlan_ToOrkva2)
+	if(random = 2) map(City_Vorlan;City_Vorlan_ToOrkva3)
+}

@@ -1,0 +1,107 @@
+# -----------------------------------------------------------
+# --------------- Characters --------------------------------
+# -----------------------------------------------------------
+
+Char_Harold = Harold
+Char_??? = ???
+Char_GUARD = GARDE
+Char_Courier = Postier
+Char_Bandit = Bandit
+Char_Doctor = Docteur
+Char_Salesman = Commerçant
+Char_Fisherman = Pêcheur
+Char_Mayor = Maire
+Char_Soldier = Soldat
+Char_Priest = Prêtre
+Char_Merchant = Marchand
+Char_Sword = Epée
+Char_Ace = Ace
+Char_Waiter = Serveur
+Char_Waitress = Serveuse
+Char_Man = Homme
+Char_Woman = Femme
+Char_Bos = Bos
+Char_Anna = Anna
+Char_Amanda = Amanda
+Char_Jackwell = Jackwell
+Char_Northman = Nordien
+Char_Elder = Ancien
+Char_Sam = Sam
+Char_Owner = Propriétaire
+Char_Prosecutor = Procureur
+Char_Chief = Chef
+Char_Felix = Vrai
+Char_Judge = Juge
+Char_Simon = Simon
+Char_Keeper = Gardien
+Char_Lame = Lame
+Char_Lara = Lara
+Char_Pal = Pal
+Char_Robertus = Robertus
+Char_Ogden = Ogden
+
+# -----------------------------------------------------------
+# --------------- Choices -----------------------------------
+# -----------------------------------------------------------
+
+Choice_Generic = Que faire ?
+Choice_Chat = De quoi parler ?
+Choice_Road = Quel chemin prendre ?
+
+Choice_Map = Carte
+Choice_CheckArea = Vérifier les alentours
+Choice_Nothing = Rien (Partir)
+Choice_MoveOut = Continuer
+Choice_Buy = Acheter...
+Choice_Sleep = Dormir
+Choice_OrderSomething = Commander quelque chose
+
+Choice_Yes = Oui
+Choice_No = Non
+Choice_GreenTea = Thé vert
+Choice_HotChocolate = Chocolat chaud
+Choice_Bread = Pain
+
+Choice_Ideas = Des idées ?
+Choice_AboutRegion = A propos de la région
+Choice_AboutYou = A propos de vous
+Choice_AboutJob = A propos de votre travail
+Choice_Heal = J'ai besoin de soins
+Choice_NeedHelp = Besoin d'aide ?
+Choice_AboutTask = A propos de la tache
+Choice_AboutCity = A propos de la ville
+Choice_AboutBandits = A propos des bandits
+Choice_GivePackage = <i>Donner le colis</i>
+Choice_AboutCamp = A propos du camp
+Choice_AboutKalibu = A propos de Kalibu
+Choice_AboutOrkva = A propos d'Orkva
+Choice_AboutMarklicht = A propos du Marklicht
+Choice_AboutSect = A propos de la secte
+Choice_AboutRebellion = A propos de la rebéllion
+Choice_AboutKalia = A propos de Kalia
+Choice_AboutContinent = A propos du Continent
+Choice_AboutVillage = A propos du village
+Choice_AboutFisherman = A propos du pêcheur
+Choice_AboutOrder = A propos de l'Ordre
+
+Choice_Left = Aller à Gauche
+Choice_Right = Aller à Droite
+
+Choice_Accept = Accepter
+Choice_Refuse = Refuser
+
+Choice_Ready = Je suis prêt
+Choice_NotYet = Pas encore
+
+Choice_GoBack = Retourner en arrière
+
+Choice_UseBoat = Puis-je utiliser votre barque ?
+
+# ---------------------------------------------------------
+# ------------------- Common ------------------------------
+# ---------------------------------------------------------
+
+Common_DontNeedToGoThere_1 = I don't need to go there.
+
+Common_FastForwardDay_1 = <color=blue>C'est maintenant la journée.</color>
+Common_FastForwardNight_1 = <color=blue>C'est maintenant la nuit.</color> 

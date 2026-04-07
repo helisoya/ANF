@@ -1,0 +1,4 @@
+dialog(narrator;_;false;Okville_CityHall_Door_1)
+dialog(narrator;_;false;Okville_CityHall_Door_2)
+
+load(Orkva/Okville/CityHall/Interaction)

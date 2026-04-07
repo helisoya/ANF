@@ -1,0 +1,7 @@
+clearStack()
+unlockLog(Log_Libertville;true)
+random(0;3)
+if(random = 0) map(City_Libertville;City_Libertville_ToMarklicht1)
+if(random = 1) map(City_Libertville;City_Libertville_ToMarklicht2)
+if(random = 2) map(City_Libertville;City_Libertville_ToMarklicht3)
+

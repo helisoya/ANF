@@ -1,0 +1,31 @@
+clearStack()
+setFg(1)
+
+setLocals(forest)
+
+playMusic(Exploration_Forest)
+removeAllCharacters()
+setBackground(Forest/BanditMine)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_WhiteForest)
+
+autosave()
+
+addCharacter(OrderSoldier;false)
+setCharacterPosition(OrderSoldier;OrderSoldier)
+setCharacterRotation(OrderSoldier;OrderSoldier)
+
+if(arcQuest_Order_4 = 0){
+	setInteractionChapter(OrderSoldier;Forest/BanditMine/Quest_Ask)
+}
+else{
+	setInteractionChapter(OrderSoldier;Forest/BanditMine/OrderSoldier)
+}
+
+fadeFg(0;false)
+	
+load(Forest/BanditMine/Interaction)

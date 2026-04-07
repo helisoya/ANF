@@ -1,0 +1,7 @@
+clearStack()
+
+setInteractionChapter(MayorIberty;Kalia/Iberty/CityHall/Mayor_Enter)
+setInteractionChapter(SoldierKalia2;Kalia/Iberty/CityHall/Soldier_Enter)
+setInteractionChapter(Exit;MAP-City_Iberty-City_Iberty_CityHall)
+
+interact

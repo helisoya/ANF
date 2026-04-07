@@ -1,0 +1,8 @@
+setCharacterAlpha(Salesman2;0;true)
+setCharacterPosition(Salesman2;Front)
+setCharacterRotation(Salesman2;Front)
+setCharacterAlpha(Salesman2;1;false)
+
+dialog(Salesman;Salesman2;false;Kalia_Shop_Greetings_1)
+
+load(Kalia/City/Shop/Salesman)

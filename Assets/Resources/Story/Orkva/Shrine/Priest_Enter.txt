@@ -1,0 +1,12 @@
+setCharacterAlpha(KalibuPriest2;0;true)
+setCharacterPosition(KalibuPriest2;Front)
+setCharacterRotation(KalibuPriest2;Front)
+setCharacterAlpha(KalibuPriest2;1;false)
+
+if(secondaryQuest_Vorlan_Inn = 0){
+	load(Orkva/Shrine/Priest_SecondaryQuest)
+}
+else{
+	dialog(Priest;KalibuPriest2;false;OrkvaShrine_Priest_Greetings_1)
+	load(Orkva/Shrine/Priest)
+}

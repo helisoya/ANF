@@ -1,0 +1,11 @@
+variable(shopQuest;0)
+variable(shopAvailable;1)
+
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Souvenir_1)
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Souvenir_2)
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Souvenir_3)
+dialog([MC];_;false;Salesman_Salesman_End_Souvenir_4)
+dialog(Salesman;Salesman;false;Salesman_Salesman_End_Souvenir_5)
+
+playMusic(Exploration_Rickey)
+load(Salesman/Salesman_Exit)

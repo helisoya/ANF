@@ -1,0 +1,6 @@
+dialog(Owner;Citizen6;false;Libertville_Inn_Innkeeper_AboutYou_1)
+dialog(Owner;Citizen6;false;Libertville_Inn_Innkeeper_AboutYou_2)
+dialog(Owner;Citizen6;false;Libertville_Inn_Innkeeper_AboutYou_3)
+dialog(Owner;Citizen6;false;Libertville_Inn_Innkeeper_AboutYou_4)
+
+load(Marklicht/Libertville/Inn/Owner)

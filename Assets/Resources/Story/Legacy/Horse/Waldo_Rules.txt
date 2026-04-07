@@ -1,0 +1,6 @@
+dialog(Waldo;Waldo;false;Horse_Waldo_Rules_1)
+dialog(Waldo;Waldo;false;Horse_Waldo_Rules_2)
+dialog(Waldo;Waldo;false;Horse_Waldo_Rules_3)
+dialog(Waldo;Waldo;false;Horse_Waldo_Rules_4)
+
+load(Horse/Waldo_Default)

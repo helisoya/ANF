@@ -1,0 +1,24 @@
+# If quest not start
+if(secondaryQuest_Tolau_Fisherman = -1){
+	load(Orkva/Tolau/FishermanHouse/Fisherman_StartQuest)
+	return()
+}
+
+# Quest in progress
+if(secondaryQuest_Tolau_Fisherman < 3){
+	load(Orkva/Tolau/FishermanHouse/Fisherman_DuringQuest)
+	return()
+}
+
+# Finish quest
+if(secondaryQuest_Tolau_Fisherman = 3){
+	load(Orkva/Tolau/FishermanHouse/Fisherman_EndQuest)
+	return()
+}
+
+dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_UseBoat_1)
+fadeFg(1;true)
+
+setBg(0)
+unlockLog(Log_MirageIsland;true)
+load(MirageIsland/HopeHarbor/Docks/Arrival)

@@ -1,0 +1,31 @@
+# Main Quest 2
+# You encounter Bos, and launch a dungeon
+# Autosave is not triggered before, so you can go back if you get stuck
+# Dungeon has no boss at the end, just a simple 3-5 floors with ennemies
+
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_1)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_2)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_3)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_4)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_5)
+dialog([MC];_;false;Kalia_Docks_MainQuest2_0_6)
+
+addCharacter(Bos;true)
+setCharacterPosition(Bos;Front)
+setCharacterRotation(Bos;Front)
+setCharacterAlpha(Bos;1;false)
+
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_7)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_8)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_9)
+
+setCharacterAlpha(Bos;0;false)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_10)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_11)
+
+fadeBg(1;false)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_12)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_13)
+dialog(narrator;_;false;Kalia_Docks_MainQuest2_0_14)
+
+dungeon(Kalia_MainQuest2;0)

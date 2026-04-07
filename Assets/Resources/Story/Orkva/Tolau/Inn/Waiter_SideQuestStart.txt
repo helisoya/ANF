@@ -1,0 +1,17 @@
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_1)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_2)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_3)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_4)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_5)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_6)
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_7)
+
+dialog([MC];_;false;Tolau_Inn_Owner_QuestStart_8)
+
+dialog(Owner;Citizen5;false;Tolau_Inn_Owner_QuestStart_9)
+
+dialog(narrator;_;false;Tolau_Inn_Owner_QuestStart_10)
+
+variable(secondaryQuest_Tolau_Inn;0)
+
+load(Orkva/Tolau/Inn/Waiter)

@@ -1,0 +1,843 @@
+# ------------------------------------------------------------------------
+# -------------------- Title Screen & Settings ---------------------------
+# ------------------------------------------------------------------------
+
+
+title_preMenu = Cliquez pour jouer
+title_newGame = Nouvelle partie
+title_continue = Continuer
+title_quit = Quitter
+title_settings = Paramètres
+settings_audio = Audio
+settings_bgm = BGM
+settings_sfx = SFX
+settings_voice = Voix
+settings_screen = Ecran
+settings_fullscreen = Plein Ecran
+title_enterText = Entrez votre nom...
+title_finishText = Continuer
+title_descName = Entrez votre nom
+end_thanks = Merci d'avoir joué !
+
+saves_title_save = Choisissez un slot de sauvegarde
+saves_title_load = Choisissez quel slot charger
+saves_none = Pas de données
+saves_confirmDesc = Utiliser ce slot ?
+saves_confirm = Confirmer
+saves_back = Retour
+
+pause_title = Pause
+pause_resume = Continuer
+pause_save = Sauvegarder
+pause_load = Charger
+pause_settings = Paramètres
+pause_party = Equipe
+pause_exitDungeon = Fuir Donjon
+pause_quit = Ecran Titre
+
+party_title = Equipe
+party_status = Statut
+party_equip = Equiper
+party_items = Objects
+party_back = Retour
+
+party_status_title = Equipe
+party_status_gold = Or :
+party_status_hp = PV : 
+party_status_sp = PS :
+party_status_exp = Exp :
+party_status_data = /
+party_status_weapon = Arme :
+party_status_armor = Armure :
+party_status_attack = Atk :
+party_status_defense = Def :
+party_status_evasion = Eva :
+party_status_priceReduction = Buy :
+party_status_strength = Str :
+party_status_resilience = Res :
+party_status_agility = Agi :
+party_status_charisma = Cha :
+party_status_strategy = Sty :
+party_status_bonusHP = BHP :
+party_status_none = Rien
+
+party_equip_title = Equiper
+party_equip_weapon = Arme
+party_equip_armor = Armure
+party_equip_data = -
+
+party_items_title = Objets
+party_items_usables = Consumables
+party_items_key = Objets clés
+party_items_use = Utiliser l'objet sur
+
+shop_buy = Achat
+shop_amountInInventory = Dans l'inventaire :
+shop_value = ->
+
+# ------------------------------------------------------------------------
+# ------------------------- Dungeons -------------------------------------
+# ------------------------------------------------------------------------
+
+dungeon_floor = Etage :
+
+# ------------------------------------------------------------------------
+# --------------------------- Quests -------------------------------------
+# ------------------------------------------------------------------------
+
+quests_title = Quêtes
+quests_story = Histoire
+quests_arcs = Arcs
+quests_faction = Faction
+quests_secondary = Secondaires
+quests_inProgress = En cours
+quests_done = Finie
+quests_none = Aucune
+
+# ------------------------------------------------------------------------
+# ------------------------- Battles --------------------------------------
+# ------------------------------------------------------------------------
+
+ailement_poison = poison
+ailement_sleep = sommeil
+ailement_confused = confusion
+ailement_attack_up = attaque suppl.
+ailement_defense_up = défence suppl.
+ailement_defense_down = défense bas
+ailement_attack_down = attaque bas
+
+battle_attack = Attaquer
+battle_defend = Parer
+battle_items = Objets
+battle_back = Retour
+
+battle_target_multiple = Plusieurs
+
+battle_action_block = bloque les attaques
+battle_action_attack = utilise
+battle_action_poison = soufre du poison
+battle_action_confused = est confu
+battle_action_sleep = dort
+battle_action_cured = n'est plus affecté par :
+battle_action_ailement = est affecté par :
+
+battle_lost = Vous avez perdu
+battle_won = Vous avez gagné !
+battle_levelUp = a gagné un niveau !
+battle_gold = Or obtenu :
+battle_exp = Exp obtenu :
+
+# ------------------------------------------------------------------------
+# ------------------------ Level up --------------------------------------
+# ------------------------------------------------------------------------
+
+levelUp_title = Montée de niveau !
+levelUp_confirm = Confirmer
+levelUp_remaining = Points restants :
+
+levelUp_force = Force
+levelUp_resilience = Resilience
+levelUp_agility = Agilité
+levelUp_charisma = Charisme
+levelUp_strategy = Stratégie
+levelUp_bonusHP = HP bonus
+
+# ------------------------------------------------------------------------
+# ---------------------- Background --------------------------------------
+# ------------------------------------------------------------------------
+
+
+
+# ------------------------------------------------------------------------
+# ----------------------------- Map --------------------------------------
+# ------------------------------------------------------------------------
+
+City_Iberty_ToRegion = Vers Kalia
+City_Iberty_Doctor = Docteur
+City_Iberty_Shop = Boutique
+City_Iberty_CityHall = Mairie
+City_Iberty_Catacombs = Catacombes
+City_Iberty_Port = Port
+
+Region_Kalia_ToForest = Vers la forêt blanche
+Region_Kalia_Iberty = Iberty
+Region_Kalia_City = Kalia
+Region_Kalia_Farm = Ferme
+Region_Kalia_Camp = Camp "Espoir"
+Region_Kalia_Shrine = Autel de Kalibu
+Region_Kalia_Outpost = Avant poste
+
+City_Kalia_ToRegion = Vers la région
+City_Kalia_Palace = Palais du Consul
+City_Kalia_Shop = Boutique
+City_Kalia_Plaza = Grande Place
+City_Kalia_Park = Parc de Kalibu
+City_Kalia_Lighthouse = Phare
+City_Kalia_Docks = Docks
+City_Kalia_Jackwell = Librairie Jackwell
+City_Kalia_BarGUARD = Bar de Max
+City_Kalia_RebelHQ = Bar du Salut
+
+Region_Forest_ToKalia = Vers Kalia
+Region_Forest_ToMarklicht = Vers le Marklicht
+Region_Forest_ToOrkva = Vers Orkva
+Region_Forest_Field = Prés
+Region_Forest_OrderHQ = QG de l'Ordre
+Region_Forest_Crag = Passe-Falaise
+Region_Forest_Cavern = Caverne
+Region_Forest_Vasalia = Mont Vasalia
+Region_Forest_Camp1 = Camp du Gang du Lac
+Region_Forest_Camp2 = Camp de bandits
+Region_Forest_Camp3 = Base de bandits
+Region_Forest_Village = Village Nordiens
+
+Region_Orkva_ToForest = Vers la forêt blanche
+Region_Orkva_ToMirageIsland = Vers l'Ile Mirage
+Region_Orkva_FortWall = Fort Muraille
+Region_Orkva_Vorlan = Vorlan
+Region_Orkva_Tolau = Tolau
+Region_Orkva_Farm = Ferme de Tolau
+Region_Orkva_MilitaryBase = Base militaire
+Region_Orkva_Village = Altyr
+Region_Orkva_Okville = Okville
+Region_Orkva_Prison = Prison
+Region_Orkva_Shrine = Autel de Kalibu
+
+City_Vorlan_ToOrkva1 = Vers Orkva
+City_Vorlan_ToOrkva2 = Vers Orkva
+City_Vorlan_ToOrkva3 = Vers Orkva
+City_Vorlan_Shop = Boutique
+City_Vorlan_Inn = Auberge
+City_Vorlan_Checkpoint = Checkpoint
+City_Vorlan_CityHall = Mairie
+City_Vorlan_Plaza = Place de Vorlan
+
+City_Okville_ToOrkva1 = Vers Orkva
+City_Okville_ToOrkva2 = Vers Orkva
+City_Okville_ToOrkva3 = Vers Orkva
+City_Okville_Shop = Boutique
+City_Okville_TrainStation = Gare
+City_Okville_Shrine = Autel Royal
+City_Okville_CityHall = Mairie
+
+City_Tolau_ToOrkva1 = To Orkva
+City_Tolau_ToOrkva2 = To Orkva
+City_Tolau_Shop = Boutique
+City_Tolau_Boathouse = Cabane du pecheur
+City_Tolau_Lighthouse = Phare
+City_Tolau_Port = Docks
+City_Tolau_Plaza = Place
+City_Tolau_Courthouse = Tribunal
+City_Tolau_CityHall = Mairie
+City_Tolau_Residences = Residences
+City_Tolau_Inn = Auberge
+
+Region_MirageIsland_ToOrkva = Vers Orkva
+Region_MirageIsland_Cottage = Maisonette
+Region_MirageIsland_Forest = Forêt Mirage
+Region_MirageIsland_HopeHarbor = Port Espoir
+
+City_HopeHarbor_ToIsland = Vers l'Ile Mirage
+City_HopeHarbor_Docks = Docks
+City_HopeHarbor_Lighthouse = Phare
+City_HopeHarbor_Inn = Auberge
+
+Region_Marklicht_ToForest = Vers la Forêt Blanche
+Region_Marklicht_BorderFortress = Forteresse frontalière
+Region_Marklicht_Forest = Forêt
+Region_Marklicht_LibertFarm = Ferme de Libertville
+Region_Marklicht_Libertville = Libertville
+Region_Marklicht_LibertFort = Fort Libert 
+Region_Marklicht_BorderWall = Mur de frontière
+Region_Marklicht_Mountains = Montagnes
+
+City_Libertville_ToMarklicht1 = Vers le Marklicht
+City_Libertville_ToMarklicht2  = Vers le Marklicht
+City_Libertville_ToMarklicht3 = Vers le Marklicht
+City_Libertville_TrainStation = Gare
+City_Libertville_Inn = Auberge
+City_Libertville_Shop = Boutique
+City_Libertville_Plaza = Place Centrale
+City_Libertville_MilitaryAcademy = Académie Militaire
+
+# ------------------------------------------------------------------------
+# -------------------------- Quests --------------------------------------
+# ------------------------------------------------------------------------
+
+mainQuest_1 = Un nouveau jour
+mainQuest_1_0 = Parlez au commerçant à Iberty
+mainQuest_1_1 = Retournez voir le Marchand au palais, à Kalia
+mainQuest_1_done = J'ai fait mon rapport au Marchand
+
+mainQuest_2 = Une légère démotion
+mainQuest_2_0 = Menez l'enquête sur les bandits aux docks de Kalia
+mainQuest_2_1 = Retournez voir le Marchand au palais, à Kalia
+mainQuest_2_done = J'ai mené l'enquête sur le bandit des docks
+
+mainQuest_3 = La Forêt Blanche
+mainQuest_3_0 = Allez au QG de l'ordre dans la Forêt Blanche
+mainQuest_3_1 = Trouvez la trace des bandits à Vorlan
+mainQuest_3_2 = Parlez à l'homme dans l'auberge de Vorlan
+mainQuest_3_done = J'ai trouvé où se trouve le colis
+
+mainQuest_4 = Bandits aux Marklicht
+mainQuest_4_0 = Trouvez l'entrée du camp de bandits au Marklicht
+mainQuest_4_done = J'ai trouvé le colis
+
+rebelQuest_0 = Trouver le salut
+rebelQuest_0_0 = Si je veux rejoindre les rebelles, je dois chercher le salut. Il prendra la forme d'une tasse de thé vert.
+rebelQuest_0_done = J'ai rejoins les rebelles
+
+rebelQuest_1 = Coup de couteau
+rebelQuest_1_0 = Retournez voir les rebelles dans le QG au bar du Salut, à Kalia
+rebelQuest_1_1 = Parlez à la Générale Lara, à la Forteresse Frontalière du Marklicht
+rebelQuest_1_done = J'ai sécurisé des ravitaillements pour la rebellion
+
+rebelQuest_2 = Mauvais Jugement
+rebelQuest_2_0 = Retournez voir les rebelles dans le QG au bar du Salut, à Kalia
+rebelQuest_2_1 = Reprenez l'entrepôt aux docks de Kalia
+rebelQuest_2_2 = Retournez voir les rebelles dans le QG au bar du Salut, à Kalia
+rebelQuest_2_done = J'ai repris le contrôle de l'entrepôt de la rebellion
+
+rebelQuest_3 = Une aventure !
+rebelQuest_3_0 = Bos a les détails de l'aventure au phare de Tolau !
+rebelQuest_3_1 = Trouvez un moyen d'atteindre la forêt de l'Ile Mirage
+rebelQuest_3_2 = Retournez voir les rebelles dans le QG au bar du Salut, à Kalia
+rebelQuest_3_done = J'ai empêché un nouveau vol d'artefact
+
+rebelQuest_4 = Pour le peuple
+rebelQuest_4_0 = Distribuez des tracts à la grande place de Kalia
+rebelQuest_4_1 = Retournez voir les rebelles dans le QG au bar du Salut, à Kalia
+rebelQuest_4_done = J'ai distribué des tracts
+
+rebelQuest_5 = Hotage
+rebelQuest_5_0 = Sauvez Bos au camp Espoir
+rebelQuest_5_done = J'ai sauvé Bos
+
+rebelQuest_6 = Revolution
+rebelQuest_6_0 = Retournez voir les rebelles dans le QG au bar du Salut, à Kalia
+rebelQuest_6_1 = Parlez à Amanda au QG des rebelles, à Kalia
+rebelQuest_6_done = Nous avons renversé le Marchand et repoussé Orkva
+
+marklichtQuest_0 = Changer de camp
+marklichtQuest_0_0 = Si je veux rejoindre le Marklicht, je dois parler à Lame à la Forteresse Frontalière
+marklichtQuest_0_done = J'ai rejoint le Marklicht
+
+marklichtQuest_1 = Propriété dé-volé
+marklichtQuest_1_0 = Retournez voir la Générale Lara à la Forteresse Frontalière du Marklicht
+marklichtQuest_1_1 = Parlez aux rebelles à leur QG, au bar du Salut à Kalia
+marklichtQuest_1_2 = Retournez voir la Générale Lara à la Forteresse Frontalière du Marklicht
+marklichtQuest_1_done = J'ai convaincu les rebelles
+
+marklichtQuest_2 = Droit de passage
+marklichtQuest_2_0 = Parlez au doyen du village Nordien, au nord de Passe Falaise
+marklichtQuest_2_1 = Parlez au doyen du village Nordien, au nord de Passe Falaise
+marklichtQuest_2_2 = Retournez voir la Générale Lara à la Forteresse Frontalière du Marklicht
+marklichtQuest_2_done = J'ai prévenu les Nordiens
+
+marklichtQuest_3 = Espionnage
+marklichtQuest_3_0 = Trouvez Epée à Tolau
+marklichtQuest_3_1 = Suivez Epée jusqu'à la forêt de l'Ile Mirage
+marklichtQuest_3_2 = Retournez voir la Générale Lara à la Forteresse Frontalière du Marklicht
+marklichtQuest_3_done = J'ai suivi Epée et empêché sa tentative de vol
+
+marklichtQuest_4 = Investigation
+marklichtQuest_4_0 = Menez l'enquête dans les montagnes Marklichtiennes
+marklichtQuest_4_1 = Parlez à Sam à Altyr
+marklichtQuest_4_2 = Menez l'enquête à Altyr
+marklichtQuest_4_done = Nous avons mené l'enquête sur l'incursion Orkvienne
+
+marklichtQuest_5 = Evasion de prison
+marklichtQuest_5_0 = Volez un camion militaire à Okville
+marklichtQuest_5_1 = Retournez voir la Générale Lara à la Forteresse Frontalière du Marklicht
+marklichtQuest_5_done = Nous avons découvert le plan Orkvien
+
+marklichtQuest_6 = Invasion & Libération
+marklichtQuest_6_0 = Parlez à la Générale Lara à la Forteresse Frontalière du Marklicht
+marklichtQuest_6_done = Nous avons envahi Kalia
+
+merchantQuest_1 = Célebration
+merchantQuest_1_0 = Retournez voir le Marchand au palais de Kalia
+merchantQuest_1_1 = Trouvez Robertus dans un des bars de Kalia
+merchantQuest_1_2 = Retournez voir le Marchand au palais de Kalia
+merchantQuest_1_done = J'ai tué un rival du Marchand
+
+merchantQuest_2 = Affaires douteuses
+merchantQuest_2_0 = Allez au phare de Kalia
+merchantQuest_2_1 = Obtenez le prototype au Camp Espoir
+merchantQuest_2_2 = Allez au phare de Kalia
+merchantQuest_2_3 = Retournez voir le Marchand au palais de Kalia
+merchantQuest_2_done = J'ai découvert la position des rebelles
+
+merchantQuest_3 = Expédition
+merchantQuest_3_0 = Retrouvez Epée au port de Tolau
+merchantQuest_3_1 = Trouvez l'artefact dans la forêt de l'Ile Mirage
+merchantQuest_3_2 = Retournez voir le Marchand au palais de Kalia
+merchantQuest_3_done = Nous avons trouvé l'artefact
+
+merchantQuest_4 = Finir les rebelles
+merchantQuest_4_0 = Allez aux catacombes d'Iberty
+merchantQuest_4_1 = Retournez voir le Marchand au palais de Kalia
+merchantQuest_4_done = Epée a tué les rebelles
+
+merchantQuest_5 = La chute
+merchantQuest_5_0 = Allez à la grande place de Kalia
+merchantQuest_5_1 = Confrontez Epée au Camp Espoir
+merchantQuest_5_done = J'ai empeché le coup d'état
+
+merchantQuest_6 = To prevent an invasion
+merchantQuest_6_0 = Allez à Fort Muraille, à Orkva
+merchantQuest_6_done = J'ai protégé Kalia
+
+factionQuest_Rebel_1 = La visite
+factionQuest_Rebel_1_0 = Visitez l'autel Suori de Kalia
+factionQuest_Rebel_1_1 = Visitez l'autel Suori d'Orkva
+factionQuest_Rebel_1_done = J'ai sauvé un prêtre
+
+factionQuest_Rebel_2 = Feu & Emeute
+factionQuest_Rebel_2_0 = Mettez le feu à la ferme de Tolau
+factionQuest_Rebel_2_done = J'ai distrait des soldats Orkviens en utilisant un incendit
+
+factionQuest_Marklicht_1 = Rendre hommage
+factionQuest_Marklicht_1_0 = Visitez le mur de frontière au Marklicht
+factionQuest_Marklicht_1_done = Nous avons rendu hommage
+
+factionQuest_Marklicht_2 = Rebellion
+factionQuest_Marklicht_2_0 = Allez à l'autel d'Okville
+factionQuest_Marklicht_2_done = Nous avons créé du mécontentement à Okville
+
+factionQuest_Merchant_1 = Adieux
+factionQuest_Merchant_1_0 = Livrez la lettre à l'autel de Kalibu, à Kalia
+factionQuest_Merchant_1_done = J'ai livré la lettre d'adieux
+
+factionQuest_Merchant_2 = Rogue
+factionQuest_Merchant_2_0 = Allez au Mont Vasalia
+factionQuest_Merchant_2_done = Je me suis occupé des soldats non loyaux
+
+arcQuest_Guard_1 = Une secte à Kalia
+arcQuest_Guard_1_0 = Menez l'enquête aux docks de Kalia avec GARDE
+arcQuest_Guard_1_done = J'ai mené l'enquête aux docks avec GARDE
+
+arcQuest_Guard_2 = Une secte drapée de noblesse
+arcQuest_Guard_2_0 = Retrouvez GARDE à la grande place de Kalia
+arcQuest_Guard_2_done = J'ai mené l'enquête avec GARDE sur le marchant
+
+arcQuest_Guard_3 = Une bombe pour la secte
+arcQuest_Guard_3_0 = Volez une bombe à Fort Muraille
+arcQuest_Guard_3_1 = Retournez voir GARDE au bar de Max à Kalia
+arcQuest_Guard_3_done = J'ai volé une bombe à Orkva
+
+arcQuest_Guard_4 = La fin de la secte
+arcQuest_Guard_4_0 = Retrouvez GARDE au Camp Espoir, à Kalia
+arcQuest_Guard_4_1 = Battez les Invocateurs
+arcQuest_Guard_4_done = J'ai vaincu les Invocateurs avec GARDE
+
+arcQuest_Jackwell_1 = Des herbes pour Jackwell
+arcQuest_Jackwell_1_0 = Cueillez des herbes médicinales dans le côté Kalien de la Forêt Blanche
+arcQuest_Jackwell_1_1 = Donnez les herbes à Jackwell, dans sa librairie, à Kalia
+arcQuest_Jackwell_1_done = J'ai trouvé des herbes médicinales pour Jackwell
+
+arcQuest_Jackwell_2 = Jackwell et les loups
+arcQuest_Jackwell_2_0 = Explorez la caverne dans la Forêt Blanche
+arcQuest_Jackwell_2_1 = Retournez voir Jackwell, dans sa librairie, à Kalia
+arcQuest_Jackwell_2_done = J'ai exploré la caverne de la Forêt Blanche
+
+arcQuest_Jackwell_3 = Jackwell et la montagne
+arcQuest_Jackwell_3_0 = Gravissez le Mont Vasalia
+arcQuest_Jackwell_3_1 = Retournez voir Jackwell, dans sa librairie, à Kalia
+arcQuest_Jackwell_3_done = J'ai gravi le Mont Vasalia
+
+arcQuest_Jackwell_4 = Jackwell et l'eau
+arcQuest_Jackwell_4_0 = Nagez près du phare de Kalia
+arcQuest_Jackwell_4_1 = Retournez voir Jackwell, dans sa librairie, à Kalia
+arcQuest_Jackwell_4_done = J'ai nagé vers le phare de Kalia
+
+arcQuest_Order_1 = Un ordre emprisonné
+arcQuest_Order_1_0 = Parlez au chef de l'Ordre au tribunal de Tolau
+arcQuest_Order_1_1 = Parlez à l'avocat à Tolau
+arcQuest_Order_1_2 = Parlez au chef de l'Ordre au tribunal de Tolau
+arcQuest_Order_1_done = J'ai fait sortir l'Ordre de prison
+
+arcQuest_Order_2 = Une belle récompense
+arcQuest_Order_2_0 = Parlez au chef de l'Ordre dans leur bunker de la forêt blanche
+arcQuest_Order_2_1 = Parlez au chef de l'Ordre dans leur bunker de la forêt blanche
+arcQuest_Order_2_done = J'ai sécurisé le bunker de l'Ordre
+
+arcQuest_Order_3 = Ravitaillement
+arcQuest_Order_3_0 = Parlez au chef de l'Ordre dans leur bunker de la forêt blanche
+arcQuest_Order_3_1 = Obtenez des ravitaillements à Fort Libert, au Marklicht
+arcQuest_Order_3_2 = Rapportez les ravitaillements au bunker de l'Ordre, dans la forêt blanche
+arcQuest_Order_3_done = J'ai obtenu des ravitaillements pour l'ordre
+
+arcQuest_Order_4 = Assaut
+arcQuest_Order_4_0 = Retrouvez les soldats de l'Ordre à la base de bandits proche des mines de la Forêt Blanche
+arcQuest_Order_4_done = J'ai aidé l'Ordre à prendre le contrôle d'une base de bandits
+
+arcQuest_Sam_1 = Complot
+arcQuest_Sam_1_0 = Menez l'enquête à la mairie de Vorlan
+arcQuest_Sam_1_done = J'ai mené l'enquête dans les chemins de fer de Vorlan
+
+arcQuest_Sam_2 = Voleurs
+arcQuest_Sam_2_0 = Trouvez Simon à l'auberge de Tolau
+arcQuest_Sam_2_1 = Retrouvez Simon à la base militaire Orkvienne
+arcQuest_Sam_2_done = J'ai volé des habits militaires pour les bandits
+
+arcQuest_Sam_3 = Le plan
+arcQuest_Sam_3_0 = Allez au meeting au phare de Tolau, la nuit
+arcQuest_Sam_3_1 = Vérifiez les chemins de fer à Vorlan
+arcQuest_Sam_3_done = J'ai empêché le sabotage des chemins de fer de Vorlan
+
+arcQuest_Sam_4 = Le braquage
+arcQuest_Sam_4_0 = Retrouvez les bandits à la gare d'Okville
+arcQuest_Sam_4_1 = Parlez à Sam à Altyr
+arcQuest_Sam_4_done = J'ai déjoué le braquage
+
+arcQuest_Dragon_1 = Chasse aux loups
+arcQuest_Dragon_1_0 = Tuez des loups (0/5)
+arcQuest_Dragon_1_1 = Tuez des loups (1/5)
+arcQuest_Dragon_1_2 = Tuez des loups (2/5)
+arcQuest_Dragon_1_3 = Tuez des loups (3/5)
+arcQuest_Dragon_1_4 = Tuez des loups (4/5)
+arcQuest_Dragon_1_5 = Parlez à la doyenne du village Nordien
+arcQuest_Dragon_1_done = J'ai tué des loups
+
+arcQuest_Dragon_2 = Chasse à l'ours
+arcQuest_Dragon_2_0 = Tuez des ours (0/3)
+arcQuest_Dragon_2_1 = Tuez des ours (1/3)
+arcQuest_Dragon_2_2 = Tuez des ours (2/3)
+arcQuest_Dragon_2_3 = Parlez à la doyenne du village Nordien
+arcQuest_Dragon_2_done = J'ai tué des ours
+
+arcQuest_Dragon_3 = Chasse à la légende
+arcQuest_Dragon_3_0 = Tuez l'ours légendaire dans les prés de la Forêt Blanche
+arcQuest_Dragon_3_1 = Parlez à la doyenne du village Nordien
+arcQuest_Dragon_3_done = J'ai tué l'ours légendaire et repoussé le dragon
+
+arcQuest_Dragon_4 = Chasse au dragon
+arcQuest_Dragon_4_0 = Tuez le dragon au Mont Vasalia
+arcQuest_Dragon_4_1 = Parlez à la doyenne du village Nordien
+arcQuest_Dragon_4_done = J'ai tué le dragon
+
+secondaryQuest_Iberty_Doctor = Médicaments pour le maire 
+secondaryQuest_Iberty_Doctor_0 = Livrez les médicaments au maire d'Iberty
+secondaryQuest_Iberty_Doctor_1 = Parlez au médecin d'Iberty
+secondaryQuest_Iberty_Doctor_done = J'ai livré les médicaments
+
+secondaryQuest_Iberty_Port = Un problème de bandit
+secondaryQuest_Iberty_Port_0 = Parlez au pêcheur à Iberty
+secondaryQuest_Iberty_Port_done = J'ai vaincu le bandit
+
+secondaryQuest_Iberty_Catacombs = Bandits dans les catacombes
+secondaryQuest_Iberty_Catacombs_0 = Nettoyer les catacombes d'Iberty
+secondaryQuest_Iberty_Catacombs_1 = Parlez au soldat d'Iberty
+secondaryQuest_Iberty_Catacombs_done = J'ai nettoyé les catacombes
+
+secondaryQuest_Kalia_Max = Un petit prêt
+secondaryQuest_Kalia_Max_0 = Parler au petit-fils de la serveuse au parc de Kalibu
+secondaryQuest_Kalia_Max_1 = Parler à la serveuse du bar de Max à Kalia
+secondaryQuest_Kalia_Max_done = J'ai parlé au petit-fils de la serveuse
+
+secondaryQuest_Kalia_Shop = Problèmes nocturnes
+secondaryQuest_Kalia_Shop_0 = Vérifier la boutique de Kalia la nuit
+secondaryQuest_Kalia_Shop_done = J'ai vaincu le voleur
+
+secondaryQuest_Kalia_Delivery = Une étrange requete
+secondaryQuest_Kalia_Delivery_0 = Livrez la lettre à la ferme de Kalia
+secondaryQuest_Kalia_Delivery_done = J'ai livré la lettre
+
+secondaryQuest_Vorlan_Soldier = Correspondance privée
+secondaryQuest_Vorlan_Soldier_0 = Livrez la lettre à Altyr
+secondaryQuest_Vorlan_Soldier_1 = Parlez au soldat au checkpoint de Vorlan
+secondaryQuest_Vorlan_Soldier_done = J'ai livré la lettre et peux maintenant entrer dans Vorlan
+
+secondaryQuest_Vorlan_Inn = Livraison de nourriture
+secondaryQuest_Vorlan_Inn_0 = Livrez la nourriture à l'autel de Kalibu d'Orkva durant la nuit
+secondaryQuest_Vorlan_Inn_done = J'ai livré la nourriture au prêtre de l'autel de Kalibu d'Orkva
+
+secondaryQuest_Vorlan_Mayor = Le gouverneur militaire
+secondaryQuest_Vorlan_Mayor_0 = Ambusquez le gouverneur militaire, de nuit, à la place de Vorlan
+secondaryQuest_Vorlan_Mayor_1 = Parlez au maire de Vorlan
+secondaryQuest_Vorlan_Mayor_done = J'ai tué le gouverneur militaire de Vorlan
+
+secondaryQuest_Tolau_Fisherman = Bon voyage
+secondaryQuest_Tolau_Fisherman_0 = Parlez au marchand de Tolau
+secondaryQuest_Tolau_Fisherman_1 = Parlez au marchand de Vorlan
+secondaryQuest_Tolau_Fisherman_2 = Reprenez l'horloge des mains du Gang du Lac dans la Forêt Blanche
+secondaryQuest_Tolau_Fisherman_3 = Apportez l'horloge au pêcheur de Tolau
+secondaryQuest_Tolau_Fisherman_done = Je peux maintenant accéder à l'île Mirage
+
+secondaryQuest_Tolau_Inn = Chantage
+secondaryQuest_Tolau_Inn_0 = Allez aux docks de Tolau durant la nuit
+secondaryQuest_Tolau_Inn_1 = Parlez à la gérante de l'auberge de Tolau
+secondaryQuest_Tolau_Inn_done = J'ai résolu une affaire de chantage
+
+secondaryQuest_Tolau_Mayor = Les secrets du procureur
+secondaryQuest_Tolau_Mayor_0 = Trouvez des secrets dans la maison du procureur de Tolau
+secondaryQuest_Tolau_Mayor_1 = Parlez au maire de Tolau
+secondaryQuest_Tolau_Mayor_done = J'ai trouvé des secrets pour le maire
+
+secondaryQuest_HopeHarbor_Cottage = Maisonette sous occupation
+secondaryQuest_HopeHarbor_Cottage_0 = Nettoyez la maisonnette dans les collines proches de Port Espoir.
+secondaryQuest_HopeHarbor_Cottage_1 = Parlez à la dame au docks de Port Espoir
+secondaryQuest_HopeHarbor_Cottage_done = J'ai nettoyé la maisonette
+
+secondaryQuest_HopeHarbor_Keeper = Le "trésor"
+secondaryQuest_HopeHarbor_Keeper_0 = Reprenez le trésor au camp de bandits proche de Passe-Falaise
+secondaryQuest_HopeHarbor_Keeper_1 = Parlez au gardien de phare de Port Espoir
+secondaryQuest_HopeHarbor_Keeper_done = J'ai retrouvé le trésor du gardien
+
+secondaryQuest_HopeHarbor_Inn = Lettre pour le maître postier
+secondaryQuest_HopeHarbor_Inn_0 = Livrez la lettre au maître postier de Libertville 
+secondaryQuest_HopeHarbor_Inn_done = J'ai livré la lettre
+
+secondaryQuest_Libertville_Courier = Postier à temps partiel
+secondaryQuest_Libertville_Courier_0 = Livrez la lettre à la ferme de Libertville
+secondaryQuest_Libertville_Courier_done = J'ai livré la lettre
+
+secondaryQuest_Libertville_Academy = Espions
+secondaryQuest_Libertville_Academy_0 = Occupez vous des espions à la place centrale de Libertville
+secondaryQuest_Libertville_Academy_1 = Parlez au soldat de l'académie militaire de Libertville
+secondaryQuest_Libertville_Academy_done = J'ai vaincu des espions
+
+secondaryQuest_Libertville_Shop = Pour tuer un ours
+secondaryQuest_Libertville_Shop_0 = Tuez un ours dans les bois proches de Libertville
+secondaryQuest_Libertville_Shop_1 = Parlez au marchand de Libertville
+secondaryQuest_Libertville_Shop_done = J'ai tué un ours
+
+# ------------------------------------------------------------------------
+# -------------------------- Save Locations ------------------------------
+# ------------------------------------------------------------------------
+
+Location_WhiteForest = Forêt Blanche
+Location_Iberty = Iberty
+Location_KaliaFarm = Ferme de Kalia
+Location_KalibuShrine = Autel de Kalibu
+Location_KaliaCamp = Camp "Espoir"
+Location_KaliaOutpost = Avant Poste
+Location_Kalia = Kalia
+Location_Orkva =  Orkva
+Location_Vorlan = Vorlan
+Location_Tolau = Tolau
+Location_Okville = Okville
+Location_BraiseFortress = Forteresse Braise
+Location_MirageIsland = Ile Mirage
+Location_HopeHarbor = Port Espoir
+Location_Marklicht = Marklicht
+Location_Libertville = Libertville
+
+# ------------------------------------------------------------------------
+# ------------------------ Ennemies --------------------------------------
+# ------------------------------------------------------------------------
+
+ENNEMY_Bandit_Hand_name = Bandit
+ENNEMY_Bandit_Knife_name = Bandit
+ENNEMY_Bandit_Revolver_name = Bandit
+ENNEMY_Bandit_Rifle_name = Bandit
+ENNEMY_Bandit_VorlanMainQuest3_name = Bandit
+ENNEMY_Bandit_VorlanMainQuest4_name = Chef
+
+ENNEMY_Summoner_Hand_name = Invocateur
+ENNEMY_Summoner_Knife_name = Invocateur
+ENNEMY_Summoner_Katana_name = Invocateur
+ENNEMY_Summoner_Sword_name = Invocateur
+ENNEMY_Summoner_Hero2_name = ???
+ENNEMY_Summoner_Harold_name = ???
+
+ENNEMY_Animal_Wolf_name = Loup
+ENNEMY_Animal_Bear_name = Ours
+ENNEMY_Animal_LegendaryBear_name = Ours
+ENNEMY_Animal_Dragon1_name = Dragon
+ENNEMY_Animal_Dragon2_name = Dragon
+
+ENNEMY_Orkva_VorlanGovernor_name = Gouverneur militaire
+ENNEMY_Orkva_BodyGuard_name = Garde du corps
+ENNEMY_Orkva_Ogden_name = Garde du corps
+ENNEMY_Orkva_Pal_name = Géneral Pal
+ENNEMY_Orkva_OgdenMarklicht_name = Commandant
+ENNEMY_OrkvaSoldier_Sword_name = Soldat
+ENNEMY_OrkvaSoldier_Revolver_name = Soldat
+ENNEMY_OrkvaSoldier_Rifle_name = Soldat
+
+ENNEMY_Rebel_Hand_name = Rebelle
+ENNEMY_Rebel_Knife_name = Rebelle
+ENNEMY_Rebel_Rifle_name = Rebelle
+ENNEMY_Rebel_Revolver_name = Rebelle
+ENNEMY_Robertus_name = Robertus
+
+ENNEMY_SwordVar1_name = Epée
+ENNEMY_SwordVar2_name = Epée
+ENNEMY_SwordVar3_name = Epée
+
+ENNEMY_KaliaSoldier_Rifle_name = Soldat
+ENNEMY_KaliaSoldier_Revolver_name = Soldat
+ENNEMY_Kalia_Merchant_name = Le Marchand
+
+ENNEMY_MarklichtSoldier_Revolver_name = Soldat
+ENNEMY_MarklichtSoldier_Rifle_name = Soldat
+
+DOGACE_name = Ace
+GUARD_name = GARDE
+ANNA_name = Anna
+LAME_name = Lame
+
+# ------------------------------------------------------------------------
+# ------------------------------- Items ----------------------------------
+# ------------------------------------------------------------------------
+
+ARMOR_LEATHER_name = Armure en cuir
+ARMOR_LEATHER_desc = Une armure basique, qui peut tenir quelques coups.<br>+2 DEF
+ITEM_ATTACK_UP_name = Stimulant
+ITEM_ATTACK_UP_desc = Boost l'attaque d'un allié
+ITEM_CONFUSE_name = Sifflet
+ITEM_CONFUSE_desc = Rend confus un ennemi
+ITEM_CURE_name = Antidote
+ITEM_CURE_desc = Guéri un allié du poison.
+ITEM_DEFENSE_UP_name = Bouclier de défence
+ITEM_DEFENSE_UP_desc = Boost la défence d'un allié
+ITEM_POISON_name = Grenade à gas
+ITEM_POISON_desc = Empoisone un ennemi
+ITEM_POTION_name = Herbes medicinales
+ITEM_POTION_desc = Rend 20 PV à un allié.
+ITEM_HIGHPOTION_name = Trousse de soin
+ITEM_HIGHPOTION_desc = Rend 50 PV à un allié
+ITEM_REVIVE_name = Eau bénite
+ITEM_REVIVE_desc = Réanime un allié (10 PV)
+ITEM_HIGH_REVIVE_name = Défibrilateur
+ITEM_HIGH_REVIVE_desc = Réanime un allié (50 PV)
+ITEM_SLEEP_name = Gas soporifique
+ITEM_SLEEP_desc = Endore un ennemi
+ONEHANDED_AXE_name = Hache
+ONEHANDED_AXE_desc = Une hache banale qui a déjà vu du combat.<br>+3 ATK
+ONEHANDED_SWORD_name = Epee
+ONEHANDED_SWORD_desc = Une épée qui est utilisée par certains bandits.<br>+2 ATK
+SKILL_BASEATTACK_name = Attaque
+SKILL_BASEATTACK_desc = Attaque normale<br>(Un ennemi)
+SKILL_MADSTRIKE_name = Rafales
+SKILL_MADSTRIKE_desc = Attaque légère<br>(Tout les ennemis)
+SKILL_SLASH_name = Trachage
+SKILL_SLASH_desc = Attaque lourde<br>(Un ennemi)
+SKILL_FREEZE_name = Gel
+SKILL_FREEZE_desc = Attaque légère<br>Probabilité de Malus de Défense<br>(Un ennemi)
+ONEHANDED_KNIFE_name = Couteau
+ONEHANDED_KNIFE_desc = La base pour un bandit de la forêt blanche.<br>+1 ATK
+FIREARM_REVOLVER_name = Revolver
+FIREARM_REVOLVER_desc = Un revolver standard.<br>+4 ATK
+FIREARM_REVOLVERGUARD_name = Revolver de GARDE
+FIREARM_REVOLVERGUARD_desc = Le revolver spécial de GARDE.<br>+8 ATK
+ARMOR_TRENCHCOAT_name = Trenchcoat
+ARMOR_TRENCHCOAT_desc = Un trenchcoat rembourré avec un gilet pare-balles.<br>+5 DEF
+TWOHANDED_KATANA_name = Epée de Runan
+TWOHANDED_KATANA_desc = Une épée venant de la province Koskyienne de Runan.<br>+6 ATK
+TWOHANDED_BATTLEAXE_name = Hache de guerre
+TWOHANDED_BATTLEAXE_desc = Cette hache a été utilisée par des Nordiens dans le passé.<br>+8 ATK
+SKILL_DEFENSEUP_name = Protectus
+SKILL_DEFENSEUP_desc = Augmente la défense<br>(un allié)
+SKILL_HEAL_name = Bénediction
+SKILL_HEAL_desc = Soin léger<br>(un allié)
+SKILL_ELKTOUCH_name = Touché du Cerf
+SKILL_ELKTOUCH_desc = Attaque légère<br>Chance d'empoisonner<br>(Un ennemi)
+FIREARM_RIFLE_name = Fusil
+FIREARM_RIFLE_desc = Un fusil militaire standard.<br>+6 ATK
+FIREARM_SHOTGUN_name = Fusil à pompe
+FIREARM_SHOTGUN_desc = Parfait pour du combat rapproché.<br>+7 ATK
+SKILL_FRAGPELLET_name = Balles à fragmentation
+SKILL_FRAGPELLET_desc = Attaque légère<br>Malus de Défense<br>(un ennemi)
+ARMOR_BATTLEARMOR_name = Armure de combat
+ARMOR_BATTLEARMOR_desc = Une armure de combat faite main.<br>+8 DEF
+ARMOR_RIOTSHIELD_name = Bouclier Blindé
+ARMOR_RIOTSHIELD_desc = Un bouclier blindé qui a été utilisé par le fondateur de l'Ordre.<br>+8 DEF
+ARMOR_UNIFORM_name = Uniforme
+ARMOR_UNIFORM_desc = Un uniforme militaire standard.<br>+3 DEF
+FIREARM_HANDGUN_name = Pistolet
+FIREARM_HANDGUN_desc = L'arme favorite des bandits.<br>+3 ATK
+
+# ------------------------------------------------------------------------
+# -------------------------------- Logs ----------------------------------
+# ------------------------------------------------------------------------
+
+Log_Unknown = ???
+Log_Anim = Nouvelle entrée
+
+Log_Iberty_name = Iberty
+Log_Iberty_desc = Iberty est un petit village localisé près de Kalia.<br>Au départ, il était plutôt prospère, mais le règne du Marchand et les bandits alentours l'ont ruiné.<br>De nos jours, c'est un village de pêcheurs plutôt insignifiant.
+
+Log_Kalia_name = Kalia
+Log_Kalia_desc = Kalia est la plus grande ville commerçante de l'entièreté de la côte est du continent, ce qui lui a valu le surnom du "Joyau du Nord".<br>Kalia est une république gouvernée par un consul. Elle administre la région à l'est de la Forêt Blanche, incluant Iberty.
+
+Log_Bandits_name = Bandits
+Log_Bandits_desc = Le crime organisé est commun dans la région.<br>Poussé par la pauvreté ou la cupidité, des gangs ont été formés pour attaquer quiconque entre dans la Forêt Blanche.<br>Ces gangs ne sont pas unifiés et ne travaillent pas ensemble en géneral.
+
+Log_Merchant_name = Le Marchand
+Log_Merchant_desc = Le Marchand est le consul et dictateur de Kalia.<br>Après avoir gagné une élection controversée, il a dissous le parlement.<br>Il aime les artefacts rares et fera tout pour en obtenir de nouveaux.
+
+Log_Rebels_name = La Rébellion
+Log_Rebels_desc = Les rebelles sont opposés au règne du Marchand.<br>Il y avait au départ beaucoup de groupes de résistance. Mais maintenant, il n'y en a plus qu'un seul.<br>Ils sont prêts à tout pour renverser le consul.
+
+Log_Suori_name = Les Suoris
+Log_Suori_desc = La culture Suori est la culture principale de Kalia et de la région alentour.<br>Les Suoris vénèrent le Grand Kalibu, un dieu qui prend la forme d'un caribou. Les pays Suori comprennent Kalia, l'Ile Mirage, Marklicht et Kosky.
+
+Log_Marklicht_name = L'Union du Marklicht
+Log_Marklicht_desc = L'Union du Marklicht est un pays voisin de Kalia.<br>Elle est divisée entre les Suoris au nord et les Luoris au sud.<br>Elle a été fondée lorsque le général Mark a mené un coup d'État et a aboli la monarchie Lichtienne.
+
+Log_Orkva_name = Royaume d'Orkva
+Log_Orkva_desc = Le royaume d'Orkva est une monarchie absolue située au sud de Kalia.<br>Les Orkviens vénèrent le roi d'Orkva.<br>Il y a un siècle, les royaumes d'Orkva et de Licht ont conquis les régions autour de Tolau, Vorlan et Libertville.
+
+Log_Libertville_name = Libertville
+Log_Libertville_desc = Libertville est une petite ville du nord du Marklicht.<br>Pendant la guerre des Unions, elle a été presque entièrement détruite.
+
+Log_WhiteForest_name = La Forêt Blanche
+Log_WhiteForest_desc = La Forêt Blanche est la vaste forêt située à l'ouest de Kalia.<br>Elle constitue une formidable protection naturelle et sert de frontière de jure pour Kalia.
+
+Log_MirageIsland_name = Ile Mirage
+Log_MirageIsland_desc = L'Ile Mirage abrite Port Espoir et un ancien temple Suori.<br>Port Espoir a été fondé lorsque des Toliens, mécontents de leur vie à Tolau, ont décidé de trouver un nouveau foyer.
+
+Log_Northmen_name = Les Nordiens
+Log_Northmen_desc = Les Nordiens vivent dans les régions gelées au nord du Continent.<br>Ils vivent dans un isolement quasi total.
+
+Log_Vorlan_name = Vorlan
+Log_Vorlan_desc = Vorlan est une ville Suori du nord d'Orkva. Autrefois, c'était un important point de passage commercial.<br>Après la conquête de la ville par Orkva il y a un siècle, des séparatistes sont apparus. Le gouvernement royal a décidé de confiner la ville pour tenter de régler la situation.
+
+Log_Tolau_name = Tolau
+Log_Tolau_desc = Tolau est une ville Suori du nord d'Orkva. Autrefois, c'était un important centre de commerce naval.<br>Après la conquête de la ville par Orkva il y a un siècle, des séparatistes sont apparus. Le gouvernement royal a décidé d'imposer un blocus naval à la ville pour tenter de stopper les séparatistes.
+
+Log_Okville_name = Okville
+Log_Okville_desc = Okville est une ville Orkvienne située au nord d'Orkva.<br>Elle s'appelait à l'origine Altyr, mais le gouvernement royal a décidé de la raser et de la reconstruire. La majeure partie de la population Suori est partie vers d'autres villes.
+
+Log_OrkvaLicht_name = Royaume-Uni d'Orkva-Licht
+Log_OrkvaLicht_desc = Cette union entre les royaumes d'Orkva et de Licht a été l'élément déclencheur de la Guerre des Unions.<br>Orkva se considère toujours comme l'héritier de cette union et arbore parfois son drapeau.
+
+Log_Licht_name = Royaume de Licht
+Log_Licht_desc = Le royaume de Licht était l'ancêtre du Marklicht.<br>Il fut renversé lorsque son roi tenta d'unifier son royaume avec celui d'Orkva, ce qui déclencha la guerre des Unions.
+
+Log_ImperialCivilWar_name = Guerre Civile Impériale
+Log_ImperialCivilWar_desc = La guerre civile impériale débuta lorsque le général Oremil tenta de renverser l'Empire central.<br>Ce conflit eut diverses répercussions géopolitiques et aboutit à la création de la Confédération Orémilienne et de la Fédération Bellienne.
+
+Log_Kosky_name = Provinces Unies de Kosky
+Log_Kosky_desc = Les Provinces Unies de Kosky sont un pays situé à l'ouest de Marklicht.<br>Sa culture est Suori. Ses différentes provinces sont assez célèbres dans le monde Suori.
+
+Log_Vlatyr_name = Province de Vlatyr
+Log_Vlatyr_desc = Vlatyr est une province des Provinces Unies de Kosky.<br>Elle est célèbre pour la Forteresse Braise et le parc d'attractions RickeyLand. Elle fut jadis le domaine d'un dragon : le seigneur Braise.
+
+Log_Runan_name = Province de Runan
+Log_Runan_desc = Runan est une province des Provinces Unies de Kosky.<br>Elle est connue pour sa neige, le Chevalier de Runan et les Chocostalines.
+
+Log_Summoners_name = La secte des Invocateurs
+Log_Summoners_desc = Peu de choses sont connues sur cette secte, si ce n'est qu'elle opère depuis la province koskyienne de Vlatyr.<br>Ses membres utilisent la magie invocatrice pour commettre des actes maléfiques.
+
+Log_Order_name = L'Ordre
+Log_Order_desc = L'Ordre Marklichto-Kalien est une organisation militaire sponsorisée par les pays de Kalia et du Marklicht.<br>Son objectif est de résoudre militairement le problème des bandits dans la Forêt Blanche.
+
+Log_RepublicanGuardIncident_name = L'incident de la Garde Républicaine
+Log_RepublicanGuardIncident_desc = La garde républicaine est la garde d'élite du Marchand.<br>Elle a été presque entièrement décimée lorsqu'un rebelle a placé une bombe dans son quartier général. Des civils ont également péri lors de l'incident.<br>Seuls deux gardes ont survécu à l'attaque.
+
+Log_Pal_name = Général Pal
+Log_Pal_desc = Le général Pal est le commandant de la région nord d'Orkva, ainsi que de ses forces armées.<br> Son objectif est d'anéantir les séparatistes Suori à Vorlan et Tolau.
+
+Log_Lara_name = Générale Lara
+Log_Lara_desc = La générale Lara est responsable des forces marklichtiennes dans la région de Libertville.<br>Elle est également chargée de fournir des approvisionnements à divers groupes extérieurs, tels que l'Ordre.
+
+Log_Amanda_name = Amanda
+Log_Amanda_desc = Amanda est la chef de la dernière cellule rebelle de Kalia.<br>Elle est déterminée à renverser le Marchand une fois pour toutes.
+
+Log_UnionsWar_name = La Guerre des Unions
+Log_UnionsWar_desc = Après l'abolition de la monarchie Lichtienne, Orkva a décidé de s'autoproclamer comme le "Royaume Unis d'Orkva-Licht" et d'envahir le Marklicht.<br>La guerre finissa sans vainqueur évident, et Orkva dû abandonner ses ambitions unificatrices.

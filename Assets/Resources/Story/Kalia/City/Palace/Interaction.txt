@@ -1,0 +1,6 @@
+clearStack()
+
+setInteractionChapter(Door;Kalia/City/Palace/Door_Check)
+setInteractionChapter(Exit;MAP-City_Kalia-City_Kalia_Palace)
+
+interact

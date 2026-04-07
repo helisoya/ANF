@@ -1,0 +1,4 @@
+dialog(narrator;_;false;Vorlan_CityHall_RailwayQuest_1)
+dialog(narrator;_;false;Vorlan_CityHall_RailwayQuest_2)
+
+dungeon(Orkva_Vorlan_Railway;0)

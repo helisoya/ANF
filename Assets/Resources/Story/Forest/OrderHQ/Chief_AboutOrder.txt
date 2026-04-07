@@ -1,0 +1,8 @@
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutOrder_1)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutOrder_2)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutOrder_3)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutOrder_4)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutOrder_5)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_AboutOrder_6)
+
+load(Forest/OrderHQ/Chief)

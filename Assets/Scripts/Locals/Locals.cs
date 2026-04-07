@@ -1,0 +1,166 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Unity.VisualScripting;
+using UnityEngine;
+
+/// <summary>
+/// Handles the languages
+/// </summary>
+public class Locals
+{
+    private static Locals self;
+    private string currentLanguage;
+
+    public static string current
+    {
+        get
+        {
+            return self.currentLanguage;
+        }
+    }
+
+    public static string[] currentFiles
+    {
+        get
+        {
+            return self.files;
+        }
+    }
+
+    private Dictionary<string, string> locals;
+    private string[] files;
+
+
+    /// <summary>
+    /// Initiliazes the Locals
+    /// </summary>
+    public static void Init()
+    {
+        new Locals();
+    }
+
+    public Locals()
+    {
+        self = this;
+        files = new string[0];
+        locals = new Dictionary<string, string>();
+        ChangeLanguage("eng");
+    }
+
+    /// <summary>
+	/// Sets the current languages files (aside from system and common)
+	/// </summary>
+	/// <param name="files">The new files to load</param>
+    public static void SetFiles(string[] files)
+    {
+        bool reload = self.files.Length != files.Length;
+
+        if (!reload)
+        {
+            foreach (string file in files)
+            {
+                bool found = false;
+                foreach (string alreadyIn in self.files)
+                {
+                    if (alreadyIn.Equals(file))
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    reload = true;
+                    break;
+                }
+            }
+        }
+
+        if (reload)
+        {
+            self.files = files;
+            ReloadContent();
+        }
+    }
+
+    /// <summary>
+    /// Changes the current language
+    /// </summary>
+    /// <param name="newOne">The new language's code</param>
+    public static void ChangeLanguage(string newOne)
+    {
+        if (newOne.Equals(self.currentLanguage)) return;
+
+        self.currentLanguage = newOne;
+        ReloadContent();
+
+    }
+
+    /// <summary>
+	/// Reloads the locals
+	/// </summary>
+    private static void ReloadContent()
+    {
+        self.locals.Clear();
+        long before = GC.GetTotalMemory(false);
+
+        self.LoadContent(self.currentLanguage + "_system");
+        self.LoadContent(self.currentLanguage + "_common");
+
+        foreach (string file in self.files)
+        {
+            self.LoadContent(self.currentLanguage + "_" + file);
+        }
+
+        Debug.Log("New Local Size : " + ((GC.GetTotalMemory(false) - before) / 1024.0f / 1024.0f));
+    }
+
+    /// <summary>
+    /// Gets a localized string
+    /// </summary>
+    /// <param name="key">The string's ID</param>
+    /// <returns>The localized string</returns>
+    public static string GetLocal(string key)
+    {
+        if (key != null && self.locals.ContainsKey(key)) return self.locals[key];
+        return key;
+    }
+
+    /// <summary>
+    /// Loads the content of a file
+    /// </summary>
+    /// <param name="fileName">The filename</param>
+    void LoadContent(string fileName)
+    {
+        List<string> fileContent = FileManager.ReadTextAsset(Resources.Load<TextAsset>("Locals/" + fileName));
+        string line;
+        string[] split;
+
+        for (int i = 0; i < fileContent.Count; i++)
+        {
+            line = fileContent[i];
+            if (line.StartsWith("#") || string.IsNullOrWhiteSpace(line)) continue;
+
+            split = line.Split(" = ");
+
+            if (split.Length != 2)
+            {
+                Debug.Log("Error on line " + line + ". There should be only one = .");
+                continue;
+            }
+
+            if (split[0].EndsWith(" "))
+            {
+                split[0] = split[0].Substring(0, split[0].Length - 1);
+            }
+            if (split[1].EndsWith(" "))
+            {
+                split[1] = split[1].Substring(0, split[1].Length - 1);
+            }
+            locals.Add(split[0], split[1]);
+        }
+    }
+}

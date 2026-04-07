@@ -1,0 +1,10 @@
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_1)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_2)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_3)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_4)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_5)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_6)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_7)
+dialog(Amanda;Amanda;false;Kalia_BarSalvation_Amanda_AboutRebellion_8)
+
+load(Kalia/City/BarSalvation/Amanda)

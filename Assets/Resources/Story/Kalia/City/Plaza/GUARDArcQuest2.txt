@@ -1,0 +1,8 @@
+setInteractionHidden(Exit;true)
+setInteractionChapter(Safe;Kalia/City/Plaza/GUARDArcQuest2_Safe)
+setInteractionChapter(GUARD;Kalia/City/Plaza/GUARDArcQuest2_GUARD)
+setInteractionChapter(Painting;Kalia/City/Plaza/GUARDArcQuest2_Painting)
+setInteractionChapter(Bookshelf;Kalia/City/Plaza/GUARDArcQuest2_Bookshelf)
+setInteractionChapter(Note;Kalia/City/Plaza/GUARDArcQuest2_Note)
+
+interact

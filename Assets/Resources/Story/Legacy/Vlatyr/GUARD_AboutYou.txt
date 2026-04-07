@@ -1,0 +1,7 @@
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutYou_1)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutYou_2)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutYou_3)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutYou_4)
+dialog(GUARD;GUARD;false;Vlatyr_GUARD_AboutYou_5)
+
+load(Vlatyr/GUARD_Default)

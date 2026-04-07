@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(islandRegion)
+
+playMusic(Exploration_Island)
+removeAllCharacters()
+setBackground(MirageIsland/HopeHarbor/Lighthouse)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_HopeHarbor)
+
+autosave()
+
+if(night = 0){
+	addCharacter(LighthouseKeeper;false)
+	setCharacterPosition(LighthouseKeeper;Keeper)
+	setCharacterRotation(LighthouseKeeper;Keeper)
+	setInteractionChapter(LighthouseKeeper;MirageIsland/HopeHarbor/Lighthouse/Keeper_Enter)
+}
+
+fadeFg(0;false)
+
+load(MirageIsland/HopeHarbor/Lighthouse/Interaction)

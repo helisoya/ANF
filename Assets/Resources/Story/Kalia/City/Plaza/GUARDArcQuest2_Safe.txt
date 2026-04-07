@@ -1,0 +1,4 @@
+dialog(narrator;_;false;Kalia_Plaza_GUARDArcQuest2_Safe_1)
+
+if(tempVar_1 = 0) load(Kalia/City/Plaza/GUARDArcQuest2)
+else load(Kalia/City/Plaza/GUARDArcQuest2_End)

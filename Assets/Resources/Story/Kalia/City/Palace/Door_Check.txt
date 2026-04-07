@@ -1,0 +1,45 @@
+# Check for the door in Kalia's Palace
+
+# Trigger for the end of mainQuest1
+if(mainQuest_1 = 1){ 
+	load(Kalia/City/Palace/MainQuest1_1) 
+	return()
+}
+
+# Trigger for the end of mainQuest2
+if(mainQuest_2 = 1){ 
+	load(Kalia/City/Palace/MainQuest2_1) 
+	return()
+}
+
+# Trigger for the start of merchantQuest1
+if(merchantQuest_1 = 0){ 
+	load(Kalia/City/Palace/MerchantQuest1Start) 
+	return()
+}
+
+# Trigger for the end of merchantQuest1
+if(merchantQuest_1 = 2){ 
+	load(Kalia/City/Palace/MerchantQuest2Start) 
+	return()
+}
+
+# Trigger for the end of merchantQuest2
+if(merchantQuest_2 = 3){ 
+	load(Kalia/City/Palace/MerchantQuest2End) 
+	return()
+}
+
+# Trigger for the end of merchantQuest3
+if(merchantQuest_3 = 2){ 
+	load(Kalia/City/Palace/MerchantQuest3End) 
+	return()
+}
+
+# Trigger for the end of merchantQuest4
+if(merchantQuest_4 = 1){ 
+	load(Kalia/City/Palace/MerchantQuest4End) 
+	return()
+}
+
+load(Kalia/City/Palace/Door_Cant)

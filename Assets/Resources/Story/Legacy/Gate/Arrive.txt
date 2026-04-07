@@ -1,0 +1,9 @@
+if(mainQuest != 5) playMusic(Exploration_Rickey)
+if(mainQuest = 5) playMusic(Exploration2_Rickey)
+
+removeAllCharacters()
+setBackground(RickeyLandGate)
+
+if(rain = 1) changeSkybox(Rain)
+
+load(Gate/Interaction)

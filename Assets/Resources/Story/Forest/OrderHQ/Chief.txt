@@ -1,0 +1,13 @@
+if(arcQuest_Order_4 = 100){
+choice Choice_Chat
+	Choice_AboutBandits Forest/OrderHQ/Chief_AboutBandits
+	Choice_AboutOrder Forest/OrderHQ/Chief_AboutOrder
+	Choice_Nothing Forest/OrderHQ/Chief_Exit
+}
+else{
+choice Choice_Chat
+	Choice_AboutBandits Forest/OrderHQ/Chief_AboutBandits
+	Choice_AboutOrder Forest/OrderHQ/Chief_AboutOrder
+	Choice_AboutTask Forest/OrderHQ/Chief_ArcQuestCheck
+	Choice_Nothing Forest/OrderHQ/Chief_Exit
+}

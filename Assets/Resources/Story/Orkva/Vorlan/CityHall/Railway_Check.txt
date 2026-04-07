@@ -1,0 +1,12 @@
+if(arcQuest_Sam_1 = 0){
+	load(Orkva/Vorlan/CityHall/StartRailwayQuest)
+	return()
+}
+
+if(arcQuest_Sam_3 = 1){
+	load(Orkva/Vorlan/CityHall/SamArcQuest3)
+	return()
+}
+
+dialog(narrator;_;false;Common_DontNeedToGoThere_1)
+load(Orkva/Vorlan/CityHall/Interaction)

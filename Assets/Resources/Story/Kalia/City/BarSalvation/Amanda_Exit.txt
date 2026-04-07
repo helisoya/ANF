@@ -1,0 +1,7 @@
+setCharacterAlpha(Amanda;0;true)
+setCharacterPosition(Amanda;Desk)
+setCharacterRotation(Amanda;Desk)
+setCharacterBody(Amanda;Desk;true)
+setCharacterAlpha(Amanda;1;false)
+
+load(Kalia/City/BarSalvation/HQ)

@@ -1,0 +1,3 @@
+dialog([MC];_;false;OrderHQ_Chief_ArcQuest2End_1)
+dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest2End_2)
+dungeon(Forest_OrderArc2;0)

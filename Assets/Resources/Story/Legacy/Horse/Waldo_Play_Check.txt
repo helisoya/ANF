@@ -1,0 +1,7 @@
+if(horseRaceQuest = 0) Horse/Waldo_HorseRunAway
+if(horseRaceQuest = 1) Horse/Waldo_NoHorse
+if(horseRaceQuest = 2) Horse/Waldo_Play
+
+dialog(Waldo;Waldo;false;Quiz_Waldo_Done_1)
+
+load(Horse/Waldo_Default)

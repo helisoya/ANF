@@ -1,0 +1,15 @@
+# End of Iberty's Soldier Quest
+dialog([MC];_;false;Iberty_CityHall_Soldier_Quest_End_1)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_End_2)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_End_3)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_End_4)
+
+addExpToAll(10)
+addGold(10)
+
+dialog(narrator;_;false;Iberty_CityHall_Soldier_Quest_End_5)
+dialog(Soldier;SoldierKalia2;false;Iberty_CityHall_Soldier_Quest_End_6)
+
+variable(secondaryQuest_Iberty_Catacombs;100)
+
+load(Kalia/Iberty/CityHall/Soldier)

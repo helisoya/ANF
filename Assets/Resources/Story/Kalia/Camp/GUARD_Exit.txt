@@ -1,0 +1,6 @@
+setCharacterAlpha(GUARD;0;true)
+setCharacterRotation(GUARD;Spot1)
+setCharacterPosition(GUARD;Spot1)
+setCharacterAlpha(GUARD;1;false)
+
+load(Kalia/Camp/Interaction)

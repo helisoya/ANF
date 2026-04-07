@@ -1,0 +1,56 @@
+# The first time you enter Vorlan, you get a cutscene about the ongoing military mission in the city
+
+dialog(narrator;_;false;Vorlan_EntranceCutscene_1)
+dialog(narrator;_;false;Vorlan_EntranceCutscene_2)
+dialog(narrator;_;false;Vorlan_EntranceCutscene_3)
+
+if(mainQuest_3 = 1){
+	dialog(narrator;_;false;Vorlan_EntranceCutscene_NeedToEnterVorlan_1)
+	dialog(narrator;_;false;Vorlan_EntranceCutscene_NeedToEnterVorlan_2)
+}
+else{
+	dialog(narrator;_;false;Vorlan_EntranceCutscene_NoNeedToEnterVorlan_1)
+	dialog(narrator;_;false;Vorlan_EntranceCutscene_NoNeedToEnterVorlan_2)
+}
+
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_4)
+
+setCharacterAlpha(OrkvaSoldier;0;true)
+setCharacterPosition(OrkvaSoldier;Front)
+setCharacterRotation(OrkvaSoldier;Front)
+setCharacterAlpha(OrkvaSoldier;1;false)
+
+dialog(narrator;_;false;Vorlan_EntranceCutscene_5)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_6)
+
+dialog([MC];_;false;Vorlan_EntranceCutscene_7)
+dialog(narrator;_;false;Vorlan_EntranceCutscene_8)
+dialog([MC];_;false;Vorlan_EntranceCutscene_9)
+
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_10)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_11)
+
+dialog([MC];_;false;Vorlan_EntranceCutscene_12)
+
+dialog(Soldier;_;false;Vorlan_EntranceCutscene_13)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_14)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_15)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_16)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_17)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_18)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_19)
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_20)
+
+dialog([MC];_;false;Vorlan_EntranceCutscene_21)
+
+dialog(Soldier;OrkvaSoldier;false;Vorlan_EntranceCutscene_22)
+
+setCharacterAlpha(OrkvaSoldier;0;true)
+setCharacterPosition(OrkvaSoldier;SoldierSpot)
+setCharacterRotation(OrkvaSoldier;SoldierSpot)
+setCharacterAlpha(OrkvaSoldier;1;false)
+
+variable(secondaryQuest_Vorlan_Soldier;0)
+variable(cutscene_EntranceVorlan;1)
+
+load(Orkva/Vorlan/Checkpoint/Interaction)

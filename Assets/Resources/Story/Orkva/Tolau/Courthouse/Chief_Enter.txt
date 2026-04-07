@@ -1,0 +1,10 @@
+setCharacterAlpha(OrderChief;0;true)
+setCharacterBody(OrderChief;Cuffs;true)
+setCharacterPosition(OrderChief;Front)
+setCharacterRotation(OrderChief;Front)
+setCharacterAlpha(OrderChief;1;false)
+
+switch arcQuest_Order_1
+	0 Orkva/Tolau/Courthouse/Chief_ArcQuest0
+	2 Orkva/Tolau/Courthouse/Chief_ArcQuest2
+	default Orkva/Tolau/Courthouse/Chief_ArcQuest1

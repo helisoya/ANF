@@ -1,0 +1,1302 @@
+# ---------------------------------------------------------
+# ---------------- Kalia - Shop ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Shop_Greetings_1 = Greetings. How may I help you ?
+
+Kalia_Shop_AboutYou_1 = My family has been trading goods for centuries.
+Kalia_Shop_AboutYou_2 = In fact, my great-great-great grandfather was the founder of this shop.
+Kalia_Shop_AboutYou_3 = At the time, he only sold apples and other commodities from Iberty.
+Kalia_Shop_AboutYou_4 = Nowadays, we mainly sell weapons to whoever's crazy enough to go into the White Forest.
+Kalia_Shop_AboutYou_5 = I would have liked to continue trading with Iberty, but the Merchant won't let us...
+
+Kalia_Shop_StartSubQuest_1 = Actually, I might need help.
+Kalia_Shop_StartSubQuest_2 = I suspect that someone is lurking around my shop at night, but I can't prove it.
+Kalia_Shop_StartSubQuest_3 = Could you investigate this matter ?
+Kalia_Shop_StartSubQuest_4 = I'm no fighter. If a burglar is really here, I wouldn't be able to do anything.
+Kalia_Shop_StartSubQuest_5 = Fine, I'll try to find this mysterious individual.
+Kalia_Shop_StartSubQuest_6 = I should come back at night. I could go to a bar or an inn to pass the time.
+Kalia_Shop_StartSubQuest_7 = Thank you. I'll reward you if you manage to find anything.
+
+Kalia_Shop_SubQuest_1 = I arrive at the shop.
+Kalia_Shop_SubQuest_2 = The shopkeeper wants me to investigate whether or not there is a burglar around.
+Kalia_Shop_SubQuest_3 = ...And it seems he was right.
+Kalia_Shop_SubQuest_4 = Someone comes out of the shadows and makes their way to the shop.
+Kalia_Shop_SubQuest_5 = They are probably going to steal something.
+Kalia_Shop_SubQuest_6 = I intercept them before they can do anything.
+Kalia_Shop_SubQuest_7 = Wha- Where did you come from ?
+Kalia_Shop_SubQuest_8 = What do you plan to do here ?
+Kalia_Shop_SubQuest_9 = ... This !
+
+Kalia_Shop_SubQuest_10 = I heard a commotion. Is everything alright ?!
+Kalia_Shop_SubQuest_11 = The shopkeeper comes rushing. He was probably woken up by the fight.
+Kalia_Shop_SubQuest_12 = I'm fine. I caught your bulgar.
+Kalia_Shop_SubQuest_13 = I... I see. Thank you.
+Kalia_Shop_SubQuest_14 = Now I'll be able to sleep more easily.
+Kalia_Shop_SubQuest_15 = Oh, and here is your pay.
+Kalia_Shop_SubQuest_16 = <color=blue>I received 10 gold from the shopkeeper.</color>
+Kalia_Shop_SubQuest_17 = If you ever need supplies, don't hesitate to come to my shop.
+Kalia_Shop_SubQuest_18 = The shopkeeper goes back home. I guess I'm done here.
+
+# ---------------------------------------------------------
+# -------------- Kalia - Palace ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Palace_Door_Cant_1 = I shouldn't enter for now.
+
+Kalia_Palace_MainQuest1_1_1 = ... Time to make my report, I guess.
+Kalia_Palace_MainQuest1_1_2 = The Merchant won't be happy to learn that I lost the package. 
+Kalia_Palace_MainQuest1_1_3 = He might even fire me now that I think about it...
+Kalia_Palace_MainQuest1_1_4 = Oh well, here goes...
+Kalia_Palace_MainQuest1_1_5 = I knock and enter his office.
+Kalia_Palace_MainQuest1_1_6 = Here he is, the Consul of the Republic of Kalia, my boss.
+Kalia_Palace_MainQuest1_1_7 = Hmm ? Who is this ?
+Kalia_Palace_MainQuest1_1_8 = Shield, is that you ?
+Kalia_Palace_MainQuest1_1_9 = Yes sir... I have come to make my report.
+Kalia_Palace_MainQuest1_1_10 = 'Shield'... My codename in the guard.
+Kalia_Palace_MainQuest1_1_11 = I dislike using it. I find it useless nowadays.
+Kalia_Palace_MainQuest1_1_12 = Where were you ?! The package was supposed to arrive yesterday night !
+Kalia_Palace_MainQuest1_1_13 = There were... complications, sir. I'm afraid the package was... lost.
+Kalia_Palace_MainQuest1_1_14 = Lost ?! What ?! HOW ?!
+Kalia_Palace_MainQuest1_1_15 = What am I even paying you for ? Do you even know how valuable this package was ?
+Kalia_Palace_MainQuest1_1_16 = Si-
+Kalia_Palace_MainQuest1_1_17 = Since that incident, both of you just keep screwing up every operations !
+Kalia_Palace_MainQuest1_1_18 = Could you just try for once in your life ?
+Kalia_Palace_MainQuest1_1_19 = I just asked to escort a courier, nothing more !
+Kalia_Palace_MainQuest1_1_20 = And yet, you managed to lose the package ?
+Kalia_Palace_MainQuest1_1_21 = Sir, bandits ambushed us an-
+Kalia_Palace_MainQuest1_1_22 = Bandits ! It's always the bandits, isn't it ?
+Kalia_Palace_MainQuest1_1_23 = 'Bandits attacked the factory', 'Bandits overran the outpost'...
+Kalia_Palace_MainQuest1_1_24 = It seems that these... things... are just the perfect excuses for slackers nowadays.
+Kalia_Palace_MainQuest1_1_25 = Well, there is a slight bandit problem in the forest, yes...
+Kalia_Palace_MainQuest1_1_26 = But good luck telling him that.
+Kalia_Palace_MainQuest1_1_27 = What could bandits want with my package anyway ?
+Kalia_Palace_MainQuest1_1_28 = It's just an artifact I got from the Marklichtian National Museum.
+Kalia_Palace_MainQuest1_1_29 = Just that ?! Come on, that thing could be worth a fortune.
+Kalia_Palace_MainQuest1_1_30 = Sir, I have a plan to find the lost package.
+Kalia_Palace_MainQuest1_1_31 = If you simply let me use the dog, I might be able to-
+Kalia_Palace_MainQuest1_1_32 = A dog ? Of course you are a dog, idiot !
+Kalia_Palace_MainQuest1_1_33 = And a dog you will be as long as you don't stop being so lazy !
+Kalia_Palace_MainQuest1_1_34 = Forget the Guard's dog ! Forget the package !
+Kalia_Palace_MainQuest1_1_35 = I'm giving this case to someone hopefully more competent.
+Kalia_Palace_MainQuest1_1_36 = Sword ! Come here, my lackey.
+Kalia_Palace_MainQuest1_1_37 = Sir ?
+Kalia_Palace_MainQuest1_1_38 = This is Sword, my only colleague in the Republican Guard.
+Kalia_Palace_MainQuest1_1_39 = Sword is, of course, only his codename. I don't know his real name.
+Kalia_Palace_MainQuest1_1_40 = You are to locate my lost package. Do not fail me.
+Kalia_Palace_MainQuest1_1_41 = Lost ? You mean Shield lost it ?
+Kalia_Palace_MainQuest1_1_42 = Yes ! This fool must have thought it was a nice joke... It is not.
+Kalia_Palace_MainQuest1_1_43 = Eh ! I always knew he'd fail eventually.
+Kalia_Palace_MainQuest1_1_44 = Don't worry, sir. I'll find your package.
+Kalia_Palace_MainQuest1_1_45 = The Order keeps tabs on bandit movements in the White Forest.
+Kalia_Palace_MainQuest1_1_46 = I'm sure they could give me a clue about the package.
+Kalia_Palace_MainQuest1_1_47 = Whatever, I just want my package, Sword.
+Kalia_Palace_MainQuest1_1_48 = It shall be done posthaste !
+Kalia_Palace_MainQuest1_1_49 = Sword exits the room. This isn't good.
+Kalia_Palace_MainQuest1_1_50 = He hates me, and tends to put himself in dangerous situations.
+Kalia_Palace_MainQuest1_1_51 = Chances are, I'll have to rescue him from a bandit camp again...
+Kalia_Palace_MainQuest1_1_52 = But for now...
+Kalia_Palace_MainQuest1_1_53 = What about me, sir ? Should I be on standby for now ?
+Kalia_Palace_MainQuest1_1_54 = Already thinking of slacking of ? Dream on !
+Kalia_Palace_MainQuest1_1_55 = I have a task for you. It's about the rebels.
+Kalia_Palace_MainQuest1_1_56 = After remaining in the dark for so long, my spies have located one.
+Kalia_Palace_MainQuest1_1_57 = He's at the docks. Dispose of him and learn his secrets.
+Kalia_Palace_MainQuest1_1_58 = It shall be done, sir.
+Kalia_Palace_MainQuest1_1_59 = Do not fail me, Shield. This is your last chance.
+Kalia_Palace_MainQuest1_1_60 = I exit the room. This could have gone better...
+Kalia_Palace_MainQuest1_1_61 = The Merchant will have my head if I fail this one.
+Kalia_Palace_MainQuest1_1_62 = The rebels... How long has it been ? 20 or so years ?
+Kalia_Palace_MainQuest1_1_63 = As the Merchant held onto power, people started to riot against him.
+Kalia_Palace_MainQuest1_1_64 = The guard dealt with them for a time. Then the incident happened.
+Kalia_Palace_MainQuest1_1_65 = Can I even hope to deal with them alone ? When hundreds couldn't...
+Kalia_Palace_MainQuest1_1_66 = Am I even fighting the right crowd ? Aren't they right in a way ?
+Kalia_Palace_MainQuest1_1_67 = ... No. I can't ask myself these questions now.
+Kalia_Palace_MainQuest1_1_68 = I need to get to the docks and find that rebel.
+
+Kalia_Palace_MainQuest2_1_1 = ...Can't believe I'm back so soon...
+Kalia_Palace_MainQuest2_1_2 = I enter the Merchant's office.
+Kalia_Palace_MainQuest2_1_3 = Sir. I came to make my report.
+Kalia_Palace_MainQuest2_1_4 = Ah ! Finally !
+Kalia_Palace_MainQuest2_1_5 = So, did you kill that rebel ? Did you find out his secrets ?
+Kalia_Palace_MainQuest2_1_6 = I... took care of him, yes.
+Kalia_Palace_MainQuest2_1_7 = I also managed to find one of the rebel's supply stash.
+Kalia_Palace_MainQuest2_1_8 = I can't tell him what really happened.
+Kalia_Palace_MainQuest2_1_9 = Good, good. You managed to save face, Shield.
+Kalia_Palace_MainQuest2_1_10 = I was beginning to think I had to engage article 7 on you.
+Kalia_Palace_MainQuest2_1_11 = No need, sir. I... I learned my lesson.
+Kalia_Palace_MainQuest2_1_12 = Good ! Because there's a new mission for you.
+Kalia_Palace_MainQuest2_1_13 = Oh ?
+Kalia_Palace_MainQuest2_1_14 = That good for nothing Sword broke contact. I can't reach him via the radio.
+Kalia_Palace_MainQuest2_1_15 = Maybe he ran into some bandits ?
+Kalia_Palace_MainQuest2_1_16 = I don't care ! All I want is my package, and he's not helping.
+Kalia_Palace_MainQuest2_1_17 = So I want you to find him and my precious package.
+Kalia_Palace_MainQuest2_1_18 = Of course, sir. It shall be done.
+Kalia_Palace_MainQuest2_1_19 = I exit the room. This isn't good.
+Kalia_Palace_MainQuest2_1_20 = Sword has a radio that he can use to communicate with the palace.
+Kalia_Palace_MainQuest2_1_21 = And if he went silent...
+Kalia_Palace_MainQuest2_1_22 = I have to find him. I should start by visiting the Order's HQ in the White Forest.
+Kalia_Palace_MainQuest2_1_23 = They are a group of soldiers founded by Kalia and the neighboring Marklicht.
+Kalia_Palace_MainQuest2_1_24 = Their goal is to solve the bandit crisis in the White Forest.
+Kalia_Palace_MainQuest2_1_25 = Sword went there to see if they had any information on the package.
+Kalia_Palace_MainQuest2_1_26 = Whatever happened, they should know something.
+Kalia_Palace_MainQuest2_1_27 = Wof !
+Kalia_Palace_MainQuest2_1_28 = !
+Kalia_Palace_MainQuest2_1_29 = Oh. It's just you, Ace.
+Kalia_Palace_MainQuest2_1_30 = This is the guard's dog. He's sort of our mascot.
+Kalia_Palace_MainQuest2_1_31 = ...Maybe I should bring him with me.
+Kalia_Palace_MainQuest2_1_32 = The forest is dangerous, and he was trained to fight.
+Kalia_Palace_MainQuest2_1_33 = What do you say, Ace ? Do you want to help me find Sword ?
+Kalia_Palace_MainQuest2_1_34 = Wof !
+Kalia_Palace_MainQuest2_1_35 = Eh. Fine, let's go.
+Kalia_Palace_MainQuest2_1_36 = <color=blue>Ace added to the party.</color>
+
+Kalia_Palace_MerchantQuest1Start_1 = Shield, finally !
+Kalia_Palace_MerchantQuest1Start_2 = What were you doing ? Sword arrived here earlier, with the artifact no less.
+Kalia_Palace_MerchantQuest1Start_3 = He told me he defeated some brigands alone and got it back.
+Kalia_Palace_MerchantQuest1Start_4 = What am I paying you for... You incompetent fool.
+Kalia_Palace_MerchantQuest1Start_5 = I guess Sword didn't tell him about him getting injured.
+Kalia_Palace_MerchantQuest1Start_6 = I'm sorry for the delay. Sword returned ahead of me with the artifact. We fought the bandits together.
+Kalia_Palace_MerchantQuest1Start_7 = Hmm ? ....
+Kalia_Palace_MerchantQuest1Start_8 = ...
+Kalia_Palace_MerchantQuest1Start_9 = Sword... I hate liars more than losing money. Don't fail me again.
+Kalia_Palace_MerchantQuest1Start_10 = Yes, sir.
+Kalia_Palace_MerchantQuest1Start_11 = Such is our life. I do something. Sword takes the credit, and sometimes, he gets reprimmanded.
+Kalia_Palace_MerchantQuest1Start_12 = The Merchant examines the artifact. He seems happy.
+Kalia_Palace_MerchantQuest1Start_13 = Oh, my sweet, sweet artifact... I have just the place for you, right next to that bronze statue.
+Kalia_Palace_MerchantQuest1Start_14 = You have done... well, my loyal guards. You have retrieved a most magnificent artifact.
+Kalia_Palace_MerchantQuest1Start_15 = But there is still much work to do. I still have more artifacts to gather.
+Kalia_Palace_MerchantQuest1Start_16 = My artifacts... I want them all !
+Kalia_Palace_MerchantQuest1Start_17 = Sir ?
+Kalia_Palace_MerchantQuest1Start_18 = That fool... Robertus ! He dares to have more than me !
+Kalia_Palace_MerchantQuest1Start_19 = Robertus... Wasn't he the business partner of the Merchant back in the days ?
+Kalia_Palace_MerchantQuest1Start_20 = Before he entered politics, at least.
+Kalia_Palace_MerchantQuest1Start_21 = Even worse... He dares to question my rule !
+Kalia_Palace_MerchantQuest1Start_22 = What ?
+Kalia_Palace_MerchantQuest1Start_23 = I heard from good ears that he spoke in favor of the rebels.
+Kalia_Palace_MerchantQuest1Start_24 = He said that I was holding onto power, that I was a tyrant.
+Kalia_Palace_MerchantQuest1Start_25 = Prepostrous !
+Kalia_Palace_MerchantQuest1Start_26 = ...
+Kalia_Palace_MerchantQuest1Start_27 = Yes, yes. I'm not a tyrant. They are all radicals, lunatics !
+Kalia_Palace_MerchantQuest1Start_28 = I disbanded the parliament. So what ? They were obstructing my trades.
+Kalia_Palace_MerchantQuest1Start_29 = I made it easier for me and my loyal supporters to do business.
+Kalia_Palace_MerchantQuest1Start_30 = What isn't there to like ? Kalia's economy is doing good !
+Kalia_Palace_MerchantQuest1Start_31 = Who cares if some peasants in Iberty can't sell their things here. They don't have the money.
+Kalia_Palace_MerchantQuest1Start_32 = Grr... Back in my days, I would travel the entire continent to sell things.
+Kalia_Palace_MerchantQuest1Start_33 = "Sir, your goods are so good. Please let us buy some more.", they said.
+Kalia_Palace_MerchantQuest1Start_34 = Uh, sir. What is your point ? About Robertus.
+Kalia_Palace_MerchantQuest1Start_35 = Robertus ?! That radical lunatic... He must be dealt with.
+Kalia_Palace_MerchantQuest1Start_36 = Not only does he have more Lonasian artifacts than me, but he also dares to question my rule !
+Kalia_Palace_MerchantQuest1Start_37 = We've heard that line before.
+Kalia_Palace_MerchantQuest1Start_38 = Don't worry, we'll deal with this criminal.
+Kalia_Palace_MerchantQuest1Start_39 = Grr.... I want him dead ! Sword, Shield. Kill. Him.
+Kalia_Palace_MerchantQuest1Start_40 = Of course. And we'll also confiscate his artifact collection.
+Kalia_Palace_MerchantQuest1Start_41 = Yes, yes ! He probably stole them anyway !
+Kalia_Palace_MerchantQuest1Start_42 = We have to put a stop to his crimes !
+Kalia_Palace_MerchantQuest1Start_43 = Of course. Let's go, my lackey.
+Kalia_Palace_MerchantQuest1Start_44 = Uh, yes.
+Kalia_Palace_MerchantQuest1Start_45 = I'll be in charge of getting the collection back.
+Kalia_Palace_MerchantQuest1Start_46 = Go take care of Robertus.
+Kalia_Palace_MerchantQuest1Start_47 = I hear he likes to drink in bars quite often.
+Kalia_Palace_MerchantQuest1Start_48 = A- Alright...
+Kalia_Palace_MerchantQuest1Start_49 = I'm not that happy with political assassination. But disobeying orders would mean my death.
+Kalia_Palace_MerchantQuest1Start_50 = Let's find this Robertus.
+
+Kalia_Palace_MerchantQuest1End_1 = I succeeded, sir.
+Kalia_Palace_MerchantQuest1End_2 = Ah, Sword. I knew I could count on you.
+Kalia_Palace_MerchantQuest1End_3 = Uh... It's Shield, sir.
+Kalia_Palace_MerchantQuest1End_4 = Uh ? Shield ? When did you get here ?
+Kalia_Palace_MerchantQuest1End_5 = I... I just got here.
+Kalia_Palace_MerchantQuest1End_6 = Then tell me ! Was Robertus dealt with ?
+Kalia_Palace_MerchantQuest1End_7 = Of course. He attacked me and died in the following fight.
+Kalia_Palace_MerchantQuest1End_8 = Grr... I knew Manf- Robertus was a leech. He was always a thorn in my side.
+Kalia_Palace_MerchantQuest1End_9 = You did well... guard.
+Kalia_Palace_MerchantQuest1End_10 = Do you need me for anything else ? Or should I go help Sword ?
+Kalia_Palace_MerchantQuest1End_11 = No, no. Sword is currently finishing transporting the artifacts.
+Kalia_Palace_MerchantQuest1End_12 = I have another mission for you. It's about the... the...
+Kalia_Palace_MerchantQuest1End_13 = The rebels ! Yes. I want them dead !
+Kalia_Palace_MerchantQuest1End_14 = I want you to find out where they live.
+Kalia_Palace_MerchantQuest1End_15 = I received intel at some point. Something about a bar and salvation.
+Kalia_Palace_MerchantQuest1End_16 = No, no. I'm sure they've fled to the countryside by now.
+Kalia_Palace_MerchantQuest1End_17 = I can feel it in my bones... Crawling...
+Kalia_Palace_MerchantQuest1End_18 = Sir ?
+Kalia_Palace_MerchantQuest1End_19 = Go to the lighthouse. One of my associates lives there.
+Kalia_Palace_MerchantQuest1End_20 = He'll be able to tell you where they went. He knows everything.
+Kalia_Palace_MerchantQuest1End_21 = Swor- Shield. If he asks for a payment, comply.
+Kalia_Palace_MerchantQuest1End_22 = It's the way he works.
+Kalia_Palace_MerchantQuest1End_23 = Alright. I'll do that, sir.
+Kalia_Palace_MerchantQuest1End_24 = That Robertus... How could he... 
+Kalia_Palace_MerchantQuest1End_25 = I leave the room. The Merchant is rambling about nonsense.
+Kalia_Palace_MerchantQuest1End_26 = When did his mind start deteriorating so fast ?
+Kalia_Palace_MerchantQuest1End_27 = I just hope I got on the right wagon...
+Kalia_Palace_MerchantQuest1End_28 = Okay, time to find this mysterious associate.
+
+Kalia_Palace_MerchantQuest2End_1 = Sword is already here. I guess he must have finished moving those artifacts.
+Kalia_Palace_MerchantQuest2End_2 = Sword, you're finally here.
+Kalia_Palace_MerchantQuest2End_3 = Sir, it's Shield.
+Kalia_Palace_MerchantQuest2End_4 = Uh ? Then who was I talking to...
+Kalia_Palace_MerchantQuest2End_5 = Sir. We were talking about the artifacts.
+Kalia_Palace_MerchantQuest2End_6 = I finished moving them to the dining area, as instructed.
+Kalia_Palace_MerchantQuest2End_7 = Uh ? artifacts ? Why, yes. I love artifacts !
+Kalia_Palace_MerchantQuest2End_8 = My sweet package... When you get home...
+Kalia_Palace_MerchantQuest2End_9 = ...
+Kalia_Palace_MerchantQuest2End_10 = ...
+Kalia_Palace_MerchantQuest2End_11 = Sir-
+Kalia_Palace_MerchantQuest2End_12 = Shield ! When did you get here ?
+Kalia_Palace_MerchantQuest2End_13 = Did you get rid of Robertus ?
+Kalia_Palace_MerchantQuest2End_14 = Sir, I already did that. He's dead, remember ?
+Kalia_Palace_MerchantQuest2End_15 = You sent me to the lighthouse t-
+Kalia_Palace_MerchantQuest2End_16 = Sir, if I may. I have intel on a priceless artifact that could interest you.
+Kalia_Palace_MerchantQuest2End_17 = Uh ? Yes, yes. 
+Kalia_Palace_MerchantQuest2End_18 = It's located in the Mirage Island's Forest. It's an old scepter.
+Kalia_Palace_MerchantQuest2End_19 = Robertus had documents about it in his study.
+Kalia_Palace_MerchantQuest2End_20 = Robertus...
+Kalia_Palace_MerchantQuest2End_21 = Hmm... Fine ! Go get that scepter.
+Kalia_Palace_MerchantQuest2End_22 = I don't want you to laze around.
+Kalia_Palace_MerchantQuest2End_23 = This artifact will be a fine addition to my collection.
+Kalia_Palace_MerchantQuest2End_24 = Then it's settled, come my lackey.
+Kalia_Palace_MerchantQuest2End_25 = I'm not your lackey, Sword.
+Kalia_Palace_MerchantQuest2End_26 = Suit yourself. Let's meet at Tolau's docks if you insist on not following me.
+Kalia_Palace_MerchantQuest2End_27 = Sword hurries out of the room.
+Kalia_Palace_MerchantQuest2End_28 = This whole thing is lunar. What is going on ?
+Kalia_Palace_MerchantQuest2End_29 = Sir. Are you sure about this ?
+Kalia_Palace_MerchantQuest2End_30 = Uh ? Who are you ?
+Kalia_Palace_MerchantQuest2End_31 = Uh. I'm Shield, sir. You know, the guard ?
+Kalia_Palace_MerchantQuest2End_32 = Of course I know who you are !
+Kalia_Palace_MerchantQuest2End_33 = Sir, if I may. Are you feeling well ?
+Kalia_Palace_MerchantQuest2End_34 = You've been in and out ever since we returned with the artfact.
+Kalia_Palace_MerchantQuest2End_35 = ...
+Kalia_Palace_MerchantQuest2End_36 = Swo- Shield. I'm getting old.
+Kalia_Palace_MerchantQuest2End_37 = Sometimes, it's difficult to remember anything.
+Kalia_Palace_MerchantQuest2End_38 = That's why I have you and Sword. That way I can't forget anything.
+Kalia_Palace_MerchantQuest2End_39 = But if this continues... What's the plan ?
+Kalia_Palace_MerchantQuest2End_40 = What do we do if you become too old or worse, die ?
+Kalia_Palace_MerchantQuest2End_41 = You never appointed a successor. Does that mean elections will be held again ?
+Kalia_Palace_MerchantQuest2End_42 = ...
+Kalia_Palace_MerchantQuest2End_43 = Shield. I'll appoint one. Don't worry about that.
+Kalia_Palace_MerchantQuest2End_44 = And as for the future, I don't care.
+Kalia_Palace_MerchantQuest2End_45 = I used the state to fulfill what I wanted.
+Kalia_Palace_MerchantQuest2End_46 = My successor will be able to do the same. Whatever that purpose may be.
+Kalia_Palace_MerchantQuest2End_47 = I see.
+Kalia_Palace_MerchantQuest2End_48 = By the way. Sword is acting weird these days, don't you think ?
+Kalia_Palace_MerchantQuest2End_49 = Hmm ? Maybe ? He was always a troublemaker.
+Kalia_Palace_MerchantQuest2End_50 = I know. But, I don't know... He seems to be... scheming ?
+Kalia_Palace_MerchantQuest2End_51 = Like that artifact talk. Are you sure about leaving the rebels be ?
+Kalia_Palace_MerchantQuest2End_52 = Shield. He's having fun. Let him run free once in a while.
+Kalia_Palace_MerchantQuest2End_53 = And what if he's planning something ? He can't do much anyway.
+Kalia_Palace_MerchantQuest2End_54 = As for the rebels... Did you learn anything from my associate ?
+Kalia_Palace_MerchantQuest2End_55 = Yes. They live in th-
+Kalia_Palace_MerchantQuest2End_56 = Shh... Keep that to yourself for now.
+Kalia_Palace_MerchantQuest2End_57 = We'll worry about when you'll have found that scepter.
+Kalia_Palace_MerchantQuest2End_58 = Now go, Sword is waiting for you.
+Kalia_Palace_MerchantQuest2End_59 = Sight... I would have prefered if you two went along.
+Kalia_Palace_MerchantQuest2End_60 = Yes, yes. I'll get going then.
+Kalia_Palace_MerchantQuest2End_61 = All the suffering he caused. And he doesn't care...
+Kalia_Palace_MerchantQuest2End_62 = He's just holding onto power because of greed. He doesn't care about his legacy.
+Kalia_Palace_MerchantQuest2End_63 = I fear for the day when he dies. The power vacuum could be dangerous.
+Kalia_Palace_MerchantQuest2End_64 = But it's not like I want to be the consul or anything.
+Kalia_Palace_MerchantQuest2End_65 = To be frank, I'd rather disappear in the Koskyian wilderness.
+Kalia_Palace_MerchantQuest2End_66 = That would be a nice refresher after this mess.
+Kalia_Palace_MerchantQuest2End_67 = Still, I better catch up to Sword.
+
+Kalia_Palace_MerchantQuest3End_1 = Sir, we found the scepter.
+Kalia_Palace_MerchantQuest3End_2 = Good, good. Place it next to the others.
+Kalia_Palace_MerchantQuest3End_3 = What should we do now ?
+Kalia_Palace_MerchantQuest3End_4 = Its high time we dealt with the rebels.
+Kalia_Palace_MerchantQuest3End_5 = Take Sword with you, go to their hideout, and kill them all.
+Kalia_Palace_MerchantQuest3End_6 = These radicals cannot be left alone. They'll try to steal my collection.
+Kalia_Palace_MerchantQuest3End_7 = Of course. We'll head to Iberty right away.
+Kalia_Palace_MerchantQuest3End_8 = Sir, I won't disappoint you ! I'll personally kill those rebels !
+Kalia_Palace_MerchantQuest3End_9 = Yes, yes. Now, go.
+Kalia_Palace_MerchantQuest3End_10 = Well, time to head to Iberty's catacombs.
+
+Kalia_Palace_MerchantQuest4End_1 = Shield ! Come here, my boy.
+Kalia_Palace_MerchantQuest4End_2 = Where's Sword ?
+Kalia_Palace_MerchantQuest4End_3 = Hmm... I wonder.
+Kalia_Palace_MerchantQuest4End_4 = Sir, the rebels were...
+Kalia_Palace_MerchantQuest4End_5 = Decimated, I know. Sword told me he killed them.
+Kalia_Palace_MerchantQuest4End_6 = He also told me you didn't take part in the operation ?
+Kalia_Palace_MerchantQuest4End_7 = Barely. I wanted to capture them, but...
+Kalia_Palace_MerchantQuest4End_8 = My boy, I made a decision.
+Kalia_Palace_MerchantQuest4End_9 = What's going on ? He never called me like that before.
+Kalia_Palace_MerchantQuest4End_10 = I already told Sword. He left in anger. It doesn't matter in the end.
+Kalia_Palace_MerchantQuest4End_11 = What did you tell him, sir ?
+Kalia_Palace_MerchantQuest4End_12 = I thought about what you told me. About my heir.
+Kalia_Palace_MerchantQuest4End_13 = I have come to a conclusion. I know who will lead after my death.
+Kalia_Palace_MerchantQuest4End_14 = You don't need to rush things. You're not dead yet.
+Kalia_Palace_MerchantQuest4End_15 = I can feel it... My time is up.
+Kalia_Palace_MerchantQuest4End_16 = Shield, no... [MC].
+Kalia_Palace_MerchantQuest4End_17 = Sir ?
+Kalia_Palace_MerchantQuest4End_18 = I want you to lead after my death.
+Kalia_Palace_MerchantQuest4End_19 = No... I want you to lead from now on. Immediate.
+Kalia_Palace_MerchantQuest4End_20 = What ? But I haven't followed orders as I should.
+Kalia_Palace_MerchantQuest4End_21 = Sword was the one who-
+Kalia_Palace_MerchantQuest4End_22 = [MC], my boy. You yourself told me that "He's scheming", no ?
+Kalia_Palace_MerchantQuest4End_23 = Well...
+Kalia_Palace_MerchantQuest4End_24 = Sword is a simpleton. He just wants to feel respected by others.
+Kalia_Palace_MerchantQuest4End_25 = You, on the other hand, have judgment.
+Kalia_Palace_MerchantQuest4End_26 = The next leader of Kalia should have impeccable judgment to know what to do next.
+Kalia_Palace_MerchantQuest4End_27 = Is old age finally getting to him ? Why is he doing this ?
+Kalia_Palace_MerchantQuest4End_28 = Sir, I understand. Do you have orders for me when I will rule ?
+Kalia_Palace_MerchantQuest4End_29 = You are already ruling, my boy. Do what you think is right.
+Kalia_Palace_MerchantQuest4End_30 = As for me, let me die in here.
+Kalia_Palace_MerchantQuest4End_31 = I won't see tomorrow morning, I'm afraid.
+Kalia_Palace_MerchantQuest4End_32 = So let me die next to my collection.
+Kalia_Palace_MerchantQuest4End_33 = I understand. I am honored by your trust in me.
+Kalia_Palace_MerchantQuest4End_34 = Go, the city needs you. Maybe you'll do better than me.
+Kalia_Palace_MerchantQuest4End_35 = What was that ? Am I really the consul now ?
+Kalia_Palace_MerchantQuest4End_36 = No wonder Sword was angry. He was denied what he always sought.
+Kalia_Palace_MerchantQuest4End_37 = I thought he wanted to be recognized. But he actually wanted to be the heir.
+Kalia_Palace_MerchantQuest4End_38 = Which means he's a rival for now.
+Kalia_Palace_MerchantQuest4End_39 = ... To think the instigator of all this chaos would just give up power like that.
+Kalia_Palace_MerchantQuest4End_40 = I'll worry about what I'll do later. I must deal with Sword.
+Kalia_Palace_MerchantQuest4End_41 = I wonder where I can find him ?
+Kalia_Palace_MerchantQuest4End_42 = I could always ask around.
+Kalia_Palace_MerchantQuest4End_43 = The grand plaza could have clues for me.
+
+# ---------------------------------------------------------
+# --------------- Kalia - Docks ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Docks_Hangar_Locked_1 = It's locked...
+
+Kalia_Docks_MainQuest2_0_1 = Here are the docks...
+Kalia_Docks_MainQuest2_0_2 = Ships from all over the continent stop here.
+Kalia_Docks_MainQuest2_0_3 = But today, I'm after a rebel.
+Kalia_Docks_MainQuest2_0_4 = Where could they be ? And what are they after ?
+Kalia_Docks_MainQuest2_0_5 = Maybe they are smuggling weapons to help their cause against the consul.
+Kalia_Docks_MainQuest2_0_6 = !
+Kalia_Docks_MainQuest2_0_7 = I spot someone in the distance. I recognize him.
+Kalia_Docks_MainQuest2_0_8 = He's the rebel the spies saw ! There's no doubt in my mind.
+Kalia_Docks_MainQuest2_0_9 = And knowing him, he's up to no good.
+Kalia_Docks_MainQuest2_0_10 = The rebel looks around, then disappears in a nearby building.
+Kalia_Docks_MainQuest2_0_11 = I follow him. I can't let him escape. Not again.
+Kalia_Docks_MainQuest2_0_12 = I enter the building, but something feels off...
+Kalia_Docks_MainQuest2_0_13 = This... this is a rebel hideout. Probably a depot of some kind.
+Kalia_Docks_MainQuest2_0_14 = That rebel is somewhere in there. I need to find him.
+
+Kalia_Docks_MainQuest2_0_15 = I manage to get to a pitch black room.
+Kalia_Docks_MainQuest2_0_16 = I'm sure the rebel must be close by.
+Kalia_Docks_MainQuest2_0_17 = Don't move.
+Kalia_Docks_MainQuest2_0_18 = !
+Kalia_Docks_MainQuest2_0_19 = I know who you are, [MC].
+Kalia_Docks_MainQuest2_0_20 = I also know what you want : me.
+Kalia_Docks_MainQuest2_0_21 = But don't you think this was a little bit too easy ?
+Kalia_Docks_MainQuest2_0_22 = ...
+Kalia_Docks_MainQuest2_0_23 = So this was a trap ?
+Kalia_Docks_MainQuest2_0_24 = Not really. I just wanted to talk.
+Kalia_Docks_MainQuest2_0_25 = I don't talk to rebels.
+Kalia_Docks_MainQuest2_0_26 = Do you really ? Can't you see you're on the wrong team ?
+Kalia_Docks_MainQuest2_0_27 = ...
+Kalia_Docks_MainQuest2_0_28 = Two years ago, you let me do it.
+Kalia_Docks_MainQuest2_0_29 = I don't know what you're talking about.
+Kalia_Docks_MainQuest2_0_30 = You could have stopped me, but you didn't.
+Kalia_Docks_MainQuest2_0_31 = ... I thought you would do something else. I was wrong.
+Kalia_Docks_MainQuest2_0_32 = You killed many of my comrades. You don't deserve sympathy.
+Kalia_Docks_MainQuest2_0_33 = Eh. Have it your way.
+Kalia_Docks_MainQuest2_0_34 = If you ever change your mind, find salvation.
+Kalia_Docks_MainQuest2_0_35 = It will be in the form of a cup of green tea.
+Kalia_Docks_MainQuest2_0_36 = Think it over. At least, do it for her.
+Kalia_Docks_MainQuest2_0_37 = I can feel the rebel disappear in the shadows.
+Kalia_Docks_MainQuest2_0_38 = So this was just an elaborate setup to get to me...
+Kalia_Docks_MainQuest2_0_39 = I should make my report to the Merchant.
+Kalia_Docks_MainQuest2_0_40 = ...
+Kalia_Docks_MainQuest2_0_41 = Two years ago, what was on my mind ?
+Kalia_Docks_MainQuest2_0_42 = That bastard killed almost all of them. Why did I let him ?
+Kalia_Docks_MainQuest2_0_43 = ...What did I wish for him to do instead ?
+Kalia_Docks_MainQuest2_0_44 = ...
+Kalia_Docks_MainQuest2_0_45 = Maybe that wish is one I need to fulfill on my own.
+Kalia_Docks_MainQuest2_0_46 = Maybe I should do as he said, seek salvation.
+Kalia_Docks_MainQuest2_0_47 = ...
+Kalia_Docks_MainQuest2_0_48 = Could I ?
+Kalia_Docks_MainQuest2_0_49 = While thinking, I get out of the building.
+Kalia_Docks_MainQuest2_0_50 = It's clear to me I have to think about my loyalty.
+Kalia_Docks_MainQuest2_0_51 = What is best for me. For her...
+
+Kalia_Docks_GUARDArcQuest1_1 = This is the hangar GUARD told me about.
+Kalia_Docks_GUARDArcQuest1_2 = The door is unlocked. I can see someone inside.
+Kalia_Docks_GUARDArcQuest1_3 = Ah, there you are. I've just opened the door.
+Kalia_Docks_GUARDArcQuest1_4 = Are you ready to investigate this place ?
+Kalia_Docks_GUARDArcQuest1_5 = Yes, I'm ready.
+Kalia_Docks_GUARDArcQuest1_6 = Good. I'll let you take the lead then.
+Kalia_Docks_GUARDArcQuest1_7 = <color=blue>GUARD added to the party.</color>
+Kalia_Docks_GUARDArcQuest1_8 = Alright, time to investigate...
+
+Kalia_Docks_GUARDArcQuest1_9 = ... Still nothing, uh ?
+Kalia_Docks_GUARDArcQuest1_10 = We've swept the hangar. There is nothing here...
+Kalia_Docks_GUARDArcQuest1_11 = I thought for sure this was their "headquarters".
+Kalia_Docks_GUARDArcQuest1_12 = Maybe they are using this hangar to store things ?
+Kalia_Docks_GUARDArcQuest1_13 = It would be less conspicuous at least.
+Kalia_Docks_GUARDArcQuest1_14 = Hmm... True. I hadn't thought of that.
+Kalia_Docks_GUARDArcQuest1_15 = Wait, let me check... 
+Kalia_Docks_GUARDArcQuest1_16 = I knew it ! They were hiding something in the crates.
+Kalia_Docks_GUARDArcQuest1_17 = GUARD comes back from a nearby crate with weapons in his hands.
+Kalia_Docks_GUARDArcQuest1_18 = Are they hiding weapons here ?
+Kalia_Docks_GUARDArcQuest1_19 = Seems that way. This doesn't look good.
+Kalia_Docks_GUARDArcQuest1_20 = I knew they meant bad business, but still.
+Kalia_Docks_GUARDArcQuest1_21 = Worst case scenario, they are plotting to seize power.
+Kalia_Docks_GUARDArcQuest1_22 = They wouldn't dare.
+Kalia_Docks_GUARDArcQuest1_23 = They were crazy enough to kill the leader of the investigation that was researching them.
+Kalia_Docks_GUARDArcQuest1_24 = However, this doesn't help us much. We still don't know where and who they are. 
+Kalia_Docks_GUARDArcQuest1_25 = Maybe we should try looking for the people on that list of yours ?
+Kalia_Docks_GUARDArcQuest1_26 = True, but who do we try to find ? I don't know any names on the list.
+Kalia_Docks_GUARDArcQuest1_27 = Let me see.
+Kalia_Docks_GUARDArcQuest1_28 = I take GUARD's list and start to look at the names.
+Kalia_Docks_GUARDArcQuest1_29 = There must be at least 30 names on it, all unknown to me.
+Kalia_Docks_GUARDArcQuest1_30 = The only thing I'm sure, is that none of them are part of the military.
+Kalia_Docks_GUARDArcQuest1_31 = Oh ? I know that name.
+Kalia_Docks_GUARDArcQuest1_32 = William Sualibu, he's a rather famous merchant around here.
+Kalia_Docks_GUARDArcQuest1_33 = He made a fortune by selling wares from Kosky.
+Kalia_Docks_GUARDArcQuest1_34 = Kosky ? That means he could be connected to the sect.
+Kalia_Docks_GUARDArcQuest1_35 = Do you know where we could find that man ? He may have informations on them.
+Kalia_Docks_GUARDArcQuest1_36 = I don't know exactly, but usually famous people live in the upper district.
+Kalia_Docks_GUARDArcQuest1_37 = It's the one inside the old keep of Kalia. You can find the grand plaza and the consul's palace nearby.
+Kalia_Docks_GUARDArcQuest1_38 = I see where it is.
+Kalia_Docks_GUARDArcQuest1_39 = Alright, we'll meet up at the grand plaza then.
+Kalia_Docks_GUARDArcQuest1_40 = You can go on ahead. I still have to check a few things here.
+Kalia_Docks_GUARDArcQuest1_41 = Alright, do as you wish.
+Kalia_Docks_GUARDArcQuest1_42 = <color=blue>GUARD removed from the party.</color>
+Kalia_Docks_GUARDArcQuest1_43 = I exit the hangar using the door at the back.
+Kalia_Docks_GUARDArcQuest1_44 = I could go directly to the grand plaza, or I could do other things.
+Kalia_Docks_GUARDArcQuest1_45 = In the end, the choice is up to me.
+
+Kalia_Docks_RebelQuest2_1 = Okay, let's take that safehouse back.
+
+Kalia_Docks_RebelQuest2_2 = After a few battles, we manage to take back the safehouse.
+Kalia_Docks_RebelQuest2_3 = This should make the boss happy.
+Kalia_Docks_RebelQuest2_4 = Yeah, sis loves it when we take over stuff !
+Kalia_Docks_RebelQuest2_5 = Really ?
+Kalia_Docks_RebelQuest2_6 = Trust me ! You'd think she's always grumpy, but that's not true.
+Kalia_Docks_RebelQuest2_7 = The sight of the rebellion gaining grounds is enough to make her smile.
+Kalia_Docks_RebelQuest2_8 = If you say so...
+Kalia_Docks_RebelQuest2_9 = Anyway, let's head back.
+
+# ---------------------------------------------------------
+# ------------ Kalia - Max's Bar --------------------------
+# ---------------------------------------------------------
+
+Kalia_BarMax_Waiter_Greetings_1 = Hi. Do you need anything ?
+
+Kalia_BarMax_Waiter_Sleep_1 = Sure, let me show you to your room.
+
+Kalia_BarMax_Waiter_AboutYou_1 = I'm Max, the owner of this bar.
+Kalia_BarMax_Waiter_AboutYou_2 = I've been tending to this place my whole life.
+Kalia_BarMax_Waiter_AboutYou_3 = That seems like a long time. Do you plan to retire at some point ?
+Kalia_BarMax_Waiter_AboutYou_4 = I'd like to. But I don't have any successor for now.
+Kalia_BarMax_Waiter_AboutYou_5 = I hoped one of my grandsons would, but they prefer their respective jobs...
+
+Kalia_BarMax_Waiter_SideQuest_Done_1 = Not at this time, no.
+
+Kalia_BarMax_Waiter_SideQuest_Start_1 = I might need some help, yes.
+Kalia_BarMax_Waiter_SideQuest_Start_2 = One of my grandsons owes me money. He still needs to pay up.
+Kalia_BarMax_Waiter_SideQuest_Start_3 = Could you tell him to do so soon ? 
+Kalia_BarMax_Waiter_SideQuest_Start_4 = I'll see what I can do.
+Kalia_BarMax_Waiter_SideQuest_Start_5 = Thanks, you'll find him in the city's park.
+
+Kalia_BarMax_Waiter_SideQuest_InProgress_1 = You'll find my grandson in the city's park.
+
+Kalia_BarMax_Waiter_SideQuest_End_1 = My grandson came by and gave me my money back. I suppose you were involved ?
+Kalia_BarMax_Waiter_SideQuest_End_2 = Yes, I talked to him.
+Kalia_BarMax_Waiter_SideQuest_End_3 = Thanks. You can keep some change for helping me out.
+Kalia_BarMax_Waiter_SideQuest_End_4 = <color=blue>I received 10 gold from the waitress.</color>
+Kalia_BarMax_Waiter_SideQuest_End_5 = Did you need anything else ?
+
+Kalia_BarMax_GUARD_Greetings_ArcQuest1_1 = Hi. Don't forget to meet me at the docks.
+
+Kalia_BarMax_GUARD_Greetings_ArcQuest3_1 = Did you have any luck with that bomb ?
+
+Kalia_BarMax_GUARD_ArcQuest1_Start_1 = Hey, you.
+Kalia_BarMax_GUARD_ArcQuest1_Start_2 = A strange man starts talking to me.
+Kalia_BarMax_GUARD_ArcQuest1_Start_3 = Are you searching for a job by any chance ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_4 = Not really. My hands are already full. But shoot, you never know.
+Kalia_BarMax_GUARD_ArcQuest1_Start_5 = Well, it's a long one in truth. I'm on some sort of a secret mission if you will.
+Kalia_BarMax_GUARD_ArcQuest1_Start_6 = I come from the Vlatyr province, in the Koskyian United Provinces.
+Kalia_BarMax_GUARD_ArcQuest1_Start_7 = The country west of Marklicht ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_8 = That one. To keep it short, we have some sort of sect over there. Really shady stuff.
+Kalia_BarMax_GUARD_ArcQuest1_Start_9 = They were involved in the killing of a politician not too long ago.
+Kalia_BarMax_GUARD_ArcQuest1_Start_10 = After digging up a little bit, I managed to get ahold of a list.
+Kalia_BarMax_GUARD_ArcQuest1_Start_11 = It contains names of people living in Kalia. I'm not sure what it is for.
+Kalia_BarMax_GUARD_ArcQuest1_Start_12 = So you decided to come have a look ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_13 = Right. This "Summoners" sect can't be good news. 
+Kalia_BarMax_GUARD_ArcQuest1_Start_14 = But I need to be sure what this list is. It could be members, or targets.
+Kalia_BarMax_GUARD_ArcQuest1_Start_15 = So you would have liked me to check them out ?
+Kalia_BarMax_GUARD_ArcQuest1_Start_16 = Not yet, no. Actually, I have another lead.
+Kalia_BarMax_GUARD_ArcQuest1_Start_17 = There is a hangar in the docks that is very suspicious.
+Kalia_BarMax_GUARD_ArcQuest1_Start_18 = Apparently, it is used for trading with Kosky. But I know better.
+Kalia_BarMax_GUARD_ArcQuest1_Start_19 = I've seen sect members enter and exit the place.
+Kalia_BarMax_GUARD_ArcQuest1_Start_20 = I need to clear this place and figure out what they are doing here.
+Kalia_BarMax_GUARD_ArcQuest1_Start_21 = So right now, I'm actually trying to find backup.
+Kalia_BarMax_GUARD_ArcQuest1_Start_22 = ... I see.
+Kalia_BarMax_GUARD_ArcQuest1_Start_23 = While I don't have much time, this sect isn't good news.
+Kalia_BarMax_GUARD_ArcQuest1_Start_24 = Maybe I should help him. It could save me a headache later.
+Kalia_BarMax_GUARD_ArcQuest1_Start_25 = Alright, I'll see what I can do to help you.
+Kalia_BarMax_GUARD_ArcQuest1_Start_26 = Really ?! Thank you so much !
+Kalia_BarMax_GUARD_ArcQuest1_Start_27 = When you're ready, meet me at the docks.
+Kalia_BarMax_GUARD_ArcQuest1_Start_28 = I'll probably already be in the hangar when you arrive.
+Kalia_BarMax_GUARD_ArcQuest1_Start_29 = In the meantime, feel free to ask me anything.
+Kalia_BarMax_GUARD_ArcQuest1_Start_30 = Oh, and I'm GUARD by the way.
+
+Kalia_BarMax_GUARD_ArcQuest3_End_1 = Oh, you're back.
+Kalia_BarMax_GUARD_ArcQuest3_End_2 = Yes, I found the bomb you needed.
+Kalia_BarMax_GUARD_ArcQuest3_End_3 = Let me see...
+Kalia_BarMax_GUARD_ArcQuest3_End_4 = Yes... This is it.
+Kalia_BarMax_GUARD_ArcQuest3_End_5 = This ordinance will be more than enough to destroy the fortress.
+Kalia_BarMax_GUARD_ArcQuest3_End_6 = Now all we need is a plane to travel to Vlatyr.
+Kalia_BarMax_GUARD_ArcQuest3_End_7 = I can help with that.
+Kalia_BarMax_GUARD_ArcQuest3_End_8 = Meet me at Camp Hope. I'll get us a plane.
+Kalia_BarMax_GUARD_ArcQuest3_End_9 = Rogers.
+Kalia_BarMax_GUARD_ArcQuest3_End_10 = And don't forget to buy supplies beforehand.
+Kalia_BarMax_GUARD_ArcQuest3_End_11 = Once we get on the plane, there will be no turning back.
+Kalia_BarMax_GUARD_ArcQuest3_End_12 = We'll only come back when the sect is dealt with.
+
+Kalia_BarMax_GUARD_AboutYou_1 = GUARD is only my codename. I used it not too long ago while I was on protection duty.
+Kalia_BarMax_GUARD_AboutYou_2 = I was protecting a politician... and you can guess what happened.
+Kalia_BarMax_GUARD_AboutYou_3 = The sect killed him ?
+Kalia_BarMax_GUARD_AboutYou_4 = That's right. He was investigating the sect, so they killed him in retaliation.
+Kalia_BarMax_GUARD_AboutYou_5 = Ever since that day, I stopped being a bodyguard. People mocked me for being incompetent.
+Kalia_BarMax_GUARD_AboutYou_6 = So I vowed revenge on the sect. I'll destroy them, I swear it.
+
+Kalia_BarMax_GUARD_AboutSect_1 = The Summoners Sect I'm after is quite secretive.
+Kalia_BarMax_GUARD_AboutSect_2 = They apparently specialize in summoning things.
+Kalia_BarMax_GUARD_AboutSect_3 = What exactly ? I'm entirely not sure. But it can't be good.
+Kalia_BarMax_GUARD_AboutSect_4 = I also learned they worship the god of chaos : Lord Elk.
+Kalia_BarMax_GUARD_AboutSect_5 = So their intentions can't be good. They need to be stopped.
+
+# ---------------------------------------------------------
+# ---------------- Kalia - Park ---------------------------
+# ---------------------------------------------------------
+
+Kalia_KalibuPark_SecondaryQuest_1 = Are you the grandson of the owner of Max's bar ?
+Kalia_KalibuPark_SecondaryQuest_2 = Yeah, why ?
+Kalia_KalibuPark_SecondaryQuest_3 = She wanted you to know you still owe her some money.
+Kalia_KalibuPark_SecondaryQuest_4 = ... Oh ! Right. How did I manage to forget ?
+Kalia_KalibuPark_SecondaryQuest_5 = Thank you for relaying the message. I'll go see her right away.
+Kalia_KalibuPark_SecondaryQuest_6 = The man disappears in the distance. I should head back to the bar too.
+
+Kalia_KalibuPark_DeliveryQuest_1 = What are you doing at such a late hour ?
+Kalia_KalibuPark_DeliveryQuest_2 = ...
+Kalia_KalibuPark_DeliveryQuest_3 = Uh... Hello ?
+Kalia_KalibuPark_DeliveryQuest_4 = Uh ?! Oh, hello, sir.
+Kalia_KalibuPark_DeliveryQuest_5 = What are you doing here ?
+Kalia_KalibuPark_DeliveryQuest_6 = Uh ? Is it that late already ?
+Kalia_KalibuPark_DeliveryQuest_7 = What do you mean ?
+Kalia_KalibuPark_DeliveryQuest_8 = I... I planned on giving this letter to the lady who owns the farm just outside the city's wall.
+Kalia_KalibuPark_DeliveryQuest_9 = But... I guess I couldn't...
+Kalia_KalibuPark_DeliveryQuest_10 = What ? Did you encounter bandits or something ? Do you need help ?
+Kalia_KalibuPark_DeliveryQuest_11 = No, no ! I didn't... I mean... I guess...
+Kalia_KalibuPark_DeliveryQuest_12 = Could you give her this letter ? I'll even pay you for it !
+Kalia_KalibuPark_DeliveryQuest_13 = Wait, hold on. What are yo-
+Kalia_KalibuPark_DeliveryQuest_14 = The man gives me the letter and even some gold.
+Kalia_KalibuPark_DeliveryQuest_15 = Here's your payment. I trust you'll succeed !
+Kalia_KalibuPark_DeliveryQuest_16 = The man runs away. What was that all about ?
+Kalia_KalibuPark_DeliveryQuest_17 = ... I guess I'll have to deliver his letter then. Talk about awkward.
+
+# ---------------------------------------------------------
+# --------------- Kalia - Plaza ---------------------------
+# ---------------------------------------------------------
+
+Kalia_Plaza_GUARDArcQuest2_Start_1 = Ah, there you are.
+Kalia_Plaza_GUARDArcQuest2_Start_2 = I took the liberty of checking the address of our target.
+Kalia_Plaza_GUARDArcQuest2_Start_3 = In fact, I can even tell you that he left town.
+Kalia_Plaza_GUARDArcQuest2_Start_4 = Maybe he went on a work trip ?
+Kalia_Plaza_GUARDArcQuest2_Start_5 = Maybe. But at least that means his house is empty.
+Kalia_Plaza_GUARDArcQuest2_Start_6 = You want to sneak in then ?
+Kalia_Plaza_GUARDArcQuest2_Start_7 = Yes. We might find a clue in his house.
+Kalia_Plaza_GUARDArcQuest2_Start_8 = I want to know his connection to the sect.
+Kalia_Plaza_GUARDArcQuest2_Start_9 = He could be a target, or a member. Remember that.
+Kalia_Plaza_GUARDArcQuest2_Start_10 = Alright, let's try to sneak in then.
+Kalia_Plaza_GUARDArcQuest2_Start_11 = I follow GUARD to the merchant's house.
+Kalia_Plaza_GUARDArcQuest2_Start_12 = It's a well maintained house, at least on the exterior.
+Kalia_Plaza_GUARDArcQuest2_Start_13 = You can feel the wealth of this man just by looking at it.
+Kalia_Plaza_GUARDArcQuest2_Start_14 = GUARD takes out a lockpick and starts opening the door.
+Kalia_Plaza_GUARDArcQuest2_Start_15 = Meanwhile, I stand guard. We can't allow ourselves to be seen here.
+Kalia_Plaza_GUARDArcQuest2_Start_16 = After a few minutes, the door is open.
+Kalia_Plaza_GUARDArcQuest2_Start_17 = We enter the house and begin our search.
+Kalia_Plaza_GUARDArcQuest2_Start_18 = Hmm... Here is his study.
+Kalia_Plaza_GUARDArcQuest2_Start_19 = But where could we find clues ?
+Kalia_Plaza_GUARDArcQuest2_Start_20 = Let's split up. That should allow us to find some faster.
+
+Kalia_Plaza_GUARDArcQuest2_Painting_1 = A painting. This won't help us.
+
+Kalia_Plaza_GUARDArcQuest2_Bookshelf_1 = There are a lot of books here.
+Kalia_Plaza_GUARDArcQuest2_Bookshelf_2 = This man seems to be interested in the occult, from what I can see.
+
+Kalia_Plaza_GUARDArcQuest2_Note_1 = He left a note hanging around.
+Kalia_Plaza_GUARDArcQuest2_Note_2 = Current code : 0064 (I need to change this someday)
+Kalia_Plaza_GUARDArcQuest2_Note_3 = Might come in handy...
+
+Kalia_Plaza_GUARDArcQuest2_GUARD_1 = Our guy seems interested in the occult.
+Kalia_Plaza_GUARDArcQuest2_GUARD_2 = He may be more connected to the sect than I thought...
+
+Kalia_Plaza_GUARDArcQuest2_Safe_1 = This is a safe. I wonder how I could open it.
+
+Kalia_Plaza_GUARDArcQuest2_End_1 = Maybe I could try the code on the note.
+Kalia_Plaza_GUARDArcQuest2_End_2 = 0064... It worked !
+Kalia_Plaza_GUARDArcQuest2_End_3 = The safe opens, and its secrets are revealed to us.
+Kalia_Plaza_GUARDArcQuest2_End_4 = Ah ! You found something.
+Kalia_Plaza_GUARDArcQuest2_End_5 = Let's see...
+Kalia_Plaza_GUARDArcQuest2_End_6 = Mostly business papers, but that was to be expected.
+Kalia_Plaza_GUARDArcQuest2_End_7 = ... Oh ?
+Kalia_Plaza_GUARDArcQuest2_End_8 = GUARD takes out a letter from the pile. It looks different from the other.
+Kalia_Plaza_GUARDArcQuest2_End_9 = ...
+Kalia_Plaza_GUARDArcQuest2_End_10 = To my friend, William Sualibu.
+Kalia_Plaza_GUARDArcQuest2_End_11 = A congress is going to be held next week at the Ember Fortress.
+Kalia_Plaza_GUARDArcQuest2_End_12 = We'll finally discuss getting rid of your opponents and making you the rightful consul of Kalia.
+Kalia_Plaza_GUARDArcQuest2_End_13 = I await your arrival with great anticipation, H.
+Kalia_Plaza_GUARDArcQuest2_End_14 = This is bad.
+Kalia_Plaza_GUARDArcQuest2_End_15 = I knew something was afoot. They are planning to coup the governement.
+Kalia_Plaza_GUARDArcQuest2_End_16 = And once they're be done, they'll put this guy in control.
+Kalia_Plaza_GUARDArcQuest2_End_17 = Yeah, this is quite bad. We need to do something.
+Kalia_Plaza_GUARDArcQuest2_End_18 = Luckily, I know where they are holding this congress.
+Kalia_Plaza_GUARDArcQuest2_End_19 = Really ?
+Kalia_Plaza_GUARDArcQuest2_End_20 = Yes. The Ember Fortress is an old fortress in Vlatyr, Kosky.
+Kalia_Plaza_GUARDArcQuest2_End_21 = Not too long ago, there was a dragon living in it.
+Kalia_Plaza_GUARDArcQuest2_End_22 = But someone killed it, and it was thought to be unoccupied ever since.
+Kalia_Plaza_GUARDArcQuest2_End_23 = What do you plan to do ? It would take us days to reach Vlatyr.
+Kalia_Plaza_GUARDArcQuest2_End_24 = .... I might have an idea.
+Kalia_Plaza_GUARDArcQuest2_End_25 = Camp Hope in Kalia has an airfield, right ?
+Kalia_Plaza_GUARDArcQuest2_End_26 = Don't tell me... You want to steal a plane ?
+Kalia_Plaza_GUARDArcQuest2_End_27 = No, we'll only be... borrowing it.
+Kalia_Plaza_GUARDArcQuest2_End_28 = Well, I know the guy that manages the planes.
+Kalia_Plaza_GUARDArcQuest2_End_29 = Chances are, we could steal a plane without even being noticed.
+Kalia_Plaza_GUARDArcQuest2_End_30 = Incredible. Kalia's military is as defunct as I heard.
+Kalia_Plaza_GUARDArcQuest2_End_31 = Hey, we do our best.
+Kalia_Plaza_GUARDArcQuest2_End_32 = I know, I know.
+Kalia_Plaza_GUARDArcQuest2_End_33 = Anyway, I have another mission beforehand.
+Kalia_Plaza_GUARDArcQuest2_End_34 = To deal with the sect once and for all, we'll use a bomb.
+Kalia_Plaza_GUARDArcQuest2_End_35 = Kalia doesn't make explosives that powerful.
+Kalia_Plaza_GUARDArcQuest2_End_36 = Right, but Orkva does.
+Kalia_Plaza_GUARDArcQuest2_End_37 = I'd like you to steal an Orkvian bomb from Fort Wall.
+Kalia_Plaza_GUARDArcQuest2_End_38 = They have a big stash of weapons there, so they won't miss one bomb.
+Kalia_Plaza_GUARDArcQuest2_End_39 = Right, I'll see what I can do.
+Kalia_Plaza_GUARDArcQuest2_End_40 = Meet me at Max's bar when you're done with the bomb.
+Kalia_Plaza_GUARDArcQuest2_End_41 = As we agree on this last mission, we exit the house.
+Kalia_Plaza_GUARDArcQuest2_End_42 = My next step is up to me.
+
+Kalia_Plaza_RebelQuest4_1 = Okay. Let's distribute those leaflets.
+Kalia_Plaza_RebelQuest4_2 = It's risky to do it here, but the people must know.
+Kalia_Plaza_RebelQuest4_3 = Us being confident enough to do this will show our strength.
+Kalia_Plaza_RebelQuest4_4 = To be honest, we don't even need to distribute anything.
+Kalia_Plaza_RebelQuest4_5 = Just a commotion might be enough.
+Kalia_Plaza_RebelQuest4_6 = As we distribute leaflets, more and more people start coming.
+Kalia_Plaza_RebelQuest4_7 = I guess they want to know the Merchant's reaction. We are right under his window.
+Kalia_Plaza_RebelQuest4_8 = Hey ! What are you doing here ?
+Kalia_Plaza_RebelQuest4_9 = This area is restr- Wait...
+Kalia_Plaza_RebelQuest4_10 = Rebels ! And the turncoat is with them !
+Kalia_Plaza_RebelQuest4_11 = Shoot them !
+
+Kalia_Plaza_RebelQuest4_12 = The Merchant's soldiers lay dead on the ground.
+Kalia_Plaza_RebelQuest4_13 = Did you see that ?
+Kalia_Plaza_RebelQuest4_14 = The rebels might actually stand a chance.
+Kalia_Plaza_RebelQuest4_15 = Yeah. Maybe we could root for them. They'll protect us.
+Kalia_Plaza_RebelQuest4_16 = Good. The people are starting to trust us more and more.
+Kalia_Plaza_RebelQuest4_17 = Let's go back to Amanda. I wonder what the next step is.
+
+Kalia_Plaza_MerchantQuest5_1 = That's weird. There are a lot of people around today.
+Kalia_Plaza_MerchantQuest5_2 = Did you hear the news ?
+Kalia_Plaza_MerchantQuest5_3 = No, what is it ?
+Kalia_Plaza_MerchantQuest5_4 = The rebels were crushed. On top of that, the Merchant is dead !
+Kalia_Plaza_MerchantQuest5_5 = What ? How ?
+Kalia_Plaza_MerchantQuest5_6 = That's great news ! Do we start a new election ?
+Kalia_Plaza_MerchantQuest5_7 = Elections... We haven't had one of those in a few dozen years.
+Kalia_Plaza_MerchantQuest5_8 = Who'd want to compete ? I heard the military is maybe going to coup the government.
+Kalia_Plaza_MerchantQuest5_9 = Not that much of it is left anyway...
+Kalia_Plaza_MerchantQuest5_10 = This is bad. How did news spread so fast ?
+Kalia_Plaza_MerchantQuest5_11 = I'm sorry, sir. Can I ask you a few questions ?
+Kalia_Plaza_MerchantQuest5_12 = You... That other guy told us about you.
+Kalia_Plaza_MerchantQuest5_13 = Me ? You mean the other republican guard ?
+Kalia_Plaza_MerchantQuest5_14 = I guess. He told us you killed the Merchant. He's going to Camp Hope to get the military onboard for a coup.
+Kalia_Plaza_MerchantQuest5_15 = What ? I did no such thing. While it's true I am the interim leader of Kalia, I did not kill to get the position.
+Kalia_Plaza_MerchantQuest5_16 = Relay to your friends that elections will soon be held.
+Kalia_Plaza_MerchantQuest5_17 = Let it be known that the military will not coup the government. They will have to face me first.
+Kalia_Plaza_MerchantQuest5_18 = As for the other republican guard. Consider him as a traitor. Arrest him if he ever shows his face around here again.
+Kalia_Plaza_MerchantQuest5_19 = Y- Yes, sir !
+Kalia_Plaza_MerchantQuest5_20 = The few people that were listening to me start moving towards other groups of people.
+Kalia_Plaza_MerchantQuest5_21 = The news are going to spread fast.
+Kalia_Plaza_MerchantQuest5_22 = In the meantime, I should head to Camp Hope and confront Sword.
+Kalia_Plaza_MerchantQuest5_23 = He won't coup the government. This is our only chance for salvation after all this mess.
+
+# ---------------------------------------------------------
+# ------------ Kalia - Lighthouse -------------------------
+# ---------------------------------------------------------
+
+Kalia_Lighthouse_Door_Locked_1 = Locked...
+
+Kalia_Lighthouse_JackwellArcQuest4_1 = This is where Jackwell wanted me to swim...
+Kalia_Lighthouse_JackwellArcQuest4_2 = Here I go...
+Kalia_Lighthouse_JackwellArcQuest4_3 = After a few minutes, I finished swimming around the lighthouse.
+Kalia_Lighthouse_JackwellArcQuest4_4 = Jackwell should be happy now. I should head back.
+
+Kalia_Lighthouse_MerchantQuest2Start_1 = This is where the Merchant told me his associate would be.
+Kalia_Lighthouse_MerchantQuest2Start_2 = I don't know who he is, but I heard rumors about the lighthouse.
+Kalia_Lighthouse_MerchantQuest2Start_3 = Really shady people come in and out of the lighthouse at night.
+Kalia_Lighthouse_MerchantQuest2Start_4 = So much so that it isn't even used to guide ships anymore.
+Kalia_Lighthouse_MerchantQuest2Start_5 = I can only imagine who this mysterious associate could be.
+Kalia_Lighthouse_MerchantQuest2Start_6 = I enter the lighthouse. It is dimly lit. I can't see much.
+Kalia_Lighthouse_MerchantQuest2Start_7 = I ascend to the top of the lighthouse. It has been closed off the exterior.
+Kalia_Lighthouse_MerchantQuest2Start_8 = A single light illuminates the entrance. It's as if it is meant to hide the person living here, and expose me.
+Kalia_Lighthouse_MerchantQuest2Start_9 = A visitor ? You don't look like the usual guys.
+Kalia_Lighthouse_MerchantQuest2Start_10 = The consul sent me. We require your services.
+Kalia_Lighthouse_MerchantQuest2Start_11 = Oh. I knew the moment would come sooner or later.
+Kalia_Lighthouse_MerchantQuest2Start_12 = Is he searching for the rebels, by any chance ?
+Kalia_Lighthouse_MerchantQuest2Start_13 = Y- Yes.
+Kalia_Lighthouse_MerchantQuest2Start_14 = Fuh fuh. I knew it. After all, they fled from the city.
+Kalia_Lighthouse_MerchantQuest2Start_15 = Do you know where they are now ?
+Kalia_Lighthouse_MerchantQuest2Start_16 = Prehaps...
+Kalia_Lighthouse_MerchantQuest2Start_17 = But this knowledge will come at a cost.
+Kalia_Lighthouse_MerchantQuest2Start_18 = We can pay you anything you want. Money is not an issue.
+Kalia_Lighthouse_MerchantQuest2Start_19 = Not with the Merchant, no. But I'm not interested.
+Kalia_Lighthouse_MerchantQuest2Start_20 = What I seek in payment is... your help.
+Kalia_Lighthouse_MerchantQuest2Start_21 = My help ?
+Kalia_Lighthouse_MerchantQuest2Start_22 = I have been the Merchant's associate for a long time.
+Kalia_Lighthouse_MerchantQuest2Start_23 = I was the one to propose he should run for consul. I was the one who told him to disband the parliement.
+Kalia_Lighthouse_MerchantQuest2Start_24 = All this, of course, to enrich us.
+Kalia_Lighthouse_MerchantQuest2Start_25 = I gave him the informations he needed, and he paid me back one way or another.
+Kalia_Lighthouse_MerchantQuest2Start_26 = Nothing in Kalia was out of reach. Except for one thing, onetiny little thing...
+Kalia_Lighthouse_MerchantQuest2Start_27 = Camp Hope has been developing a new weapon prototype for quite some time now.
+Kalia_Lighthouse_MerchantQuest2Start_28 = I asked time and time again, but the Merchant could not give it to me.
+Kalia_Lighthouse_MerchantQuest2Start_29 = I want you to get me that prototype. You must have the clearance to do so.
+Kalia_Lighthouse_MerchantQuest2Start_30 = This would be problematic for us. And what do you want to do with it ?
+Kalia_Lighthouse_MerchantQuest2Start_31 = Business, of course ! As for the problems you risk, are they worth not knowing the rebels location ?
+Kalia_Lighthouse_MerchantQuest2Start_32 = ....
+Kalia_Lighthouse_MerchantQuest2Start_33 = Alright, fine. I'll get that prototype for you.
+Kalia_Lighthouse_MerchantQuest2Start_34 = Then I await your return with impatience.
+Kalia_Lighthouse_MerchantQuest2Start_35 = I exit the lighthouse. This feels like a scam.
+Kalia_Lighthouse_MerchantQuest2Start_36 = He's abusing the fact we desperately need the information to get his hands on the prototype.
+Kalia_Lighthouse_MerchantQuest2Start_37 = I don't know much about it. But I'm certain this man will just sell it to the highest bider.
+Kalia_Lighthouse_MerchantQuest2Start_38 = Grr... I don't have a choice. I must go to Camp Hope. 
+
+Kalia_Lighthouse_MerchantQuest2End_1 = I enter the lighthouse and go to the top.
+Kalia_Lighthouse_MerchantQuest2End_2 = You are back. Good job.
+Kalia_Lighthouse_MerchantQuest2End_3 = And you even got the prototype. Good, good.
+Kalia_Lighthouse_MerchantQuest2End_4 = Drop it on the floor. I'll get it later.
+Kalia_Lighthouse_MerchantQuest2End_5 = Staying in the shadows, uh ?
+Kalia_Lighthouse_MerchantQuest2End_6 = Fuh fuh. I need to stay hidden. It is... better in my line of work.
+Kalia_Lighthouse_MerchantQuest2End_7 = You have what you wanted. What do you know about the rebels ?
+Kalia_Lighthouse_MerchantQuest2End_8 = Right, right. I suppose I do need to tell you.
+Kalia_Lighthouse_MerchantQuest2End_9 = The rebels fled the city after a man named Robertus died.
+Kalia_Lighthouse_MerchantQuest2End_10 = I suppose you knew him ? After all, you killed him.
+Kalia_Lighthouse_MerchantQuest2End_11 = ...
+Kalia_Lighthouse_MerchantQuest2End_12 = They fled the city, and last I checked, they took residence in Iberty's catacombs.
+Kalia_Lighthouse_MerchantQuest2End_13 = I do hope this information will be useful to you.
+Kalia_Lighthouse_MerchantQuest2End_14 = It will. Thank you.
+Kalia_Lighthouse_MerchantQuest2End_15 = I exit the lighthouse. Now we know where the rebels are.
+Kalia_Lighthouse_MerchantQuest2End_16 = To think they would hide in the halls of the dead...
+Kalia_Lighthouse_MerchantQuest2End_17 = Okay. I should head back to the palace.
+
+# ---------------------------------------------------------
+# ------------ Kalia - Salvation Bar ----------------------
+# ---------------------------------------------------------
+
+Kalia_BarSalvation_Door_Locked_1 = This barrel is used to store alcohol.
+
+Kalia_BarSalvation_Waiter_Greetings_1 = Sup' ?
+
+Kalia_BarSalvation_Waiter_AboutYou_1 = Me ? I'm just a waitress. Need something ?
+
+Kalia_BarSalvation_Waiter_NeedYou_1 = Nope !
+
+Kalia_BarSalvation_Waiter_Order_1 = You want to order something ?
+
+Kalia_BarSalvation_Waiter_Wrong_1 = There you go !
+
+Kalia_BarSalvation_Waiter_Good_1 = ... Are you sure you want to order that ?
+Kalia_BarSalvation_Waiter_Good_2 = This is not a very common blend.
+Kalia_BarSalvation_Waiter_Good_3 = <color=red>This will lock you into the rebel route, are you sure you want to continue ?</color>
+
+Kalia_BarSalvation_Waiter_Refuse_1 = Okay !
+
+Kalia_BarSalvation_Waiter_Joined_1 = If you need to talk with my sister, you can enter the... room.
+
+Kalia_BarSalvation_JoinRebels_1 = ...
+Kalia_BarSalvation_JoinRebels_2 = Follow me.
+Kalia_BarSalvation_JoinRebels_3 = The waitress moves to the big barrel on my right.
+Kalia_BarSalvation_JoinRebels_4 = She turns a strange mechanism I hadn't seen, and a secret door is revealed.
+Kalia_BarSalvation_JoinRebels_5 = Enter.
+Kalia_BarSalvation_JoinRebels_6 = I do as I'm told. I guess my hunch was right.
+Kalia_BarSalvation_JoinRebels_7 = The room I enter is pitch black.
+Kalia_BarSalvation_JoinRebels_8 = Where is this ? Is this the rebel headquarters ?
+Kalia_BarSalvation_JoinRebels_9 = I can feel people beside me. Who are they ?
+Kalia_BarSalvation_JoinRebels_10 = Is this him, Bos ?
+Kalia_BarSalvation_JoinRebels_11 = Yes. I led him here.
+Kalia_BarSalvation_JoinRebels_12 = I see. So you think he...
+Kalia_BarSalvation_JoinRebels_13 = With all due respect, I believe he is able to answer for himself.
+Kalia_BarSalvation_JoinRebels_14 = True.
+Kalia_BarSalvation_JoinRebels_15 = [MC], or should I say "Shield" ?
+Kalia_BarSalvation_JoinRebels_16 = Please don't use that codename ever again.
+Kalia_BarSalvation_JoinRebels_17 = Are you aware of where you are ?
+Kalia_BarSalvation_JoinRebels_18 = The rebel headquarters ?
+Kalia_BarSalvation_JoinRebels_19 = ...
+Kalia_BarSalvation_JoinRebels_20 = And what would a member of the republican guard be doing here ?
+Kalia_BarSalvation_JoinRebels_21 = I... I wish to join the rebellion.
+Kalia_BarSalvation_JoinRebels_22 = Really ? And why is that ?
+Kalia_BarSalvation_JoinRebels_23 = If anything, you may only be trying to infiltrate our ranks.
+Kalia_BarSalvation_JoinRebels_24 = The Merchant needs to be stopped.
+Kalia_BarSalvation_JoinRebels_25 = Does he now ? Why ?
+Kalia_BarSalvation_JoinRebels_26 = ...
+Kalia_BarSalvation_JoinRebels_27 = It's... personal.
+Kalia_BarSalvation_JoinRebels_28 = Personal won't cut it here, [MC].
+Kalia_BarSalvation_JoinRebels_29 = I... I was never convinced by his policies.
+Kalia_BarSalvation_JoinRebels_30 = And ever since the incident, I... well...
+Kalia_BarSalvation_JoinRebels_31 = The incident ? Oh, you mean Bos's operation ?
+Kalia_BarSalvation_JoinRebels_32 = ... I have many questions for you regarding that.
+Kalia_BarSalvation_JoinRebels_33 = What happened to the guard afterwards ? We can barely see them anymore.
+Kalia_BarSalvation_JoinRebels_34 = Are you just all holed up in the palace ?
+Kalia_BarSalvation_JoinRebels_35 = ... We are only two left.
+Kalia_BarSalvation_JoinRebels_36 = Makes sense...
+Kalia_BarSalvation_JoinRebels_37 = So we succeeded in the end, Bos.
+Kalia_BarSalvation_JoinRebels_38 = Yes, it seems that way.
+Kalia_BarSalvation_JoinRebels_39 = What I don't understand, is why you came to us.
+Kalia_BarSalvation_JoinRebels_40 = Why would the survivor of the incident join us ?
+Kalia_BarSalvation_JoinRebels_41 = We killed all of your comrades. We should be ennemies.
+Kalia_BarSalvation_JoinRebels_42 = I... I mean...
+Kalia_BarSalvation_JoinRebels_43 = Amanda, I could enlighten you if you wish.
+Kalia_BarSalvation_JoinRebels_44 = Hmm ?
+Kalia_BarSalvation_JoinRebels_45 = His mother was the original leader of the rebellion.
+Kalia_BarSalvation_JoinRebels_46 = You know, the march on the palace.
+Kalia_BarSalvation_JoinRebels_47 = Oh... I see.
+Kalia_BarSalvation_JoinRebels_48 = Tell me about it, [MC]. Tell me about your mother.
+Kalia_BarSalvation_JoinRebels_49 = ...
+Kalia_BarSalvation_JoinRebels_50 = What is there to say ? You probably know more than me.
+Kalia_BarSalvation_JoinRebels_51 = I had just joined the army when she started the march.
+Kalia_BarSalvation_JoinRebels_52 = At the time, the rebellion proper hadn't started yet.
+Kalia_BarSalvation_JoinRebels_53 = It was a peaceful protest, but the Merchant didn't see it that way.
+Kalia_BarSalvation_JoinRebels_54 = The army... opened fire on the protesters.
+Kalia_BarSalvation_JoinRebels_55 = They killed my mother. She had no weapon.
+Kalia_BarSalvation_JoinRebels_56 = I wasn't in town at the time. I was training in the White Forest with the Order.
+Kalia_BarSalvation_JoinRebels_57 = After that, I was promoted to the republican guard.
+Kalia_BarSalvation_JoinRebels_58 = I didn't really know what to do. They had just killed my mother.
+Kalia_BarSalvation_JoinRebels_59 = But... Maybe foolishly, I thought I could change things from the inside.
+Kalia_BarSalvation_JoinRebels_60 = It never really amounted to anything anyway...
+Kalia_BarSalvation_JoinRebels_61 = ...
+Kalia_BarSalvation_JoinRebels_62 = Bos, your opinion ?
+Kalia_BarSalvation_JoinRebels_63 = I believe he could be a valuable asset to us.
+Kalia_BarSalvation_JoinRebels_64 = He knows the military and the palace's layout.
+Kalia_BarSalvation_JoinRebels_65 = Plus, I checked his background. He didn't lie.
+Kalia_BarSalvation_JoinRebels_66 = ...
+Kalia_BarSalvation_JoinRebels_67 = [MC], you are aware of the implications of joining us ?
+Kalia_BarSalvation_JoinRebels_68 = Yes, I'll have to leave the guard. I'll have to fight my former comrades.
+Kalia_BarSalvation_JoinRebels_69 = I'll be labeled as a traitor.
+Kalia_BarSalvation_JoinRebels_70 = ...
+Kalia_BarSalvation_JoinRebels_71 = Alright. Bos, put on the light.
+Kalia_BarSalvation_JoinRebels_72 = As the woman says that, the room becomes illuminated.
+Kalia_BarSalvation_JoinRebels_73 = Well, I suppose you passed, [MC].
+Kalia_BarSalvation_JoinRebels_74 = I welcome you as the newest member of the rebellion.
+Kalia_BarSalvation_JoinRebels_75 = Our role is to topple the tyrant known as the Merchant.
+Kalia_BarSalvation_JoinRebels_76 = I am Amanda, the leader of this movement.
+Kalia_BarSalvation_JoinRebels_77 = And this is Bos, my right hand man.
+Kalia_BarSalvation_JoinRebels_78 = ...
+Kalia_BarSalvation_JoinRebels_79 = ...
+Kalia_BarSalvation_JoinRebels_80 = Bad blood between you two ?
+Kalia_BarSalvation_JoinRebels_81 = You'll both work it out somehow.
+Kalia_BarSalvation_JoinRebels_82 = For now, we have bigger concerns.
+Kalia_BarSalvation_JoinRebels_83 = Do you have an assignment for me, boss ?
+Kalia_BarSalvation_JoinRebels_84 = Yes and no. What is your current assignment for the government ?
+Kalia_BarSalvation_JoinRebels_85 = I am to secure an important package that was stolen by bandits.
+Kalia_BarSalvation_JoinRebels_86 = ... I see. Any ideas of its content ?
+Kalia_BarSalvation_JoinRebels_87 = Apparently an artifact he got from a Marklichtian museum.
+Kalia_BarSalvation_JoinRebels_88 = Hmm...
+Kalia_BarSalvation_JoinRebels_89 = Alright, this is your first assignment for the rebellion.
+Kalia_BarSalvation_JoinRebels_90 = Retrieve this package, and bring it back to us.
+Kalia_BarSalvation_JoinRebels_91 = Keep a low profile for now. We don't want the government to know you switched sides.
+Kalia_BarSalvation_JoinRebels_92 = Alright. It shall be done.
+Kalia_BarSalvation_JoinRebels_93 = The salvation bar is our hideout. Come here if you need anything.
+Kalia_BarSalvation_JoinRebels_94 = The bar itself is also owned by us. My sister is actually the waitress.
+Kalia_BarSalvation_JoinRebels_95 = So don't hesitate to hide here if the need arise.
+Kalia_BarSalvation_JoinRebels_96 = ... I may require your services after your assignment.
+Kalia_BarSalvation_JoinRebels_97 = I have missions that only a trained soldier would be able to complete.
+Kalia_BarSalvation_JoinRebels_98 = And we are lacking in that department for now.
+Kalia_BarSalvation_JoinRebels_99 = ...
+Kalia_BarSalvation_JoinRebels_100 = I'll keep that in mind.
+Kalia_BarSalvation_JoinRebels_101 = For now, I exit the room.
+Kalia_BarSalvation_JoinRebels_102 = I'll secure the package, then bring it back here.
+Kalia_BarSalvation_JoinRebels_103 = I suppose this is what she would have wanted.
+Kalia_BarSalvation_JoinRebels_104 = I thought I could change things from inside, but...
+Kalia_BarSalvation_JoinRebels_105 = I guess not...
+Kalia_BarSalvation_JoinRebels_106 = Oh, hey.
+Kalia_BarSalvation_JoinRebels_107 = The waitress starts talking to me when I get back.
+Kalia_BarSalvation_JoinRebels_108 = You came back alive. I guess you're hired ?
+Kalia_BarSalvation_JoinRebels_109 = Yes. I heard you were the boss's sister ?
+Kalia_BarSalvation_JoinRebels_110 = Yep ! I'm Anna. Pleased to meet you, uh....
+Kalia_BarSalvation_JoinRebels_111 = [MC].
+Kalia_BarSalvation_JoinRebels_112 = Right !
+Kalia_BarSalvation_JoinRebels_113 = Well, I won't hold you any longer.
+Kalia_BarSalvation_JoinRebels_114 = I'm sure you were given a difficult task.
+Kalia_BarSalvation_JoinRebels_115 = But don't hesitate to come to us if you need anything.
+Kalia_BarSalvation_JoinRebels_116 = Though you may want to talk to my sister for anything regarding our... line of work.
+
+Kalia_BarSalvation_Amanda_Greetings_1 = Hello, [MC].
+
+Kalia_BarSalvation_Amanda_AboutYou_1 = I am the eldest of three sisters.
+Kalia_BarSalvation_Amanda_AboutYou_2 = You've already met my younger sister Anna.
+Kalia_BarSalvation_Amanda_AboutYou_3 = My other sister is actually not in town.
+Kalia_BarSalvation_Amanda_AboutYou_4 = She took the mantle of our father. I can't complain.
+Kalia_BarSalvation_Amanda_AboutYou_5 = We still meet from time to time, but not that much anymore.
+Kalia_BarSalvation_Amanda_AboutYou_6 = I can't socialize while preparing a revolution, you see.
+
+Kalia_BarSalvation_Amanda_AboutRebellion_1 = This rebellion was instigated in full by your mother a few years ago.
+Kalia_BarSalvation_Amanda_AboutRebellion_2 = There was always some resistance to the Merchant before that, of course.
+Kalia_BarSalvation_Amanda_AboutRebellion_3 = But most of the time, it was just disorganized and it didn't go far.
+Kalia_BarSalvation_Amanda_AboutRebellion_4 = She, on the other hand, managed to almost topple the governement.
+Kalia_BarSalvation_Amanda_AboutRebellion_5 = She organized a great protest just in front of the palace.
+Kalia_BarSalvation_Amanda_AboutRebellion_6 = However, the army started shooting at the protesters.
+Kalia_BarSalvation_Amanda_AboutRebellion_7 = Ever since, the rebellion gained momentum in the heart of the people.
+Kalia_BarSalvation_Amanda_AboutRebellion_8 = We aren't many to take arms, but Kalians would follow us should we succeed.
+
+Kalia_BarSalvation_Quest1Start_1 = You're back. I was starting to wonder if you betrayed us.
+Kalia_BarSalvation_Quest1Start_2 = I secured the package, boss.
+Kalia_BarSalvation_Quest1Start_3 = Good. Show me.
+Kalia_BarSalvation_Quest1Start_4 = I give her the package. She inspects the artifact carefully.
+Kalia_BarSalvation_Quest1Start_5 = Hmm... It seems genuine... So he really stole it.
+Kalia_BarSalvation_Quest1Start_6 = I had Bos do some background checks on your story.
+Kalia_BarSalvation_Quest1Start_7 = He found out that the artifact was stolen. The Merchant didn't buy it.
+Kalia_BarSalvation_Quest1Start_8 = I was expecting that...
+Kalia_BarSalvation_Quest1Start_9 = So, what's the plan now ? What do we do with this ?
+Kalia_BarSalvation_Quest1Start_10 = Hmm... Let me think...
+Kalia_BarSalvation_Quest1Start_11 = Does the Merchant know you switched sides ?
+Kalia_BarSalvation_Quest1Start_12 = Yes. I had to beat up a colleague of the republican guard.
+Kalia_BarSalvation_Quest1Start_13 = Going back to the palace now is suicide.
+Kalia_BarSalvation_Quest1Start_14 = I see. Well, you are now formally part of the rebellion now.
+Kalia_BarSalvation_Quest1Start_15 = I won't rest until the government has fallen.
+Kalia_BarSalvation_Quest1Start_16 = Good. I actually have a task for you.
+Kalia_BarSalvation_Quest1Start_17 = Yes ?
+Kalia_BarSalvation_Quest1Start_18 = This artifact. Bring it to General Lara at Marklicht's Border Fortress.
+Kalia_BarSalvation_Quest1Start_19 = Try to use it as leverage. The artifact for a steady supply of guns.
+Kalia_BarSalvation_Quest1Start_20 = And if she refuse ?
+Kalia_BarSalvation_Quest1Start_21 = I'm sure she won't. Bos told me they assigned her to the artifact's theft.
+Kalia_BarSalvation_Quest1Start_22 = If she sees an opportunity to get it back, she'll take it.
+Kalia_BarSalvation_Quest1Start_23 = I see. I'll do that then.
+Kalia_BarSalvation_Quest1Start_24 = Oh, and one more thing. It's about my little sister.
+Kalia_BarSalvation_Quest1Start_25 = The waitress ?
+Kalia_BarSalvation_Quest1Start_26 = Yes. Bring her with you. She needs a breather from this place.
+Kalia_BarSalvation_Quest1Start_27 = Okay.
+Kalia_BarSalvation_Quest1Start_28 = And if anything happens to her...
+Kalia_BarSalvation_Quest1Start_29 = I'll make sure nothing bad happens !
+Kalia_BarSalvation_Quest1Start_30 = With that being said, I exit the room.
+Kalia_BarSalvation_Quest1Start_31 = She can be pretty scary when she wants to.
+Kalia_BarSalvation_Quest1Start_32 = Let's see... Where can-
+Kalia_BarSalvation_Quest1Start_33 = Wahoo ! Adventure !
+Kalia_BarSalvation_Quest1Start_34 = Hey, hey. What is going on ?
+Kalia_BarSalvation_Quest1Start_35 = I was eavesdropping on your discussion with sis.
+Kalia_BarSalvation_Quest1Start_36 = We're going on an adventure !
+Kalia_BarSalvation_Quest1Start_37 = Calm down. We're just going to talk to General Lara, nothing more.
+Kalia_BarSalvation_Quest1Start_38 = Eh... No dragon hunting ?
+Kalia_BarSalvation_Quest1Start_39 = Of course not ! You have to come back unharmed.
+Kalia_BarSalvation_Quest1Start_40 = Okay...
+Kalia_BarSalvation_Quest1Start_41 = <color=blue>Anna added to the party.</color>
+Kalia_BarSalvation_Quest1Start_42 = Well. Time to head to Marklicht then.
+
+Kalia_BarSalvation_Quest1End_1 = Sis, we're back !
+Kalia_BarSalvation_Quest1End_2 = Hmm ? Oh. Hello, Anna. I trust everything went well ?
+Kalia_BarSalvation_Quest1End_3 = Of course ! No problems whatsoever !
+Kalia_BarSalvation_Quest1End_4 = This girl...
+Kalia_BarSalvation_Quest1End_5 = The General wants you to tell them a drop point for the weapons.
+Kalia_BarSalvation_Quest1End_6 = Ah, yes. About that.
+Kalia_BarSalvation_Quest1End_7 = We have a problem in this matter.
+Kalia_BarSalvation_Quest1End_8 = Normally, we would have used the safehouse you attacked the other day.
+Kalia_BarSalvation_Quest1End_9 = However, it seems that a gang took the opportunity to take control of it.
+Kalia_BarSalvation_Quest1End_10 = Don't you have men guarding it ?
+Kalia_BarSalvation_Quest1End_11 = I'm afraid you killed them during your last incursion.
+Kalia_BarSalvation_Quest1End_12 = Oh... Sorry...
+Kalia_BarSalvation_Quest1End_13 = Well, just go and retake it.
+Kalia_BarSalvation_Quest1End_14 = Yes, boss.
+Kalia_BarSalvation_Quest1End_15 = Anna, assist him for the time being.
+Kalia_BarSalvation_Quest1End_16 = More adventures ? Count me in !
+Kalia_BarSalvation_Quest1End_17 = Just be careful...
+Kalia_BarSalvation_Quest1End_18 = By the way, I sent Bos on an errand.
+Kalia_BarSalvation_Quest1End_19 = Your friend the republican guard went out of town.
+Kalia_BarSalvation_Quest1End_20 = I had him follow him.
+Kalia_BarSalvation_Quest1End_21 = With any luck, he'll lead us to something of importance for the Merchant.
+Kalia_BarSalvation_Quest1End_22 = Sword went out of town ? I wonder what he's up to.
+Kalia_BarSalvation_Quest1End_23 = I see. Well... Come, Anna. Let's get that safehouse back.
+Kalia_BarSalvation_Quest1End_24 = We'll worry about Bos's findings later.
+Kalia_BarSalvation_Quest1End_25 = Right behind you.
+
+Kalia_BarSalvation_Quest2End_1 = It is done.
+Kalia_BarSalvation_Quest2End_2 = Good, and just in time.
+Kalia_BarSalvation_Quest2End_3 = I'll handle the weapon transfer. You have another assignement.
+Kalia_BarSalvation_Quest2End_4 = Bos sent me a letter. He found out where your friend went.
+Kalia_BarSalvation_Quest2End_5 = Where did he go ?
+Kalia_BarSalvation_Quest2End_6 = Mirage Island. Bos also said he was waiting for you at Tolau's lighthouse.
+Kalia_BarSalvation_Quest2End_7 = Apparently, he has things to say that can't be put down on paper.
+Kalia_BarSalvation_Quest2End_8 = I understand. We'll go there right now.
+Kalia_BarSalvation_Quest2End_9 = What are you doing ?
+Kalia_BarSalvation_Quest2End_10 = Oh ? I'm just writing what we have to do. In case I forget.
+Kalia_BarSalvation_Quest2End_11 = Why would you forget ? Oh, wait. Let me do it !
+Kalia_BarSalvation_Quest2End_12 = Wait-
+Kalia_BarSalvation_Quest2End_13 = ... There ! I wrote what we have to do.
+Kalia_BarSalvation_Quest2End_14 = I don't even want to know what she wrote...
+Kalia_BarSalvation_Quest2End_15 = ....
+Kalia_BarSalvation_Quest2End_16 = We'll.... be on our way, sis.
+Kalia_BarSalvation_Quest2End_17 = Good.
+
+Kalia_BarSalvation_Quest3End_1 = You're back.
+Kalia_BarSalvation_Quest3End_2 = We found out that the Merchant wanted to steal this artifact.
+Kalia_BarSalvation_Quest3End_3 = By Kalibu ! Is that what I think it is ?
+Kalia_BarSalvation_Quest3End_4 = Amanda picks up the scepter and examines it.
+Kalia_BarSalvation_Quest3End_5 = This was thought to be lost for centuries.
+Kalia_BarSalvation_Quest3End_6 = What is it ?
+Kalia_BarSalvation_Quest3End_7 = You don't know ? Oh, right. You probably didn't study to be a priest.
+Kalia_BarSalvation_Quest3End_8 = Back in the old times, at the very beginning...
+Kalia_BarSalvation_Quest3End_9 = Legends say that this is the holy scepter, used by the old conclave.
+Kalia_BarSalvation_Quest3End_10 = Oh, right. I remember this story.
+Kalia_BarSalvation_Quest3End_11 = There was this conclave of old men and women who ruled the Suori.
+Kalia_BarSalvation_Quest3End_12 = But they disappeared without any trace at some point.
+Kalia_BarSalvation_Quest3End_13 = Yes. They used this scepter to signify their right to rule.
+Kalia_BarSalvation_Quest3End_14 = The story goes that they fled the mainland after the Mountaineers's split.
+Kalia_BarSalvation_Quest3End_15 = The blow they got from losing half of their subjects to another religion made them flee.
+Kalia_BarSalvation_Quest3End_16 = Scholars thought they went far into the ocean. But it's possible they stopped at Mirage Island for a time.
+Kalia_BarSalvation_Quest3End_17 = I see. But how does this help us ?
+Kalia_BarSalvation_Quest3End_18 = This is huge, [MC].
+Kalia_BarSalvation_Quest3End_19 = This scepter could allow us to get recognition, both internally and internationally.
+Kalia_BarSalvation_Quest3End_20 = I'm sure the Merchant actually wanted to use it to reinforce his rule.
+Kalia_BarSalvation_Quest3End_21 = We'll use it to bring about its fall.
+Kalia_BarSalvation_Quest3End_22 = What are my orders ?
+Kalia_BarSalvation_Quest3End_23 = ... Go to the grand plaza. Distribute leaflets.
+Kalia_BarSalvation_Quest3End_24 = The time has come. The people must know we are ready to topple the tyrant.
+Kalia_BarSalvation_Quest3End_25 = It shall be done. 
+Kalia_BarSalvation_Quest3End_26 = By the way, [MC].
+Kalia_BarSalvation_Quest3End_27 = Yes ?
+Kalia_BarSalvation_Quest3End_28 = If we have the time, could we go to the shrine near Iberty ?
+Kalia_BarSalvation_Quest3End_29 = There's someone I must see.
+Kalia_BarSalvation_Quest3End_30 = A wise decision, Anna. Please say hi to her for me.
+Kalia_BarSalvation_Quest3End_31 = Alright, I'll make a mental note.
+
+Kalia_BarSalvation_Quest4End_1 = [MC] ? Thank Kalibu you're back !
+Kalia_BarSalvation_Quest4End_2 = Something's wrong ?
+Kalia_BarSalvation_Quest4End_3 = It's Bos... He got captured.
+Kalia_BarSalvation_Quest4End_4 = What ? How ?
+Kalia_BarSalvation_Quest4End_5 = Apparently your friend the republican guard took him by surprise.
+Kalia_BarSalvation_Quest4End_6 = This fool... He must have kept tabs on him even after the island.
+Kalia_BarSalvation_Quest4End_7 = Where is he is now ? We need to save him.
+Kalia_BarSalvation_Quest4End_8 = That's the weird part. We know Bos was captured because Sword told us where he was.
+Kalia_BarSalvation_Quest4End_9 = What ?
+Kalia_BarSalvation_Quest4End_10 = I just received a letter. It says that Bos is at Camp Hope.
+Kalia_BarSalvation_Quest4End_11 = He also says that you have to go. Or else, he will shoot him.
+Kalia_BarSalvation_Quest4End_12 = I guess he wants payback for the two times I beat him up.
+Kalia_BarSalvation_Quest4End_13 = Okay. That one is on me. It's my fault Bos captured.
+Kalia_BarSalvation_Quest4End_14 = I'll bring him back.
+Kalia_BarSalvation_Quest4End_15 = Good luck...
+Kalia_BarSalvation_Quest4End_16 = Hey ! I'm still coming with you !
+Kalia_BarSalvation_Quest4End_17 = You can follow me to the camp's entrance. But I'll have to enter it alone.
+Kalia_BarSalvation_Quest4End_18 = You can keep an eye on Ace in the meantime.
+Kalia_BarSalvation_Quest4End_19 = ... Okay.
+
+Kalia_BarSalvation_Quest6Start_1 = [MC] ! I heard from Bos. Is it true that Orkva is planning an invasion ?
+Kalia_BarSalvation_Quest6Start_2 = Yes, boss. We might have to hurry with our toppling of the Merchant.
+Kalia_BarSalvation_Quest6Start_3 = Orkva's military is quite formidable. I'm sure they'll manage to defeat the Kalian army.
+Kalia_BarSalvation_Quest6Start_4 = Then it's settled. We'll depart as soon as possible to the palace.
+Kalia_BarSalvation_Quest6Start_5 = It's time to free this city and its citizen.
+Kalia_BarSalvation_Quest6Start_6 = Be sure to restock on supplies. This is your last chance before the final battle.
+Kalia_BarSalvation_Quest6Start_7 = Talk to me when you're ready.
+
+Kalia_BarSalvation_Quest6Ask_1 = Are you ready to topple the Merchant ?
+Kalia_BarSalvation_Quest6Ask_2 = <color=red>This will lead to the end of the game. This is the last warning.</color>
+
+Kalia_BarSalvation_Quest6Ask_3 = I'm ready.
+Kalia_BarSalvation_Quest6Ask_4 = Good. Let's go. To the palace !
+
+Kalia_BarSalvation_MarklichtQuest1_1 = This is the place, but where are the rebels ?
+Kalia_BarSalvation_MarklichtQuest1_2 = Maybe... Wait...
+Kalia_BarSalvation_MarklichtQuest1_3 = This barrel is actually a door. I should have seen this coming.
+Kalia_BarSalvation_MarklichtQuest1_4 = I enter through the barrel. The room is completely dark.
+Kalia_BarSalvation_MarklichtQuest1_5 = Is this the place ?
+Kalia_BarSalvation_MarklichtQuest1_6 = Suddenly, I feel the barrel of a gun behind my back.
+Kalia_BarSalvation_MarklichtQuest1_7 = Don't move.
+Kalia_BarSalvation_MarklichtQuest1_8 = I come in peace. I'm with Marklicht.
+Kalia_BarSalvation_MarklichtQuest1_9 = Marklicht ? You are a member of the republican guard, aren't you ?
+Kalia_BarSalvation_MarklichtQuest1_10 = I defected. My superior sent me to talk to you.
+Kalia_BarSalvation_MarklichtQuest1_11 = What do they want from us ?
+Kalia_BarSalvation_MarklichtQuest1_12 = Its all in this letter. We have an offer for you.
+Kalia_BarSalvation_MarklichtQuest1_13 = Marklicht is preparing an invasion of Kalia. We offer you positions as administrators if you help us.
+Kalia_BarSalvation_MarklichtQuest1_14 = What ? Let me see.
+Kalia_BarSalvation_MarklichtQuest1_15 = ...
+Kalia_BarSalvation_MarklichtQuest1_16 = Hmm...
+Kalia_BarSalvation_MarklichtQuest1_17 = As much as the thought of losing our independence disgusts me, this offer...
+Kalia_BarSalvation_MarklichtQuest1_18 = Hmm... I'll ponder on this with my comrades.
+Kalia_BarSalvation_MarklichtQuest1_19 = Who is your superior officer ?
+Kalia_BarSalvation_MarklichtQuest1_20 = General Lara of the Border Fortress.
+Kalia_BarSalvation_MarklichtQuest1_21 = ... Alright. I'll send her a reply when we have made our choice.
+Kalia_BarSalvation_MarklichtQuest1_22 = Now get lost. You have overstayed your welcome, turncoat.
+Kalia_BarSalvation_MarklichtQuest1_23 = Without hesitation, I exit the room.
+Kalia_BarSalvation_MarklichtQuest1_24 = Well... This went as good as it could.
+Kalia_BarSalvation_MarklichtQuest1_25 = I should head back to the General's fortress.
+
+Kalia_BarSalvation_MerchantQuest1_1 = Sure enough, Robertus is here. He's drinking beer.
+Kalia_BarSalvation_MerchantQuest1_2 = Oh. You are...
+Kalia_BarSalvation_MerchantQuest1_3 = Sir, I must ask you to come with me.
+Kalia_BarSalvation_MerchantQuest1_4 = Ah. I knew you would come one day.
+Kalia_BarSalvation_MerchantQuest1_5 = It seems he decided to get rid of me for good.
+Kalia_BarSalvation_MerchantQuest1_6 = I...
+Kalia_BarSalvation_MerchantQuest1_7 = So be it. I'll never bow down to this traitor.
+Kalia_BarSalvation_MerchantQuest1_8 = All this charade for what ? Just for him to get richer ?
+Kalia_BarSalvation_MerchantQuest1_9 = Why did he send you ? Did I hurt his ego ? Am I just better at business than him ?
+Kalia_BarSalvation_MerchantQuest1_10 = Sir...
+Kalia_BarSalvation_MerchantQuest1_11 = It's too late to go back now.
+Kalia_BarSalvation_MerchantQuest1_12 = I go knowing I made the right choice in life.
+Kalia_BarSalvation_MerchantQuest1_13 = Can you say the same ?
+Kalia_BarSalvation_MerchantQuest1_14 = Not really...
+Kalia_BarSalvation_MerchantQuest1_15 = Then let me help you find salvation.
+Kalia_BarSalvation_MerchantQuest1_16 = Robertus pulls out a gun. I need to counter it, and fast !
+
+Kalia_BarSalvation_MerchantQuest1_17 = ... I feel sick.
+Kalia_BarSalvation_MerchantQuest1_18 = I must go now. I've done enough.
+Kalia_BarSalvation_MerchantQuest1_19 = The Merchant will know what to do next.
+
+# ---------------------------------------------------------
+# ----------------- Kalia - Jackwell ----------------------
+# ---------------------------------------------------------
+
+Kalia_Library_Jackwell_Greetings_1 = Hello, my good fellow.
+
+Kalia_Library_StartArcQuest_1 = This is one of Kalia's most famous library.
+Kalia_Library_StartArcQuest_2 = It was created and curated by the Jackwell family for over a century.
+Kalia_Library_StartArcQuest_3 = I heard they are some sort of treasure hunters or something like that.
+Kalia_Library_StartArcQuest_4 = Oy ! Are you who I think you are ?
+Kalia_Library_StartArcQuest_5 = I look around, only to find a man in armor standing next to me.
+Kalia_Library_StartArcQuest_6 = Uh ? Who are you ?
+Kalia_Library_StartArcQuest_7 = Oh, pardon my manners. I am Jackwell, the current owner of this library.
+Kalia_Library_StartArcQuest_8 = Wait, HE is the owner of this place ?
+Kalia_Library_StartArcQuest_9 = I couldn't help but notice your uniform.
+Kalia_Library_StartArcQuest_10 = You are a member of the republican guard, are you not ?
+Kalia_Library_StartArcQuest_11 = Why, yes. Do you have business with the army ?
+Kalia_Library_StartArcQuest_12 = Oh, no. I simply couldn't resist pointing that out.
+Kalia_Library_StartArcQuest_13 = I opened a small museum section in the library, and there are so many uniforms in there.
+Kalia_Library_StartArcQuest_14 = I... I see.
+Kalia_Library_StartArcQuest_15 = So, what's with the armor ?
+Kalia_Library_StartArcQuest_16 = Oh, I'm so glad you noticed !
+Kalia_Library_StartArcQuest_17 = This is an original armor from the far away country of Lonas.
+Kalia_Library_StartArcQuest_18 = Lonas ? Can't say I ever heard of it.
+Kalia_Library_StartArcQuest_19 = I can't blame you, it's far west. Even further than the old imperial countries.
+Kalia_Library_StartArcQuest_20 = Anyway, I'm just so happy I got this armor.
+Kalia_Library_StartArcQuest_21 = I bought this from a man in the Koskyan province of Runan.
+Kalia_Library_StartArcQuest_22 = He called himself the knight of Runan or something like that.
+Kalia_Library_StartArcQuest_23 = I... I guess.
+Kalia_Library_StartArcQuest_24 = Look at me talk. You're completely lost, aren't you.
+Kalia_Library_StartArcQuest_25 = ... Now that I think about it.
+Kalia_Library_StartArcQuest_26 = I may require the services of a strong warrior like you.
+Kalia_Library_StartArcQuest_27 = Uh ?
+Kalia_Library_StartArcQuest_28 = Since I maintain this place, I decided I could contribute a little to it.
+Kalia_Library_StartArcQuest_29 = I decided to write a book on how to survive in the wild.
+Kalia_Library_StartArcQuest_30 = I overheard sailors talking about a mysterious new land in the east, so here I am.
+Kalia_Library_StartArcQuest_31 = And where do I factor in ?
+Kalia_Library_StartArcQuest_32 = I'm not an expert in survival. I need someone to help me.
+Kalia_Library_StartArcQuest_33 = I just need you to do a few things for me. It'll help me confirm my hypotheses.
+Kalia_Library_StartArcQuest_34 = I'll pay you per request, of course.
+Kalia_Library_StartArcQuest_35 = ... Fine. I'll do what I can.
+Kalia_Library_StartArcQuest_36 = Splendid. But hold on a second.
+Kalia_Library_StartArcQuest_37 = Jackwell unequips his armor. It seems bulky.
+Kalia_Library_StartArcQuest_38 = Good, where was I ? Ah, yes.
+Kalia_Library_StartArcQuest_39 = For your first task, I need you to simply gather some herbs.
+Kalia_Library_StartArcQuest_40 = You know, the medicinal type.
+Kalia_Library_StartArcQuest_41 = Oh, you mean the long legs ?
+Kalia_Library_StartArcQuest_42 = That's how you call them ?
+Kalia_Library_StartArcQuest_43 = Well, uh... Yes...
+Kalia_Library_StartArcQuest_44 = Anyway, I just need you to gather some.
+Kalia_Library_StartArcQuest_45 = I'll reward you on delivery.
+Kalia_Library_StartArcQuest_46 = Alright.
+Kalia_Library_StartArcQuest_47 = Long legs... I believe I saw some where I lost the package.
+Kalia_Library_StartArcQuest_48 = It's worth a try.
+
+Kalia_Library_ArcQuest1End_1 = Ah ! I see you found the medicinal herbs.
+Kalia_Library_ArcQuest1End_2 = What is it called again ? Touch of Kalibu or something like that ?
+Kalia_Library_ArcQuest1End_3 = Y.. Yes.
+Kalia_Library_ArcQuest1End_4 = I can't let him know its true name.
+Kalia_Library_ArcQuest1End_5 = Anyway, what do you intend to do with them ?
+Kalia_Library_ArcQuest1End_6 = Oh, right. I did forget to tell you, didn't I ?
+Kalia_Library_ArcQuest1End_7 = I simply wanted to see them for myself and to try a recipe I found.
+Kalia_Library_ArcQuest1End_8 = Jackwell grabs the plants and adds them to a strange mixture.
+Kalia_Library_ArcQuest1End_9 = Medicinal herbs alone cannot do anything. You need to mix them beforehand.
+Kalia_Library_ArcQuest1End_10 = Here, it seems it worked.
+Kalia_Library_ArcQuest1End_11 = He gives me a strange, yet familiar mixture.
+Kalia_Library_ArcQuest1End_12 = This is technically one of these "medicinal herbs" you can buy off the market.
+Kalia_Library_ArcQuest1End_13 = I added a few other plants and some pepper.
+Kalia_Library_ArcQuest1End_14 = Pepper ?
+Kalia_Library_ArcQuest1End_15 = Why not ? Anyway, I need your help with another task.
+Kalia_Library_ArcQuest1End_16 = Now that I know how to treat wounds, I'd like you to "endanger" yourself.
+Kalia_Library_ArcQuest1End_17 = There is a cavern in the White Forest that is home to a variety of wolves.
+Kalia_Library_ArcQuest1End_18 = Go there and kill a few of them.
+Kalia_Library_ArcQuest1End_19 = Oh, and here is your payment for helping me.
+Kalia_Library_ArcQuest1End_20 = <color=blue>I got 15 gold from Jackwell.</color>
+Kalia_Library_ArcQuest1End_21 = I should head for the White Forest then. 
+
+Kalia_Library_ArcQuest2End_1 = Did you kill the wolves ?
+Kalia_Library_ArcQuest2End_2 = Yes, but I fail to see how this even helps you.
+Kalia_Library_ArcQuest2End_3 = Nonsense, this is what I need. You survived in a cavern full of wolves.
+Kalia_Library_ArcQuest2End_4 = I heard this faraway land is full of them. So I need to know how to defeat them.
+Kalia_Library_ArcQuest2End_5 = Punching them seems to do the trick.
+Kalia_Library_ArcQuest2End_6 = ... Wonderful !
+Kalia_Library_ArcQuest2End_7 = Anything else you can tell me about this wonderful island ?
+Kalia_Library_ArcQuest2End_8 = Oh, well... Apparently, it is quite mountainous.
+Kalia_Library_ArcQuest2End_9 = I'd like you to help me with that, actually.
+Kalia_Library_ArcQuest2End_10 = Take these equipements, and climb up to the top of mount Vasalia.
+Kalia_Library_ArcQuest2End_11 = Are you serious ?
+Kalia_Library_ArcQuest2End_12 = Yes. Now go ! For science !
+Kalia_Library_ArcQuest2End_13 = Oh, before that. Here is your pay.
+Kalia_Library_ArcQuest2End_14 = <color=blue>I got 15 gold from Jackwell.</color>
+Kalia_Library_ArcQuest2End_15 = Let me also heal you from your encounter with the wolves.
+Kalia_Library_ArcQuest2End_16 = <color=blue>I earned 2 points in "Bonus HP".</color>
+Kalia_Library_ArcQuest2End_17 = Well, I guess I should go climb a mountain now...
+
+Kalia_Library_ArcQuest3End_1 = Did you climb to the top of mount Vasalia ?
+Kalia_Library_ArcQuest3End_2 = Yes, but there was a path. In the end, I didn't need your tools.
+Kalia_Library_ArcQuest3End_3 = I see... natives may create roads for you to take...
+Kalia_Library_ArcQuest3End_4 = What is he even writing ?
+Kalia_Library_ArcQuest3End_5 = Here, take your pay for helping me.
+Kalia_Library_ArcQuest3End_6 = <color=blue>I got 15 gold from Jackwell.</color>
+Kalia_Library_ArcQuest3End_7 = Oh, and I also researched novel ways to climb mountains. Let me teach them to you.
+Kalia_Library_ArcQuest3End_8 = <color=blue>I earned 2 points in "Agility".</color>
+Kalia_Library_ArcQuest3End_9 = Is that all you need for your book ?
+Kalia_Library_ArcQuest3End_10 = Not quite. I still need research for my last chapter.
+Kalia_Library_ArcQuest3End_11 = Since that island is... well... an island, I thought it was interesting to write about swimming.
+Kalia_Library_ArcQuest3End_12 = Could you go to the lighthouse and swim a little ?
+Kalia_Library_ArcQuest3End_13 = I...  I guess I could do that.
+Kalia_Library_ArcQuest3End_14 = This is getting more and more ridiculous...
+Kalia_Library_ArcQuest3End_15 = Fantastic, I'll eagerly await your return.
+
+Kalia_Library_ArcQuest4End_1 = So ?
+Kalia_Library_ArcQuest4End_2 = Well... I guess I can swim ?
+Kalia_Library_ArcQuest4End_3 = Incredible !
+Kalia_Library_ArcQuest4End_4 = Let me write this down... "Humans can float"...
+Kalia_Library_ArcQuest4End_5 = Somehow, I fear for the quality of his book.
+Kalia_Library_ArcQuest4End_6 = Ah ! With this, my research is complete. I can now write my book.
+Kalia_Library_ArcQuest4End_7 = Here, take this as a reward.
+Kalia_Library_ArcQuest4End_8 = <color=blue>I got 30 gold from Jackwell.</color>
+Kalia_Library_ArcQuest4End_9 = Oh, and let me teach you a few things I learned about survival.
+Kalia_Library_ArcQuest4End_10 = <color=blue>I earned 2 points in "Resilience".</color>
+Kalia_Library_ArcQuest4End_11 = So, my job here is done then ?
+Kalia_Library_ArcQuest4End_12 = Yes, I'll be working on writing my book from now on.
+Kalia_Library_ArcQuest4End_13 = But rest assured that you'll get a free copy when it's finished.
+Kalia_Library_ArcQuest4End_14 = I see... Thank you.
+Kalia_Library_ArcQuest4End_15 = Not that I'll need it anyway...
+Kalia_Library_ArcQuest4End_16 = Well, glad that this is over.
+
+Kalia_Library_Jackwell_AboutYou_1 = I am the fourth owner of the Jackwell Library of Kalia.
+Kalia_Library_Jackwell_AboutYou_2 = My great-grandfather created this library to allow Kalians to learn about anything.
+Kalia_Library_Jackwell_AboutYou_3 = People come here to learn about geography, nature, and much more.
+Kalia_Library_Jackwell_AboutYou_4 = My great-grandfather, however, had a thing for history and archeology.
+Kalia_Library_Jackwell_AboutYou_5 = He, along with his colleague Archibald von Ramos, went on an expedition to a ruin in the north.
+Kalia_Library_Jackwell_AboutYou_6 = They found artifacts that you can see in this library.
+Kalia_Library_Jackwell_AboutYou_7 = But alas, he died on the way back.
+Kalia_Library_Jackwell_AboutYou_8 = They were pretty far up north, and he died in a snowstorm.
+Kalia_Library_Jackwell_AboutYou_9 = My grandfather then became the owner of the library and continued to maintain it.
+Kalia_Library_Jackwell_AboutYou_10 = Nowadays, I'm the owner. Though I won't go on an expedition anytime soon.
+
+Kalia_Library_Jackwell_AboutKalia_1 = Kalia was founded a long time ago.
+Kalia_Library_Jackwell_AboutKalia_2 = It was, like today, mainly centered around trade.
+Kalia_Library_Jackwell_AboutKalia_3 = After a while, it created a sort of confederation with the nearby cites.
+Kalia_Library_Jackwell_AboutKalia_4 = Vorlan, Tolau, and the Mirage Island were some of the members of this confederation. 
+Kalia_Library_Jackwell_AboutKalia_5 = One day, the faraway Central Empire came and made Kalia their protectorate.
+Kalia_Library_Jackwell_AboutKalia_6 = Nothing really changed for the population, however.
+Kalia_Library_Jackwell_AboutKalia_7 = Later on, the Empire went into a civil war. It was chaos.
+Kalia_Library_Jackwell_AboutKalia_8 = The neighboring countries of Orkva and, at time Licht took the opportunity to invade.
+Kalia_Library_Jackwell_AboutKalia_9 = After a quick conflict, only Kalia and the Mirage Island remained in the confederation.
+Kalia_Library_Jackwell_AboutKalia_10 = Now, rumors say Orkva wants to invade again. We'll see where the future will lead us.
+
+Kalia_Library_Jackwell_AboutContinent_1 = Our large continent is called Vasia.
+Kalia_Library_Jackwell_AboutContinent_2 = Kalia is situated on the east coast of it.
+Kalia_Library_Jackwell_AboutContinent_3 = Our direct neighbors are Orkva and Marklicht. I suppose we also are almost neighbors with the northmen.
+Kalia_Library_Jackwell_AboutContinent_4 = The continent was for a very long time dominated by two powers : Alhaunia and the Central Empire.
+Kalia_Library_Jackwell_AboutContinent_5 = They waged many wars on the western side of the continent for control of key regions.
+Kalia_Library_Jackwell_AboutContinent_6 = Nowadays, Alhaunia is declining, and the Central Empire was disintegrated due to a civil war.
+Kalia_Library_Jackwell_AboutContinent_7 = In terms of geography, the biggest mountains on the continent are the White mountains.
+Kalia_Library_Jackwell_AboutContinent_8 = They stretch from the central plains to the Koskyan province of Vlatyr.

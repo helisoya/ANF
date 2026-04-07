@@ -1,0 +1,6 @@
+# Checks for the secondary quest of Iberty's Doctor
+switch secondaryQuest_Iberty_Doctor
+	-1 Kalia/Iberty/Doctor/Doctor_SideQuest_Start
+	0 Kalia/Iberty/Doctor/Doctor_SideQuest_InProgress
+	1 Kalia/Iberty/Doctor/Doctor_SideQuest_End
+	100 Kalia/Iberty/Doctor/Doctor_SideQuest_Done

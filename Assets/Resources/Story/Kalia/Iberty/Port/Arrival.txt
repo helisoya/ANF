@@ -1,0 +1,27 @@
+clearStack()
+setFg(1)
+
+setLocals(kaliaRegion)
+
+playMusic(Exploration_KaliaRegion)
+removeAllCharacters()
+setBackground(Kalia/Iberty/Port)
+
+load(Common/ProcessDayNight)
+load(Common/ProcessWeather)
+load(Common/DisplayWeatherRain)
+
+setLocation(Location_Iberty)
+
+if(night = 0){
+	addCharacter(Fisherman1;false)
+	setCharacterPosition(Fisherman1;FishermanSpot)
+	setCharacterRotation(Fisherman1;FishermanSpot)
+	setInteractionChapter(Fisherman1;Kalia/Iberty/Port/Fisherman_Enter)
+}
+
+autosave()
+
+fadeFg(0;false)
+
+load(Kalia/Iberty/Port/Interaction)

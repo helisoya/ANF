@@ -1,0 +1,9 @@
+# Doctor talks about herself
+
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_AboutYou_1)
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_AboutYou_2)
+dialog([MC];_;false;Kalia_BarMax_Waiter_AboutYou_3)
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_AboutYou_4)
+dialog(Waitress;Waiter1;false;Kalia_BarMax_Waiter_AboutYou_5)
+
+load(Kalia/City/BarMax/Waiter)

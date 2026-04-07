@@ -1,0 +1,11 @@
+setBg(1)
+
+if(arcQuest_Jackwell_2 = 0){
+	dialog(narrator;_;false;ForestCavern_End_Jackwell_1)
+	variable(arcQuest_Jackwell_2;1)
+}
+
+fadeFg(1;true)
+setBg(0)
+
+load(Forest/Cavern/Arrival)

@@ -1,0 +1,7 @@
+# Shop of the Okville's salesman
+
+dialog(Owner;Citizen3;false;Okville_Shop_Shop_1)
+
+shop(OkvilleSalesman)
+
+load(Orkva/Okville/Shop/Salesman)

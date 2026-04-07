@@ -1,0 +1,4 @@
+# Shop of the Iberty's salesman
+shop(IbertySalesman)
+
+load(Kalia/Iberty/Shop/Salesman)
