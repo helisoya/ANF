@@ -1,0 +1,160 @@
+using ANF.ANSL;
+using ANF.Manager;
+using ANF.Utils;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+/// <summary>
+/// Represents the flow of a specific script.
+/// A context can change scripts dynamically without having to recreate a new one
+/// </summary>
+public class ANSLContext
+{
+    public bool isRunning { get; private set; }
+
+    private Dictionary<uint, ANSLFunction> functions;
+    private string[] currentScript;
+    private uint currentLine;
+    
+    private bool lastFunctionModifiedLine;
+    private bool waitingForFunction;
+    private uint currentFunctionId;
+
+    private uint currentFunctionDepth;
+    private bool waitingForNextFrame;
+
+    public ANSLContext(Dictionary<uint,ANSLFunction> functions, string scriptFilePath, bool startImmediately)
+    {
+        this.functions = functions;
+        LoadScript(scriptFilePath, startImmediately);
+    }
+
+    public ANSLContext(Dictionary<uint, ANSLFunction> functions)
+    {
+        this.functions = functions;
+        isRunning = false;
+    }
+
+    /// <summary>
+    /// Loads a new script file
+    /// </summary>
+    /// <param name="scriptFilePath">The script's filepath (Local path inside the designated resource folder) </param>
+    /// <param name="startImmediately">True if the script should start immediatly. False will wait for the next Update</param>
+    public void LoadScript(string scriptFilePath, bool startImmediately)
+    {
+        if(System.IO.File.Exists(scriptFilePath))
+        {
+            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(ANFManager.instance.GetANFSettings()+"/"+scriptFilePath)).ToArray();
+            lastFunctionModifiedLine = true;
+            currentLine = 0;
+
+            if(!waitingForNextFrame)
+                waitingForNextFrame = !startImmediately;
+
+            isRunning = true;
+
+            NextLine();
+        }
+        else
+        {
+            // No file, do something ?
+            StopContext();
+        }
+    }
+
+    /// <summary>
+    /// Process the next line
+    /// </summary>
+    public void NextLine()
+    {
+        currentFunctionDepth++;
+        if(waitingForNextFrame || currentFunctionDepth > ANFManager.instance.GetANFSettings().anslMaxFunctionsPerFrame)
+        {
+            waitingForNextFrame = true;
+            return;
+        }
+
+
+        if (!lastFunctionModifiedLine)
+            currentLine++;
+
+        waitingForFunction = false;
+        lastFunctionModifiedLine = false;
+
+        if(currentLine < currentScript.Length)
+        {
+            string[] split = currentScript[currentLine].Split(' ', 1);
+            uint functionId;
+            if(split.Length == 0 || string.IsNullOrEmpty(currentScript[currentLine]) || 
+                !uint.TryParse(split[0],out functionId) || !functions.ContainsKey(functionId))
+            {
+                // Could not parse/find function
+                NextLine();
+            }
+            else
+            {
+                // Start the new function
+                functions[functionId].StartProcess(split.Length > 1 ? split[1].Split(' ') : null,this);
+
+                if (functions[functionId].isProcessing)
+                {
+                    // Needs to wait until the function is finished
+                    currentFunctionId = functionId;
+                    waitingForFunction = true;
+                }
+                else
+                {
+                    // Function is already over
+                    NextLine();
+                }
+            }
+        }
+        else
+        {
+            // No more lines in script
+            StopContext();
+        }
+    }
+
+    /// <summary>
+    /// Updates the context
+    /// </summary>
+    public void Update()
+    {
+        // If the context is in cooldown, 
+        if(waitingForNextFrame)
+        {
+            currentFunctionDepth = 0;
+            waitingForNextFrame = false;
+            NextLine();
+        }
+
+        // Updates the current function if it isn't finished yet
+        if (waitingForFunction && functions.ContainsKey(currentFunctionId))
+        {
+            functions[currentFunctionId].Update();
+            if (!functions[currentFunctionId].isProcessing)
+                NextLine();
+        }
+    }
+
+    /// <summary>
+    /// Changes the current line counter.
+    /// This will disable the auto increment at the end of the next function
+    /// </summary>
+    /// <param name="value">The new line counter</param>
+    public void SetLineCounter(uint value)
+    {
+        currentLine = value;
+        lastFunctionModifiedLine = true;
+    }
+
+    /// <summary>
+    /// Stops the context
+    /// </summary>
+    public void StopContext()
+    {
+        isRunning = false;
+    }
+}

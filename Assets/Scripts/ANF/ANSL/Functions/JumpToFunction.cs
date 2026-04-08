@@ -1,0 +1,41 @@
+using UnityEngine;
+
+namespace ANF.ANSL
+{
+    /// <summary>
+    /// The jumps to function is used to advance the line counter manually.
+    /// It is only used internaly, and may not be used in ANSL scripts directly
+    /// </summary>
+    [ANSLFunctionAttribute(
+        functionId: 0,
+        functionBody: "",
+        functionAutoComplete: "",
+        functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]
+    public class JumpToFunction : ANSLFunction
+    {
+        public override bool Compile()
+        {
+            return true;
+        }
+
+        protected override void OnStartProcess(string[] parameters, ANSLContext context)
+        {
+            if (parameters.Length > 0)
+                if (uint.TryParse(parameters[0], out uint lineCounter))
+                    context.SetLineCounter(lineCounter);
+
+            EndProcess();
+        }
+
+        protected override void OnUpdate()
+        {
+            // Unused
+        }
+
+        protected override void OnCleanup()
+        {
+            // Unused
+        }
+    }
+}
+
