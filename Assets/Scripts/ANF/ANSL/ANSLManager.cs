@@ -14,32 +14,37 @@ public class ANSLManager : MonoBehaviour
 {
     private ANSLContext[] contexts;
 
-    void Start()
+    /// <summary>
+	/// Initialize the manager
+	/// </summary>
+    /// <param name="manager">The ANF Manager</param>
+    public void Initialize(ANFManager manager)
     {
-        GenerateContexts();
+        GenerateContexts(manager);
     }
 
     /// <summary>
     /// Generate the context pool
     /// </summary>
-    private void GenerateContexts()
+    /// <param name="manager">The ANF Manager</param>
+    private void GenerateContexts(ANFManager manager)
     {
         List<Type> functions = GetFunctionsList();
 
-        contexts = new ANSLContext[ANFManager.instance.GetANFSettings().anslMaxContexts];
-        for(int i = 0; i < contexts.Length;i++)
+        contexts = new ANSLContext[PersistentDataManager.instance.GetANFSettings().anslMaxContexts];
+        for (int i = 0; i < contexts.Length; i++)
         {
             Dictionary<uint, ANSLFunction> instances = new Dictionary<uint, ANSLFunction>();
             foreach (Type type in functions)
             {
                 ANSLFunctionAttribute attribute = type.GetAttribute<ANSLFunctionAttribute>();
-                if(attribute != null && !instances.ContainsKey(attribute.functionId))
+                if (attribute != null && !instances.ContainsKey(attribute.functionId))
                 {
-                    instances.Add(attribute.functionId,(ANSLFunction)type.Instantiate());
+                    instances.Add(attribute.functionId, (ANSLFunction)type.Instantiate());
                 }
             }
 
-            contexts[i] = new ANSLContext(instances);
+            contexts[i] = new ANSLContext(instances, manager);
         }
     }
 
@@ -70,9 +75,9 @@ public class ANSLManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(ANSLContext context in contexts)
+        foreach (ANSLContext context in contexts)
         {
-            if(context.isRunning)
+            if (context.isRunning)
                 context.Update();
         }
     }

@@ -18,7 +18,7 @@ namespace ANF.ANSL
             return true;
         }
 
-        protected override void OnStartProcess(string[] parameters, ANSLContext context)
+        protected override void OnStartProcess(string[] parameters)
         {
             if (parameters.Length > 0)
                 if (uint.TryParse(parameters[0], out uint lineCounter))

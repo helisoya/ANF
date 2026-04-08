@@ -7,31 +7,22 @@ namespace ANF.Manager
     /// </summary>
     public class ANFManager : MonoBehaviour
     {
-        public static ANFManager instance { get; private set; }
-
-        [Header("Data")]
-        [SerializeField] private ANFSettings anfSettings;
-
-        void Awake()
-        {
-            if (!instance)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        [Header("Base Component")]
+        [SerializeField] private ANSLManager anslManager;
 
         /// <summary>
-        /// Gets the internal ANF settings
+        /// Gets the ANSL Manager
         /// </summary>
-        /// <returns>The ANF Settings</returns>
-        public ANFSettings GetANFSettings()
+        /// <returns>The ANSL Manager</returns>
+        public ANSLManager GetANSLManager()
         {
-            return anfSettings;
+            return anslManager;
+        }
+
+        void Update()
+        {
+            anslManager.Initialize(this);
+
         }
     }
 }

@@ -1,3 +1,4 @@
+using ANF.Manager;
 using UnityEngine;
 
 namespace ANF.ANSL
@@ -11,6 +12,9 @@ namespace ANF.ANSL
     {
         public bool isProcessing { get; private set; }
 
+        protected ANSLContext context;
+        protected ANFManager manager;
+
         public ANSLFunction()
         {
             isProcessing = false;
@@ -23,10 +27,13 @@ namespace ANF.ANSL
         /// </summary>
         /// <param name="parameters">The function's parameters</param>
         /// <param name="context">The ANSL Context</param>
-        public void StartProcess(string[] parameters, ANSLContext context)
+        /// <param name="manager">The ANF Manager</param>
+        public void StartProcess(string[] parameters, ANSLContext context, ANFManager manager)
         {
             isProcessing = true;
-            OnStartProcess(parameters, context);
+            this.context = context;
+            this.manager = manager;
+            OnStartProcess(parameters);
         }
 
         /// <summary>
@@ -44,7 +51,7 @@ namespace ANF.ANSL
         /// </summary>
         public void Update()
         {
-            if(isProcessing)
+            if (isProcessing)
             {
                 OnUpdate();
             }
@@ -61,8 +68,7 @@ namespace ANF.ANSL
         /// If the function doesn't last over time (Ex: Edit a variable), call EndProcess() here
         /// </summary>
         /// <param name="parameters">The function's parameters</param>
-        /// <param name="context">The ANSL Context</param>
-        protected abstract void OnStartProcess(string[] parameters, ANSLContext context);
+        protected abstract void OnStartProcess(string[] parameters);
 
         /// <summary>
         /// Called when ending the function's processing.

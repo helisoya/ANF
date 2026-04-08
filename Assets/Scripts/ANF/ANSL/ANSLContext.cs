@@ -16,7 +16,7 @@ public class ANSLContext
     private Dictionary<uint, ANSLFunction> functions;
     private string[] currentScript;
     private uint currentLine;
-    
+
     private bool lastFunctionModifiedLine;
     private bool waitingForFunction;
     private uint currentFunctionId;
@@ -24,15 +24,13 @@ public class ANSLContext
     private uint currentFunctionDepth;
     private bool waitingForNextFrame;
 
-    public ANSLContext(Dictionary<uint,ANSLFunction> functions, string scriptFilePath, bool startImmediately)
-    {
-        this.functions = functions;
-        LoadScript(scriptFilePath, startImmediately);
-    }
+    private ANFManager manager;
 
-    public ANSLContext(Dictionary<uint, ANSLFunction> functions)
+
+    public ANSLContext(Dictionary<uint, ANSLFunction> functions, ANFManager manager)
     {
         this.functions = functions;
+        this.manager = manager;
         isRunning = false;
     }
 
@@ -43,13 +41,13 @@ public class ANSLContext
     /// <param name="startImmediately">True if the script should start immediatly. False will wait for the next Update</param>
     public void LoadScript(string scriptFilePath, bool startImmediately)
     {
-        if(System.IO.File.Exists(scriptFilePath))
+        if (System.IO.File.Exists(scriptFilePath))
         {
-            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(ANFManager.instance.GetANFSettings()+"/"+scriptFilePath)).ToArray();
+            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(PersistentDataManager.instance.GetANFSettings() + "/" + scriptFilePath)).ToArray();
             lastFunctionModifiedLine = true;
             currentLine = 0;
 
-            if(!waitingForNextFrame)
+            if (!waitingForNextFrame)
                 waitingForNextFrame = !startImmediately;
 
             isRunning = true;
@@ -69,7 +67,7 @@ public class ANSLContext
     public void NextLine()
     {
         currentFunctionDepth++;
-        if(waitingForNextFrame || currentFunctionDepth > ANFManager.instance.GetANFSettings().anslMaxFunctionsPerFrame)
+        if (waitingForNextFrame || currentFunctionDepth > PersistentDataManager.instance.GetANFSettings().anslMaxFunctionsPerFrame)
         {
             waitingForNextFrame = true;
             return;
@@ -82,12 +80,12 @@ public class ANSLContext
         waitingForFunction = false;
         lastFunctionModifiedLine = false;
 
-        if(currentLine < currentScript.Length)
+        if (currentLine < currentScript.Length)
         {
             string[] split = currentScript[currentLine].Split(' ', 1);
             uint functionId;
-            if(split.Length == 0 || string.IsNullOrEmpty(currentScript[currentLine]) || 
-                !uint.TryParse(split[0],out functionId) || !functions.ContainsKey(functionId))
+            if (split.Length == 0 || string.IsNullOrEmpty(currentScript[currentLine]) ||
+                !uint.TryParse(split[0], out functionId) || !functions.ContainsKey(functionId))
             {
                 // Could not parse/find function
                 NextLine();
@@ -95,7 +93,7 @@ public class ANSLContext
             else
             {
                 // Start the new function
-                functions[functionId].StartProcess(split.Length > 1 ? split[1].Split(' ') : null,this);
+                functions[functionId].StartProcess(split.Length > 1 ? split[1].Split(' ') : null, this, manager);
 
                 if (functions[functionId].isProcessing)
                 {
@@ -123,7 +121,7 @@ public class ANSLContext
     public void Update()
     {
         // If the context is in cooldown, 
-        if(waitingForNextFrame)
+        if (waitingForNextFrame)
         {
             currentFunctionDepth = 0;
             waitingForNextFrame = false;
