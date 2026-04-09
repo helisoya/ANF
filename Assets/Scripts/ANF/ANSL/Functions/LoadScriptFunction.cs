@@ -18,7 +18,8 @@ namespace ANF.ANSL
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.BOOL}
+                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.BOOL},
+                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.UINT, FunctionParameterType.BOOL}
             };
         }
 
@@ -31,8 +32,19 @@ namespace ANF.ANSL
         {
             EndProcess(); // Flags the function as ended to avoid potential problems if the script is loaded instantly
 
-            if (parameters.GetParameter(0, out string scriptFile) && parameters.GetParameter(0, out bool immediate))
-                context.LoadScript(scriptFile, immediate);
+            if (parameters.GetParameter(0, out string scriptFile))
+            {
+                bool immediate;
+                uint startLine;
+                if (parameters.GetTemplateId() == 0 &&
+                parameters.GetParameter(1, out immediate))
+                    context.LoadScript(scriptFile, 0, immediate);
+                else if (parameters.GetTemplateId() == 1 &&
+                parameters.GetParameter(1, out startLine) &&
+                parameters.GetParameter(2, out immediate))
+                    context.LoadScript(scriptFile, startLine, immediate);
+            }
+
         }
 
         protected override void OnUpdate()

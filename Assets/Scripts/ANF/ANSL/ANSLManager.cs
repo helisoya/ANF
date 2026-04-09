@@ -53,7 +53,7 @@ namespace ANF.ANSL
         /// </summary>
         /// <param name="contextId">The context's Id</param>
         /// <returns>The context if found</returns>
-        public ANSLContext GetContext(int contextId)
+        public ANSLContext GetContext(uint contextId)
         {
             if (contextId < 0 || contextId > contexts.Length)
                 return null;
@@ -65,15 +65,16 @@ namespace ANF.ANSL
         /// Starts a new context
         /// </summary>
         /// <param name="scriptPath">The script's filepath</param>
+        /// <param name="startLine">The starting line counter. 0 by default</param>
         /// <param name="startImmediately">True if the script should be started this frame</param>
         /// <returns>The new context's Id. -1 if no context was avaiable</returns>
-        public int StartNewContext(string scriptPath, bool startImmediately)
+        public int StartNewContext(string scriptPath, uint startLine = 0, bool startImmediately = true)
         {
             for (int i = 0; i < contexts.Length; i++)
             {
                 if (!contexts[i].isRunning)
                 {
-                    contexts[i].LoadScript(scriptPath, startImmediately);
+                    contexts[i].LoadScript(scriptPath, startLine, startImmediately);
                     return i;
                 }
             }

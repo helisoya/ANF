@@ -20,7 +20,7 @@ namespace ANF.Manager
             return anslManager;
         }
 
-        void Update()
+        void Start()
         {
             anslManager.Initialize(this);
         }

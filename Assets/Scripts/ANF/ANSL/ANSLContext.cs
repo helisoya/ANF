@@ -14,8 +14,11 @@ public class ANSLContext
     public bool isRunning { get; private set; }
 
     private Dictionary<uint, ANSLFunction> functions;
+    private List<ANSLContextStackEntry> scriptStack;
+
     private string[] currentScript;
     private uint currentLine;
+    private string currentFilePath;
 
     private bool lastFunctionModifiedLine;
     private bool waitingForFunction;
@@ -32,20 +35,33 @@ public class ANSLContext
         this.functions = functions;
         this.manager = manager;
         isRunning = false;
+        scriptStack = new List<ANSLContextStackEntry>();
     }
 
     /// <summary>
     /// Loads a new script file
     /// </summary>
     /// <param name="scriptFilePath">The script's filepath (Local path inside the designated resource folder) </param>
+    /// <param name="startLine">The starting line. 0 by default.</param>
     /// <param name="startImmediately">True if the script should start immediatly. False will wait for the next Update</param>
-    public void LoadScript(string scriptFilePath, bool startImmediately)
+    public void LoadScript(string scriptFilePath, uint startLine = 0, bool startImmediately = true)
     {
         if (System.IO.File.Exists(scriptFilePath))
         {
+            // Add current script to stack if it isn't finished
+            if (currentScript != null)
+            {
+                while (scriptStack.Count >= PersistentDataManager.instance.GetANFSettings().anslContextStackLength) // Clear excess entries
+                {
+                    scriptStack.RemoveAt(0);
+                }
+                scriptStack.Add(new ANSLContextStackEntry() { filePath = currentFilePath, lineCounter = currentLine + 1 });
+            }
+
+            currentFilePath = scriptFilePath;
             currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(PersistentDataManager.instance.GetANFSettings() + "/" + scriptFilePath)).ToArray();
             lastFunctionModifiedLine = true;
-            currentLine = 0;
+            currentLine = startLine;
 
             if (!waitingForNextFrame)
                 waitingForNextFrame = !startImmediately;
@@ -95,7 +111,7 @@ public class ANSLContext
             {
                 FunctionParameters parameters = ANSLUtils.CreateParametersInterface(split.Length > 1 ? split[1].Split(' ') : null, functions[functionId].GetParametersTemplates());
 
-                if(parameters == null)
+                if (parameters == null)
                 {
                     // Parameters couldn't be parsed
                     NextLine();
@@ -159,11 +175,38 @@ public class ANSLContext
     }
 
     /// <summary>
+	/// Clears the script stack
+	/// </summary>
+    public void ClearStack()
+    {
+        scriptStack.Clear();
+    }
+
+    /// <summary>
     /// Stops the context
     /// </summary>
     public void StopContext()
     {
-        isRunning = false;
-        currentScript = null;
+        if (scriptStack.Count == 0)
+        {
+            isRunning = false;
+            currentScript = null;
+        }
+        else
+        {
+            ANSLContextStackEntry entry = scriptStack[scriptStack.Count - 1];
+            scriptStack.RemoveAt(scriptStack.Count - 1);
+            LoadScript(entry.filePath, entry.lineCounter, true);
+        }
+
+    }
+
+    /// <summary>
+	/// Represents an entry in the context's stack
+	/// </summary>
+    public struct ANSLContextStackEntry
+    {
+        public string filePath;
+        public uint lineCounter;
     }
 }
