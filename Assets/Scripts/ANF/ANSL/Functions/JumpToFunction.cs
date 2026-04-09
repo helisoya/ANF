@@ -13,16 +13,22 @@ namespace ANF.ANSL
         functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]
     public class JumpToFunction : ANSLFunction
     {
+        public override FunctionParameterType[][] GetParametersTemplates()
+        {
+            return new FunctionParameterType[][] { 
+                new FunctionParameterType[]{FunctionParameterType.INT} 
+            };
+        }
+
         public override bool Compile()
         {
             return true;
         }
 
-        protected override void OnStartProcess(string[] parameters)
+        protected override void OnStartProcess()
         {
-            if (parameters.Length > 0)
-                if (uint.TryParse(parameters[0], out uint lineCounter))
-                    context.SetLineCounter(lineCounter);
+            if (parameters.GetParameter(0,out uint lineCounter))
+                context.SetLineCounter(lineCounter);
 
             EndProcess();
         }

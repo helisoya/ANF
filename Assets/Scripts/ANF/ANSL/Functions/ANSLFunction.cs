@@ -14,6 +14,7 @@ namespace ANF.ANSL
 
         protected ANSLContext context;
         protected ANFManager manager;
+        protected FunctionParameters parameters;
 
         public ANSLFunction()
         {
@@ -23,17 +24,26 @@ namespace ANF.ANSL
         public abstract bool Compile();
 
         /// <summary>
+        /// Generates the parameters templates for this function.
+        /// You can have multiple templates for one function.
+        /// Ex : setPosition(MARKER), setPosition(X;Y;Z) 
+        /// </summary>
+        /// <returns>The templates</returns>
+        public abstract FunctionParameterType[][] GetParametersTemplates();
+
+        /// <summary>
         /// Starts the function's process
         /// </summary>
         /// <param name="parameters">The function's parameters</param>
         /// <param name="context">The ANSL Context</param>
         /// <param name="manager">The ANF Manager</param>
-        public void StartProcess(string[] parameters, ANSLContext context, ANFManager manager)
+        public void StartProcess(FunctionParameters parameters, ANSLContext context, ANFManager manager)
         {
             isProcessing = true;
             this.context = context;
             this.manager = manager;
-            OnStartProcess(parameters);
+            this.parameters = parameters;
+            OnStartProcess();
         }
 
         /// <summary>
@@ -67,8 +77,7 @@ namespace ANF.ANSL
         /// Called when the function starts processing.
         /// If the function doesn't last over time (Ex: Edit a variable), call EndProcess() here
         /// </summary>
-        /// <param name="parameters">The function's parameters</param>
-        protected abstract void OnStartProcess(string[] parameters);
+        protected abstract void OnStartProcess();
 
         /// <summary>
         /// Called when ending the function's processing.

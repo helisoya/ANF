@@ -84,6 +84,7 @@ public class ANSLContext
         {
             string[] split = currentScript[currentLine].Split(' ', 1);
             uint functionId;
+
             if (split.Length == 0 || string.IsNullOrEmpty(currentScript[currentLine]) ||
                 !uint.TryParse(split[0], out functionId) || !functions.ContainsKey(functionId))
             {
@@ -92,8 +93,17 @@ public class ANSLContext
             }
             else
             {
+                FunctionParameters parameters = ANSLUtils.CreateParametersInterface(split.Length > 1 ? split[1].Split(' ') : null, functions[functionId].GetParametersTemplates());
+
+                if(parameters == null)
+                {
+                    // Parameters couldn't be parsed
+                    NextLine();
+                    return;
+                }
+
                 // Start the new function
-                functions[functionId].StartProcess(split.Length > 1 ? split[1].Split(' ') : null, this, manager);
+                functions[functionId].StartProcess(parameters, this, manager);
 
                 if (functions[functionId].isProcessing)
                 {
@@ -154,5 +164,6 @@ public class ANSLContext
     public void StopContext()
     {
         isRunning = false;
+        currentScript = null;
     }
 }

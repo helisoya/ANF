@@ -1,4 +1,5 @@
 using UnityEngine;
+using ANF.ANSL;
 
 namespace ANF.Manager
 {
@@ -22,7 +23,6 @@ namespace ANF.Manager
         void Update()
         {
             anslManager.Initialize(this);
-
         }
     }
 }
