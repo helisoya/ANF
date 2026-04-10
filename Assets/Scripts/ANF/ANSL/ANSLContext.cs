@@ -46,10 +46,11 @@ public class ANSLContext
     /// <param name="startImmediately">True if the script should start immediatly. False will wait for the next Update</param>
     public void LoadScript(string scriptFilePath, uint startLine = 0, bool startImmediately = true)
     {
-        if (System.IO.File.Exists(scriptFilePath))
+        string fullPath = PersistentDataManager.instance.GetANFSettings().anslDestinationFolder + scriptFilePath;
+        if (System.IO.File.Exists("Assets/Resources/" + fullPath + ".txt"))
         {
             // Add current script to stack if it isn't finished
-            if (currentScript != null && currentLine < currentScript.Length-1)
+            if (currentScript != null && currentLine < currentScript.Length - 1)
             {
                 while (scriptStack.Count >= PersistentDataManager.instance.GetANFSettings().anslContextStackLength) // Clear excess entries
                 {
@@ -59,7 +60,7 @@ public class ANSLContext
             }
 
             currentFilePath = scriptFilePath;
-            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(PersistentDataManager.instance.GetANFSettings() + "/" + scriptFilePath)).ToArray();
+            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(fullPath)).ToArray();
             lastFunctionModifiedLine = true;
             currentLine = startLine;
 
@@ -98,7 +99,7 @@ public class ANSLContext
 
         if (currentLine < currentScript.Length)
         {
-            string[] split = currentScript[currentLine].Split(' ', 1);
+            string[] split = currentScript[currentLine].Split('|', 2);
             uint functionId;
 
             if (split.Length == 0 || string.IsNullOrEmpty(currentScript[currentLine]) ||
@@ -109,7 +110,7 @@ public class ANSLContext
             }
             else
             {
-                FunctionParameters parameters = ANSLUtils.CreateParametersInterface(split.Length > 1 ? split[1].Split(' ') : null, functions[functionId].GetParametersTemplates());
+                FunctionParameters parameters = ANSLUtils.CreateParametersInterface(split.Length > 1 ? split[1].Split('|') : null, functions[functionId].GetParametersTemplates());
 
                 if (parameters == null)
                 {

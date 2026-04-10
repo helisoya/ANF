@@ -1,4 +1,8 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using ANF.Manager;
+using ANF.Utils;
 using UnityEngine;
 
 namespace ANF.ANSL
@@ -21,7 +25,68 @@ namespace ANF.ANSL
             isProcessing = false;
         }
 
-        public abstract bool Compile();
+        /// <summary>
+		/// Gets the function's attribute
+		/// </summary>
+		/// <returns>The function attribute</returns>
+        public ANSLFunctionAttribute GetAttribute()
+        {
+            return GetType().GetCustomAttribute<ANSLFunctionAttribute>();
+        }
+
+        /// <summary>
+		/// Compiles the function
+		/// </summary>
+		/// <param name="compiledLines">The compiled lines of script for this function</param>
+		/// <param name="compiler">The compiler</param>
+		/// <param name="errors">The global error list</param>
+		/// <returns>True if the compiling was successful</returns>
+        public virtual bool Compile(out List<string> compiledLines, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors)
+        {
+            compiledLines = new List<string>();
+
+            string currentLine = compiler.GetCurrentLineClean();
+            string[] split = currentLine.Split(new char[] { '(', ')' }, System.StringSplitOptions.RemoveEmptyEntries);
+
+            if (split.Length != 2)
+            {
+                // More than one pair of () found
+                errors.Add(new ANSLUtils.ANSLError()
+                {
+                    type = ANSLUtils.ANSLErrorType.ERROR,
+                    filePath = compiler.GetSourceFilepath(),
+                    line = compiler.GetCurrentLineCounter(),
+                    errorMessage = $"Too many () detected : {currentLine}."
+                });
+                return false;
+            }
+
+            string[] parameters = split[1].Split(';');
+
+            if (ANSLUtils.CreateParametersInterface(parameters, GetParametersTemplates()) == null)
+            {
+                // Failed to find a valid parameter template
+                errors.Add(new ANSLUtils.ANSLError()
+                {
+                    type = ANSLUtils.ANSLErrorType.ERROR,
+                    filePath = compiler.GetSourceFilepath(),
+                    line = compiler.GetCurrentLineCounter(),
+                    errorMessage = $"Unknown parameter template : {currentLine}."
+                });
+                return false;
+            }
+
+            string compiledLine = GetAttribute().functionId.ToString();
+
+            foreach (string parameter in parameters)
+            {
+                compiledLine += "|" + parameter;
+            }
+
+            compiledLines.Add(compiledLine);
+
+            return true;
+        }
 
         /// <summary>
         /// Generates the parameters templates for this function.

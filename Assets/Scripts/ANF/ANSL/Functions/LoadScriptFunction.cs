@@ -23,11 +23,6 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile()
-        {
-            return true;
-        }
-
         protected override void OnStartProcess()
         {
             EndProcess(); // Flags the function as ended to avoid potential problems if the script is loaded instantly

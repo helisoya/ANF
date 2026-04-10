@@ -3,6 +3,7 @@ using ANF.Manager;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -48,10 +49,10 @@ namespace ANF.Utils
         public static FunctionParameters CreateParametersInterface(string[] parameters, FunctionParameterType[][] templates)
         {
             FunctionParameters parameterInterface = new FunctionParameters();
-            for(uint i = 0; i < templates.Length;i++)
+            for (uint i = 0; i < templates.Length; i++)
             {
                 parameterInterface.Clear();
-                parameterInterface.Initialize(parameters, templates[i],i);
+                parameterInterface.Initialize(parameters, templates[i], i);
                 if (parameterInterface.IsValid())
                     return parameterInterface;
             }
@@ -70,7 +71,7 @@ namespace ANF.Utils
         {
             public ANSLErrorType type;
             public string filePath;
-            public uint line;
+            public int line;
             public string errorMessage;
         }
 
@@ -96,11 +97,11 @@ namespace ANF.Utils
 
             if (CheckANSLFunctions(functions, errors))
             {
-                Dictionary<string,ANSLFunction> functionInstances = new Dictionary<string,ANSLFunction>();
+                Dictionary<string, ANSLFunction> functionInstances = new Dictionary<string, ANSLFunction>();
                 foreach (Type type in functions)
                 {
-                    ANSLFunctionAttribute attribute = type.GetAttribute<ANSLFunctionAttribute>();
-                    if(attribute != null)
+                    ANSLFunctionAttribute attribute = type.GetCustomAttribute<ANSLFunctionAttribute>();
+                    if (attribute != null)
                     {
                         functionInstances.Add(attribute.functionBody, (ANSLFunction)type.Instantiate());
                     }
@@ -109,7 +110,7 @@ namespace ANF.Utils
                 Stack<string> directories = new Stack<string>();
                 directories.Push(settings.anslSourceFolder);
 
-                while(directories.Count > 0)
+                while (directories.Count > 0)
                 {
                     string directory = directories.Pop();
 
@@ -144,7 +145,7 @@ namespace ANF.Utils
 
             foreach (Type function in functions)
             {
-                ANSLFunctionAttribute attribute = function.GetAttribute<ANSLFunctionAttribute>(false);
+                ANSLFunctionAttribute attribute = function.GetCustomAttribute<ANSLFunctionAttribute>(false);
                 if (attribute != null)
                 {
                     if (usedIds.Contains(attribute.functionId))

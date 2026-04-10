@@ -1,0 +1,5 @@
+3|Log|Hello from test B
+1|ANF/Tests/TestC|true
+3|Log|Hello Again
+1|ANF/Tests/TestC|true
+3|Log|Again ?

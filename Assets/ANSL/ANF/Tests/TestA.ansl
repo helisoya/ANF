@@ -2,7 +2,7 @@ log(Log;Log Message)
 
 log(Warning;Warning Message)
 
-
+loadScript(ANF/Tests/TestB;true)
 
 
 log(Error;Error Message)

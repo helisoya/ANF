@@ -21,11 +21,6 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile()
-        {
-            return true;
-        }
-
         protected override void OnStartProcess()
         {
             if (parameters.GetTemplateId() == 0)

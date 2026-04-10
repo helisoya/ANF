@@ -1,3 +1,4 @@
-log(Log;Log Message)
-log(Warning;Warning Message)
-log(Error;Error Message)
+3|Log|Log Message
+3|Warning|Warning Message
+1|ANF/Tests/TestB|true
+3|Error|Error Message

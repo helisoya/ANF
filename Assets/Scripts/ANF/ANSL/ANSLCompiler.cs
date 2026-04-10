@@ -1,6 +1,7 @@
 using ANF.Utils;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using static ANF.Utils.ANSLUtils;
 using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
@@ -12,6 +13,9 @@ namespace ANF.ANSL
     /// </summary>
     public class ANSLCompiler
     {
+        private string sourceFilepath;
+        private bool isfirstLine;
+
         private int currentLine;
         private string cachedCurrentLine;
         private string cachedCurrentLineClean;
@@ -29,11 +33,13 @@ namespace ANF.ANSL
         /// <param name="destinationFile">The destination file</param>
         /// <param name="functions">The function list</param>
         /// <param name="errors">The global error list</param>
-        public bool Compile(string sourceFile, string destinationFile, Dictionary<string,ANSLFunction> functions, List<ANSLUtils.ANSLError> errors)
+        public bool Compile(string sourceFile, string destinationFile, Dictionary<string, ANSLFunction> functions, List<ANSLUtils.ANSLError> errors)
         {
+            sourceFilepath = sourceFile;
             this.errors = errors;
             this.functions = functions;
             currentLine = -1;
+            isfirstLine = true;
 
             inLines = File.ReadAllLines(sourceFile);
 
@@ -57,41 +63,96 @@ namespace ANF.ANSL
             outStream = new StreamWriter(destinationFile, false);
 
             CheckNextLine();
-            ContinueCompiling();
 
-            return true;
+            return ContinueCompiling();
         }
 
         /// <summary>
         /// Continues the compiling process
         /// </summary>
-        private void ContinueCompiling()
+		/// <returns>True if the compiling failed</returns>
+        private bool ContinueCompiling()
         {
-            if(currentLine >= inLines.Length)
+            if (currentLine >= inLines.Length)
             {
                 // End of File
                 Clean();
+                return true;
             }
             else
             {
-                if (!string.IsNullOrEmpty(cachedCurrentLineClean) && !string.IsNullOrWhiteSpace(cachedCurrentLineClean))
+                if (CompileLine(cachedCurrentLineClean, out List<string> compiledLines))
                 {
-                    foreach (string body in functions.Keys)
+                    foreach (string line in compiledLines)
                     {
-                        if (string.IsNullOrEmpty(body)) // Skip undefined functions
-                            continue;
+                        if (isfirstLine)
+                            isfirstLine = false;
+                        else
+                            outStream.Write("\n");
 
-                        if (cachedCurrentLineClean.StartsWith(body))
+                        outStream.Write(line);
+                    }
+                }
+                else
+                {
+                    Clean();
+                    return false;
+                }
+
+                CheckNextLine();
+                return ContinueCompiling();
+            }
+        }
+
+        /// <summary>
+		/// Compiles a specific line
+		/// </summary>
+		/// <param name="line">The line counter</param>
+		/// <param name="compiledLines">The compiled lines of code</param>
+		/// <returns>True if the compiling resulted in success</returns>
+        public bool CompileLine(string line, out List<string> compiledLines)
+        {
+            compiledLines = new List<string>();
+            if (!string.IsNullOrEmpty(line) && !string.IsNullOrWhiteSpace(line))
+            {
+                bool found = false;
+                foreach (string body in functions.Keys)
+                {
+                    if (string.IsNullOrEmpty(body)) // Skip undefined functions
+                        continue;
+
+                    if (line.StartsWith(body))
+                    {
+                        found = true;
+
+                        // Compile with this function
+                        if (functions[body].Compile(out List<string> result, this, errors))
                         {
-                            // Compile with this function
-                            outStream.WriteLine(cachedCurrentLineClean);
+                            foreach (string compiledLine in result)
+                            {
+                                compiledLines.Add(compiledLine);
+                            }
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
                         }
                     }
                 }
 
-                CheckNextLine();
-                ContinueCompiling();
+                if (!found)
+                {
+                    errors.Add(new ANSLError()
+                    {
+                        type = ANSLErrorType.WARNING,
+                        filePath = sourceFilepath,
+                        line = currentLine,
+                        errorMessage = $"Unknown function : {cachedCurrentLineClean}."
+                    });
+                }
             }
+            return true;
         }
 
         /// <summary>
@@ -100,7 +161,7 @@ namespace ANF.ANSL
         public void CheckNextLine()
         {
             currentLine++;
-            if(currentLine >= inLines.Length)
+            if (currentLine >= inLines.Length)
             {
                 // End of file
                 cachedCurrentLine = null;
@@ -116,11 +177,47 @@ namespace ANF.ANSL
         }
 
         /// <summary>
+		/// Returns the cached current line
+		/// </summary>
+		/// <returns>The current line</returns>
+        public string GetCurrentLine()
+        {
+            return cachedCurrentLine;
+        }
+
+        /// <summary>
+		/// Returns the cleaned cached current line (Without tabs and white spaces at the start)
+		/// </summary>
+		/// <returns>The cleaned cached current line</returns>
+        public string GetCurrentLineClean()
+        {
+            return cachedCurrentLineClean;
+        }
+
+        /// <summary>
+		/// Gets the source filepath
+		/// </summary>
+		/// <returns>The source filepath</returns>
+        public string GetSourceFilepath()
+        {
+            return sourceFilepath;
+        }
+
+        /// <summary>
+		/// Gets the current line counter
+		/// </summary>
+		/// <returns>The current line counter</returns>
+        public int GetCurrentLineCounter()
+        {
+            return currentLine;
+        }
+
+        /// <summary>
         /// Cleans the compiler
         /// </summary>
         public void Clean()
         {
-            if(outStream != null)
+            if (outStream != null)
             {
                 outStream.Close();
                 outStream = null;

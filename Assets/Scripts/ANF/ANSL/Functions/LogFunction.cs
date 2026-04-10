@@ -22,14 +22,9 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile()
-        {
-            return true;
-        }
-
         protected override void OnStartProcess()
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             if (parameters.GetParameter(0, out string type) && parameters.GetParameter(1, out string message))
             {
                 if (type.Equals("Log"))
@@ -39,7 +34,7 @@ namespace ANF.ANSL
                 else if (type.Equals("Error"))
                     Debug.LogError(message);
             }
-            #endif
+#endif
             EndProcess();
         }
 

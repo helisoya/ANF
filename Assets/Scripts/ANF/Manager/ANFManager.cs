@@ -8,8 +8,12 @@ namespace ANF.Manager
     /// </summary>
     public class ANFManager : MonoBehaviour
     {
-        [Header("Base Component")]
+        [Header("Base Components")]
         [SerializeField] private ANSLManager anslManager;
+
+        [Header("Debug")]
+        [SerializeField] private bool debugEnabled = false;
+        [SerializeField] private string debugScriptToLoad;
 
         /// <summary>
         /// Gets the ANSL Manager
@@ -23,6 +27,9 @@ namespace ANF.Manager
         void Start()
         {
             anslManager.Initialize(this);
+
+            if (debugEnabled)
+                anslManager.StartNewContext(debugScriptToLoad);
         }
     }
 }

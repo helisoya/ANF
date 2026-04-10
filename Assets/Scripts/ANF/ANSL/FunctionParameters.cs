@@ -29,7 +29,7 @@ namespace ANF.ANSL
         /// <returns>The template Id</returns>
         public uint GetTemplateId()
         {
-            return id; 
+            return id;
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace ANF.ANSL
         /// <returns>True if the retrieval was a success</returns>
         public bool GetParameter(int parameterIndex, out int value)
         {
-            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length 
+            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
                 && template[parameterIndex] == FunctionParameterType.INT)
             {
                 if (int.TryParse(parameters[parameterIndex], out value))
@@ -196,11 +196,11 @@ namespace ANF.ANSL
                 value = new int[listSize];
                 for (int i = 0; i < listSize; i++)
                 {
-                    if(int.TryParse(parameters[parameterIndex + i],out int result))
+                    if (int.TryParse(parameters[parameterIndex + i], out int result))
                     {
                         value[i] = result;
                     }
-                    else 
+                    else
                     {
                         value = null;
                         return false;
@@ -318,18 +318,16 @@ namespace ANF.ANSL
             if (template == null || parameters == null)
                 return false;
 
-            FunctionParameterType lastType = template.Length == 0 ? FunctionParameterType.UNKNOWN : template[template.Length - 1]; 
-
-            if (parameters.Length != template.Length && 
-                !(lastType == FunctionParameterType.LISTSTRING || lastType == FunctionParameterType.LISTINT 
+            FunctionParameterType lastType = template.Length == 0 ? FunctionParameterType.UNKNOWN : template[template.Length - 1];
+            if (parameters.Length != template.Length &&
+                !(lastType == FunctionParameterType.LISTSTRING || lastType == FunctionParameterType.LISTINT
                 || lastType == FunctionParameterType.LISTUINT || lastType == FunctionParameterType.LISTFLOAT
                 || lastType == FunctionParameterType.LISTBOOL))
                 return false;
-
-            for(int i = 0; i < template.Length; i++)
+            for (int i = 0; i < template.Length; i++)
             {
-                bool valid = false;
-                switch(template[i])
+                bool valid = true;
+                switch (template[i])
                 {
                     case FunctionParameterType.INT:
                         valid = int.TryParse(parameters[i], out int _);
@@ -345,11 +343,11 @@ namespace ANF.ANSL
                         break;
                     case FunctionParameterType.LISTINT:
                         valid = i == template.Length - 1;
-                        if(valid)
+                        if (valid)
                         {
-                            for(int j = i;j < parameters.Length;j++)
+                            for (int j = i; j < parameters.Length; j++)
                             {
-                                if(!int.TryParse(parameters[j], out int _))
+                                if (!int.TryParse(parameters[j], out int _))
                                 {
                                     valid = false;
                                     break;

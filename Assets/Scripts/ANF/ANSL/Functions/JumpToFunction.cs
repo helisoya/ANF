@@ -15,19 +15,14 @@ namespace ANF.ANSL
     {
         public override FunctionParameterType[][] GetParametersTemplates()
         {
-            return new FunctionParameterType[][] { 
-                new FunctionParameterType[]{FunctionParameterType.INT} 
+            return new FunctionParameterType[][] {
+                new FunctionParameterType[]{FunctionParameterType.INT}
             };
-        }
-
-        public override bool Compile()
-        {
-            return true;
         }
 
         protected override void OnStartProcess()
         {
-            if (parameters.GetParameter(0,out uint lineCounter))
+            if (parameters.GetParameter(0, out uint lineCounter))
                 context.SetLineCounter(lineCounter);
 
             EndProcess();
