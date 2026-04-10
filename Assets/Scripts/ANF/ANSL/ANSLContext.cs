@@ -49,7 +49,7 @@ public class ANSLContext
         if (System.IO.File.Exists(scriptFilePath))
         {
             // Add current script to stack if it isn't finished
-            if (currentScript != null)
+            if (currentScript != null && currentLine < currentScript.Length-1)
             {
                 while (scriptStack.Count >= PersistentDataManager.instance.GetANFSettings().anslContextStackLength) // Clear excess entries
                 {

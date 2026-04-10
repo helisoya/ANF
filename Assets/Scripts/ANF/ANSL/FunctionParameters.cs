@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 namespace ANF.ANSL
@@ -159,6 +160,156 @@ namespace ANF.ANSL
         }
 
         /// <summary>
+        /// Gets a string list parameter
+        /// </summary>
+        /// <param name="parameterIndex">The parameter's index</param>
+        /// <param name="value">The out value</param>
+        /// <returns>True if the retrieval was a success</returns>
+        public bool GetParameter(int parameterIndex, out string[] value)
+        {
+            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
+                && template[parameterIndex] == FunctionParameterType.LISTSTRING)
+            {
+                int listSize = parameters.Length - parameterIndex;
+                value = new string[listSize];
+                for (int i = 0; i < listSize; i++)
+                    value[i] = parameters[parameterIndex + i];
+                return true;
+            }
+
+            value = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Gets an int list parameter
+        /// </summary>
+        /// <param name="parameterIndex">The parameter's index</param>
+        /// <param name="value">The out value</param>
+        /// <returns>True if the retrieval was a success</returns>
+        public bool GetParameter(int parameterIndex, out int[] value)
+        {
+            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
+                && template[parameterIndex] == FunctionParameterType.LISTINT)
+            {
+                int listSize = parameters.Length - parameterIndex;
+                value = new int[listSize];
+                for (int i = 0; i < listSize; i++)
+                {
+                    if(int.TryParse(parameters[parameterIndex + i],out int result))
+                    {
+                        value[i] = result;
+                    }
+                    else 
+                    {
+                        value = null;
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            value = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Gets a uint list parameter
+        /// </summary>
+        /// <param name="parameterIndex">The parameter's index</param>
+        /// <param name="value">The out value</param>
+        /// <returns>True if the retrieval was a success</returns>
+        public bool GetParameter(int parameterIndex, out uint[] value)
+        {
+            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
+                && template[parameterIndex] == FunctionParameterType.LISTUINT)
+            {
+                int listSize = parameters.Length - parameterIndex;
+                value = new uint[listSize];
+                for (int i = 0; i < listSize; i++)
+                {
+                    if (uint.TryParse(parameters[parameterIndex + i], out uint result))
+                    {
+                        value[i] = result;
+                    }
+                    else
+                    {
+                        value = null;
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            value = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Gets a bool list parameter
+        /// </summary>
+        /// <param name="parameterIndex">The parameter's index</param>
+        /// <param name="value">The out value</param>
+        /// <returns>True if the retrieval was a success</returns>
+        public bool GetParameter(int parameterIndex, out bool[] value)
+        {
+            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
+                && template[parameterIndex] == FunctionParameterType.LISTBOOL)
+            {
+                int listSize = parameters.Length - parameterIndex;
+                value = new bool[listSize];
+                for (int i = 0; i < listSize; i++)
+                {
+                    if (bool.TryParse(parameters[parameterIndex + i], out bool result))
+                    {
+                        value[i] = result;
+                    }
+                    else
+                    {
+                        value = null;
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            value = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Gets a float list parameter
+        /// </summary>
+        /// <param name="parameterIndex">The parameter's index</param>
+        /// <param name="value">The out value</param>
+        /// <returns>True if the retrieval was a success</returns>
+        public bool GetParameter(int parameterIndex, out float[] value)
+        {
+            if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
+                && template[parameterIndex] == FunctionParameterType.LISTINT)
+            {
+                int listSize = parameters.Length - parameterIndex;
+                value = new float[listSize];
+                for (int i = 0; i < listSize; i++)
+                {
+                    if (float.TryParse(parameters[parameterIndex + i], out float result))
+                    {
+                        value[i] = result;
+                    }
+                    else
+                    {
+                        value = null;
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            value = null;
+            return false;
+        }
+
+        /// <summary>
         /// Checks if the inteface is valid or not
         /// </summary>
         /// <returns>True if valid</returns>
@@ -167,10 +318,15 @@ namespace ANF.ANSL
             if (template == null || parameters == null)
                 return false;
 
-            if (parameters.Length != template.Length)
+            FunctionParameterType lastType = template.Length == 0 ? FunctionParameterType.UNKNOWN : template[template.Length - 1]; 
+
+            if (parameters.Length != template.Length && 
+                !(lastType == FunctionParameterType.LISTSTRING || lastType == FunctionParameterType.LISTINT 
+                || lastType == FunctionParameterType.LISTUINT || lastType == FunctionParameterType.LISTFLOAT
+                || lastType == FunctionParameterType.LISTBOOL))
                 return false;
 
-            for(int i = 0; i < parameters.Length; i++)
+            for(int i = 0; i < template.Length; i++)
             {
                 bool valid = false;
                 switch(template[i])
@@ -186,6 +342,65 @@ namespace ANF.ANSL
                         break;
                     case FunctionParameterType.BOOL:
                         valid = bool.TryParse(parameters[i], out bool _);
+                        break;
+                    case FunctionParameterType.LISTINT:
+                        valid = i == template.Length - 1;
+                        if(valid)
+                        {
+                            for(int j = i;j < parameters.Length;j++)
+                            {
+                                if(!int.TryParse(parameters[j], out int _))
+                                {
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    case FunctionParameterType.LISTUINT:
+                        valid = i == template.Length - 1;
+                        if (valid)
+                        {
+                            for (int j = i; j < parameters.Length; j++)
+                            {
+                                if (!uint.TryParse(parameters[j], out uint _))
+                                {
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    case FunctionParameterType.LISTFLOAT:
+                        valid = i == template.Length - 1;
+                        if (valid)
+                        {
+                            for (int j = i; j < parameters.Length; j++)
+                            {
+                                if (!float.TryParse(parameters[j], out float _))
+                                {
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    case FunctionParameterType.LISTBOOL:
+                        valid = i == template.Length - 1;
+                        if (valid)
+                        {
+                            for (int j = i; j < parameters.Length; j++)
+                            {
+                                if (!bool.TryParse(parameters[j], out bool _))
+                                {
+                                    valid = false;
+                                    break;
+                                }
+                            }
+                        }
+                        break;
+                    case FunctionParameterType.LISTSTRING:
+                        valid = i == template.Length - 1;
                         break;
                 }
 
@@ -217,7 +432,12 @@ namespace ANF.ANSL
         UINT,
         FLOAT,
         BOOL,
-        STRING
+        STRING,
+        LISTINT,
+        LISTUINT,
+        LISTSTRING,
+        LISTFLOAT,
+        LISTBOOL
     }
 }
 
