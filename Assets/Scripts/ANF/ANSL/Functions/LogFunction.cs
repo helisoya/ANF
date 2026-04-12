@@ -11,7 +11,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 3,
         functionBody: "log",
-        functionAutoComplete: "log(TYPE;WARNING)",
+        functionAutoComplete: new string[] { "log(Type;Message)" },
         functionDesc: "Logs a message to the debug console. (Can be Log, Warning or Error)")]
     public class LogFunction : ANSLFunction
     {

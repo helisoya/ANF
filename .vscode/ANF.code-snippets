@@ -1,0 +1,37 @@
+{
+	"2_0": {
+		"scope": "ansl",
+		"prefix": "clearStack",
+		"body": ["clearStack()"],
+		"description": "Clears the context's stack. Can also clear other context's"
+	},
+	"2_1": {
+		"scope": "ansl",
+		"prefix": "clearStack",
+		"body": ["clearStack(ContextIndex)"],
+		"description": "Clears the context's stack. Can also clear other context's"
+	},
+	"1_0": {
+		"scope": "ansl",
+		"prefix": "load",
+		"body": ["load(Script;Immediate)"],
+		"description": "Jump to is an internal function. It cannot be called from anywhere"
+	},
+	"1_1": {
+		"scope": "ansl",
+		"prefix": "load",
+		"body": ["load(Script;StartIndex;Immediate)"],
+		"description": "Jump to is an internal function. It cannot be called from anywhere"
+	},
+	"3_0": {
+		"scope": "ansl",
+		"prefix": "log",
+		"body": ["log(Type;Message)"],
+		"description": "Logs a message to the debug console. (Can be Log, Warning or Error)"
+	},
+	"4_0": {
+		"scope": "ansl",
+		"prefix": "wait",
+		"body": ["wait(Seconds)"],
+		"description": "Waits for a certain number of seconds"
+	},

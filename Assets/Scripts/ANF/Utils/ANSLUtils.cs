@@ -86,6 +86,47 @@ namespace ANF.Utils
         }
 
         /// <summary>
+		/// Regenerates the VS Code Snippets
+		/// </summary>
+        public static void RegenerateVSCodeSnippets(string targetPath)
+        {
+            string targetFile = targetPath + "/ANF.code-snippets";
+
+            new FileInfo(targetFile).Directory.Create();
+
+            if (File.Exists(targetFile))
+                File.Delete(targetFile);
+
+            StreamWriter outStream = new StreamWriter(targetFile, false);
+
+            List<Type> functions = GetANSLFunctionsList();
+
+            outStream.Write("{");
+
+            foreach (Type type in functions)
+            {
+                ANSLFunctionAttribute attribute = type.GetCustomAttribute<ANSLFunctionAttribute>();
+
+                if (attribute != null && !string.IsNullOrEmpty(attribute.functionBody) && attribute.functionAutoComplete != null)
+                {
+                    int idx = 0;
+                    foreach (string autoComplete in attribute.functionAutoComplete)
+                    {
+                        outStream.Write($"\n\t\"{attribute.functionId}_{idx}\": {{");
+                        outStream.Write($"\n\t\t\"scope\": \"ansl\",");
+                        outStream.Write($"\n\t\t\"prefix\": \"{attribute.functionBody}\",");
+                        outStream.Write($"\n\t\t\"body\": [\"{autoComplete}\"],");
+                        outStream.Write($"\n\t\t\"description\": \"{attribute.functionDesc}\"");
+                        outStream.Write($"\n\t}},");
+                        idx++;
+                    }
+                }
+            }
+            outStream.Close();
+        }
+
+
+        /// <summary>
         /// Compiles all ANSL Files
         /// </summary>
         /// <returns>The error list</returns>

@@ -9,7 +9,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 0,
         functionBody: "",
-        functionAutoComplete: "",
+        functionAutoComplete: null,
         functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]
     public class JumpToFunction : ANSLFunction
     {

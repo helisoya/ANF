@@ -10,7 +10,7 @@ namespace ANF.ANSL
     {
         public uint functionId { get; private set; }
         public string functionBody { get; private set; }
-        public string functionAutoComplete { get; private set; }
+        public string[] functionAutoComplete { get; private set; }
         public string functionDesc { get; private set; }
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace ANF.ANSL
         /// <param name="functionBody">The body of the function is the part before any (). Ex : setBackground is the body of setBackground(BCKGND)</param>
         /// <param name="functionAutoComplete">The function's script template (For VS Code autocomplete feature). Ex : setBackground(BACKGROUND)</param>
         /// <param name="functionDesc">The function's script description (For VS Code autocomplete feature)</param>
-        public ANSLFunctionAttribute(uint functionId = 0, string functionBody = "", string functionAutoComplete = "", string functionDesc = "")
+        public ANSLFunctionAttribute(uint functionId = 0, string functionBody = "", string[] functionAutoComplete = null, string functionDesc = "")
         {
             this.functionId = functionId;
             this.functionBody = functionBody;

@@ -11,7 +11,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 1,
         functionBody: "load",
-        functionAutoComplete: "load(SCRIPT;IMMEDIATE)",
+        functionAutoComplete: new string[] { "load(Script;Immediate)", "load(Script;StartIndex;Immediate)" },
         functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]
     public class LoadScriptFunction : ANSLFunction
     {

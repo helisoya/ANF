@@ -9,7 +9,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 2,
         functionBody: "clearStack",
-        functionAutoComplete: "clearStack()",
+        functionAutoComplete: new string[] { "clearStack()", "clearStack(ContextIndex)" },
         functionDesc: "Clears the context's stack. Can also clear other context's")]
     public class ClearStack : ANSLFunction
     {

@@ -14,6 +14,8 @@ namespace ANF.Manager
         public string anslSourceFolder;
         [Tooltip("ANSL destination file location (Is inside Resources/)")]
         public string anslDestinationFolder;
+        [Tooltip("Path to the ANSL .code-snippets file (auto complete for VS code)")]
+        public string anslVSCodeSnippetsPath;
         [Tooltip("How many ANSL function can be called per frame (per context)")]
         public uint anslMaxFunctionsPerFrame = 10;
         [Tooltip("How many concurrent contexts can coexist")]

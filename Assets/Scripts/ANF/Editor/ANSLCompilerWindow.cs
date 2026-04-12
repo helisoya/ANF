@@ -29,7 +29,14 @@ namespace ANF.Editor
 
         public void OnGUI()
         {
-            if (GUILayout.Button("Compile"))
+            if (GUILayout.Button("Regenerate VS Code Snippets"))
+            {
+                ANFSettings settings = AssetDatabase.LoadAssetAtPath<ANFSettings>("Assets/Settings/ANF/ANFSettings.asset");
+                if (settings != null)
+                    ANSLUtils.RegenerateVSCodeSnippets(settings.anslVSCodeSnippetsPath);
+            }
+
+            if (GUILayout.Button("Compile ANSL Files"))
             {
                 CompileANSLFiles();
             }
@@ -109,7 +116,7 @@ namespace ANF.Editor
                     {
                         GUILayout.Label($"{data[i].filePath}, {data[i].line}", options);
                     }
-                    
+
                     GUILayout.Label(data[i].errorMessage, options);
                     GUILayout.EndHorizontal();
                 }

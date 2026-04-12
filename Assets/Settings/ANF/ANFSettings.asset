@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFSettings
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
+  anslVSCodeSnippetsPath: .vscode/
   anslMaxFunctionsPerFrame: 10
   anslMaxContexts: 20
   anslContextStackLength: 10
