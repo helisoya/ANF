@@ -29,6 +29,36 @@
 		"body": ["log(Type;Message)"],
 		"description": "Logs a message to the debug console. (Can be Log, Warning or Error)"
 	},
+	"7_0": {
+		"scope": "ansl",
+		"prefix": "playerName",
+		"body": ["playerName(playerName)"],
+		"description": "Changes the player's name"
+	},
+	"5_0": {
+		"scope": "ansl",
+		"prefix": "random",
+		"body": ["random(Min;Max)"],
+		"description": "Generates a random variable between [Min,Max["
+	},
+	"6_0": {
+		"scope": "ansl",
+		"prefix": "variable",
+		"body": ["variable(Name;Operator;Value)"],
+		"description": "Changes a variable's value. Operator can be +, -, and default"
+	},
+	"6_1": {
+		"scope": "ansl",
+		"prefix": "variable",
+		"body": ["variable(Name;Operator;Variable)"],
+		"description": "Changes a variable's value. Operator can be +, -, and default"
+	},
+	"6_2": {
+		"scope": "ansl",
+		"prefix": "variable",
+		"body": ["variable(Name;default)"],
+		"description": "Changes a variable's value. Operator can be +, -, and default"
+	},
 	"4_0": {
 		"scope": "ansl",
 		"prefix": "wait",

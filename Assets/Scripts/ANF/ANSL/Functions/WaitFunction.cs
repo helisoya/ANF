@@ -34,7 +34,6 @@ namespace ANF.ANSL
 
         protected override void OnUpdate()
         {
-            // Unused
             timeToWait -= Time.deltaTime;
             if (timeToWait <= 0)
                 EndProcess();

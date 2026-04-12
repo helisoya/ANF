@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ANF.Manager
@@ -11,12 +13,14 @@ namespace ANF.Manager
 
         [Header("Data")]
         [SerializeField] private ANFSettings anfSettings;
+        [SerializeField] private PlayerData playerData;
 
         void Awake()
         {
             if (!instance)
             {
                 instance = this;
+                playerData = new PlayerData(anfSettings);
                 DontDestroyOnLoad(gameObject);
             }
             else
@@ -32,6 +36,15 @@ namespace ANF.Manager
         public ANFSettings GetANFSettings()
         {
             return anfSettings;
+        }
+
+        /// <summary>
+		/// Gets the player's data
+		/// </summary>
+		/// <returns>The player's data</returns>
+        public PlayerData GetPlayerData()
+        {
+            return playerData;
         }
     }
 }
