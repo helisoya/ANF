@@ -1,0 +1,7 @@
+log(Log;Log Message from A)
+
+log(Warning;Warning Message from A)
+
+loadScript(ANF/Tests/StackB;true)
+
+log(Error;Error Message from A)

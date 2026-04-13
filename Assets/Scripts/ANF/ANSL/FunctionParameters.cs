@@ -132,7 +132,7 @@ namespace ANF.ANSL
             if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
                 && template[parameterIndex] == FunctionParameterType.FLOAT)
             {
-                if (float.TryParse(parameters[parameterIndex], out value))
+                if (float.TryParse(parameters[parameterIndex],System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out value))
                     return true;
             }
 
@@ -292,7 +292,7 @@ namespace ANF.ANSL
                 value = new float[listSize];
                 for (int i = 0; i < listSize; i++)
                 {
-                    if (float.TryParse(parameters[parameterIndex + i], out float result))
+                    if (float.TryParse(parameters[parameterIndex + i], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float result))
                     {
                         value[i] = result;
                     }
@@ -336,7 +336,7 @@ namespace ANF.ANSL
                         valid = uint.TryParse(parameters[i], out uint _);
                         break;
                     case FunctionParameterType.FLOAT:
-                        valid = float.TryParse(parameters[i], out float _);
+                        valid = float.TryParse(parameters[i], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float _);
                         break;
                     case FunctionParameterType.BOOL:
                         valid = bool.TryParse(parameters[i], out bool _);
@@ -375,7 +375,7 @@ namespace ANF.ANSL
                         {
                             for (int j = i; j < parameters.Length; j++)
                             {
-                                if (!float.TryParse(parameters[j], out float _))
+                                if (!float.TryParse(parameters[j], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out float _))
                                 {
                                     valid = false;
                                     break;

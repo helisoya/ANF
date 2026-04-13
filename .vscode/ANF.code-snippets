@@ -11,6 +11,19 @@
 		"body": ["clearStack(ContextIndex)"],
 		"description": "Clears the context's stack. Can also clear other context's"
 	},
+	"8_0": {
+		"scope": "ansl",
+		"prefix": "if",
+		"body": ["if()
+{
+
+}
+else
+{
+
+}"],
+		"description": "Checks variables. You can use && and ||, as well as (). Ex : if((Var1 == Var2 && Var3 == 1) || Var3 == 0"
+	},
 	"1_0": {
 		"scope": "ansl",
 		"prefix": "load",

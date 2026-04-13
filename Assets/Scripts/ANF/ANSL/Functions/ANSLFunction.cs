@@ -40,8 +40,9 @@ namespace ANF.ANSL
 		/// <param name="compiledLines">The compiled lines of script for this function</param>
 		/// <param name="compiler">The compiler</param>
 		/// <param name="errors">The global error list</param>
+        /// <param name="outputLine">The output line the function will start in</param>
 		/// <returns>True if the compiling was successful</returns>
-        public virtual bool Compile(out List<string> compiledLines, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors)
+        public virtual bool Compile(out List<string> compiledLines, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 

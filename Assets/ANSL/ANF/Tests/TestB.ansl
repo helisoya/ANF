@@ -1,5 +1,0 @@
-log(Log;Hello from test B)
-loadScript(ANF/Tests/TestC;true)
-log(Log;Hello Again)
-loadScript(ANF/Tests/TestC;true)
-log(Log;Again ?)

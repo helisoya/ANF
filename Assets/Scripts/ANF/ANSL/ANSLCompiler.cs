@@ -16,6 +16,7 @@ namespace ANF.ANSL
         private string sourceFilepath;
         private bool isfirstLine;
 
+        private int currentLineInOutput;
         private int currentLine;
         private string cachedCurrentLine;
         private string cachedCurrentLineClean;
@@ -39,6 +40,7 @@ namespace ANF.ANSL
             this.errors = errors;
             this.functions = functions;
             currentLine = -1;
+            currentLineInOutput = 0;
             isfirstLine = true;
 
             inLines = File.ReadAllLines(sourceFile);
@@ -81,7 +83,7 @@ namespace ANF.ANSL
             }
             else
             {
-                if (CompileLine(cachedCurrentLineClean, out List<string> compiledLines))
+                if (CompileLine(cachedCurrentLineClean, out List<string> compiledLines,currentLineInOutput))
                 {
                     foreach (string line in compiledLines)
                     {
@@ -92,6 +94,7 @@ namespace ANF.ANSL
 
                         outStream.Write(line);
                     }
+                    currentLineInOutput += compiledLines.Count;
                 }
                 else
                 {
@@ -109,8 +112,9 @@ namespace ANF.ANSL
 		/// </summary>
 		/// <param name="line">The line counter</param>
 		/// <param name="compiledLines">The compiled lines of code</param>
+        /// <param name="outputLine">The outline line the function will start in</param>
 		/// <returns>True if the compiling resulted in success</returns>
-        public bool CompileLine(string line, out List<string> compiledLines)
+        public bool CompileLine(string line, out List<string> compiledLines, int outputLine)
         {
             compiledLines = new List<string>();
             if (!string.IsNullOrEmpty(line) && !string.IsNullOrWhiteSpace(line))
@@ -126,7 +130,7 @@ namespace ANF.ANSL
                         found = true;
 
                         // Compile with this function
-                        if (functions[body].Compile(out List<string> result, this, errors))
+                        if (functions[body].Compile(out List<string> result, this, errors,outputLine))
                         {
                             foreach (string compiledLine in result)
                             {
@@ -174,6 +178,23 @@ namespace ANF.ANSL
                 while (cachedCurrentLineClean.StartsWith(" ") && cachedCurrentLineClean.Length > 0)
                     cachedCurrentLine = cachedCurrentLineClean.Substring(1);
             }
+        }
+            
+        /// <summary>
+        /// Removes the first character from the cleaned line
+        /// </summary>
+        public void RemoveFirstCharacterFromCleanedLine()
+        {
+            cachedCurrentLineClean = cachedCurrentLineClean.Substring(1);
+        }
+            
+        /// <summary>
+        /// Gets the current line counter in the output file
+        /// </summary>
+        /// <returns>The line counter</returns>
+        public int GetCurrentOutputLineCounter()
+        {
+            return currentLineInOutput;
         }
 
         /// <summary>
