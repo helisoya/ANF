@@ -83,7 +83,7 @@ namespace ANF.ANSL
             }
             else
             {
-                if (CompileLine(cachedCurrentLineClean, out List<string> compiledLines,currentLineInOutput))
+                if (CompileLine(cachedCurrentLineClean, out List<string> compiledLines, currentLineInOutput))
                 {
                     foreach (string line in compiledLines)
                     {
@@ -130,7 +130,7 @@ namespace ANF.ANSL
                         found = true;
 
                         // Compile with this function
-                        if (functions[body].Compile(out List<string> result, this, errors,outputLine))
+                        if (functions[body].Compile(out List<string> result, line, this, errors, outputLine))
                         {
                             foreach (string compiledLine in result)
                             {
@@ -179,7 +179,7 @@ namespace ANF.ANSL
                     cachedCurrentLine = cachedCurrentLineClean.Substring(1);
             }
         }
-            
+
         /// <summary>
         /// Removes the first character from the cleaned line
         /// </summary>
@@ -187,7 +187,7 @@ namespace ANF.ANSL
         {
             cachedCurrentLineClean = cachedCurrentLineClean.Substring(1);
         }
-            
+
         /// <summary>
         /// Gets the current line counter in the output file
         /// </summary>

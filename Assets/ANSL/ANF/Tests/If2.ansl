@@ -1,0 +1,22 @@
+
+if(random == 0 & random < 1)
+{
+	log(Log;Setting to 5)
+	variable(random;=;5)
+}
+
+if(random != 5)
+{
+	log(Error;Should be at 5)
+}
+else
+{
+	variable(random;-;1)
+}
+
+if(random == 4)
+	log(Log;Is at 4)
+else
+	log(Error;Should be at 4)
+
+log(Log;End)

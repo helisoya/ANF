@@ -16,7 +16,7 @@ namespace ANF.ANSL
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.INT}
+                new FunctionParameterType[]{FunctionParameterType.UINT}
             };
         }
 

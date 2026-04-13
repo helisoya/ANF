@@ -57,11 +57,7 @@ namespace ANF.ANSL
                             case "-":
                                 currentValue -= otherValue;
                                 break;
-                            case "default":
-                                currentValue += otherValue;
-                                break;
                         }
-
                         container.SetVariable(name, currentValue);
                     }
                 }

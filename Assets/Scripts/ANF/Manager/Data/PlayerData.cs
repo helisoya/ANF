@@ -35,7 +35,7 @@ namespace ANF.Manager
         {
             foreach (PlayerDataContainer container in containers)
             {
-                if (containers.GetType().IsSubclassOf(typeof(T)) || containers.GetType() == typeof(T))
+                if (container.GetType().IsSubclassOf(typeof(T)) || container.GetType() == typeof(T))
                 {
                     result = (T)container;
                     return true;

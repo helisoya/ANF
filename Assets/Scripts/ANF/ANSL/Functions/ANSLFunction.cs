@@ -38,16 +38,16 @@ namespace ANF.ANSL
 		/// Compiles the function
 		/// </summary>
 		/// <param name="compiledLines">The compiled lines of script for this function</param>
-		/// <param name="compiler">The compiler</param>
+		/// <param name="cleanedLine">The line to compile (cleaned)</param>
+        /// <param name="compiler">The compiler</param>
 		/// <param name="errors">The global error list</param>
         /// <param name="outputLine">The output line the function will start in</param>
 		/// <returns>True if the compiling was successful</returns>
-        public virtual bool Compile(out List<string> compiledLines, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public virtual bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
-            string currentLine = compiler.GetCurrentLineClean();
-            string[] split = currentLine.Split(new char[] { '(', ')' }, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] split = cleanedLine.Split(new char[] { '(', ')' }, System.StringSplitOptions.RemoveEmptyEntries);
 
             if (split.Length != 2)
             {
@@ -57,7 +57,7 @@ namespace ANF.ANSL
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"Too many () detected : {currentLine}."
+                    errorMessage = $"Too many () detected : {cleanedLine}."
                 });
                 return false;
             }
@@ -72,7 +72,7 @@ namespace ANF.ANSL
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"Unknown parameter template : {currentLine}."
+                    errorMessage = $"Unknown parameter template : {cleanedLine}."
                 });
                 return false;
             }

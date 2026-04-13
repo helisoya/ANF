@@ -1,16 +1,16 @@
-if(var = 1 && (var2 = 2))
+if(var == 1 & (var2 == 2))
 	log(Log;True1)
 
 wait(0.1)
 
-if(var = 1 && var2 = 2)
+if(var == 1 & var2 == 2)
 	log(Log;True2)
 else
 	log(Log;False2)
 
 wait(0.1)
 
-if(var = 1 && var2 = 2)
+if(var == 1 & var2 == 2)
 {
 	log(Log;True3)
 	log(Warning;True3)
@@ -20,7 +20,7 @@ else
 
 wait(0.1)
 
-if(var = 1 && var2 = 2)
+if(var == 1 & var2 == 2)
 {
 	log(Log;True4)
 	log(Warning;True4)
@@ -29,7 +29,7 @@ if(var = 1 && var2 = 2)
 
 wait(0.1)
 
-if(var = 1 && var2 = 2)
+if(var == 1 & var2 == 2)
 {
 	log(Log;True5)
 	log(Warning;True5)
@@ -42,7 +42,7 @@ else
 	
 wait(0.1)
 
-if(var = 1 && var2 = 2)
+if(var == 1 & var2 == 2)
 	log(Log;True6)
 else
 {
@@ -52,7 +52,7 @@ else
 	
 wait(0.1)
 
-if(var = 1 && var2 = 2){
+if(var == 1 & var2 == 2){
 	log(Log;True7)
 	log(Warning;True7)
 }else{
@@ -62,7 +62,7 @@ if(var = 1 && var2 = 2){
 
 wait(0.1)
 
-if(var = 1 && var2 = 2){
+if(var == 1 & var2 == 2){
 	if(var4 = 2)
 
 		log(Log;True8)

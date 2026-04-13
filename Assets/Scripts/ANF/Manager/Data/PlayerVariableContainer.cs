@@ -95,6 +95,15 @@ namespace ANF.Manager
         }
 
         /// <summary>
+		/// Gets all variables
+		/// </summary>
+		/// <returns>All variables</returns>
+        public List<Variable> GetAllVariables()
+        {
+            return variables;
+        }
+
+        /// <summary>
 		/// Checks if the specified variable exists
 		/// </summary>
 		/// <param name="variableName">The variable's name</param>

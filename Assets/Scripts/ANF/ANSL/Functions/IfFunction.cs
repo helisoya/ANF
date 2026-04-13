@@ -13,8 +13,8 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 8,
         functionBody: "if",
-        functionAutoComplete: new string[] {"if()\n{\n\n}\nelse\n{\n\n}"},
-        functionDesc: "Checks variables. You can use && and ||, as well as (). Ex : if((Var1 == Var2 && Var3 == 1) || Var3 == 0")]
+        functionAutoComplete: new string[] { "if()\n{\n\n}\nelse\n{\n\n}" },
+        functionDesc: "Checks variables. You can't use both | and & in the same check.")]
     public class IfFunction : ANSLFunction
     {
         public override FunctionParameterType[][] GetParametersTemplates()
@@ -24,13 +24,13 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile(out List<string> compiledLines, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public override bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
-            string currentLine = compiler.GetCurrentLineClean();
+            Debug.Log(cleanedLine);
 
-            string ifContent = ExtractParenthesisContent(currentLine);
+            string ifContent = ExtractParenthesisContent(cleanedLine);
 
             if (ifContent == null)
             {
@@ -40,12 +40,12 @@ namespace ANF.ANSL
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"No if content detected : {currentLine}."
+                    errorMessage = $"No if content detected : {cleanedLine}."
                 });
                 return false;
             }
 
-            if (!currentLine.EndsWith(')') && !currentLine.EndsWith('{'))
+            if (!cleanedLine.EndsWith(')') && !cleanedLine.EndsWith('{'))
             {
                 // Unknown character
                 errors.Add(new ANSLUtils.ANSLError()
@@ -53,12 +53,12 @@ namespace ANF.ANSL
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"Unknown character at the end of the line : {currentLine}."
+                    errorMessage = $"Unknown character at the end of the line : {cleanedLine}."
                 });
                 return false;
             }
 
-            if(!CheckIfContent(ifContent,out bool _, true))
+            if (!CheckIfContent(ifContent, out bool _, true))
             {
                 // Check failed
                 errors.Add(new ANSLUtils.ANSLError()
@@ -66,14 +66,14 @@ namespace ANF.ANSL
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"Could not parse if content : {currentLine}."
+                    errorMessage = $"Could not parse if content : {cleanedLine}."
                 });
                 return false;
             }
 
             List<string> compiledTrue = new List<string>();
             List<string> compiledFalse = new List<string>();
-            bool isMulti = currentLine.EndsWith('{');
+            bool isMulti = cleanedLine.EndsWith('{');
             bool compilingTrues = true;
             bool canContinue = true;
             bool elseFound = false;
@@ -82,15 +82,15 @@ namespace ANF.ANSL
             bool canTryCompile;
             bool mayCheckForLastFunction = false;
 
-            while(canContinue && currentNextLine != null)
+            while (canContinue && currentNextLine != null)
             {
                 if (string.IsNullOrEmpty(currentNextLine) || string.IsNullOrWhiteSpace(currentNextLine))
                 {
                     compiler.CheckNextLine();
                     currentNextLine = compiler.GetCurrentLineClean();
+                    Debug.Log("Empty line : " + currentNextLine);
+                    continue;
                 }
-
-                Debug.Log("--"+ currentNextLine + "--");
 
                 canTryCompile = true;
 
@@ -110,7 +110,7 @@ namespace ANF.ANSL
                         });
                         return false;
                     }
-                    else if(isMulti)
+                    else if (isMulti)
                     {
                         // { was already put
                         errors.Add(new ANSLUtils.ANSLError()
@@ -122,7 +122,7 @@ namespace ANF.ANSL
                         });
                         return false;
                     }
-                    else if(!compilingTrues && !elseFound)
+                    else if (!compilingTrues && !elseFound)
                     {
                         // else is missing
                         errors.Add(new ANSLUtils.ANSLError()
@@ -137,7 +137,7 @@ namespace ANF.ANSL
                     else
                     {
                         isMulti = true;
-                        if(currentNextLine.Length > 1)
+                        if (currentNextLine.Length > 1)
                         {
                             // Try parse a potential function on top of {
                             currentNextLine = currentNextLine.Substring(1);
@@ -145,11 +145,11 @@ namespace ANF.ANSL
                         }
                     }
                 }
-                
+
                 if (currentNextLine.StartsWith('}'))
                 {
                     canTryCompile = false;
-                    if(!isMulti)
+                    if (!isMulti)
                     {
                         errors.Add(new ANSLUtils.ANSLError()
                         {
@@ -166,7 +166,7 @@ namespace ANF.ANSL
                     else
                         canContinue = false;
 
-                    if(currentNextLine.Length > 1)
+                    if (currentNextLine.Length > 1)
                     {
                         // Still things after the }
                         // Could be a else and/or a function
@@ -180,10 +180,10 @@ namespace ANF.ANSL
                     }
                 }
 
-                if(currentNextLine.StartsWith("else"))
+                if (currentNextLine.StartsWith("else"))
                 {
                     canTryCompile = false;
-                    if(elseFound)
+                    if (elseFound)
                     {
                         errors.Add(new ANSLUtils.ANSLError()
                         {
@@ -195,7 +195,7 @@ namespace ANF.ANSL
                         return false;
                     }
 
-                    if(compilingTrues || !canContinue)
+                    if (compilingTrues || !canContinue)
                     {
                         errors.Add(new ANSLUtils.ANSLError()
                         {
@@ -209,14 +209,14 @@ namespace ANF.ANSL
 
                     elseFound = true;
 
-                    if(currentNextLine.Length > 4)
+                    if (currentNextLine.Length > 4)
                     {
                         currentNextLine = currentNextLine.Substring(4);
                         continue;
                     }
                 }
-                
-                if(canTryCompile)
+
+                if (canTryCompile)
                 {
                     int outputLineForFunction;
                     if (compilingTrues)
@@ -224,46 +224,48 @@ namespace ANF.ANSL
                     else
                         outputLineForFunction = outputLine + compiledTrue.Count + 1 + compiledFalse.Count + 1;
 
-                    while(currentNextLine.Length > 0 && currentNextLine[0] == ' ')
+                    while (currentNextLine.Length > 0 && currentNextLine[0] == ' ')
                         currentNextLine = currentNextLine.Substring(1);
 
-                    // Potential function
-                    if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
+                    if (!isMulti && !compilingTrues && !elseFound)
+                    {
+                        mayCheckForLastFunction = true;
+                        canContinue = false;
+                    }
+                    else
+                    {
+                        // Potential function
+                        if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
                         {
-                            if (!isMulti && !compilingTrues && !elseFound)
+                            foreach (string line in compiled)
                             {
-                                mayCheckForLastFunction = true;
-                                canContinue = false;
+                                if (compilingTrues)
+                                    compiledTrue.Add(line);
+                                else
+                                    compiledFalse.Add(line);
                             }
-                            else
-                            {
-                                foreach (string line in compiled)
-                                {
-                                    if (compilingTrues)
-                                        compiledTrue.Add(line);
-                                    else
-                                        compiledFalse.Add(line);
-                                }
 
-                                if (!isMulti)
-                                {
-                                    if (compilingTrues)
-                                        compilingTrues = false;
-                                    else
-                                        canContinue = false;
-                                }
+                            if (!isMulti)
+                            {
+                                if (compilingTrues)
+                                    compilingTrues = false;
+                                else
+                                    canContinue = false;
                             }
+
                         }
                         else
                         {
                             return false;
                         }
+                    }
                 }
 
-                if(canContinue)
+                if (canContinue)
                 {
                     compiler.CheckNextLine();
                     currentNextLine = compiler.GetCurrentLineClean();
+                    Debug.Log("Can continue : " + currentNextLine);
                 }
             }
 
@@ -280,12 +282,13 @@ namespace ANF.ANSL
             compiledLines.AddRange(compiledFalse);
             compiledLines.Add($"0|{endIndex}");
 
-            if(mayCheckForLastFunction)
+            if (mayCheckForLastFunction)
             {
+                Debug.Log("Checking last one : " + currentNextLine);
                 while (currentNextLine.Length > 0 && currentNextLine[0] == ' ')
                     currentNextLine = currentNextLine.Substring(1);
 
-                if (compiler.CompileLine(currentNextLine,out List<string> lastLines,endIndex))
+                if (compiler.CompileLine(currentNextLine, out List<string> lastLines, endIndex))
                     compiledLines.AddRange(lastLines);
                 else
                     return false;
@@ -296,6 +299,15 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
+            if (parameters.GetParameter(0, out uint trueIdx) &&
+                parameters.GetParameter(1, out uint falseIdx) &&
+                parameters.GetParameter(2, out string content))
+            {
+                if (CheckIfContent(content, out bool result))
+                {
+                    context.SetLineCounter(result ? trueIdx : falseIdx);
+                }
+            }
             EndProcess();
         }
 
@@ -319,11 +331,11 @@ namespace ANF.ANSL
             int startIdx = -1;
             int endIdx = -1;
             int parenthesisToClose = 0;
-            for (int i = 0; i < fullString.Length;i++)
+            for (int i = 0; i < fullString.Length; i++)
             {
                 if (fullString[i] == '(')
                 {
-                    if(parenthesisToClose == 0)
+                    if (parenthesisToClose == 0)
                         startIdx = i + 1;
 
                     parenthesisToClose++;
@@ -336,7 +348,7 @@ namespace ANF.ANSL
                     {
                         endIdx = i - 1;
 
-                        if(startIdx < endIdx && startIdx != -1 && endIdx != -1 && endIdx < fullString.Length)
+                        if (startIdx < endIdx && startIdx != -1 && endIdx != -1 && endIdx < fullString.Length)
                         {
                             return fullString.Substring(startIdx, endIdx - startIdx + 1);
                         }
@@ -349,28 +361,57 @@ namespace ANF.ANSL
 
 
         /// <summary>
-        /// Checks the result for the 
+        /// Checks the result for the specified content
         /// </summary>
         /// <param name="result">True if the if was correct</param>
         /// <param name="debug">True if debug mode is enabled (Don't check variables, only the composition)</param>
         /// <returns>True if there was no errors</returns>
-        protected bool CheckIfContent(string ifContent,out bool result, bool debug = false)
+        protected bool CheckIfContent(string ifContent, out bool result, bool debug = false)
         {
             PlayerVariableContainer variableContainer = null;
-            if(!debug)
+            if (!debug)
             {
-                if(!PersistentDataManager.instance.GetPlayerData().GetDataContainer(out variableContainer))
+                if (!PersistentDataManager.instance.GetPlayerData().GetDataContainer<PlayerVariableContainer>(out variableContainer))
                 {
+
                     result = false;
                     return false;
                 }
             }
 
-            if(CheckIfContentImpl(ifContent, variableContainer, out result))
+            if (CheckIfContentImpl(ifContent, variableContainer, out result) || debug)
                 return true;
 
             result = false;
             return true;
+        }
+
+        /// <summary>
+		/// Checks the result of the operation
+		/// </summary>
+		/// <param name="left">Left value</param>
+		/// <param name="right">Right value</param>
+		/// <param name="oper">The Operator</param>
+		/// <returns>The result</returns>
+        bool IsCheckOkay(int left, int right, string oper)
+        {
+            switch (oper)
+            {
+                case "==":
+                    return left == right;
+                case ">":
+                    return left > right;
+                case "<":
+                    return left < right;
+                case ">=":
+                    return left >= right;
+                case "<=":
+                    return left <= right;
+                case "!=":
+                    return left != right;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -380,9 +421,76 @@ namespace ANF.ANSL
         /// <param name="container">The variable container</param>
         /// <param name="result">The out result</param>
         /// <returns>True if no problem was encountered</returns>
-        protected bool CheckIfContentImpl(string line,PlayerVariableContainer container, out bool result)
+        protected bool CheckIfContentImpl(string line, PlayerVariableContainer container, out bool result)
         {
             result = true;
+            bool isAnd = true;
+            bool tmpResult;
+
+            string[] operators = new string[] { "==", "<=", ">=", "<", ">", "!=" };
+
+            string[] split = line.Split("&");
+            if (split.Length == 1)
+            {
+                result = false;
+                isAnd = false;
+                split = line.Split("|");
+            }
+
+            foreach (string part in split)
+            {
+                foreach (string oper in operators)
+                {
+                    if (part.Contains(oper))
+                    {
+                        string[] parametersSplit = part.Split(oper);
+                        if (parametersSplit.Length != 2)
+                        {
+                            result = false;
+                            return false;
+                        }
+
+                        string left = parametersSplit[0].Replace(" ", "");
+                        string right = parametersSplit[1].Replace(" ", "");
+
+                        int valueLeft;
+                        int valueRight;
+
+                        if (container == null || !container.GetVariable(left, out valueLeft))
+                        {
+                            if (!int.TryParse(left, out valueLeft))
+                            {
+                                result = false;
+                                return false;
+                            }
+                        }
+
+                        if (container == null || !container.GetVariable(right, out valueRight))
+                        {
+                            if (!int.TryParse(right, out valueRight))
+                            {
+                                result = false;
+                                return false;
+                            }
+                        }
+
+                        tmpResult = IsCheckOkay(valueLeft, valueRight, oper);
+
+                        if (!tmpResult && isAnd)
+                        {
+                            result = false;
+                            break;
+                        }
+                        else if (tmpResult && !isAnd)
+                        {
+                            result = true;
+                            break;
+                        }
+
+                        break;
+                    }
+                }
+            }
             return true;
         }
     }
