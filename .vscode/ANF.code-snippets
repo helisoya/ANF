@@ -22,7 +22,7 @@ else
 {
 
 }"],
-		"description": "Checks variables. You can use && and ||, as well as (). Ex : if((Var1 == Var2 && Var3 == 1) || Var3 == 0"
+		"description": "Checks variables. You can't use both | and & in the same check."
 	},
 	"1_0": {
 		"scope": "ansl",
@@ -53,6 +53,24 @@ else
 		"prefix": "random",
 		"body": ["random(Min;Max)"],
 		"description": "Generates a random variable between [Min,Max["
+	},
+	"9_0": {
+		"scope": "ansl",
+		"prefix": "return",
+		"body": ["return()"],
+		"description": "Stops the current script"
+	},
+	"10_0": {
+		"scope": "ansl",
+		"prefix": "switch",
+		"body": ["switch(Variable)
+{
+	case default:
+	{
+
+	}
+}"],
+		"description": "Checks a single variables. You can use 'case default:' to check when none of the checks are valid"
 	},
 	"6_0": {
 		"scope": "ansl",

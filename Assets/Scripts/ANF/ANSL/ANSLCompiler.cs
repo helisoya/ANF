@@ -160,7 +160,7 @@ namespace ANF.ANSL
         }
 
         /// <summary>
-        /// Checks the next line and caches a version without 
+        /// Checks the next line and caches a version without tabs and spaces at the start
         /// </summary>
         public void CheckNextLine()
         {
@@ -178,6 +178,21 @@ namespace ANF.ANSL
                 while (cachedCurrentLineClean.StartsWith(" ") && cachedCurrentLineClean.Length > 0)
                     cachedCurrentLine = cachedCurrentLineClean.Substring(1);
             }
+        }
+
+        /// <summary>
+        /// Checks the previous line and caches a version without tabs and spaces at the start
+        /// </summary>
+        public void CheckPreviousLine()
+        {
+            currentLine++;
+            if (currentLine < 0)
+                currentLine = 0;
+
+            cachedCurrentLine = inLines[currentLine];
+            cachedCurrentLineClean = cachedCurrentLine.Replace("\t", "");
+            while (cachedCurrentLineClean.StartsWith(" ") && cachedCurrentLineClean.Length > 0)
+                cachedCurrentLine = cachedCurrentLineClean.Substring(1);
         }
 
         /// <summary>

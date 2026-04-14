@@ -13,7 +13,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 8,
         functionBody: "if",
-        functionAutoComplete: new string[] { "if()\n{\n\n}\nelse\n{\n\n}" },
+        functionAutoComplete: new string[] { "if()\n\nelse\n\nendif}" },
         functionDesc: "Checks variables. You can't use both | and & in the same check.")]
     public class IfFunction : ANSLFunction
     {
@@ -27,8 +27,6 @@ namespace ANF.ANSL
         public override bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
-
-            Debug.Log(cleanedLine);
 
             string ifContent = ExtractParenthesisContent(cleanedLine);
 
@@ -45,7 +43,7 @@ namespace ANF.ANSL
                 return false;
             }
 
-            if (!cleanedLine.EndsWith(')') && !cleanedLine.EndsWith('{'))
+            if (!cleanedLine.EndsWith(')'))
             {
                 // Unknown character
                 errors.Add(new ANSLUtils.ANSLError()
@@ -73,14 +71,11 @@ namespace ANF.ANSL
 
             List<string> compiledTrue = new List<string>();
             List<string> compiledFalse = new List<string>();
-            bool isMulti = cleanedLine.EndsWith('{');
             bool compilingTrues = true;
             bool canContinue = true;
-            bool elseFound = false;
+            bool foundEnd = false;
             compiler.CheckNextLine();
             string currentNextLine = compiler.GetCurrentLineClean();
-            bool canTryCompile;
-            bool mayCheckForLastFunction = false;
 
             while (canContinue && currentNextLine != null)
             {
@@ -88,135 +83,58 @@ namespace ANF.ANSL
                 {
                     compiler.CheckNextLine();
                     currentNextLine = compiler.GetCurrentLineClean();
-                    Debug.Log("Empty line : " + currentNextLine);
                     continue;
-                }
-
-                canTryCompile = true;
-
-                if (currentNextLine.StartsWith('{'))
-                {
-                    canTryCompile = false;
-                    if ((compilingTrues && compiledTrue.Count != 0) ||
-                        (!compilingTrues && compiledFalse.Count != 0))
-                    {
-                        // Already started as non multi
-                        errors.Add(new ANSLUtils.ANSLError()
-                        {
-                            type = ANSLUtils.ANSLErrorType.ERROR,
-                            filePath = compiler.GetSourceFilepath(),
-                            line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Functions detected before this {{ : {currentNextLine}."
-                        });
-                        return false;
-                    }
-                    else if (isMulti)
-                    {
-                        // { was already put
-                        errors.Add(new ANSLUtils.ANSLError()
-                        {
-                            type = ANSLUtils.ANSLErrorType.ERROR,
-                            filePath = compiler.GetSourceFilepath(),
-                            line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Too many {{ detected : {currentNextLine}."
-                        });
-                        return false;
-                    }
-                    else if (!compilingTrues && !elseFound)
-                    {
-                        // else is missing
-                        errors.Add(new ANSLUtils.ANSLError()
-                        {
-                            type = ANSLUtils.ANSLErrorType.ERROR,
-                            filePath = compiler.GetSourceFilepath(),
-                            line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"else is missing : {currentNextLine}."
-                        });
-                        return false;
-                    }
-                    else
-                    {
-                        isMulti = true;
-                        if (currentNextLine.Length > 1)
-                        {
-                            // Try parse a potential function on top of {
-                            currentNextLine = currentNextLine.Substring(1);
-                            canTryCompile = true;
-                        }
-                    }
-                }
-
-                if (currentNextLine.StartsWith('}'))
-                {
-                    canTryCompile = false;
-                    if (!isMulti)
-                    {
-                        errors.Add(new ANSLUtils.ANSLError()
-                        {
-                            type = ANSLUtils.ANSLErrorType.ERROR,
-                            filePath = compiler.GetSourceFilepath(),
-                            line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Too many }} detected : {currentNextLine}."
-                        });
-                        return false;
-                    }
-                    isMulti = false;
-                    if (compilingTrues)
-                        compilingTrues = false;
-                    else
-                        canContinue = false;
-
-                    if (currentNextLine.Length > 1)
-                    {
-                        // Still things after the }
-                        // Could be a else and/or a function
-
-                        currentNextLine = currentNextLine.Substring(1);
-
-                        if (!canContinue)
-                            mayCheckForLastFunction = true;
-                        else
-                            canTryCompile = true;
-                    }
                 }
 
                 if (currentNextLine.StartsWith("else"))
                 {
-                    canTryCompile = false;
-                    if (elseFound)
+                    if(!compilingTrues)
                     {
+                        // Already compiling else
                         errors.Add(new ANSLUtils.ANSLError()
                         {
                             type = ANSLUtils.ANSLErrorType.ERROR,
                             filePath = compiler.GetSourceFilepath(),
                             line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Too many else detected : {currentNextLine}."
+                            errorMessage = $"Two else detected : {currentNextLine}."
                         });
                         return false;
                     }
 
-                    if (compilingTrues || !canContinue)
+                    if (currentNextLine.Length != "else".Length)
                     {
+                        // Already compiling else
                         errors.Add(new ANSLUtils.ANSLError()
                         {
                             type = ANSLUtils.ANSLErrorType.ERROR,
                             filePath = compiler.GetSourceFilepath(),
                             line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Else is not correctly placed : {currentNextLine}."
+                            errorMessage = $"Unexpected token after the else : {currentNextLine}."
                         });
                         return false;
                     }
 
-                    elseFound = true;
-
-                    if (currentNextLine.Length > 4)
-                    {
-                        currentNextLine = currentNextLine.Substring(4);
-                        continue;
-                    }
+                    compilingTrues = false;
                 }
+                else if (currentNextLine.StartsWith("endif"))
+                {
+                    if (currentNextLine.Length != "endif".Length)
+                    {
+                        // Already compiling else
+                        errors.Add(new ANSLUtils.ANSLError()
+                        {
+                            type = ANSLUtils.ANSLErrorType.ERROR,
+                            filePath = compiler.GetSourceFilepath(),
+                            line = compiler.GetCurrentLineCounter(),
+                            errorMessage = $"Unexpected token after the endif : {currentNextLine}."
+                        });
+                        return false;
+                    }
 
-                if (canTryCompile)
+                    foundEnd = true;
+                    canContinue = false;
+                }
+                else
                 {
                     int outputLineForFunction;
                     if (compilingTrues)
@@ -224,40 +142,17 @@ namespace ANF.ANSL
                     else
                         outputLineForFunction = outputLine + compiledTrue.Count + 1 + compiledFalse.Count + 1;
 
-                    while (currentNextLine.Length > 0 && currentNextLine[0] == ' ')
-                        currentNextLine = currentNextLine.Substring(1);
-
-                    if (!isMulti && !compilingTrues && !elseFound)
+                    // Potential function
+                    if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
                     {
-                        mayCheckForLastFunction = true;
-                        canContinue = false;
+                        if (compilingTrues)
+                            compiledTrue.AddRange(compiled);
+                        else
+                            compiledFalse.AddRange(compiled);
                     }
                     else
                     {
-                        // Potential function
-                        if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
-                        {
-                            foreach (string line in compiled)
-                            {
-                                if (compilingTrues)
-                                    compiledTrue.Add(line);
-                                else
-                                    compiledFalse.Add(line);
-                            }
-
-                            if (!isMulti)
-                            {
-                                if (compilingTrues)
-                                    compilingTrues = false;
-                                else
-                                    canContinue = false;
-                            }
-
-                        }
-                        else
-                        {
-                            return false;
-                        }
+                        return false;
                     }
                 }
 
@@ -265,10 +160,20 @@ namespace ANF.ANSL
                 {
                     compiler.CheckNextLine();
                     currentNextLine = compiler.GetCurrentLineClean();
-                    Debug.Log("Can continue : " + currentNextLine);
                 }
             }
 
+            if(!foundEnd)
+            {
+                errors.Add(new ANSLUtils.ANSLError()
+                {
+                    type = ANSLUtils.ANSLErrorType.ERROR,
+                    filePath = compiler.GetSourceFilepath(),
+                    line = compiler.GetCurrentLineCounter(),
+                    errorMessage = $"endif not found : {currentNextLine}."
+                });
+                return false;
+            }
 
             int startTrue = outputLine + 1;
             int startFalse = startTrue + compiledTrue.Count + 1;
@@ -281,18 +186,6 @@ namespace ANF.ANSL
             compiledLines.Add($"0|{endIndex}");
             compiledLines.AddRange(compiledFalse);
             compiledLines.Add($"0|{endIndex}");
-
-            if (mayCheckForLastFunction)
-            {
-                Debug.Log("Checking last one : " + currentNextLine);
-                while (currentNextLine.Length > 0 && currentNextLine[0] == ' ')
-                    currentNextLine = currentNextLine.Substring(1);
-
-                if (compiler.CompileLine(currentNextLine, out List<string> lastLines, endIndex))
-                    compiledLines.AddRange(lastLines);
-                else
-                    return false;
-            }
 
             return true;
         }

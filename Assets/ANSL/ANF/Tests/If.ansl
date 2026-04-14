@@ -1,5 +1,6 @@
 if(var == 1 & (var2 == 2))
 	log(Log;True1)
+endif
 
 wait(0.1)
 
@@ -7,62 +8,58 @@ if(var == 1 & var2 == 2)
 	log(Log;True2)
 else
 	log(Log;False2)
+endif
 
 wait(0.1)
 
 if(var == 1 & var2 == 2)
-{
 	log(Log;True3)
 	log(Warning;True3)
-}	
 else
 	log(Log;False3)
+endif
 
 wait(0.1)
 
 if(var == 1 & var2 == 2)
-{
 	log(Log;True4)
 	log(Warning;True4)
-}else
+else
 	log(Log;False4)
+endif
 
 wait(0.1)
 
 if(var == 1 & var2 == 2)
-{
 	log(Log;True5)
-	log(Warning;True5)
-}	
+	log(Warning;True5)	
 else
-{
 	log(Log;False5)
 	log(Warning;False5)
-}
+endif
 	
 wait(0.1)
 
 if(var == 1 & var2 == 2)
 	log(Log;True6)
 else
-{
 	log(Log;False6)
 	log(Warning;False6)
-}
+endif
 	
 wait(0.1)
 
-if(var == 1 & var2 == 2){
+if(var == 1 & var2 == 2)
 	log(Log;True7)
 	log(Warning;True7)
-}else{
+else
 	log(Log;False7)
 	log(Warning;False7)
-}
+endif
 
 wait(0.1)
 
-if(var == 1 & var2 == 2){
+if(var == 1 & var2 == 2)
 	if(var4 = 2)
 
 		log(Log;True8)
@@ -70,20 +67,22 @@ if(var == 1 & var2 == 2){
 	else
 
 		log(Warning;True8)
-}else{
+	endif
+else
 
 
 
 	log(Error;False8)
 	if(var4 = 5)
-	{
+	
 
 		log(Log;False8)
 
-	}else
-	{
+	else
+	
 
 		log(Warning;False8)
-	}log(Log;False8)
+	endif
+	log(Log;False8)
 		
-}
+endif

@@ -1,0 +1,14 @@
+10|random|3|0|1|8|5|1|7|5|12
+3|Log|Is at 0
+0|14
+3|Log|Default
+0|14
+3|Log|Is 8
+0|14
+8|8|10|random == 1
+3|Error|Is at 1
+0|11
+0|11
+0|14
+3|Log|Is at 5
+0|14
