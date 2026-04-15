@@ -1,7 +1,8 @@
 using UnityEngine;
 using ANF.ANSL;
+using ANF.Persistent;
 
-namespace ANF.Manager
+namespace ANF.World
 {
     /// <summary>
     /// Handles persistent data and other Manager
@@ -10,6 +11,7 @@ namespace ANF.Manager
     {
         [Header("Base Components")]
         [SerializeField] private ANSLManager anslManager;
+        private LoadersManager loadersManager;
 
         [Header("Debug")]
         [SerializeField] private bool debugEnabled = false;
@@ -23,10 +25,20 @@ namespace ANF.Manager
         {
             return anslManager;
         }
+        
+        /// <summary>
+        /// Gets the loader's manager
+        /// </summary>
+        /// <returns>The loader's manager</returns>
+        public LoadersManager GetLoadersManager()
+        {
+            return loadersManager; 
+        }
 
         void Start()
         {
             anslManager.Initialize(this);
+            loadersManager = new LoadersManager("worldLoaders", PersistentDataManager.instance.GetANFSettings().registeredWorldLoaders, this);
 
             if (debugEnabled)
                 anslManager.StartNewContext(debugScriptToLoad);

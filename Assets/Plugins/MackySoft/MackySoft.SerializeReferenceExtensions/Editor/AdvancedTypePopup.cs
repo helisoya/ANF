@@ -28,16 +28,19 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         private const int MaxNamespaceNestCount = 16;
 
-        public static void AddTo (AdvancedDropdownItem root, IEnumerable<Type> types)
+        public static void AddTo (AdvancedDropdownItem root, IEnumerable<Type> types, bool allowNull)
         {
             int itemCount = 0;
 
-            // Add null item.
-            var nullItem = new AdvancedTypePopupItem(null, TypeMenuUtility.NullDisplayName)
+            if(allowNull)
             {
-                id = itemCount++
-            };
-            root.AddChild(nullItem);
+                // Add null item.
+                var nullItem = new AdvancedTypePopupItem(null, TypeMenuUtility.NullDisplayName)
+                {
+                    id = itemCount++
+                };
+                root.AddChild(nullItem);
+            }
 
             Type[] typeArray = types.OrderByType().ToArray();
 
@@ -134,11 +137,13 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
         private static readonly float HeaderHeight = EditorGUIUtility.singleLineHeight * 2f;
 
         private Type[] types;
+        private bool allowNull;
 
         public event Action<AdvancedTypePopupItem> OnItemSelected;
 
-        public AdvancedTypePopup (IEnumerable<Type> types, int maxLineCount, AdvancedDropdownState state) : base(state)
+        public AdvancedTypePopup (IEnumerable<Type> types, int maxLineCount, AdvancedDropdownState state, bool allowNull) : base(state)
         {
+            this.allowNull = allowNull;
             SetTypes(types);
             minimumSize = new Vector2(minimumSize.x, EditorGUIUtility.singleLineHeight * maxLineCount + HeaderHeight);
         }
@@ -151,7 +156,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
         protected override AdvancedDropdownItem BuildRoot ()
         {
             var root = new AdvancedDropdownItem("Select Type");
-            AddTo(root, types);
+            AddTo(root, types, allowNull);
             return root;
         }
 
