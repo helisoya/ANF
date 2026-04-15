@@ -58,7 +58,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.ansl",
-					"match": "\\b(if)\\b"
+					"match": "\\b(if|endif)\\b"
 				}
 			]
 		},

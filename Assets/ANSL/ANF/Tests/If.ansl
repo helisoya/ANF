@@ -22,67 +22,43 @@ endif
 wait(0.1)
 
 if(var == 1 & var2 == 2)
-	log(Log;True4)
-	log(Warning;True4)
 else
 	log(Log;False4)
 endif
 
 wait(0.1)
 
-if(var == 1 & var2 == 2)
-	log(Log;True5)
-	log(Warning;True5)	
+if(var == 1 & var2 == 2)	
 else
-	log(Log;False5)
-	log(Warning;False5)
 endif
 	
 wait(0.1)
 
-if(var == 1 & var2 == 2)
-	log(Log;True6)
-else
-	log(Log;False6)
-	log(Warning;False6)
-endif
-	
-wait(0.1)
-
-if(var == 1 & var2 == 2)
-	log(Log;True7)
-	log(Warning;True7)
-else
-	log(Log;False7)
-	log(Warning;False7)
-endif
-
-wait(0.1)
 
 if(var == 1 & var2 == 2)
 	if(var4 = 2)
 
-		log(Log;True8)
+		log(Log;True5)
 
 	else
 
-		log(Warning;True8)
+		log(Warning;True5)
 	endif
 else
 
 
 
-	log(Error;False8)
+	log(Error;False5)
 	if(var4 = 5)
 	
 
-		log(Log;False8)
+		log(Log;False5)
 
 	else
 	
 
-		log(Warning;False8)
+		log(Warning;False5)
 	endif
-	log(Log;False8)
+	log(Log;False5)
 		
 endif
