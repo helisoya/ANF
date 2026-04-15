@@ -27,11 +27,13 @@ namespace ANF.ANSL
                 context.ClearStack();
             else if (parameters.GetParameter(0, out uint contextId))
             {
-                ANSLContext otherContext = manager.GetANSLManager().GetContext(contextId);
-                if (otherContext != null && otherContext.isRunning)
-                    otherContext.ClearStack();
+                if (manager.GetWorldComponent(out ANSLManager anslManager))
+                {
+                    ANSLContext otherContext = anslManager.GetContext(contextId);
+                    if (otherContext != null && otherContext.isRunning)
+                        otherContext.ClearStack();
+                }
             }
-
 
             EndProcess();
         }

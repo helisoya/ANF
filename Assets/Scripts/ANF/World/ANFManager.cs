@@ -1,6 +1,8 @@
 using UnityEngine;
 using ANF.ANSL;
 using ANF.Persistent;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 namespace ANF.World
 {
@@ -9,38 +11,52 @@ namespace ANF.World
     /// </summary>
     public class ANFManager : MonoBehaviour
     {
-        [Header("Base Components")]
-        [SerializeField] private ANSLManager anslManager;
-        private LoadersManager loadersManager;
+        private WorldComponent[] worldComponents;
 
         [Header("Debug")]
         [SerializeField] private bool debugEnabled = false;
         [SerializeField] private string debugScriptToLoad;
 
+
         /// <summary>
-        /// Gets the ANSL Manager
-        /// </summary>
-        /// <returns>The ANSL Manager</returns>
-        public ANSLManager GetANSLManager()
+		/// Gets a world component
+		/// </summary>
+		/// <typeparam name="T">The type to search</typeparam>
+		/// <param name="result">The component if found</param>
+		/// <returns>True if the component was found</returns>
+        public bool GetWorldComponent<T>(out T result)
         {
-            return anslManager;
+            foreach (WorldComponent component in worldComponents)
+            {
+                if (component.GetType() == typeof(T) || component.GetType().IsSubclassOf(typeof(T)))
+                {
+                    result = (T)component;
+                    return true;
+                }
+            }
+            result = default;
+            return false;
         }
-        
-        /// <summary>
-        /// Gets the loader's manager
-        /// </summary>
-        /// <returns>The loader's manager</returns>
-        public LoadersManager GetLoadersManager()
+
+        void Update()
         {
-            return loadersManager; 
+            foreach (WorldComponent component in worldComponents)
+            {
+                component.Update();
+            }
         }
 
         void Start()
         {
-            anslManager.Initialize(this);
-            loadersManager = new LoadersManager("worldLoaders", PersistentDataManager.instance.GetANFSettings().registeredWorldLoaders, this);
+            WorldComponent[] componentsToCopy = PersistentDataManager.instance.GetANFSettings().registeredWorldComponents;
+            worldComponents = new WorldComponent[componentsToCopy.Length];
+            for (int i = 0; i < worldComponents.Length; i++)
+            {
+                worldComponents[i] = componentsToCopy[i].GetType().Instantiate() as WorldComponent;
+                worldComponents[i].Initialize(this);
+            }
 
-            if (debugEnabled)
+            if (debugEnabled && GetWorldComponent(out ANSLManager anslManager))
                 anslManager.StartNewContext(debugScriptToLoad);
         }
     }

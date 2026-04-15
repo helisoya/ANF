@@ -1,6 +1,7 @@
 using ANF.Persistent;
 using ANF.Utils;
 using ANF.World;
+using Leguar.TotalJSON;
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -11,9 +12,18 @@ namespace ANF.ANSL
     /// <summary>
     /// Handles the different ANSL Contexts
     /// </summary>
-    public class ANSLManager : MonoBehaviour
+    [System.Serializable]
+    public class ANSLManager : WorldComponent
     {
         private ANSLContext[] contexts;
+        private ANFManager manager;
+
+        [Tooltip("How many ANSL function can be called per frame (per context)")]
+        [SerializeField] private uint maxFunctionsPerFrame = 10;
+        [Tooltip("How many concurrent contexts can coexist")]
+        [SerializeField] private uint maxContexts = 20;
+        [Tooltip("How large the script stack can be (per context)")]
+        [SerializeField] private uint contextStackLength = 10;
 
         /// <summary>
         /// Initialize the manager
@@ -21,6 +31,7 @@ namespace ANF.ANSL
         /// <param name="manager">The ANF Manager</param>
         public void Initialize(ANFManager manager)
         {
+            this.manager = manager;
             GenerateContexts(manager);
         }
 
@@ -32,7 +43,7 @@ namespace ANF.ANSL
         {
             List<Type> functions = ANSLUtils.GetANSLFunctionsList();
 
-            contexts = new ANSLContext[PersistentDataManager.instance.GetANFSettings().anslMaxContexts];
+            contexts = new ANSLContext[maxContexts];
             for (int i = 0; i < contexts.Length; i++)
             {
                 Dictionary<uint, ANSLFunction> instances = new Dictionary<uint, ANSLFunction>();
@@ -45,7 +56,7 @@ namespace ANF.ANSL
                     }
                 }
 
-                contexts[i] = new ANSLContext(instances, manager);
+                contexts[i] = new ANSLContext(instances, contextStackLength, maxFunctionsPerFrame, manager);
             }
         }
 
@@ -82,13 +93,37 @@ namespace ANF.ANSL
             return -1;
         }
 
-        void Update()
+        public void Update()
         {
             foreach (ANSLContext context in contexts)
             {
                 if (context.isRunning)
                     context.Update();
             }
+        }
+
+        public WorldComponent CloneComponent()
+        {
+            return new ANSLManager()
+            {
+                manager = manager,
+                maxFunctionsPerFrame = maxFunctionsPerFrame,
+                maxContexts = maxContexts,
+                contextStackLength = contextStackLength
+            };
+        }
+
+        public string GetJSONName()
+        {
+            return "anslManager";
+        }
+
+        public void Save(JSON json)
+        {
+        }
+
+        public void Load(JSON json)
+        {
         }
     }
 }

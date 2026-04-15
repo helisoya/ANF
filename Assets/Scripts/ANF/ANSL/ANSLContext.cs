@@ -16,6 +16,9 @@ public class ANSLContext
     private Dictionary<uint, ANSLFunction> functions;
     private List<ANSLContextStackEntry> scriptStack;
 
+    private uint contextStackLength;
+    private uint maxFunctionsPerFrame;
+
     private string[] currentScript;
     private uint currentLine;
     private string currentFilePath;
@@ -30,8 +33,10 @@ public class ANSLContext
     private ANFManager manager;
 
 
-    public ANSLContext(Dictionary<uint, ANSLFunction> functions, ANFManager manager)
+    public ANSLContext(Dictionary<uint, ANSLFunction> functions, uint contextStackLength, uint maxFunctionsPerFrame, ANFManager manager)
     {
+        this.contextStackLength = contextStackLength;
+        this.maxFunctionsPerFrame = maxFunctionsPerFrame;
         this.functions = functions;
         this.manager = manager;
         isRunning = false;
@@ -52,7 +57,7 @@ public class ANSLContext
             // Add current script to stack if it isn't finished
             if (currentScript != null && currentLine < currentScript.Length - 1)
             {
-                while (scriptStack.Count >= PersistentDataManager.instance.GetANFSettings().anslContextStackLength) // Clear excess entries
+                while (scriptStack.Count >= contextStackLength) // Clear excess entries
                 {
                     scriptStack.RemoveAt(0);
                 }
@@ -84,7 +89,7 @@ public class ANSLContext
     public void NextLine()
     {
         currentFunctionDepth++;
-        if (waitingForNextFrame || currentFunctionDepth > PersistentDataManager.instance.GetANFSettings().anslMaxFunctionsPerFrame)
+        if (waitingForNextFrame || currentFunctionDepth > maxFunctionsPerFrame)
         {
             waitingForNextFrame = true;
             return;
