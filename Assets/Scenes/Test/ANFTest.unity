@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0aa906c962ad4140ba0f6ce2fecdcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.PersistentDataManager
-  anfSettings: {fileID: 11400000, guid: 7a77c17ce3961fe47b5bfe1ce8f21f5e, type: 2}
+  anfSettings: {fileID: 11400000, guid: 85adbd51737aa93488f97abfb7306fb0, type: 2}
 --- !u!1 &463512310
 GameObject:
   m_ObjectHideFlags: 0

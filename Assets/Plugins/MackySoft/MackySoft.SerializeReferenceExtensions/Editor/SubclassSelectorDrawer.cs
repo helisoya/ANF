@@ -63,7 +63,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
                 // Draw the subclass selector popup.
                 if (EditorGUI.DropdownButton(popupPosition, GetTypeName(property), FocusType.Keyboard))
                 {
-                    TypePopupCache popup = GetTypePopup(property);
+                    TypePopupCache popup = GetTypePopup(property, subclassSelectorAttribute.AllowNull);
                     targetProperty = property;
                     popup.TypePopup.Show(popupPosition);
                 }
@@ -145,7 +145,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return null;
         }
 
-        private TypePopupCache GetTypePopup (SerializedProperty property)
+        private TypePopupCache GetTypePopup (SerializedProperty property, bool allowNull)
         {
             // Cache this string. This property internally call Assembly.GetName, which result in a large allocation.
             string managedReferenceFieldTypename = property.managedReferenceFieldTypename;
@@ -159,7 +159,8 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
                 var popup = new AdvancedTypePopup(
                     types,
                     MaxTypePopupLineCount,
-                    state
+                    state,
+                    allowNull
                 );
                 popup.OnItemSelected += item =>
                 {

@@ -1,27 +1,30 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Leguar.TotalJSON;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace ANF.Manager
+namespace ANF.Persistent
 {
 
     /// <summary>
-	/// Handles the player's data (variables, player name, ...)
+	/// Handles multiple containers
 	/// </summary>
-    public class PlayerData
+    public class DataManager
     {
-        private PlayerDataContainer[] containers;
-
-        public PlayerData(ANFSettings settings)
+        public string name { get; private set; }
+        private DataContainer[] containers;
+        
+        public DataManager(string name, DataContainer[] containers, ANFSettings settings)
         {
-            containers = new PlayerDataContainer[settings.registeredPlayerDataContainers.Length];
+            this.name = name;
+            this.containers = new DataContainer[containers.Length];
 
             for (int i = 0; i < containers.Length; i++)
             {
-                containers[i] = settings.registeredPlayerDataContainers[i].GetType().Instantiate() as PlayerDataContainer;
-                containers[i].Initialize(settings);
+                this.containers[i] = containers[i].CloneContainer();
+                this.containers[i].Initialize(settings);
             }
         }
 
@@ -33,7 +36,7 @@ namespace ANF.Manager
 		/// <returns>True if the container was found</returns>
         public bool GetDataContainer<T>(out T result)
         {
-            foreach (PlayerDataContainer container in containers)
+            foreach (DataContainer container in containers)
             {
                 if (container.GetType().IsSubclassOf(typeof(T)) || container.GetType() == typeof(T))
                 {
@@ -52,7 +55,7 @@ namespace ANF.Manager
 		/// <param name="json">The data containers</param>
         public void Load(JSON json)
         {
-            foreach (PlayerDataContainer container in containers)
+            foreach (DataContainer container in containers)
                 if (json.ContainsKey(container.GetJSONName()))
                     container.Load(json.GetJSON(container.GetJSONName()));
         }
@@ -63,17 +66,17 @@ namespace ANF.Manager
 		/// <param name="json">The json</param>
         public void Save(JSON json)
         {
-            JSON playerDataJson = new JSON();
+            JSON dataJSON = new JSON();
             JSON individualDataJson;
 
-            foreach (PlayerDataContainer container in containers)
+            foreach (DataContainer container in containers)
             {
                 individualDataJson = new JSON();
                 container.Save(individualDataJson);
-                playerDataJson.Add(container.GetJSONName(), individualDataJson);
+                dataJSON.Add(container.GetJSONName(), individualDataJson);
             }
 
-            json.Add("playerData", playerDataJson);
+            json.Add(name, dataJSON);
         }
     }
 }

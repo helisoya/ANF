@@ -4,27 +4,33 @@ using System.Collections.Generic;
 using Leguar.TotalJSON;
 using UnityEngine;
 
-namespace ANF.Manager
+namespace ANF.Persistent
 {
     /// <summary>
     /// Represents the game's variable and the player name
     /// Variables are represented as integers
     /// </summary>
     [System.Serializable]
-    public class PlayerVariableContainer : PlayerDataContainer
+    public class PlayerVariableContainer : DataContainer
     {
         private string playerName;
         private List<Variable> variables;
-        private string randomVariableName;
+
+        [Tooltip("Name of the random variable, automatically generated")]
+        [SerializeField] private string randomVariableName;
 
         public string GetJSONName()
         {
             return "playerVariables";
         }
 
+        public DataContainer CloneContainer()
+        {
+            return new PlayerVariableContainer() { randomVariableName = this.randomVariableName};
+        }
+
         public void Initialize(ANFSettings settings)
         {
-            randomVariableName = settings.randomVariableName;
             GenerateVariablesList(settings.generalDataPath + "variables");
             Reset();
         }

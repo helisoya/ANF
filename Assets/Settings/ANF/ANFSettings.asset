@@ -11,12 +11,14 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773bfc7de97ad5247b9061be4feb35ce, type: 3}
   m_Name: ANFSettings
-  m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFSettings
+  m_EditorClassIdentifier: Assembly-CSharp::ANF.Persistent.ANFSettings
   saveFolder: Saves/
   generalDataPath: General/
-  randomVariableName: random
   registeredPlayerDataContainers:
-  - rid: 1438065829971755274
+  - rid: 6964546694216155232
+  registeredGlobalDataContainers: []
+  registeredWorldLoaders:
+  - rid: 6964546694216155237
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -26,6 +28,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 1438065829971755274
-      type: {class: PlayerVariableContainer, ns: ANF.Manager, asm: Assembly-CSharp}
+    - rid: 6964546694216155232
+      type: {class: PlayerVariableContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data:
+        randomVariableName: random
+    - rid: 6964546694216155237
+      type: {class: DefaultLoader, ns: ANF.World, asm: Assembly-CSharp}
       data: 

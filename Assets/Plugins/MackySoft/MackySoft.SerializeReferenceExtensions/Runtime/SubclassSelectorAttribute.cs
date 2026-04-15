@@ -11,6 +11,7 @@ public sealed class SubclassSelectorAttribute : PropertyAttribute
 #if UNITY_2021_3_OR_NEWER
     // NOTE: Use managedReferenceValue getter to invoke instance method in SubclassSelectorDrawer.
     public bool UseToStringAsLabel { get; set; }
+    public bool AllowNull { get; set; }
 #endif
 
 }

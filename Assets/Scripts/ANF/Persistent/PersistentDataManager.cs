@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ANF.Manager
+namespace ANF.Persistent
 {
     /// <summary>
 	/// Handles persistent data (Sounds, User data, ...)
@@ -13,14 +13,16 @@ namespace ANF.Manager
 
         [Header("Data")]
         [SerializeField] private ANFSettings anfSettings;
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] private DataManager playerData;
+        [SerializeField] private DataManager globalData;
 
         void Awake()
         {
             if (!instance)
             {
                 instance = this;
-                playerData = new PlayerData(anfSettings);
+                playerData = new DataManager("saveData",anfSettings.registeredPlayerDataContainers,anfSettings);
+                globalData = new DataManager("globalData", anfSettings.registeredGlobalDataContainers, anfSettings);
                 DontDestroyOnLoad(gameObject);
             }
             else
@@ -39,12 +41,21 @@ namespace ANF.Manager
         }
 
         /// <summary>
-		/// Gets the player's data
+		/// Gets the player's data (data that is local to a save)
 		/// </summary>
 		/// <returns>The player's data</returns>
-        public PlayerData GetPlayerData()
+        public DataManager GetPlayerData()
         {
             return playerData;
+        }
+
+        /// <summary>
+        /// Gets the global data (data that is not local to a save, ex: Settings)
+        /// </summary>
+        /// <returns>The global data</returns>
+        public DataManager GetGlobalData()
+        {
+            return globalData;
         }
     }
 }
