@@ -120,10 +120,36 @@ namespace ANF.ANSL
 
         public void Save(JSON json)
         {
+            JArray contextsArray = new JArray();
+            JSON contextJSON;
+            foreach (ANSLContext context in contexts)
+            {
+                contextJSON = new JSON();
+                context.Save(contextJSON);
+                contextsArray.Add(contextJSON);
+            }
+
+            json.Add("contexts", contextsArray);
         }
 
         public void Load(JSON json)
         {
+            if (json.ContainsKey("contexts"))
+            {
+                JArray contextsArray = json.GetJArray("contexts");
+                JSON contextJSON;
+                for (int i = 0; i < contextsArray.Length; i++)
+                {
+                    if (i >= contexts.Length)
+                        continue;
+
+                    if (contextsArray.Values[i] is JSON)
+                    {
+                        contextJSON = contextsArray.Values[i] as JSON;
+                        contexts[i].Load(contextJSON);
+                    }
+                }
+            }
         }
     }
 }

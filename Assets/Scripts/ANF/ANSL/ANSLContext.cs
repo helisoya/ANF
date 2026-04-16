@@ -146,7 +146,7 @@ public class ANSLContext : Jsonable
         {
             // No more lines in script
 
-            if(scriptStack.Count == 0)
+            if (scriptStack.Count == 0)
                 StopContext();
             else
             {
@@ -216,8 +216,8 @@ public class ANSLContext : Jsonable
     {
         json.Add("isRunning", isRunning);
 
-        json.Add("currentLine",currentLine);
-        json.Add("currentFilePath",currentFilePath);
+        json.Add("currentLine", currentLine);
+        json.Add("currentFilePath", currentFilePath);
 
         json.Add("lastFunctionModifiedLine", lastFunctionModifiedLine);
         json.Add("waitingForFunction", waitingForFunction);
@@ -235,7 +235,7 @@ public class ANSLContext : Jsonable
         }
         json.Add("scriptStack", stackArray);
 
-        if(isRunning && functions.ContainsKey(currentFunctionId))
+        if (isRunning && functions.ContainsKey(currentFunctionId))
         {
             JSON currentFunctionParameters = new JSON();
             functions[currentFunctionId].Save(currentFunctionParameters);
@@ -246,6 +246,7 @@ public class ANSLContext : Jsonable
     public void Load(JSON json)
     {
         scriptStack.Clear();
+        currentScript = null;
 
         if (json.ContainsKey("isRunning"))
             isRunning = json.GetBool("isRunning");
@@ -260,38 +261,42 @@ public class ANSLContext : Jsonable
         if (json.ContainsKey("waitingForNextFrame"))
             waitingForNextFrame = json.GetBool("waitingForNextFrame");
 
-        string currentScript = null;
+        string currentFilepath = null;
         uint currentLineIndex = 0;
 
         if (json.ContainsKey("currentLine"))
             currentLineIndex = json.GetJNumber("currentLine").AsUInt();
         if (json.ContainsKey("currentFilePath"))
-            currentScript = json.GetString("currentFilePath");
+            currentFilepath = json.GetString("currentFilePath");
 
-        if(json.ContainsKey("scriptStack"))
+        if (json.ContainsKey("scriptStack"))
         {
             JSON jsonEntry;
             JArray stack = json.GetJArray("scriptStack");
-            foreach(JValue entry in stack.Values)
+            foreach (JValue entry in stack.Values)
             {
-                if(entry is JSON)
+                if (entry is JSON)
                 {
                     jsonEntry = entry as JSON;
                     if (jsonEntry.ContainsKey("filePath") && jsonEntry.ContainsKey("lineCounter"))
-                        scriptStack.Add(new ANSLContextStackEntry() {filePath = jsonEntry.GetString("filepath"),lineCounter = jsonEntry.GetJNumber("lineCounter").AsUInt()});
+                        scriptStack.Add(new ANSLContextStackEntry() { filePath = jsonEntry.GetString("filepath"), lineCounter = jsonEntry.GetJNumber("lineCounter").AsUInt() });
                 }
             }
         }
 
-        if(isRunning && currentScript != null)
+        if (isRunning && currentScript != null)
         {
-            LoadScript(currentScript, currentLineIndex, false, false);
+            currentLine = currentLineIndex;
+            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(currentFilepath)).ToArray();
 
             if (json.ContainsKey("currentFunctionParameters"))
             {
                 JSON parameters = json.GetJSON("currentFunctionParameters");
                 functions[currentFunctionId].Load(parameters);
             }
+
+            if (!waitingForFunction && !waitingForNextFrame)
+                waitingForNextFrame = true;
         }
     }
 
