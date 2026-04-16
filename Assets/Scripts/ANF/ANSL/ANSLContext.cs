@@ -2,6 +2,7 @@ using ANF.ANSL;
 using ANF.Persistent;
 using ANF.Utils;
 using ANF.World;
+using Leguar.TotalJSON;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ using UnityEngine;
 /// Represents the flow of a specific script.
 /// A context can change scripts dynamically without having to recreate a new one
 /// </summary>
-public class ANSLContext
+public class ANSLContext : Jsonable
 {
     public bool isRunning { get; private set; }
 
@@ -49,13 +50,14 @@ public class ANSLContext
     /// <param name="scriptFilePath">The script's filepath (Local path inside the designated resource folder) </param>
     /// <param name="startLine">The starting line. 0 by default.</param>
     /// <param name="startImmediately">True if the script should start immediatly. False will wait for the next Update</param>
-    public void LoadScript(string scriptFilePath, uint startLine = 0, bool startImmediately = true)
+    /// <param name="canAddPreviousToStack">True if the previous script can be added to the stack</param>
+    public void LoadScript(string scriptFilePath, uint startLine = 0, bool startImmediately = true, bool canAddPreviousToStack = true)
     {
         string fullPath = PersistentDataManager.instance.GetANFSettings().anslDestinationFolder + scriptFilePath;
         if (System.IO.File.Exists("Assets/Resources/" + fullPath + ".txt"))
         {
             // Add current script to stack if it isn't finished
-            if (currentScript != null && currentLine < currentScript.Length - 1)
+            if (currentScript != null && canAddPreviousToStack)
             {
                 while (scriptStack.Count >= contextStackLength) // Clear excess entries
                 {
@@ -143,7 +145,15 @@ public class ANSLContext
         else
         {
             // No more lines in script
-            StopContext();
+
+            if(scriptStack.Count == 0)
+                StopContext();
+            else
+            {
+                ANSLContextStackEntry entry = scriptStack[scriptStack.Count - 1];
+                scriptStack.RemoveAt(scriptStack.Count - 1);
+                LoadScript(entry.filePath, entry.lineCounter, true, false);
+            }
         }
     }
 
@@ -193,23 +203,101 @@ public class ANSLContext
     /// </summary>
     public void StopContext()
     {
-        if (scriptStack.Count == 0)
+        isRunning = false;
+        currentScript = null;
+    }
+
+    public string GetJSONName()
+    {
+        return "anslContext";
+    }
+
+    public void Save(JSON json)
+    {
+        json.Add("isRunning", isRunning);
+
+        json.Add("currentLine",currentLine);
+        json.Add("currentFilePath",currentFilePath);
+
+        json.Add("lastFunctionModifiedLine", lastFunctionModifiedLine);
+        json.Add("waitingForFunction", waitingForFunction);
+        json.Add("currentFunctionId", currentFunctionId);
+        json.Add("currentFunctionDepth", currentFunctionDepth);
+        json.Add("waitingForNextFrame", waitingForNextFrame);
+
+        JArray stackArray = new JArray();
+        JSON stackEntry;
+        foreach (ANSLContextStackEntry entry in scriptStack)
         {
-            isRunning = false;
-            currentScript = null;
+            stackEntry = new JSON();
+            stackEntry.Add("filePath", entry.filePath);
+            stackEntry.Add("lineCounter", entry.lineCounter);
         }
-        else
+        json.Add("scriptStack", stackArray);
+
+        if(isRunning && functions.ContainsKey(currentFunctionId))
         {
-            ANSLContextStackEntry entry = scriptStack[scriptStack.Count - 1];
-            scriptStack.RemoveAt(scriptStack.Count - 1);
-            LoadScript(entry.filePath, entry.lineCounter, true);
+            JSON currentFunctionParameters = new JSON();
+            functions[currentFunctionId].Save(currentFunctionParameters);
+            json.Add("currentFunctionParameters", currentFunctionParameters);
+        }
+    }
+
+    public void Load(JSON json)
+    {
+        scriptStack.Clear();
+
+        if (json.ContainsKey("isRunning"))
+            isRunning = json.GetBool("isRunning");
+        if (json.ContainsKey("lastFunctionModifiedLine"))
+            lastFunctionModifiedLine = json.GetBool("lastFunctionModifiedLine");
+        if (json.ContainsKey("waitingForFunction"))
+            waitingForFunction = json.GetBool("waitingForFunction");
+        if (json.ContainsKey("currentFunctionId"))
+            currentFunctionId = json.GetJNumber("currentFunctionId").AsUInt();
+        if (json.ContainsKey("currentFunctionDepth"))
+            currentFunctionDepth = json.GetJNumber("currentFunctionDepth").AsUInt();
+        if (json.ContainsKey("waitingForNextFrame"))
+            waitingForNextFrame = json.GetBool("waitingForNextFrame");
+
+        string currentScript = null;
+        uint currentLineIndex = 0;
+
+        if (json.ContainsKey("currentLine"))
+            currentLineIndex = json.GetJNumber("currentLine").AsUInt();
+        if (json.ContainsKey("currentFilePath"))
+            currentScript = json.GetString("currentFilePath");
+
+        if(json.ContainsKey("scriptStack"))
+        {
+            JSON jsonEntry;
+            JArray stack = json.GetJArray("scriptStack");
+            foreach(JValue entry in stack.Values)
+            {
+                if(entry is JSON)
+                {
+                    jsonEntry = entry as JSON;
+                    if (jsonEntry.ContainsKey("filePath") && jsonEntry.ContainsKey("lineCounter"))
+                        scriptStack.Add(new ANSLContextStackEntry() {filePath = jsonEntry.GetString("filepath"),lineCounter = jsonEntry.GetJNumber("lineCounter").AsUInt()});
+                }
+            }
         }
 
+        if(isRunning && currentScript != null)
+        {
+            LoadScript(currentScript, currentLineIndex, false, false);
+
+            if (json.ContainsKey("currentFunctionParameters"))
+            {
+                JSON parameters = json.GetJSON("currentFunctionParameters");
+                functions[currentFunctionId].Load(parameters);
+            }
+        }
     }
 
     /// <summary>
-	/// Represents an entry in the context's stack
-	/// </summary>
+    /// Represents an entry in the context's stack
+    /// </summary>
     public struct ANSLContextStackEntry
     {
         public string filePath;

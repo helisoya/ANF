@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using ANF.Utils;
 using ANF.World;
+using Leguar.TotalJSON;
 
 namespace ANF.ANSL
 {
@@ -10,7 +11,7 @@ namespace ANF.ANSL
     /// Ex:
     /// setBackground(Mountain)
     /// </summary>
-    public abstract class ANSLFunction
+    public abstract class ANSLFunction : Jsonable
     {
         public bool isProcessing { get; private set; }
 
@@ -148,6 +149,19 @@ namespace ANF.ANSL
         /// Clean things here if needs be
         /// </summary>
         protected abstract void OnCleanup();
+
+        public virtual string GetJSONName()
+        {
+            return "anslFunction";
+        }
+
+        public virtual void Save(JSON json)
+        {
+        }
+
+        public virtual void Load(JSON json)
+        {
+        }
     }
 }
 

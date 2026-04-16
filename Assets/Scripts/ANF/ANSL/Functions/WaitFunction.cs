@@ -1,4 +1,5 @@
 using ANF.ANSL;
+using Leguar.TotalJSON;
 using UnityEngine;
 
 
@@ -42,6 +43,17 @@ namespace ANF.ANSL
         protected override void OnCleanup()
         {
             // Unused
+        }
+
+        public override void Save(JSON json)
+        {
+            json.Add("timeToWait", timeToWait);
+        }
+
+        public override void Load(JSON json)
+        {
+            if (json.ContainsKey("timeToWait"))
+                timeToWait = json.GetFloat("timeToWait");
         }
     }
 }
