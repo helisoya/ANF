@@ -67,7 +67,7 @@ namespace ANF.ANSL
         /// <returns>The context if found</returns>
         public ANSLContext GetContext(uint contextId)
         {
-            if (contextId < 0 || contextId > contexts.Length)
+            if (contextId < 0 || contextId >= contexts.Length)
                 return null;
 
             return contexts[contextId];
@@ -91,6 +91,29 @@ namespace ANF.ANSL
                 }
             }
             return -1;
+        }
+
+        /// <summary>
+        /// Pauses all contexts
+        /// </summary>
+        /// <param name="paused">True if the contexts are now paused</param>
+        public void PauseAllContexts(bool paused)
+        {
+            foreach(ANSLContext context in contexts)
+            {
+                context.PauseContext(paused);
+            }
+        }
+
+        /// <summary>
+        /// Pauses a specific context
+        /// </summary>
+        /// <param name="contextId">The context's Id</param>
+        /// <param name="paused">True if the context should be paused</param>
+        public void PauseContext(uint contextId,bool paused)
+        {
+            if (contextId >= 0 && contextId < contexts.Length)
+                contexts[contextId].PauseContext(paused);
         }
 
         public void Update()

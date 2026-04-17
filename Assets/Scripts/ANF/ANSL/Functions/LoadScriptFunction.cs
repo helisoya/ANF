@@ -11,15 +11,15 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 1,
         functionBody: "load",
-        functionAutoComplete: new string[] { "load(Script;Immediate)", "load(Script;StartIndex;Immediate)" },
+        functionAutoComplete: new string[] { "load(Script)", "load(Script;StartIndex)" },
         functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]
     public class LoadScriptFunction : ANSLFunction
     {
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.BOOL},
-                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.UINT, FunctionParameterType.BOOL}
+                new FunctionParameterType[]{FunctionParameterType.STRING},
+                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.UINT}
             };
         }
 
@@ -29,15 +29,12 @@ namespace ANF.ANSL
 
             if (parameters.GetParameter(0, out string scriptFile))
             {
-                bool immediate;
                 uint startLine;
-                if (parameters.GetTemplateId() == 0 &&
-                parameters.GetParameter(1, out immediate))
-                    context.LoadScript(scriptFile, 0, immediate);
+                if (parameters.GetTemplateId() == 0)
+                    context.LoadScript(scriptFile, 0);
                 else if (parameters.GetTemplateId() == 1 &&
-                parameters.GetParameter(1, out startLine) &&
-                parameters.GetParameter(2, out immediate))
-                    context.LoadScript(scriptFile, startLine, immediate);
+                parameters.GetParameter(1, out startLine))
+                    context.LoadScript(scriptFile, startLine);
             }
 
         }

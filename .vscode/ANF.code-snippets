@@ -15,25 +15,22 @@
 		"scope": "ansl",
 		"prefix": "if",
 		"body": ["if()
-{
 
-}
 else
-{
 
-}"],
+endif}"],
 		"description": "Checks variables. You can't use both | and & in the same check."
 	},
 	"1_0": {
 		"scope": "ansl",
 		"prefix": "load",
-		"body": ["load(Script;Immediate)"],
+		"body": ["load(Script)"],
 		"description": "Jump to is an internal function. It cannot be called from anywhere"
 	},
 	"1_1": {
 		"scope": "ansl",
 		"prefix": "load",
-		"body": ["load(Script;StartIndex;Immediate)"],
+		"body": ["load(Script;StartIndex)"],
 		"description": "Jump to is an internal function. It cannot be called from anywhere"
 	},
 	"3_0": {
@@ -64,12 +61,11 @@ else
 		"scope": "ansl",
 		"prefix": "switch",
 		"body": ["switch(Variable)
-{
 	case default:
-	{
 
-	}
-}"],
+	case 0:
+
+endswitch}"],
 		"description": "Checks a single variables. You can use 'case default:' to check when none of the checks are valid"
 	},
 	"6_0": {

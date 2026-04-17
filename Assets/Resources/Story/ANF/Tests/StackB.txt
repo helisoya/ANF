@@ -1,5 +1,5 @@
 3|Log|Hello from B
-1|ANF/Tests/StackC|true
+1|ANF/Tests/StackC
 3|Log|Hello Again from B
-1|ANF/Tests/StackC|true
+1|ANF/Tests/StackC
 3|Log|Back to B

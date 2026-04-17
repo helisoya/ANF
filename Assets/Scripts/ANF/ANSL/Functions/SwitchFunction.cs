@@ -14,7 +14,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 10,
         functionBody: "switch",
-        functionAutoComplete: new string[] { "switch(Variable)\n\tcase default:\n\n\tcase 0:\n\nendswitch}" },
+        functionAutoComplete: new string[] { "switch(Variable)\n\tcase default:\n\n\tcase 0:\n\nendswitch" },
         functionDesc: "Checks a single variables. You can use 'case default:' to check when none of the checks are valid")]
     public class SwitchFunction : ANSLFunction
     {

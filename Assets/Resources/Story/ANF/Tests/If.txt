@@ -16,48 +16,27 @@
 3|Log|False3
 0|17
 4|0.1
-8|19|22|var == 1 & var2 == 2
-3|Log|True4
-3|Warning|True4
-0|24
+8|19|20|var == 1 & var2 == 2
+0|22
 3|Log|False4
-0|24
+0|22
 4|0.1
-8|26|29|var == 1 & var2 == 2
+8|24|25|var == 1 & var2 == 2
+0|26
+0|26
+4|0.1
+8|28|34|var == 1 & var2 == 2
+8|29|31|var4 = 2
 3|Log|True5
+0|33
 3|Warning|True5
-0|32
+0|33
+0|42
+3|Error|False5
+8|36|38|var4 = 5
 3|Log|False5
+0|40
 3|Warning|False5
-0|32
-4|0.1
-8|34|36|var == 1 & var2 == 2
-3|Log|True6
-0|39
-3|Log|False6
-3|Warning|False6
-0|39
-4|0.1
-8|41|44|var == 1 & var2 == 2
-3|Log|True7
-3|Warning|True7
-0|47
-3|Log|False7
-3|Warning|False7
-0|47
-4|0.1
-8|49|55|var == 1 & var2 == 2
-8|50|52|var4 = 2
-3|Log|True8
-0|54
-3|Warning|True8
-0|54
-0|63
-3|Error|False8
-8|57|59|var4 = 5
-3|Log|False8
-0|61
-3|Warning|False8
-0|61
-3|Log|False8
-0|63
+0|40
+3|Log|False5
+0|42

@@ -13,6 +13,7 @@ using UnityEngine;
 public class ANSLContext : Jsonable
 {
     public bool isRunning { get; private set; }
+    public bool isPaused { get; private set; }
 
     private Dictionary<uint, ANSLFunction> functions;
     private List<ANSLContextStackEntry> scriptStack;
@@ -27,12 +28,9 @@ public class ANSLContext : Jsonable
     private bool lastFunctionModifiedLine;
     private bool waitingForFunction;
     private uint currentFunctionId;
-
     private uint currentFunctionDepth;
-    private bool waitingForNextFrame;
 
     private ANFManager manager;
-
 
     public ANSLContext(Dictionary<uint, ANSLFunction> functions, uint contextStackLength, uint maxFunctionsPerFrame, ANFManager manager)
     {
@@ -41,6 +39,7 @@ public class ANSLContext : Jsonable
         this.functions = functions;
         this.manager = manager;
         isRunning = false;
+        isPaused = false;
         scriptStack = new List<ANSLContextStackEntry>();
     }
 
@@ -49,9 +48,8 @@ public class ANSLContext : Jsonable
     /// </summary>
     /// <param name="scriptFilePath">The script's filepath (Local path inside the designated resource folder) </param>
     /// <param name="startLine">The starting line. 0 by default.</param>
-    /// <param name="startImmediately">True if the script should start immediatly. False will wait for the next Update</param>
     /// <param name="canAddPreviousToStack">True if the previous script can be added to the stack</param>
-    public void LoadScript(string scriptFilePath, uint startLine = 0, bool startImmediately = true, bool canAddPreviousToStack = true)
+    public void LoadScript(string scriptFilePath, uint startLine = 0, bool canAddPreviousToStack = true)
     {
         string fullPath = PersistentDataManager.instance.GetANFSettings().anslDestinationFolder + scriptFilePath;
         if (System.IO.File.Exists("Assets/Resources/" + fullPath + ".txt"))
@@ -71,12 +69,7 @@ public class ANSLContext : Jsonable
             lastFunctionModifiedLine = true;
             currentLine = startLine;
 
-            if (!waitingForNextFrame)
-                waitingForNextFrame = !startImmediately;
-
             isRunning = true;
-
-            NextLine();
         }
         else
         {
@@ -90,18 +83,16 @@ public class ANSLContext : Jsonable
     /// </summary>
     public void NextLine()
     {
-        currentFunctionDepth++;
-        if (waitingForNextFrame || currentFunctionDepth > maxFunctionsPerFrame)
-        {
-            waitingForNextFrame = true;
+        if (isPaused)
             return;
-        }
 
+        currentFunctionDepth++;
+        if (currentFunctionDepth > maxFunctionsPerFrame)
+            return;
 
         if (!lastFunctionModifiedLine)
             currentLine++;
 
-        waitingForFunction = false;
         lastFunctionModifiedLine = false;
 
         if (currentLine < currentScript.Length)
@@ -114,6 +105,7 @@ public class ANSLContext : Jsonable
             {
                 // Could not parse/find function
                 NextLine();
+                return;
             }
             else
             {
@@ -139,6 +131,7 @@ public class ANSLContext : Jsonable
                 {
                     // Function is already over
                     NextLine();
+                    return;
                 }
             }
         }
@@ -152,7 +145,7 @@ public class ANSLContext : Jsonable
             {
                 ANSLContextStackEntry entry = scriptStack[scriptStack.Count - 1];
                 scriptStack.RemoveAt(scriptStack.Count - 1);
-                LoadScript(entry.filePath, entry.lineCounter, true, false);
+                LoadScript(entry.filePath, entry.lineCounter, false);
             }
         }
     }
@@ -162,20 +155,22 @@ public class ANSLContext : Jsonable
     /// </summary>
     public void Update()
     {
-        // If the context is in cooldown, 
-        if (waitingForNextFrame)
-        {
-            currentFunctionDepth = 0;
-            waitingForNextFrame = false;
-            NextLine();
-        }
+        if (isPaused)
+            return;
 
         // Updates the current function if it isn't finished yet
         if (waitingForFunction && functions.ContainsKey(currentFunctionId))
         {
             functions[currentFunctionId].Update();
-            if (!functions[currentFunctionId].isProcessing)
-                NextLine();
+            if(!functions[currentFunctionId].isProcessing)
+                waitingForFunction = false;
+        }
+
+        if(!waitingForFunction)
+        {
+            // Start next batch of lines 
+            currentFunctionDepth = 0;
+            NextLine();
         }
     }
 
@@ -206,6 +201,15 @@ public class ANSLContext : Jsonable
         isRunning = false;
         currentScript = null;
     }
+    
+    /// <summary>
+    /// Pauses the context
+    /// </summary>
+    /// <param name="paused">True if paused</param>
+    public void PauseContext(bool paused)
+    {
+        isPaused = paused;
+    }
 
     public string GetJSONName()
     {
@@ -215,6 +219,7 @@ public class ANSLContext : Jsonable
     public void Save(JSON json)
     {
         json.Add("isRunning", isRunning);
+        json.Add("isPaused", isPaused);
 
         json.Add("currentLine", currentLine);
         json.Add("currentFilePath", currentFilePath);
@@ -223,7 +228,6 @@ public class ANSLContext : Jsonable
         json.Add("waitingForFunction", waitingForFunction);
         json.Add("currentFunctionId", currentFunctionId);
         json.Add("currentFunctionDepth", currentFunctionDepth);
-        json.Add("waitingForNextFrame", waitingForNextFrame);
 
         JArray stackArray = new JArray();
         JSON stackEntry;
@@ -235,7 +239,7 @@ public class ANSLContext : Jsonable
         }
         json.Add("scriptStack", stackArray);
 
-        if (isRunning && functions.ContainsKey(currentFunctionId))
+        if (isRunning && waitingForFunction && functions.ContainsKey(currentFunctionId))
         {
             JSON currentFunctionParameters = new JSON();
             functions[currentFunctionId].Save(currentFunctionParameters);
@@ -250,6 +254,8 @@ public class ANSLContext : Jsonable
 
         if (json.ContainsKey("isRunning"))
             isRunning = json.GetBool("isRunning");
+        if (json.ContainsKey("isPaused"))
+            isPaused = json.GetBool("isPaused");
         if (json.ContainsKey("lastFunctionModifiedLine"))
             lastFunctionModifiedLine = json.GetBool("lastFunctionModifiedLine");
         if (json.ContainsKey("waitingForFunction"))
@@ -258,8 +264,6 @@ public class ANSLContext : Jsonable
             currentFunctionId = json.GetJNumber("currentFunctionId").AsUInt();
         if (json.ContainsKey("currentFunctionDepth"))
             currentFunctionDepth = json.GetJNumber("currentFunctionDepth").AsUInt();
-        if (json.ContainsKey("waitingForNextFrame"))
-            waitingForNextFrame = json.GetBool("waitingForNextFrame");
 
         string currentFilepath = null;
         uint currentLineIndex = 0;
@@ -289,14 +293,11 @@ public class ANSLContext : Jsonable
             currentLine = currentLineIndex;
             currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(currentFilepath)).ToArray();
 
-            if (json.ContainsKey("currentFunctionParameters"))
+            if (waitingForFunction && json.ContainsKey("currentFunctionParameters"))
             {
                 JSON parameters = json.GetJSON("currentFunctionParameters");
                 functions[currentFunctionId].Load(parameters);
             }
-
-            if (!waitingForFunction && !waitingForNextFrame)
-                waitingForNextFrame = true;
         }
     }
 
