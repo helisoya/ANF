@@ -1,4 +1,10 @@
 {
+	"11_0": {
+		"scope": "ansl",
+		"prefix": "block",
+		"body": ["block\n\nendblock"],
+		"description": "All functions inside a block will be processed during the same frame, ignoring any depth check."
+	},
 	"2_0": {
 		"scope": "ansl",
 		"prefix": "clearStack",
@@ -14,11 +20,7 @@
 	"8_0": {
 		"scope": "ansl",
 		"prefix": "if",
-		"body": ["if()
-
-else
-
-endif}"],
+		"body": ["if()\n\nelse\n\nendif"],
 		"description": "Checks variables. You can't use both | and & in the same check."
 	},
 	"1_0": {
@@ -60,12 +62,7 @@ endif}"],
 	"10_0": {
 		"scope": "ansl",
 		"prefix": "switch",
-		"body": ["switch(Variable)
-	case default:
-
-	case 0:
-
-endswitch}"],
+		"body": ["switch(Variable)\n\tcase default:\n\n\tcase 0:\n\nendswitch"],
 		"description": "Checks a single variables. You can use 'case default:' to check when none of the checks are valid"
 	},
 	"6_0": {

@@ -13,14 +13,14 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 11,
         functionBody: "block",
-        functionAutoComplete: new string[] { "block()\n\nendblock" },
+        functionAutoComplete: new string[] { "block\\n\\nendblock" },
         functionDesc: "All functions inside a block will be processed during the same frame, ignoring any depth check.")]
     public class BlockFunction : ANSLFunction
     {
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{ }
+                new FunctionParameterType[]{FunctionParameterType.BOOL }
             };
         }
 
@@ -41,9 +41,7 @@ namespace ANF.ANSL
                 return false;
             }
 
-            List<string> compiledTrue = new List<string>();
-            List<string> compiledFalse = new List<string>();
-            bool compilingTrues = true;
+            List<string> compiledBetween = new List<string>();
             bool canContinue = true;
             bool foundEnd = false;
             compiler.CheckNextLine();
@@ -58,47 +56,17 @@ namespace ANF.ANSL
                     continue;
                 }
 
-                if (currentNextLine.StartsWith("else"))
+                if (currentNextLine.StartsWith("endblock"))
                 {
-                    if(!compilingTrues)
+                    if (currentNextLine.Length != "endblock".Length)
                     {
-                        // Already compiling else
+                        // Unknown character
                         errors.Add(new ANSLUtils.ANSLError()
                         {
                             type = ANSLUtils.ANSLErrorType.ERROR,
                             filePath = compiler.GetSourceFilepath(),
                             line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Two else detected : {currentNextLine}."
-                        });
-                        return false;
-                    }
-
-                    if (currentNextLine.Length != "else".Length)
-                    {
-                        // Already compiling else
-                        errors.Add(new ANSLUtils.ANSLError()
-                        {
-                            type = ANSLUtils.ANSLErrorType.ERROR,
-                            filePath = compiler.GetSourceFilepath(),
-                            line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Unexpected token after the else : {currentNextLine}."
-                        });
-                        return false;
-                    }
-
-                    compilingTrues = false;
-                }
-                else if (currentNextLine.StartsWith("endif"))
-                {
-                    if (currentNextLine.Length != "endif".Length)
-                    {
-                        // Already compiling else
-                        errors.Add(new ANSLUtils.ANSLError()
-                        {
-                            type = ANSLUtils.ANSLErrorType.ERROR,
-                            filePath = compiler.GetSourceFilepath(),
-                            line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Unexpected token after the endif : {currentNextLine}."
+                            errorMessage = $"Unknown character at the end of the line : {currentNextLine}."
                         });
                         return false;
                     }
@@ -108,24 +76,13 @@ namespace ANF.ANSL
                 }
                 else
                 {
-                    int outputLineForFunction;
-                    if (compilingTrues)
-                        outputLineForFunction = outputLine + compiledTrue.Count + 1;
-                    else
-                        outputLineForFunction = outputLine + compiledTrue.Count + 1 + compiledFalse.Count + 1;
+                    int outputLineForFunction = outputLine + compiledBetween.Count + 1;
 
                     // Potential function
                     if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
-                    {
-                        if (compilingTrues)
-                            compiledTrue.AddRange(compiled);
-                        else
-                            compiledFalse.AddRange(compiled);
-                    }
+                        compiledBetween.AddRange(compiled);
                     else
-                    {
                         return false;
-                    }
                 }
 
                 if (canContinue)
@@ -135,36 +92,31 @@ namespace ANF.ANSL
                 }
             }
 
-            if(!foundEnd)
+            if (!foundEnd)
             {
                 errors.Add(new ANSLUtils.ANSLError()
                 {
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"endif not found : {currentNextLine}."
+                    errorMessage = $"endblock not found : {currentNextLine}."
                 });
                 return false;
             }
 
-            int startTrue = outputLine + 1;
-            int startFalse = startTrue + compiledTrue.Count + 1;
-            int endIndex = startFalse + compiledFalse.Count + 1;
-
             uint idFunction = GetAttribute().functionId;
 
-            compiledLines.Add($"{idFunction}|{startTrue}|{startFalse}|{ifContent}");
-            compiledLines.AddRange(compiledTrue);
-            compiledLines.Add($"0|{endIndex}");
-            compiledLines.AddRange(compiledFalse);
-            compiledLines.Add($"0|{endIndex}");
+            compiledLines.Add($"{idFunction}|false");
+            compiledLines.AddRange(compiledBetween);
+            compiledLines.Add($"{idFunction}|true");
 
             return true;
         }
 
         protected override void OnStartProcess()
         {
-
+            if (parameters.GetParameter(0, out bool enabled))
+                context.SetDepthCheckEnabled(enabled);
             EndProcess();
         }
 

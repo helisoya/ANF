@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFManager
   debugEnabled: 1
-  debugScriptToLoad: ANF/Tests/StackA
+  debugScriptToLoad: ANF/Tests/Block
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

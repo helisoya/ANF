@@ -3,6 +3,7 @@ using ANF.Persistent;
 using ANF.Utils;
 using ANF.World;
 using Leguar.TotalJSON;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +30,9 @@ public class ANSLContext : Jsonable
     private bool waitingForFunction;
     private uint currentFunctionId;
     private uint currentFunctionDepth;
+
+    private uint ignoreCheckDepthInternalValue;
+    private bool ignoreDepthCheck { get { return ignoreCheckDepthInternalValue != 0; } }
 
     private ANFManager manager;
 
@@ -87,7 +91,7 @@ public class ANSLContext : Jsonable
             return;
 
         currentFunctionDepth++;
-        if (currentFunctionDepth > maxFunctionsPerFrame)
+        if (currentFunctionDepth > maxFunctionsPerFrame && !ignoreDepthCheck)
             return;
 
         if (!lastFunctionModifiedLine)
@@ -162,11 +166,11 @@ public class ANSLContext : Jsonable
         if (waitingForFunction && functions.ContainsKey(currentFunctionId))
         {
             functions[currentFunctionId].Update();
-            if(!functions[currentFunctionId].isProcessing)
+            if (!functions[currentFunctionId].isProcessing)
                 waitingForFunction = false;
         }
 
-        if(!waitingForFunction)
+        if (!waitingForFunction)
         {
             // Start next batch of lines 
             currentFunctionDepth = 0;
@@ -201,7 +205,7 @@ public class ANSLContext : Jsonable
         isRunning = false;
         currentScript = null;
     }
-    
+
     /// <summary>
     /// Pauses the context
     /// </summary>
@@ -211,6 +215,21 @@ public class ANSLContext : Jsonable
         isPaused = paused;
     }
 
+    /// <summary>
+	/// Changes if the depth check (how many functions per frame) is enabled.
+    /// Function depth is still incremented if disabled, and reenabling the depth check may result in a direct cooldown
+    /// This internaly works as a stack. (If you disable depth check two times, you'll need to enable it two times too)
+	/// </summary>
+	/// <param name="enabled">True if enabled</param>
+    public void SetDepthCheckEnabled(bool enabled)
+    {
+        if (enabled)
+            ignoreCheckDepthInternalValue--;
+        else
+            ignoreCheckDepthInternalValue++;
+    }
+
+    #region Jsonable
     public string GetJSONName()
     {
         return "anslContext";
@@ -220,6 +239,8 @@ public class ANSLContext : Jsonable
     {
         json.Add("isRunning", isRunning);
         json.Add("isPaused", isPaused);
+
+        json.Add("ignoreCheckDepthInternalValue", ignoreCheckDepthInternalValue);
 
         json.Add("currentLine", currentLine);
         json.Add("currentFilePath", currentFilePath);
@@ -256,6 +277,8 @@ public class ANSLContext : Jsonable
             isRunning = json.GetBool("isRunning");
         if (json.ContainsKey("isPaused"))
             isPaused = json.GetBool("isPaused");
+        if (json.ContainsKey("ignoreCheckDepthInternalValue"))
+            ignoreCheckDepthInternalValue = json.GetJNumber("ignoreCheckDepthInternalValue").AsUInt();
         if (json.ContainsKey("lastFunctionModifiedLine"))
             lastFunctionModifiedLine = json.GetBool("lastFunctionModifiedLine");
         if (json.ContainsKey("waitingForFunction"))
@@ -300,6 +323,7 @@ public class ANSLContext : Jsonable
             }
         }
     }
+    #endregion
 
     /// <summary>
     /// Represents an entry in the context's stack

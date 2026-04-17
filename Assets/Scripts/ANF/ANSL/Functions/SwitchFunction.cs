@@ -14,7 +14,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 10,
         functionBody: "switch",
-        functionAutoComplete: new string[] { "switch(Variable)\n\tcase default:\n\n\tcase 0:\n\nendswitch" },
+        functionAutoComplete: new string[] { "switch(Variable)\\n\\tcase default:\\n\\n\\tcase 0:\\n\\nendswitch" },
         functionDesc: "Checks a single variables. You can use 'case default:' to check when none of the checks are valid")]
     public class SwitchFunction : ANSLFunction
     {
@@ -29,7 +29,7 @@ namespace ANF.ANSL
         {
             compiledLines = new List<string>();
 
-            string[] split = cleanedLine.Split(new char[] { '(', ')' },System.StringSplitOptions.RemoveEmptyEntries);
+            string[] split = cleanedLine.Split(new char[] { '(', ')' }, System.StringSplitOptions.RemoveEmptyEntries);
 
             if (split.Length != 2 && split.Length != 3)
             {
@@ -80,7 +80,7 @@ namespace ANF.ANSL
 
                 if (currentNextLine.StartsWith("endswitch"))
                 {
-                    if(currentNextLine.Length != "endswitch".Length)
+                    if (currentNextLine.Length != "endswitch".Length)
                     {
                         errors.Add(new ANSLUtils.ANSLError()
                         {
@@ -106,7 +106,7 @@ namespace ANF.ANSL
                     if (currentNextLine.StartsWith("case ") && currentNextLine.EndsWith(":"))
                     {
                         string token = currentNextLine.Substring(5, currentNextLine.Length - 6);
-                        if(token.Contains(' ') || token.Contains('\t') || string.IsNullOrEmpty(token))
+                        if (token.Contains(' ') || token.Contains('\t') || string.IsNullOrEmpty(token))
                         {
                             errors.Add(new ANSLUtils.ANSLError()
                             {
@@ -127,11 +127,11 @@ namespace ANF.ANSL
                         currentCompiledPart = new List<string>();
                         bool isCompilingDefault = token.Equals("default");
 
-                        if(!isCompilingDefault)
+                        if (!isCompilingDefault)
                         {
-                            if(int.TryParse(token,out int value))
+                            if (int.TryParse(token, out int value))
                             {
-                                if(variables.Contains(value))
+                                if (variables.Contains(value))
                                 {
                                     errors.Add(new ANSLUtils.ANSLError()
                                     {
@@ -207,11 +207,11 @@ namespace ANF.ANSL
                     // Potential function
                     if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
                         currentCompiledPart.AddRange(compiled);
-                            
+
                     else
                         return false;
                 }
-              
+
                 if (canContinue)
                 {
                     compiler.CheckNextLine();
@@ -235,7 +235,7 @@ namespace ANF.ANSL
             int startIdx = outputLine + 1;
             int startDefault = -1;
             List<int> starts = new List<int>();
-            for(int i = 0; i < compiledParts.Count;i++)
+            for (int i = 0; i < compiledParts.Count; i++)
             {
                 if (variables[i] == int.MinValue) // default
                     startDefault = startIdx;
@@ -245,7 +245,7 @@ namespace ANF.ANSL
                 startIdx += compiledParts[i].Count + 1;
             }
 
-            if(startDefault == -1)
+            if (startDefault == -1)
                 startDefault = startIdx;
 
             uint idFunction = GetAttribute().functionId;
@@ -294,10 +294,10 @@ namespace ANF.ANSL
         {
             int result = defaultIndex;
 
-            if(PersistentDataManager.instance.GetPlayerData().GetDataContainer(out PlayerVariableContainer container) &&
+            if (PersistentDataManager.instance.GetPlayerData().GetDataContainer(out PlayerVariableContainer container) &&
                 container.GetVariable(variable, out int variableValue))
             {
-                for(int i = 0;i< others.Length ; i += 2)
+                for (int i = 0; i < others.Length; i += 2)
                 {
                     if (others[i] == variableValue)
                     {

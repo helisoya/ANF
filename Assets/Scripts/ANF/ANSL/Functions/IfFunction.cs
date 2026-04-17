@@ -13,7 +13,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 8,
         functionBody: "if",
-        functionAutoComplete: new string[] { "if()\n\nelse\n\nendif" },
+        functionAutoComplete: new string[] { "if()\\n\\nelse\\n\\nendif" },
         functionDesc: "Checks variables. You can't use both | and & in the same check.")]
     public class IfFunction : ANSLFunction
     {
@@ -88,7 +88,7 @@ namespace ANF.ANSL
 
                 if (currentNextLine.StartsWith("else"))
                 {
-                    if(!compilingTrues)
+                    if (!compilingTrues)
                     {
                         // Already compiling else
                         errors.Add(new ANSLUtils.ANSLError()
@@ -163,7 +163,7 @@ namespace ANF.ANSL
                 }
             }
 
-            if(!foundEnd)
+            if (!foundEnd)
             {
                 errors.Add(new ANSLUtils.ANSLError()
                 {
