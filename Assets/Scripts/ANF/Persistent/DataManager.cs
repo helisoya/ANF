@@ -1,7 +1,8 @@
+using ANF.World;
+using Leguar.TotalJSON;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Leguar.TotalJSON;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -34,7 +35,7 @@ namespace ANF.Persistent
 		/// <typeparam name="T">The container's type</typeparam>
 		/// <param name="result">The out result</param>
 		/// <returns>True if the container was found</returns>
-        public bool GetDataContainer<T>(out T result)
+        public bool GetDataContainer<T>(out T result) where T : DataContainer
         {
             foreach (DataContainer container in containers)
             {

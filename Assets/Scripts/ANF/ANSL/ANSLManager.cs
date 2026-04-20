@@ -16,7 +16,6 @@ namespace ANF.ANSL
     public class ANSLManager : WorldComponent
     {
         private ANSLContext[] contexts;
-        private ANFManager manager;
 
         [Tooltip("How many ANSL function can be called per frame (per context)")]
         [SerializeField] private uint maxFunctionsPerFrame = 10;
@@ -28,10 +27,8 @@ namespace ANF.ANSL
         /// <summary>
         /// Initialize the manager
         /// </summary>
-        /// <param name="manager">The ANF Manager</param>
-        public void Initialize(ANFManager manager)
+        protected override void OnInitialize()
         {
-            this.manager = manager;
             GenerateContexts(manager);
         }
 
@@ -116,16 +113,7 @@ namespace ANF.ANSL
                 contexts[contextId].PauseContext(paused);
         }
 
-        public void Update()
-        {
-            foreach (ANSLContext context in contexts)
-            {
-                if (context.isRunning)
-                    context.Update();
-            }
-        }
-
-        public WorldComponent CloneComponent()
+        public override WorldComponent CloneComponent()
         {
             return new ANSLManager()
             {
@@ -136,12 +124,21 @@ namespace ANF.ANSL
             };
         }
 
-        public string GetJSONName()
+        public override void Update()
+        {
+            foreach (ANSLContext context in contexts)
+            {
+                if (context.isRunning)
+                    context.Update();
+            }
+        }
+
+        public override string GetJSONName()
         {
             return "anslManager";
         }
 
-        public void Save(JSON json)
+        public override void Save(JSON json)
         {
             JArray contextsArray = new JArray();
             JSON contextJSON;
@@ -155,7 +152,7 @@ namespace ANF.ANSL
             json.Add("contexts", contextsArray);
         }
 
-        public void Load(JSON json)
+        public override void Load(JSON json)
         {
             if (json.ContainsKey("contexts"))
             {

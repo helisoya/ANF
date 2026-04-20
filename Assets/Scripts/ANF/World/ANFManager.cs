@@ -24,7 +24,7 @@ namespace ANF.World
 		/// <typeparam name="T">The type to search</typeparam>
 		/// <param name="result">The component if found</param>
 		/// <returns>True if the component was found</returns>
-        public bool GetWorldComponent<T>(out T result)
+        public bool GetWorldComponent<T>(out T result) where T : WorldComponent
         {
             foreach (WorldComponent component in worldComponents)
             {
@@ -42,7 +42,8 @@ namespace ANF.World
         {
             foreach (WorldComponent component in worldComponents)
             {
-                component.Update();
+                if(component.isEnabled)
+                    component.Update();
             }
         }
 

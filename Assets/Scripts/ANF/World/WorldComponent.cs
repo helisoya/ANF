@@ -1,4 +1,5 @@
 using ANF.Utils;
+using Leguar.TotalJSON;
 using UnityEngine;
 
 namespace ANF.World
@@ -7,13 +8,31 @@ namespace ANF.World
 	/// Represent a world component
     /// Ex : The ANSL manager, the Background, the Characters, ...
 	/// </summary>
-    public interface WorldComponent : Jsonable
+    [System.Serializable]
+    public abstract class WorldComponent : Jsonable
     {
+        protected ANFManager manager;
+        public bool isEnabled { get; protected set; } = true;
+
+
         /// <summary>
         /// Initialize the component
         /// </summary>
         /// <param name="manager">The ANF Manager</param>
-        public abstract void Initialize(ANFManager manager);
+        public void Initialize(ANFManager manager)
+        {
+            this.manager = manager;
+            OnInitialize();
+        }
+
+        /// <summary>
+        /// Changes if the component is enabled or not
+        /// </summary>
+        /// <param name="enabled">True if enabled</param>
+        public void ChangeIsEnabled(bool enabled)
+        {
+            isEnabled = enabled;
+        }
 
         /// <summary>
         /// Clones the component
@@ -25,5 +44,11 @@ namespace ANF.World
 		/// Updates the component
 		/// </summary>
         public abstract void Update();
+
+        protected abstract void OnInitialize();
+
+        public abstract string GetJSONName();
+        public abstract void Save(JSON json);
+        public abstract void Load(JSON json);
     }
 }
