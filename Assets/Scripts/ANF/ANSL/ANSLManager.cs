@@ -96,7 +96,7 @@ namespace ANF.ANSL
         /// <param name="paused">True if the contexts are now paused</param>
         public void PauseAllContexts(bool paused)
         {
-            foreach(ANSLContext context in contexts)
+            foreach (ANSLContext context in contexts)
             {
                 context.PauseContext(paused);
             }
@@ -107,7 +107,7 @@ namespace ANF.ANSL
         /// </summary>
         /// <param name="contextId">The context's Id</param>
         /// <param name="paused">True if the context should be paused</param>
-        public void PauseContext(uint contextId,bool paused)
+        public void PauseContext(uint contextId, bool paused)
         {
             if (contextId >= 0 && contextId < contexts.Length)
                 contexts[contextId].PauseContext(paused);
@@ -131,11 +131,6 @@ namespace ANF.ANSL
                 if (context.isRunning)
                     context.Update();
             }
-        }
-
-        public override string GetJSONName()
-        {
-            return "anslManager";
         }
 
         public override void Save(JSON json)

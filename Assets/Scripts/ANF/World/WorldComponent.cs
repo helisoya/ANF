@@ -45,9 +45,11 @@ namespace ANF.World
 		/// </summary>
         public abstract void Update();
 
+        /// <summary>
+		/// On Initialize callback
+		/// </summary>
         protected abstract void OnInitialize();
 
-        public abstract string GetJSONName();
         public abstract void Save(JSON json);
         public abstract void Load(JSON json);
     }

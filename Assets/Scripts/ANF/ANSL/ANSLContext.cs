@@ -230,10 +230,6 @@ public class ANSLContext : Jsonable
     }
 
     #region Jsonable
-    public string GetJSONName()
-    {
-        return "anslContext";
-    }
 
     public void Save(JSON json)
     {

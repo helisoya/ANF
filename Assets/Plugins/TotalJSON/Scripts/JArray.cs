@@ -5,14 +5,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Leguar.TotalJSON.Internal;
+using UnityEngine;
 
-namespace Leguar.TotalJSON {
+namespace Leguar.TotalJSON
+{
 
 	/// <summary>
 	/// JSON array that may contain any number of JValue objects, including zero (empty array). Objects in array stay in order they are added in to the array.
 	/// New values can be added, removed and replaced freely.
 	/// </summary>
-	public class JArray : JValue {
+	public class JArray : JValue
+	{
 
 		private readonly List<JValue> values;
 
@@ -21,7 +24,8 @@ namespace Leguar.TotalJSON {
 		/// <summary>
 		/// Creates a new empty instance of JArray.
 		/// </summary>
-		public JArray() : base() {
+		public JArray() : base()
+		{
 			values = new List<JValue>();
 			thisProtected = false;
 		}
@@ -43,9 +47,11 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="UnknownObjectTypeException">
 		/// If any value in parameter array/list is unsupported type.
 		/// </exception>
-		public JArray(IList sourceValues) : this() {
-			if (sourceValues==null) {
-				throw (new JArgumentNullException("sourceValues","Parameter in constructor JArray.<init>(IList) can not be null"));
+		public JArray(IList sourceValues) : this()
+		{
+			if (sourceValues == null)
+			{
+				throw (new JArgumentNullException("sourceValues", "Parameter in constructor JArray.<init>(IList) can not be null"));
 			}
 			InternalTools.listToJArray(sourceValues, this, new List<object>());
 		}
@@ -58,20 +64,25 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// Single string with information of this JArray object.
 		/// </returns>
-		public override string ToString() {
-			if (values.Count == 0) {
+		public override string ToString()
+		{
+			if (values.Count == 0)
+			{
 				return ("[JArray: Empty array]");
 			}
 			Type allType = values[0].GetType();
-			if (values.Count == 1) {
-				return ("[JArray: Array length = 1, element type of "+allType+"]");
+			if (values.Count == 1)
+			{
+				return ("[JArray: Array length = 1, element type of " + allType + "]");
 			}
-			for (int n=1; n<values.Count; n++) {
-				if (values[n].GetType() != allType) {
+			for (int n = 1; n < values.Count; n++)
+			{
+				if (values[n].GetType() != allType)
+				{
 					return ("[JArray: Array length = " + values.Count + ", mixed element types]");
 				}
 			}
-			return ("[JArray: Array length = "+values.Count+", all elements type of "+allType+"]");
+			return ("[JArray: Array length = " + values.Count + ", all elements type of " + allType + "]");
 		}
 
 		/// <summary>
@@ -84,29 +95,37 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// True if objects are equal, false otherwise.
 		/// </returns>
-		public override bool Equals(object anotherObject) {
-			if (anotherObject==null) {
+		public override bool Equals(object anotherObject)
+		{
+			if (anotherObject == null)
+			{
 				return false;
 			}
-			if (!(anotherObject is JArray)) {
+			if (!(anotherObject is JArray))
+			{
 				return false;
 			}
-			JArray anotherJArray=(JArray)(anotherObject);
-			if (anotherJArray.Length!=this.Length) {
+			JArray anotherJArray = (JArray)(anotherObject);
+			if (anotherJArray.Length != this.Length)
+			{
 				return false;
 			}
-			for (int n=0; n<this.Length; n++) {
-				if (!values[n].Equals(anotherJArray[n])) {
+			for (int n = 0; n < this.Length; n++)
+			{
+				if (!values[n].Equals(anotherJArray[n]))
+				{
 					return false;
 				}
 			}
 			return true;
 		}
 
-		public override int GetHashCode() {
-			int hashCode=103;
-			foreach (JValue value in values) {
-				hashCode^=value.GetHashCode();
+		public override int GetHashCode()
+		{
+			int hashCode = 103;
+			foreach (JValue value in values)
+			{
+				hashCode ^= value.GetHashCode();
 			}
 			return hashCode;
 		}
@@ -117,8 +136,10 @@ namespace Leguar.TotalJSON {
 		/// <value>
 		/// Array length.
 		/// </value>
-		public int Length {
-			get {
+		public int Length
+		{
+			get
+			{
 				return values.Count;
 			}
 		}
@@ -132,12 +153,15 @@ namespace Leguar.TotalJSON {
 		/// <value>
 		/// Any JValue object, can not be null but can be JNull.
 		/// </value>
-		public JValue this[int index] {
-			get {
+		public JValue this[int index]
+		{
+			get
+			{
 				return Get(index);
 			}
-			set {
-				ReplaceAt(index,value);
+			set
+			{
+				ReplaceAt(index, value);
 			}
 		}
 
@@ -153,12 +177,15 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JArrayIndexOutOfRangeException">
 		/// If parameter index is negative, or more than or equal to this JArray length.
 		/// </exception>
-		public JValue Get(int index) {
-			if (index<0) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be negative when getting value from JArray (index = "+index+")"));
+		public JValue Get(int index)
+		{
+			if (index < 0)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be negative when getting value from JArray (index = " + index + ")"));
 			}
-			if (index>=values.Count) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be outside array length when getting value from JArray (index = "+index+", array length = "+values.Count+")"));
+			if (index >= values.Count)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be outside array length when getting value from JArray (index = " + index + ", array length = " + values.Count + ")"));
 			}
 			return values[index];
 		}
@@ -178,15 +205,18 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If value in index is not JSON or JNull.
 		/// </exception>
-		public JSON GetJSON(int index) {
-			JValue jValue=Get(index);
-			if (jValue is JSON) {
+		public JSON GetJSON(int index)
+		{
+			JValue jValue = Get(index);
+			if (jValue is JSON)
+			{
 				return ((JSON)(jValue));
 			}
-			if (jValue is JNull) {
+			if (jValue is JNull)
+			{
 				return null;
 			}
-			throw (new JValueTypeException(index,jValue,"JSON"));
+			throw (new JValueTypeException(index, jValue, "JSON"));
 		}
 
 		/// <summary>
@@ -204,15 +234,18 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If value in index is not JNumber or JNull.
 		/// </exception>
-		public JNumber GetJNumber(int index) {
-			JValue jValue=Get(index);
-			if (jValue is JNumber) {
+		public JNumber GetJNumber(int index)
+		{
+			JValue jValue = Get(index);
+			if (jValue is JNumber)
+			{
 				return ((JNumber)(jValue));
 			}
-			if (jValue is JNull) {
+			if (jValue is JNull)
+			{
 				return null;
 			}
-			throw (new JValueTypeException(index,jValue,"JNumber"));
+			throw (new JValueTypeException(index, jValue, "JNumber"));
 		}
 
 		/// <summary>
@@ -244,10 +277,12 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JNumberFormatException">
 		/// If number stored to this JNumber is floating point number.
 		/// </exception>
-		public int GetInt(int index) {
-			JNumber jNumber=GetJNumber(index);
-			if (jNumber==null) {
-				throw (new JValueNullException(index,"int"));
+		public int GetInt(int index)
+		{
+			JNumber jNumber = GetJNumber(index);
+			if (jNumber == null)
+			{
+				throw (new JValueNullException(index, "int"));
 			}
 			return jNumber.AsInt();
 		}
@@ -278,10 +313,12 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JNumberOverflowException">
 		/// If number stored to this JNumber doesn't fit in float.
 		/// </exception>
-		public float GetFloat(int index) {
-			JNumber jNumber=GetJNumber(index);
-			if (jNumber==null) {
-				throw (new JValueNullException(index,"float"));
+		public float GetFloat(int index)
+		{
+			JNumber jNumber = GetJNumber(index);
+			if (jNumber == null)
+			{
+				throw (new JValueNullException(index, "float"));
 			}
 			return jNumber.AsFloat();
 		}
@@ -301,15 +338,18 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If value in index is not JString or JNull.
 		/// </exception>
-		public string GetString(int index) {
-			JValue jValue=Get(index);
-			if (jValue is JString) {
+		public string GetString(int index)
+		{
+			JValue jValue = Get(index);
+			if (jValue is JString)
+			{
 				return ((JString)(jValue)).AsString();
 			}
-			if (jValue is JNull) {
+			if (jValue is JNull)
+			{
 				return null;
 			}
-			throw (new JValueTypeException(index,jValue,"string"));
+			throw (new JValueTypeException(index, jValue, "string"));
 		}
 
 		/// <summary>
@@ -327,12 +367,14 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If value in index is not JBoolean.
 		/// </exception>
-		public bool GetBool(int index) {
-			JValue jValue=Get(index);
-			if (jValue is JBoolean) {
+		public bool GetBool(int index)
+		{
+			JValue jValue = Get(index);
+			if (jValue is JBoolean)
+			{
 				return ((JBoolean)(jValue)).AsBool();
 			}
-			throw (new JValueTypeException(index,jValue,"bool"));
+			throw (new JValueTypeException(index, jValue, "bool"));
 		}
 
 		/// <summary>
@@ -350,15 +392,18 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If value in index is not JArray or JNull.
 		/// </exception>
-		public JArray GetJArray(int index) {
-			JValue jValue=Get(index);
-			if (jValue is JArray) {
+		public JArray GetJArray(int index)
+		{
+			JValue jValue = Get(index);
+			if (jValue is JArray)
+			{
 				return ((JArray)(jValue));
 			}
-			if (jValue is JNull) {
+			if (jValue is JNull)
+			{
 				return null;
 			}
-			throw (new JValueTypeException(index,jValue,"JArray"));
+			throw (new JValueTypeException(index, jValue, "JArray"));
 		}
 
 		/// <summary>
@@ -373,12 +418,15 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JArrayIndexOutOfRangeException">
 		/// If parameter index is negative, or more than equal to this JArray length.
 		/// </exception>
-		public bool IsJNull(int index) {
-			if (index<0) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be negative when testing array value for being JNull"));
+		public bool IsJNull(int index)
+		{
+			if (index < 0)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be negative when testing array value for being JNull"));
 			}
-			if (index>=values.Count) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be outside array length when testing array value for being JNull"));
+			if (index >= values.Count)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be outside array length when testing array value for being JNull"));
 			}
 			return (values[index] is JNull);
 		}
@@ -398,25 +446,33 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="UnknownObjectTypeException">
 		/// If parameter value is unsupported type.
 		/// </exception>
-		public void Add(object value) {
-			if (IsProtected()) {
+		public void Add(object value)
+		{
+			if (IsProtected())
+			{
 				throw (new ProtectedException("Can not add new value in this JArray, this JArray is set protected (read only)"));
 			}
-			if (value==this) {
-				throw (new JArgumentException("Trying to add JArray value to itself. This would cause circular JSON.","value"));
+			if (value == this)
+			{
+				throw (new JArgumentException("Trying to add JArray value to itself. This would cause circular JSON.", "value"));
 			}
-			JValue jValue=InternalTools.objectAsJValue(value);
-			if (jValue==null) {
-				throw (new UnknownObjectTypeException(value,"value"));
+			JValue jValue = InternalTools.objectAsJValue(value);
+			if (jValue == null)
+			{
+				throw (new UnknownObjectTypeException(value, "value"));
 			}
-			if (jValue is JSON) {
-				if (((JSON)(jValue)).deepContainsObject(this)) {
-					throw (new JArgumentException("Trying to add JSON value which contains this JArray itself. This would cause circular JSON.","value"));
+			if (jValue is JSON)
+			{
+				if (((JSON)(jValue)).deepContainsObject(this))
+				{
+					throw (new JArgumentException("Trying to add JSON value which contains this JArray itself. This would cause circular JSON.", "value"));
 				}
 			}
-			if (jValue is JArray) {
-				if (((JArray)(jValue)).deepContainsObject(this)) {
-					throw (new JArgumentException("Trying to add JArray value which contains this JArray itself. This would cause circular JSON.","value"));
+			if (jValue is JArray)
+			{
+				if (((JArray)(jValue)).deepContainsObject(this))
+				{
+					throw (new JArgumentException("Trying to add JArray value which contains this JArray itself. This would cause circular JSON.", "value"));
 				}
 			}
 			values.Add(jValue);
@@ -444,34 +500,44 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="UnknownObjectTypeException">
 		/// If parameter value is unsupported type.
 		/// </exception>
-		public void ReplaceAt(int index, object value) {
-			if (index<0) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be negative in JArray.ReplaceAt(int index, JValue value)"));
+		public void ReplaceAt(int index, object value)
+		{
+			if (index < 0)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be negative in JArray.ReplaceAt(int index, JValue value)"));
 			}
-			if (index>=values.Count) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be outside array length in JArray.ReplaceAt(int index, JValue value)"));
+			if (index >= values.Count)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be outside array length in JArray.ReplaceAt(int index, JValue value)"));
 			}
-			if (IsProtected()) {
+			if (IsProtected())
+			{
 				throw (new ProtectedException("Can not set value to this JArray, this JArray is set protected (read only)"));
 			}
-			if (value==this) {
-				throw (new JArgumentException("Trying to set JArray value to itself. This would cause circular JSON.","value"));
+			if (value == this)
+			{
+				throw (new JArgumentException("Trying to set JArray value to itself. This would cause circular JSON.", "value"));
 			}
-			JValue jValue=InternalTools.objectAsJValue(value);
-			if (jValue==null) {
-				throw (new UnknownObjectTypeException(value,"value"));
+			JValue jValue = InternalTools.objectAsJValue(value);
+			if (jValue == null)
+			{
+				throw (new UnknownObjectTypeException(value, "value"));
 			}
-			if (jValue is JSON) {
-				if (((JSON)(jValue)).deepContainsObject(this)) {
-					throw (new JArgumentException("Trying to set JSON value which contains this JArray itself. This would cause circular JSON.","value"));
+			if (jValue is JSON)
+			{
+				if (((JSON)(jValue)).deepContainsObject(this))
+				{
+					throw (new JArgumentException("Trying to set JSON value which contains this JArray itself. This would cause circular JSON.", "value"));
 				}
 			}
-			if (jValue is JArray) {
-				if (((JArray)(jValue)).deepContainsObject(this)) {
-					throw (new JArgumentException("Trying to set JArray value which contains this JArray itself. This would cause circular JSON.","value"));
+			if (jValue is JArray)
+			{
+				if (((JArray)(jValue)).deepContainsObject(this))
+				{
+					throw (new JArgumentException("Trying to set JArray value which contains this JArray itself. This would cause circular JSON.", "value"));
 				}
 			}
-			values[index]=jValue;
+			values[index] = jValue;
 		}
 
 		/// <summary>
@@ -496,34 +562,44 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="UnknownObjectTypeException">
 		/// If parameter value is unsupported type.
 		/// </exception>
-		public void InsertAt(int index, object value) {
-			if (index<0) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be negative in JArray.InsertAt(int index, JValue value)"));
+		public void InsertAt(int index, object value)
+		{
+			if (index < 0)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be negative in JArray.InsertAt(int index, JValue value)"));
 			}
-			if (index>values.Count) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be more than array length in JArray.InsertAt(int index, JValue value)"));
+			if (index > values.Count)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be more than array length in JArray.InsertAt(int index, JValue value)"));
 			}
-			if (IsProtected()) {
+			if (IsProtected())
+			{
 				throw (new ProtectedException("Can not insert new value in this JArray, this JArray is set protected (read only)"));
 			}
-			if (value==this) {
-				throw (new JArgumentException("Trying to set JArray value to itself. This would cause circular JSON.","value"));
+			if (value == this)
+			{
+				throw (new JArgumentException("Trying to set JArray value to itself. This would cause circular JSON.", "value"));
 			}
-			JValue jValue=InternalTools.objectAsJValue(value);
-			if (jValue==null) {
-				throw (new UnknownObjectTypeException(value,"value"));
+			JValue jValue = InternalTools.objectAsJValue(value);
+			if (jValue == null)
+			{
+				throw (new UnknownObjectTypeException(value, "value"));
 			}
-			if (jValue is JSON) {
-				if (((JSON)(jValue)).deepContainsObject(this)) {
-					throw (new JArgumentException("Trying to set JSON value which contains this JArray itself. This would cause circular JSON.","value"));
+			if (jValue is JSON)
+			{
+				if (((JSON)(jValue)).deepContainsObject(this))
+				{
+					throw (new JArgumentException("Trying to set JSON value which contains this JArray itself. This would cause circular JSON.", "value"));
 				}
 			}
-			if (jValue is JArray) {
-				if (((JArray)(jValue)).deepContainsObject(this)) {
-					throw (new JArgumentException("Trying to set JArray value which contains this JArray itself. This would cause circular JSON.","value"));
+			if (jValue is JArray)
+			{
+				if (((JArray)(jValue)).deepContainsObject(this))
+				{
+					throw (new JArgumentException("Trying to set JArray value which contains this JArray itself. This would cause circular JSON.", "value"));
 				}
 			}
-			values.Insert(index,jValue);
+			values.Insert(index, jValue);
 		}
 
 		/// <summary>
@@ -538,14 +614,18 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="ProtectedException">
 		/// If this JArray object is set protected (read only).
 		/// </exception>
-		public void RemoveAt(int index) {
-			if (index<0) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be negative in JArray.RemoveAt(int index)"));
+		public void RemoveAt(int index)
+		{
+			if (index < 0)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be negative in JArray.RemoveAt(int index)"));
 			}
-			if (index>=values.Count) {
-				throw (new JArrayIndexOutOfRangeException("index",index,"'index' can not be outside array length in JArray.RemoveAt(int index)"));
+			if (index >= values.Count)
+			{
+				throw (new JArrayIndexOutOfRangeException("index", index, "'index' can not be outside array length in JArray.RemoveAt(int index)"));
 			}
-			if (IsProtected()) {
+			if (IsProtected())
+			{
 				throw (new ProtectedException("Can not remove value from this JArray, this JArray is set protected (read only)"));
 			}
 			values.RemoveAt(index);
@@ -566,21 +646,26 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JArgumentException">
 		/// If can not found any value matching the parameter.
 		/// </exception>
-		public void RemoveValue(object valueToRemove) {
-			if (IsProtected()) {
+		public void RemoveValue(object valueToRemove)
+		{
+			if (IsProtected())
+			{
 				throw (new ProtectedException("Can not remove value from this JArray, this JArray is set protected (read only)"));
 			}
 			JValue jValueToRemove = InternalTools.objectAsJValue(valueToRemove);
-			if (jValueToRemove==null) {
-				throw (new UnknownObjectTypeException(valueToRemove,"valueToRemove"));
+			if (jValueToRemove == null)
+			{
+				throw (new UnknownObjectTypeException(valueToRemove, "valueToRemove"));
 			}
-			for (int n=0; n<values.Count; n++) {
-				if (values[n].Equals(jValueToRemove)) {
+			for (int n = 0; n < values.Count; n++)
+			{
+				if (values[n].Equals(jValueToRemove))
+				{
 					values.RemoveAt(n);
 					return;
 				}
 			}
-			throw (new JArgumentException("Can not find value to remove from this JArray","valueToRemove"));
+			throw (new JArgumentException("Can not find value to remove from this JArray", "valueToRemove"));
 		}
 
 		/// <summary>
@@ -589,8 +674,10 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="ProtectedException">
 		/// If this JArray object is set protected (read only).
 		/// </exception>
-		public void Clear() {
-			if (IsProtected()) {
+		public void Clear()
+		{
+			if (IsProtected())
+			{
 				throw (new ProtectedException("Can not clear this JArray, this JArray is set protected (read only)"));
 			}
 			values.Clear();
@@ -608,13 +695,17 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// <c>true</c> if this JArray contains 'valueToSearch', <c>false</c> otherwise.
 		/// </returns>
-		public bool ContainsValue(object valueToSearch) {
+		public bool ContainsValue(object valueToSearch)
+		{
 			JValue jValueToSearch = InternalTools.objectAsJValue(valueToSearch);
-			if (jValueToSearch==null) {
-				throw (new UnknownObjectTypeException(valueToSearch,"valueToSearch"));
+			if (jValueToSearch == null)
+			{
+				throw (new UnknownObjectTypeException(valueToSearch, "valueToSearch"));
 			}
-			foreach (JValue value in values) {
-				if (value.Equals(jValueToSearch)) {
+			foreach (JValue value in values)
+			{
+				if (value.Equals(jValueToSearch))
+				{
 					return true;
 				}
 			}
@@ -630,16 +721,25 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// <c>true</c> if this exact 'obj' object exists somewhere in JSON tree hierarchy starting from this object, <c>false</c> otherwise.
 		/// </returns>
-		internal bool deepContainsObject(JValue obj) {
-			foreach (JValue value in values) {
-				if (value==obj) {
+		internal bool deepContainsObject(JValue obj)
+		{
+			foreach (JValue value in values)
+			{
+				if (value == obj)
+				{
 					return true;
-				} else if (value is JSON) {
-					if (((JSON)(value)).deepContainsObject(obj)) {
+				}
+				else if (value is JSON)
+				{
+					if (((JSON)(value)).deepContainsObject(obj))
+					{
 						return true;
 					}
-				} else if (value is JArray) {
-					if (((JArray)(value)).deepContainsObject(obj)) {
+				}
+				else if (value is JArray)
+				{
+					if (((JArray)(value)).deepContainsObject(obj))
+					{
 						return true;
 					}
 				}
@@ -653,8 +753,9 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// <c>true</c> if this array is empty, <c>false</c> otherwise.
 		/// </returns>
-		public bool IsEmpty() {
-			return (values.Count==0);
+		public bool IsEmpty()
+		{
+			return (values.Count == 0);
 		}
 
 		/// <summary>
@@ -676,15 +777,147 @@ namespace Leguar.TotalJSON {
 		/// <value>
 		/// All the values in this JArray object.
 		/// </value>
-		public JValue[] Values {
-			get {
-				int count=values.Count;
-				JValue[] array=new JValue[count];
-				for (int n=0; n<count; n++) {
-					array[n]=values[n];
+		public JValue[] Values
+		{
+			get
+			{
+				int count = values.Count;
+				JValue[] array = new JValue[count];
+				for (int n = 0; n < count; n++)
+				{
+					array[n] = values[n];
 				}
 				return array;
 			}
+		}
+
+		/// <summary>
+		/// Get this array as a color
+		/// </summary>
+		/// <returns>
+		/// A color
+		/// </returns>
+		/// <exception cref="JValueTypeException">
+		/// If any value in array is other than JSON object or null.
+		/// </exception>
+		public Color AsColor()
+		{
+			Color result = new Color();
+
+			int count = values.Count;
+			if (count != 4)
+				return result;
+
+			for (int n = 0; n < 4; n++)
+			{
+				if (values[n] is not JNumber)
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
+				}
+			}
+
+			result.r = ((JNumber)values[0]).AsFloat();
+			result.g = ((JNumber)values[1]).AsFloat();
+			result.b = ((JNumber)values[2]).AsFloat();
+			result.a = ((JNumber)values[3]).AsFloat();
+
+			return result;
+		}
+
+		/// <summary>
+		/// Get this array as a Vector2
+		/// </summary>
+		/// <returns>
+		/// A Vector2
+		/// </returns>
+		/// <exception cref="JValueTypeException">
+		/// If any value in array is other than JSON object or null.
+		/// </exception>
+		public Vector2 AsVector2()
+		{
+			Vector2 result = new Vector2();
+
+			int count = values.Count;
+			if (count != 2)
+				return result;
+
+			for (int n = 0; n < 2; n++)
+			{
+				if (values[n] is not JNumber)
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
+				}
+			}
+
+			result.x = ((JNumber)values[0]).AsFloat();
+			result.y = ((JNumber)values[1]).AsFloat();
+
+			return result;
+		}
+
+		/// <summary>
+		/// Get this array as a Vector3
+		/// </summary>
+		/// <returns>
+		/// A Vector3
+		/// </returns>
+		/// <exception cref="JValueTypeException">
+		/// If any value in array is other than JSON object or null.
+		/// </exception>
+		public Vector3 AsVector3()
+		{
+			Vector3 result = new Vector3();
+
+			int count = values.Count;
+			if (count != 3)
+				return result;
+
+			for (int n = 0; n < 3; n++)
+			{
+				if (values[n] is not JNumber)
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
+				}
+			}
+
+			result.x = ((JNumber)values[0]).AsFloat();
+			result.y = ((JNumber)values[1]).AsFloat();
+			result.z = ((JNumber)values[2]).AsFloat();
+
+			return result;
+		}
+
+		/// <summary>
+		/// Get this array as a Vector4
+		/// </summary>
+		/// <returns>
+		/// A Vector4
+		/// </returns>
+		/// <exception cref="JValueTypeException">
+		/// If any value in array is other than JSON object or null.
+		/// </exception>
+		public Vector4 AsVector4()
+		{
+			Vector4 result = new Vector3();
+
+			int count = values.Count;
+			if (count != 4)
+				return result;
+
+			for (int n = 0; n < 4; n++)
+			{
+				if (values[n] is not JNumber)
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
+				}
+			}
+
+			result.x = ((JNumber)values[0]).AsFloat();
+			result.y = ((JNumber)values[1]).AsFloat();
+			result.z = ((JNumber)values[2]).AsFloat();
+			result.w = ((JNumber)values[3]).AsFloat();
+
+			return result;
 		}
 
 		/// <summary>
@@ -696,16 +929,23 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than JSON object or null.
 		/// </exception>
-		public JSON[] AsJSONArray() {
-			int count=values.Count;
-			JSON[] array=new JSON[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JSON) {
-					array[n]=(JSON)(values[n]);
-				} else if (values[n] is JNull) {
-					array[n]=null;
-				} else {
-					throw (new JValueTypeException(n,values[n],"JSON"));
+		public JSON[] AsJSONArray()
+		{
+			int count = values.Count;
+			JSON[] array = new JSON[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JSON)
+				{
+					array[n] = (JSON)(values[n]);
+				}
+				else if (values[n] is JNull)
+				{
+					array[n] = null;
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JSON"));
 				}
 			}
 			return array;
@@ -720,14 +960,19 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than number.
 		/// </exception>
-		public int[] AsIntArray() {
-			int count=values.Count;
-			int[] array=new int[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JNumber) {
-					array[n]=((JNumber)(values[n])).AsInt();
-				} else {
-					throw (new JValueTypeException(n,values[n],"JNumber"));
+		public int[] AsIntArray()
+		{
+			int count = values.Count;
+			int[] array = new int[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JNumber)
+				{
+					array[n] = ((JNumber)(values[n])).AsInt();
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
 				}
 			}
 			return array;
@@ -742,14 +987,19 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than number.
 		/// </exception>
-		public long[] AsLongArray() {
-			int count=values.Count;
-			long[] array=new long[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JNumber) {
-					array[n]=((JNumber)(values[n])).AsLong();
-				} else {
-					throw (new JValueTypeException(n,values[n],"JNumber"));
+		public long[] AsLongArray()
+		{
+			int count = values.Count;
+			long[] array = new long[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JNumber)
+				{
+					array[n] = ((JNumber)(values[n])).AsLong();
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
 				}
 			}
 			return array;
@@ -764,14 +1014,19 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than number.
 		/// </exception>
-		public float[] AsFloatArray() {
-			int count=values.Count;
-			float[] array=new float[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JNumber) {
-					array[n]=((JNumber)(values[n])).AsFloat();
-				} else {
-					throw (new JValueTypeException(n,values[n],"JNumber"));
+		public float[] AsFloatArray()
+		{
+			int count = values.Count;
+			float[] array = new float[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JNumber)
+				{
+					array[n] = ((JNumber)(values[n])).AsFloat();
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
 				}
 			}
 			return array;
@@ -786,14 +1041,19 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than number.
 		/// </exception>
-		public double[] AsDoubleArray() {
-			int count=values.Count;
-			double[] array=new double[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JNumber) {
-					array[n]=((JNumber)(values[n])).AsDouble();
-				} else {
-					throw (new JValueTypeException(n,values[n],"JNumber"));
+		public double[] AsDoubleArray()
+		{
+			int count = values.Count;
+			double[] array = new double[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JNumber)
+				{
+					array[n] = ((JNumber)(values[n])).AsDouble();
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
 				}
 			}
 			return array;
@@ -808,14 +1068,19 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than number.
 		/// </exception>
-		public decimal[] AsDecimalArray() {
-			int count=values.Count;
-			decimal[] array=new decimal[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JNumber) {
-					array[n]=((JNumber)(values[n])).AsDecimal();
-				} else {
-					throw (new JValueTypeException(n,values[n],"JNumber"));
+		public decimal[] AsDecimalArray()
+		{
+			int count = values.Count;
+			decimal[] array = new decimal[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JNumber)
+				{
+					array[n] = ((JNumber)(values[n])).AsDecimal();
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JNumber"));
 				}
 			}
 			return array;
@@ -830,16 +1095,23 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than string or null.
 		/// </exception>
-		public string[] AsStringArray() {
-			int count=values.Count;
-			string[] array=new string[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JString) {
-					array[n]=((JString)(values[n])).AsString();
-				} else if (values[n] is JNull) {
-					array[n]=null;
-				} else {
-					throw (new JValueTypeException(n,values[n],"JString"));
+		public string[] AsStringArray()
+		{
+			int count = values.Count;
+			string[] array = new string[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JString)
+				{
+					array[n] = ((JString)(values[n])).AsString();
+				}
+				else if (values[n] is JNull)
+				{
+					array[n] = null;
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JString"));
 				}
 			}
 			return array;
@@ -854,14 +1126,19 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than boolean.
 		/// </exception>
-		public bool[] AsBoolArray() {
-			int count=values.Count;
-			bool[] array=new bool[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JBoolean) {
-					array[n]=((JBoolean)(values[n])).AsBool();
-				} else {
-					throw (new JValueTypeException(n,values[n],"JBoolean"));
+		public bool[] AsBoolArray()
+		{
+			int count = values.Count;
+			bool[] array = new bool[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JBoolean)
+				{
+					array[n] = ((JBoolean)(values[n])).AsBool();
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JBoolean"));
 				}
 			}
 			return array;
@@ -876,16 +1153,23 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="JValueTypeException">
 		/// If any value in array is other than array or null.
 		/// </exception>
-		public JArray[] AsJArrayArray() {
-			int count=values.Count;
-			JArray[] array=new JArray[count];
-			for (int n=0; n<count; n++) {
-				if (values[n] is JArray) {
-					array[n]=(JArray)(values[n]);
-				} else if (values[n] is JNull) {
-					array[n]=null;
-				} else {
-					throw (new JValueTypeException(n,values[n],"JArray"));
+		public JArray[] AsJArrayArray()
+		{
+			int count = values.Count;
+			JArray[] array = new JArray[count];
+			for (int n = 0; n < count; n++)
+			{
+				if (values[n] is JArray)
+				{
+					array[n] = (JArray)(values[n]);
+				}
+				else if (values[n] is JNull)
+				{
+					array[n] = null;
+				}
+				else
+				{
+					throw (new JValueTypeException(n, values[n], "JArray"));
 				}
 			}
 			return array;
@@ -898,9 +1182,11 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// List that doesn't contain any TotalJSON objects on any level.
 		/// </returns>
-		public List<object> AsList() {
+		public List<object> AsList()
+		{
 			List<object> targetValues = new List<object>();
-			foreach (JValue jValue in values) {
+			foreach (JValue jValue in values)
+			{
 				object oValue = InternalTools.jValueAsSystemObject(jValue);
 				targetValues.Add(oValue);
 			}
@@ -916,7 +1202,8 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// This array as JSON formatted string, containing only basic ascii characters between [32..126] without line feeds.
 		/// </returns>
-		public override string CreateString() {
+		public override string CreateString()
+		{
 			return base.CreateString();
 		}
 
@@ -927,7 +1214,8 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// This array as JSON formatted string.
 		/// </returns>
-		public override string CreateString(CreateStringSettings settings) {
+		public override string CreateString(CreateStringSettings settings)
+		{
 			return base.CreateString(settings);
 		}
 
@@ -946,31 +1234,40 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// This array as JSON formatted string, containing only basic ascii characters between [32..126], line feeds and tabs.
 		/// </returns>
-		public string CreatePrettyString() {
+		public string CreatePrettyString()
+		{
 			CreateStringSettings createStringSettings = new CreateStringSettings();
 			createStringSettings.HumanReadable = true;
 			return CreateString(createStringSettings);
 		}
 
-		internal override void zCreate(CreateStringRunner createStringRunner) {
-			if (values.Count>0) {
+		internal override void zCreate(CreateStringRunner createStringRunner)
+		{
+			if (values.Count > 0)
+			{
 				createStringRunner.appendBolding(true);
-				createStringRunner.append('[',1);
+				createStringRunner.append('[', 1);
 				createStringRunner.appendBolding(false);
 				bool first = true;
-				foreach (JValue value in values) {
-					if (!first) {
-						createStringRunner.append(',',0);
-					} else {
+				foreach (JValue value in values)
+				{
+					if (!first)
+					{
+						createStringRunner.append(',', 0);
+					}
+					else
+					{
 						first = false;
 					}
 					value.zCreate(createStringRunner);
 				}
 				createStringRunner.appendBolding(true);
-				createStringRunner.append(-1,']');
+				createStringRunner.append(-1, ']');
 				createStringRunner.appendBolding(false);
-			} else {
-				createStringRunner.append('[',']');
+			}
+			else
+			{
+				createStringRunner.append('[', ']');
 			}
 		}
 
@@ -989,9 +1286,11 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="ParseException">
 		/// If input string can not be parsed to JArray.
 		/// </exception>
-		public static JArray ParseString(string jsonArrayInSingleString) {
-			if (jsonArrayInSingleString==null) {
-				throw (new JArgumentNullException("jsonArrayInSingleString","Source string can not be null"));
+		public static JArray ParseString(string jsonArrayInSingleString)
+		{
+			if (jsonArrayInSingleString == null)
+			{
+				throw (new JArgumentNullException("jsonArrayInSingleString", "Source string can not be null"));
 			}
 			return innerParseString(jsonArrayInSingleString, null);
 		}
@@ -1018,13 +1317,15 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="ParseException">
 		/// If input string can not be parsed to JArray.
 		/// </exception>
-		public static JArray ParseString(string jsonArrayInSingleString, string debugIDForExceptions) {
-			if (jsonArrayInSingleString==null) {
-				throw (new JArgumentNullException("jsonArrayInSingleString","Source string can not be null"+ParseException.getExceptionMessageTailForID(debugIDForExceptions)));
+		public static JArray ParseString(string jsonArrayInSingleString, string debugIDForExceptions)
+		{
+			if (jsonArrayInSingleString == null)
+			{
+				throw (new JArgumentNullException("jsonArrayInSingleString", "Source string can not be null" + ParseException.getExceptionMessageTailForID(debugIDForExceptions)));
 			}
-			ParseStringSettings parseStringSettings=new ParseStringSettings();
+			ParseStringSettings parseStringSettings = new ParseStringSettings();
 			parseStringSettings.DebugIDForExceptions = debugIDForExceptions;
-			return innerParseString(jsonArrayInSingleString,parseStringSettings);
+			return innerParseString(jsonArrayInSingleString, parseStringSettings);
 		}
 
 		/// <summary>
@@ -1045,63 +1346,79 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="ParseException">
 		/// If input string can not be parsed to JArray.
 		/// </exception>
-		public static JArray ParseString(string jsonArrayInSingleString, ParseStringSettings parseStringSettings) {
-			if (jsonArrayInSingleString==null) {
-				throw (new JArgumentNullException("jsonArrayInSingleString","Source string can not be null"+ParseException.getExceptionMessageTail(parseStringSettings)));
+		public static JArray ParseString(string jsonArrayInSingleString, ParseStringSettings parseStringSettings)
+		{
+			if (jsonArrayInSingleString == null)
+			{
+				throw (new JArgumentNullException("jsonArrayInSingleString", "Source string can not be null" + ParseException.getExceptionMessageTail(parseStringSettings)));
 			}
-			if (parseStringSettings==null) {
-				throw (new JArgumentNullException("parseStringSettings","Settings can not be null in JArray.ParseString(string,ParseStringSettings)"+ParseException.getExceptionMessageTail(null)));
+			if (parseStringSettings == null)
+			{
+				throw (new JArgumentNullException("parseStringSettings", "Settings can not be null in JArray.ParseString(string,ParseStringSettings)" + ParseException.getExceptionMessageTail(null)));
 			}
 			return innerParseString(jsonArrayInSingleString, parseStringSettings);
 		}
 
-		private static JArray innerParseString(string jsonArrayInSingleString, ParseStringSettings parseStringSettings) {
+		private static JArray innerParseString(string jsonArrayInSingleString, ParseStringSettings parseStringSettings)
+		{
 			int length = jsonArrayInSingleString.Length;
-			if (length==0) {
-				throw ParseException.forEmpty("Parameter string 'jsonArrayInSingleString' is empty (length 0)",parseStringSettings);
+			if (length == 0)
+			{
+				throw ParseException.forEmpty("Parameter string 'jsonArrayInSingleString' is empty (length 0)", parseStringSettings);
 			}
-			ParseStringRunner parseStringRunner = new ParseStringRunner(jsonArrayInSingleString,parseStringSettings);
-			if (!parseStringRunner.containsNonWhiteChars()) {
-				throw ParseException.forEmpty("Parameter string 'jsonArrayInSingleString' is not empty (length "+length+") but doesn't contain any non-white characters",parseStringSettings);
+			ParseStringRunner parseStringRunner = new ParseStringRunner(jsonArrayInSingleString, parseStringSettings);
+			if (!parseStringRunner.containsNonWhiteChars())
+			{
+				throw ParseException.forEmpty("Parameter string 'jsonArrayInSingleString' is not empty (length " + length + ") but doesn't contain any non-white characters", parseStringSettings);
 			}
-			JArray jArray=zParse(parseStringRunner,true);
-			if (!parseStringRunner.isAllowNonWhiteCharactersAfterObject()) {
+			JArray jArray = zParse(parseStringRunner, true);
+			if (!parseStringRunner.isAllowNonWhiteCharactersAfterObject())
+			{
 				char chr;
 				StringPointer sp = parseStringRunner.getStringPointer();
-				if (sp.tryGetNextNonWhiteChar(out chr)) {
+				if (sp.tryGetNextNonWhiteChar(out chr))
+				{
 					throw ParseException.forCharactersAfterEnd(parseStringRunner, chr);
 				}
 			}
 			return jArray;
 		}
 
-		internal static JArray zParse(ParseStringRunner parseStringRunner, bool expectStartOfArray) {
+		internal static JArray zParse(ParseStringRunner parseStringRunner, bool expectStartOfArray)
+		{
 
 			StringPointer sp = parseStringRunner.getStringPointer();
 
 			char chr;
-			if (expectStartOfArray) {
-				if (!sp.tryGetNextNonWhiteChar(out chr)) {
-					throw ParseException.forInvalidStart("Parameter string didn't contain any non-white characters",parseStringRunner);
+			if (expectStartOfArray)
+			{
+				if (!sp.tryGetNextNonWhiteChar(out chr))
+				{
+					throw ParseException.forInvalidStart("Parameter string didn't contain any non-white characters", parseStringRunner);
 				}
-				if (chr!='[') {
-					throw ParseException.forInvalidStart("Invalid character "+InternalTools.logSafeCharacter(chr)+" when expecting start of array '['", parseStringRunner);
+				if (chr != '[')
+				{
+					throw ParseException.forInvalidStart("Invalid character " + InternalTools.logSafeCharacter(chr) + " when expecting start of array '['", parseStringRunner);
 				}
 			}
-			JArray array=new JArray();
-			chr=sp.getNextNonWhiteChar();
-			if (chr==']') {
+			JArray array = new JArray();
+			chr = sp.getNextNonWhiteChar();
+			if (chr == ']')
+			{
 				return array; // Empty array
 			}
 			sp.stepBack();
-			do {
+			do
+			{
 				array.Add(parseStringRunner.parseValue());
-				chr=sp.getNextNonWhiteChar();
-				if (chr==']') {
+				chr = sp.getNextNonWhiteChar();
+				if (chr == ']')
+				{
 					return array; // At least one element in array
 				}
-				if (chr!=',') {
-					throw ParseException.forInvalidCharacter("Invalid character "+InternalTools.logSafeCharacter(chr)+" when expecting value separator ',' or end of array ']'", parseStringRunner);
+				if (chr != ',')
+				{
+					throw ParseException.forInvalidCharacter("Invalid character " + InternalTools.logSafeCharacter(chr) + " when expecting value separator ',' or end of array ']'", parseStringRunner);
 				}
 			} while (true);
 
@@ -1119,7 +1436,8 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="SerializeException">
 		/// If any exceptions occurs when trying to serialize object to new JArray.
 		/// </exception>
-		public static JArray Serialize(object objectToSerialize) {
+		public static JArray Serialize(object objectToSerialize)
+		{
 			return Serialize(objectToSerialize, new SerializeSettings());
 		}
 
@@ -1138,12 +1456,15 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="SerializeException">
 		/// If any exceptions occurs when trying to serialize object to new JArray.
 		/// </exception>
-		public static JArray Serialize(object objectToSerialize, SerializeSettings serializeSettings) {
+		public static JArray Serialize(object objectToSerialize, SerializeSettings serializeSettings)
+		{
 			JValue jValue = InternalTools.serializeObject(objectToSerialize, serializeSettings);
-			if (jValue==null) {
+			if (jValue == null)
+			{
 				throw (new SerializeException("Parameter object is type that can't be serialized", objectToSerialize, "objectToSerialize"));
 			}
-			if (!(jValue is JArray)) {
+			if (!(jValue is JArray))
+			{
 				throw (new SerializeException("Parameter object can be serialized but not to JArray", objectToSerialize, "objectToSerialize"));
 			}
 			return ((JArray)(jValue));
@@ -1161,7 +1482,8 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="DeserializeException">
 		/// If any exceptions occurs when trying to deserialize this JArray to object.
 		/// </exception>
-		public T Deserialize<T>() {
+		public T Deserialize<T>()
+		{
 			return Deserialize<T>(new DeserializeSettings());
 		}
 
@@ -1180,37 +1502,45 @@ namespace Leguar.TotalJSON {
 		/// <exception cref="DeserializeException">
 		/// If any exceptions occurs when trying to deserialize this JArray to object.
 		/// </exception>
-		public T Deserialize<T>(DeserializeSettings deserializeSettings) {
+		public T Deserialize<T>(DeserializeSettings deserializeSettings)
+		{
 			object obj = zDeserialize(typeof(T), null, deserializeSettings);
 			return (T)(obj);
 		}
 
-		internal override object zDeserialize(Type type, string toFieldName, DeserializeSettings deserializeSettings) {
+		internal override object zDeserialize(Type type, string toFieldName, DeserializeSettings deserializeSettings)
+		{
 
 			Type listGenericType = getListGenericType(type);
 
-			if (type.IsArray) {
-				Array array = Array.CreateInstance(listGenericType,this.Length);
-				for (int n=0; n<this.Length; n++) {
-					array.SetValue(this[n].zDeserialize(listGenericType,toFieldName+"["+n+"]",deserializeSettings),n);
+			if (type.IsArray)
+			{
+				Array array = Array.CreateInstance(listGenericType, this.Length);
+				for (int n = 0; n < this.Length; n++)
+				{
+					array.SetValue(this[n].zDeserialize(listGenericType, toFieldName + "[" + n + "]", deserializeSettings), n);
 				}
 				return array;
 			}
 
 			object obj = Activator.CreateInstance(type);
 
-			if (!(obj is IList)) {
-				if (type==typeof(object)) {
-					if (deserializeSettings.AllowFieldsToBeObjects) {
+			if (!(obj is IList))
+			{
+				if (type == typeof(object))
+				{
+					if (deserializeSettings.AllowFieldsToBeObjects)
+					{
 						return this.AsList();
 					}
 					throw (DeserializeException.forNonMatchingTypeObject(this, toFieldName));
 				}
-				throw (DeserializeException.forNonMatchingType(this,type,toFieldName));
+				throw (DeserializeException.forNonMatchingType(this, type, toFieldName));
 			}
 			IList iList = (IList)(obj);
 
-			foreach (JValue jValue in this.values) {
+			foreach (JValue jValue in this.values)
+			{
 				iList.Add(jValue.zDeserialize(listGenericType, toFieldName, deserializeSettings));
 			}
 
@@ -1218,17 +1548,22 @@ namespace Leguar.TotalJSON {
 
 		}
 
-		private Type getListGenericType(Type type) {
+		private Type getListGenericType(Type type)
+		{
 			Type iListType = typeof(IList<>);
 			Type[] interfaceTypes = type.GetInterfaces();
-			foreach (Type interfaceType in interfaceTypes) {
-				if (interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition()==iListType) {
+			foreach (Type interfaceType in interfaceTypes)
+			{
+				if (interfaceType.IsGenericType && interfaceType.GetGenericTypeDefinition() == iListType)
+				{
 					Type[] genericArguments = type.GetGenericArguments();
-					if (genericArguments.Length>0) {
+					if (genericArguments.Length > 0)
+					{
 						return genericArguments[0];
 					}
 					Type elementType = type.GetElementType();
-					if (elementType!=null) {
+					if (elementType != null)
+					{
 						return elementType;
 					}
 				}
@@ -1242,12 +1577,17 @@ namespace Leguar.TotalJSON {
 		/// <remarks>
 		/// Typically this is called only for top level JSON. Protecetion can't be cancelled, once it is set, it will stay.
 		/// </remarks>
-		public void SetProtected() {
+		public void SetProtected()
+		{
 			thisProtected = true;
-			foreach (JValue value in values) {
-				if (value is JSON) {
+			foreach (JValue value in values)
+			{
+				if (value is JSON)
+				{
 					((JSON)(value)).SetProtected();
-				} else if (value is JArray) {
+				}
+				else if (value is JArray)
+				{
 					((JArray)(value)).SetProtected();
 				}
 			}
@@ -1259,7 +1599,8 @@ namespace Leguar.TotalJSON {
 		/// <returns>
 		/// <c>true</c> if this object is protected, <c>false</c> otherwise
 		/// </returns>
-		public bool IsProtected() {
+		public bool IsProtected()
+		{
 			return thisProtected;
 		}
 
@@ -1272,7 +1613,8 @@ namespace Leguar.TotalJSON {
 		/// <param name="debugName">
 		/// Name of this object in debug window.
 		/// </param>
-		public void DebugInEditor(string debugName) {
+		public void DebugInEditor(string debugName)
+		{
 #if UNITY_EDITOR
 			JSONRuntimeDebugContainer jsonRuntimeDebugContainer = InternalTools.getDebugContainer();
 			jsonRuntimeDebugContainer.add(debugName, this);

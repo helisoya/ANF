@@ -15,23 +15,32 @@ MonoBehaviour:
   saveFolder: Saves/
   generalDataPath: General/
   registeredPlayerDataContainers:
-  - rid: 6964546694216155232
+  - id: playerVariableContainer
+    data:
+      rid: 1438066020397613127
   registeredGlobalDataContainers: []
   registeredWorldComponents:
-  - rid: 1438065909938782282
+  - id: anslManager
+    data:
+      rid: 1438066020397613125
+  registeredGUIComponents:
+  - id: fadeBg
+    data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
+  - id: fadeFg
+    data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
-  anslMaxFunctionsPerFrame: 10
-  anslMaxContexts: 20
-  anslContextStackLength: 10
   references:
     version: 2
     RefIds:
-    - rid: 1438065909938782282
+    - rid: 1438066020397613125
       type: {class: ANSLManager, ns: ANF.ANSL, asm: Assembly-CSharp}
-      data: 
-    - rid: 6964546694216155232
+      data:
+        maxFunctionsPerFrame: 10
+        maxContexts: 20
+        contextStackLength: 10
+    - rid: 1438066020397613127
       type: {class: PlayerVariableContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         randomVariableName: random

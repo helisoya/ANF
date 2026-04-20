@@ -19,14 +19,9 @@ namespace ANF.Persistent
         [Tooltip("Name of the random variable, automatically generated")]
         [SerializeField] private string randomVariableName;
 
-        public string GetJSONName()
-        {
-            return "playerVariables";
-        }
-
         public DataContainer CloneContainer()
         {
-            return new PlayerVariableContainer() { randomVariableName = this.randomVariableName};
+            return new PlayerVariableContainer() { randomVariableName = this.randomVariableName };
         }
 
         public void Initialize(ANFSettings settings)

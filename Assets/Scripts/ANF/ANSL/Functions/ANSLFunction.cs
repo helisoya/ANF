@@ -150,11 +150,6 @@ namespace ANF.ANSL
         /// </summary>
         protected abstract void OnCleanup();
 
-        public virtual string GetJSONName()
-        {
-            return "anslFunction";
-        }
-
         public virtual void Save(JSON json)
         {
         }

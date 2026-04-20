@@ -9,12 +9,6 @@ namespace ANF.Utils
     public interface Jsonable
     {
         /// <summary>
-        /// Gets the object's JSON name
-        /// </summary>
-        /// <returns>Its name</returns>
-        public abstract string GetJSONName();
-
-        /// <summary>
 		/// Saves the object to a json
 		/// </summary>
 		/// <param name="json">The JSON to save to</param>

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using ANF.ANSL;
+using ANF.GUI;
+using ANF.Utils;
 using ANF.World;
 using UnityEngine;
 
@@ -19,13 +21,16 @@ namespace ANF.Persistent
         [Tooltip("Path to the general data files (in Resources/) Ex: variables.txt, maps.txt")]
         public string generalDataPath = "General/";
         [Tooltip("Player datas containers are responsible for datas that are local to a save file (Ex: variables)")]
-        [SerializeReference, SubclassSelector(AllowNull = false)] public DataContainer[] registeredPlayerDataContainers;
+        public ComponentRegisterEntry<DataContainer>[] registeredPlayerDataContainers;
         [Tooltip("Global datas containers are responsible for datas that are not local to a save file (Ex: settings)")]
-        [SerializeReference, SubclassSelector(AllowNull = false)] public DataContainer[] registeredGlobalDataContainers;
+        public ComponentRegisterEntry<DataContainer>[] registeredGlobalDataContainers;
 
         [Header("World")]
         [Tooltip("World components are responsible for individual features. (Ex: Background Manager, ANSL Manager)")]
-        [SerializeReference, SubclassSelector(AllowNull = false)] public WorldComponent[] registeredWorldComponents;
+        public ComponentRegisterEntry<WorldComponent>[] registeredWorldComponents;
+        [Tooltip("GUI components are responsible for drawing things on screen. (Ex : Pause menu, Fade, Dialogs, ...)")]
+        public GUIRegisterEntry<GUIComponent>[] registeredGUIComponents;
+
 
         [Header("ANSL")]
         [Tooltip("ANSL source files location")]

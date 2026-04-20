@@ -1,3 +1,4 @@
+using ANF.Utils;
 using ANF.World;
 using Leguar.TotalJSON;
 using System;
@@ -15,17 +16,19 @@ namespace ANF.Persistent
     public class DataManager
     {
         public string name { get; private set; }
-        private DataContainer[] containers;
-        
-        public DataManager(string name, DataContainer[] containers, ANFSettings settings)
+        private Dictionary<string, DataContainer> containers;
+
+        public DataManager(string name, ComponentRegisterEntry<DataContainer>[] containers, ANFSettings settings)
         {
             this.name = name;
-            this.containers = new DataContainer[containers.Length];
+            this.containers = new Dictionary<string, DataContainer>();
 
-            for (int i = 0; i < containers.Length; i++)
+            foreach (ComponentRegisterEntry<DataContainer> entry in containers)
             {
-                this.containers[i] = containers[i].CloneContainer();
-                this.containers[i].Initialize(settings);
+                DataContainer copy = entry.data.CloneContainer();
+                copy.Initialize(settings);
+
+                this.containers.Add(entry.id, copy);
             }
         }
 
@@ -37,7 +40,29 @@ namespace ANF.Persistent
 		/// <returns>True if the container was found</returns>
         public bool GetDataContainer<T>(out T result) where T : DataContainer
         {
-            foreach (DataContainer container in containers)
+            foreach (DataContainer container in containers.Values)
+            {
+                if (container.GetType().IsSubclassOf(typeof(T)) || container.GetType() == typeof(T))
+                {
+                    result = (T)container;
+                    return true;
+                }
+            }
+
+            result = default;
+            return false;
+        }
+
+        /// <summary>
+        /// Gets a specific data container
+        /// </summary>
+        /// <typeparam name="id">The container's id</typeparam>
+        /// <typeparam name="T">The container's type</typeparam>
+        /// <param name="result">The out result</param>
+        /// <returns>True if the container was found</returns>
+        public bool GetDataContainer<T>(string id, out T result) where T : DataContainer
+        {
+            if (containers.TryGetValue(id, out DataContainer container))
             {
                 if (container.GetType().IsSubclassOf(typeof(T)) || container.GetType() == typeof(T))
                 {
@@ -56,9 +81,9 @@ namespace ANF.Persistent
 		/// <param name="json">The data containers</param>
         public void Load(JSON json)
         {
-            foreach (DataContainer container in containers)
-                if (json.ContainsKey(container.GetJSONName()))
-                    container.Load(json.GetJSON(container.GetJSONName()));
+            foreach (string key in containers.Keys)
+                if (json.ContainsKey(key))
+                    containers[key].Load(json.GetJSON(key));
         }
 
         /// <summary>
@@ -70,11 +95,11 @@ namespace ANF.Persistent
             JSON dataJSON = new JSON();
             JSON individualDataJson;
 
-            foreach (DataContainer container in containers)
+            foreach (string containerId in containers.Keys)
             {
                 individualDataJson = new JSON();
-                container.Save(individualDataJson);
-                dataJSON.Add(container.GetJSONName(), individualDataJson);
+                containers[containerId].Save(individualDataJson);
+                dataJSON.Add(containerId, individualDataJson);
             }
 
             json.Add(name, dataJSON);
