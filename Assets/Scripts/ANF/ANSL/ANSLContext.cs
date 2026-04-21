@@ -68,7 +68,7 @@ public class ANSLContext : Jsonable
                 scriptStack.Add(new ANSLContextStackEntry() { filePath = currentFilePath, lineCounter = currentLine + 1 });
             }
 
-            currentFilePath = scriptFilePath;
+            currentFilePath = fullPath;
             currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(fullPath)).ToArray();
             lastFunctionModifiedLine = true;
             currentLine = startLine;
@@ -270,7 +270,6 @@ public class ANSLContext : Jsonable
     public void Load(JSON json)
     {
         scriptStack.Clear();
-        currentScript = null;
 
         if (json.ContainsKey("isRunning"))
             isRunning = json.GetBool("isRunning");
@@ -287,13 +286,10 @@ public class ANSLContext : Jsonable
         if (json.ContainsKey("currentFunctionDepth"))
             currentFunctionDepth = json.GetJNumber("currentFunctionDepth").AsUInt();
 
-        string currentFilepath = null;
-        uint currentLineIndex = 0;
-
         if (json.ContainsKey("currentLine"))
-            currentLineIndex = json.GetJNumber("currentLine").AsUInt();
+            currentLine = json.GetJNumber("currentLine").AsUInt();
         if (json.ContainsKey("currentFilePath"))
-            currentFilepath = json.GetString("currentFilePath");
+            currentFilePath = json.GetString("currentFilePath");
 
         if (json.ContainsKey("scriptStack"))
         {
@@ -310,10 +306,11 @@ public class ANSLContext : Jsonable
             }
         }
 
-        if (isRunning && currentScript != null)
+
+
+        if (isRunning)
         {
-            currentLine = currentLineIndex;
-            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(currentFilepath)).ToArray();
+            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(currentFilePath)).ToArray();
 
             if (waitingForFunction && json.ContainsKey("currentFunctionParameters"))
             {
