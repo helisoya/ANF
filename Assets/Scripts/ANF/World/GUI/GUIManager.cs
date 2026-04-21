@@ -60,7 +60,10 @@ namespace ANF.GUI
             return false;
         }
 
-        private void Update()
+        /// <summary>
+        /// Updates the manager
+        /// </summary>
+        public void UpdateManager()
         {
             foreach (GUIComponent component in guiComponents.Values)
             {
@@ -69,6 +72,10 @@ namespace ANF.GUI
             }
         }
 
+        /// <summary>
+        /// Initialize the manager
+        /// </summary>
+        /// <param name="manager">The ANFManager</param>
         public void Initialize(ANFManager manager)
         {
             this.manager = manager;

@@ -81,9 +81,22 @@ namespace ANF.World
                 if (component.isEnabled)
                     component.Update();
             }
+
+            guiManager.UpdateManager();
         }
 
         void Start()
+        {
+            InitializeComponents();
+
+            if (debugEnabled && GetWorldComponent(out ANSLManager anslManager))
+                anslManager.StartNewContext(debugScriptToLoad);
+        }
+
+        /// <summary>
+        /// Initialize the various components (GUI & World Components)
+        /// </summary>
+        private void InitializeComponents()
         {
             guiManager = GetComponent<GUIManager>();
             guiManager.Initialize(this);
@@ -97,9 +110,6 @@ namespace ANF.World
                 copy.Initialize(this);
                 worldComponents.Add(entry.id, copy);
             }
-
-            if (debugEnabled && GetWorldComponent(out ANSLManager anslManager))
-                anslManager.StartNewContext(debugScriptToLoad);
         }
 
         public void Save(JSON json)

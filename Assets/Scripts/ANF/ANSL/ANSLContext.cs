@@ -77,6 +77,7 @@ public class ANSLContext : Jsonable
         }
         else
         {
+            Debug.LogError($"File not found : {fullPath}");
             // No file, do something ?
             StopContext();
         }
@@ -107,6 +108,7 @@ public class ANSLContext : Jsonable
             if (split.Length == 0 || string.IsNullOrEmpty(currentScript[currentLine]) ||
                 !uint.TryParse(split[0], out functionId) || !functions.ContainsKey(functionId))
             {
+                Debug.LogError($"Could not parse/find function for : {currentScript[currentLine]}");
                 // Could not parse/find function
                 NextLine();
                 return;
@@ -117,6 +119,7 @@ public class ANSLContext : Jsonable
 
                 if (parameters == null)
                 {
+                    Debug.LogError($"Could not parse parameters for : {currentScript[currentLine]}");
                     // Parameters couldn't be parsed
                     NextLine();
                     return;

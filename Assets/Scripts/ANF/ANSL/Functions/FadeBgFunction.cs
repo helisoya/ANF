@@ -14,8 +14,7 @@ namespace ANF.ANSL
         functionBody: "fadeBg",
         functionAutoComplete: new string[] {
             "fadeBg(Alpha;WaitForEnd)",
-            "fadeBg(Alpha;WaitForEnd;Immediate)",
-            "fadeBg(Alpha;WaitForEnd;Immediate;Speed)" },
+            "fadeBg(Alpha;WaitForEnd;Speed)" },
         functionDesc: "Fades the Background to a specific value")]
     public class FadeBgFunction : ANSLFunction
     {
@@ -26,29 +25,24 @@ namespace ANF.ANSL
         {
             return new FunctionParameterType[][] {
                 new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.BOOL},
-                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.BOOL, FunctionParameterType.BOOL},
-                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.BOOL, FunctionParameterType.BOOL, FunctionParameterType.FLOAT},
+                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.BOOL, FunctionParameterType.FLOAT},
             };
         }
 
         protected override void OnStartProcess()
         {
-            if (parameters.GetParameter(0, out float target))
+            if (parameters.GetParameter(0, out float target) &&
+                parameters.GetParameter(1, out waitingForFading))
             {
-                bool immediate;
                 float speed;
 
-                if (!parameters.GetParameter(1, out waitingForFading))
-                    waitingForFading = true;
-                if (!parameters.GetParameter(2, out immediate))
-                    immediate = false;
-                if (!parameters.GetParameter(3, out speed))
+                if (!parameters.GetParameter(2, out speed))
                     speed = 1.0f;
 
                 manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeBg", out currentFade);
 
                 if (currentFade != null)
-                    currentFade.FadeTo(target, immediate, speed);
+                    currentFade.FadeTo(target, false, speed);
 
                 if (!waitingForFading || currentFade == null)
                     EndProcess();
@@ -60,10 +54,7 @@ namespace ANF.ANSL
             if (currentFade == null)
                 manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeBg", out currentFade);
 
-            if (currentFade == null)
-                return;
-
-            if (!currentFade.fading)
+            if (currentFade != null && !currentFade.fading)
             {
                 waitingForFading = false;
                 EndProcess();

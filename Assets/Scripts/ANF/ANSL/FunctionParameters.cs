@@ -322,8 +322,11 @@ namespace ANF.ANSL
         /// <returns>True if valid</returns>
         private bool CheckIfValid()
         {
-            if (template == null || parameters == null)
+            if (template == null)
                 return false;
+
+            if (template.Length == 0)
+                return parameters == null;
 
             FunctionParameterType lastType = template.Length == 0 ? FunctionParameterType.UNKNOWN : template[template.Length - 1];
             if (parameters.Length != template.Length &&
@@ -428,7 +431,7 @@ namespace ANF.ANSL
     }
 
     /// <summary>
-    /// Base types for enums
+    /// Base types for parameters
     /// </summary>
     public enum FunctionParameterType
     {

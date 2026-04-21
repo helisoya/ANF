@@ -1,0 +1,49 @@
+using ANF.ANSL;
+using ANF.GUI;
+using Leguar.TotalJSON;
+using UnityEngine;
+
+
+namespace ANF.ANSL
+{
+    /// <summary>
+    /// The Set Fg function sets immediately the Foreground's fade alpha without transition
+    /// </summary>
+    [ANSLFunctionAttribute(
+        functionId: 16,
+        functionBody: "setFg",
+        functionAutoComplete: new string[] {
+            "setFg(Alpha)" },
+        functionDesc: "Sets the Foreground's alpha to a specific value")]
+    public class SetFgFunction : ANSLFunction
+    {
+
+        public override FunctionParameterType[][] GetParametersTemplates()
+        {
+            return new FunctionParameterType[][] {
+                new FunctionParameterType[]{FunctionParameterType.FLOAT},
+            };
+        }
+
+        protected override void OnStartProcess()
+        {
+            if (parameters.GetParameter(0, out float target) &&
+                manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeFg", out GUI.Fade currentFade))
+            {
+                currentFade.FadeTo(target, true);
+            }
+            EndProcess();
+        }
+
+        protected override void OnUpdate()
+        {
+            // Unused
+        }
+
+        protected override void OnCleanup()
+        {
+            // Unused
+        }
+    }
+}
+

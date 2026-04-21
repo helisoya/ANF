@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 using ANF.Utils;
 using ANF.World;
 using Leguar.TotalJSON;
+using UnityEngine;
 
 namespace ANF.ANSL
 {
@@ -46,9 +48,9 @@ namespace ANF.ANSL
         {
             compiledLines = new List<string>();
 
-            string[] split = cleanedLine.Split(new char[] { '(', ')' }, System.StringSplitOptions.RemoveEmptyEntries);
+            string[] split = cleanedLine.Split(new char[] { '(', ')' });
 
-            if (split.Length != 2)
+            if (split.Length > 3 || split[2].Length != 0)
             {
                 // More than one pair of () found
                 errors.Add(new ANSLUtils.ANSLError()
@@ -62,6 +64,8 @@ namespace ANF.ANSL
             }
 
             string[] parameters = split[1].Split(';');
+            if (parameters.Length == 1 && parameters[0].Length == 0)
+                parameters = null;
 
             if (ANSLUtils.CreateParametersInterface(parameters, GetParametersTemplates()) == null)
             {
@@ -78,9 +82,12 @@ namespace ANF.ANSL
 
             string compiledLine = GetAttribute().functionId.ToString();
 
-            foreach (string parameter in parameters)
+            if(parameters != null)
             {
-                compiledLine += "|" + parameter;
+                foreach (string parameter in parameters)
+                {
+                    compiledLine += "|" + parameter;
+                }
             }
 
             compiledLines.Add(compiledLine);

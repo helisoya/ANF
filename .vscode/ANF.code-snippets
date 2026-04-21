@@ -1,4 +1,16 @@
 {
+	"19_0": {
+		"scope": "ansl",
+		"prefix": "autosave",
+		"body": ["autosave()"],
+		"description": "Starts an autosave"
+	},
+	"19_1": {
+		"scope": "ansl",
+		"prefix": "autosave",
+		"body": ["autosave(SaveIndex)"],
+		"description": "Starts an autosave"
+	},
 	"11_0": {
 		"scope": "ansl",
 		"prefix": "block",
@@ -26,13 +38,7 @@
 	"12_1": {
 		"scope": "ansl",
 		"prefix": "fadeBg",
-		"body": ["fadeBg(Alpha;WaitForEnd;Immediate)"],
-		"description": "Fades the Background to a specific value"
-	},
-	"12_2": {
-		"scope": "ansl",
-		"prefix": "fadeBg",
-		"body": ["fadeBg(Alpha;WaitForEnd;Immediate;Speed)"],
+		"body": ["fadeBg(Alpha;WaitForEnd;Speed)"],
 		"description": "Fades the Background to a specific value"
 	},
 	"13_0": {
@@ -44,13 +50,7 @@
 	"13_1": {
 		"scope": "ansl",
 		"prefix": "fadeFg",
-		"body": ["fadeFg(Alpha;WaitForEnd;Immediate)"],
-		"description": "Fades the Foreground to a specific value"
-	},
-	"13_2": {
-		"scope": "ansl",
-		"prefix": "fadeFg",
-		"body": ["fadeFg(Alpha;WaitForEnd;Immediate;Speed)"],
+		"body": ["fadeFg(Alpha;WaitForEnd;Speed)"],
 		"description": "Fades the Foreground to a specific value"
 	},
 	"8_0": {
@@ -101,11 +101,23 @@
 		"body": ["colorBg(R;G;B;A)"],
 		"description": "Changes the color of the background fade"
 	},
+	"17_0": {
+		"scope": "ansl",
+		"prefix": "setBg",
+		"body": ["setBg(Alpha)"],
+		"description": "Sets the Background's alpha to a specific value"
+	},
 	"15_0": {
 		"scope": "ansl",
 		"prefix": "colorFg",
 		"body": ["colorFg(R;G;B;A)"],
 		"description": "Changes the color of the foreground fade"
+	},
+	"16_0": {
+		"scope": "ansl",
+		"prefix": "setFg",
+		"body": ["setFg(Alpha)"],
+		"description": "Sets the Foreground's alpha to a specific value"
 	},
 	"10_0": {
 		"scope": "ansl",

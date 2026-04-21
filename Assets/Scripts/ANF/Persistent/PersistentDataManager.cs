@@ -1,3 +1,4 @@
+using ANF.Utils;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,13 @@ namespace ANF.Persistent
                 instance = this;
                 playerData = new DataManager("saveData",anfSettings.registeredPlayerDataContainers,anfSettings);
                 globalData = new DataManager("globalData", anfSettings.registeredGlobalDataContainers, anfSettings);
+
+                string globalDataSaveFile = FileManager.savPath + anfSettings.saveFolder + "global.json";
+                if (SaveUtils.FileExists(globalDataSaveFile))
+                    SaveUtils.LoadGlobalData(globalData, globalDataSaveFile);
+                else
+                    SaveUtils.SaveGlobalData(globalData, globalDataSaveFile);
+
                 DontDestroyOnLoad(gameObject);
             }
             else

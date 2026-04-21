@@ -92,17 +92,14 @@ namespace ANF.Persistent
 		/// <param name="json">The json</param>
         public void Save(JSON json)
         {
-            JSON dataJSON = new JSON();
             JSON individualDataJson;
 
             foreach (string containerId in containers.Keys)
             {
                 individualDataJson = new JSON();
                 containers[containerId].Save(individualDataJson);
-                dataJSON.Add(containerId, individualDataJson);
+                json.Add(containerId, individualDataJson);
             }
-
-            json.Add(name, dataJSON);
         }
     }
 }
