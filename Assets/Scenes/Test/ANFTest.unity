@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFManager
   debugEnabled: 1
-  debugScriptToLoad: ANF/Tests/Block
+  debugScriptToLoad: ANF/Tests/Fade
 --- !u!114 &2092936273
 MonoBehaviour:
   m_ObjectHideFlags: 0

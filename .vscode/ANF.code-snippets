@@ -17,6 +17,42 @@
 		"body": ["clearStack(ContextIndex)"],
 		"description": "Clears the context's stack. Can also clear other context's"
 	},
+	"12_0": {
+		"scope": "ansl",
+		"prefix": "fadeBg",
+		"body": ["fadeBg(Alpha;WaitForEnd)"],
+		"description": "Fades the Background to a specific value"
+	},
+	"12_1": {
+		"scope": "ansl",
+		"prefix": "fadeBg",
+		"body": ["fadeBg(Alpha;WaitForEnd;Immediate)"],
+		"description": "Fades the Background to a specific value"
+	},
+	"12_2": {
+		"scope": "ansl",
+		"prefix": "fadeBg",
+		"body": ["fadeBg(Alpha;WaitForEnd;Immediate;Speed)"],
+		"description": "Fades the Background to a specific value"
+	},
+	"13_0": {
+		"scope": "ansl",
+		"prefix": "fadeFg",
+		"body": ["fadeFg(Alpha;WaitForEnd)"],
+		"description": "Fades the Foreground to a specific value"
+	},
+	"13_1": {
+		"scope": "ansl",
+		"prefix": "fadeFg",
+		"body": ["fadeFg(Alpha;WaitForEnd;Immediate)"],
+		"description": "Fades the Foreground to a specific value"
+	},
+	"13_2": {
+		"scope": "ansl",
+		"prefix": "fadeFg",
+		"body": ["fadeFg(Alpha;WaitForEnd;Immediate;Speed)"],
+		"description": "Fades the Foreground to a specific value"
+	},
 	"8_0": {
 		"scope": "ansl",
 		"prefix": "if",
@@ -58,6 +94,18 @@
 		"prefix": "return",
 		"body": ["return()"],
 		"description": "Stops the current script"
+	},
+	"14_0": {
+		"scope": "ansl",
+		"prefix": "colorBg",
+		"body": ["colorBg(R;G;B;A)"],
+		"description": "Changes the color of the background fade"
+	},
+	"15_0": {
+		"scope": "ansl",
+		"prefix": "colorFg",
+		"body": ["colorFg(R;G;B;A)"],
+		"description": "Changes the color of the foreground fade"
 	},
 	"10_0": {
 		"scope": "ansl",

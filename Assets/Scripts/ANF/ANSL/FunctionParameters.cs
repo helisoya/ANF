@@ -132,7 +132,7 @@ namespace ANF.ANSL
             if (isValid && parameterIndex >= 0 && parameterIndex < parameters.Length
                 && template[parameterIndex] == FunctionParameterType.FLOAT)
             {
-                if (float.TryParse(parameters[parameterIndex],System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out value))
+                if (float.TryParse(parameters[parameterIndex], System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out value))
                     return true;
             }
 
@@ -152,6 +152,8 @@ namespace ANF.ANSL
                 && template[parameterIndex] == FunctionParameterType.STRING)
             {
                 value = parameters[parameterIndex];
+                if (value.ToLower().Equals("null"))
+                    value = null;
                 return true;
             }
 
@@ -173,7 +175,12 @@ namespace ANF.ANSL
                 int listSize = parameters.Length - parameterIndex;
                 value = new string[listSize];
                 for (int i = 0; i < listSize; i++)
+                {
                     value[i] = parameters[parameterIndex + i];
+                    if (value[i].ToLower().Equals("null"))
+                        value[i] = null;
+                }
+
                 return true;
             }
 
