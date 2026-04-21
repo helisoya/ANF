@@ -12,10 +12,11 @@ namespace ANF.World
     /// <summary>
     /// Handles persistent data and other Manager
     /// </summary>
-    [RequireComponent(typeof(GUIManager))]
     public class ANFManager : MonoBehaviour, Jsonable
     {
-        private Dictionary<string, WorldComponent> worldComponents;
+        [Header("General")]
+        [SerializeField] private Transform uiRoot;
+        private World world;
         private GUIManager guiManager;
 
         [Header("Debug")]
@@ -33,71 +34,41 @@ namespace ANF.World
         }
 
         /// <summary>
-        /// Gets a world component
-        /// </summary>
-        /// <typeparam name="T">The type to search</typeparam>
-        /// <param name="result">The component if found</param>
-        /// <returns>True if the component was found</returns>
-        public bool GetWorldComponent<T>(out T result) where T : WorldComponent
+		/// Gets the world
+		/// </summary>
+		/// <returns>The world</returns>
+        public World GetWorld()
         {
-            foreach (WorldComponent component in worldComponents.Values)
-            {
-                if (component.GetType() == typeof(T) || component.GetType().IsSubclassOf(typeof(T)))
-                {
-                    result = (T)component;
-                    return true;
-                }
-            }
-            result = default;
-            return false;
-        }
-
-        /// <summary>
-        /// Gets a world component
-        /// </summary>
-        /// <typeparam name="id">The component's id</typeparam>
-        /// <typeparam name="T">The type to search</typeparam>
-        /// <param name="result">The component if found</param>
-        /// <returns>True if the component was found</returns>
-        public bool GetWorldComponent<T>(string id, out T result) where T : WorldComponent
-        {
-            if (worldComponents.TryGetValue(id, out WorldComponent component))
-            {
-
-                if (component.GetType() == typeof(T) || component.GetType().IsSubclassOf(typeof(T)))
-                {
-                    result = (T)component;
-                    return true;
-                }
-            }
-
-            result = default;
-            return false;
+            return world;
         }
 
         void Update()
         {
-            foreach (WorldComponent component in worldComponents.Values)
-            {
-                if (component.isEnabled)
-                    component.Update();
-            }
-
-            guiManager.UpdateManager();
+            world.OnUpdate();
+            guiManager.OnUpdate();
         }
 
         void Start()
         {
             InitializeComponents();
+            OnStartComponents();
 
-
-            if(debugAutoSaveLoad)
+            if (debugAutoSaveLoad)
             {
                 string savePath = Utils.FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder + "autosave.json";
                 SaveUtils.LoadPlayerData(PersistentDataManager.instance.GetPlayerData(), this, savePath);
             }
-            else if (debugEnabled && GetWorldComponent(out ANSLManager anslManager))
+            else if (debugEnabled && world.GetComponent(out ANSLManager anslManager))
                 anslManager.StartNewContext(debugScriptToLoad);
+        }
+
+        /// <summary>
+		/// Calls the On Start callback on all components
+		/// </summary>
+        private void OnStartComponents()
+        {
+            world.OnStart();
+            guiManager.OnStart();
         }
 
         /// <summary>
@@ -105,44 +76,28 @@ namespace ANF.World
         /// </summary>
         private void InitializeComponents()
         {
-            guiManager = GetComponent<GUIManager>();
-            guiManager.Initialize(this);
-
-
-            ComponentRegisterEntry<WorldComponent>[] componentsToCopy = PersistentDataManager.instance.GetANFSettings().registeredWorldComponents;
-            worldComponents = new Dictionary<string, WorldComponent>();
-            foreach (ComponentRegisterEntry<WorldComponent> entry in componentsToCopy)
-            {
-                WorldComponent copy = entry.data.CloneComponent();
-                copy.Initialize(this);
-                worldComponents.Add(entry.id, copy);
-            }
+            guiManager = new GUIManager(this, uiRoot, PersistentDataManager.instance.GetANFSettings().registeredGUIComponents);
+            world = new World(this, PersistentDataManager.instance.GetANFSettings().registeredWorldComponents);
         }
 
         public void Save(JSON json)
         {
-            JSON individualDataJson;
-
-            foreach (string containerId in worldComponents.Keys)
-            {
-                individualDataJson = new JSON();
-                worldComponents[containerId].Save(individualDataJson);
-                json.Add(containerId, individualDataJson);
-            }
+            JSON individualDataJson = new JSON();
+            world.Save(individualDataJson);
+            json.Add("world", individualDataJson);
 
             individualDataJson = new JSON();
             guiManager.Save(individualDataJson);
-            json.Add("guiManager", individualDataJson);
+            json.Add("gui", individualDataJson);
         }
 
         public void Load(JSON json)
         {
-            if (json.ContainsKey("guiManager"))
-                guiManager.Load(json.GetJSON("guiManager"));
+            if (json.ContainsKey("gui"))
+                guiManager.Load(json.GetJSON("gui"));
 
-            foreach (string key in worldComponents.Keys)
-                if (json.ContainsKey(key))
-                    worldComponents[key].Load(json.GetJSON(key));
+            if (json.ContainsKey("world"))
+                world.Load(json.GetJSON("world"));
         }
     }
 }

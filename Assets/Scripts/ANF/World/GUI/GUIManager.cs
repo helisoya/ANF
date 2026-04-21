@@ -10,104 +10,30 @@ namespace ANF.GUI
     /// <summary>
     /// Handles the ANF GUI
     /// </summary>
-    public class GUIManager : MonoBehaviour, Jsonable
+    public class GUIManager : ANFComponentManager<GUIComponent>
     {
-        [SerializeField] private Transform uiRoot;
-
+        private Transform uiRoot;
         private ANFManager manager;
-        private Dictionary<string, GUIComponent> guiComponents;
-
-        /// <summary>
-		/// Gets a gui component
-		/// </summary>
-		/// <typeparam name="T">The type to search</typeparam>
-		/// <param name="result">The component if found</param>
-		/// <returns>True if the component was found</returns>
-        public bool GetGUIComponent<T>(out T result) where T : GUIComponent
-        {
-            foreach (GUIComponent component in guiComponents.Values)
-            {
-                if (component.GetType() == typeof(T) || component.GetType().IsSubclassOf(typeof(T)))
-                {
-                    result = (T)component;
-                    return true;
-                }
-            }
-            result = default;
-            return false;
-        }
-
-        /// <summary>
-        /// Gets a gui component
-        /// </summary>
-        /// <typeparam name="id">The component's id</typeparam>
-        /// <typeparam name="T">The type to search</typeparam>
-        /// <param name="result">The component if found</param>
-        /// <returns>True if the component was found</returns>
-        public bool GetGUIComponent<T>(string id, out T result) where T : GUIComponent
-        {
-            if (guiComponents.TryGetValue(id, out GUIComponent component))
-            {
-
-                if (component.GetType() == typeof(T) || component.GetType().IsSubclassOf(typeof(T)))
-                {
-                    result = (T)component;
-                    return true;
-                }
-            }
-
-            result = default;
-            return false;
-        }
-
-        /// <summary>
-        /// Updates the manager
-        /// </summary>
-        public void UpdateManager()
-        {
-            foreach (GUIComponent component in guiComponents.Values)
-            {
-                if (component.isOpen)
-                    component.UpdateComponent();
-            }
-        }
 
         /// <summary>
         /// Initialize the manager
         /// </summary>
         /// <param name="manager">The ANFManager</param>
-        public void Initialize(ANFManager manager)
+        /// <param name="uiRoot">The UI's root</param>
+        /// <param name="componentsToCopy">The registered UI components</param>
+        public GUIManager(ANFManager manager, Transform uiRoot, GUIRegisterEntry<GUIComponent>[] componentsToCopy)
         {
+            this.uiRoot = uiRoot;
             this.manager = manager;
 
-            GUIRegisterEntry<GUIComponent>[] componentsToCopy = PersistentDataManager.instance.GetANFSettings().registeredGUIComponents;
-            guiComponents = new Dictionary<string, GUIComponent>();
+            components = new Dictionary<string, GUIComponent>();
             foreach (GUIRegisterEntry<GUIComponent> entry in componentsToCopy)
             {
-                GUIComponent instance = Instantiate(entry.data, uiRoot);
+                GUIComponent instance = Object.Instantiate(entry.data, uiRoot);
                 instance.name = entry.id;
                 instance.Initialize(manager, this);
-                guiComponents.Add(entry.id, instance);
+                components.Add(entry.id, instance);
             }
-        }
-
-        public void Save(JSON json)
-        {
-            JSON individualDataJson;
-
-            foreach (string containerId in guiComponents.Keys)
-            {
-                individualDataJson = new JSON();
-                guiComponents[containerId].Save(individualDataJson);
-                json.Add(containerId, individualDataJson);
-            }
-        }
-
-        public void Load(JSON json)
-        {
-            foreach (string key in guiComponents.Keys)
-                if (json.ContainsKey(key))
-                    guiComponents[key].Load(json.GetJSON(key));
         }
     }
 }

@@ -10,7 +10,7 @@ namespace ANF.GUI
     /// Represents a GUI Component
     /// </summary>
     [System.Serializable]
-    public abstract class GUIComponent : MonoBehaviour, Jsonable
+    public abstract class GUIComponent : MonoBehaviour, ANFComponent
     {
         [Header("General")]
         [SerializeField] protected GameObject root;
@@ -30,13 +30,10 @@ namespace ANF.GUI
             this.gui = gui;
             OnInitialize();
 
-            root.SetActive(!openByDefault);
-
+            root.SetActive(false);
 
             if (openByDefault)
                 Open();
-            else
-                Close();
         }
 
         /// <summary>
@@ -62,16 +59,6 @@ namespace ANF.GUI
                 OnClose();
             }
         }
-
-        /// <summary>
-		/// Updates the GUI Component
-		/// </summary>
-        public abstract void UpdateComponent();
-
-        /// <summary>
-		/// On Initialize Callback
-		/// </summary>
-        protected abstract void OnInitialize();
 
         /// <summary>
 		/// On Open callback
@@ -116,5 +103,9 @@ namespace ANF.GUI
 		/// </summary>
 		/// <param name="json">The JSON to load from</param>
         protected abstract void OnLoad(JSON json);
+
+        public abstract void OnInitialize();
+        public abstract void OnUpdate();
+        public abstract void OnStart();
     }
 }

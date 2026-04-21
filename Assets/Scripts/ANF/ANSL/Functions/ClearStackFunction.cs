@@ -27,7 +27,7 @@ namespace ANF.ANSL
                 context.ClearStack();
             else if (parameters.GetParameter(0, out uint contextId))
             {
-                if (manager.GetWorldComponent(out ANSLManager anslManager))
+                if (manager.GetWorld().GetComponent(out ANSLManager anslManager))
                 {
                     ANSLContext otherContext = anslManager.GetContext(contextId);
                     if (otherContext != null && otherContext.isRunning)

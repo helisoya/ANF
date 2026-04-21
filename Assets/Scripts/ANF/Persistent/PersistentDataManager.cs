@@ -14,16 +14,16 @@ namespace ANF.Persistent
 
         [Header("Data")]
         [SerializeField] private ANFSettings anfSettings;
-        [SerializeField] private DataManager playerData;
-        [SerializeField] private DataManager globalData;
+        [SerializeField] private ContainerManager playerData;
+        [SerializeField] private ContainerManager globalData;
 
         void Awake()
         {
             if (!instance)
             {
                 instance = this;
-                playerData = new DataManager("saveData",anfSettings.registeredPlayerDataContainers,anfSettings);
-                globalData = new DataManager("globalData", anfSettings.registeredGlobalDataContainers, anfSettings);
+                playerData = new ContainerManager(anfSettings.registeredPlayerDataContainers, anfSettings);
+                globalData = new ContainerManager(anfSettings.registeredGlobalDataContainers, anfSettings);
 
                 string globalDataSaveFile = FileManager.savPath + anfSettings.saveFolder + "global.json";
                 if (SaveUtils.FileExists(globalDataSaveFile))
@@ -52,7 +52,7 @@ namespace ANF.Persistent
 		/// Gets the player's data (data that is local to a save)
 		/// </summary>
 		/// <returns>The player's data</returns>
-        public DataManager GetPlayerData()
+        public ContainerManager GetPlayerData()
         {
             return playerData;
         }
@@ -61,7 +61,7 @@ namespace ANF.Persistent
         /// Gets the global data (data that is not local to a save, ex: Settings)
         /// </summary>
         /// <returns>The global data</returns>
-        public DataManager GetGlobalData()
+        public ContainerManager GetGlobalData()
         {
             return globalData;
         }

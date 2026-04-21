@@ -57,7 +57,7 @@ namespace ANF.Utils
         /// <param name="globalData">The global data manager</param>
         /// <param name="savePath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool SaveGlobalData(DataManager globalData, string savePath)
+        public static bool SaveGlobalData(ContainerManager globalData, string savePath)
         {
             JSON json = new JSON();
 
@@ -74,7 +74,7 @@ namespace ANF.Utils
         /// <param name="globalData">The global data manager</param>
         /// <param name="loadPath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool LoadGlobalData(DataManager globalData, string loadPath)
+        public static bool LoadGlobalData(ContainerManager globalData, string loadPath)
         {
             JSON loadedJSON = LoadJSON(loadPath);
             if (loadedJSON == null)
@@ -93,7 +93,7 @@ namespace ANF.Utils
         /// <param name="anfManager">The ANF Manager</param>
         /// <param name="savePath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool SavePlayerData(DataManager playerData, ANFManager anfManager, string savePath)
+        public static bool SavePlayerData(ContainerManager playerData, ANFManager anfManager, string savePath)
         {
             JSON json = new JSON();
 
@@ -103,7 +103,7 @@ namespace ANF.Utils
 
             partJSON = new JSON();
             anfManager.Save(partJSON);
-            json.Add("worldData",partJSON);
+            json.Add("worldData", partJSON);
 
             FileManager.SaveFile(savePath, json.CreateString());
 
@@ -117,7 +117,7 @@ namespace ANF.Utils
         /// <param name="anfManager">The ANF Manager</param>
         /// <param name="loadPath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool LoadPlayerData(DataManager playerData, ANFManager anfManager, string loadPath)
+        public static bool LoadPlayerData(ContainerManager playerData, ANFManager anfManager, string loadPath)
         {
             JSON loadedJSON = LoadJSON(loadPath);
             if (loadedJSON == null)

@@ -26,7 +26,7 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
-            if (PersistentDataManager.instance.GetPlayerData().GetDataContainer(out PlayerVariableContainer container))
+            if (PersistentDataManager.instance.GetPlayerData().GetComponent(out PlayerVariableContainer container))
             {
                 if (parameters.GetParameter(0, out string newName))
                     container.SetPlayerName(newName);

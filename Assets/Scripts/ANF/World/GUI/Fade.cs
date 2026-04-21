@@ -43,7 +43,7 @@ namespace ANF.GUI
             fading = !immediate;
         }
 
-        public override void UpdateComponent()
+        public override void OnUpdate()
         {
             if (fading)
             {
@@ -60,7 +60,7 @@ namespace ANF.GUI
         }
 
 
-        protected override void OnInitialize()
+        public override void OnInitialize()
         {
             fading = false;
             targetAlpha = canvasGroup.alpha;
@@ -76,6 +76,10 @@ namespace ANF.GUI
             // Unused
         }
 
+        public override void OnStart()
+        {
+            // Unused
+        }
 
         protected override void OnLoad(JSON json)
         {

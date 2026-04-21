@@ -294,7 +294,7 @@ namespace ANF.ANSL
         {
             int result = defaultIndex;
 
-            if (PersistentDataManager.instance.GetPlayerData().GetDataContainer(out PlayerVariableContainer container) &&
+            if (PersistentDataManager.instance.GetPlayerData().GetComponent(out PlayerVariableContainer container) &&
                 container.GetVariable(variable, out int variableValue))
             {
                 for (int i = 0; i < others.Length; i += 2)

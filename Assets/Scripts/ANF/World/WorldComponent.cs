@@ -9,7 +9,7 @@ namespace ANF.World
     /// Ex : The ANSL manager, the Background, the Characters, ...
 	/// </summary>
     [System.Serializable]
-    public abstract class WorldComponent : Jsonable
+    public abstract class WorldComponent : ANFComponent
     {
         protected ANFManager manager;
         public bool isEnabled { get; protected set; } = true;
@@ -40,16 +40,9 @@ namespace ANF.World
         /// <returns>The cloned component</returns>
         public abstract WorldComponent CloneComponent();
 
-        /// <summary>
-		/// Updates the component
-		/// </summary>
-        public abstract void Update();
-
-        /// <summary>
-		/// On Initialize callback
-		/// </summary>
-        protected abstract void OnInitialize();
-
+        public abstract void OnInitialize();
+        public abstract void OnUpdate();
+        public abstract void OnStart();
         public abstract void Save(JSON json);
         public abstract void Load(JSON json);
     }

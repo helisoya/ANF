@@ -30,7 +30,7 @@ namespace ANF.ANSL
                 parameters.GetParameter(1, out float g) &&
                 parameters.GetParameter(2, out float b) &&
                 parameters.GetParameter(3, out float a) &&
-                manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeBg", out GUI.Fade currentFade))
+                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeBg", out GUI.Fade currentFade))
             {
                 currentFade.SetColor(new Color(r, g, b, a));
             }

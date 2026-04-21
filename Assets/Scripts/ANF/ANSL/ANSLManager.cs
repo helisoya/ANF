@@ -27,9 +27,14 @@ namespace ANF.ANSL
         /// <summary>
         /// Initialize the manager
         /// </summary>
-        protected override void OnInitialize()
+        public override void OnInitialize()
         {
             GenerateContexts(manager);
+        }
+
+        public override void OnStart()
+        {
+            // Unused
         }
 
         /// <summary>
@@ -124,7 +129,7 @@ namespace ANF.ANSL
             };
         }
 
-        public override void Update()
+        public override void OnUpdate()
         {
             foreach (ANSLContext context in contexts)
             {

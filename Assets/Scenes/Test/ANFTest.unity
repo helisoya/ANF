@@ -618,7 +618,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2092936271}
   - component: {fileID: 2092936272}
-  - component: {fileID: 2092936273}
   m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
@@ -653,22 +652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffe38689ebb343b4bab8a250c131a482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFManager
+  uiRoot: {fileID: 740851709}
   debugEnabled: 1
   debugAutoSaveLoad: 0
   debugScriptToLoad: ANF/Tests/Fade
---- !u!114 &2092936273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092936269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f734ee7b6dc140e4b959c14fb8aac67a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.GUIManager
-  uiRoot: {fileID: 740851709}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

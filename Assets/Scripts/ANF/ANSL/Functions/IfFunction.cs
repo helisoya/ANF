@@ -264,7 +264,7 @@ namespace ANF.ANSL
             PlayerVariableContainer variableContainer = null;
             if (!debug)
             {
-                if (!PersistentDataManager.instance.GetPlayerData().GetDataContainer<PlayerVariableContainer>(out variableContainer))
+                if (!PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out variableContainer))
                 {
 
                     result = false;

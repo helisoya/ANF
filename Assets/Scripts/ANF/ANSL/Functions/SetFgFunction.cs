@@ -28,7 +28,7 @@ namespace ANF.ANSL
         protected override void OnStartProcess()
         {
             if (parameters.GetParameter(0, out float target) &&
-                manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeFg", out GUI.Fade currentFade))
+                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out GUI.Fade currentFade))
             {
                 currentFade.FadeTo(target, true);
             }

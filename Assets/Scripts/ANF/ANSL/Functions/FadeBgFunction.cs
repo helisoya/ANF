@@ -39,7 +39,7 @@ namespace ANF.ANSL
                 if (!parameters.GetParameter(2, out speed))
                     speed = 1.0f;
 
-                manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeBg", out currentFade);
+                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeBg", out currentFade);
 
                 if (currentFade != null)
                     currentFade.FadeTo(target, false, speed);
@@ -52,7 +52,7 @@ namespace ANF.ANSL
         protected override void OnUpdate()
         {
             if (currentFade == null)
-                manager.GetGUIManager().GetGUIComponent<GUI.Fade>("fadeBg", out currentFade);
+                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeBg", out currentFade);
 
             if (currentFade != null && !currentFade.fading)
             {
