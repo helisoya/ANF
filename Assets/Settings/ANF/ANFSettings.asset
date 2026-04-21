@@ -12,17 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773bfc7de97ad5247b9061be4feb35ce, type: 3}
   m_Name: ANFSettings
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Persistent.ANFSettings
+  startingScript: ANF/Tests/If2
   saveFolder: Saves/
   generalDataPath: General/
   registeredPlayerDataContainers:
   - id: playerVariableContainer
     data:
       rid: 1438066020397613127
-  registeredGlobalDataContainers: []
+  registeredGlobalDataContainers:
+  - id: loadState
+    data:
+      rid: 1438066042575257694
   registeredWorldComponents:
   - id: anslManager
     data:
       rid: 1438066020397613125
+  - id: stateLoader
+    data:
+      rid: 1438066042575257686
   registeredGUIComponents:
   - id: fadeBg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
@@ -44,3 +51,13 @@ MonoBehaviour:
       type: {class: PlayerVariableContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         randomVariableName: random
+    - rid: 1438066042575257686
+      type: {class: StateLoader, ns: ANF.World, asm: Assembly-CSharp}
+      data:
+        startInDebugMode: 1
+        debugModeScript: ANF/Tests/Fade
+        autoLoadSaveFile: 0
+        saveFileToAutoLoad: autosave.json
+    - rid: 1438066042575257694
+      type: {class: LoadStateContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data: 

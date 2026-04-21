@@ -19,11 +19,6 @@ namespace ANF.World
         private World world;
         private GUIManager guiManager;
 
-        [Header("Debug")]
-        [SerializeField] private bool debugEnabled = false;
-        [SerializeField] private bool debugAutoSaveLoad = false;
-        [SerializeField] private string debugScriptToLoad;
-
         /// <summary>
 		/// Gets the GUI Manager
 		/// </summary>
@@ -52,14 +47,6 @@ namespace ANF.World
         {
             InitializeComponents();
             OnStartComponents();
-
-            if (debugAutoSaveLoad)
-            {
-                string savePath = Utils.FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder + "autosave.json";
-                SaveUtils.LoadPlayerData(PersistentDataManager.instance.GetPlayerData(), this, savePath);
-            }
-            else if (debugEnabled && world.GetComponent(out ANSLManager anslManager))
-                anslManager.StartNewContext(debugScriptToLoad);
         }
 
         /// <summary>

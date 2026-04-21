@@ -15,6 +15,11 @@ namespace ANF.Persistent
     [CreateAssetMenu(fileName = "ANFSettings", menuName = "ANF/ANFSettings")]
     public class ANFSettings : ScriptableObject
     {
+        [Header("General")]
+        [Tooltip("The default starting script for the game")]
+        public string startingScript;
+
+
         [Header("Data")]
         [Tooltip("Filepath to the save files (Inside Assets/ in the editor, and inside the game's persistent data folder in build)")]
         public string saveFolder = "Saves/";

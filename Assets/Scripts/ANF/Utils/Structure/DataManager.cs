@@ -1,5 +1,6 @@
 using Leguar.TotalJSON;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ANF.Utils
 {
@@ -21,7 +22,7 @@ namespace ANF.Utils
         {
             foreach (T component in components.Values)
             {
-                if (component.GetType().IsSubclassOf(typeof(T)) || component.GetType() == typeof(T))
+                if (component.GetType().IsSubclassOf(typeof(P)) || component.GetType() == typeof(P))
                 {
                     result = (P)component;
                     return true;
@@ -43,7 +44,7 @@ namespace ANF.Utils
         {
             if (components.TryGetValue(id, out T component))
             {
-                if (component.GetType().IsSubclassOf(typeof(T)) || component.GetType() == typeof(T))
+                if (component.GetType().IsSubclassOf(typeof(P)) || component.GetType() == typeof(P))
                 {
                     result = (P)component;
                     return true;
@@ -77,7 +78,9 @@ namespace ANF.Utils
             {
                 individualDataJson = new JSON();
                 components[containerId].Save(individualDataJson);
-                json.Add(containerId, individualDataJson);
+
+                if (individualDataJson.Count != 0)
+                    json.Add(containerId, individualDataJson);
             }
         }
     }

@@ -653,9 +653,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFManager
   uiRoot: {fileID: 740851709}
-  debugEnabled: 1
-  debugAutoSaveLoad: 0
-  debugScriptToLoad: ANF/Tests/Fade
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
