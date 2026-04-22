@@ -25,7 +25,7 @@ MonoBehaviour:
       rid: 1438066042575257694
   - id: locals
     data:
-      rid: 1438066065479827529
+      rid: 1438066065479827535
   registeredWorldComponents:
   - id: anslManager
     data:
@@ -36,6 +36,8 @@ MonoBehaviour:
   registeredGUIComponents:
   - id: fadeBg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
+  - id: dialog
+    data: {fileID: 5724826130367448010, guid: 022905ec658687a479fc48d91f16fa39, type: 3}
   - id: fadeFg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   anslSourceFolder: Assets/ANSL/
@@ -64,7 +66,7 @@ MonoBehaviour:
     - rid: 1438066042575257694
       type: {class: LoadStateContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
-    - rid: 1438066065479827529
+    - rid: 1438066065479827535
       type: {class: Locals, ns: ANF.Locals, asm: Assembly-CSharp}
       data:
         staticData:
@@ -78,31 +80,31 @@ MonoBehaviour:
           defaultData:
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}
           - sizeIndex: 0
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 0}
+            color: {r: 0, g: 0, b: 0, a: 1}

@@ -16,7 +16,8 @@ namespace ANF.Locals
 		[SerializeField] protected TMP_Text text;
 		[SerializeField] protected bool canResize = true;
 		[SerializeField] protected bool canRecolor = true;
-		[SerializeField] protected bool noText = false;
+		[SerializeField] protected bool noReload = false;
+		[SerializeField] protected bool disableLocalization = false;
 		protected object[] injectors;
 		protected Locals locals;
 
@@ -49,14 +50,11 @@ namespace ANF.Locals
 		/// </summary>
 		public virtual void ReloadText()
 		{
-			if (noText)
-			{
-				text.text = "";
+			if (noReload)
 				return;
-			}
 
 			string txt = localKey;
-			if (locals != null)
+			if (locals != null && !disableLocalization)
 				txt = locals.GetLocal(localKey);
 
 			if (injectors != null && injectors.Length > 0)
@@ -90,13 +88,24 @@ namespace ANF.Locals
 		}
 
 		/// <summary>
-		/// Sets if the text should be shown or not
+		/// Sets if the text can be reloaded using the key system or not
 		/// </summary>
-		/// <param name="textActive">True if the text is shown</param>
+		/// <param name="canReload">True if the text is shown</param>
 		/// <param name="reloadText">True if the visual should be reloaded</param>
-		public void SetNoText(bool textActive, bool reloadText = true)
+		public void SetCanReload(bool canReload, bool reloadText = true)
 		{
-			noText = textActive;
+			noReload = !canReload;
+			if (reloadText) ReloadText();
+		}
+
+		/// <summary>
+		/// Sets if the text should display localized text or the raw key
+		/// </summary>
+		/// <param name="enabled">True for localized text</param>
+		/// <param name="reloadText">True if the visual should be reloaded/param>
+		public void SetLocalizationEnabled(bool enabled, bool reloadText = true)
+		{
+			disableLocalization = !enabled;
 			if (reloadText) ReloadText();
 		}
 
