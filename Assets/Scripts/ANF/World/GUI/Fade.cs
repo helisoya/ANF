@@ -14,56 +14,82 @@ namespace ANF.GUI
         [Header("Fade")]
         [SerializeField] private Image fadeImg;
         [SerializeField] private CanvasGroup canvasGroup;
+
+        private float startAlpha;
+        private float tAlpha;
         private float targetAlpha;
-        private float currentTransitionSpeed;
-        public bool fading { get; private set; }
+        private float currentAlphaTransitionDuration;
+
+        private Color startColor;
+        private float tColor;
+        private Color targetColor;
+        private float currentColorTransitionDuration;
+
+        public bool fadingAlpha { get; private set; }
+        public bool fadingColor { get; private set; }
 
         /// <summary>
-		/// Changes the component's color
-		/// </summary>
-		/// <param name="newColor">The new color</param>
-        public void SetColor(Color newColor)
-        {
-            fadeImg.color = newColor;
-        }
-
-        /// <summary>
-		/// Starts a fade
+		/// Starts an alpha transition
 		/// </summary>
 		/// <param name="target">The Alpha target</param>
 		/// <param name="immediate">True if the transition should be immediate</param>
-		/// <param name="transitionSpeed">The transition speed if not immediate</param>
-        public void FadeTo(float target, bool immediate = false, float transitionSpeed = 1.0f)
+		/// <param name="transitionDuration">The transition's duration if not immediate</param>
+        public void FadeAlphaTo(float target, bool immediate = false, float transitionDuration = 1.0f)
         {
+            startAlpha = canvasGroup.alpha;
+            tAlpha = 0.0f;
             targetAlpha = target;
-            currentTransitionSpeed = transitionSpeed;
+            currentAlphaTransitionDuration = transitionDuration;
             if (immediate)
                 canvasGroup.alpha = target;
 
-            fading = !immediate;
+            fadingAlpha = !immediate;
+        }
+
+        /// <summary>
+        /// Starts a color transition
+        /// </summary>
+        /// <param name="target">The color target</param>
+        /// <param name="immediate">True if the transition should be immediate</param>
+        /// <param name="transitionDuration">The transition's duration if not immediate</param>
+        public void FadeColorTo(Color target, bool immediate = false, float transitionDuration = 1.0f)
+        {
+            startColor = fadeImg.color;
+            tColor = 0.0f;
+            targetColor = target;
+            currentColorTransitionDuration = transitionDuration;
+            if (immediate)
+                fadeImg.color = target;
+
+            fadingColor = !immediate;
         }
 
         public override void OnUpdate()
         {
-            if (fading)
+            if (fadingAlpha)
             {
-                float currentAlpha = canvasGroup.alpha;
-                float side = targetAlpha > currentAlpha ? 1 : -1;
-                float max = side == 1 ? targetAlpha : 1f;
-                float min = side == 1 ? currentAlpha : targetAlpha;
-                float nextValue = Mathf.Clamp(currentAlpha + currentTransitionSpeed * side * Time.deltaTime, min, max);
+                tAlpha += Time.deltaTime / currentAlphaTransitionDuration;
+                canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, tAlpha);
 
-                canvasGroup.alpha = nextValue;
-                if (nextValue == targetAlpha)
-                    fading = false;
+                if (tAlpha >= 1.0f)
+                    fadingAlpha = false;
+            }
+
+            if (fadingColor)
+            {
+                tColor += Time.deltaTime / currentColorTransitionDuration;
+                fadeImg.color = Color.Lerp(startColor, targetColor, tColor);
+
+                if (tColor >= 1.0f)
+                    fadingColor = false;
             }
         }
 
 
         public override void OnInitialize()
         {
-            fading = false;
-            targetAlpha = canvasGroup.alpha;
+            fadingColor = false;
+            fadingAlpha = false;
         }
 
         protected override void OnOpen()
@@ -83,12 +109,29 @@ namespace ANF.GUI
 
         protected override void OnLoad(JSON json)
         {
-            if (json.ContainsKey("fading"))
-                fading = json.GetBool("fading");
+            if (json.ContainsKey("fadingAlpha"))
+                fadingAlpha = json.GetBool("fadingAlpha");
+            if (json.ContainsKey("fadingColor"))
+                fadingColor = json.GetBool("fadingColor");
+
             if (json.ContainsKey("targetAlpha"))
                 targetAlpha = json.GetFloat("targetAlpha");
-            if (json.ContainsKey("currentTransitionSpeed"))
-                currentTransitionSpeed = json.GetFloat("currentTransitionSpeed");
+            if (json.ContainsKey("startAlpha"))
+                startAlpha = json.GetFloat("startAlpha");
+            if (json.ContainsKey("tAlpha"))
+                tAlpha = json.GetFloat("tAlpha");
+            if (json.ContainsKey("currentAlphaTransitionDuration"))
+                currentAlphaTransitionDuration = json.GetFloat("currentAlphaTransitionDuration");
+
+            if (json.ContainsKey("targetColor"))
+                targetColor = json.GetJArray("targetColor").AsColor();
+            if (json.ContainsKey("startColor"))
+                startColor = json.GetJArray("startColor").AsColor();
+            if (json.ContainsKey("tColor"))
+                tColor = json.GetFloat("tColor");
+            if (json.ContainsKey("currentColorTransitionDuration"))
+                currentColorTransitionDuration = json.GetFloat("currentColorTransitionDuration");
+
             if (json.ContainsKey("currentAlpha"))
                 canvasGroup.alpha = json.GetFloat("currentAlpha");
             if (json.ContainsKey("currentColor"))
@@ -97,9 +140,19 @@ namespace ANF.GUI
 
         protected override void OnSave(JSON json)
         {
-            json.Add("fading", fading);
+            json.Add("fadingAlpha", fadingAlpha);
+            json.Add("fadingColor", fadingColor);
+
+            json.Add("startAlpha", startAlpha);
+            json.Add("tAlpha", tAlpha);
             json.Add("targetAlpha", targetAlpha);
-            json.Add("currentTransitionSpeed", currentTransitionSpeed);
+            json.Add("currentAlphaTransitionDuration", currentAlphaTransitionDuration);
+
+            json.Add("startColor", startColor);
+            json.Add("tColor", tColor);
+            json.Add("currentColorTransitionDuration", currentColorTransitionDuration);
+            json.Add("targetColor", targetColor);
+
             json.Add("currentAlpha", canvasGroup.alpha);
             json.Add("currentColor", fadeImg.color);
         }

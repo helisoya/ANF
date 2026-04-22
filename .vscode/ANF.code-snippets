@@ -29,6 +29,18 @@
 		"body": ["clearStack(ContextIndex)"],
 		"description": "Clears the context's stack. Can also clear other context's"
 	},
+	"20_0": {
+		"scope": "ansl",
+		"prefix": "fadeBgColor",
+		"body": ["fadeBgColor(R;G;B;A;WaitForEnd)"],
+		"description": "Changes the color of the background fade over time"
+	},
+	"20_1": {
+		"scope": "ansl",
+		"prefix": "fadeBgColor",
+		"body": ["fadeBgColor(R;G;B;A;WaitForEnd;Duration)"],
+		"description": "Changes the color of the background fade over time"
+	},
 	"12_0": {
 		"scope": "ansl",
 		"prefix": "fadeBg",
@@ -38,8 +50,20 @@
 	"12_1": {
 		"scope": "ansl",
 		"prefix": "fadeBg",
-		"body": ["fadeBg(Alpha;WaitForEnd;Speed)"],
+		"body": ["fadeBg(Alpha;WaitForEnd;Duration)"],
 		"description": "Fades the Background to a specific value"
+	},
+	"21_0": {
+		"scope": "ansl",
+		"prefix": "fadeFgColor",
+		"body": ["fadeFgColor(R;G;B;A;WaitForEnd)"],
+		"description": "Changes the color of the foreground fade over time"
+	},
+	"21_1": {
+		"scope": "ansl",
+		"prefix": "fadeFgColor",
+		"body": ["fadeFgColor(R;G;B;A;WaitForEnd;Duration)"],
+		"description": "Changes the color of the foreground fade over time"
 	},
 	"13_0": {
 		"scope": "ansl",
@@ -50,7 +74,7 @@
 	"13_1": {
 		"scope": "ansl",
 		"prefix": "fadeFg",
-		"body": ["fadeFg(Alpha;WaitForEnd;Speed)"],
+		"body": ["fadeFg(Alpha;WaitForEnd;Duration)"],
 		"description": "Fades the Foreground to a specific value"
 	},
 	"8_0": {
@@ -97,9 +121,9 @@
 	},
 	"14_0": {
 		"scope": "ansl",
-		"prefix": "colorBg",
-		"body": ["colorBg(R;G;B;A)"],
-		"description": "Changes the color of the background fade"
+		"prefix": "setBgColor",
+		"body": ["setBgColor(R;G;B;A)"],
+		"description": "Changes the color of the background fade immediately"
 	},
 	"17_0": {
 		"scope": "ansl",
@@ -109,9 +133,9 @@
 	},
 	"15_0": {
 		"scope": "ansl",
-		"prefix": "colorFg",
-		"body": ["colorFg(R;G;B;A)"],
-		"description": "Changes the color of the foreground fade"
+		"prefix": "setFgColor",
+		"body": ["setFgColor(R;G;B;A)"],
+		"description": "Changes the color of the foreground fade immediately"
 	},
 	"16_0": {
 		"scope": "ansl",

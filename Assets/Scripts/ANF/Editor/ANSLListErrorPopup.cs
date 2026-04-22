@@ -1,62 +1,11 @@
-using ANF.ANSL;
 using ANF.Persistent;
 using ANF.Utils;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using static ANF.Editor.ANSLCompilerWindow;
-using static LJDNUtilsEditor;
 
 namespace ANF.Editor
 {
-    /// <summary>
-    /// Represents the ANSL Compiler Window.
-    /// Used to compile and show scripting errors
-    /// </summary>
-    public class ANSLCompilerWindow : EditorWindow
-    {
-
-        [MenuItem("ANF/ANSL Compiler")]
-        public static void OpenWindow()
-        {
-            ANSLCompilerWindow wnd = GetWindow<ANSLCompilerWindow>();
-            wnd.titleContent = new GUIContent("ANSL Compiler");
-        }
-
-
-        public void OnGUI()
-        {
-            if (GUILayout.Button("Regenerate VS Code Snippets"))
-            {
-                ANFSettings settings = AssetDatabase.LoadAssetAtPath<ANFSettings>("Assets/Settings/ANF/ANFSettings.asset");
-                if (settings != null)
-                    ANSLUtils.RegenerateVSCodeSnippets(settings.anslVSCodeSnippetsPath);
-            }
-
-            if (GUILayout.Button("Compile ANSL Files"))
-            {
-                CompileANSLFiles();
-            }
-        }
-
-        /// <summary>
-        /// Compiles the ANSL files of the project
-        /// </summary>
-        private void CompileANSLFiles()
-        {
-            ANFSettings settings = AssetDatabase.LoadAssetAtPath<ANFSettings>("Assets/Settings/ANF/ANFSettings.asset");
-
-            if (settings != null)
-            {
-                List<ANSLUtils.ANSLError> errors = ANSLUtils.CompileAll(settings);
-
-                ANSLErrorListPopup.Show(errors);
-            }
-        }
-    }
 
     /// <summary>
     /// Represents a popup for the ANSL Errors
@@ -69,9 +18,9 @@ namespace ANF.Editor
         private Vector2 scrollPosition;
 
         /// <summary>
-		/// Initialize the popup
-		/// </summary>
-		/// <param name="data">The ANSL error's data</param>
+        /// Initialize the popup
+        /// </summary>
+        /// <param name="data">The ANSL error's data</param>
         public void Init(List<ANSLUtils.ANSLError> data)
         {
             this.data = data;
@@ -79,9 +28,9 @@ namespace ANF.Editor
         }
 
         /// <summary>
-		/// Shows the popup
-		/// </summary>
-		/// <param name="data">The error's data</param>
+        /// Shows the popup
+        /// </summary>
+        /// <param name="data">The error's data</param>
         public static void Show(List<ANSLUtils.ANSLError> data)
         {
             ANSLErrorListPopup wnd = GetWindow<ANSLErrorListPopup>();
@@ -125,4 +74,3 @@ namespace ANF.Editor
         }
     }
 }
-

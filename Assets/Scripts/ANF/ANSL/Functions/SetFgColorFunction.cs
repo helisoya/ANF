@@ -11,9 +11,9 @@ namespace ANF.ANSL
     /// </summary>
     [ANSLFunctionAttribute(
         functionId: 15,
-        functionBody: "colorFg",
-        functionAutoComplete: new string[] { "colorFg(R;G;B;A)" },
-        functionDesc: "Changes the color of the foreground fade")]
+        functionBody: "setFgColor",
+        functionAutoComplete: new string[] { "setFgColor(R;G;B;A)" },
+        functionDesc: "Changes the color of the foreground fade immediately")]
     public class SetFgColorFunction : ANSLFunction
     {
 
@@ -32,7 +32,7 @@ namespace ANF.ANSL
                 parameters.GetParameter(3, out float a) &&
                 manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out GUI.Fade currentFade))
             {
-                currentFade.SetColor(new Color(r, g, b, a));
+                currentFade.FadeColorTo(new Color(r, g, b, a),true);
             }
             EndProcess();
         }

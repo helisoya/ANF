@@ -6,7 +6,7 @@ fadeBg(0;false)
 
 wait(0.5)
 
-colorFg(1;0;0;1)
+fadeFgColor(1;0;0;1;false;1)
 autosave()
 fadeFg(1;true)
 

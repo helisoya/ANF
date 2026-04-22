@@ -14,7 +14,7 @@ namespace ANF.ANSL
         functionBody: "fadeFg",
         functionAutoComplete: new string[] {
             "fadeFg(Alpha;WaitForEnd)",
-            "fadeFg(Alpha;WaitForEnd;Speed)" },
+            "fadeFg(Alpha;WaitForEnd;Duration)" },
         functionDesc: "Fades the Foreground to a specific value")]
     public class FadeFgFunction : ANSLFunction
     {
@@ -34,15 +34,15 @@ namespace ANF.ANSL
             if (parameters.GetParameter(0, out float target) &&
                 parameters.GetParameter(1, out waitingForFading))
             {
-                float speed;
+                float duration;
 
-                if (!parameters.GetParameter(2, out speed))
-                    speed = 1.0f;
+                if (!parameters.GetParameter(2, out duration))
+                    duration = 1.0f;
 
                 manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out currentFade);
 
                 if (currentFade != null)
-                    currentFade.FadeTo(target, false, speed);
+                    currentFade.FadeAlphaTo(target, false, duration);
 
                 if (!waitingForFading || currentFade == null)
                     EndProcess();
@@ -54,7 +54,7 @@ namespace ANF.ANSL
             if (currentFade == null)
                 manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out currentFade);
 
-            if (currentFade != null && !currentFade.fading)
+            if (currentFade != null && !currentFade.fadingAlpha)
             {
                 waitingForFading = false;
                 EndProcess();
