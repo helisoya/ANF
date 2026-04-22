@@ -23,6 +23,9 @@ MonoBehaviour:
   - id: loadState
     data:
       rid: 1438066042575257694
+  - id: locals
+    data:
+      rid: 1438066065479827529
   registeredWorldComponents:
   - id: anslManager
     data:
@@ -61,3 +64,45 @@ MonoBehaviour:
     - rid: 1438066042575257694
       type: {class: LoadStateContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
+    - rid: 1438066065479827529
+      type: {class: Locals, ns: ANF.Locals, asm: Assembly-CSharp}
+      data:
+        staticData:
+          languages:
+          - eng
+          - fra
+          fonts:
+          - {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+          sizes: 100000001200000014000000
+          defaultLanguage: eng
+          defaultData:
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}
+          - sizeIndex: 0
+            fontIndex: 0
+            color: {r: 0, g: 0, b: 0, a: 0}

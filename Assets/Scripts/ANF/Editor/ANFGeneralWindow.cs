@@ -17,6 +17,7 @@ namespace ANF.Editor
 
         private bool settingsOpen = true;
         private bool anslOpen = true;
+        private Vector2 scrollPosition = Vector2.zero;
 
         [MenuItem("ANF/General")]
         public static void OpenWindow()
@@ -35,13 +36,14 @@ namespace ANF.Editor
             settingsEditor = UnityEditor.Editor.CreateEditor(settings);
         }
 
-        
+
 
         public void OnGUI()
         {
             if (settings == null)
                 return;
 
+            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
             settingsOpen = EditorGUILayout.Foldout(settingsOpen, "Settings");
             if (settingsOpen)
             {
@@ -63,6 +65,7 @@ namespace ANF.Editor
                     CompileANSLFiles();
                 }
             }
+            EditorGUILayout.EndScrollView();
         }
 
         /// <summary>
