@@ -196,9 +196,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: VNGUI, Assembly-CSharp
-        m_MethodName: SkipDialog
+      - m_Target: {fileID: 5724826130367448010}
+        m_TargetAssemblyTypeName: ANF.GUI.DialogUI, Assembly-CSharp
+        m_MethodName: ToggleCanSkip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,0 +1,4 @@
+dialog(Man;null;Test_Dialog_1)
+dialog(Man;null;Test_Dialog_2;true)
+dialog(Man;null;Test_Dialog_3)
+dialog(Man;null;Test_Dialog_4;true)

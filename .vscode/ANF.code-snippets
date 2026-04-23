@@ -29,6 +29,30 @@
 		"body": ["clearStack(ContextIndex)"],
 		"description": "Clears the context's stack. Can also clear other context's"
 	},
+	"22_0": {
+		"scope": "ansl",
+		"prefix": "dialog",
+		"body": ["dialog(SpeakerId;CharacterId;DialogId)"],
+		"description": "Shows a dialog"
+	},
+	"22_1": {
+		"scope": "ansl",
+		"prefix": "dialog",
+		"body": ["dialog(SpeakerId;CharacterId;DialogId;Additive)"],
+		"description": "Shows a dialog"
+	},
+	"22_2": {
+		"scope": "ansl",
+		"prefix": "dialog",
+		"body": ["dialog(SpeakerId;CharacterId;DialogId;Additive;NoEndUserInput)"],
+		"description": "Shows a dialog"
+	},
+	"22_3": {
+		"scope": "ansl",
+		"prefix": "dialog",
+		"body": ["dialog(SpeakerId;CharacterId;DialogId;Additive;NoEndUserInput;CloseAfterwards)"],
+		"description": "Shows a dialog"
+	},
 	"20_0": {
 		"scope": "ansl",
 		"prefix": "fadeBgColor",

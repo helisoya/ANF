@@ -33,6 +33,8 @@ namespace ANF.Locals
 		[SerializeField] private LocalsData staticData;
 
 		private string currentLanguage = null;
+		private string[] currentAdditionalFiles = null;
+
 		private Dictionary<string, string> locals;
 		private UnityEvent onChangeLocal;
 		private LocalChannel[] channels;
@@ -125,16 +127,59 @@ namespace ANF.Locals
 		/// Changes the current language
 		/// </summary>
 		/// <param name="newOne">The new language's code</param>
-		public void ChangeLanguage(string newOne)
+		/// <param name="force">True if the reload should be forced</param>
+		public void ChangeLanguage(string newOne, bool force = false)
 		{
-			if (newOne.Equals(currentLanguage)) return;
+			if (newOne.Equals(currentLanguage) && !force) return;
 
 			currentLanguage = newOne;
 			locals.Clear();
 			LoadContent(newOne + "_system");
 			LoadContent(newOne + "_common");
 
+			if(currentAdditionalFiles != null)
+				foreach(string file in currentAdditionalFiles)
+					LoadContent(newOne + "_" + file);
+
 			onChangeLocal.Invoke();
+		}
+
+		/// <summary>
+		/// Changes the current additional files to load
+		/// </summary>
+		/// <param name="newFiles">The new files to load</param>
+		public void ChangeAdditionalFiles(string[] newFiles)
+		{
+			bool reload = false;
+			if ((newFiles == null || currentAdditionalFiles == null) && newFiles != currentAdditionalFiles)
+				reload = true;
+
+			if(!reload && newFiles != null && currentAdditionalFiles != null)
+			{
+				foreach(string newFile in newFiles)
+				{
+					bool found = false;
+					foreach(string existing in currentAdditionalFiles)
+					{
+						if(newFile.Equals(existing))
+						{
+							found = true;
+							break;
+						}
+					}
+					if(!found)
+					{
+						reload = true;
+						break;
+					}
+				}
+			}
+
+
+			currentAdditionalFiles = newFiles;
+
+			if (reload)
+				ChangeLanguage(currentLanguage, true);
 		}
 
 		/// <summary>
@@ -302,6 +347,9 @@ namespace ANF.Locals
 		{
 			json.Add("currentLanguage", currentLanguage);
 
+			if(currentAdditionalFiles != null)
+				json.Add("currentAdditionalFiles", currentAdditionalFiles);
+
 			JArray channelArray = new JArray();
 			JSON channelData;
 
@@ -335,7 +383,10 @@ namespace ANF.Locals
 				}
 			}
 
-			if (json.ContainsKey("currentLanguage"))
+            if (json.ContainsKey("currentAdditionalFiles"))
+                currentAdditionalFiles = json.GetJArray("currentAdditionalFiles").AsStringArray();
+
+            if (json.ContainsKey("currentLanguage"))
 				ChangeLanguage(json.GetString("currentLanguage"));
 		}
 	}

@@ -60,7 +60,7 @@ MonoBehaviour:
       type: {class: StateLoader, ns: ANF.World, asm: Assembly-CSharp}
       data:
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Fade
+        debugModeScript: ANF/Tests/Dialog
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave.json
     - rid: 1438066042575257694
@@ -78,12 +78,12 @@ MonoBehaviour:
           sizes: 100000001200000014000000
           defaultLanguage: eng
           defaultData:
-          - sizeIndex: 0
+          - sizeIndex: 1
             fontIndex: 0
             color: {r: 0, g: 0, b: 0, a: 1}
-          - sizeIndex: 0
+          - sizeIndex: 1
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 1}
+            color: {r: 1, g: 1, b: 1, a: 1}
           - sizeIndex: 0
             fontIndex: 0
             color: {r: 0, g: 0, b: 0, a: 1}
