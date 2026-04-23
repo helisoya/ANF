@@ -167,6 +167,18 @@
 		"body": ["setFg(Alpha)"],
 		"description": "Sets the Foreground's alpha to a specific value"
 	},
+	"24_0": {
+		"scope": "ansl",
+		"prefix": "setLocals",
+		"body": ["setLocals(Locals)"],
+		"description": "Shows/Hides the dialog window"
+	},
+	"23_0": {
+		"scope": "ansl",
+		"prefix": "showDialogWindow",
+		"body": ["showDialogWindow(Shown)"],
+		"description": "Shows/Hides the dialog window"
+	},
 	"10_0": {
 		"scope": "ansl",
 		"prefix": "switch",

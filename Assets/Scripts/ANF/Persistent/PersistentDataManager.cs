@@ -2,6 +2,7 @@ using ANF.Utils;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ANF.Persistent
 {
@@ -14,6 +15,7 @@ namespace ANF.Persistent
 
         [Header("Data")]
         [SerializeField] private ANFSettings anfSettings;
+        [SerializeField] private PlayerInput playerInput;
         [SerializeField] private ContainerManager playerData;
         [SerializeField] private ContainerManager globalData;
 
@@ -37,6 +39,15 @@ namespace ANF.Persistent
             {
                 Destroy(gameObject);
             }
+        }
+
+        /// <summary>
+		/// Gets the player input
+		/// </summary>
+		/// <returns>The player input</returns>
+        public PlayerInput GetPlayerInput()
+        {
+            return playerInput;
         }
 
         /// <summary>

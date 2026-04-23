@@ -53,7 +53,7 @@ namespace ANF.Persistent
 
         public void Reset()
         {
-            playerName = "Man";
+            playerName = "Player";
             foreach (Variable variable in variables)
             {
                 variable.value = variable.defaultValue;

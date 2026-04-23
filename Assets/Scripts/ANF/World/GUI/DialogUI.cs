@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.HableCurve;
 
@@ -22,6 +23,7 @@ namespace ANF.GUI
         [SerializeField] private GameObject speakerRoot;
         [SerializeField] private Locals.LocalizedText speakerText;
         [SerializeField] private Locals.LocalizedText dialogText;
+        [SerializeField] private Button skipButton;
 
         [Header("Infos")]
         [SerializeField] private float punctuationSpeedFactor = 3;
@@ -79,7 +81,7 @@ namespace ANF.GUI
             speakerRoot.SetActive(speakerID != null);
             if (speakerID != null)
             {
-                bool speakerIsMC = speakerText.Equals("[MC]");
+                bool speakerIsMC = speakerID.Equals("[MC]");
                 if (speakerIsMC &&
                 PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer container))
                 {
@@ -129,11 +131,11 @@ namespace ANF.GUI
                     };
                     textSegments.Add(currentSegment);
 
-                    if(lastTextCompleted || textIds.Count - 1 > i)
+                    if (lastTextCompleted || textIds.Count - 1 > i)
                     {
                         currentSegmentIdx++;
                         result += currentSegment.dialogText;
-                    }         
+                    }
                 }
             }
 
@@ -151,11 +153,11 @@ namespace ANF.GUI
                 TMP_Text text = dialogText.GetText();
                 bool stillCharactersToReveal = revealIndex < text.textInfo.characterCount;
 
-                if(!stillCharactersToReveal && currentSegmentIdx < textSegments.Count)
+                if (!stillCharactersToReveal && currentSegmentIdx < textSegments.Count)
                 {
-                    if (currentSegmentIdx != 0 && textSegments[currentSegmentIdx-1].commands != null)
+                    if (currentSegmentIdx != 0 && textSegments[currentSegmentIdx - 1].commands != null)
                     {
-                        foreach (string command in textSegments[currentSegmentIdx-1].commands)
+                        foreach (string command in textSegments[currentSegmentIdx - 1].commands)
                         {
                             ProcessCommand(command);
                         }
@@ -168,27 +170,19 @@ namespace ANF.GUI
                     currentSegmentIdx++;
                 }
 
-                if (canSkip)
+                if (canSkip || !stillCharactersToReveal)
                 {
-                    if (!stillCharactersToReveal && currentSegmentIdx >= textSegments.Count)
-                    {
-                        // End of dialog
-                        showingDialog = false;
-                        return;
-                    }
-                    else
-                    {
-                        // Skip typewriter
+                    // Skip typewriter
 
-                        for(int i = currentSegmentIdx;i < textSegments.Count;i++)
-                        {
-                            text.text += textSegments[i].dialogText;
-                        }
-                        text.ForceMeshUpdate(true);
-                        revealIndex = text.textInfo.characterCount;
-                        text.maxVisibleCharacters = revealIndex;
-                        currentSegmentIdx = textSegments.Count;
+                    for (int i = currentSegmentIdx; i < textSegments.Count; i++)
+                    {
+                        text.text += textSegments[i].dialogText;
                     }
+                    text.ForceMeshUpdate(true);
+                    revealIndex = text.textInfo.characterCount;
+                    text.maxVisibleCharacters = revealIndex;
+                    currentSegmentIdx = textSegments.Count;
+                    showingDialog = false;
                     canSkip = false;
                 }
                 else if (stillCharactersToReveal)
@@ -197,7 +191,7 @@ namespace ANF.GUI
                     {
                         revealIndex++;
                         currentWaitTime = secondsBetweenCharacters *
-                            (IsPunctuation(text.textInfo.characterInfo[revealIndex-1].character) ? punctuationSpeedFactor : 1.0f);
+                            (IsPunctuation(text.textInfo.characterInfo[revealIndex - 1].character) ? punctuationSpeedFactor : 1.0f);
                         text.maxVisibleCharacters = revealIndex;
                     }
                     else
@@ -258,6 +252,15 @@ namespace ANF.GUI
         }
 
         /// <summary>
+		/// Gets the skip button
+		/// </summary>
+		/// <returns>The skip button</returns>
+        public Button GetSkipButton()
+        {
+            return skipButton;
+        }
+
+        /// <summary>
         /// Process a command embedded in a dialog
         /// Must use the following synthax : COMMAND PARAM1 PARAM2
         /// </summary>
@@ -270,14 +273,14 @@ namespace ANF.GUI
             while (command.Length > 0 && command.StartsWith(' '))
                 command = command.Substring(1);
             while (command.Length > 0 && command.EndsWith(' '))
-                command = command.Substring(command.Length-1);
+                command = command.Substring(command.Length - 1);
 
             string[] split = command.Split(' ');
 
-            switch(split[0])
+            switch (split[0])
             {
                 case "wait":
-                    if (split.Length == 2 && float.TryParse(split[1],NumberStyles.Float, CultureInfo.InvariantCulture, out float waitTime))
+                    if (split.Length == 2 && float.TryParse(split[1], NumberStyles.Float, CultureInfo.InvariantCulture, out float waitTime))
                         currentWaitTime = waitTime;
                     break;
                 case "speed":

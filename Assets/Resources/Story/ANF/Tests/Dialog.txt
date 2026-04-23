@@ -1,4 +1,9 @@
-22|Man|null|Test_Dialog_1
-22|Man|null|Test_Dialog_2|true
-22|Man|null|Test_Dialog_3
-22|Man|null|Test_Dialog_4|true
+24|test
+22|Test_Character|null|Test_Dialog_1
+22|Test_Character|null|Test_Dialog_2|true
+22|[MC]|null|Test_Dialog_3
+22|[MC]|null|Test_Dialog_4|true
+4|0.1
+22|null|null|Test_Dialog_5|false|true
+4|0.5
+22|null|null|Test_Dialog_6|true|false|true

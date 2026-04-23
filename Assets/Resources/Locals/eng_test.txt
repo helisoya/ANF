@@ -1,0 +1,12 @@
+# ---------------------------------------------------------
+# -------------------- Tests ------------------------------
+# ---------------------------------------------------------
+
+Test_Character = Man
+
+Test_Dialog_1 = This is a test dialog.
+Test_Dialog_2 = This is an additive dialog.
+Test_Dialog_3 = This is [speed 0.25]<b>a slower text.</b>[wait 1, defaultSpeed] Okay, much better.
+Test_Dialog_4 = [speed 0.001]super judge racing ![defaultSpeed] Okay, stop.
+Test_Dialog_5 = This text won't require end input...
+Test_Dialog_6 = Yep !
