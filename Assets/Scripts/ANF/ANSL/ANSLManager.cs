@@ -137,6 +137,15 @@ namespace ANF.ANSL
                     context.Update();
             }
         }
+        public override void OnEnabled()
+        {
+            PauseAllContexts(false);
+        }
+
+        public override void OnDisabled()
+        {
+            PauseAllContexts(true);
+        }
 
         public override void Save(JSON json)
         {

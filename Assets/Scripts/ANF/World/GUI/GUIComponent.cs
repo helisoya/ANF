@@ -2,6 +2,7 @@ using ANF.Utils;
 using ANF.World;
 using Leguar.TotalJSON;
 using NUnit.Framework;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace ANF.GUI
@@ -14,11 +15,15 @@ namespace ANF.GUI
     {
         [Header("General")]
         [SerializeField] protected GameObject root;
+        [SerializeField] protected bool hideRootWhenClosed = true;
         [SerializeField] protected bool openByDefault = true;
+        [Tooltip("A component may be opened only if all its lock components are closed. For instance, the load menu cannot be opened if the map menu is open")]
+        [SerializeField] protected string[] lockComponents;
 
         protected ANFManager manager;
         protected GUIManager gui;
-        public bool isOpen { get { return root.activeInHierarchy; } }
+        public bool isOpen { get; private set; }
+        public bool isEnabled { get; private set; }
 
         /// <summary>
         /// Initialize the component
@@ -28,12 +33,24 @@ namespace ANF.GUI
         {
             this.manager = manager;
             this.gui = gui;
+            isOpen = false;
+            isEnabled = false;
             OnInitialize();
 
-            root.SetActive(false);
+            root.SetActive(!hideRootWhenClosed);
 
             if (openByDefault)
                 Open();
+        }
+        
+        /// <summary>
+        /// Changes if the component is enabled (can be updated).
+        /// A visible component can be disabled, it won't be updated with OnUpdate
+        /// </summary>
+        /// <param name="enabled"></param>
+        public void SetIsEnabled(bool enabled)
+        {
+            isEnabled = isOpen && enabled;
         }
 
         /// <summary>
@@ -41,8 +58,13 @@ namespace ANF.GUI
 		/// </summary>
         public void Open()
         {
+            if (gui.AnyComponentsActive(lockComponents))
+                return;
+
             if (!isOpen)
             {
+                isOpen = true;
+                isEnabled = true;
                 root.SetActive(true);
                 OnOpen();
             }
@@ -55,7 +77,9 @@ namespace ANF.GUI
         {
             if (isOpen)
             {
-                root.SetActive(false);
+                isOpen = false;
+                isEnabled = false;
+                root.SetActive(!hideRootWhenClosed);
                 OnClose();
             }
         }
@@ -82,9 +106,10 @@ namespace ANF.GUI
 
             if (json.ContainsKey("isOpen"))
             {
+
                 bool open = json.GetBool("isOpen");
 
-                root.SetActive(open);
+                root.SetActive(false);
                 if (open)
                     OnOpen();
                 else

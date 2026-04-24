@@ -23,6 +23,25 @@ namespace ANF.World
                 components.Add(entry.id, copy);
             }
         }
+        
+        /// <summary>
+        /// Changes if the world components are enabled or not
+        /// </summary>
+        /// <param name="enabled">True if enabled</param>
+        public void EnableWorldComponents(bool enabled)
+        {
+            foreach(WorldComponent component in components.Values)
+            {
+                component.ChangeIsEnabled(enabled);
+            }
+        }
+
+        public override void OnUpdate()
+        {
+            foreach (WorldComponent component in components.Values)
+                if(component.isEnabled)
+                    component.OnUpdate();
+        }
     }
 
 }

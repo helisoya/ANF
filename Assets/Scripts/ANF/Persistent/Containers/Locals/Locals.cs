@@ -139,7 +139,8 @@ namespace ANF.Locals
 
 			if(currentAdditionalFiles != null)
 				foreach(string file in currentAdditionalFiles)
-					LoadContent(newOne + "_" + file);
+					if(file != null)
+						LoadContent(newOne + "_" + file);
 
 			onChangeLocal.Invoke();
 		}
@@ -158,9 +159,15 @@ namespace ANF.Locals
 			{
 				foreach(string newFile in newFiles)
 				{
+					if (newFile == null)
+						continue;
+
 					bool found = false;
 					foreach(string existing in currentAdditionalFiles)
 					{
+						if (existing == null)
+							continue;
+
 						if(newFile.Equals(existing))
 						{
 							found = true;

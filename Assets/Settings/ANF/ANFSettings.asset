@@ -40,6 +40,8 @@ MonoBehaviour:
     data: {fileID: 5724826130367448010, guid: 022905ec658687a479fc48d91f16fa39, type: 3}
   - id: fadeFg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
+  - id: pauseMenu
+    data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -75,12 +77,12 @@ MonoBehaviour:
           - fra
           fonts:
           - {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
-          sizes: 100000001200000014000000
+          sizes: 12000000180000001c000000
           defaultLanguage: eng
           defaultData:
           - sizeIndex: 1
             fontIndex: 0
-            color: {r: 0, g: 0, b: 0, a: 1}
+            color: {r: 1, g: 1, b: 1, a: 1}
           - sizeIndex: 1
             fontIndex: 0
             color: {r: 1, g: 1, b: 1, a: 1}

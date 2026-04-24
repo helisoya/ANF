@@ -14,7 +14,7 @@ namespace ANF.World
                 component.OnInitialize();
         }
 
-        public void OnUpdate()
+        public virtual void OnUpdate()
         {
             foreach (T component in components.Values)
                 component.OnUpdate();

@@ -84,6 +84,14 @@ namespace ANF.World
         public override void Load(JSON json)
         {
         }
+
+        public override void OnEnabled()
+        {
+        }
+
+        public override void OnDisabled()
+        {
+        }
     }
 
 }

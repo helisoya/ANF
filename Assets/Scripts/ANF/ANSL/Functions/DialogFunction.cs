@@ -4,6 +4,7 @@ using ANF.Persistent;
 using Leguar.TotalJSON;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 
 namespace ANF.ANSL
@@ -78,8 +79,8 @@ namespace ANF.ANSL
             {
                 manager.GetGUIManager().GetComponent<DialogUI>(out dialogUI);
                 dialogUI.GetSkipButton().onClick.AddListener(OnDialogSkip);
+                PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnDialogSkip;
             }
-
 
             if (!dialogUI.showingDialog)
             {
@@ -117,12 +118,13 @@ namespace ANF.ANSL
 
         private void OnDialogSkip()
         {
-            inputDetected = true;
+            if(!context.isPaused)
+                inputDetected = true;
         }
 
         private void OnDialogSkip(InputAction.CallbackContext callbackContext)
         {
-            if (callbackContext.ReadValueAsButton())
+            if (!context.isPaused && callbackContext.ReadValueAsButton())
                 OnDialogSkip();
         }
 

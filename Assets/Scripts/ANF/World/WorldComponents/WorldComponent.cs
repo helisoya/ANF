@@ -31,7 +31,15 @@ namespace ANF.World
         /// <param name="enabled">True if enabled</param>
         public void ChangeIsEnabled(bool enabled)
         {
-            isEnabled = enabled;
+            if(isEnabled != enabled)
+            {
+                isEnabled = enabled;
+                if (isEnabled)
+                    OnEnabled();
+                else
+                    OnDisabled();
+            }
+
         }
 
         /// <summary>
@@ -43,6 +51,8 @@ namespace ANF.World
         public abstract void OnInitialize();
         public abstract void OnUpdate();
         public abstract void OnStart();
+        public abstract void OnEnabled();
+        public abstract void OnDisabled();
         public abstract void Save(JSON json);
         public abstract void Load(JSON json);
     }
