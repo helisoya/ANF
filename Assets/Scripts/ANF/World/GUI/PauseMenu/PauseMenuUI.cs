@@ -17,26 +17,29 @@ namespace ANF.GUI
     public class PauseMenuUI : GUIComponent
     {
         [Header("Infos")]
-        [SerializeField] private string[] guiComponentsToPause = {"fadeBg","fadeFg","dialog"};
+        [SerializeField] private string[] guiComponentsToPause = { "fadeBg", "fadeFg", "dialog" };
         [SerializeField] private float transitionDuration = 0.5f;
 
         [Header("Base UI")]
-        [SerializeField] private Image bgImg;
-        [SerializeField] private Color bgTargetColor = new Color(0, 0, 0, 0.5f);
         [SerializeField] private RectTransform buttonsRoot;
 
         [Header("Buttons")]
         [SerializeReference, SubclassSelector(AllowNull = false)] private PauseMenuButtonData[] buttonDatas;
         [SerializeField] private PauseMenuButton buttonPrefab;
+        private int currentButtonIdx;
+        private int currentButtonInputSide;
+        private float cooldownToNextButtonIncrement;
+        private PauseMenuButton[] buttons;
 
         public override void OnInitialize()
         {
-            bgImg.color = Color.clear;
             buttonsRoot.anchoredPosition = new Vector2(-buttonsRoot.sizeDelta.x / 2f, 0);
 
-            foreach(PauseMenuButtonData buttonData in buttonDatas)
+            buttons = new PauseMenuButton[buttonDatas.Length];
+            for (int i = 0; i < buttonDatas.Length; i++)
             {
-                Instantiate(buttonPrefab, buttonsRoot).Initialize(buttonData, this, manager);
+                buttons[i] = Instantiate(buttonPrefab, buttonsRoot);
+                buttons[i].Initialize(i, buttonDatas[i], this, manager);
             }
         }
 
@@ -47,13 +50,22 @@ namespace ANF.GUI
 
         public override void OnUpdate()
         {
-
+            if (currentButtonInputSide != 0)
+            {
+                cooldownToNextButtonIncrement -= Time.deltaTime;
+                if (cooldownToNextButtonIncrement <= 0)
+                {
+                    IncrementButtonWithInput();
+                    cooldownToNextButtonIncrement = 0.25f;
+                }
+            }
         }
 
         protected override void OnClose()
         {
-            bgImg.DOComplete();
-            bgImg.DOColor(Color.clear, transitionDuration).SetEase(Ease.OutQuad);
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
 
             buttonsRoot.DOComplete();
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
@@ -70,8 +82,14 @@ namespace ANF.GUI
 
         protected override void OnOpen()
         {
-            bgImg.DOComplete();
-            bgImg.DOColor(bgTargetColor, transitionDuration).SetEase(Ease.OutQuad);
+            SetCurrentButton(0, true);
+
+            currentButtonInputSide = 0;
+            cooldownToNextButtonIncrement = 0;
+
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
 
             buttonsRoot.DOComplete();
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
@@ -79,22 +97,74 @@ namespace ANF.GUI
 
             gui.SetComponentsEnabled(guiComponentsToPause, false);
             manager.GetWorld().EnableWorldComponents(false);
-            if(gui.GetComponent<DialogUI>(out DialogUI dialog))
+            if (gui.GetComponent<DialogUI>(out DialogUI dialog))
             {
-                if(dialog.isOpen)
+                if (dialog.isOpen)
                     dialog.SetIsEnabled(false);
             }
         }
 
         private void OnPauseInput(InputAction.CallbackContext context)
         {
-            if(context.ReadValueAsButton())
+            if (context.ReadValueAsButton())
             {
                 if (!isOpen)
                     Open();
                 else
                     Close();
             }
+        }
+
+        private void OnNext(InputAction.CallbackContext context)
+        {
+            if (isOpen && isEnabled && context.ReadValueAsButton())
+                buttons[currentButtonIdx].OnClick();
+        }
+
+        private void OnMove(InputAction.CallbackContext context)
+        {
+            if (isOpen && isEnabled)
+            {
+                float value = context.ReadValue<Vector2>().y;
+
+                if (Mathf.Abs(value) >= 0.9f)
+                {
+                    if (currentButtonInputSide == 0)
+                    {
+                        cooldownToNextButtonIncrement = 0.25f;
+                        currentButtonInputSide = value < 0 ? -1 : 1;
+                        IncrementButtonWithInput();
+                    }
+                }
+                else
+                {
+                    cooldownToNextButtonIncrement = 0.0f;
+                    currentButtonInputSide = 0;
+                }
+            }
+        }
+
+        /// <summary>
+		/// Changes the current button
+		/// </summary>
+		/// <param name="id">The new button's id</param>
+        /// <param name="force">True if the id check should be skipped</param>
+        public void SetCurrentButton(int id, bool force = false)
+        {
+            if (force || currentButtonIdx != id)
+            {
+                buttons[currentButtonIdx].OnExit();
+                currentButtonIdx = id;
+                buttons[currentButtonIdx].OnEnter();
+            }
+        }
+
+        /// <summary>
+		/// Increments the current button with the keyboard input
+		/// </summary>
+        private void IncrementButtonWithInput()
+        {
+            SetCurrentButton((currentButtonIdx + currentButtonInputSide + buttons.Length) % buttons.Length);
         }
 
         protected override void OnSave(JSON json)

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5197445996823678283}
   - component: {fileID: 8782808608600142951}
+  - component: {fileID: 830148950531939248}
+  - component: {fileID: 939049465448658230}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -62,6 +64,44 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!222 &830148950531939248
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460004839094970551}
+  m_CullTransparentMesh: 1
+--- !u!114 &939049465448658230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5460004839094970551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 17d84690e04978f4ab8eb947fb6df31d, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7804507056784517331
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5309721437366466196}
   - component: {fileID: 8589963936372850101}
-  - component: {fileID: 8263671387515832335}
   - component: {fileID: 4893906188555742882}
   m_Layer: 5
   m_Name: PauseMenu
@@ -109,36 +148,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7804507056784517331}
   m_CullTransparentMesh: 1
---- !u!114 &8263671387515832335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7804507056784517331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &4893906188555742882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.PauseMenuUI
   root: {fileID: 7804507056784517331}
+  canBeSaved: 0
   hideRootWhenClosed: 0
   openByDefault: 0
   lockComponents: []
@@ -160,18 +170,21 @@ MonoBehaviour:
   - fadeFg
   - dialog
   transitionDuration: 0.5
-  bgImg: {fileID: 8263671387515832335}
-  bgTargetColor: {r: 0, g: 0, b: 0, a: 0.5}
   buttonsRoot: {fileID: 5197445996823678283}
   buttonDatas:
   - rid: 6964546897533993293
+  - rid: 1438066110988812370
   buttonPrefab: {fileID: 8145366409012032469, guid: 5df2f3a4ab496e341b857de7a20b921d, type: 3}
   references:
     version: 2
     RefIds:
+    - rid: 1438066110988812370
+      type: {class: PauseMenuButtonDataQuit, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: 360516080, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_Quit
     - rid: 6964546897533993293
       type: {class: PauseMenuButtonDataResume, ns: ANF.GUI, asm: Assembly-CSharp}
       data:
-        iconSpriteNormal: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-        iconSpriteSelected: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+        iconSprite: {fileID: -795715281, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
         labelKey: PauseMenu_Resume

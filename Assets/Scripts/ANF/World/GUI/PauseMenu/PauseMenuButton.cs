@@ -1,5 +1,6 @@
 using ANF.World;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -14,10 +15,12 @@ namespace ANF.GUI
         [SerializeField] private RectTransform buttonRoot;
         [SerializeField] private Locals.LocalizedText label;
         [SerializeField] private Image icon;
+        [SerializeField] private RectTransform iconTransform;
 
         private PauseMenuUI pauseMenu;
         private ANFManager manager;
         private PauseMenuButtonData data;
+        private int id;
 
         /// <summary>
         /// Initialize the button
@@ -25,37 +28,59 @@ namespace ANF.GUI
         /// <param name="data">The button's data</param>
         /// <param name="pauseMenu">The pause menu</param>
         /// <param name="manager">The ANF Manager</param>
-        public void Initialize(PauseMenuButtonData data, PauseMenuUI pauseMenu, ANFManager manager)
+        public void Initialize(int id, PauseMenuButtonData data, PauseMenuUI pauseMenu, ANFManager manager)
         {
+            this.id = id;
             this.data = data;
             this.pauseMenu = pauseMenu;
             this.manager = manager;
 
-            if(data != null)
+            iconTransform.sizeDelta = Vector2.zero;
+
+            if (data != null)
             {
                 label.SetNewKey(data.labelKey);
-                icon.sprite = data.iconSpriteNormal;
+                icon.sprite = data.iconSprite;
             }
         }
 
-        public void OnPointerDown(PointerEventData eventData)
+        public void OnClick()
         {
             if (data != null)
                 data.OnClick(pauseMenu, manager);
         }
 
+        public void OnEnter()
+        {
+            iconTransform.DOComplete();
+            iconTransform.DOSizeDelta(Vector2.one * 40f, 0.5f).SetEase(Ease.OutQuad);
+
+            buttonRoot.DOComplete();
+            buttonRoot.DOAnchorPosX(25, 0.5f).SetEase(Ease.OutQuad);
+        }
+
+        public void OnExit()
+        {
+            iconTransform.DOComplete();
+            iconTransform.DOSizeDelta(Vector2.zero, 0.5f).SetEase(Ease.OutQuad);
+
+            buttonRoot.DOComplete();
+            buttonRoot.DOAnchorPosX(0, 0.5f).SetEase(Ease.OutQuad);
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            OnClick();
+        }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
-            icon.sprite = data.iconSpriteSelected;
-            buttonRoot.DOComplete();
-            buttonRoot.DOAnchorPosX(25,0.5f).SetEase(Ease.OutQuad);
+            pauseMenu.SetCurrentButton(id);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            icon.sprite = data.iconSpriteNormal;
-            buttonRoot.DOComplete();
-            buttonRoot.DOAnchorPosX(0, 0.5f).SetEase(Ease.OutQuad);
+
         }
     }
 
@@ -67,8 +92,7 @@ namespace ANF.GUI
     [System.Serializable]
     public abstract class PauseMenuButtonData
     {
-        public Sprite iconSpriteNormal;
-        public Sprite iconSpriteSelected;
+        public Sprite iconSprite;
         public string labelKey;
 
         public abstract void OnClick(PauseMenuUI pauseMenu, ANFManager manager);
@@ -123,6 +147,17 @@ namespace ANF.GUI
     }
 
     /// <summary>
+    /// Subclass for the Main Menu button
+    /// </summary>
+    [System.Serializable]
+    public class PauseMenuButtonDataMainMenu : PauseMenuButtonData
+    {
+        public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
+        {
+        }
+    }
+
+    /// <summary>
     /// Subclass for the quit button
     /// </summary>
     [System.Serializable]
@@ -130,7 +165,7 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-
+            Application.Quit();
         }
     }
 }

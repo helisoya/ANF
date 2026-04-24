@@ -15,6 +15,7 @@ namespace ANF.GUI
     {
         [Header("General")]
         [SerializeField] protected GameObject root;
+        [SerializeField] protected bool canBeSaved = true;
         [SerializeField] protected bool hideRootWhenClosed = true;
         [SerializeField] protected bool openByDefault = true;
         [Tooltip("A component may be opened only if all its lock components are closed. For instance, the load menu cannot be opened if the map menu is open")]
@@ -42,7 +43,7 @@ namespace ANF.GUI
             if (openByDefault)
                 Open();
         }
-        
+
         /// <summary>
         /// Changes if the component is enabled (can be updated).
         /// A visible component can be disabled, it won't be updated with OnUpdate
@@ -96,12 +97,18 @@ namespace ANF.GUI
 
         public void Save(JSON json)
         {
+            if (!canBeSaved)
+                return;
+
             json.Add("isOpen", isOpen);
             OnSave(json);
         }
 
         public void Load(JSON json)
         {
+            if (!canBeSaved)
+                return;
+
             OnLoad(json);
 
             if (json.ContainsKey("isOpen"))

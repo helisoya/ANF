@@ -211,6 +211,7 @@ MonoBehaviour:
   buttonRoot: {fileID: 5542118692257084118}
   label: {fileID: 7262475220386468103}
   icon: {fileID: 5807507818081639748}
+  iconTransform: {fileID: 2488694604977049897}
 --- !u!222 &8302685521189042123
 CanvasRenderer:
   m_ObjectHideFlags: 0
