@@ -107,6 +107,16 @@ namespace ANF.GUI
             // Unused
         }
 
+        protected override void OnDisabled()
+        {
+            // Unused
+        }
+
+        protected override void OnEnabled()
+        {
+            // Unused
+        }
+
         protected override void OnLoad(JSON json)
         {
             if (json.ContainsKey("fadingAlpha"))

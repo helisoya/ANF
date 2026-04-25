@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4936776425618609508}
   - component: {fileID: 5724826130367448010}
+  - component: {fileID: 4755947927630345497}
   m_Layer: 5
   m_Name: DialogSystem
   m_TagString: Untagged
@@ -231,9 +232,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 75}
+  m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5724826130367448010
 MonoBehaviour:
@@ -248,12 +249,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.DialogUI
   root: {fileID: 5010621968908180720}
+  canBeSaved: 1
+  hideRootWhenClosed: 0
   openByDefault: 1
+  lockComponents: []
+  canvasGroup: {fileID: 4755947927630345497}
   speakerRoot: {fileID: 724436330951842106}
   speakerText: {fileID: 7864567423224832971}
   dialogText: {fileID: 2344990285739357128}
   skipButton: {fileID: 2268815960365812632}
   punctuationSpeedFactor: 3
+--- !u!225 &4755947927630345497
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5010621968908180720}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5360710977432353584
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.13781738, y: 0.3484993}
+  m_AnchoredPosition: {x: -0.13781738, y: 0.34849548}
   m_SizeDelta: {x: -24.1883, y: -15.9321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4938588194042563351

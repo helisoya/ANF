@@ -52,19 +52,13 @@ namespace ANF.GUI
 
         public void OnEnter()
         {
-            iconTransform.DOComplete();
             iconTransform.DOSizeDelta(Vector2.one * 40f, 0.5f).SetEase(Ease.OutQuad);
-
-            buttonRoot.DOComplete();
             buttonRoot.DOAnchorPosX(25, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public void OnExit()
         {
-            iconTransform.DOComplete();
             iconTransform.DOSizeDelta(Vector2.zero, 0.5f).SetEase(Ease.OutQuad);
-
-            buttonRoot.DOComplete();
             buttonRoot.DOAnchorPosX(0, 0.5f).SetEase(Ease.OutQuad);
         }
 

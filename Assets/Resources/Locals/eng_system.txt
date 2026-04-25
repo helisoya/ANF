@@ -6,6 +6,7 @@ PauseMenu_Resume = Resume
 PauseMenu_Save = Save
 PauseMenu_Load = Load
 PauseMenu_Options = Options
+PauseMenu_MainMenu = Main Menu
 PauseMenu_Quit = Quit
 
 

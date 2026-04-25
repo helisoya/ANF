@@ -7,6 +7,7 @@ namespace ANF.World
     /// <summary>
 	/// Represent a world component
     /// Ex : The ANSL manager, the Background, the Characters, ...
+    /// By default, isEnabled is used as a temporary way to halt a component. It won't be saved and should be used to pause components when in menus, etc...
 	/// </summary>
     [System.Serializable]
     public abstract class WorldComponent : ANFComponent
@@ -31,7 +32,7 @@ namespace ANF.World
         /// <param name="enabled">True if enabled</param>
         public void ChangeIsEnabled(bool enabled)
         {
-            if(isEnabled != enabled)
+            if (isEnabled != enabled)
             {
                 isEnabled = enabled;
                 if (isEnabled)

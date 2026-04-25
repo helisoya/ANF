@@ -1,5 +1,6 @@
 using ANF.GUI;
 using ANF.Persistent;
+using DG.Tweening;
 using Leguar.TotalJSON;
 using System.Collections.Generic;
 using System.Globalization;
@@ -20,6 +21,7 @@ namespace ANF.GUI
     public class DialogUI : GUIComponent
     {
         [Header("Components")]
+        [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private GameObject speakerRoot;
         [SerializeField] private Locals.LocalizedText speakerText;
         [SerializeField] private Locals.LocalizedText dialogText;
@@ -49,6 +51,8 @@ namespace ANF.GUI
             speakerText.SetCanReload(true, false);
             dialogText.SetLocalizationEnabled(false, false);
             dialogText.SetCanReload(false, false);
+
+            canvasGroup.alpha = 0;
         }
 
         public override void OnStart()
@@ -217,10 +221,22 @@ namespace ANF.GUI
 
         protected override void OnClose()
         {
+            OnClose();
         }
 
         protected override void OnOpen()
         {
+            OnEnabled();
+        }
+
+        protected override void OnDisabled()
+        {
+            canvasGroup.DOFade(0, 0.5f).SetEase(Ease.OutQuad);
+        }
+
+        protected override void OnEnabled()
+        {
+            canvasGroup.DOFade(1, 0.5f).SetEase(Ease.OutQuad);
         }
 
         protected override void OnSave(JSON json)

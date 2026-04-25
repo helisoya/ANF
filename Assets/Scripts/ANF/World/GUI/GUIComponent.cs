@@ -9,6 +9,9 @@ namespace ANF.GUI
 {
     /// <summary>
     /// Represents a GUI Component
+    /// A component can be opened or closed, which will be saved.
+    /// It can also be enabled and disabled, which will restrict some of its functions, but will not be saved.
+    /// You may use isEnabled to disable components when in a pause menu, without compromising a potential save
     /// </summary>
     [System.Serializable]
     public abstract class GUIComponent : MonoBehaviour, ANFComponent
@@ -51,8 +54,27 @@ namespace ANF.GUI
         /// <param name="enabled"></param>
         public void SetIsEnabled(bool enabled)
         {
-            isEnabled = isOpen && enabled;
+            bool newValue = isOpen && enabled;
+
+            if (newValue != isEnabled)
+            {
+                isEnabled = isOpen && enabled;
+                if (newValue)
+                    OnEnabled();
+                else
+                    OnDisabled();
+            }
         }
+
+        /// <summary>
+		/// Callback for when a component is enabled
+		/// </summary>
+        protected abstract void OnEnabled();
+
+        /// <summary>
+		/// Callback for when a component is disabled
+		/// </summary>
+        protected abstract void OnDisabled();
 
         /// <summary>
 		/// Opens the GUI component
@@ -68,6 +90,7 @@ namespace ANF.GUI
                 isEnabled = true;
                 root.SetActive(true);
                 OnOpen();
+                OnEnabled();
             }
         }
 
@@ -82,6 +105,7 @@ namespace ANF.GUI
                 isEnabled = false;
                 root.SetActive(!hideRootWhenClosed);
                 OnClose();
+                OnDisabled();
             }
         }
 

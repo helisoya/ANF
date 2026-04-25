@@ -173,6 +173,10 @@ MonoBehaviour:
   buttonsRoot: {fileID: 5197445996823678283}
   buttonDatas:
   - rid: 6964546897533993293
+  - rid: 1438066124900532298
+  - rid: 1438066124900532299
+  - rid: 1438066124900532300
+  - rid: 1438066124900532297
   - rid: 1438066110988812370
   buttonPrefab: {fileID: 8145366409012032469, guid: 5df2f3a4ab496e341b857de7a20b921d, type: 3}
   references:
@@ -183,6 +187,26 @@ MonoBehaviour:
       data:
         iconSprite: {fileID: 360516080, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
         labelKey: PauseMenu_Quit
+    - rid: 1438066124900532297
+      type: {class: PauseMenuButtonDataMainMenu, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: -258718329, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_MainMenu
+    - rid: 1438066124900532298
+      type: {class: PauseMenuButtonDataSave, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: 1542346999, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_Save
+    - rid: 1438066124900532299
+      type: {class: PauseMenuButtonDataLoad, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: 930631579, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_Load
+    - rid: 1438066124900532300
+      type: {class: PauseMenuButtonDataOptions, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: 1942865845, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_Options
     - rid: 6964546897533993293
       type: {class: PauseMenuButtonDataResume, ns: ANF.GUI, asm: Assembly-CSharp}
       data:

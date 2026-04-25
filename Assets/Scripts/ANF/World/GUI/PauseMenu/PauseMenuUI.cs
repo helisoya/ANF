@@ -56,9 +56,19 @@ namespace ANF.GUI
                 if (cooldownToNextButtonIncrement <= 0)
                 {
                     IncrementButtonWithInput();
-                    cooldownToNextButtonIncrement = 0.25f;
+                    cooldownToNextButtonIncrement = 0.5f;
                 }
             }
+        }
+
+        protected override void OnDisabled()
+        {
+            // Unused
+        }
+
+        protected override void OnEnabled()
+        {
+            // Unused
         }
 
         protected override void OnClose()
@@ -67,7 +77,6 @@ namespace ANF.GUI
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
 
-            buttonsRoot.DOComplete();
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
@@ -91,7 +100,6 @@ namespace ANF.GUI
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
 
-            buttonsRoot.DOComplete();
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
@@ -131,8 +139,8 @@ namespace ANF.GUI
                 {
                     if (currentButtonInputSide == 0)
                     {
-                        cooldownToNextButtonIncrement = 0.25f;
-                        currentButtonInputSide = value < 0 ? -1 : 1;
+                        cooldownToNextButtonIncrement = 0.5f;
+                        currentButtonInputSide = value < 0 ? 1 : -1;
                         IncrementButtonWithInput();
                     }
                 }
