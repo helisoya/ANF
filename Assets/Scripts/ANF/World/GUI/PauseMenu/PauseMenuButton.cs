@@ -25,6 +25,7 @@ namespace ANF.GUI
         /// <summary>
         /// Initialize the button
         /// </summary>
+        /// <param name="id">The button's id</param>
         /// <param name="data">The button's data</param>
         /// <param name="pauseMenu">The pause menu</param>
         /// <param name="manager">The ANF Manager</param>
@@ -112,7 +113,7 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-            if(manager.GetGUIManager().GetComponent<SaveMenuUI>(out SaveMenuUI saveMenu))
+            if (manager.GetGUIManager().GetComponent<SaveMenuUI>(out SaveMenuUI saveMenu))
             {
                 saveMenu.SetIsInSaveMode(true);
                 pauseMenu.ChangeSubMenu(saveMenu);

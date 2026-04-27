@@ -23,6 +23,8 @@ namespace ANF.Persistent
         [Header("Data")]
         [Tooltip("Filepath to the save files (Inside Assets/ in the editor, and inside the game's persistent data folder in build)")]
         public string saveFolder = "Saves/";
+        [Tooltip("How many save slot (minus the auto save) should be available ?")]
+        public int saveSlotsAmount = 10;
         [Tooltip("Path to the general data files (in Resources/) Ex: variables.txt, maps.txt")]
         public string generalDataPath = "General/";
         [Tooltip("Player datas containers are responsible for datas that are local to a save file (Ex: variables)")]

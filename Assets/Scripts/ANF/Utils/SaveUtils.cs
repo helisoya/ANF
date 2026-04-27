@@ -27,6 +27,17 @@ namespace ANF.Utils
         }
 
         /// <summary>
+		/// Computes a save path
+		/// </summary>
+		/// <param name="saveName">The save's name</param>
+		/// <param name="saveFolder">The save folder</param>
+		/// <returns></returns>
+        public static string GetSavePath(string saveName, string saveFolder)
+        {
+            return FileManager.savPath + saveFolder + saveName + ".json";
+        }
+
+        /// <summary>
         /// Loads a JSON
         /// </summary>
         /// <param name="filepath"></param>

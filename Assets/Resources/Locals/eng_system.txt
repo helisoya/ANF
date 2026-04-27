@@ -11,6 +11,9 @@ PauseMenu_MainMenu = Main Menu
 SaveMenu_Title_Save = Select a slot to save to
 SaveMenu_Title_Load = Select a slot to load from
 
+SaveMenu_Popup_Title = Use this slot ?
+SaveMenu_Popup_Confirm = Confirm
+SaveMenu_Popup_Cancel = Cancel
 
 # ------------------------------------------------------------------------
 # -------------------- Title Screen & Settings ---------------------------

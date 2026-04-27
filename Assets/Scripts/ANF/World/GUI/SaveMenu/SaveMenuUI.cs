@@ -1,4 +1,6 @@
 using ANF.Locals;
+using ANF.Persistent;
+using ANF.Utils;
 using DG.Tweening;
 using Leguar.TotalJSON;
 using UnityEngine;
@@ -17,6 +19,8 @@ namespace ANF.GUI
 
         [Header("Save Menu")]
         [SerializeField] private Locals.LocalizedText titleText;
+        [SerializeField] private Transform buttonsRoot;
+        [SerializeField] private SaveMenuButton buttonPrefab;
 
         private bool inSaveMode;
 
@@ -56,9 +60,53 @@ namespace ANF.GUI
             this.inSaveMode = inSaveMode;
         }
 
+        /// <summary>
+		/// Generates a save button
+		/// </summary>
+		/// <param name="settings">The ANF settings</param>
+		/// <param name="saveName">The save's name</param>
+		/// <param name="saveIcon">The save's icon</param>
+        private void GenerateSaveButton(ANFSettings settings, string saveName, string saveIcon)
+        {
+            string savePath = SaveUtils.GetSavePath(saveName, settings.saveFolder);
+            string label = "";
+
+            JSON saveFile = SaveUtils.LoadJSON(savePath);
+            if (saveFile != null)
+            {
+                try
+                {
+                    label = saveFile.GetJSON("playerData").GetJSON("playerVariableContainer").GetString("playerName");
+                }
+                catch
+                {
+                }
+            }
+
+            Instantiate(buttonPrefab, buttonsRoot).Initialize(0, this,
+            new SaveMenuButtonData()
+            {
+                saveFileIcon = saveIcon,
+                saveFileName = savePath,
+                label = label,
+                bgSprite = null,
+            });
+        }
+
         public override void OnEnabled()
         {
+            ANFSettings settings = PersistentDataManager.instance.GetANFSettings();
             titleText.SetNewKey(inSaveMode ? "SaveMenu_Title_Save" : "SaveMenu_Title_Load");
+
+            foreach (Transform child in buttonsRoot)
+                Destroy(child.gameObject);
+
+            GenerateSaveButton(settings, "autosave", "A");
+
+            for (int i = 0; i < settings.saveSlotsAmount; i++)
+            {
+                GenerateSaveButton(settings, i.ToString(), i.ToString());
+            }
 
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
