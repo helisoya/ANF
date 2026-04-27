@@ -219,27 +219,27 @@ namespace ANF.GUI
             return false;
         }
 
-        protected override void OnClose()
+        public override void OnEnabled()
         {
-            OnClose();
+            OnUnPaused();
         }
 
-        protected override void OnOpen()
+        public override void OnDisabled()
         {
-            OnEnabled();
+            OnPaused();
         }
 
-        protected override void OnDisabled()
+        public override void OnPaused()
         {
             canvasGroup.DOFade(0, 0.5f).SetEase(Ease.OutQuad);
         }
 
-        protected override void OnEnabled()
+        public override void OnUnPaused()
         {
             canvasGroup.DOFade(1, 0.5f).SetEase(Ease.OutQuad);
         }
 
-        protected override void OnSave(JSON json)
+        public override void OnSave(JSON json)
         {
             json.Add("showingDialog", showingDialog);
             json.Add("secondsBetweenCharacters", secondsBetweenCharacters);
@@ -249,7 +249,7 @@ namespace ANF.GUI
             json.Add("textIds", textIds);
         }
 
-        protected override void OnLoad(JSON json)
+        public override void OnLoad(JSON json)
         {
             if (json.ContainsKey("showingDialog"))
                 showingDialog = json.GetBool("showingDialog");

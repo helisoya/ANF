@@ -137,17 +137,36 @@ namespace ANF.ANSL
                     context.Update();
             }
         }
+        
+        /// <summary>
+        /// Refresh whether contexts should be enabled
+        /// </summary>
+        private void CheckEnableState()
+        {
+            PauseAllContexts(isPaused);
+        }
+
+        public override void OnPaused()
+        {
+            CheckEnableState();
+        }
+
+        public override void OnUnPaused()
+        {
+            CheckEnableState();
+        }
+
         public override void OnEnabled()
         {
-            PauseAllContexts(false);
+            CheckEnableState();
         }
 
         public override void OnDisabled()
         {
-            PauseAllContexts(true);
+            CheckEnableState();
         }
 
-        public override void Save(JSON json)
+        public override void OnSave(JSON json)
         {
             JArray contextsArray = new JArray();
             JSON contextJSON;
@@ -161,7 +180,7 @@ namespace ANF.ANSL
             json.Add("contexts", contextsArray);
         }
 
-        public override void Load(JSON json)
+        public override void OnLoad(JSON json)
         {
             if (json.ContainsKey("contexts"))
             {

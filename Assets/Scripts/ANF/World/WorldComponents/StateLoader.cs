@@ -77,11 +77,11 @@ namespace ANF.World
         {
         }
 
-        public override void Save(JSON json)
+        public override void OnPaused()
         {
         }
 
-        public override void Load(JSON json)
+        public override void OnUnPaused()
         {
         }
 
@@ -90,6 +90,14 @@ namespace ANF.World
         }
 
         public override void OnDisabled()
+        {
+        }
+
+        public override void OnSave(JSON json)
+        {
+        }
+
+        public override void OnLoad(JSON json)
         {
         }
     }

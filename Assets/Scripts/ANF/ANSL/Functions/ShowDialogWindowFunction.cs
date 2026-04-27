@@ -30,11 +30,7 @@ namespace ANF.ANSL
             if (parameters.GetParameter(0, out bool shown) &&
                 manager.GetGUIManager().GetComponent<DialogUI>(out DialogUI dialogUI))
             {
-
-                if (shown)
-                    dialogUI.Open();
-                else
-                    dialogUI.Close();
+                dialogUI.SetEnabled(shown);
             }
             EndProcess();
         }

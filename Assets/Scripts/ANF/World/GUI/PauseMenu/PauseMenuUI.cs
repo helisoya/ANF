@@ -61,17 +61,7 @@ namespace ANF.GUI
             }
         }
 
-        protected override void OnDisabled()
-        {
-            // Unused
-        }
-
-        protected override void OnEnabled()
-        {
-            // Unused
-        }
-
-        protected override void OnClose()
+        public override void OnDisabled()
         {
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
@@ -80,16 +70,16 @@ namespace ANF.GUI
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
-            gui.SetComponentsEnabled(guiComponentsToPause, true);
-            manager.GetWorld().EnableWorldComponents(true);
+            gui.SetComponentsPaused(guiComponentsToPause, false);
+            manager.GetWorld().SetPausedAll(false);
             if (gui.GetComponent<DialogUI>(out DialogUI dialog))
             {
-                if (dialog.isOpen)
-                    dialog.SetIsEnabled(true);
+                if (dialog.isEnabled)
+                    dialog.SetPaused(false);
             }
         }
 
-        protected override void OnOpen()
+        public override void OnEnabled()
         {
             SetCurrentButton(0, true);
 
@@ -103,35 +93,49 @@ namespace ANF.GUI
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
-            gui.SetComponentsEnabled(guiComponentsToPause, false);
-            manager.GetWorld().EnableWorldComponents(false);
+            gui.SetComponentsPaused(guiComponentsToPause, true);
+            manager.GetWorld().SetPausedAll(true);
             if (gui.GetComponent<DialogUI>(out DialogUI dialog))
             {
-                if (dialog.isOpen)
-                    dialog.SetIsEnabled(false);
+                if (dialog.isEnabled)
+                    dialog.SetPaused(true);
             }
         }
+
+        public override void OnPaused()
+        {
+        }
+
+        public override void OnUnPaused()
+        {
+        }
+
+        public override void OnSave(JSON json)
+        {
+        }
+
+        public override void OnLoad(JSON json)
+        {
+        }
+
 
         private void OnPauseInput(InputAction.CallbackContext context)
         {
             if (context.ReadValueAsButton())
             {
-                if (!isOpen)
-                    Open();
-                else
-                    Close();
+                SetEnabled(!isEnabled);
             }
         }
 
         private void OnNext(InputAction.CallbackContext context)
         {
-            if (isOpen && isEnabled && context.ReadValueAsButton())
+            if (isEnabled && !isPaused && context.ReadValueAsButton())
                 buttons[currentButtonIdx].OnClick();
         }
 
         private void OnMove(InputAction.CallbackContext context)
         {
-            if (isOpen && isEnabled)
+            if (isEnabled && !isPaused)
             {
                 float value = context.ReadValue<Vector2>().y;
 
@@ -175,11 +179,6 @@ namespace ANF.GUI
             SetCurrentButton((currentButtonIdx + currentButtonInputSide + buttons.Length) % buttons.Length);
         }
 
-        protected override void OnSave(JSON json)
-        {
-        }
-        protected override void OnLoad(JSON json)
-        {
-        }
+
     }
 }

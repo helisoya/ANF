@@ -100,7 +100,7 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-            pauseMenu.Close();
+            pauseMenu.SetEnabled(false);
         }
     }
 
@@ -148,18 +148,6 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-        }
-    }
-
-    /// <summary>
-    /// Subclass for the quit button
-    /// </summary>
-    [System.Serializable]
-    public class PauseMenuButtonDataQuit : PauseMenuButtonData
-    {
-        public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
-        {
-            Application.Quit();
         }
     }
 }

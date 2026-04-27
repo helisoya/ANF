@@ -17,17 +17,18 @@ namespace ANF.GUI
     public abstract class GUIComponent : MonoBehaviour, ANFComponent
     {
         [Header("General")]
-        [SerializeField] protected GameObject root;
         [SerializeField] protected bool canBeSaved = true;
+        [SerializeField] protected bool enabledByDefault = true;
+        [SerializeField] protected GameObject root;
         [SerializeField] protected bool hideRootWhenClosed = true;
-        [SerializeField] protected bool openByDefault = true;
         [Tooltip("A component may be opened only if all its lock components are closed. For instance, the load menu cannot be opened if the map menu is open")]
         [SerializeField] protected string[] lockComponents;
 
+        public bool isEnabled { get; protected set; } = true;
+        public bool isPaused { get; protected set; } = false;
+
         protected ANFManager manager;
         protected GUIManager gui;
-        public bool isOpen { get; private set; }
-        public bool isEnabled { get; private set; }
 
         /// <summary>
         /// Initialize the component
@@ -37,94 +38,54 @@ namespace ANF.GUI
         {
             this.manager = manager;
             this.gui = gui;
-            isOpen = false;
             isEnabled = false;
+            isPaused = false;
             OnInitialize();
 
             root.SetActive(!hideRootWhenClosed);
 
-            if (openByDefault)
-                Open();
+            if (enabledByDefault)
+                SetEnabled(true);
         }
 
-        /// <summary>
-        /// Changes if the component is enabled (can be updated).
-        /// A visible component can be disabled, it won't be updated with OnUpdate
-        /// </summary>
-        /// <param name="enabled"></param>
-        public void SetIsEnabled(bool enabled)
+        public void SetEnabled(bool enabled)
         {
-            bool newValue = isOpen && enabled;
+            if (enabled && gui.AnyComponentsActive(lockComponents))
+                return;
 
-            if (newValue != isEnabled)
+            if (enabled != isEnabled)
             {
-                isEnabled = isOpen && enabled;
-                if (newValue)
+                isPaused = false;
+                isEnabled = enabled;
+                root.SetActive(!hideRootWhenClosed || isEnabled);
+
+                if(isEnabled)
                     OnEnabled();
                 else
                     OnDisabled();
             }
         }
 
-        /// <summary>
-		/// Callback for when a component is enabled
-		/// </summary>
-        protected abstract void OnEnabled();
-
-        /// <summary>
-		/// Callback for when a component is disabled
-		/// </summary>
-        protected abstract void OnDisabled();
-
-        /// <summary>
-		/// Opens the GUI component
-		/// </summary>
-        public void Open()
+        public void SetPaused(bool paused)
         {
-            if (gui.AnyComponentsActive(lockComponents))
-                return;
+            bool newValue = isEnabled && paused;
 
-            if (!isOpen)
+            if (newValue != isPaused)
             {
-                isOpen = true;
-                isEnabled = true;
-                root.SetActive(true);
-                OnOpen();
-                OnEnabled();
+                isPaused = newValue;
+                if (newValue)
+                    OnPaused();
+                else
+                    OnUnPaused();
             }
         }
-
-        /// <summary>
-        /// Closes the GUI component
-        /// </summary>
-        public void Close()
-        {
-            if (isOpen)
-            {
-                isOpen = false;
-                isEnabled = false;
-                root.SetActive(!hideRootWhenClosed);
-                OnClose();
-                OnDisabled();
-            }
-        }
-
-        /// <summary>
-		/// On Open callback
-		/// </summary>
-        protected abstract void OnOpen();
-
-        /// <summary>
-		/// On close callback
-		/// </summary>
-        protected abstract void OnClose();
 
         public void Save(JSON json)
         {
             if (!canBeSaved)
                 return;
 
-            json.Add("isOpen", isOpen);
+            json.Add("isEnabled", isEnabled);
             OnSave(json);
         }
 
@@ -135,33 +96,22 @@ namespace ANF.GUI
 
             OnLoad(json);
 
-            if (json.ContainsKey("isOpen"))
+            if (json.ContainsKey("isEnabled"))
             {
-
-                bool open = json.GetBool("isOpen");
-
-                root.SetActive(false);
-                if (open)
-                    OnOpen();
-                else
-                    OnClose();
+                bool open = json.GetBool("isEnabled");
+                enabled = !open;
+                SetEnabled(open);
             }
         }
-
-        /// <summary>
-		/// On Save callback
-		/// </summary>
-		/// <param name="json">The JSON to save to</param>
-        protected abstract void OnSave(JSON json);
-
-        /// <summary>
-		/// On Load Callback
-		/// </summary>
-		/// <param name="json">The JSON to load from</param>
-        protected abstract void OnLoad(JSON json);
 
         public abstract void OnInitialize();
         public abstract void OnUpdate();
         public abstract void OnStart();
+        public abstract void OnPaused();
+        public abstract void OnUnPaused();
+        public abstract void OnEnabled();
+        public abstract void OnDisabled();
+        public abstract void OnSave(JSON json);
+        public abstract void OnLoad(JSON json);
     }
 }

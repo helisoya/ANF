@@ -40,30 +40,6 @@ namespace ANF.GUI
         }
 
         /// <summary>
-        /// Changes if all components are enabled or not
-        /// </summary>
-        /// <param name="enabled">True if enabled</param>
-        public void SetComponentsEnabled(bool enabled)
-        {
-            foreach (GUIComponent component in components.Values)
-                component.SetIsEnabled(enabled);
-        }
-
-        /// <summary>
-        /// Changes if all components are enabled or not
-        /// </summary>
-        /// <param name="enabled">True if enabled</param>
-        public void SetComponentsEnabled(string[] componentIds, bool enabled)
-        {
-            GUIComponent tmp;
-            foreach (string componentId in componentIds)
-            {
-                if (components.TryGetValue(componentId, out tmp))
-                    tmp.SetIsEnabled(enabled);
-            }
-        }
-
-        /// <summary>
         /// Checks if any of the specified components are open
         /// </summary>
         /// <param name="components">The components to check</param>
@@ -74,16 +50,30 @@ namespace ANF.GUI
             foreach(string componentId in componentIds)
             {
                 if(components.TryGetValue(componentId, out tmp))
-                    if(tmp.isOpen)
+                    if(tmp.isEnabled)
                         return true;
             }
             return false;
         }
 
+        /// <summary>
+        /// Changes if all components are paused or not
+        /// </summary>
+        /// <param name="paused">True if paused</param>
+        public void SetComponentsPaused(string[] componentIds, bool paused)
+        {
+            GUIComponent tmp;
+            foreach (string componentId in componentIds)
+            {
+                if (components.TryGetValue(componentId, out tmp))
+                    tmp.SetPaused(paused);
+            }
+        }
+
         public override void OnUpdate()
         {
             foreach (GUIComponent component in components.Values)
-                if(component.isEnabled && component.isOpen)
+                if (component.isEnabled && !component.isPaused)
                     component.OnUpdate();
         }
     }

@@ -1,4 +1,6 @@
 using ANF.Utils;
+using Leguar.TotalJSON;
+using System.Security.Authentication.ExtendedProtection;
 using UnityEngine;
 
 namespace ANF.World
@@ -25,6 +27,45 @@ namespace ANF.World
         /// Called when all components are created
 		/// </summary>
         public abstract void OnStart();
+
+        /// <summary>
+        /// On Paused callback.
+        /// Called when the component is paused (paused state is not saved)
+        /// </summary>
+        public abstract void OnPaused();
+
+        /// <summary>
+        /// On UnPaused callback.
+        /// Called when the component is unpaused (paused state is not saved)
+        /// </summary>
+        public abstract void OnUnPaused();
+
+        /// <summary>
+        /// On Enabled callback.
+        /// Called when the component is enabled (enabled state is saved)
+        /// </summary>
+        public abstract void OnEnabled();
+
+        /// <summary>
+        /// On Disabled callback.
+        /// Called when the component is disabled (enabled state is saved)
+        /// </summary>
+        public abstract void OnDisabled();
+
+        /// <summary>
+        /// Changes if the component is enabled or not
+        /// </summary>
+        /// <param name="enabled">True if enabled</param>
+        public void SetEnabled(bool enabled);
+
+        /// <summary>
+        /// Changes if the component is paused or not (not saved)
+        /// </summary>
+        /// <param name="paused">True if paused</param>
+        public void SetPaused(bool paused);
+
+        public abstract void OnSave(JSON json);
+        public abstract void OnLoad(JSON json);
     }
 }
 

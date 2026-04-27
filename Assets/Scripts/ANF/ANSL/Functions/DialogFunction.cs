@@ -97,7 +97,7 @@ namespace ANF.ANSL
                     PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnDialogSkip;
 
                     if (closeAfterwards)
-                        dialogUI.Close();
+                        dialogUI.SetEnabled(false);
                     EndProcess();
                 }
             }

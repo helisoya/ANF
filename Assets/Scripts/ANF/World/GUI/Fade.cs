@@ -92,32 +92,32 @@ namespace ANF.GUI
             fadingAlpha = false;
         }
 
-        protected override void OnOpen()
-        {
-            // Unused
-        }
-
-        protected override void OnClose()
-        {
-            // Unused
-        }
-
         public override void OnStart()
         {
             // Unused
         }
 
-        protected override void OnDisabled()
+        public override void OnDisabled()
         {
             // Unused
         }
 
-        protected override void OnEnabled()
+        public override void OnEnabled()
         {
             // Unused
         }
 
-        protected override void OnLoad(JSON json)
+        public override void OnPaused()
+        {
+            // Unused
+        }
+
+        public override void OnUnPaused()
+        {
+            // Unused
+        }
+
+        public override void OnLoad(JSON json)
         {
             if (json.ContainsKey("fadingAlpha"))
                 fadingAlpha = json.GetBool("fadingAlpha");
@@ -148,7 +148,7 @@ namespace ANF.GUI
                 fadeImg.color = json.GetJArray("currentColor").AsColor();
         }
 
-        protected override void OnSave(JSON json)
+        public override void OnSave(JSON json)
         {
             json.Add("fadingAlpha", fadingAlpha);
             json.Add("fadingColor", fadingColor);
@@ -166,6 +166,7 @@ namespace ANF.GUI
             json.Add("currentAlpha", canvasGroup.alpha);
             json.Add("currentColor", fadeImg.color);
         }
+
 
     }
 }

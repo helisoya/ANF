@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PauseIcons_0
+      name: PauseIcons_Resume
       rect:
         serializedVersion: 2
         x: 0
@@ -132,7 +132,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PauseIcons_1
+      name: PauseIcons_MainMenu
       rect:
         serializedVersion: 2
         x: 64
@@ -154,7 +154,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PauseIcons_2
+      name: PauseIcons_Options
       rect:
         serializedVersion: 2
         x: 128
@@ -176,7 +176,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PauseIcons_3
+      name: PauseIcons_Save
       rect:
         serializedVersion: 2
         x: 192
@@ -198,7 +198,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PauseIcons_4
+      name: PauseIcons_Load
       rect:
         serializedVersion: 2
         x: 256
@@ -219,28 +219,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: PauseIcons_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcb4fd3105e4b584594ab7c95d575c7f
-      internalID: 930631579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -257,12 +235,12 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      PauseIcons_0: -795715281
-      PauseIcons_1: 360516080
-      PauseIcons_2: -258718329
-      PauseIcons_3: 1942865845
-      PauseIcons_4: 1542346999
       PauseIcons_5: 930631579
+      PauseIcons_Load: 1542346999
+      PauseIcons_MainMenu: 360516080
+      PauseIcons_Options: -258718329
+      PauseIcons_Resume: -795715281
+      PauseIcons_Save: 1942865845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

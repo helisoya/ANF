@@ -12,9 +12,13 @@ namespace ANF.World
     [System.Serializable]
     public abstract class WorldComponent : ANFComponent
     {
-        protected ANFManager manager;
+        [Header("General")]
+        [SerializeField] protected bool canBeSaved = true;
+        [SerializeField] protected bool enabledByDefault = true;
         public bool isEnabled { get; protected set; } = true;
+        public bool isPaused { get; protected set; } = false;
 
+        protected ANFManager manager;
 
         /// <summary>
         /// Initialize the component
@@ -23,24 +27,56 @@ namespace ANF.World
         public void Initialize(ANFManager manager)
         {
             this.manager = manager;
+            isEnabled = enabledByDefault;
+            isPaused = false;
             OnInitialize();
         }
 
-        /// <summary>
-        /// Changes if the component is enabled or not
-        /// </summary>
-        /// <param name="enabled">True if enabled</param>
-        public void ChangeIsEnabled(bool enabled)
+        public void SetEnabled(bool enabled)
         {
-            if (isEnabled != enabled)
+            if (enabled != isEnabled)
             {
                 isEnabled = enabled;
+                isPaused = false;
                 if (isEnabled)
                     OnEnabled();
                 else
                     OnDisabled();
             }
+        }
 
+        public void SetPaused(bool paused)
+        {
+            bool newValue = isEnabled && paused;
+
+            if (newValue != isPaused)
+            {
+                isPaused = newValue;
+                if (isPaused)
+                    OnPaused();
+                else
+                    OnUnPaused();
+            }
+        }
+
+        public void Save(JSON json)
+        {
+            if (!canBeSaved)
+                return;
+
+            json.Add("isEnabled", isEnabled);
+            OnSave(json);
+        }
+
+        public void Load(JSON json)
+        {
+            if (!canBeSaved)
+                return;
+
+            OnLoad(json);
+
+            if (json.ContainsKey("isEnabled"))
+                isEnabled = json.GetBool("isEnabled");
         }
 
         /// <summary>
@@ -52,9 +88,11 @@ namespace ANF.World
         public abstract void OnInitialize();
         public abstract void OnUpdate();
         public abstract void OnStart();
+        public abstract void OnPaused();
+        public abstract void OnUnPaused();
         public abstract void OnEnabled();
         public abstract void OnDisabled();
-        public abstract void Save(JSON json);
-        public abstract void Load(JSON json);
+        public abstract void OnSave(JSON json);
+        public abstract void OnLoad(JSON json);
     }
 }
