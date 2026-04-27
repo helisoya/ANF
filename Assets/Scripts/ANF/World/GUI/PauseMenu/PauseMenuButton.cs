@@ -112,7 +112,11 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-
+            if(manager.GetGUIManager().GetComponent<SaveMenuUI>(out SaveMenuUI saveMenu))
+            {
+                saveMenu.SetIsInSaveMode(true);
+                pauseMenu.ChangeSubMenu(saveMenu);
+            }
         }
     }
 
@@ -124,7 +128,11 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-
+            if (manager.GetGUIManager().GetComponent<SaveMenuUI>(out SaveMenuUI saveMenu))
+            {
+                saveMenu.SetIsInSaveMode(false);
+                pauseMenu.ChangeSubMenu(saveMenu);
+            }
         }
     }
 

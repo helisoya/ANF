@@ -8,7 +8,8 @@ PauseMenu_Load = Load
 PauseMenu_Options = Options
 PauseMenu_MainMenu = Main Menu
 
-
+SaveMenu_Title_Save = Select a slot to save to
+SaveMenu_Title_Load = Select a slot to load from
 
 
 # ------------------------------------------------------------------------

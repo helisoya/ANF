@@ -42,6 +42,8 @@ MonoBehaviour:
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   - id: pauseMenu
     data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
+  - id: saveMenu
+    data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -51,6 +53,8 @@ MonoBehaviour:
     - rid: 1438066020397613125
       type: {class: ANSLManager, ns: ANF.ANSL, asm: Assembly-CSharp}
       data:
+        canBeSaved: 1
+        enabledByDefault: 1
         maxFunctionsPerFrame: 10
         maxContexts: 20
         contextStackLength: 10
@@ -61,6 +65,8 @@ MonoBehaviour:
     - rid: 1438066042575257686
       type: {class: StateLoader, ns: ANF.World, asm: Assembly-CSharp}
       data:
+        canBeSaved: 1
+        enabledByDefault: 1
         startInDebugMode: 1
         debugModeScript: ANF/Tests/Dialog
         autoLoadSaveFile: 0

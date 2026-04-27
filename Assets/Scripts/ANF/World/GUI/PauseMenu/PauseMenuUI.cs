@@ -2,6 +2,7 @@ using ANF.GUI;
 using ANF.Persistent;
 using DG.Tweening;
 using Leguar.TotalJSON;
+using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,12 +17,10 @@ namespace ANF.GUI
     [System.Serializable]
     public class PauseMenuUI : GUIComponent
     {
-        [Header("Infos")]
+        [Header("Base UI")]
         [SerializeField] private string[] guiComponentsToPause = { "fadeBg", "fadeFg", "dialog" };
         [SerializeField] private float transitionDuration = 0.5f;
-
-        [Header("Base UI")]
-        [SerializeField] private RectTransform buttonsRoot;
+        [SerializeField] private RectTransform buttonsRoot;        
 
         [Header("Buttons")]
         [SerializeReference, SubclassSelector(AllowNull = false)] private PauseMenuButtonData[] buttonDatas;
@@ -31,8 +30,12 @@ namespace ANF.GUI
         private float cooldownToNextButtonIncrement;
         private PauseMenuButton[] buttons;
 
+        private GUIComponent currentPauseSubmenu;
+
+
         public override void OnInitialize()
         {
+            currentPauseSubmenu = null;
             buttonsRoot.anchoredPosition = new Vector2(-buttonsRoot.sizeDelta.x / 2f, 0);
 
             buttons = new PauseMenuButton[buttonDatas.Length];
@@ -63,6 +66,9 @@ namespace ANF.GUI
 
         public override void OnDisabled()
         {
+            if(currentPauseSubmenu != null)
+                ChangeSubMenu(null);
+
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
@@ -123,19 +129,28 @@ namespace ANF.GUI
         {
             if (context.ReadValueAsButton())
             {
-                SetEnabled(!isEnabled);
+                if(currentPauseSubmenu != null)
+                {
+                    currentPauseSubmenu.SetEnabled(false);
+                    currentPauseSubmenu = null;
+                }
+                else
+                {
+                    SetEnabled(!isEnabled);
+                }
+                
             }
         }
 
         private void OnNext(InputAction.CallbackContext context)
         {
-            if (isEnabled && !isPaused && context.ReadValueAsButton())
+            if (isEnabled && !isPaused && currentPauseSubmenu == null && context.ReadValueAsButton())
                 buttons[currentButtonIdx].OnClick();
         }
 
         private void OnMove(InputAction.CallbackContext context)
         {
-            if (isEnabled && !isPaused)
+            if (isEnabled && !isPaused && currentPauseSubmenu == null)
             {
                 float value = context.ReadValue<Vector2>().y;
 
@@ -179,6 +194,23 @@ namespace ANF.GUI
             SetCurrentButton((currentButtonIdx + currentButtonInputSide + buttons.Length) % buttons.Length);
         }
 
+        /// <summary>
+        /// Changes the current submenu
+        /// </summary>
+        /// <param name="component">The new submenu</param>
+        public void ChangeSubMenu(GUIComponent component)
+        {
+            if (currentPauseSubmenu != null)
+                currentPauseSubmenu.SetEnabled(false);
 
+            currentPauseSubmenu = component;
+            if(currentPauseSubmenu)
+            {
+                currentButtonInputSide = 0;
+                cooldownToNextButtonIncrement = 0;
+                currentPauseSubmenu.SetEnabled(true);
+            }
+                
+        }
     }
 }
