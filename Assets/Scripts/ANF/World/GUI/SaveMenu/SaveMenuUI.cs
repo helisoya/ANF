@@ -21,6 +21,9 @@ namespace ANF.GUI
         [SerializeField] private Locals.LocalizedText titleText;
         [SerializeField] private Transform buttonsRoot;
         [SerializeField] private SaveMenuButton buttonPrefab;
+        [SerializeReference, SubclassSelector(AllowNull = false)] private SaveMenuSlotInfo slotInfo;
+        [SerializeField] private Sprite bgSpriteSaveFile;
+        [SerializeField] private Sprite bgSpriteNoSaveFile;
 
         private bool inSaveMode;
 
@@ -69,27 +72,24 @@ namespace ANF.GUI
         private void GenerateSaveButton(ANFSettings settings, string saveName, string saveIcon)
         {
             string savePath = SaveUtils.GetSavePath(saveName, settings.saveFolder);
-            string label = "";
 
-            JSON saveFile = SaveUtils.LoadJSON(savePath);
-            if (saveFile != null)
+            string label = "";
+            bool saveFileExists = SaveUtils.FileExists(savePath);
+            if (saveFileExists)
             {
-                try
-                {
-                    label = saveFile.GetJSON("playerData").GetJSON("playerVariableContainer").GetString("playerName");
-                }
-                catch
-                {
-                }
+                JSON saveFile = SaveUtils.LoadJSON(savePath);
+                label = slotInfo.GetInfo(saveFile);
+
             }
 
             Instantiate(buttonPrefab, buttonsRoot).Initialize(0, this,
             new SaveMenuButtonData()
             {
+                saveFileExists = saveFileExists,
                 saveFileIcon = saveIcon,
                 saveFileName = savePath,
                 label = label,
-                bgSprite = null,
+                bgSprite = saveFileExists ? bgSpriteSaveFile : bgSpriteNoSaveFile,
             });
         }
 
@@ -136,6 +136,46 @@ namespace ANF.GUI
         public override void OnLoad(JSON json)
         {
 
+        }
+    }
+
+    /// <summary>
+	/// Represents a way to get slot info from a save file
+	/// </summary>
+    [System.Serializable]
+    public abstract class SaveMenuSlotInfo
+    {
+        /// <summary>
+		/// Gets the slot's visual info from a savefile
+		/// </summary>
+		/// <param name="saveFile">The save file</param>
+		/// <returns>The save slot's label</returns>
+        public abstract string GetInfo(JSON saveFile);
+    }
+
+    /// <summary>
+	/// The default ANF Slot Info
+	/// </summary>
+    [System.Serializable]
+    public class SaveMenuSlotDefaultInfo : SaveMenuSlotInfo
+    {
+        public override string GetInfo(JSON saveFile)
+        {
+            if (saveFile != null)
+            {
+                try
+                {
+                    string result = "";
+                    result = saveFile.GetJSON("playerData").GetJSON("playerVariableContainer").GetString("playerName");
+
+                    return result;
+                }
+                catch
+                {
+                }
+            }
+
+            return "";
         }
     }
 }

@@ -952,6 +952,16 @@ MonoBehaviour:
   titleText: {fileID: 2269394107686771599}
   buttonsRoot: {fileID: 6390159873749332529}
   buttonPrefab: {fileID: 1238873286846129547, guid: f5431055d342b374e98657c9c73f096d, type: 3}
+  slotInfo:
+    rid: 1438066191746990158
+  bgSpriteSaveFile: {fileID: 0}
+  bgSpriteNoSaveFile: {fileID: 0}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1438066191746990158
+      type: {class: SaveMenuSlotDefaultInfo, ns: ANF.GUI, asm: Assembly-CSharp}
+      data: 
 --- !u!1 &5950405889042382750
 GameObject:
   m_ObjectHideFlags: 0

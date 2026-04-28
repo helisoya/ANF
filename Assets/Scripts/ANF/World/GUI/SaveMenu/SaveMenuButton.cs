@@ -42,7 +42,7 @@ namespace ANF.GUI
 
         public void OnEnter()
         {
-            root.DOSizeDelta(Vector2.one * 0.9f, 0.5f).SetEase(Ease.OutQuad);
+            root.DOScale(Vector2.one * 0.9f, 0.5f).SetEase(Ease.OutQuad);
             root.DOShakeRotation(0.5f, new Vector3(0, 0, 5f)).SetEase(Ease.OutQuad).OnComplete(() =>
             {
                 root.DORotate(Vector3.zero, 0.1f).SetEase(Ease.OutQuad);
@@ -51,7 +51,7 @@ namespace ANF.GUI
 
         public void OnExit()
         {
-            root.DOSizeDelta(Vector2.one, 0.5f).SetEase(Ease.OutQuad);
+            root.DOScale(Vector2.one, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -75,6 +75,7 @@ namespace ANF.GUI
 	/// </summary>
     public class SaveMenuButtonData
     {
+        public bool saveFileExists;
         public string saveFileName;
         public string saveFileIcon;
         public string label;
