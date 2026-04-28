@@ -354,9 +354,6 @@ namespace ANF.Locals
 		{
 			json.Add("currentLanguage", currentLanguage);
 
-			if(currentAdditionalFiles != null)
-				json.Add("currentAdditionalFiles", currentAdditionalFiles);
-
 			JArray channelArray = new JArray();
 			JSON channelData;
 
@@ -389,9 +386,6 @@ namespace ANF.Locals
 						ChangeColor((Channel)i, channelJson.GetJArray("color").AsColor());
 				}
 			}
-
-            if (json.ContainsKey("currentAdditionalFiles"))
-                currentAdditionalFiles = json.GetJArray("currentAdditionalFiles").AsStringArray();
 
             if (json.ContainsKey("currentLanguage"))
 				ChangeLanguage(json.GetString("currentLanguage"));

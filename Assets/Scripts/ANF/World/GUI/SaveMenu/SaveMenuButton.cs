@@ -40,6 +40,21 @@ namespace ANF.GUI
             }
         }
 
+
+        /// <summary>
+        /// Updates the button's infos
+        /// </summary>
+        /// <param name="label">The new label</param>
+        /// <param name="bgSprite">The new Background sprite</param>
+        public void UpdateInfos(string label, Sprite bgSprite)
+        {
+            data.label = label;
+            data.bgSprite = bgSprite;
+
+            labelText.GetText().text = label;
+            backgroundImage.sprite = bgSprite;
+        }
+
         public void OnEnter()
         {
             root.DOScale(Vector2.one * 0.9f, 0.5f).SetEase(Ease.OutQuad);
@@ -54,14 +69,21 @@ namespace ANF.GUI
             root.DOScale(Vector2.one, 0.5f).SetEase(Ease.OutQuad);
         }
 
+        public void OnClick()
+        {
+            if(data.interactable)
+                saveMenuUI.OpenConfirmPopup(data);
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
-
+            if (data.interactable)
+                OnClick();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            OnEnter();
+            saveMenuUI.SetCurrentButton(id);
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -75,6 +97,7 @@ namespace ANF.GUI
 	/// </summary>
     public class SaveMenuButtonData
     {
+        public bool interactable;
         public bool saveFileExists;
         public string saveFileName;
         public string saveFileIcon;

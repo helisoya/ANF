@@ -117,6 +117,14 @@ namespace ANF.GUI
             // Unused
         }
 
+        public override void OnRegisterInputs()
+        {
+        }
+
+        public override void OnUnRegisterInputs()
+        {
+        }
+
         public override void OnLoad(JSON json)
         {
             if (json.ContainsKey("fadingAlpha"))

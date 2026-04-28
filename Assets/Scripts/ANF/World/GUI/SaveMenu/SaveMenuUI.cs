@@ -3,7 +3,11 @@ using ANF.Persistent;
 using ANF.Utils;
 using DG.Tweening;
 using Leguar.TotalJSON;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 namespace ANF.GUI
@@ -22,8 +26,22 @@ namespace ANF.GUI
         [SerializeField] private Transform buttonsRoot;
         [SerializeField] private SaveMenuButton buttonPrefab;
         [SerializeReference, SubclassSelector(AllowNull = false)] private SaveMenuSlotInfo slotInfo;
-        [SerializeField] private Sprite bgSpriteSaveFile;
-        [SerializeField] private Sprite bgSpriteNoSaveFile;
+        [SerializeField] private int slotsPerRow = 4;
+
+        [Header("Confirm Popup")]
+        [SerializeField] private RectTransform confirmPopupRoot;
+        [SerializeField] private SaveMenuButton confirmPopupPreviewButton;
+        [SerializeField] private RectTransform confirmPopupCancelButton;
+        [SerializeField] private RectTransform confirmPopupAcceptButton;
+
+        private int currentButtonIdx;
+        private SaveMenuButton[] buttons;
+        private Vector2Int currentButtonInputSide = new Vector2Int();
+        private float cooldownToNextButtonIncrement = 0;
+
+        private bool onConfirmButton;
+        private SaveMenuButtonData currentPopupData;
+        private bool inPopup;
 
         private bool inSaveMode;
 
@@ -40,7 +58,18 @@ namespace ANF.GUI
 
         public override void OnUpdate()
         {
-
+            if (currentButtonInputSide.x != 0 || currentButtonInputSide.y != 0)
+            {
+                cooldownToNextButtonIncrement -= Time.deltaTime;
+                if (cooldownToNextButtonIncrement <= 0)
+                {
+                    if (inPopup && currentButtonInputSide.x != 0)
+                        ChangePopupButton(!onConfirmButton);
+                    else
+                        IncrementButtonWithInput();
+                    cooldownToNextButtonIncrement = 0.5f;
+                }
+            }
         }
 
         /// <summary>
@@ -69,28 +98,34 @@ namespace ANF.GUI
 		/// <param name="settings">The ANF settings</param>
 		/// <param name="saveName">The save's name</param>
 		/// <param name="saveIcon">The save's icon</param>
-        private void GenerateSaveButton(ANFSettings settings, string saveName, string saveIcon)
+        /// <param name="id">The slot's id</param>
+        /// <param name="interactable">True if interactable</param>
+        /// <returns>The generated button</returns>
+        private SaveMenuButton GenerateSaveButton(ANFSettings settings, string saveName, string saveIcon, int id, bool interactable)
         {
             string savePath = SaveUtils.GetSavePath(saveName, settings.saveFolder);
 
-            string label = "";
             bool saveFileExists = SaveUtils.FileExists(savePath);
-            if (saveFileExists)
-            {
-                JSON saveFile = SaveUtils.LoadJSON(savePath);
-                label = slotInfo.GetInfo(saveFile);
+            JSON saveFile = SaveUtils.LoadJSON(savePath);
+            string label = slotInfo.GetLabel(saveFile);
+            Sprite bgSprite = slotInfo.GetBackground(saveFile);
 
-            }
+            if (interactable && ((!saveFileExists && !inSaveMode) || (inSaveMode && id == 0))) // No manual save to autosave and no load to empty stuff
+                interactable = false;
 
-            Instantiate(buttonPrefab, buttonsRoot).Initialize(0, this,
+            SaveMenuButton button = Instantiate(buttonPrefab, buttonsRoot);
+            button.Initialize(id, this,
             new SaveMenuButtonData()
             {
+                interactable = interactable,
                 saveFileExists = saveFileExists,
                 saveFileIcon = saveIcon,
                 saveFileName = savePath,
                 label = label,
-                bgSprite = saveFileExists ? bgSpriteSaveFile : bgSpriteNoSaveFile,
+                bgSprite = bgSprite,
             });
+
+            return button;
         }
 
         public override void OnEnabled()
@@ -101,19 +136,29 @@ namespace ANF.GUI
             foreach (Transform child in buttonsRoot)
                 Destroy(child.gameObject);
 
-            GenerateSaveButton(settings, "autosave", "A");
+            buttons = new SaveMenuButton[settings.saveSlotsAmount+1];
+            buttons[0] = GenerateSaveButton(settings, "autosave", "A",0,true);
 
             for (int i = 0; i < settings.saveSlotsAmount; i++)
             {
-                GenerateSaveButton(settings, i.ToString(), i.ToString());
+                buttons[i + 1] = GenerateSaveButton(settings, i.ToString(), i.ToString(),i + 1,true);
             }
 
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
+
+            currentButtonInputSide.x = 0;
+            currentButtonInputSide.y = 0;
+            cooldownToNextButtonIncrement = 0;
+
+            SetCurrentButton(0, true);
         }
 
         public override void OnDisabled()
         {
+            if (inPopup)
+                CloseConfirmPopup();
+
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
         }
@@ -128,6 +173,213 @@ namespace ANF.GUI
 
         }
 
+        private void OnNext(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused && context.ReadValueAsButton())
+            {
+                if(inPopup)
+                    ConfirmCurrentPopupButton();
+                else
+                    buttons[currentButtonIdx].OnClick();  
+            }
+        }
+
+        private void OnPauseInput(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused && context.ReadValueAsButton())
+            {
+                if (inPopup)
+                    CloseConfirmPopup();
+                else
+                    SetEnabled(false);
+            }
+        }
+
+        private void OnMove(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused)
+            {
+                Vector2 value = context.ReadValue<Vector2>();
+
+                bool noMovement = true;
+
+                if (Mathf.Abs(value.x) >= 0.9f)
+                {
+                    noMovement = false;
+                    if (currentButtonInputSide.x == 0)
+                    {
+                        cooldownToNextButtonIncrement = 0.5f;
+                        currentButtonInputSide.x = value.x < 0 ? 1 : -1;
+
+                        if(inPopup)
+                            ChangePopupButton(!onConfirmButton);
+                        else
+                            IncrementButtonWithInput();
+                    }
+                }
+
+                if (Mathf.Abs(value.y) >= 0.9f && !inPopup)
+                {
+                    noMovement = false;
+                    if (currentButtonInputSide.y == 0)
+                    {
+                        cooldownToNextButtonIncrement = 0.5f;
+                        currentButtonInputSide.y = value.y < 0 ? 1 : -1;
+                        IncrementButtonWithInput();
+                    }
+                }
+
+                if (noMovement)
+                {
+                    cooldownToNextButtonIncrement = 0.0f;
+                    currentButtonInputSide.x = 0;
+                    currentButtonInputSide.y = 0;
+                }
+            }
+        }
+
+        /// <summary>
+		/// Changes the current button
+		/// </summary>
+		/// <param name="id">The new button's id</param>
+        /// <param name="force">True if the id check should be skipped</param>
+        public void SetCurrentButton(int id, bool force = false)
+        {
+            if (id < 0)
+                return;
+
+            if (force || currentButtonIdx != id)
+            {
+                buttons[currentButtonIdx].OnExit();
+                currentButtonIdx = id;
+                buttons[currentButtonIdx].OnEnter();
+            }
+        }
+
+        /// <summary>
+		/// Increments the current button with the keyboard input
+		/// </summary>
+        private void IncrementButtonWithInput()
+        {
+            SetCurrentButton((currentButtonIdx -currentButtonInputSide.x + currentButtonInputSide.y * slotsPerRow + buttons.Length) % buttons.Length);
+        }
+
+        /// <summary>
+        /// Opens the confirm popup
+        /// </summary>
+        /// <param name="data">The slot's data</param>
+        public void OpenConfirmPopup(SaveMenuButtonData data)
+        {
+            currentButtonInputSide.x = 0;
+            currentButtonInputSide.y = 0;
+            cooldownToNextButtonIncrement = 0;
+            inPopup = true;
+            currentPopupData = new SaveMenuButtonData()
+            {
+                saveFileExists = data.saveFileExists,
+                saveFileIcon = data.saveFileIcon,
+                saveFileName = data.saveFileName,
+                bgSprite = data.bgSprite,
+                interactable = false,
+                label = data.label
+            };
+
+            confirmPopupPreviewButton.Initialize(-1, this, currentPopupData);
+
+            onConfirmButton = true;
+            ChangePopupButton(false);
+            confirmPopupRoot.DOScale(Vector3.one, 0.75f).SetEase(Ease.OutBack);
+            confirmPopupRoot.DOShakeRotation(0.4f, new Vector3(0, 0, 5.0f)).OnComplete(() =>
+            {
+                confirmPopupRoot.DORotate(Vector3.zero, 0.1f).SetEase(Ease.OutQuad);
+            });
+        }
+
+        /// <summary>
+        /// Closes the confirm popup
+        /// </summary>
+        public void CloseConfirmPopup()
+        {
+            inPopup = false;
+            currentPopupData = null;
+
+            currentButtonInputSide.x = 0;
+            currentButtonInputSide.y = 0;
+            cooldownToNextButtonIncrement = 0;
+
+            confirmPopupRoot.DOScale(Vector3.zero, 0.75f).SetEase(Ease.InBack);
+        }
+
+        /// <summary>
+        /// Confims and applies the current popup selection
+        /// </summary>
+        public void ConfirmCurrentPopupButton()
+        {
+            if (onConfirmButton)
+            {
+                // Save / Load
+                if (inSaveMode)
+                {
+                    SaveUtils.SavePlayerData(PersistentDataManager.instance.GetPlayerData(), manager, currentPopupData.saveFileName);
+                    JSON newFile = SaveUtils.LoadJSON(currentPopupData.saveFileName);
+                    buttons[currentButtonIdx].UpdateInfos(slotInfo.GetLabel(newFile), slotInfo.GetBackground(newFile));
+                }
+                else
+                {
+                    if(PersistentDataManager.instance.GetGlobalData().GetComponent<LoadStateContainer>(out LoadStateContainer container))
+                    {
+                        manager.GetWorld().UnRegisterAllInputs();
+                        manager.GetGUIManager().UnRegisterAllInputs();
+                        container.SetToLoadSaveFile(currentPopupData.saveFileName);
+                        SceneManager.LoadScene(PersistentDataManager.instance.GetANFSettings().gameScene);
+                    }
+                }
+            }
+            CloseConfirmPopup();
+        }
+
+        /// <summary>
+        /// Changes the currently selected popup button
+        /// </summary>
+        /// <param name="onConfirmButton">True if the user is on the confirm button</param>
+        /// <param name="force">True if no check should be applied</param>
+        public void ChangePopupButton(bool onConfirmButton)
+        {
+            if(onConfirmButton != this.onConfirmButton)
+            {
+                this.onConfirmButton = onConfirmButton;
+
+                confirmPopupAcceptButton.DOScale(Vector3.one * (onConfirmButton ? 1.2f : 1.0f), 0.5f).SetEase(Ease.OutBounce);
+                confirmPopupCancelButton.DOScale(Vector3.one * (!onConfirmButton ? 1.2f : 1.0f), 0.5f).SetEase(Ease.OutBounce);
+                confirmPopupAcceptButton.GetComponent<Image>().DOColor(Color.white * new Vector4(
+                    (onConfirmButton ? 0.9f : 1.0f), 
+                    1.0f, 
+                    (onConfirmButton ? 0.9f : 1.0f),
+                    1.0f), 0.5f).SetEase(Ease.OutQuad);
+                confirmPopupCancelButton.GetComponent<Image>().DOColor(Color.white * new Vector4(
+                    (!onConfirmButton ? 0.9f : 1.0f),
+                    1.0f,
+                    (!onConfirmButton ? 0.9f : 1.0f),
+                    1.0f), 0.5f).SetEase(Ease.OutQuad);
+            }
+        }
+
+        public override void OnRegisterInputs()
+        {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed += OnPauseInput;
+        }
+
+        public override void OnUnRegisterInputs()
+        {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed -= OnPauseInput;
+        }
+
         public override void OnSave(JSON json)
         {
 
@@ -139,6 +391,10 @@ namespace ANF.GUI
         }
     }
 
+
+
+
+
     /// <summary>
 	/// Represents a way to get slot info from a save file
 	/// </summary>
@@ -146,20 +402,31 @@ namespace ANF.GUI
     public abstract class SaveMenuSlotInfo
     {
         /// <summary>
-		/// Gets the slot's visual info from a savefile
+		/// Gets the slot's label info from a savefile
 		/// </summary>
 		/// <param name="saveFile">The save file</param>
 		/// <returns>The save slot's label</returns>
-        public abstract string GetInfo(JSON saveFile);
+        public abstract string GetLabel(JSON saveFile);
+
+        /// <summary>
+        /// Gets the slot's background from a savefile
+        /// </summary>
+        /// <param name="saveFile">The save file</param>
+        /// <returns>The save slot's label</returns>
+        public abstract Sprite GetBackground(JSON saveFile);
     }
 
     /// <summary>
-	/// The default ANF Slot Info
+	/// The default ANF Slot Info.
+    /// The label is the player name and the background is different depending on if the savefile exists
 	/// </summary>
     [System.Serializable]
     public class SaveMenuSlotDefaultInfo : SaveMenuSlotInfo
     {
-        public override string GetInfo(JSON saveFile)
+        [SerializeField] private Sprite bgSavefileExists;
+        [SerializeField] private Sprite bgSavefileDontExist;
+
+        public override string GetLabel(JSON saveFile)
         {
             if (saveFile != null)
             {
@@ -176,6 +443,13 @@ namespace ANF.GUI
             }
 
             return "";
+        }
+
+        public override Sprite GetBackground(JSON saveFile)
+        {
+            if (saveFile == null)
+                return bgSavefileDontExist;
+            return bgSavefileExists;
         }
     }
 }

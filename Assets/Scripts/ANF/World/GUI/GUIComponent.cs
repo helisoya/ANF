@@ -60,9 +60,15 @@ namespace ANF.GUI
                 root.SetActive(!hideRootWhenClosed || isEnabled);
 
                 if(isEnabled)
+                {
+                    OnRegisterInputs();
                     OnEnabled();
+                }
                 else
+                {
+                    OnUnRegisterInputs();
                     OnDisabled();
+                }
             }
         }
 
@@ -113,5 +119,7 @@ namespace ANF.GUI
         public abstract void OnDisabled();
         public abstract void OnSave(JSON json);
         public abstract void OnLoad(JSON json);
+        public abstract void OnRegisterInputs();
+        public abstract void OnUnRegisterInputs();
     }
 }

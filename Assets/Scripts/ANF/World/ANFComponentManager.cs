@@ -1,4 +1,5 @@
 using ANF.Utils;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace ANF.World
@@ -44,6 +45,15 @@ namespace ANF.World
         {
             foreach (T component in components.Values)
                 component.SetPaused(paused);
+        }
+
+        /// <summary>
+        /// Unregisters all component inputs. Use this when changing scenes.
+        /// </summary>
+        public void UnRegisterAllInputs()
+        {
+            foreach (T component in components.Values)
+                component.OnUnRegisterInputs();
         }
 
     }

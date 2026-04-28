@@ -166,6 +166,14 @@ namespace ANF.ANSL
             CheckEnableState();
         }
 
+        public override void OnRegisterInputs()
+        {
+        }
+
+        public override void OnUnRegisterInputs()
+        {
+        }
+
         public override void OnSave(JSON json)
         {
             JArray contextsArray = new JArray();

@@ -42,32 +42,34 @@ namespace ANF.World
 
         public override void OnStart()
         {
-#if UNITY_EDITOR
-            if (autoLoadSaveFile)
-            {
-                string savePath = Utils.FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder
-                    + saveFileToAutoLoad + ".json";
-                SaveUtils.LoadPlayerData(PersistentDataManager.instance.GetPlayerData(), manager, savePath);
-                return;
-            }
-            else if (startInDebugMode)
-            {
-                if (manager.GetWorld().GetComponent<ANSLManager>(out ANSLManager anslManager))
-                    anslManager.StartNewContext(debugModeScript);
-                return;
-            }
-#endif
             if (PersistentDataManager.instance.GetGlobalData().GetComponent<LoadStateContainer>(out LoadStateContainer container))
             {
+                ANSLManager anslManager = null;
+                manager.GetWorld().GetComponent<ANSLManager>(out anslManager);
+
                 if (container.loadingASaveFile)
                 {
-                    string savePath = Utils.FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder
-                        + container.GetSaveFileToLoad() + ".json";
-                    SaveUtils.LoadPlayerData(PersistentDataManager.instance.GetPlayerData(), manager, savePath);
+                    SaveUtils.LoadPlayerData(PersistentDataManager.instance.GetPlayerData(), manager, container.GetSaveFileToLoad());
                 }
                 else
                 {
-                    if (manager.GetWorld().GetComponent<ANSLManager>(out ANSLManager anslManager))
+#if UNITY_EDITOR
+                    if (autoLoadSaveFile)
+                    {
+                        string savePath = Utils.FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder
+                            + saveFileToAutoLoad + ".json";
+                        SaveUtils.LoadPlayerData(PersistentDataManager.instance.GetPlayerData(), manager, savePath);
+                        return;
+                    }
+                    else if (startInDebugMode)
+                    {
+                        if (anslManager != null)
+                            anslManager.StartNewContext(debugModeScript);
+                        return;
+                    }
+#endif
+
+                    if (anslManager != null)
                         anslManager.StartNewContext(container.GetScriptToLoad());
                 }
             }
@@ -98,6 +100,14 @@ namespace ANF.World
         }
 
         public override void OnLoad(JSON json)
+        {
+        }
+
+        public override void OnRegisterInputs()
+        {
+        }
+
+        public override void OnUnRegisterInputs()
         {
         }
     }

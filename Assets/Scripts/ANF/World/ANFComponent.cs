@@ -53,6 +53,16 @@ namespace ANF.World
         public abstract void OnDisabled();
 
         /// <summary>
+        /// Called when inputs should be registered
+        /// </summary>
+        public abstract void OnRegisterInputs();
+
+        /// <summary>
+        /// Called when inputs should be unregistered (component is disabled, scene change, ...)
+        /// </summary>
+        public abstract void OnUnRegisterInputs();
+
+        /// <summary>
         /// Changes if the component is enabled or not
         /// </summary>
         /// <param name="enabled">True if enabled</param>

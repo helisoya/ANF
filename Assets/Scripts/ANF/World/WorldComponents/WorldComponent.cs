@@ -94,5 +94,7 @@ namespace ANF.World
         public abstract void OnDisabled();
         public abstract void OnSave(JSON json);
         public abstract void OnLoad(JSON json);
+        public abstract void OnRegisterInputs();
+        public abstract void OnUnRegisterInputs();
     }
 }

@@ -18,6 +18,10 @@ namespace ANF.Persistent
         [Header("General")]
         [Tooltip("The default starting script for the game")]
         public string startingScript;
+        [Tooltip("The name of the main menu scene")]
+        public string mainMenuScene;
+        [Tooltip("The name of the game scene")]
+        public string gameScene;
 
 
         [Header("Data")]

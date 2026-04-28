@@ -1,5 +1,6 @@
 using ANF.ANSL;
 using ANF.GUI;
+using ANF.Locals;
 using ANF.Persistent;
 using Leguar.TotalJSON;
 using UnityEngine;
@@ -29,11 +30,11 @@ namespace ANF.ANSL
         protected override void OnStartProcess()
         {
             if (parameters.GetParameter(0, out string[] list) &&
-                PersistentDataManager.instance.GetGlobalData().GetComponent<Locals.Locals>(out Locals.Locals locals))
+                PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerLocals>(out PlayerLocals locals))
             {
                 if (list.Length == 0 && list[0] == null)
                     list = null;
-                locals.ChangeAdditionalFiles(list);
+                locals.SetAdditionalFiles(list);
             }
             EndProcess();
         }

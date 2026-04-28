@@ -310,6 +310,14 @@ namespace ANF.GUI
             }
         }
 
+        public override void OnRegisterInputs()
+        {
+        }
+
+        public override void OnUnRegisterInputs()
+        {
+        }
+
         /// <summary>
         /// Represents a dialog segment
         /// </summary>

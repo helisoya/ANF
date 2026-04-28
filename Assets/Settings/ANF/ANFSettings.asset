@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: ANFSettings
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Persistent.ANFSettings
   startingScript: ANF/Tests/If2
+  mainMenuScene: 
+  gameScene: ANFTest
   saveFolder: Saves/
+  saveSlotsAmount: 11
   generalDataPath: General/
   registeredPlayerDataContainers:
   - id: playerVariableContainer
     data:
       rid: 1438066020397613127
+  - id: playerLocals
+    data:
+      rid: 6964546988055199858
   registeredGlobalDataContainers:
   - id: loadState
     data:
@@ -116,3 +122,6 @@ MonoBehaviour:
           - sizeIndex: 0
             fontIndex: 0
             color: {r: 0, g: 0, b: 0, a: 1}
+    - rid: 6964546988055199858
+      type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
+      data: 

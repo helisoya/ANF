@@ -53,6 +53,9 @@ namespace ANF.GUI
 
         public override void OnUpdate()
         {
+            if (currentPauseSubmenu && !currentPauseSubmenu.isEnabled)
+                currentPauseSubmenu = null;
+
             if (currentButtonInputSide != 0)
             {
                 cooldownToNextButtonIncrement -= Time.deltaTime;
@@ -68,10 +71,6 @@ namespace ANF.GUI
         {
             if(currentPauseSubmenu != null)
                 ChangeSubMenu(null);
-
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
 
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
@@ -92,9 +91,7 @@ namespace ANF.GUI
             currentButtonInputSide = 0;
             cooldownToNextButtonIncrement = 0;
 
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
+
 
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
@@ -124,21 +121,25 @@ namespace ANF.GUI
         {
         }
 
+        public override void OnRegisterInputs()
+        {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
+        }
+
+        public override void OnUnRegisterInputs()
+        {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
+        }
 
         private void OnPauseInput(InputAction.CallbackContext context)
         {
-            if (context.ReadValueAsButton())
+            if (currentPauseSubmenu == null && context.ReadValueAsButton())
             {
-                if(currentPauseSubmenu != null)
-                {
-                    currentPauseSubmenu.SetEnabled(false);
-                    currentPauseSubmenu = null;
-                }
-                else
-                {
-                    SetEnabled(!isEnabled);
-                }
-                
+                SetEnabled(!isEnabled);
             }
         }
 
