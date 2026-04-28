@@ -656,8 +656,8 @@ MonoBehaviour:
     - rid: 1438066191746990158
       type: {class: SaveMenuSlotDefaultInfo, ns: ANF.GUI, asm: Assembly-CSharp}
       data:
-        bgSavefileExists: {fileID: 0}
-        bgSavefileDontExist: {fileID: 0}
+        bgSavefileExists: {fileID: 76504064, guid: a1b6fab1533b50a43aa60e764df062a1, type: 3}
+        bgSavefileDontExist: {fileID: 1924764891, guid: a1b6fab1533b50a43aa60e764df062a1, type: 3}
 --- !u!1 &5950405889042382750
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ namespace ANF.ANSL
     /// </summary>
     public abstract class ANSLFunction : Jsonable
     {
-        public bool isProcessing { get; private set; }
+        public bool isProcessing { get; protected set; }
 
         protected ANSLContext context;
         protected ANFManager manager;
@@ -82,7 +82,7 @@ namespace ANF.ANSL
 
             string compiledLine = GetAttribute().functionId.ToString();
 
-            if(parameters != null)
+            if (parameters != null)
             {
                 foreach (string parameter in parameters)
                 {
@@ -104,16 +104,23 @@ namespace ANF.ANSL
         public abstract FunctionParameterType[][] GetParametersTemplates();
 
         /// <summary>
+		/// Initialize the function
+		/// </summary>
+		/// <param name="context">The ANSL context</param>
+		/// <param name="manager">The ANF Manager</param>
+        public void Initialize(ANSLContext context, ANFManager manager)
+        {
+            this.context = context;
+            this.manager = manager;
+        }
+
+        /// <summary>
         /// Starts the function's process
         /// </summary>
         /// <param name="parameters">The function's parameters</param>
-        /// <param name="context">The ANSL Context</param>
-        /// <param name="manager">The ANF Manager</param>
-        public void StartProcess(FunctionParameters parameters, ANSLContext context, ANFManager manager)
+        public void StartProcess(FunctionParameters parameters)
         {
             isProcessing = true;
-            this.context = context;
-            this.manager = manager;
             this.parameters = parameters;
             OnStartProcess();
         }
@@ -140,6 +147,14 @@ namespace ANF.ANSL
         }
 
         /// <summary>
+		/// Cleans up the function. Called in rare occasions (Changing scenes for instance)
+		/// </summary>
+        public void Cleanup()
+        {
+            OnCleanup();
+        }
+
+        /// <summary>
         /// Called when updating the function
         /// Use this is the function does things in more than one frame
         /// </summary>
@@ -157,12 +172,31 @@ namespace ANF.ANSL
         /// </summary>
         protected abstract void OnCleanup();
 
-        public virtual void Save(JSON json)
+        /// <summary>
+        /// On save callback
+        /// </summary>
+        /// <param name="json">The json to save to</param>
+        protected virtual void OnSave(JSON json) { }
+
+        /// <summary>
+		/// On load callback
+		/// </summary>
+		/// <param name="json">The json to load from</param>
+        protected virtual void OnLoad(JSON json) { }
+
+        public void Save(JSON json)
         {
+            json.Add("isProcessing", isProcessing);
+
+            OnSave(json);
         }
 
-        public virtual void Load(JSON json)
+        public void Load(JSON json)
         {
+            OnLoad(json);
+
+            if (json.ContainsKey("isProcessing"))
+                isProcessing = json.GetBool("isProcessing");
         }
     }
 }

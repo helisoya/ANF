@@ -136,12 +136,12 @@ namespace ANF.GUI
             foreach (Transform child in buttonsRoot)
                 Destroy(child.gameObject);
 
-            buttons = new SaveMenuButton[settings.saveSlotsAmount+1];
-            buttons[0] = GenerateSaveButton(settings, "autosave", "A",0,true);
+            buttons = new SaveMenuButton[settings.saveSlotsAmount + 1];
+            buttons[0] = GenerateSaveButton(settings, "autosave", "A", 0, true);
 
             for (int i = 0; i < settings.saveSlotsAmount; i++)
             {
-                buttons[i + 1] = GenerateSaveButton(settings, i.ToString(), i.ToString(),i + 1,true);
+                buttons[i + 1] = GenerateSaveButton(settings, i.ToString(), i.ToString(), i + 1, true);
             }
 
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
@@ -177,10 +177,10 @@ namespace ANF.GUI
         {
             if (isEnabled && !isPaused && context.ReadValueAsButton())
             {
-                if(inPopup)
+                if (inPopup)
                     ConfirmCurrentPopupButton();
                 else
-                    buttons[currentButtonIdx].OnClick();  
+                    buttons[currentButtonIdx].OnClick();
             }
         }
 
@@ -211,7 +211,7 @@ namespace ANF.GUI
                         cooldownToNextButtonIncrement = 0.5f;
                         currentButtonInputSide.x = value.x < 0 ? 1 : -1;
 
-                        if(inPopup)
+                        if (inPopup)
                             ChangePopupButton(!onConfirmButton);
                         else
                             IncrementButtonWithInput();
@@ -261,7 +261,7 @@ namespace ANF.GUI
 		/// </summary>
         private void IncrementButtonWithInput()
         {
-            SetCurrentButton((currentButtonIdx -currentButtonInputSide.x + currentButtonInputSide.y * slotsPerRow + buttons.Length) % buttons.Length);
+            SetCurrentButton((currentButtonIdx - currentButtonInputSide.x + currentButtonInputSide.y * slotsPerRow + buttons.Length) % buttons.Length);
         }
 
         /// <summary>
@@ -326,12 +326,14 @@ namespace ANF.GUI
                 }
                 else
                 {
-                    if(PersistentDataManager.instance.GetGlobalData().GetComponent<LoadStateContainer>(out LoadStateContainer container))
+                    if (PersistentDataManager.instance.GetGlobalData().GetComponent<LoadStateContainer>(out LoadStateContainer container))
                     {
-                        manager.GetWorld().UnRegisterAllInputs();
-                        manager.GetGUIManager().UnRegisterAllInputs();
+                        DOTween.KillAll(false);
+                        manager.GetWorld().OnChangeScene();
+                        manager.GetGUIManager().OnChangeScene();
                         container.SetToLoadSaveFile(currentPopupData.saveFileName);
                         SceneManager.LoadScene(PersistentDataManager.instance.GetANFSettings().gameScene);
+                        return;
                     }
                 }
             }
@@ -345,15 +347,15 @@ namespace ANF.GUI
         /// <param name="force">True if no check should be applied</param>
         public void ChangePopupButton(bool onConfirmButton)
         {
-            if(onConfirmButton != this.onConfirmButton)
+            if (onConfirmButton != this.onConfirmButton)
             {
                 this.onConfirmButton = onConfirmButton;
 
                 confirmPopupAcceptButton.DOScale(Vector3.one * (onConfirmButton ? 1.2f : 1.0f), 0.5f).SetEase(Ease.OutBounce);
                 confirmPopupCancelButton.DOScale(Vector3.one * (!onConfirmButton ? 1.2f : 1.0f), 0.5f).SetEase(Ease.OutBounce);
                 confirmPopupAcceptButton.GetComponent<Image>().DOColor(Color.white * new Vector4(
-                    (onConfirmButton ? 0.9f : 1.0f), 
-                    1.0f, 
+                    (onConfirmButton ? 0.9f : 1.0f),
+                    1.0f,
                     (onConfirmButton ? 0.9f : 1.0f),
                     1.0f), 0.5f).SetEase(Ease.OutQuad);
                 confirmPopupCancelButton.GetComponent<Image>().DOColor(Color.white * new Vector4(
@@ -378,6 +380,11 @@ namespace ANF.GUI
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed -= OnPauseInput;
+        }
+
+        public override void OnChangeScene()
+        {
+            OnUnRegisterInputs();
         }
 
         public override void OnSave(JSON json)
@@ -432,8 +439,17 @@ namespace ANF.GUI
             {
                 try
                 {
+                    Locals.Locals locals;
+                    PersistentDataManager.instance.GetGlobalData().GetComponent<Locals.Locals>(out locals);
+
                     string result = "";
-                    result = saveFile.GetJSON("playerData").GetJSON("playerVariableContainer").GetString("playerName");
+                    JSON playerVariableJson = saveFile.GetJSON("playerData").GetJSON("playerVariableContainer");
+                    if (playerVariableJson.ContainsKey("playerName"))
+                        result += playerVariableJson.GetString("playerName");
+
+                    if (playerVariableJson.ContainsKey("location"))
+                        result += "<br>" + (locals == null ? playerVariableJson.GetString("location") :
+                            locals.GetLocal(playerVariableJson.GetString("location")));
 
                     return result;
                 }

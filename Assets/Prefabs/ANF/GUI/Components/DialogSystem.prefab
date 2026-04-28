@@ -248,10 +248,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6504125bda2f534098730bbc2e8e953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.DialogUI
-  root: {fileID: 5010621968908180720}
   canBeSaved: 1
-  hideRootWhenClosed: 0
-  openByDefault: 1
+  enabledByDefault: 1
+  root: {fileID: 5010621968908180720}
+  hideRootWhenClosed: 1
   lockComponents: []
   canvasGroup: {fileID: 4755947927630345497}
   speakerRoot: {fileID: 724436330951842106}

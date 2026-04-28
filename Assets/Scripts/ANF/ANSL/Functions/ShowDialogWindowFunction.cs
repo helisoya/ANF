@@ -44,16 +44,6 @@ namespace ANF.ANSL
         {
             // Unused
         }
-
-        public override void Save(JSON json)
-        {
-            // Unused
-        }
-
-        public override void Load(JSON json)
-        {
-            // Unused
-        }
     }
 }
 

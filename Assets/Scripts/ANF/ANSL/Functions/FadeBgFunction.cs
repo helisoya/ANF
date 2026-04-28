@@ -66,12 +66,12 @@ namespace ANF.ANSL
             // Unused
         }
 
-        public override void Save(JSON json)
+        protected override void OnSave(JSON json)
         {
             json.Add("waitingForFading", waitingForFading);
         }
 
-        public override void Load(JSON json)
+        protected override void OnLoad(JSON json)
         {
             if (json.ContainsKey("waitingForFading"))
                 waitingForFading = json.GetBool("waitingForFading");

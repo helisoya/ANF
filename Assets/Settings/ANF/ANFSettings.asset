@@ -68,6 +68,7 @@ MonoBehaviour:
       type: {class: PlayerVariableContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         randomVariableName: random
+        location: Location_WhiteForest
     - rid: 1438066042575257686
       type: {class: StateLoader, ns: ANF.World, asm: Assembly-CSharp}
       data:

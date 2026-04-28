@@ -125,6 +125,10 @@ namespace ANF.GUI
         {
         }
 
+        public override void OnChangeScene()
+        {
+        }
+
         public override void OnLoad(JSON json)
         {
             if (json.ContainsKey("fadingAlpha"))

@@ -20,7 +20,7 @@ namespace ANF.GUI
         [Header("Base UI")]
         [SerializeField] private string[] guiComponentsToPause = { "fadeBg", "fadeFg", "dialog" };
         [SerializeField] private float transitionDuration = 0.5f;
-        [SerializeField] private RectTransform buttonsRoot;        
+        [SerializeField] private RectTransform buttonsRoot;
 
         [Header("Buttons")]
         [SerializeReference, SubclassSelector(AllowNull = false)] private PauseMenuButtonData[] buttonDatas;
@@ -69,7 +69,7 @@ namespace ANF.GUI
 
         public override void OnDisabled()
         {
-            if(currentPauseSubmenu != null)
+            if (currentPauseSubmenu != null)
                 ChangeSubMenu(null);
 
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
@@ -90,8 +90,6 @@ namespace ANF.GUI
 
             currentButtonInputSide = 0;
             cooldownToNextButtonIncrement = 0;
-
-
 
             float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
             buttonsRoot.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
@@ -119,6 +117,12 @@ namespace ANF.GUI
 
         public override void OnLoad(JSON json)
         {
+        }
+
+        public override void OnChangeScene()
+        {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed -= OnPauseInput;
+            OnUnRegisterInputs();
         }
 
         public override void OnRegisterInputs()
@@ -205,13 +209,13 @@ namespace ANF.GUI
                 currentPauseSubmenu.SetEnabled(false);
 
             currentPauseSubmenu = component;
-            if(currentPauseSubmenu)
+            if (currentPauseSubmenu)
             {
                 currentButtonInputSide = 0;
                 cooldownToNextButtonIncrement = 0;
                 currentPauseSubmenu.SetEnabled(true);
             }
-                
+
         }
     }
 }

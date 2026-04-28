@@ -94,7 +94,6 @@ namespace ANF.ANSL
                 if (!waitingForEndInput)
                 {
                     dialogUI.GetSkipButton().onClick.RemoveListener(OnDialogSkip);
-                    PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnDialogSkip;
 
                     if (closeAfterwards)
                         dialogUI.SetEnabled(false);
@@ -113,12 +112,12 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnDialogSkip;
         }
 
         private void OnDialogSkip()
         {
-            if(!context.isPaused)
+            if (!context.isPaused)
                 inputDetected = true;
         }
 
@@ -128,14 +127,14 @@ namespace ANF.ANSL
                 OnDialogSkip();
         }
 
-        public override void Save(JSON json)
+        protected override void OnSave(JSON json)
         {
             json.Add("waitingForEndInput", waitingForEndInput);
             json.Add("closeAfterwards", closeAfterwards);
             json.Add("characterId", characterId);
         }
 
-        public override void Load(JSON json)
+        protected override void OnLoad(JSON json)
         {
             if (json.ContainsKey("waitingForEndInput"))
                 waitingForEndInput = json.GetBool("waitingForEndInput");

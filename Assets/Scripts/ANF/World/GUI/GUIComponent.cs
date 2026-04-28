@@ -59,7 +59,7 @@ namespace ANF.GUI
                 isEnabled = enabled;
                 root.SetActive(!hideRootWhenClosed || isEnabled);
 
-                if(isEnabled)
+                if (isEnabled)
                 {
                     OnRegisterInputs();
                     OnEnabled();
@@ -121,5 +121,6 @@ namespace ANF.GUI
         public abstract void OnLoad(JSON json);
         public abstract void OnRegisterInputs();
         public abstract void OnUnRegisterInputs();
+        public abstract void OnChangeScene();
     }
 }

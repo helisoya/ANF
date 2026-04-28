@@ -18,10 +18,15 @@ namespace ANF.Persistent
 
         [Tooltip("Name of the random variable, automatically generated")]
         [SerializeField] private string randomVariableName;
-
+        [Tooltip("Default location name (for the save slot's info)")]
+        [SerializeField] private string location;
         public DataContainer CloneContainer()
         {
-            return new PlayerVariableContainer() { randomVariableName = this.randomVariableName };
+            return new PlayerVariableContainer()
+            {
+                randomVariableName = randomVariableName,
+                location = location
+            };
         }
 
         public void Initialize(ANFSettings settings)
@@ -33,9 +38,11 @@ namespace ANF.Persistent
         public void Load(JSON json)
         {
             if (json.ContainsKey("playerName"))
-            {
                 playerName = json.GetString("playerName");
-            }
+
+            if (json.ContainsKey("location"))
+                location = json.GetString("location");
+
             if (json.ContainsKey("variables"))
             {
                 JArray array = json.GetJArray("variables");
@@ -63,6 +70,7 @@ namespace ANF.Persistent
         public void Save(JSON json)
         {
             json.Add("playerName", playerName);
+            json.Add("location", location);
 
             JArray variableArray = new JArray();
             JSON variableNode;
@@ -75,6 +83,24 @@ namespace ANF.Persistent
                 variableArray.Add(variableNode);
             }
             json.Add("variables", variableArray);
+        }
+
+        /// <summary>
+		/// Gets the save slot's location (or its local key)
+		/// </summary>
+		/// <returns>The location</returns>
+        public string GetLocationKey()
+        {
+            return location;
+        }
+
+        /// <summary>
+		/// Changes the current save slot's location
+		/// </summary>
+		/// <param name="locationKey">The new location (or its local key)</param>
+        public void SetLocation(string locationKey)
+        {
+            location = locationKey;
         }
 
         /// <summary>

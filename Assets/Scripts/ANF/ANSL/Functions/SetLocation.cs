@@ -9,32 +9,30 @@ using UnityEngine;
 namespace ANF.ANSL
 {
     /// <summary>
-    /// The Set Locals function allows you to change the additional files for the locals system
+    /// The Set location function allows you to change the current player location for the save slot info
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 24,
-        functionBody: "setLocals",
+        functionId: 25,
+        functionBody: "setLocation",
         functionAutoComplete: new string[] {
-            "setLocals(Locals)"
+            "setLocation(Location)"
         },
-        functionDesc: "Shows/Hides the dialog window")]
-    public class SetLocalsFunction : ANSLFunction
+        functionDesc: "Changes the location (visible on the save slot's info)")]
+    public class SetLocationFunction : ANSLFunction
     {
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.LISTSTRING}
+                new FunctionParameterType[]{FunctionParameterType.STRING}
             };
         }
 
         protected override void OnStartProcess()
         {
-            if (parameters.GetParameter(0, out string[] list) &&
-                PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerLocals>(out PlayerLocals locals))
+            if (parameters.GetParameter(0, out string location) &&
+                PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer container))
             {
-                if (list.Length == 0 && list[0] == null)
-                    list = null;
-                locals.SetAdditionalFiles(list);
+                container.SetLocation(location);
             }
             EndProcess();
         }

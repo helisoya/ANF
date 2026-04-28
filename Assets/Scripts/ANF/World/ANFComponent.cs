@@ -63,6 +63,11 @@ namespace ANF.World
         public abstract void OnUnRegisterInputs();
 
         /// <summary>
+		/// Called before changing scenes
+		/// </summary>
+        public abstract void OnChangeScene();
+
+        /// <summary>
         /// Changes if the component is enabled or not
         /// </summary>
         /// <param name="enabled">True if enabled</param>

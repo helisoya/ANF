@@ -45,12 +45,12 @@ namespace ANF.ANSL
             // Unused
         }
 
-        public override void Save(JSON json)
+        protected override void OnSave(JSON json)
         {
             json.Add("timeToWait", timeToWait);
         }
 
-        public override void Load(JSON json)
+        protected override void OnLoad(JSON json)
         {
             if (json.ContainsKey("timeToWait"))
                 timeToWait = json.GetFloat("timeToWait");

@@ -45,6 +45,9 @@ public class ANSLContext : Jsonable
         isRunning = false;
         isPaused = false;
         scriptStack = new List<ANSLContextStackEntry>();
+
+        foreach (ANSLFunction function in functions.Values)
+            function.Initialize(this, manager);
     }
 
     /// <summary>
@@ -126,7 +129,7 @@ public class ANSLContext : Jsonable
                 }
 
                 // Start the new function
-                functions[functionId].StartProcess(parameters, this, manager);
+                functions[functionId].StartProcess(parameters);
 
                 if (functions[functionId].isProcessing)
                 {
@@ -231,6 +234,19 @@ public class ANSLContext : Jsonable
         else
             ignoreCheckDepthInternalValue++;
     }
+
+    /// <summary>
+	/// Cleanup the context.
+    /// Used in rare case. (Ex : When changing scenes)
+	/// </summary>
+    public void Cleanup()
+    {
+        if (waitingForFunction && functions.ContainsKey(currentFunctionId))
+        {
+            functions[currentFunctionId].Cleanup();
+        }
+    }
+
 
     #region Jsonable
 

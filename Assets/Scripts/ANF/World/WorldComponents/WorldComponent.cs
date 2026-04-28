@@ -96,5 +96,6 @@ namespace ANF.World
         public abstract void OnLoad(JSON json);
         public abstract void OnRegisterInputs();
         public abstract void OnUnRegisterInputs();
+        public abstract void OnChangeScene();
     }
 }

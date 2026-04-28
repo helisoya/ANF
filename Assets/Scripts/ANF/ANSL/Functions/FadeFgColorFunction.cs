@@ -12,7 +12,7 @@ namespace ANF.ANSL
     [ANSLFunctionAttribute(
         functionId: 21,
         functionBody: "fadeFgColor",
-        functionAutoComplete: new string[] { 
+        functionAutoComplete: new string[] {
             "fadeFgColor(R;G;B;A;WaitForEnd)",
             "fadeFgColor(R;G;B;A;WaitForEnd;Duration)"
         },
@@ -25,9 +25,9 @@ namespace ANF.ANSL
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.FLOAT, FunctionParameterType.FLOAT, 
+                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.FLOAT, FunctionParameterType.FLOAT,
                     FunctionParameterType.FLOAT, FunctionParameterType.BOOL},
-                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.FLOAT, FunctionParameterType.FLOAT, 
+                new FunctionParameterType[]{FunctionParameterType.FLOAT, FunctionParameterType.FLOAT, FunctionParameterType.FLOAT,
                     FunctionParameterType.FLOAT, FunctionParameterType.BOOL, FunctionParameterType.FLOAT }
             };
         }
@@ -48,7 +48,7 @@ namespace ANF.ANSL
                 currentFade.FadeColorTo(new Color(r, g, b, a), false, duration);
             }
 
-            if(!waitingForFading || !currentFade)
+            if (!waitingForFading || !currentFade)
                 EndProcess();
         }
 
@@ -69,12 +69,12 @@ namespace ANF.ANSL
             // Unused
         }
 
-        public override void Save(JSON json)
+        protected override void OnSave(JSON json)
         {
             json.Add("waitingForFading", waitingForFading);
         }
 
-        public override void Load(JSON json)
+        protected override void OnLoad(JSON json)
         {
             if (json.ContainsKey("waitingForFading"))
                 waitingForFading = json.GetBool("waitingForFading");

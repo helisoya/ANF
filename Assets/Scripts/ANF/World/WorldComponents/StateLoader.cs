@@ -110,6 +110,10 @@ namespace ANF.World
         public override void OnUnRegisterInputs()
         {
         }
+
+        public override void OnChangeScene()
+        {
+        }
     }
 
 }

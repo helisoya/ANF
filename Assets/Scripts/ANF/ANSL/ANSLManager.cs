@@ -137,7 +137,7 @@ namespace ANF.ANSL
                     context.Update();
             }
         }
-        
+
         /// <summary>
         /// Refresh whether contexts should be enabled
         /// </summary>
@@ -174,6 +174,14 @@ namespace ANF.ANSL
         {
         }
 
+        public override void OnChangeScene()
+        {
+            foreach (ANSLContext context in contexts)
+            {
+                context.Cleanup();
+            }
+        }
+
         public override void OnSave(JSON json)
         {
             JArray contextsArray = new JArray();
@@ -206,6 +214,7 @@ namespace ANF.ANSL
                     }
                 }
             }
+            CheckEnableState();
         }
     }
 }

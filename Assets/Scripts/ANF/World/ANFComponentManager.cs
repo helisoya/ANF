@@ -26,7 +26,7 @@ namespace ANF.World
             foreach (T component in components.Values)
                 component.OnStart();
         }
-        
+
         /// <summary>
         /// Changes if all components are enabled or not
         /// </summary>
@@ -56,5 +56,13 @@ namespace ANF.World
                 component.OnUnRegisterInputs();
         }
 
+        /// <summary>
+        /// Calls the On Change Scene callback on all components
+        /// </summary>
+        public void OnChangeScene()
+        {
+            foreach (T component in components.Values)
+                component.OnChangeScene();
+        }
     }
 }

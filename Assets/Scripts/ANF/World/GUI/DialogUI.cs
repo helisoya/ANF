@@ -32,6 +32,7 @@ namespace ANF.GUI
 
         private List<string> textIds = new List<string>();
         private List<DialogSegment> textSegments;
+        private string currentSpeakerID;
         private bool canSkip;
         private int revealIndex;
         private int currentSegmentIdx;
@@ -81,6 +82,7 @@ namespace ANF.GUI
             currentWaitTime = 0;
             this.secondsBetweenCharacters = secondsBetweenCharacters;
             this.defaultSecondsBetweenCharacters = secondsBetweenCharacters;
+            currentSpeakerID = speakerID;
 
             speakerRoot.SetActive(speakerID != null);
             if (speakerID != null)
@@ -247,6 +249,8 @@ namespace ANF.GUI
             json.Add("currentWaitTime", currentWaitTime);
             json.Add("revealIndex", revealIndex);
             json.Add("textIds", textIds);
+            if (currentSpeakerID != null)
+                json.Add("currentSpeakerID", currentSpeakerID);
         }
 
         public override void OnLoad(JSON json)
@@ -263,6 +267,19 @@ namespace ANF.GUI
                 revealIndex = json.GetInt("revealIndex");
             if (json.ContainsKey("textIds"))
                 textIds = new List<string>(json.GetJArray("textIds").AsStringArray());
+            if (json.ContainsKey("currentSpeakerID"))
+            {
+                currentSpeakerID = json.GetString("currentSpeakerID");
+                speakerText.SetNewKey(currentSpeakerID);
+            }
+            else
+            {
+                currentSpeakerID = null;
+            }
+
+            speakerRoot.SetActive(currentSpeakerID != null);
+
+            secondsBetweenCharacters = defaultSecondsBetweenCharacters;
 
             RegenerateDialogFromStack(!showingDialog);
         }
@@ -315,6 +332,10 @@ namespace ANF.GUI
         }
 
         public override void OnUnRegisterInputs()
+        {
+        }
+
+        public override void OnChangeScene()
         {
         }
 
