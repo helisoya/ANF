@@ -10,3 +10,11 @@ Test_Dialog_3 = This is [speed 0.25]<b>a slower text.</b>[wait 1, defaultSpeed] 
 Test_Dialog_4 = [speed 0.001]super judge racing ![defaultSpeed] Okay, stop.
 Test_Dialog_5 = This text won't require end input...
 Test_Dialog_6 = Yep !
+
+Test_Choice_1 = Do you want to see a caribou ?
+
+Test_Choice_Yes_1 = Sorry. It got away...
+
+Test_Choice_No_1 = Oh, sad...
+
+Test_Choice_2 = Okay, this is where I get of.

@@ -56,10 +56,14 @@ public class ANSLContext : Jsonable
     /// <param name="scriptFilePath">The script's filepath (Local path inside the designated resource folder) </param>
     /// <param name="startLine">The starting line. 0 by default.</param>
     /// <param name="canAddPreviousToStack">True if the previous script can be added to the stack</param>
-    public void LoadScript(string scriptFilePath, uint startLine = 0, bool canAddPreviousToStack = true)
+    /// <param name="isFullPath">True if the path is already the full path to the script<param>
+    public void LoadScript(string scriptFilePath, uint startLine = 0, bool canAddPreviousToStack = true, bool isFullPath = false)
     {
-        string fullPath = PersistentDataManager.instance.GetANFSettings().anslDestinationFolder + scriptFilePath;
-        if (System.IO.File.Exists("Assets/Resources/" + fullPath + ".txt"))
+        string fullPath = (isFullPath ? "" : PersistentDataManager.instance.GetANFSettings().anslDestinationFolder) +
+            scriptFilePath;
+
+        TextAsset data = Resources.Load<TextAsset>(fullPath);
+        if (data)
         {
             // Add current script to stack if it isn't finished
             if (currentScript != null && canAddPreviousToStack)
@@ -72,7 +76,7 @@ public class ANSLContext : Jsonable
             }
 
             currentFilePath = fullPath;
-            currentScript = FileManager.ReadTextAsset(Resources.Load<TextAsset>(fullPath)).ToArray();
+            currentScript = FileManager.ReadTextAsset(data).ToArray();
             lastFunctionModifiedLine = true;
             currentLine = startLine;
 
@@ -155,7 +159,7 @@ public class ANSLContext : Jsonable
             {
                 ANSLContextStackEntry entry = scriptStack[scriptStack.Count - 1];
                 scriptStack.RemoveAt(scriptStack.Count - 1);
-                LoadScript(entry.filePath, entry.lineCounter, false);
+                LoadScript(entry.filePath, entry.lineCounter, false, true);
             }
         }
     }

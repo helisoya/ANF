@@ -229,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 921190303842990850}
   - component: {fileID: 237637143809057935}
+  - component: {fileID: 1583797137673693727}
   m_Layer: 5
   m_Name: ChoiceUI
   m_TagString: Untagged
@@ -274,10 +275,23 @@ MonoBehaviour:
   root: {fileID: 5008901504485921086}
   hideRootWhenClosed: 0
   lockComponents: []
+  canvasGroup: {fileID: 1583797137673693727}
   titleText: {fileID: 177850424319839004}
   titleTransform: {fileID: 1341285483188659146}
   buttonsRoot: {fileID: 4090759887301235742}
   buttonPrefab: {fileID: 6390827533792533767, guid: bddbce20b6459d04ba92daee8bdb1571, type: 3}
+--- !u!225 &1583797137673693727
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008901504485921086}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8061800504415351373
 GameObject:
   m_ObjectHideFlags: 0

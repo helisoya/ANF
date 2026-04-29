@@ -79,7 +79,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Dialog
+        debugModeScript: ANF/Tests/Choice
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave.json
     - rid: 1438066042575257694

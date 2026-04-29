@@ -1,0 +1,4 @@
+24|test
+22|Test_Character|null|Test_Choice_1
+26|Choice_Generic|Choice_Yes|ANF/Tests/Choice_Yes|Choice_No|ANF/Tests/Choice_No
+22|Test_Character|null|Test_Choice_2

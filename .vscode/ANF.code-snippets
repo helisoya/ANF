@@ -17,6 +17,14 @@
 		"body": ["block\n\nendblock"],
 		"description": "All functions inside a block will be processed during the same frame, ignoring any depth check."
 	},
+	"26_0": {
+		"scope": "ansl",
+		"prefix": "choice",
+		"body": ["choice(Title)
+	Key Script
+endchoice"],
+		"description": "Starts a choice"
+	},
 	"2_0": {
 		"scope": "ansl",
 		"prefix": "clearStack",
@@ -172,6 +180,12 @@
 		"prefix": "setLocals",
 		"body": ["setLocals(Locals)"],
 		"description": "Shows/Hides the dialog window"
+	},
+	"25_0": {
+		"scope": "ansl",
+		"prefix": "setLocation",
+		"body": ["setLocation(Location)"],
+		"description": "Changes the location (visible on the save slot's info)"
 	},
 	"23_0": {
 		"scope": "ansl",

@@ -70,9 +70,9 @@ namespace ANF.ANSL
                     continue;
                 }
 
-                if (currentNextLine.StartsWith("endChoice"))
+                if (currentNextLine.StartsWith("endchoice"))
                 {
-                    if (currentNextLine.Length != "endChoice".Length)
+                    if (currentNextLine.Length != "endchoice".Length)
                     {
                         // Unknown character
                         errors.Add(new ANSLUtils.ANSLError()
@@ -92,7 +92,7 @@ namespace ANF.ANSL
                 {
                     split = currentNextLine.Split(' ');
 
-                    if(split.Length != 2)
+                    if (split.Length != 2)
                     {
                         // Unknown character
                         errors.Add(new ANSLUtils.ANSLError()
@@ -142,7 +142,10 @@ namespace ANF.ANSL
                 data.title = titleKey;
                 data.entries = new ChoiceData.ChoiceDataEntry[choices.Length / 2];
                 for (int i = 0; i < choices.Length; i += 2)
-                    data.entries[i] = new ChoiceData.ChoiceDataEntry() { textKey = choices[i], linkedScript = choices[i + 1] };
+                {
+                    data.entries[i / 2] = new ChoiceData.ChoiceDataEntry() { textKey = choices[i], linkedScript = choices[i + 1] };
+                }
+
 
                 choiceUI.SetEnabled(true, data);
 
@@ -152,12 +155,29 @@ namespace ANF.ANSL
             {
                 EndProcess();
             }
-            
+
         }
 
         protected override void OnUpdate()
         {
-            // Unused
+            if (choiceUI == null)
+                manager.GetGUIManager().GetComponent<ChoiceUI>(out choiceUI);
+
+            if (choiceUI != null && choiceUI.showingChoice)
+                return;
+
+            if (choiceUI)
+            {
+                if (choiceUI.showingChoice)
+                    return;
+
+                EndProcess();
+                context.LoadScript(choiceUI.selectedScript);
+            }
+            else
+            {
+                EndProcess();
+            }
         }
 
         protected override void OnCleanup()
@@ -167,7 +187,15 @@ namespace ANF.ANSL
 
         protected override void OnSave(JSON json)
         {
-            
+            json.Add("waitingForChoice", waitingForChoice);
+        }
+
+        protected override void OnLoad(JSON json)
+        {
+            if (json.ContainsKey("waitingForChoice"))
+                waitingForChoice = json.GetBool("waitingForChoice");
+            else
+                waitingForChoice = false;
         }
     }
 }

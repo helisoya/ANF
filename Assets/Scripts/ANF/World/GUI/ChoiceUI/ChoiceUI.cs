@@ -13,7 +13,10 @@ namespace ANF.GUI
     /// </summary>
     public class ChoiceUI : GUIComponent
     {
-        [Header("Tittle")]
+        [Header("General")]
+        [SerializeField] private CanvasGroup canvasGroup;
+
+        [Header("Title")]
         [SerializeField] private Locals.LocalizedText titleText;
         [SerializeField] private RectTransform titleTransform;
 
@@ -28,7 +31,7 @@ namespace ANF.GUI
         private int currentButtonInputSide;
         private float cooldownToNextButtonIncrement;
 
-        public bool showingDialog { get; private set; } = false;
+        public bool showingChoice { get; private set; } = false;
         public string selectedScript { get; private set; } = null;
 
         public override void OnInitialize()
@@ -64,7 +67,7 @@ namespace ANF.GUI
             if (enabled && !isEnabled)
             {
                 currentData = choiceData;
-                showingDialog = true;
+                showingChoice = true;
                 selectedScript = null;
                 currentButtonIndex = 0;
             }
@@ -80,7 +83,7 @@ namespace ANF.GUI
             titleText.SetNewKey(currentData.title);
             titleTransform.DOAnchorPosY(-titleTransform.sizeDelta.y / 2.0f - 30f, 0.5f).SetEase(Ease.OutQuad);
 
-            foreach(Transform child in buttonsRoot)
+            foreach (Transform child in buttonsRoot)
             {
                 child.DOKill(false);
                 Destroy(child.gameObject);
@@ -88,10 +91,10 @@ namespace ANF.GUI
 
             buttons = new ChoiceUIButton[currentData.entries.Length];
 
-            for(int i = 0; i < buttons.Length; i++)
+            for (int i = 0; i < buttons.Length; i++)
             {
                 ChoiceUIButton button = Instantiate(buttonPrefab, buttonsRoot);
-                button.Initialize(i, currentData.entries[i].textKey,this);
+                button.Initialize(i, currentData.entries[i].textKey, this);
                 buttons[i] = button;
 
                 if (i == 0)
@@ -102,21 +105,34 @@ namespace ANF.GUI
         public override void OnDisabled()
         {
             titleTransform.DOAnchorPosY(titleTransform.sizeDelta.y / 2.0f, 0.5f).SetEase(Ease.OutQuad);
-            for(int i = 0; i < buttons.Length;i++)
+
+            for (int i = 0; i < buttons.Length; i++)
             {
                 if (i == currentButtonIndex)
-                    buttons[i].FadeAndDestroy(0.5f, () => { showingDialog = false; });
+                    buttons[i].Fade(0.5f, () =>
+                    {
+                        showingChoice = false;
+                        foreach (Transform child in buttonsRoot)
+                        {
+                            child.DOKill(false);
+                            Destroy(child.gameObject);
+                        }
+                    });
                 else
-                    buttons[i].FadeAndDestroy(0.0f, null);
+                    buttons[i].Fade(0.0f, null);
             }
         }
 
         public override void OnPaused()
         {
+            cooldownToNextButtonIncrement = 0.0f;
+            currentButtonInputSide = 0;
+            canvasGroup.DOFade(0, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public override void OnUnPaused()
         {
+            canvasGroup.DOFade(1, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public override void OnRegisterInputs()
@@ -139,7 +155,7 @@ namespace ANF.GUI
         /// <param name="choiceIndex">The choice's index</param>
         public void SelectChoice(int choiceIndex)
         {
-            if(showingDialog && isEnabled && !isPaused)
+            if (showingChoice && isEnabled && !isPaused)
             {
                 selectedScript = currentData.entries[choiceIndex].linkedScript;
                 SetEnabled(false);
@@ -148,13 +164,13 @@ namespace ANF.GUI
 
         private void OnNext(InputAction.CallbackContext context)
         {
-            if (isEnabled && !isPaused && showingDialog && context.ReadValueAsButton())
+            if (isEnabled && !isPaused && showingChoice && context.ReadValueAsButton())
                 SelectChoice(currentButtonIndex);
         }
 
         private void OnMove(InputAction.CallbackContext context)
         {
-            if (isEnabled && !isPaused && showingDialog)
+            if (isEnabled && !isPaused && showingChoice)
             {
                 float value = context.ReadValue<Vector2>().y;
 
@@ -204,16 +220,16 @@ namespace ANF.GUI
 
         public override void OnSave(JSON json)
         {
-            json.Add("showingDialog", showingDialog);
+            json.Add("showingChoice", showingChoice);
             json.Add("selectedScript", selectedScript);
 
-            if (showingDialog)
+            if (showingChoice)
             {
                 JSON choiceDataJson = new JSON();
                 JArray choiceEntriesJson = new JArray();
                 choiceDataJson.Add("title", currentData.title);
 
-                foreach(ChoiceData.ChoiceDataEntry entry in currentData.entries)
+                foreach (ChoiceData.ChoiceDataEntry entry in currentData.entries)
                 {
                     JSON entryJson = new JSON();
                     entryJson.Add("textKey", entry.textKey);
@@ -230,13 +246,13 @@ namespace ANF.GUI
 
         public override void OnLoad(JSON json)
         {
-            if (json.ContainsKey("showingDialog"))
-                showingDialog = json.GetBool("showingDialog");
+            if (json.ContainsKey("showingChoice"))
+                showingChoice = json.GetBool("showingChoice");
 
             if (json.ContainsKey("selectedScript"))
                 selectedScript = json.GetString("selectedScript");
 
-            if(showingDialog && json.ContainsKey("choiceData"))
+            if (showingChoice && json.ContainsKey("choiceData"))
             {
                 JSON choiceData = json.GetJSON("choiceData");
 
@@ -248,7 +264,7 @@ namespace ANF.GUI
                     JSON[] arrayData = choiceData.GetJArray("entries").AsJSONArray();
 
                     currentData.entries = new ChoiceData.ChoiceDataEntry[arrayData.Length];
-                    for(int i = 0; i < arrayData.Length;i++)
+                    for (int i = 0; i < arrayData.Length; i++)
                     {
                         if (arrayData[i].ContainsKey("textKey"))
                             currentData.entries[i].textKey = arrayData[i].GetString("textKey");
@@ -258,6 +274,7 @@ namespace ANF.GUI
                     }
                 }
 
+                isEnabled = false;
                 SetEnabled(true, currentData);
 
                 if (json.ContainsKey("isEnabled"))
