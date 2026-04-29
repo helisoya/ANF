@@ -44,6 +44,8 @@ MonoBehaviour:
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   - id: dialog
     data: {fileID: 5724826130367448010, guid: 022905ec658687a479fc48d91f16fa39, type: 3}
+  - id: choiceUI
+    data: {fileID: 237637143809057935, guid: 6cf9e0c16fec62f4d9fca3a93dc77fe6, type: 3}
   - id: fadeFg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   - id: pauseMenu

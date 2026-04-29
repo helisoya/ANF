@@ -104,7 +104,7 @@ namespace ANF.GUI
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            OnExit();
+            //OnExit();
         }
     }
 
