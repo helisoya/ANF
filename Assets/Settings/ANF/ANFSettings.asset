@@ -50,6 +50,8 @@ MonoBehaviour:
     data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
   - id: saveMenu
     data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
+  - id: fadeAll
+    data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/

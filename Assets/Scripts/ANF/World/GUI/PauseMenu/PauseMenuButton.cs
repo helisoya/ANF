@@ -1,3 +1,4 @@
+using ANF.Persistent;
 using ANF.World;
 using DG.Tweening;
 using Unity.VisualScripting;
@@ -65,7 +66,8 @@ namespace ANF.GUI
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            OnClick();
+            if(eventData.button == PointerEventData.InputButton.Left)
+                pauseMenu.SelectCurrentButton();
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -157,6 +159,7 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
+            manager.ChangeScene(PersistentDataManager.instance.GetANFSettings().mainMenuScene);
         }
     }
 }

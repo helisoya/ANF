@@ -150,7 +150,7 @@ namespace ANF.GUI
         private void OnNext(InputAction.CallbackContext context)
         {
             if (isEnabled && !isPaused && currentPauseSubmenu == null && context.ReadValueAsButton())
-                buttons[currentButtonIdx].OnClick();
+                SelectCurrentButton();
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -183,12 +183,21 @@ namespace ANF.GUI
         /// <param name="force">True if the id check should be skipped</param>
         public void SetCurrentButton(int id, bool force = false)
         {
-            if (force || currentButtonIdx != id)
+            if (currentPauseSubmenu == null && (force || currentButtonIdx != id))
             {
                 buttons[currentButtonIdx].OnExit();
                 currentButtonIdx = id;
                 buttons[currentButtonIdx].OnEnter();
             }
+        }
+
+        /// <summary>
+        /// Calls the OnClick event on the selected button
+        /// </summary>
+        public void SelectCurrentButton()
+        {
+            if (isEnabled && !isPaused && currentPauseSubmenu == null)
+                buttons[currentButtonIdx].OnClick();
         }
 
         /// <summary>

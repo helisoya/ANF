@@ -717,6 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Manager.ANFManager
   uiRoot: {fileID: 740851709}
+  changeSceneUseFading: 1
+  changeSceneFadingName: fadeAll
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

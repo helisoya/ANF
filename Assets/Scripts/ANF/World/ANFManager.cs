@@ -1,11 +1,13 @@
-using UnityEngine;
 using ANF.ANSL;
+using ANF.GUI;
 using ANF.Persistent;
+using ANF.Utils;
+using DG.Tweening;
+using Leguar.TotalJSON;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using ANF.Utils;
-using Leguar.TotalJSON;
-using ANF.GUI;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ANF.World
 {
@@ -16,6 +18,14 @@ namespace ANF.World
     {
         [Header("General")]
         [SerializeField] private Transform uiRoot;
+
+        [Header("Changing Scene")]
+        [SerializeField] private bool changeSceneUseFading = true;
+        [SerializeField] private string changeSceneFadingName = "fadeAll";
+        private bool isChangingScene = false;
+        private string nextSceneToLoad = null;
+
+
         private World world;
         private GUIManager guiManager;
 
@@ -39,8 +49,22 @@ namespace ANF.World
 
         void Update()
         {
-            world.OnUpdate();
-            guiManager.OnUpdate();
+            if(isChangingScene)
+            {
+                if (changeSceneUseFading && guiManager.GetComponent<GUI.Fade>(changeSceneFadingName, out GUI.Fade fade))
+                {
+                    fade.OnUpdate();
+                    if (fade.fadingAlpha)
+                        return;
+                }
+
+                SceneManager.LoadScene(nextSceneToLoad);
+            }
+            else
+            {
+                world.OnUpdate();
+                guiManager.OnUpdate();
+            }
         }
 
         void Start()
@@ -65,6 +89,31 @@ namespace ANF.World
         {
             guiManager = new GUIManager(this, uiRoot, PersistentDataManager.instance.GetANFSettings().registeredGUIComponents);
             world = new World(this, PersistentDataManager.instance.GetANFSettings().registeredWorldComponents);
+        }
+
+        /// <summary>
+        /// Changes the current Unity Scene
+        /// </summary>
+        /// <param name="nextScene">The next scene</param>
+        public void ChangeScene(string nextScene)
+        {
+            if (changeSceneUseFading && guiManager.GetComponent<GUI.Fade>(changeSceneFadingName, out GUI.Fade fade))
+            {
+                DOTween.KillAll(false);
+                guiManager.OnChangeScene();
+                world.OnChangeScene();
+
+                isChangingScene = true;
+                nextSceneToLoad = nextScene;
+
+                fade.SetEnabled(true);
+                fade.SetPaused(false);
+                fade.FadeAlphaTo(1);
+            }
+            else
+            {
+                SceneManager.LoadScene(nextSceneToLoad);
+            }
         }
 
         public void Save(JSON json)

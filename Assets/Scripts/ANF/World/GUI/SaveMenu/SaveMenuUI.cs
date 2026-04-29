@@ -321,18 +321,20 @@ namespace ANF.GUI
                 if (inSaveMode)
                 {
                     SaveUtils.SavePlayerData(PersistentDataManager.instance.GetPlayerData(), manager, currentPopupData.saveFileName);
+
                     JSON newFile = SaveUtils.LoadJSON(currentPopupData.saveFileName);
-                    buttons[currentButtonIdx].UpdateInfos(slotInfo.GetLabel(newFile), slotInfo.GetBackground(newFile));
+                    string newLabel = slotInfo.GetLabel(newFile);
+                    Sprite newSprite = slotInfo.GetBackground(newFile);
+
+                    buttons[currentButtonIdx].UpdateInfos(newLabel, newSprite);
+                    confirmPopupPreviewButton.UpdateInfos(newLabel, newSprite);
                 }
                 else
                 {
                     if (PersistentDataManager.instance.GetGlobalData().GetComponent<LoadStateContainer>(out LoadStateContainer container))
                     {
-                        DOTween.KillAll(false);
-                        manager.GetWorld().OnChangeScene();
-                        manager.GetGUIManager().OnChangeScene();
                         container.SetToLoadSaveFile(currentPopupData.saveFileName);
-                        SceneManager.LoadScene(PersistentDataManager.instance.GetANFSettings().gameScene);
+                        manager.ChangeScene(PersistentDataManager.instance.GetANFSettings().gameScene);
                         return;
                     }
                 }

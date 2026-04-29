@@ -57,6 +57,7 @@ namespace ANF.GUI
 
         public void OnEnter()
         {
+            backgroundImage.DOColor(Color.lightGray, 0.5f).SetEase(Ease.OutQuad);
             root.DOScale(Vector2.one * 0.9f, 0.5f).SetEase(Ease.OutQuad);
             root.DOShakeRotation(0.5f, new Vector3(0, 0, 5f)).SetEase(Ease.OutQuad).OnComplete(() =>
             {
@@ -66,18 +67,33 @@ namespace ANF.GUI
 
         public void OnExit()
         {
+            backgroundImage.DOColor(Color.white, 0.5f).SetEase(Ease.OutQuad);
             root.DOScale(Vector2.one, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public void OnClick()
         {
             if(data.interactable)
+            {
                 saveMenuUI.OpenConfirmPopup(data);
+            }                
+            else
+            {
+                root.DOShakeRotation(0.5f, new Vector3(0, 0, 10f)).SetEase(Ease.InOutElastic).OnComplete(() =>
+                {
+                    root.DORotate(Vector3.zero, 0.1f).SetEase(Ease.OutQuad);
+                });
+
+                backgroundImage.DOColor(Color.red, 0.25f).SetEase(Ease.Flash).onComplete += () =>
+                {
+                    backgroundImage.DOColor(Color.lightGray, 0.25f).SetEase(Ease.Flash);
+                };
+            }
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if (data.interactable)
+            if (eventData.button == PointerEventData.InputButton.Left)
                 OnClick();
         }
 
