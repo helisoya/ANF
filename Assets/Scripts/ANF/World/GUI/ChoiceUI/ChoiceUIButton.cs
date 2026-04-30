@@ -33,7 +33,7 @@ namespace ANF.GUI
             label.SetNewKey(labelKey);
 
             buttonRoot.localScale = Vector2.zero;
-            buttonRoot.DOScale(Vector3.one, 0.5f).SetEase(Ease.InBack);
+            buttonRoot.DOScale(Vector3.one, 0.5f).SetEase(Ease.InBack).SetId(transform);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace ANF.GUI
         /// <param name="actionOnDestroy">The action to perform afterwards (optional)</param>
         public void Fade(float delay, Action actionOnDestroy)
         {
-            buttonRoot.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack).SetDelay(delay).OnComplete(() =>
+            buttonRoot.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack).SetDelay(delay).SetId(transform).OnComplete(() =>
             {
                 if (actionOnDestroy != null)
                     actionOnDestroy.Invoke();
@@ -52,16 +52,16 @@ namespace ANF.GUI
 
         public void OnEnter()
         {
-            buttonImg.DOColor(Color.lightGray, 0.5f).SetEase(Ease.OutQuad);
-            buttonRoot.DOScale(Vector3.one * 1.05f, 0.5f).SetEase(Ease.OutQuad);
-            buttonRoot.DORotate(new Vector3(0, 0, -2.5f), 0.5f).SetEase(Ease.OutBounce);
+            buttonImg.DOColor(Color.lightGray, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            buttonRoot.DOScale(Vector3.one * 1.05f, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            buttonRoot.DORotate(new Vector3(0, 0, -2.5f), 0.5f).SetEase(Ease.OutBounce).SetId(transform);
         }
 
         public void OnExit()
         {
-            buttonImg.DOColor(Color.white, 0.5f).SetEase(Ease.OutQuad);
-            buttonRoot.DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.OutQuad);
-            buttonRoot.DORotate(Vector3.zero, 0.5f).SetEase(Ease.OutBounce);
+            buttonImg.DOColor(Color.white, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            buttonRoot.DOScale(Vector3.one * 0.8f, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            buttonRoot.DORotate(Vector3.zero, 0.5f).SetEase(Ease.OutBounce).SetId(transform);
         }
 
         public void OnPointerDown(PointerEventData eventData)

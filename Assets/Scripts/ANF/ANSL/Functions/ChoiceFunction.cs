@@ -17,7 +17,7 @@ namespace ANF.ANSL
         functionId: 26,
         functionBody: "choice",
         functionAutoComplete: new string[] {
-            "choice(Title)\n\tKey Script\nendchoice"
+            "choice(Title)\n\t choice Key:\n\nendchoice"
         },
         functionDesc: "Starts a choice")]
     public class ChoiceFunction : ANSLFunction
@@ -36,28 +36,43 @@ namespace ANF.ANSL
         {
             compiledLines = new List<string>();
 
-            string[] split = cleanedLine.Split(new char[] { '(', ')' });
+            string[] split = cleanedLine.Split(new char[] { '(', ')' }, System.StringSplitOptions.RemoveEmptyEntries);
 
-            if (split.Length > 3 || split[2].Length != 0)
+            if (split.Length != 2 && split.Length != 3)
             {
-                // More than one pair of () found
+                // Missing parts
                 errors.Add(new ANSLUtils.ANSLError()
                 {
                     type = ANSLUtils.ANSLErrorType.ERROR,
                     filePath = compiler.GetSourceFilepath(),
                     line = compiler.GetCurrentLineCounter(),
-                    errorMessage = $"Too many () detected : {cleanedLine}."
+                    errorMessage = $"Bad number of parenthesis : {cleanedLine}."
+                });
+                return false;
+            }
+
+            if (!cleanedLine.EndsWith(')'))
+            {
+                // Unknown character
+                errors.Add(new ANSLUtils.ANSLError()
+                {
+                    type = ANSLUtils.ANSLErrorType.ERROR,
+                    filePath = compiler.GetSourceFilepath(),
+                    line = compiler.GetCurrentLineCounter(),
+                    errorMessage = $"Unknown character at the end of the line : {cleanedLine}."
                 });
                 return false;
             }
 
             string titleKey = split[1];
 
-            string fullLine = $"{GetAttribute().functionId}|{titleKey}";
-
+            List<string> currentCompiledPart = null;
+            bool foundEnd = false;
+            List<string> buttonKey = new List<string>();
+            List<List<string>> compiledParts = new List<List<string>>();
 
             bool canContinue = true;
-            bool foundEnd = false;
+
             compiler.CheckNextLine();
             string currentNextLine = compiler.GetCurrentLineClean();
 
@@ -74,38 +89,88 @@ namespace ANF.ANSL
                 {
                     if (currentNextLine.Length != "endchoice".Length)
                     {
-                        // Unknown character
                         errors.Add(new ANSLUtils.ANSLError()
                         {
                             type = ANSLUtils.ANSLErrorType.ERROR,
                             filePath = compiler.GetSourceFilepath(),
                             line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Unknown character at the end of the line : {currentNextLine}."
+                            errorMessage = $"Unknown token after the endchoice : {currentNextLine}."
                         });
                         return false;
                     }
 
                     foundEnd = true;
                     canContinue = false;
-                }
-                else
-                {
-                    split = currentNextLine.Split(' ');
 
-                    if (split.Length != 2)
+                    if (currentCompiledPart != null)
                     {
-                        // Unknown character
+                        compiledParts.Add(currentCompiledPart);
+                        currentCompiledPart = null;
+                    }
+                }
+                else if (currentNextLine.StartsWith("choice"))
+                {
+                    if (currentNextLine.StartsWith("choice ") && currentNextLine.EndsWith(":"))
+                    {
+                        string token = currentNextLine.Substring(7, currentNextLine.Length - 8);
+                        if (token.Contains(' ') || token.Contains('\t') || string.IsNullOrEmpty(token))
+                        {
+                            errors.Add(new ANSLUtils.ANSLError()
+                            {
+                                type = ANSLUtils.ANSLErrorType.ERROR,
+                                filePath = compiler.GetSourceFilepath(),
+                                line = compiler.GetCurrentLineCounter(),
+                                errorMessage = $"Invalid token : {currentNextLine}."
+                            });
+                            return false;
+                        }
+
+                        if (currentCompiledPart != null)
+                        {
+                            compiledParts.Add(currentCompiledPart);
+                            currentCompiledPart = null;
+                        }
+
+                        currentCompiledPart = new List<string>();
+                        buttonKey.Add(token);
+                    }
+                    else
+                    {
                         errors.Add(new ANSLUtils.ANSLError()
                         {
                             type = ANSLUtils.ANSLErrorType.ERROR,
                             filePath = compiler.GetSourceFilepath(),
                             line = compiler.GetCurrentLineCounter(),
-                            errorMessage = $"Could not parse choice : {currentNextLine}."
+                            errorMessage = $"Bad choice creation : {currentNextLine}."
+                        });
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (compiledParts == null)
+                    {
+                        errors.Add(new ANSLUtils.ANSLError()
+                        {
+                            type = ANSLUtils.ANSLErrorType.ERROR,
+                            filePath = compiler.GetSourceFilepath(),
+                            line = compiler.GetCurrentLineCounter(),
+                            errorMessage = $"Function linked to no choice : {currentNextLine}."
                         });
                         return false;
                     }
 
-                    fullLine += $"|{split[0]}|{split[1]}";
+                    int outputLineForFunction = outputLine;
+                    foreach (List<string> part in compiledParts)
+                        outputLineForFunction += part.Count + 1;
+                    outputLineForFunction += currentCompiledPart.Count + 1;
+
+                    // Potential function
+                    if (compiler.CompileLine(currentNextLine, out List<string> compiled, outputLineForFunction))
+                        currentCompiledPart.AddRange(compiled);
+
+                    else
+                        return false;
                 }
 
                 if (canContinue)
@@ -127,7 +192,27 @@ namespace ANF.ANSL
                 return false;
             }
 
-            compiledLines.Add(fullLine);
+
+            int startIdx = outputLine + 1;
+            List<int> starts = new List<int>();
+            for (int i = 0; i < compiledParts.Count; i++)
+            {
+                starts.Add(startIdx);
+                startIdx += compiledParts[i].Count + 1;
+            }
+
+            uint idFunction = GetAttribute().functionId;
+
+            string compiledSwitchLine = $"{idFunction}|{titleKey}";
+            for (int i = 0; i < compiledParts.Count; i++)
+            {
+                compiledSwitchLine += $"|{buttonKey[i]}|{starts[i]}";
+
+                compiledLines.AddRange(compiledParts[i]);
+                compiledLines.Add($"0|{startIdx}");
+            }
+
+            compiledLines.Insert(0, compiledSwitchLine);
 
             return true;
         }
@@ -143,9 +228,8 @@ namespace ANF.ANSL
                 data.entries = new ChoiceData.ChoiceDataEntry[choices.Length / 2];
                 for (int i = 0; i < choices.Length; i += 2)
                 {
-                    data.entries[i / 2] = new ChoiceData.ChoiceDataEntry() { textKey = choices[i], linkedScript = choices[i + 1] };
+                    data.entries[i / 2] = new ChoiceData.ChoiceDataEntry() { textKey = choices[i], linkedLine = uint.Parse(choices[i + 1]) };
                 }
-
 
                 choiceUI.SetEnabled(true, data);
 
@@ -172,7 +256,7 @@ namespace ANF.ANSL
                     return;
 
                 EndProcess();
-                context.LoadScript(choiceUI.selectedScript);
+                context.SetLineCounter(choiceUI.selectedLine);
             }
             else
             {

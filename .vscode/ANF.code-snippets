@@ -21,7 +21,8 @@
 		"scope": "ansl",
 		"prefix": "choice",
 		"body": ["choice(Title)
-	Key Script
+	 choice Key:
+
 endchoice"],
 		"description": "Starts a choice"
 	},

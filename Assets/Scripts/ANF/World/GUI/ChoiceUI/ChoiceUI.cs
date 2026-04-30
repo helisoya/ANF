@@ -32,7 +32,7 @@ namespace ANF.GUI
         private float cooldownToNextButtonIncrement;
 
         public bool showingChoice { get; private set; } = false;
-        public string selectedScript { get; private set; } = null;
+        public uint selectedLine { get; private set; } = 0;
 
         public override void OnInitialize()
         {
@@ -68,7 +68,7 @@ namespace ANF.GUI
             {
                 currentData = choiceData;
                 showingChoice = true;
-                selectedScript = null;
+                selectedLine = 0;
                 currentButtonIndex = 0;
             }
 
@@ -157,7 +157,7 @@ namespace ANF.GUI
         {
             if (showingChoice && isEnabled && !isPaused)
             {
-                selectedScript = currentData.entries[choiceIndex].linkedScript;
+                selectedLine = currentData.entries[choiceIndex].linkedLine;
                 SetEnabled(false);
             }
         }
@@ -198,6 +198,9 @@ namespace ANF.GUI
         /// <param name="force">True if the id check should be skipped</param>
         public void SetCurrentButton(int id, bool force = false)
         {
+            if (!isEnabled || isPaused)
+                return;
+
             if (force || currentButtonIndex != id)
             {
                 buttons[currentButtonIndex].OnExit();
@@ -221,7 +224,7 @@ namespace ANF.GUI
         public override void OnSave(JSON json)
         {
             json.Add("showingChoice", showingChoice);
-            json.Add("selectedScript", selectedScript);
+            json.Add("selectedLine", selectedLine);
 
             if (showingChoice)
             {
@@ -233,7 +236,7 @@ namespace ANF.GUI
                 {
                     JSON entryJson = new JSON();
                     entryJson.Add("textKey", entry.textKey);
-                    entryJson.Add("linkedScript", entry.linkedScript);
+                    entryJson.Add("linkedScript", entry.linkedLine);
 
                     choiceEntriesJson.Add(entryJson);
                 }
@@ -249,8 +252,8 @@ namespace ANF.GUI
             if (json.ContainsKey("showingChoice"))
                 showingChoice = json.GetBool("showingChoice");
 
-            if (json.ContainsKey("selectedScript"))
-                selectedScript = json.GetString("selectedScript");
+            if (json.ContainsKey("selectedLine"))
+                selectedLine = json.GetJNumber("selectedLine").AsUInt();
 
             if (showingChoice && json.ContainsKey("choiceData"))
             {
@@ -269,8 +272,8 @@ namespace ANF.GUI
                         if (arrayData[i].ContainsKey("textKey"))
                             currentData.entries[i].textKey = arrayData[i].GetString("textKey");
 
-                        if (arrayData[i].ContainsKey("linkedScript"))
-                            currentData.entries[i].linkedScript = arrayData[i].GetString("linkedScript");
+                        if (arrayData[i].ContainsKey("linkedLine"))
+                            currentData.entries[i].linkedLine = arrayData[i].GetJNumber("linkedLine").AsUInt();
                     }
                 }
 
@@ -297,7 +300,7 @@ namespace ANF.GUI
         public struct ChoiceDataEntry
         {
             public string textKey;
-            public string linkedScript;
+            public uint linkedLine;
         }
     }
 }
