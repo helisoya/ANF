@@ -32,6 +32,9 @@ MonoBehaviour:
   - id: locals
     data:
       rid: 1438066065479827535
+  - id: maps
+    data:
+      rid: 3436799647305696213
   registeredWorldComponents:
   - id: anslManager
     data:
@@ -46,6 +49,8 @@ MonoBehaviour:
     data: {fileID: 5724826130367448010, guid: 022905ec658687a479fc48d91f16fa39, type: 3}
   - id: choiceUI
     data: {fileID: 237637143809057935, guid: 6cf9e0c16fec62f4d9fca3a93dc77fe6, type: 3}
+  - id: mapUI
+    data: {fileID: 7502116054405208522, guid: e70c0214d98967445badb02e7039cadc, type: 3}
   - id: fadeFg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   - id: pauseMenu
@@ -79,7 +84,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Choice
+        debugModeScript: ANF/Tests/Map_Start
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave.json
     - rid: 1438066042575257694
@@ -127,6 +132,9 @@ MonoBehaviour:
           - sizeIndex: 0
             fontIndex: 0
             color: {r: 0, g: 0, b: 0, a: 1}
+    - rid: 3436799647305696213
+      type: {class: MapContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data: 
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
       data: 

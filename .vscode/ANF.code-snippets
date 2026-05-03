@@ -134,6 +134,12 @@ endchoice"],
 		"body": ["log(Type;Message)"],
 		"description": "Logs a message to the debug console. (Can be Log, Warning or Error)"
 	},
+	"27_0": {
+		"scope": "ansl",
+		"prefix": "map",
+		"body": ["map(Map;Def)"],
+		"description": "Opens a map using a specific definition"
+	},
 	"7_0": {
 		"scope": "ansl",
 		"prefix": "playerName",

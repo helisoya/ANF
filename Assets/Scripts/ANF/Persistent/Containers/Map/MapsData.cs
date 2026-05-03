@@ -6,7 +6,7 @@ namespace ANF.Persistent
     /// <summary>
     /// Contains all known maps
     /// </summary>
-    [CreateAssetMenu(fileName = "MapsData",menuName = "ANF/Maps Data")]
+    [CreateAssetMenu(fileName = "MapsData", menuName = "ANF/Maps Data")]
     public class MapsData : ScriptableObject
     {
         public List<MapData> maps = new List<MapData>();
@@ -44,6 +44,8 @@ namespace ANF.Persistent
     public class MapButton
     {
         public string id;
+        public float rotation;
         public Sprite sprite;
+        public Vector2 normalizedPosition;
     }
 }

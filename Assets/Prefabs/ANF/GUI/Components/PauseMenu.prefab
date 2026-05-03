@@ -170,6 +170,7 @@ MonoBehaviour:
   - fadeFg
   - dialog
   - choiceUI
+  - mapUI
   transitionDuration: 0.5
   buttonsRoot: {fileID: 5197445996823678283}
   buttonDatas:

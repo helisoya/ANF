@@ -1,0 +1,103 @@
+using ANF.ANSL;
+using ANF.GUI;
+using ANF.Locals;
+using ANF.Persistent;
+using ANF.Utils;
+using Leguar.TotalJSON;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+
+namespace ANF.ANSL
+{
+    /// <summary>
+    /// The Map function opens the map UI and launches the selected script
+    /// </summary>
+    [ANSLFunctionAttribute(
+        functionId: 27,
+        functionBody: "map",
+        functionAutoComplete: new string[] {
+            "map(Map;Def)"
+        },
+        functionDesc: "Opens a map using a specific definition")]
+    public class MapChoiceFunction : ANSLFunction
+    {
+        private bool waitingForMap = false;
+        private MapUI mapUI;
+
+        public override FunctionParameterType[][] GetParametersTemplates()
+        {
+            return new FunctionParameterType[][] {
+                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.STRING}
+            };
+        }
+
+        protected override void OnStartProcess()
+        {
+            waitingForMap = false;
+            if (parameters.GetParameter(0, out string map) &&
+                parameters.GetParameter(1, out string mapDef) &&
+                manager.GetGUIManager().GetComponent<MapUI>(out mapUI) &&
+                PersistentDataManager.instance.GetGlobalData().GetComponent<MapContainer>(out MapContainer mapContainer))
+            {
+                if (mapContainer.GetMap(map, out ANF.Persistent.MapData foundData) &&
+                    mapContainer.GetDef(mapDef, out MapDefs foundDefs))
+                {
+                    waitingForMap = true;
+                    mapUI.SetEnabled(true, foundData, foundDefs);
+                }
+                else
+                {
+                    EndProcess();
+                }
+            }
+            else
+            {
+                EndProcess();
+            }
+
+        }
+
+        protected override void OnUpdate()
+        {
+            if (mapUI == null)
+                manager.GetGUIManager().GetComponent<MapUI>(out mapUI);
+
+            if (mapUI != null && mapUI.showingMap)
+                return;
+
+            if (mapUI)
+            {
+                if (mapUI.showingMap)
+                    return;
+
+                EndProcess();
+                context.LoadScript(mapUI.selectedScript);
+            }
+            else
+            {
+                EndProcess();
+            }
+        }
+
+        protected override void OnCleanup()
+        {
+            // Unused
+        }
+
+        protected override void OnSave(JSON json)
+        {
+            json.Add("waitingForMap", waitingForMap);
+        }
+
+        protected override void OnLoad(JSON json)
+        {
+            if (json.ContainsKey("waitingForMap"))
+                waitingForMap = json.GetBool("waitingForMap");
+            else
+                waitingForMap = false;
+        }
+    }
+}
+

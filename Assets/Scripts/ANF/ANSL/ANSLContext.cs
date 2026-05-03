@@ -95,7 +95,7 @@ public class ANSLContext : Jsonable
     /// </summary>
     public void NextLine()
     {
-        if (isPaused)
+        if (isPaused || !isRunning)
             return;
 
         currentFunctionDepth++;
