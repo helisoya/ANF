@@ -142,6 +142,7 @@ MonoBehaviour:
   mapRoot: {fileID: 6452069723421223990}
   backgroundImg: {fileID: 971308761287149622}
   prefabButton: {fileID: 7999730661450670340, guid: e286cb7350c99dd4486a80c3a3c52bb9, type: 3}
+  thresholdInputDistance: 20
 --- !u!1 &7166128929257139309
 GameObject:
   m_ObjectHideFlags: 0

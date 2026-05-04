@@ -22,6 +22,7 @@ namespace ANF.GUI
         [SerializeField] private RectTransform mapRoot;
         [SerializeField] private Image backgroundImg;
         [SerializeField] private MapUIButton prefabButton;
+        [SerializeField] private float thresholdInputDistance = 10f;
         private List<MapUIButton> buttons;
         private MapDefs currentMapDefs;
         private ANF.Persistent.MapData currentMap;
@@ -209,7 +210,7 @@ namespace ANF.GUI
         {
             Vector2 position = buttons[currentButtonIndex].GetComponent<RectTransform>().anchoredPosition;
             Vector2Int closestIndex = new Vector2Int(currentButtonIndex, currentButtonIndex);
-            Vector2 closestPosition = new Vector2(-9999 * currentButtonInputSide.x, -9999 * currentButtonInputSide.y);
+            Vector2 closestDistance = new Vector2(99999 , 99999);
 
             Vector2 tmpPos;
             for (int i = 0; i < buttons.Count; i++)
@@ -219,24 +220,32 @@ namespace ANF.GUI
 
                 tmpPos = buttons[i].GetComponent<RectTransform>().anchoredPosition;
 
-                if ((tmpPos.x <= position.x && currentButtonInputSide.x == 1 && tmpPos.x > closestPosition.x) ||
-                    (tmpPos.x >= position.x && currentButtonInputSide.x == -1 && tmpPos.x < closestPosition.x))
+                if ((tmpPos.x <= position.x - thresholdInputDistance && currentButtonInputSide.x == 1) ||
+                    (tmpPos.x >= position.x + thresholdInputDistance && currentButtonInputSide.x == -1))
                 {
-                    closestPosition.x = tmpPos.x;
-                    closestIndex.x = i;
+                    float distance = Vector2.Distance(tmpPos, position);
+                    if(closestDistance.x > distance)
+                    {
+                        closestDistance.x = distance;
+                        closestIndex.x = i;
+                    }
                 }
 
-                if ((tmpPos.y <= position.y && currentButtonInputSide.y == 1 && tmpPos.y > closestPosition.y) ||
-                    (tmpPos.y >= position.y && currentButtonInputSide.y == -1 && tmpPos.y < closestPosition.y))
+                if ((tmpPos.y <= position.y - thresholdInputDistance && currentButtonInputSide.y == 1) ||
+                    (tmpPos.y >= position.y + thresholdInputDistance && currentButtonInputSide.y == -1))
                 {
-                    closestPosition.y = tmpPos.y;
-                    closestIndex.y = i;
+                    float distance = Vector2.Distance(tmpPos, position);
+                    if (closestDistance.y > distance)
+                    {
+                        closestDistance.y = distance;
+                        closestIndex.y = i;
+                    }
                 }
             }
 
             if (currentButtonInputSide.x != 0 && currentButtonInputSide.y != 0)
             {
-                if (Mathf.Abs(position.x - closestPosition.x) < Mathf.Abs(position.y - closestPosition.y))
+                if (closestDistance.x <= closestDistance.y)
                     SetCurrentButton(closestIndex.x);
                 else
                     SetCurrentButton(closestIndex.y);
