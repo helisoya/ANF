@@ -63,6 +63,7 @@ namespace ANF.Editor
                 if (GUILayout.Button("Compile ANSL Files"))
                 {
                     CompileANSLFiles();
+                    AssetDatabase.Refresh();
                 }
             }
             EditorGUILayout.EndScrollView();

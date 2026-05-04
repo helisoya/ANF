@@ -16,4 +16,14 @@ Test_Choice_Yes_1 = Sorry. It got away...
 Test_Choice_No_1 = Oh, sad...
 Test_Choice_2 = Okay, this is where I get of.
 
-Test_Map_1 = Map test start.
+Test_Map_Start = Map test start.
+Test_Map_Village = Welcome to the village.
+Test_Map_Shack = You can now access the deserted Island.
+Test_Map_TurtleIsland = Tutel...
+Test_Map_DesertedIsland = You are suddenly stuck here...
+
+Map_ANFDemo_OldFortress = Old Fortress
+Map_ANFDemo_PeteShack = Pete's Shack
+Map_ANFDemo_Village = Pirate Village
+Map_ANFDemo_TurtleIsland = Turtle Island
+Map_ANFDemo_DesertedIsland = Deserted Island

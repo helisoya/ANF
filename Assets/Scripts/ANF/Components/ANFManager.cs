@@ -17,7 +17,7 @@ namespace ANF.World
     public class ANFManager : MonoBehaviour, Jsonable
     {
         [Header("General")]
-        [SerializeField] private Transform uiRoot;
+        [SerializeField] private RectTransform uiRoot;
 
         [Header("Changing Scene")]
         [SerializeField] private bool changeSceneUseFading = true;

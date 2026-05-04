@@ -1,0 +1,3 @@
+22|Test_Character|null|Test_Map_Shack
+6|anfDemoProgress|=|1
+27|Map_ANFDemo|TestMap|PeteShack

@@ -19,6 +19,7 @@ namespace ANF.GUI
         private MapUI mapUI;
         private int id;
         private bool isCurrentButton;
+        private float labelRestXPos;
 
         /// <summary>
         /// Initialize the button
@@ -28,8 +29,9 @@ namespace ANF.GUI
         /// <param name="linkedScript">The button's linked script</param>
         /// <param name="sprite">The button's sprite</param>
         /// <param name="isCurrentButton">True if the button represents the current player's location</param>
+        /// <param name="canvasTransform">The canvas's transforms</param>
         /// <param name="mapUI">The Map UI</param>
-        public void Initialize(int id, string labelKey, string linkedScript, Sprite sprite, bool isCurrentButton, MapUI mapUI)
+        public void Initialize(int id, string labelKey, string linkedScript, Sprite sprite, bool isCurrentButton, RectTransform canvasTransform, MapUI mapUI)
         {
             this.id = id;
             this.mapUI = mapUI;
@@ -39,11 +41,22 @@ namespace ANF.GUI
             buttonImg.sprite = sprite;
 
             label.SetNewKey(labelKey);
+            label.RegisterText();
+            label.GetText().ForceMeshUpdate(true, true);
             labelRoot.localScale = new Vector2(0, 1);
 
             buttonRoot.localScale = Vector2.zero;
             buttonImg.color = isCurrentButton ? Color.lightGreen : Color.white;
-            buttonRoot.DOScale(Vector3.one, 0.5f).SetEase(Ease.InBack).SetId(transform);
+            buttonRoot.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetId(transform);
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(labelRoot);
+            
+            float side = buttonRoot.anchoredPosition.x + labelRoot.sizeDelta.x >= canvasTransform.sizeDelta.x ? -1 : 1;
+
+            labelRoot.anchorMin = new Vector2(0.5f + 0.5f * side, 0.5f);
+            labelRoot.anchorMax = new Vector2(0.5f + 0.5f * side, 0.5f);
+            labelRestXPos = labelRoot.sizeDelta.x / 2.0f * side;
+            labelRoot.anchoredPosition = new Vector2(0f, 0f);
         }
 
         /// <summary>
@@ -55,29 +68,18 @@ namespace ANF.GUI
             return linkedScript;
         }
 
-        /// <summary>
-        /// Fades and destroy the button
-        /// </summary>
-        /// <param name="delay">The delay</param>
-        /// <param name="actionOnDestroy">The action to perform afterwards (optional)</param>
-        public void Fade(float delay, Action actionOnDestroy)
-        {
-            buttonRoot.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack).SetDelay(delay).SetId(transform).OnComplete(() =>
-            {
-                if (actionOnDestroy != null)
-                    actionOnDestroy.Invoke();
-            });
-        }
-
         public void OnEnter()
         {
             labelRoot.DOScaleX(1, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            labelRoot.DOAnchorPosX(labelRestXPos,0.5f).SetEase(Ease.OutQuad).SetId(transform);
             buttonImg.DOColor(Color.softRed, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            buttonRoot.SetAsLastSibling();
         }
 
         public void OnExit()
         {
             labelRoot.DOScaleX(0, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            labelRoot.DOAnchorPosX(0, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
             buttonImg.DOColor(isCurrentButton ? Color.lightGreen : Color.white, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
         }
 

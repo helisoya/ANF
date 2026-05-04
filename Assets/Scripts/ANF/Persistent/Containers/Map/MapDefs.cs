@@ -41,7 +41,7 @@ namespace ANF.Persistent
                 case MapDefsType.Never:
                     return false;
                 case MapDefsType.VariableToggle:
-                    return variableCheckValue != 0;
+                    return variableValue != 0;
                 case MapDefsType.Variable:
                     switch (variableCheckType)
                     {

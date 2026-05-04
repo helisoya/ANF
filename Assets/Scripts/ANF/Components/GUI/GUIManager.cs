@@ -12,7 +12,7 @@ namespace ANF.GUI
     /// </summary>
     public class GUIManager : ANFComponentManager<GUIComponent>
     {
-        private Transform uiRoot;
+        private RectTransform uiRoot;
         private ANFManager manager;
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace ANF.GUI
         /// <param name="manager">The ANFManager</param>
         /// <param name="uiRoot">The UI's root</param>
         /// <param name="componentsToCopy">The registered UI components</param>
-        public GUIManager(ANFManager manager, Transform uiRoot, GUIRegisterEntry<GUIComponent>[] componentsToCopy)
+        public GUIManager(ANFManager manager, RectTransform uiRoot, GUIRegisterEntry<GUIComponent>[] componentsToCopy)
         {
             this.uiRoot = uiRoot;
             this.manager = manager;
@@ -75,6 +75,15 @@ namespace ANF.GUI
             foreach (GUIComponent component in components.Values)
                 if (component.isEnabled && !component.isPaused)
                     component.OnUpdate();
+        }
+
+        /// <summary>
+        /// Gets the UI's Root
+        /// </summary>
+        /// <returns>The UI's root</returns>
+        public RectTransform GetRoot()
+        {
+            return uiRoot;
         }
     }
 }

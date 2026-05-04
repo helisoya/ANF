@@ -80,20 +80,21 @@ namespace ANF.GUI
         /// <summary>
 		/// Computes the unstretched background image's size
 		/// </summary>
-		/// <returns></returns>
-        private Vector2 CalculateImageSize()
+        /// <param name="backgroundSize">The background's full size</param>
+		/// <returns>The image's size</returns>
+        private Vector2 CalculateImageSize(Vector2 backgroundSize)
         {
             Vector2 size = new Vector2();
-            if (backgroundImg.rectTransform.sizeDelta.x > backgroundImg.rectTransform.sizeDelta.y)
+            if (backgroundSize.x > backgroundSize.y)
             {
-                float mul = backgroundImg.rectTransform.sizeDelta.y / backgroundImg.sprite.rect.height;
+                float mul = backgroundSize.y / backgroundImg.sprite.rect.height;
                 size.x = backgroundImg.sprite.rect.width * mul;
-                size.y = backgroundImg.rectTransform.sizeDelta.y;
+                size.y = backgroundSize.y;
             }
             else
             {
-                float mul = backgroundImg.rectTransform.sizeDelta.x / backgroundImg.sprite.rect.width;
-                size.x = backgroundImg.rectTransform.sizeDelta.x;
+                float mul = backgroundSize.x / backgroundImg.sprite.rect.width;
+                size.x = backgroundSize.x;
                 size.y = backgroundImg.sprite.rect.height * mul;
             }
             return size;
@@ -103,13 +104,21 @@ namespace ANF.GUI
         {
             currentButtonIndex = 0;
 
+            RectTransform guiRoot = gui.GetRoot();
+
             backgroundImg.sprite = currentMap.backgroundSprite;
-            Vector2 imageSize = CalculateImageSize();
-            Vector2 sizeDifference = backgroundImg.rectTransform.sizeDelta - imageSize;
+            Vector2 backgroundSize = guiRoot.sizeDelta - new Vector2(20f, 10f);
+            Vector2 imageSize = CalculateImageSize(backgroundSize);
+            
+            Vector2 sizeDifference = backgroundSize - imageSize;
             buttons = new List<MapUIButton>();
 
             foreach (Transform child in backgroundImg.transform)
+            {
+                DOTween.Kill(child);
                 Destroy(child.gameObject);
+            }
+                
 
             foreach (ANF.Persistent.MapButton button in currentMap.buttons)
             {
@@ -149,7 +158,7 @@ namespace ANF.GUI
                         -sizeDifference.y / 2.0f - imageSize.y * button.normalizedPosition.y
                     );
                     instance.Initialize(buttons.Count, currentMap.id + "_" + button.id,
-                        scriptFound, button.sprite, buttonIsCurrentLocation, this);
+                        scriptFound, button.sprite, buttonIsCurrentLocation,guiRoot, this);
                     buttons.Add(instance);
                 }
             }
@@ -161,10 +170,8 @@ namespace ANF.GUI
 
         public override void OnDisabled()
         {
-            mapRoot.DOScaleX(0, 0.5f).SetEase(Ease.OutQuad).OnComplete(() =>
-            {
-                showingMap = false;
-            });
+            showingMap = false;
+            mapRoot.DOScaleX(0, 0.5f).SetEase(Ease.OutQuad);
         }
 
         /// <summary>

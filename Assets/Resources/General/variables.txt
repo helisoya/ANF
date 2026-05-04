@@ -1,6 +1,12 @@
 # Game Items
 # KEY DEFAULT_VALUE
 
+# ANF Demo Variables
+
+anfDemoProgress 0
+
+
+
 # Weather
 night 0
 rain 0

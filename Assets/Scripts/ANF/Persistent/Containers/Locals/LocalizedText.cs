@@ -21,19 +21,34 @@ namespace ANF.Locals
 		protected object[] injectors;
 		protected Locals locals;
 
+		private bool alreadyRegistered = false;
+
 		void Start()
 		{
-			if (PersistentDataManager.instance.GetGlobalData().GetComponent<Locals>(out locals))
-				locals.RegisterText(this, channel);
-
-			ReloadText();
-		}
+			RegisterText();
+        }
 
 		protected void OnDestroy()
 		{
 			if (locals != null)
 				locals.UnregisterText(this, channel);
 		}
+
+		/// <summary>
+		/// Registers the text. Called automatically in a Start() function. But can also be called manually
+		/// </summary>
+		public void RegisterText()
+		{
+			if (alreadyRegistered)
+				return;
+
+			alreadyRegistered = true;
+
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<Locals>(out locals))
+                locals.RegisterText(this, channel);
+
+            ReloadText();
+        }
 
 		/// <summary>
 		/// Changes the ID of the localized text
