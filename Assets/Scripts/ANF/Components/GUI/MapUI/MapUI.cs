@@ -25,6 +25,8 @@ namespace ANF.GUI
         private List<MapUIButton> buttons;
         private MapDefs currentMapDefs;
         private ANF.Persistent.MapData currentMap;
+        private string currentLocationId;
+
         private int currentButtonIndex;
         private Vector2Int currentButtonInputSide = new Vector2Int();
         private float cooldownToNextButtonIncrement = 0;
@@ -37,8 +39,8 @@ namespace ANF.GUI
         /// </summary>
         /// <param name="enabled">Enabl</param>
         /// <param name="map">The map to open</param>
-        /// <param name="currentButton">The player's current position/button</param>
-        public void SetEnabled(bool enabled, ANF.Persistent.MapData mapData, ANF.Persistent.MapDefs mapDefs)
+        /// <param name="currentLocationId">The player's current position/button</param>
+        public void SetEnabled(bool enabled, ANF.Persistent.MapData mapData, ANF.Persistent.MapDefs mapDefs, string currentLocation)
         {
             // ! Current point
             if (!isEnabled && enabled)
@@ -47,6 +49,7 @@ namespace ANF.GUI
                 selectedScript = null;
                 currentMap = mapData;
                 currentMapDefs = mapDefs;
+                currentLocationId = currentLocation;
             }
 
             SetEnabled(enabled);
@@ -133,6 +136,11 @@ namespace ANF.GUI
 
                 if (canShow)
                 {
+                    bool buttonIsCurrentLocation = currentLocationId != null && button.id.Equals(currentLocationId);
+
+                    if (buttonIsCurrentLocation)
+                        currentButtonIndex = buttons.Count;
+
                     MapUIButton instance = Instantiate(prefabButton, backgroundImg.rectTransform);
                     RectTransform instanceTransform = instance.GetComponent<RectTransform>();
                     instanceTransform.eulerAngles = new Vector3(0, 0, button.rotation);
@@ -140,12 +148,14 @@ namespace ANF.GUI
                         sizeDifference.x / 2.0f + imageSize.x * button.normalizedPosition.x,
                         -sizeDifference.y / 2.0f - imageSize.y * button.normalizedPosition.y
                     );
-                    instance.Initialize(buttons.Count, currentMap.id + "_" + button.id, scriptFound, button.sprite, this);
+                    instance.Initialize(buttons.Count, currentMap.id + "_" + button.id,
+                        scriptFound, button.sprite, buttonIsCurrentLocation, this);
                     buttons.Add(instance);
                 }
             }
 
-            buttons[currentButtonIndex].OnEnter();
+            if (currentButtonIndex >= 0 && currentButtonIndex < buttons.Count)
+                buttons[currentButtonIndex].OnEnter();
             mapRoot.DOScaleX(1, 0.5f).SetEase(Ease.OutQuad);
         }
 
@@ -302,6 +312,7 @@ namespace ANF.GUI
 
             if (showingMap)
             {
+                json.Add("currentLocationId", currentLocationId);
                 json.Add("currentMap", currentMap.id);
                 json.Add("currentMapDefs", currentMapDefs.id);
             }
@@ -315,6 +326,9 @@ namespace ANF.GUI
             if (json.ContainsKey("selectedScript"))
                 selectedScript = json.GetString("selectedScript");
 
+            if (json.ContainsKey("currentLocationId"))
+                currentLocationId = json.GetString("currentLocationId");
+
             if (showingMap && json.ContainsKey("currentMap") && json.ContainsKey("currentMapDefs") &&
             PersistentDataManager.instance.GetGlobalData().GetComponent<MapContainer>(out MapContainer container))
             {
@@ -322,7 +336,7 @@ namespace ANF.GUI
                     container.GetDef(json.GetString("currentMapDefs"), out MapDefs loadedDefs))
                 {
                     isEnabled = false;
-                    SetEnabled(true, loadedMap, loadedDefs);
+                    SetEnabled(true, loadedMap, loadedDefs, currentLocationId);
 
                     if (json.ContainsKey("isEnabled"))
                         json.Remove("isEnabled");

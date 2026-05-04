@@ -18,9 +18,9 @@ namespace ANF.ANSL
         functionId: 27,
         functionBody: "map",
         functionAutoComplete: new string[] {
-            "map(Map;Def)"
+            "map(Map;Def;CurrentLocation)"
         },
-        functionDesc: "Opens a map using a specific definition")]
+        functionDesc: "Opens a map using a specific definition. Current player location on map can be null")]
     public class MapChoiceFunction : ANSLFunction
     {
         private bool waitingForMap = false;
@@ -29,7 +29,7 @@ namespace ANF.ANSL
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.STRING}
+                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.STRING, FunctionParameterType.STRING }
             };
         }
 
@@ -38,6 +38,7 @@ namespace ANF.ANSL
             waitingForMap = false;
             if (parameters.GetParameter(0, out string map) &&
                 parameters.GetParameter(1, out string mapDef) &&
+                parameters.GetParameter(2, out string currentLocation) &&
                 manager.GetGUIManager().GetComponent<MapUI>(out mapUI) &&
                 PersistentDataManager.instance.GetGlobalData().GetComponent<MapContainer>(out MapContainer mapContainer))
             {
@@ -45,7 +46,7 @@ namespace ANF.ANSL
                     mapContainer.GetDef(mapDef, out MapDefs foundDefs))
                 {
                     waitingForMap = true;
-                    mapUI.SetEnabled(true, foundData, foundDefs);
+                    mapUI.SetEnabled(true, foundData, foundDefs, currentLocation);
                 }
                 else
                 {

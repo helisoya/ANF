@@ -137,8 +137,8 @@ endchoice"],
 	"27_0": {
 		"scope": "ansl",
 		"prefix": "map",
-		"body": ["map(Map;Def)"],
-		"description": "Opens a map using a specific definition"
+		"body": ["map(Map;Def;CurrentLocation)"],
+		"description": "Opens a map using a specific definition. Current player location on map can be null"
 	},
 	"7_0": {
 		"scope": "ansl",

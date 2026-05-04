@@ -18,6 +18,7 @@ namespace ANF.GUI
         private string linkedScript;
         private MapUI mapUI;
         private int id;
+        private bool isCurrentButton;
 
         /// <summary>
         /// Initialize the button
@@ -26,12 +27,14 @@ namespace ANF.GUI
         /// <param name="labelKey">The label's key</param>
         /// <param name="linkedScript">The button's linked script</param>
         /// <param name="sprite">The button's sprite</param>
+        /// <param name="isCurrentButton">True if the button represents the current player's location</param>
         /// <param name="mapUI">The Map UI</param>
-        public void Initialize(int id, string labelKey, string linkedScript, Sprite sprite, MapUI mapUI)
+        public void Initialize(int id, string labelKey, string linkedScript, Sprite sprite, bool isCurrentButton, MapUI mapUI)
         {
             this.id = id;
             this.mapUI = mapUI;
             this.linkedScript = linkedScript;
+            this.isCurrentButton = isCurrentButton;
 
             buttonImg.sprite = sprite;
 
@@ -39,6 +42,7 @@ namespace ANF.GUI
             labelRoot.localScale = new Vector2(0, 1);
 
             buttonRoot.localScale = Vector2.zero;
+            buttonImg.color = isCurrentButton ? Color.lightGreen : Color.white;
             buttonRoot.DOScale(Vector3.one, 0.5f).SetEase(Ease.InBack).SetId(transform);
         }
 
@@ -74,7 +78,7 @@ namespace ANF.GUI
         public void OnExit()
         {
             labelRoot.DOScaleX(0, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
-            buttonImg.DOColor(Color.white, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            buttonImg.DOColor(isCurrentButton ? Color.lightGreen : Color.white, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
         }
 
         public void OnPointerDown(PointerEventData eventData)
