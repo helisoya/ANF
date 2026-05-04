@@ -16,6 +16,9 @@ MonoBehaviour:
   - id: anslManager
     data:
       rid: 3436799676236169289
+  - id: backgroundManager
+    data:
+      rid: 3436799676236169305
   - id: stateLoader
     data:
       rid: 3436799676236169291
@@ -58,3 +61,10 @@ MonoBehaviour:
         debugModeScript: ANF/Tests/Map_Start
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
+    - rid: 3436799676236169305
+      type: {class: BackgroundManager, ns: ANF.Scene, asm: Assembly-CSharp}
+      data:
+        canBeSaved: 1
+        enabledByDefault: 1
+        backgroundType: 0
+        prefabPath: Backgrounds/

@@ -320,7 +320,7 @@ namespace ANF.GUI
                 // Save / Load
                 if (inSaveMode)
                 {
-                    SaveUtils.SavePlayerData(PersistentDataManager.instance.GetPlayerData(), manager, currentPopupData.saveFileName);
+                    SaveUtils.SavePlayerData(PersistentDataManager.instance.GetPlayerData(), manager, SceneManager.GetActiveScene().name, currentPopupData.saveFileName);
 
                     JSON newFile = SaveUtils.LoadJSON(currentPopupData.saveFileName);
                     string newLabel = slotInfo.GetLabel(newFile);
@@ -333,8 +333,14 @@ namespace ANF.GUI
                 {
                     if (PersistentDataManager.instance.GetGlobalData().GetComponent<LoadStateContainer>(out LoadStateContainer container))
                     {
+                        string nextScene = PersistentDataManager.instance.GetANFSettings().gameScene;
+                        JSON saveFile = SaveUtils.LoadJSON(currentPopupData.saveFileName);
+                        if (saveFile != null && saveFile.ContainsKey("currentScene"))
+                            nextScene = saveFile.GetString("currentScene");
+
                         container.SetToLoadSaveFile(currentPopupData.saveFileName);
-                        manager.ChangeScene(PersistentDataManager.instance.GetANFSettings().gameScene);
+
+                        manager.ChangeScene(nextScene);
                         return;
                     }
                 }

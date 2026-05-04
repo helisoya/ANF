@@ -102,11 +102,14 @@ namespace ANF.Utils
         /// </summary>
         /// <param name="playerData">The player data</param>
         /// <param name="anfManager">The ANF Manager</param>
+        /// <param name="currentScene">The current scene</param>
         /// <param name="savePath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool SavePlayerData(ContainerManager playerData, ANFManager anfManager, string savePath)
+        public static bool SavePlayerData(ContainerManager playerData, ANFManager anfManager, string currentScene, string savePath)
         {
             JSON json = new JSON();
+
+            json.Add("currentScene", currentScene);
 
             JSON partJSON = new JSON();
             playerData.Save(partJSON);
@@ -130,15 +133,27 @@ namespace ANF.Utils
         /// <returns>True if the operation was a success</returns>
         public static bool LoadPlayerData(ContainerManager playerData, ANFManager anfManager, string loadPath)
         {
-            JSON loadedJSON = LoadJSON(loadPath);
-            if (loadedJSON == null)
+            return LoadPlayerData(playerData, anfManager, LoadJSON(loadPath));
+        }
+
+
+        /// <summary>
+        /// Loads the player & world data from disk
+        /// </summary>
+        /// <param name="playerData">The player data</param>
+        /// <param name="anfManager">The ANF Manager</param>
+        /// <param name="loadPath">The save's filepath</param>
+        /// <returns>True if the operation was a success</returns>
+        public static bool LoadPlayerData(ContainerManager playerData, ANFManager anfManager, JSON json)
+        {
+            if (json == null)
                 return false;
 
-            if (loadedJSON.ContainsKey("playerData"))
-                playerData.Load(loadedJSON.GetJSON("playerData"));
+            if (json.ContainsKey("playerData"))
+                playerData.Load(json.GetJSON("playerData"));
 
-            if (loadedJSON.ContainsKey("worldData"))
-                anfManager.Load(loadedJSON.GetJSON("worldData"));
+            if (json.ContainsKey("worldData"))
+                anfManager.Load(json.GetJSON("worldData"));
 
             return true;
         }

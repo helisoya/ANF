@@ -50,7 +50,7 @@ namespace ANF.GUI
             buttonRoot.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetId(transform);
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(labelRoot);
-            
+
             float side = buttonRoot.anchoredPosition.x + labelRoot.sizeDelta.x >= canvasTransform.sizeDelta.x ? -1 : 1;
 
             labelRoot.anchorMin = new Vector2(0.5f + 0.5f * side, 0.5f);
@@ -71,9 +71,10 @@ namespace ANF.GUI
         public void OnEnter()
         {
             labelRoot.DOScaleX(1, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
-            labelRoot.DOAnchorPosX(labelRestXPos,0.5f).SetEase(Ease.OutQuad).SetId(transform);
+            labelRoot.DOAnchorPosX(labelRestXPos, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
             buttonImg.DOColor(Color.softRed, 0.5f).SetEase(Ease.OutQuad).SetId(transform);
             buttonRoot.SetAsLastSibling();
+            buttonRoot.DOPunchScale(Vector3.one * 0.2f, 0.2f).SetId(transform);
         }
 
         public void OnExit()

@@ -110,7 +110,7 @@ namespace ANF.GUI
             backgroundImg.sprite = currentMap.backgroundSprite;
             Vector2 backgroundSize = guiRoot.sizeDelta - new Vector2(20f, 10f);
             Vector2 imageSize = CalculateImageSize(backgroundSize);
-            
+
             Vector2 sizeDifference = backgroundSize - imageSize;
             buttons = new List<MapUIButton>();
 
@@ -119,7 +119,7 @@ namespace ANF.GUI
                 DOTween.Kill(child);
                 Destroy(child.gameObject);
             }
-                
+
 
             foreach (ANF.Persistent.MapButton button in currentMap.buttons)
             {
@@ -159,7 +159,7 @@ namespace ANF.GUI
                         -sizeDifference.y / 2.0f - imageSize.y * button.normalizedPosition.y
                     );
                     instance.Initialize(buttons.Count, currentMap.id + "_" + button.id,
-                        scriptFound, button.sprite, buttonIsCurrentLocation,guiRoot, this);
+                        scriptFound, button.sprite, buttonIsCurrentLocation, guiRoot, this);
                     buttons.Add(instance);
                 }
             }
@@ -210,7 +210,7 @@ namespace ANF.GUI
         {
             Vector2 position = buttons[currentButtonIndex].GetComponent<RectTransform>().anchoredPosition;
             Vector2Int closestIndex = new Vector2Int(currentButtonIndex, currentButtonIndex);
-            Vector2 closestDistance = new Vector2(99999 , 99999);
+            Vector2 closestDistance = new Vector2(99999, 99999);
 
             Vector2 tmpPos;
             for (int i = 0; i < buttons.Count; i++)
@@ -224,7 +224,7 @@ namespace ANF.GUI
                     (tmpPos.x >= position.x + thresholdInputDistance && currentButtonInputSide.x == -1))
                 {
                     float distance = Vector2.Distance(tmpPos, position);
-                    if(closestDistance.x > distance)
+                    if (closestDistance.x > distance)
                     {
                         closestDistance.x = distance;
                         closestIndex.x = i;
@@ -313,12 +313,10 @@ namespace ANF.GUI
         {
             cooldownToNextButtonIncrement = 0.0f;
             currentButtonInputSide = Vector2Int.zero;
-            mapRoot.DOScaleX(0, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public override void OnUnPaused()
         {
-            mapRoot.DOScaleX(1, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public override void OnSave(JSON json)
