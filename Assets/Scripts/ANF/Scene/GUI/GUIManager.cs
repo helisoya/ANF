@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using ANF.Persistent;
 using ANF.Utils;
-using ANF.World;
+using ANF.Scene;
 using Leguar.TotalJSON;
 using UnityEngine;
 
@@ -47,10 +47,10 @@ namespace ANF.GUI
         public bool AnyComponentsActive(string[] componentIds)
         {
             GUIComponent tmp;
-            foreach(string componentId in componentIds)
+            foreach (string componentId in componentIds)
             {
-                if(components.TryGetValue(componentId, out tmp))
-                    if(tmp.isEnabled)
+                if (components.TryGetValue(componentId, out tmp))
+                    if (tmp.isEnabled)
                         return true;
             }
             return false;

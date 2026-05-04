@@ -9,7 +9,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ANF.World
+namespace ANF.Scene
 {
     /// <summary>
     /// Handles persistent data and other Manager
@@ -18,13 +18,10 @@ namespace ANF.World
     {
         [Header("General")]
         [SerializeField] private RectTransform uiRoot;
+        [SerializeField] private ANFSceneData sceneData;
 
-        [Header("Changing Scene")]
-        [SerializeField] private bool changeSceneUseFading = true;
-        [SerializeField] private string changeSceneFadingName = "fadeAll";
         private bool isChangingScene = false;
         private string nextSceneToLoad = null;
-
 
         private World world;
         private GUIManager guiManager;
@@ -49,9 +46,10 @@ namespace ANF.World
 
         void Update()
         {
-            if(isChangingScene)
+            if (isChangingScene)
             {
-                if (changeSceneUseFading && guiManager.GetComponent<GUI.Fade>(changeSceneFadingName, out GUI.Fade fade))
+                if (sceneData.changeSceneUseFading &&
+                    guiManager.GetComponent<GUI.Fade>(sceneData.changeSceneFadingName, out GUI.Fade fade))
                 {
                     fade.OnUpdate();
                     if (fade.fadingAlpha)
@@ -87,8 +85,8 @@ namespace ANF.World
         /// </summary>
         private void InitializeComponents()
         {
-            guiManager = new GUIManager(this, uiRoot, PersistentDataManager.instance.GetANFSettings().registeredGUIComponents);
-            world = new World(this, PersistentDataManager.instance.GetANFSettings().registeredWorldComponents);
+            guiManager = new GUIManager(this, uiRoot, sceneData.registeredGUIComponents);
+            world = new World(this, sceneData.registeredWorldComponents);
         }
 
         /// <summary>
@@ -97,7 +95,7 @@ namespace ANF.World
         /// <param name="nextScene">The next scene</param>
         public void ChangeScene(string nextScene)
         {
-            if (changeSceneUseFading && guiManager.GetComponent<GUI.Fade>(changeSceneFadingName, out GUI.Fade fade))
+            if (sceneData.changeSceneUseFading && guiManager.GetComponent<GUI.Fade>(sceneData.changeSceneFadingName, out GUI.Fade fade))
             {
                 DOTween.KillAll(false);
                 guiManager.OnChangeScene();

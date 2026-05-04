@@ -2,7 +2,7 @@ using ANF.Utils;
 using Leguar.TotalJSON;
 using UnityEngine;
 
-namespace ANF.World
+namespace ANF.Scene
 {
     /// <summary>
 	/// Represent a world component

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad481a16d6eac646a792c6507ea0c64, type: 3}
+  m_Name: DefaultSceneData
+  m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.ANFSceneData
+  registeredWorldComponents:
+  - id: anslManager
+    data:
+      rid: 3436799676236169289
+  - id: stateLoader
+    data:
+      rid: 3436799676236169291
+  registeredGUIComponents:
+  - id: fadeBg
+    data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
+  - id: dialog
+    data: {fileID: 5724826130367448010, guid: 022905ec658687a479fc48d91f16fa39, type: 3}
+  - id: choiceUI
+    data: {fileID: 237637143809057935, guid: 6cf9e0c16fec62f4d9fca3a93dc77fe6, type: 3}
+  - id: mapUI
+    data: {fileID: 7502116054405208522, guid: e70c0214d98967445badb02e7039cadc, type: 3}
+  - id: fadeFg
+    data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
+  - id: pauseMenu
+    data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
+  - id: saveMenu
+    data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
+  - id: fadeAll
+    data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
+  changeSceneUseFading: 1
+  changeSceneFadingName: fadeAll
+  references:
+    version: 2
+    RefIds:
+    - rid: 3436799676236169289
+      type: {class: ANSLManager, ns: ANF.ANSL, asm: Assembly-CSharp}
+      data:
+        canBeSaved: 1
+        enabledByDefault: 1
+        maxFunctionsPerFrame: 10
+        maxContexts: 20
+        contextStackLength: 10
+    - rid: 3436799676236169291
+      type: {class: StateLoader, ns: ANF.Scene, asm: Assembly-CSharp}
+      data:
+        canBeSaved: 1
+        enabledByDefault: 1
+        startInDebugMode: 1
+        debugModeScript: ANF/Tests/Map_Start
+        autoLoadSaveFile: 0
+        saveFileToAutoLoad: autosave

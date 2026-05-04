@@ -1,5 +1,5 @@
 using ANF.Persistent;
-using ANF.World;
+using ANF.Scene;
 using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -66,7 +66,7 @@ namespace ANF.GUI
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            if(eventData.button == PointerEventData.InputButton.Left)
+            if (eventData.button == PointerEventData.InputButton.Left)
                 pauseMenu.SelectCurrentButton();
         }
 

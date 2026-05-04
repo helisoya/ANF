@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using ANF.ANSL;
 using ANF.GUI;
 using ANF.Utils;
-using ANF.World;
+using ANF.Scene;
 using UnityEngine;
 
 namespace ANF.Persistent
@@ -35,13 +35,6 @@ namespace ANF.Persistent
         public ComponentRegisterEntry<DataContainer>[] registeredPlayerDataContainers;
         [Tooltip("Global datas containers are responsible for datas that are not local to a save file (Ex: settings)")]
         public ComponentRegisterEntry<DataContainer>[] registeredGlobalDataContainers;
-
-        [Header("World")]
-        [Tooltip("World components are responsible for individual features. (Ex: Background Manager, ANSL Manager)")]
-        public ComponentRegisterEntry<WorldComponent>[] registeredWorldComponents;
-        [Tooltip("GUI components are responsible for drawing things on screen. (Ex : Pause menu, Fade, Dialogs, ...)")]
-        public GUIRegisterEntry<GUIComponent>[] registeredGUIComponents;
-
 
         [Header("ANSL")]
         [Tooltip("ANSL source files location")]

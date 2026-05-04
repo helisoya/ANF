@@ -2,7 +2,7 @@ using ANF.Utils;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-namespace ANF.World
+namespace ANF.Scene
 {
     /// <summary>
 	/// Handles multiple ANFComponents

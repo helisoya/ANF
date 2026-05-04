@@ -4,7 +4,7 @@ using ANF.Utils;
 using Leguar.TotalJSON;
 using UnityEngine;
 
-namespace ANF.World
+namespace ANF.Scene
 {
     /// <summary>
 	/// The state loader component is responsible for loading the state of the game

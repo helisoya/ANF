@@ -1,4 +1,4 @@
-using ANF.World;
+using ANF.Scene;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -73,10 +73,10 @@ namespace ANF.GUI
 
         public void OnClick()
         {
-            if(data.interactable)
+            if (data.interactable)
             {
                 saveMenuUI.OpenConfirmPopup(data);
-            }                
+            }
             else
             {
                 root.DOShakeRotation(0.5f, new Vector3(0, 0, 10f)).SetEase(Ease.InOutElastic).OnComplete(() =>

@@ -3,7 +3,7 @@ using Leguar.TotalJSON;
 using System.Security.Authentication.ExtendedProtection;
 using UnityEngine;
 
-namespace ANF.World
+namespace ANF.Scene
 {
     /// <summary>
 	/// ANF Components contains a variety of utility functions and are Jsonable

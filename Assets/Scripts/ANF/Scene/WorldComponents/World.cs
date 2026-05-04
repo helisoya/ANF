@@ -1,8 +1,8 @@
 using ANF.Utils;
-using ANF.World;
+using ANF.Scene;
 using UnityEngine;
 
-namespace ANF.World
+namespace ANF.Scene
 {
     /// <summary>
 	/// Represents the 3D world and handles its components
