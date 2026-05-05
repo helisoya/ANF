@@ -58,7 +58,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Map_Start
+        debugModeScript: ANF/Tests/Background
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305
@@ -67,4 +67,5 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         backgroundType: 0
+        asyncLoading: 1
         prefabPath: Backgrounds/

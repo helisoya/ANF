@@ -158,6 +158,12 @@ endchoice"],
 		"body": ["return()"],
 		"description": "Stops the current script"
 	},
+	"28_0": {
+		"scope": "ansl",
+		"prefix": "setBackground",
+		"body": ["setBackground(Background)"],
+		"description": "Changes the current background. Background can be null"
+	},
 	"14_0": {
 		"scope": "ansl",
 		"prefix": "setBgColor",

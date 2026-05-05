@@ -21,7 +21,7 @@ namespace ANF.ANSL
             "map(Map;Def;CurrentLocation)"
         },
         functionDesc: "Opens a map using a specific definition. Current player location on map can be null")]
-    public class MapChoiceFunction : ANSLFunction
+    public class MapFunction : ANSLFunction
     {
         private bool waitingForMap = false;
         private MapUI mapUI;
