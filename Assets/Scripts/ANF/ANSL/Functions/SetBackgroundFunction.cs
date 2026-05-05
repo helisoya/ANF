@@ -18,7 +18,8 @@ namespace ANF.ANSL
         functionId: 28,
         functionBody: "setBackground",
         functionAutoComplete: new string[] {
-            "setBackground(Background)"
+            "setBackground(Background)",
+            "setBackground(Background;UseDefaultData)"
         },
         functionDesc: "Changes the current background. Background can be null")]
     public class SetBackgroundFunction : ANSLFunction
@@ -29,7 +30,8 @@ namespace ANF.ANSL
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {
-                new FunctionParameterType[]{FunctionParameterType.STRING }
+                new FunctionParameterType[]{FunctionParameterType.STRING },
+                new FunctionParameterType[]{FunctionParameterType.STRING, FunctionParameterType.BOOL }
             };
         }
 
@@ -39,7 +41,13 @@ namespace ANF.ANSL
             if (parameters.GetParameter(0, out string background) &&
                 manager.GetWorld().GetComponent<ANF.Scene.BackgroundManager>(out backgroundManager))
             {
-                backgroundManager.SetBackground(background);
+                bool useDefaultData = false;
+
+                if (parameters.GetTemplateId() == 1)
+                    if (!parameters.GetParameter(1, out useDefaultData))
+                        useDefaultData = false;
+
+                backgroundManager.SetBackground(background, useDefaultData);
 
                 if (!backgroundManager.unloadingBackground && !backgroundManager.loadingBackground)
                     EndProcess();

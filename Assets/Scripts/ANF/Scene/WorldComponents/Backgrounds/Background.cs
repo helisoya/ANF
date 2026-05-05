@@ -1,4 +1,7 @@
 using System.Collections.Generic;
+using ANF.Utils;
+using AYellowpaper.SerializedCollections;
+using Leguar.TotalJSON;
 using UnityEngine;
 
 namespace ANF.Scene
@@ -9,8 +12,46 @@ namespace ANF.Scene
     public class Background : MonoBehaviour
     {
         [Header("Infos")]
-        [SerializeField] private Transform markersRoot;
-        private Dictionary<string, Transform> markers;
+        [SerializeField] private BackgroundData defaultData;
+
+        [Header("Components")]
+        [SerializeField] private Light sunLight;
+        [Tooltip("Only one weather effect can be active at all time")]
+        [SerializeField] private SerializedDictionary<string, GameObject> weatherEffects;
+        [Tooltip("A marker can be used to position objects and characters at runtime")]
+        [SerializeField] private SerializedDictionary<string, Transform> markers;
+
+
+        /// <summary>
+		/// Gets the background's default data
+		/// </summary>
+		/// <returns>The default data</returns>
+        public BackgroundData GetDefaultData()
+        {
+            return defaultData;
+        }
+
+        /// <summary>
+		/// Changes the current weather effect.
+        /// Can be null for no effect
+		/// </summary>
+		/// <param name="effect">The new effect</param>
+        public void SetWeatherEffect(string effect)
+        {
+            foreach (string key in weatherEffects.Keys)
+            {
+                weatherEffects[key].SetActive(key == effect);
+            }
+        }
+
+        /// <summary>
+		/// Changes the light's direction (its transform's forward will be changed)
+		/// </summary>
+		/// <param name="direction">The new light direction</param>
+        public void SetLightDirection(Vector3 direction)
+        {
+            sunLight.transform.forward = direction;
+        }
 
         /// <summary>
         /// Checks if the marker exists
@@ -20,19 +61,6 @@ namespace ANF.Scene
         public bool MarkerExists(string marker)
         {
             return markers.ContainsKey(marker);
-        }
-
-        /// <summary>
-        /// Registers the background's makers
-        /// </summary>
-        private void RegisterMarkers()
-        {
-            markers = new Dictionary<string, Transform>();
-
-            foreach (Transform child in markersRoot)
-            {
-                markers[child.name] = child;
-            }
         }
 
         /// <summary>
@@ -65,7 +93,8 @@ namespace ANF.Scene
 
         public void OnLoad()
         {
-            RegisterMarkers();
+            SetLightDirection(defaultData.currentLightDirection);
+            SetWeatherEffect(defaultData.currentWeatherEffect);
         }
 
 

@@ -164,6 +164,12 @@ endchoice"],
 		"body": ["setBackground(Background)"],
 		"description": "Changes the current background. Background can be null"
 	},
+	"28_1": {
+		"scope": "ansl",
+		"prefix": "setBackground",
+		"body": ["setBackground(Background;UseDefaultData)"],
+		"description": "Changes the current background. Background can be null"
+	},
 	"14_0": {
 		"scope": "ansl",
 		"prefix": "setBgColor",
@@ -188,6 +194,12 @@ endchoice"],
 		"body": ["setFg(Alpha)"],
 		"description": "Sets the Foreground's alpha to a specific value"
 	},
+	"29_0": {
+		"scope": "ansl",
+		"prefix": "setLightDirection",
+		"body": ["setLightDirection(X;Y;Z)"],
+		"description": "Changes the current background's light direction"
+	},
 	"24_0": {
 		"scope": "ansl",
 		"prefix": "setLocals",
@@ -199,6 +211,12 @@ endchoice"],
 		"prefix": "setLocation",
 		"body": ["setLocation(Location)"],
 		"description": "Changes the location (visible on the save slot's info)"
+	},
+	"30_0": {
+		"scope": "ansl",
+		"prefix": "setWeatherEffect",
+		"body": ["setWeatherEffect(WeatherEffect)"],
+		"description": "Changes the current background's weather effect"
 	},
 	"23_0": {
 		"scope": "ansl",

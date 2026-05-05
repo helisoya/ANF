@@ -26,10 +26,11 @@ namespace ANF.Scene
         [SerializeField] private string prefabPath = "Backgrounds/";
         private Background currentBackground;
         private string currentBackgroundID;
+        private BackgroundData currentCachedData = null;
+
 
         private AsyncOperation currentOperation;
         private string cachedNextBackgroundID;
-
         public bool loadingBackground { get; private set; }
         public bool unloadingBackground { get; private set; }
 
@@ -43,16 +44,46 @@ namespace ANF.Scene
         }
 
         /// <summary>
+		/// Changes the current background's weather effect
+		/// </summary>
+		/// <param name="weatherEffect">The new weather effect</param>
+        public void SetWeatherEffect(string weatherEffect)
+        {
+            if (currentBackground != null)
+            {
+                currentCachedData.currentWeatherEffect = weatherEffect;
+                currentBackground.SetWeatherEffect(weatherEffect);
+            }
+        }
+
+        /// <summary>
+		/// Changes the current background's light direction (This will set the light's forward vector)
+		/// </summary>
+		/// <param name="direction">The new direction</param>
+        public void SetLightDirection(Vector3 direction)
+        {
+            if (currentBackground != null)
+            {
+                currentCachedData.currentLightDirection = direction;
+                currentBackground.SetLightDirection(direction);
+            }
+        }
+
+        /// <summary>
 		/// Loads a background and removes the previous background if needed
 		/// </summary>
 		/// <param name="ID">The new background's ID. In Scene Mode, this is the Scene's name. 
         /// In Prefab Mode, this is the prefab's path in Resources/[GeneralPrefabPath]/...</param>
+        /// <param name="useDefaultData">True if the background's default data should be used</param>
 		/// <param name="force">True if the change should be forced even if </param>
-        public void SetBackground(string ID, bool force = false)
+        public void SetBackground(string ID, bool useDefaultData, bool force = false)
         {
             if (force || ID != currentBackgroundID)
             {
                 cachedNextBackgroundID = ID;
+
+                if (useDefaultData || ID == null)
+                    currentCachedData = null;
 
                 currentOperation = RemoveCurrentBackground();
 
@@ -121,7 +152,20 @@ namespace ANF.Scene
             }
 
             if (currentBackground)
+            {
                 currentBackground.OnLoad();
+
+                if (currentCachedData == null)
+                {
+                    currentCachedData = currentBackground.GetDefaultData();
+                }
+                else
+                {
+                    currentBackground.SetLightDirection(currentCachedData.currentLightDirection);
+                    currentBackground.SetWeatherEffect(currentCachedData.currentWeatherEffect);
+                }
+            }
+
 
             currentOperation = null;
         }
@@ -230,12 +274,36 @@ namespace ANF.Scene
             {
                 json.Add("backgroundID", current);
             }
+
+            if (currentCachedData != null)
+            {
+                JSON cacheJson = new JSON();
+
+                if (currentCachedData.currentWeatherEffect != null)
+                    cacheJson.Add("currentWeather", currentCachedData.currentWeatherEffect);
+
+                cacheJson.Add("currentLightDirection", currentCachedData.currentLightDirection);
+
+                json.Add("cachedData", cacheJson);
+            }
         }
 
         public override void OnLoad(JSON json)
         {
             cachedNextBackgroundID = null;
             currentBackgroundID = null;
+
+            if (json.ContainsKey("cachedData"))
+            {
+                JSON cachedData = json.GetJSON("cachedData");
+                currentCachedData = new BackgroundData();
+
+                if (cachedData.ContainsKey("currentWeather"))
+                    currentCachedData.currentWeatherEffect = cachedData.GetString("currentWeather");
+
+                if (cachedData.ContainsKey("currentLightDirection"))
+                    currentCachedData.currentLightDirection = cachedData.GetJArray("currentLightDirection").AsVector3();
+            }
 
             if (json.ContainsKey("backgroundID"))
             {
@@ -291,6 +359,16 @@ namespace ANF.Scene
                 return obj;
             }
         }
+    }
+
+    /// <summary>
+    /// A background's data
+    /// </summary>
+    [System.Serializable]
+    public class BackgroundData
+    {
+        public string currentWeatherEffect = null;
+        public Vector3 currentLightDirection = new Vector3(50, -30, 0);
     }
 }
 
