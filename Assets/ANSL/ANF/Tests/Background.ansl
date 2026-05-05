@@ -1,1 +1,5 @@
 setBackground(TestBackground)
+wait(1)
+setBackground(TestBackground2)
+wait(1)
+setBackground(null)

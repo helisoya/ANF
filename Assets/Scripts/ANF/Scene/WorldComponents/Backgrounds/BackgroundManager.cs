@@ -21,8 +21,8 @@ namespace ANF.Scene
     [System.Serializable]
     public class BackgroundManager : WorldComponent
     {
-        [SerializeField] private BackgroundType backgroundType;
-        [SerializeField] private bool asyncLoading = true;
+        [SerializeField] private BackgroundType backgroundType = BackgroundType.Prefab;
+        [SerializeField] private bool asyncLoading = false;
         [SerializeField] private string prefabPath = "Backgrounds/";
         private Background currentBackground;
         private string currentBackgroundID;
@@ -58,7 +58,7 @@ namespace ANF.Scene
 
                 unloadingBackground = currentOperation != null;
 
-                if(!unloadingBackground || (currentOperation != null && currentOperation.isDone))
+                if (!unloadingBackground)
                 {
                     EndBackgroundUnloading();
                 }
@@ -79,9 +79,9 @@ namespace ANF.Scene
             {
                 currentOperation = LoadBackground(cachedNextBackgroundID);
 
-                loadingBackground = asyncLoading && !forceSync;
+                loadingBackground = backgroundType == BackgroundType.Scene || (asyncLoading && !forceSync);
 
-                if (!loadingBackground || (currentOperation != null && currentOperation.isDone))
+                if (!loadingBackground)
                     EndBackgroundLoading();
             }
         }
@@ -106,7 +106,7 @@ namespace ANF.Scene
                 else if (currentOperation is ResourceRequest)
                     background = ((ResourceRequest)currentOperation).asset as Background;
 
-                if(background != null)
+                if (background != null)
                 {
                     currentBackground = Object.Instantiate(background, manager.transform);
                 }
@@ -114,7 +114,7 @@ namespace ANF.Scene
             else
             {
                 UnityEngine.SceneManagement.Scene scene = SceneManager.GetSceneByName(currentBackgroundID);
-                if(scene != null && scene.GetRootGameObjects().Length == 1)
+                if (scene != null && scene.GetRootGameObjects().Length == 1)
                 {
                     currentBackground = scene.GetRootGameObjects()[0].GetComponent<Background>();
                 }
@@ -138,14 +138,14 @@ namespace ANF.Scene
 
             if (backgroundType == BackgroundType.Scene)
             {
-                if (forceSync || !asyncLoading)
+                if (!forceSync && asyncLoading)
                     SceneManager.LoadScene(ID, LoadSceneMode.Additive);
                 else
                     operation = SceneManager.LoadSceneAsync(ID, LoadSceneMode.Additive);
             }
             else if (backgroundType == BackgroundType.Prefab)
             {
-                if (forceSync || !asyncLoading)
+                if (!forceSync && asyncLoading)
                     operation = Resources.LoadAsync<Background>(prefabPath + ID);
                 else
                     operation = new DummyResourceRequest(Resources.Load<Background>(prefabPath + ID));
@@ -170,7 +170,7 @@ namespace ANF.Scene
             {
                 operation = SceneManager.UnloadSceneAsync(currentBackgroundID);
             }
-            else if(backgroundType == BackgroundType.Prefab)
+            else if (backgroundType == BackgroundType.Prefab)
             {
                 Object.Destroy(currentBackground.gameObject);
             }
@@ -190,12 +190,20 @@ namespace ANF.Scene
 
         public override void OnUpdate()
         {
-            if (currentOperation != null && currentOperation.isDone)
+            if (unloadingBackground)
             {
-                if (unloadingBackground)
-                    EndBackgroundUnloading();
-                else if (loadingBackground)
-                    EndBackgroundLoading();
+                if (currentOperation != null && !currentOperation.isDone)
+                    return;
+
+                EndBackgroundUnloading();
+            }
+
+            if (loadingBackground)
+            {
+                if (currentOperation != null && !currentOperation.isDone)
+                    return;
+
+                EndBackgroundLoading();
             }
         }
 
@@ -228,7 +236,7 @@ namespace ANF.Scene
         {
             cachedNextBackgroundID = null;
             currentBackgroundID = null;
-      
+
             if (json.ContainsKey("backgroundID"))
             {
                 cachedNextBackgroundID = json.GetString("backgroundID");
@@ -259,7 +267,7 @@ namespace ANF.Scene
 
         public override void OnChangeScene()
         {
-            if(currentBackground != null && backgroundType == BackgroundType.Scene)
+            if (currentBackground != null && backgroundType == BackgroundType.Scene)
             {
                 // Not optimal
                 SceneManager.UnloadSceneAsync(currentBackgroundID);
