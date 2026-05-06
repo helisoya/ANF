@@ -10,13 +10,15 @@ namespace ANF.Scene
     {
         [Header("General Informations")]
         [SerializeField] private string ID;
+        [Tooltip("The icon display when interacting with the mouse")]
         [SerializeField] private Texture2D icon;
         private string nextScript;
 
         [Header("Renderers")]
+        [Tooltip("Represents the renderers that will be highlighted when in interaction mode")]
         [SerializeField] private Renderer[] objectRenderers;
-
-        public bool hidden { get; private set; }
+        private Vector3 approximateVisualPosition;
+        private bool hidden;
 
         /// <summary>
         /// Initialize the component (Editor Script)
@@ -29,10 +31,33 @@ namespace ANF.Scene
         }
 
         /// <summary>
+		/// Computes the approximate visual position for this object
+        /// (Average of the linked renderer's position)
+		/// </summary>
+        public void ComputeAppromixateVisualPoisition()
+        {
+            approximateVisualPosition = Vector3.zero;
+            foreach (Renderer renderer in objectRenderers)
+            {
+                approximateVisualPosition += renderer.transform.position;
+            }
+            approximateVisualPosition /= objectRenderers.Length;
+        }
+
+        /// <summary>
+		/// Gets the object's appromixate visual position
+		/// </summary>
+		/// <returns>Its approximate visual position</returns>
+        public Vector3 GetApproximateVisualPosition()
+        {
+            return approximateVisualPosition;
+        }
+
+        /// <summary>
         /// Changes the renderer's highlight alpha
         /// </summary>
         /// <param name="alpha">The new alpha</param>
-        private void SetHighlightAlpha(float alpha)
+        public void SetHighlightAlpha(float alpha)
         {
             if (hidden) return;
 
@@ -50,7 +75,7 @@ namespace ANF.Scene
         /// Changes the renderer's highlight color
         /// </summary>
         /// <param name="color">The new color</param>
-        private void SetHighlightColor(Color color)
+        public void SetHighlightColor(Color color)
         {
             if (hidden) return;
 
@@ -67,11 +92,19 @@ namespace ANF.Scene
         /// <summary>
         /// Changes if the object is hidden or not
         /// </summary>
-        /// <param name="value">Is the object hidden ?</param>
+        /// <param name="value">true if the object should be hidden</param>
         public void SetHidden(bool value)
         {
             hidden = value;
-            gameObject.SetActive(!value);
+        }
+
+        /// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+        public bool GetIsHidden()
+        {
+            return hidden;
         }
 
         /// <summary>
@@ -99,7 +132,7 @@ namespace ANF.Scene
         /// Changes the next script to be loaded when interacted with
         /// </summary>
         /// <param name="script">The new script</param>
-        public void ChangeNextScript(string script)
+        public void SetNextScript(string script)
         {
             nextScript = new string(script);
         }

@@ -1,7 +1,9 @@
+using ANF.Persistent;
 using Leguar.TotalJSON;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace ANF.Scene
 {
@@ -11,8 +13,18 @@ namespace ANF.Scene
     [System.Serializable]
     public class InteractionMode : WorldComponent
     {
-        private Dictionary<string, InteractableObject> registeredObjects = new Dictionary<string, InteractableObject>();
+        [Header("Highlight")]
+        [Tooltip("Full highlight means that every interactable object will glow. Otherwise, only the currently selected object will glow.")]
+        [SerializeField] private bool useFullHighlight;
+        [ColorUsage(true, true)][SerializeField] private Color baseColor;
+        [ColorUsage(true, true)][SerializeField] private Color selectedColor;
 
+        private Dictionary<string, InteractableObject> registeredObjects = new Dictionary<string, InteractableObject>();
+        private List<InteractableObject> currentInteractionObjects = new List<InteractableObject>();
+        private int currentIndex;
+        private bool reloadInteractionMode = false;
+        private int currentButtonInputSide = 0;
+        private float cooldownToNextButtonIncrement = 0;
 
         public bool inInteractionMode { get; private set; } = false;
         public string selectedScript { get; private set; } = null;
@@ -55,6 +67,102 @@ namespace ANF.Scene
                 Debug.LogError($"Trying to remove an non registered interactable object : {id}");
         }
 
+        /// <summary>
+		/// Changes the next script for a specific interactable object
+		/// </summary>
+		/// <param name="id">The object's Id</param>
+		/// <param name="script">The next script</param>
+        public void SetInteractableObjectNextScript(string id, string script)
+        {
+            if (registeredObjects.TryGetValue(id, out InteractableObject obj))
+                obj.SetNextScript(script);
+        }
+
+        /// <summary>
+        /// Changes if a specific interactable object is hidden or not
+        /// </summary>
+        /// <param name="id">The object's Id</param>
+        /// <param name="hidden">True if the object is hidden</param>
+        public void SetInteractableObjectHidden(string id, bool hidden)
+        {
+            if (registeredObjects.TryGetValue(id, out InteractableObject obj))
+                obj.SetHidden(hidden);
+        }
+
+        /// <summary>
+		/// Generates a sorted list of non hidden interactable objects
+		/// </summary>
+        private void GenerateInteractionList()
+        {
+            currentInteractionObjects.Clear();
+            foreach (InteractableObject obj in registeredObjects.Values)
+            {
+                if (!obj.GetIsHidden())
+                {
+                    obj.ComputeAppromixateVisualPoisition();
+                    currentInteractionObjects.Add(obj);
+                }
+            }
+
+            currentInteractionObjects.Sort((InteractableObject o1, InteractableObject o2) =>
+            {
+                return o1.GetApproximateVisualPosition().x.CompareTo(o2.GetApproximateVisualPosition().x);
+            });
+        }
+
+        /// <summary>
+		/// Starts the interaction mode
+		/// </summary>
+        public void StartInteractionMode()
+        {
+            GenerateInteractionList();
+
+            if (currentInteractionObjects.Count > 0)
+            {
+                inInteractionMode = true;
+                currentIndex = 0;
+
+                if (useFullHighlight)
+                {
+                    foreach (InteractableObject obj in currentInteractionObjects)
+                    {
+                        obj.SetHighlightAlpha(1);
+                        obj.SetHighlightColor(baseColor);
+                    }
+                }
+
+                currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
+                currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+            }
+            else
+            {
+                inInteractionMode = false;
+            }
+        }
+
+        /// <summary>
+		/// Confirms the object and ends the interaction mode
+		/// </summary>
+		/// <param name="index">The object's index</param>
+        public void ConfirmObject(int index)
+        {
+
+            inInteractionMode = false;
+            selectedScript = currentInteractionObjects[index].GetNextScript();
+
+            foreach (InteractableObject obj in currentInteractionObjects)
+            {
+                obj.SetHighlightAlpha(0);
+            }
+
+            currentInteractionObjects.Clear();
+        }
+
+        public void SelectObject(int index)
+        {
+            // TODO
+        }
+
         public override void OnInitialize()
         {
         }
@@ -65,7 +173,14 @@ namespace ANF.Scene
         }
         public override void OnUpdate()
         {
-
+            if (inInteractionMode)
+            {
+                if (reloadInteractionMode)
+                {
+                    StartInteractionMode();
+                    return;
+                }
+            }
         }
 
         public override void OnEnabled()
@@ -84,12 +199,58 @@ namespace ANF.Scene
         {
         }
 
+        private void OnNext(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused && inInteractionMode && context.ReadValueAsButton())
+            {
+                ConfirmObject(currentIndex);
+            }
+        }
+        private void OnMove(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused)
+            {
+                Vector2 value = context.ReadValue<Vector2>();
+
+                bool noMovement = true;
+
+                if (Mathf.Abs(value.x) >= 0.9f)
+                {
+                    noMovement = false;
+                    if (currentButtonInputSide == 0)
+                    {
+                        cooldownToNextButtonIncrement = 0.5f;
+                        currentButtonInputSide = value.x < 0 ? 1 : -1;
+
+                        IncrementButtonWithInput();
+                    }
+                }
+
+                if (noMovement)
+                {
+                    cooldownToNextButtonIncrement = 0.0f;
+                    currentButtonInputSide = 0;
+                }
+            }
+        }
+
+        private void IncrementButtonWithInput()
+        {
+            // TODO
+        }
+
         public override void OnRegisterInputs()
         {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
         }
 
         public override void OnUnRegisterInputs()
         {
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
         }
 
         public override void OnChangeScene()
@@ -99,12 +260,19 @@ namespace ANF.Scene
 
         public override void OnSave(JSON json)
         {
-
+            if (inInteractionMode)
+            {
+                json.Add("inInteractionMode", inInteractionMode);
+            }
         }
 
         public override void OnLoad(JSON json)
         {
-
+            if (json.ContainsKey("inInteractionMode"))
+            {
+                inInteractionMode = true;
+                reloadInteractionMode = true;
+            }
         }
     }
 }
