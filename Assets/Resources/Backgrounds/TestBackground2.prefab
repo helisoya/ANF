@@ -270,6 +270,7 @@ MonoBehaviour:
   defaultData:
     currentWeatherEffect: 
     currentLightDirection: {x: 50, y: -30, z: 0}
+    skyboxData: {fileID: 11400000, guid: dc01c0ecddf013b48be23f53bd2a30f2, type: 2}
   sunLight: {fileID: 7271947535328228345}
   weatherEffects:
     _serializedList:

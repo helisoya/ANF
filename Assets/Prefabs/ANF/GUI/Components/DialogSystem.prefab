@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.DialogUI
   canBeSaved: 1
-  enabledByDefault: 1
+  enabledByDefault: 0
   root: {fileID: 5010621968908180720}
   hideRootWhenClosed: 1
   lockComponents: []

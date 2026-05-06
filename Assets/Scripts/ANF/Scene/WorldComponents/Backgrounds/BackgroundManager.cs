@@ -2,6 +2,7 @@ using Leguar.TotalJSON;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Scripting;
 
 namespace ANF.Scene
 {
@@ -24,6 +25,8 @@ namespace ANF.Scene
         [SerializeField] private BackgroundType backgroundType = BackgroundType.Prefab;
         [SerializeField] private bool asyncLoading = false;
         [SerializeField] private string prefabPath = "Backgrounds/";
+        [SerializeField] private string skyboxDataPath = "Skyboxes/";
+        [SerializeField][RequiredMember] private SkyboxData defaultSkybox;
         private Background currentBackground;
         private string currentBackgroundID;
         private BackgroundData currentCachedData = null;
@@ -41,6 +44,23 @@ namespace ANF.Scene
                 backgroundType = backgroundType,
                 prefabPath = prefabPath
             };
+        }
+
+        /// <summary>
+        /// Changes the current background's skybox
+        /// </summary>
+        /// <param name="skyboxName">The skybox data's name</param>
+        public void SetSkybox(string skyboxName)
+        {
+            if(!string.IsNullOrEmpty(skyboxDataPath) && currentBackground != null)
+            {
+                SkyboxData data = Resources.Load<SkyboxData>(skyboxDataPath + skyboxName);
+                if(data != null)
+                {
+                    currentCachedData.skyboxData = data;
+                    currentBackground.SetSkybox(data.skybox, data.sunColor);
+                }
+            }
         }
 
         /// <summary>
@@ -159,11 +179,13 @@ namespace ANF.Scene
                 {
                     currentCachedData = currentBackground.GetDefaultData();
                 }
-                else
-                {
-                    currentBackground.SetLightDirection(currentCachedData.currentLightDirection);
-                    currentBackground.SetWeatherEffect(currentCachedData.currentWeatherEffect);
-                }
+
+                if (currentCachedData.skyboxData == null)
+                    currentCachedData.skyboxData = defaultSkybox;
+
+                currentBackground.SetLightDirection(currentCachedData.currentLightDirection);
+                currentBackground.SetWeatherEffect(currentCachedData.currentWeatherEffect);
+                currentBackground.SetSkybox(currentCachedData.skyboxData.skybox, currentCachedData.skyboxData.sunColor);
             }
 
 
@@ -284,6 +306,9 @@ namespace ANF.Scene
 
                 cacheJson.Add("currentLightDirection", currentCachedData.currentLightDirection);
 
+                if (currentCachedData.skyboxData)
+                    json.Add("currentSkybox", currentCachedData.skyboxData.name);
+
                 json.Add("cachedData", cacheJson);
             }
         }
@@ -303,6 +328,11 @@ namespace ANF.Scene
 
                 if (cachedData.ContainsKey("currentLightDirection"))
                     currentCachedData.currentLightDirection = cachedData.GetJArray("currentLightDirection").AsVector3();
+
+                if (cachedData.ContainsKey("currentSkybox"))
+                {
+                    currentCachedData.skyboxData = Resources.Load<SkyboxData>(skyboxDataPath + cachedData.GetString("currentSkybox"));
+                }
             }
 
             if (json.ContainsKey("backgroundID"))
@@ -369,6 +399,7 @@ namespace ANF.Scene
     {
         public string currentWeatherEffect = null;
         public Vector3 currentLightDirection = new Vector3(50, -30, 0);
+        public SkyboxData skyboxData = null;
     }
 }
 

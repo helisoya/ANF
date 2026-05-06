@@ -212,6 +212,12 @@ endchoice"],
 		"body": ["setLocation(Location)"],
 		"description": "Changes the location (visible on the save slot's info)"
 	},
+	"31_0": {
+		"scope": "ansl",
+		"prefix": "setSkybox",
+		"body": ["setSkybox(Skybox)"],
+		"description": "Changes the current background's skybox"
+	},
 	"30_0": {
 		"scope": "ansl",
 		"prefix": "setWeatherEffect",

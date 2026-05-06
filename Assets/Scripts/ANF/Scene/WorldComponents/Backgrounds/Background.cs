@@ -1,7 +1,7 @@
-using System.Collections.Generic;
 using ANF.Utils;
 using AYellowpaper.SerializedCollections;
 using Leguar.TotalJSON;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ANF.Scene
@@ -29,6 +29,17 @@ namespace ANF.Scene
         public BackgroundData GetDefaultData()
         {
             return defaultData;
+        }
+
+        /// <summary>
+        /// Changes the skybox for this background
+        /// </summary>
+        /// <param name="skyboxMaterial">The skybox's material</param>
+        /// <param name="sunColor">The sun's color</param>
+        public void SetSkybox(Material skyboxMaterial, Color sunColor)
+        {
+            RenderSettings.skybox = skyboxMaterial;
+            sunLight.color = sunColor;
         }
 
         /// <summary>
@@ -93,10 +104,7 @@ namespace ANF.Scene
 
         public void OnLoad()
         {
-            SetLightDirection(defaultData.currentLightDirection);
-            SetWeatherEffect(defaultData.currentWeatherEffect);
         }
-
 
         public void OnUnLoad()
         {

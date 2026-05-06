@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22eac46962755b34f9cde13540a99af4, type: 3}
-  m_Name: Night
+  m_Name: Day
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.SkyboxData
-  skybox: {fileID: 2100000, guid: 096b6c4dd30eeaa43acd816168602bd0, type: 2}
-  sunColor: {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
+  skybox: {fileID: 2100000, guid: 56e634bcd331c0542abdf0f426eb04b5, type: 2}
+  sunColor: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}

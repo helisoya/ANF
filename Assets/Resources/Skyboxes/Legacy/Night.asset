@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22eac46962755b34f9cde13540a99af4, type: 3}
+  m_Script: {fileID: 11500000, guid: c38e2b3811b059744b0f8478103f8a21, type: 3}
   m_Name: Night
-  m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.SkyboxData
-  skybox: {fileID: 2100000, guid: 096b6c4dd30eeaa43acd816168602bd0, type: 2}
-  sunColor: {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
+  m_EditorClassIdentifier: 
+  skybox: {fileID: 2100000, guid: c829fc47a30aab24daa97e149e03b411, type: 2}
+  sunColor: {r: 0.3433962, g: 0.3433962, b: 0.3433962, a: 1}
+  wheather: 0

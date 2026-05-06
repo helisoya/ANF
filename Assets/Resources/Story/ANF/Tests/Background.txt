@@ -4,6 +4,7 @@
 4|1
 28|TestBackground2|false
 4|1
+31|Cloud
 30|Rain
 4|5
 28|TestBackground
