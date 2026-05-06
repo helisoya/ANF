@@ -26,7 +26,7 @@ namespace ANF.Scene
         [SerializeField] private bool asyncLoading = false;
         [SerializeField] private string prefabPath = "Backgrounds/";
         [SerializeField] private string skyboxDataPath = "Skyboxes/";
-        [SerializeField][RequiredMember] private SkyboxData defaultSkybox;
+        [SerializeField] private SkyboxData defaultSkybox;
         private Background currentBackground;
         private string currentBackgroundID;
         private BackgroundData currentCachedData = null;
@@ -173,7 +173,7 @@ namespace ANF.Scene
 
             if (currentBackground)
             {
-                currentBackground.OnLoad();
+                currentBackground.OnLoad(manager);
 
                 if (currentCachedData == null)
                 {
@@ -230,7 +230,7 @@ namespace ANF.Scene
 
             AsyncOperation operation = null;
 
-            currentBackground.OnUnLoad();
+            currentBackground.OnUnLoad(manager);
 
             if (backgroundType == BackgroundType.Scene)
             {

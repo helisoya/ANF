@@ -219,6 +219,7 @@ namespace ANF.GUI
 
         public override void OnChangeScene()
         {
+            OnUnRegisterInputs();
         }
 
         public override void OnSave(JSON json)

@@ -373,6 +373,7 @@ namespace ANF.GUI
         }
         public override void OnChangeScene()
         {
+            OnUnRegisterInputs();
         }
     }
 }

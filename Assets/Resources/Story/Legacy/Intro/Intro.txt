@@ -1,110 +1,144 @@
-playMusic(Summoners)
-setBackground(Lake)
+# LJDN's Introduction
+# Game starts here
+
+setLocals(intro)
+
+setBackground(Forest/Road)
 changeSkybox(Night)
+
+setLocation(Location_WhiteForest)
+
+autosave()
 
 dialog(narrator;_;false;Intro_1)
 dialog(narrator;_;false;Intro_2)
-
-fadeBg(1;true)
-setBackground(BraiseBridge)
-fadeBg(0;false)
-
-dialog(narrator;_;false;Intro_3)
+dialog(narrator;_;true;Intro_3)
 dialog(narrator;_;false;Intro_4)
 dialog(narrator;_;false;Intro_5)
 dialog(narrator;_;false;Intro_6)
-dialog(narrator;_;false;Intro_7)
-dialog(narrator;_;false;Intro_8)
+dialog(???;Courier;false;Intro_7)
+
+addCharacter(Courier;true)
+setCharacterPosition(Courier;Front)
+setCharacterRotation(Courier;Front)
+setCharacterAlpha(Courier;1;false)
+
+dialog(???;Courier;false;Intro_8)
 dialog(narrator;_;false;Intro_9)
-dialog(narrator;_;false;Intro_10)
-dialog(narrator;_;false;Intro_11)
-dialog(narrator;_;false;Intro_12)
+dialog(Courier;Courier;false;Intro_10)
+dialog(Courier;Courier;false;Intro_11)
+dialog(Courier;Courier;true;Intro_12)
 
-fadeBg(1;true)
-setBackground(Black)
-addCharacter(LordElk;false)
-setCharacterPosition(LordElk;Front)
-setCharacterRotation(LordElk;Front)
-fadeBg(0;false)
+dialog([MC];_;false;Intro_13)
 
-dialog(narrator;_;false;Intro_13)
-dialog(narrator;_;false;Intro_14)
-dialog(narrator;_;false;Intro_15)
-dialog(narrator;_;false;Intro_16)
-dialog(narrator;_;false;Intro_17)
+dialog(Courier;Courier;false;Intro_14)
+dialog(Courier;Courier;false;Intro_15)
 
-fadeBg(1;true)
-removeCharacter(LordElk)
-setBackground(BraiseBridge)
-fadeBg(0;false)
+dialog([MC];_;false;Intro_16)
 
-dialog(narrator;_;false;Intro_18)
-dialog(narrator;_;false;Intro_19)
-dialog(narrator;_;false;Intro_20)
-dialog(narrator;_;false;Intro_21)
+dialog(Courier;Courier;false;Intro_17)
 
-shake(3;false)
-setBackground(BraiseBridgeExplosion)
-playSound(Explosion)
+dialog([MC];_;false;Intro_18)
 
-dialog(narrator;_;false;Intro_22)
-dialog(narrator;_;false;Intro_23)
-dialog(narrator;_;false;Intro_24)
-dialog(narrator;_;false;Intro_25)
-dialog(narrator;_;false;Intro_26)
-dialog(narrator;_;false;Intro_27)
-dialog(narrator;_;false;Intro_28)
-fadeBg(1;true)
+dialog(Courier;Courier;false;Intro_19)
+dialog(Courier;Courier;false;Intro_20)
 
-dialog(narrator;_;false;Intro_29)
-dialog(narrator;_;false;Intro_30)
-dialog(narrator;_;false;Intro_31)
+dialog([MC];_;false;Intro_21)
+
+dialog(Courier;Courier;false;Intro_22)
+dialog(Courier;Courier;false;Intro_23)
+
+dialog([MC];_;false;Intro_24)
+
+dialog(Courier;Courier;false;Intro_25)
+
+dialog([MC];_;false;Intro_26)
+
+dialog(Courier;Courier;false;Intro_27)
+
+dialog([MC];_;false;Intro_28)
+
+dialog(Courier;Courier;false;Intro_29)
+
+dialog([MC];_;false;Intro_30)
+dialog([MC];_;true;Intro_31)
 dialog(narrator;_;false;Intro_32)
-dialog(narrator;_;false;Intro_33)
+dialog([MC];_;false;Intro_33)
+
+setCharacterAlpha(Courier;0;false)
+
 dialog(narrator;_;false;Intro_34)
 dialog(narrator;_;false;Intro_35)
 
-playMusic(null)
+addCharacter(Bandit1;true)
+setCharacterPosition(Bandit1;Bandit)
+setCharacterRotation(Bandit1;Bandit)
+setCharacterBody(Bandit1;Gun;true)
+setCharacterAlpha(Bandit1;1;false)
+
+setCharacterPosition(Courier;CourierBack)
+setCharacterRotation(Courier;CourierBack)
+setCharacterAlpha(Courier;1;false)
 
 dialog(narrator;_;false;Intro_36)
-dialog(narrator;_;false;Intro_37)
-
-setBackground(Lake)
-changeSkybox(Night)
-fadeBg(0;false)
+dialog(Bandit;Bandit1;false;Intro_37)
 
 dialog([MC];_;false;Intro_38)
-dialog([MC];_;false;Intro_39)
-dialog([MC];_;false;Intro_40)
-dialog([MC];_;false;Intro_41)
+
+dialog(Bandit;Bandit1;false;Intro_39)
+dialog(Bandit;Bandit1;false;Intro_40)
+dialog(Bandit;Bandit1;false;Intro_41)
+
 dialog([MC];_;false;Intro_42)
-dialog([MC];_;false;Intro_43)
-dialog([MC];_;false;Intro_44)
-dialog([MC];_;false;Intro_45)
-dialog(narrator;_;false;Intro_46)
-dialog([MC];_;false;Intro_47)
-dialog([MC];_;false;Intro_48)
-dialog(narrator;_;false;Intro_49)
 
-addCharacter(Marcel;true)
-setCharacterPosition(Marcel;Front)
-setCharacterRotation(Marcel;Front)
-setCharacterAlpha(Marcel;1;false)
+dialog(Bandit;Bandit1;false;Intro_43)
+dialog(narrator;_;false;Intro_44)
+dialog(narrator;_;false;Intro_45)
+dialog(Bandit;Bandit1;false;Intro_46)
 
-dialog(???;Marcel;false;Intro_50)
+dialog(Courier;Courier;false;Intro_47)
+dialog(Courier;Courier;false;Intro_48)
 
-dialog([MC];_;false;Intro_51)
+dialog(Bandit;Bandit1;false;Intro_49)
+dialog(Bandit;Bandit1;false;Intro_50)
+dialog(Bandit;Bandit1;false;Intro_51)
 
-dialog(???;Marcel;false;Intro_52)
-dialog(???;Marcel;false;Intro_53)
+dialog(narrator;_;false;Intro_52)
 
-dialog([MC];_;false;Intro_54)
+playSound(Frappe)
+cameraPosition(0;-1.5;-10;false;false)
+fadeBg(0.2;false)
+dialog(narrator;_;false;Intro_53)
+dialog(narrator;_;false;Intro_54)
+dialog(narrator;_;false;Intro_55)
+dialog(Bandit;Bandit1;false;Intro_56)
+dialog(Bandit;Bandit1;false;Intro_57)
+dialog(???;_;false;Intro_58)
+dialog(Bandit;Bandit1;false;Intro_59)
 
-dialog(???;Marcel;false;Intro_55)
+setCharacterAlpha(Courier;0;false)
+setCharacterAlpha(Bandit1;0;true)
+setCharacterPosition(Bandit1;Front)
+setCharacterRotation(Bandit1;Front)
+setCharacterAlpha(Bandit1;1;false)
+fadeBg(0.6;false)
 
-setCharacterAlpha(Marcel;0;false)
-playSound(Degaine)
+dialog(narrator;_;false;Intro_60)
+dialog(Bandit;Bandit1;false;Intro_61)
+dialog(Bandit;Bandit1;false;Intro_62)
 
-dialog(narrator;_;false;Intro_56)
+dialog([MC];_;false;Intro_63)
 
-loadScene(RFM)
+dialog(Bandit;Bandit1;false;Intro_64)
+
+playSound(Tir)
+
+fadeBg(1;false)
+
+dialog(narrator;_;false;Intro_65)
+dialog(narrator;_;false;Intro_66)
+
+removeAllCharacters()
+cameraPosition(default;true;true)
+
+load(Intro/Intro_End)

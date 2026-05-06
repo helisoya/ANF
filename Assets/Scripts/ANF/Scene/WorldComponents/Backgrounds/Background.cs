@@ -1,5 +1,6 @@
 using ANF.Utils;
 using AYellowpaper.SerializedCollections;
+using DG.Tweening;
 using Leguar.TotalJSON;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace ANF.Scene
         [SerializeField] private SerializedDictionary<string, GameObject> weatherEffects;
         [Tooltip("A marker can be used to position objects and characters at runtime")]
         [SerializeField] private SerializedDictionary<string, Transform> markers;
+        [Tooltip("This list should contain all interactable objects relating to the background. (Doors, ...)")]
+        [SerializeField] private InteractableObject[] interactableObjects;
 
 
         /// <summary>
@@ -102,13 +105,27 @@ namespace ANF.Scene
             return Vector3.zero;
         }
 
-        public void OnLoad()
+        public void OnLoad(ANFManager manager)
         {
+            if(manager.GetWorld().GetComponent<InteractionMode>(out InteractionMode interactionMode))
+            {
+                foreach (InteractableObject interactableObject in interactableObjects)
+                {
+                    interactionMode.Register(interactableObject);
+                }
+            }
         }
 
-        public void OnUnLoad()
+        public void OnUnLoad(ANFManager manager)
         {
+            manager.GetWorld().GetComponent<InteractionMode>(out InteractionMode interactionMode);
 
+            foreach (InteractableObject interactableObject in interactableObjects)
+            {
+                interactableObject.StopAllTween();
+                if (interactionMode != null)
+                    interactionMode.UnRegister(interactableObject);
+            }
         }
     }
 }
