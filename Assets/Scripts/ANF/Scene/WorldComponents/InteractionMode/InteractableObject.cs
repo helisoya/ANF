@@ -65,7 +65,11 @@ namespace ANF.Scene
             {
                 foreach (Material material in renderer.materials)
                 {
-                    material.DOFloat(alpha, "_FresnelPower", 0.5f).SetEase(Ease.OutQuad).SetId(0);
+                    if (material.HasFloat("_HighlightAlpha"))
+                    {
+                        DOTween.Kill(material, 0);
+                        material.DOFloat(alpha, "_HighlightAlpha", 0.5f).SetEase(Ease.OutQuad).SetId(0);
+                    }
                 }
             }
         }
@@ -82,7 +86,12 @@ namespace ANF.Scene
             {
                 foreach (Material material in renderer.materials)
                 {
-                    material.DOColor(color, "_FresnelColor", 0.5f).SetEase(Ease.OutQuad).SetId(1);
+                    if (material.HasColor("_HighlightColor"))
+                    {
+                        DOTween.Kill(material, 1);
+                        material.DOColor(color, "_HighlightColor", 0.5f).SetEase(Ease.OutQuad).SetId(1);
+                    }
+                        
                 }
             }
         }

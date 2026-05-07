@@ -3,7 +3,9 @@ using Leguar.TotalJSON;
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace ANF.Scene
 {
@@ -13,6 +15,9 @@ namespace ANF.Scene
     [System.Serializable]
     public class InteractionMode : WorldComponent
     {
+        [Header("Infos")]
+        [SerializeField] private LayerMask interactablesMask;
+
         [Header("Highlight")]
         [Tooltip("Full highlight means that every interactable object will glow. Otherwise, only the currently selected object will glow.")]
         [SerializeField] private bool useFullHighlight;
@@ -26,6 +31,11 @@ namespace ANF.Scene
         private int currentButtonInputSide = 0;
         private float cooldownToNextButtonIncrement = 0;
 
+        private Vector2 mousePosition;
+        private bool canTryMouseClick;
+
+        private JSON loadedDataCache = null;
+
         public bool inInteractionMode { get; private set; } = false;
         public string selectedScript { get; private set; } = null;
 
@@ -36,7 +46,8 @@ namespace ANF.Scene
             {
                 useFullHighlight = useFullHighlight,
                 baseColor = baseColor,
-                selectedColor = selectedColor
+                selectedColor = selectedColor,
+                interactablesMask = interactablesMask
             };
         }
 
@@ -51,9 +62,14 @@ namespace ANF.Scene
 
             string id = obj.GetID();
             if (!registeredObjects.ContainsKey(id))
+            {
+                RestoreFromCache(obj);
                 registeredObjects.Add(id, obj);
+            }
             else
+            {
                 Debug.LogError($"Trying to add duplicate interactable object : {id}");
+            }   
         }
 
         /// <summary>
@@ -120,6 +136,12 @@ namespace ANF.Scene
 		/// </summary>
         public void StartInteractionMode()
         {
+            RestoreFromCache();
+            loadedDataCache = null;
+
+            canTryMouseClick = false;
+            mousePosition = new Vector2(-1, -1);
+
             GenerateInteractionList();
 
             if (currentInteractionObjects.Count > 0)
@@ -154,6 +176,9 @@ namespace ANF.Scene
         public void ConfirmObject(int index)
         {
             OnUnRegisterInputs();
+
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            
             inInteractionMode = false;
             selectedScript = currentInteractionObjects[index].GetNextScript();
 
@@ -202,6 +227,7 @@ namespace ANF.Scene
             {
                 if (reloadInteractionMode)
                 {
+                    reloadInteractionMode = false;
                     StartInteractionMode();
                     return;
                 }
@@ -212,10 +238,42 @@ namespace ANF.Scene
                     cooldownToNextButtonIncrement -= Time.deltaTime;
                     if (cooldownToNextButtonIncrement <= 0)
                     {
-                        IncrementButtonWithInput();
+                        IncrementObjectWithInput();
                         cooldownToNextButtonIncrement = 0.5f;
                     }
                 }
+
+
+                RaycastHit hit;
+                InteractableObject current = null;
+
+                if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(Camera.main.ScreenPointToRay(mousePosition), out hit, 500, interactablesMask))
+                {
+                    current = hit.transform.GetComponent<InteractableObject>();
+                    if (current.GetIsHidden())
+                        current = null;
+                }
+                    
+                    
+                Cursor.SetCursor(current == null ? null : current.GetIcon(), Vector2.zero, CursorMode.Auto);
+
+                if(current != null)
+                {
+                    for (int i = 0; i < currentInteractionObjects.Count;i++)
+                    {
+                        if (currentInteractionObjects[i] == current)
+                        {
+                            SelectObject(i);
+
+                            if(canTryMouseClick)
+                                ConfirmObject(i);
+                            break;
+                        }
+                    }
+                }
+
+
+                canTryMouseClick = false;
             }
         }
 
@@ -242,9 +300,22 @@ namespace ANF.Scene
                 ConfirmObject(currentIndex);
             }
         }
+
+        private void OnMousePosition(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused && inInteractionMode)
+                mousePosition = context.ReadValue<Vector2>();
+        }
+
+        private void OnMouseClick(InputAction.CallbackContext context)
+        {
+            if (isEnabled && !isPaused && inInteractionMode && context.ReadValueAsButton())
+                canTryMouseClick = true;
+        }
+
         private void OnMove(InputAction.CallbackContext context)
         {
-            if (isEnabled && !isPaused)
+            if (isEnabled && !isPaused && inInteractionMode)
             {
                 Vector2 value = context.ReadValue<Vector2>();
 
@@ -258,7 +329,7 @@ namespace ANF.Scene
                         cooldownToNextButtonIncrement = 0.5f;
                         currentButtonInputSide = value.x < 0 ? 1 : -1;
 
-                        IncrementButtonWithInput();
+                        IncrementObjectWithInput();
                     }
                 }
 
@@ -269,8 +340,11 @@ namespace ANF.Scene
                 }
             }
         }
-
-        private void IncrementButtonWithInput()
+        
+        /// <summary>
+        /// Increments the current object with the keyboard input
+        /// </summary>
+        private void IncrementObjectWithInput()
         {
             SelectObject((currentIndex + currentButtonInputSide + currentInteractionObjects.Count) % currentInteractionObjects.Count);
         }
@@ -280,6 +354,8 @@ namespace ANF.Scene
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MousePosition").performed += OnMousePosition;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MouseClick").performed += OnMouseClick;
         }
 
         public override void OnUnRegisterInputs()
@@ -287,6 +363,8 @@ namespace ANF.Scene
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MousePosition").performed -= OnMousePosition;
+            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MouseClick").performed -= OnMouseClick;
         }
 
         public override void OnChangeScene()
@@ -294,8 +372,58 @@ namespace ANF.Scene
             OnUnRegisterInputs();
         }
 
+        /// <summary>
+        /// Try to restore all interactable objects from the loaded data cache
+        /// </summary>
+        private void RestoreFromCache()
+        {
+            foreach (InteractableObject obj in registeredObjects.Values)
+            {
+                RestoreFromCache(obj);
+
+                if (loadedDataCache == null)
+                    return;
+            }
+        }
+
+        /// <summary>
+        /// Try to restore an interactable object from the loaded data cache
+        /// </summary>
+        /// <param name="obj">The object</param>
+        private void RestoreFromCache(InteractableObject obj)
+        {
+            if (loadedDataCache == null)
+                return;
+
+            if(loadedDataCache.ContainsKey(obj.GetID()))
+            {
+                JSON objJSON = loadedDataCache.GetJSON(obj.GetID());
+                obj.SetHidden(objJSON.GetBool("hidden"));
+
+                if (objJSON.ContainsKey("script"))
+                    obj.SetNextScript(objJSON.GetString("script"));
+
+                loadedDataCache.Remove(obj.GetID());
+
+                if (loadedDataCache.Count == 0)
+                    loadedDataCache = null;
+            }
+        }
+
         public override void OnSave(JSON json)
         {
+            JSON registeredObjectsJSON = new JSON();
+            foreach (InteractableObject obj in registeredObjects.Values)
+            {
+                JSON objectJSON = new JSON();
+                if(!string.IsNullOrEmpty(obj.GetNextScript()))
+                    objectJSON.Add("script",obj.GetNextScript());
+                objectJSON.Add("hidden", obj.GetIsHidden());
+                registeredObjectsJSON.Add(obj.GetID(), objectJSON);
+            }
+            json.Add("registeredObjects", registeredObjectsJSON);
+
+
             if (inInteractionMode)
             {
                 json.Add("inInteractionMode", inInteractionMode);
@@ -304,6 +432,11 @@ namespace ANF.Scene
 
         public override void OnLoad(JSON json)
         {
+            if(json.ContainsKey("registeredObjects"))
+            {
+                loadedDataCache = new JSON(json.GetJSON("registeredObjects").AsDictionary());
+            }
+
             if (json.ContainsKey("inInteractionMode"))
             {
                 inInteractionMode = true;

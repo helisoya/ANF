@@ -819,10 +819,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "FresnelPower",
+    "m_Name": "HighlightAlpha",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "FresnelPower",
-    "m_DefaultReferenceName": "_FresnelPower",
+    "m_RefNameGeneratedByDisplayName": "HighlightAlpha",
+    "m_DefaultReferenceName": "_HighlightAlpha",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1068,7 +1068,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "3eba3e3c67a041d0b98acb5a29ba347c",
     "m_Id": 0,
-    "m_DisplayName": "FresnelColor",
+    "m_DisplayName": "HighlightColor",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1095,9 +1095,6 @@
     "m_Name": "Highlight",
     "m_ChildObjectList": [
         {
-            "m_Id": "385ec8ebbb174cbabe800bbcdcac4373"
-        },
-        {
             "m_Id": "8415e1db84f74a9f81972973798314fc"
         },
         {
@@ -1105,9 +1102,6 @@
         },
         {
             "m_Id": "a5174395924749a7b4342d54e63373f6"
-        },
-        {
-            "m_Id": "a8857b272d294426bc531619f7b2a4e2"
         }
     ]
 }
@@ -1617,10 +1611,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "FresnelStrength",
+    "m_Name": "HighlightStrength",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "FresnelStrength",
-    "m_DefaultReferenceName": "_FresnelStrength",
+    "m_RefNameGeneratedByDisplayName": "HighlightStrength",
+    "m_DefaultReferenceName": "_HighlightStrength",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -1656,7 +1650,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "84228b79dbec4676bd2c23685d7e698e",
     "m_Id": 0,
-    "m_DisplayName": "FresnelPower",
+    "m_DisplayName": "HighlightAlpha",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1732,7 +1726,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "93ae930126454a06a854882de89918dd",
     "m_Id": 0,
-    "m_DisplayName": "FresnelStrength",
+    "m_DisplayName": "HighlightStrength",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2074,10 +2068,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "FresnelColor",
+    "m_Name": "HighlightColor",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "FresnelColor",
-    "m_DefaultReferenceName": "_FresnelColor",
+    "m_RefNameGeneratedByDisplayName": "HighlightColor",
+    "m_DefaultReferenceName": "_HighlightColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -2416,6 +2410,12 @@
         },
         {
             "m_Id": "ce4150274347430a952f622318acb7c3"
+        },
+        {
+            "m_Id": "385ec8ebbb174cbabe800bbcdcac4373"
+        },
+        {
+            "m_Id": "a8857b272d294426bc531619f7b2a4e2"
         }
     ]
 }

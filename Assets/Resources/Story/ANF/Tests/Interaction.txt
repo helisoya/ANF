@@ -1,2 +1,4 @@
 28|TestBackgroundInteraction
+33|Test|ANF/Tests/Interaction_Cube1
+33|Test2|ANF/Tests/Interaction_Cube2
 34

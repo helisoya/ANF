@@ -41,8 +41,11 @@ namespace ANF.Scene
         {
             return new BackgroundManager()
             {
+                asyncLoading = asyncLoading,
                 backgroundType = backgroundType,
-                prefabPath = prefabPath
+                prefabPath = prefabPath,
+                skyboxDataPath = skyboxDataPath,
+                defaultSkybox = defaultSkybox,
             };
         }
 
@@ -365,10 +368,12 @@ namespace ANF.Scene
 
         public override void OnChangeScene()
         {
-            if (currentBackground != null && backgroundType == BackgroundType.Scene)
+            if (currentBackground != null)
             {
+                currentBackground.OnUnLoad(manager);
                 // Not optimal
-                SceneManager.UnloadSceneAsync(currentBackgroundID);
+                if (backgroundType == BackgroundType.Scene)
+                    SceneManager.UnloadSceneAsync(currentBackgroundID);
             }
         }
 
