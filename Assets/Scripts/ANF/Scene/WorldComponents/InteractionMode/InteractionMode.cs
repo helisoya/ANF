@@ -32,7 +32,12 @@ namespace ANF.Scene
 
         public override WorldComponent CloneComponent()
         {
-            return new InteractionMode();
+            return new InteractionMode()
+            {
+                useFullHighlight = useFullHighlight,
+                baseColor = baseColor,
+                selectedColor = selectedColor
+            };
         }
 
         /// <summary>
@@ -133,6 +138,8 @@ namespace ANF.Scene
 
                 currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
                 currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+
+                OnRegisterInputs();
             }
             else
             {
@@ -146,7 +153,7 @@ namespace ANF.Scene
 		/// <param name="index">The object's index</param>
         public void ConfirmObject(int index)
         {
-
+            OnUnRegisterInputs();
             inInteractionMode = false;
             selectedScript = currentInteractionObjects[index].GetNextScript();
 
@@ -158,9 +165,27 @@ namespace ANF.Scene
             currentInteractionObjects.Clear();
         }
 
-        public void SelectObject(int index)
+        /// <summary>
+		/// Selects an interactable object
+		/// </summary>
+		/// <param name="index">The object's index</param>
+        /// <param name="force">True if the change should be forced</param>
+        public void SelectObject(int index, bool force = false)
         {
-            // TODO
+            if (force || index != currentIndex)
+            {
+                if (!useFullHighlight)
+                    currentInteractionObjects[currentIndex].SetHighlightAlpha(0);
+
+                currentInteractionObjects[currentIndex].SetHighlightColor(baseColor);
+
+                currentIndex = index;
+
+                if (!useFullHighlight)
+                    currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
+
+                currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+            }
         }
 
         public override void OnInitialize()
@@ -179,6 +204,17 @@ namespace ANF.Scene
                 {
                     StartInteractionMode();
                     return;
+                }
+
+
+                if (currentButtonInputSide != 0)
+                {
+                    cooldownToNextButtonIncrement -= Time.deltaTime;
+                    if (cooldownToNextButtonIncrement <= 0)
+                    {
+                        IncrementButtonWithInput();
+                        cooldownToNextButtonIncrement = 0.5f;
+                    }
                 }
             }
         }
@@ -236,7 +272,7 @@ namespace ANF.Scene
 
         private void IncrementButtonWithInput()
         {
-            // TODO
+            SelectObject((currentIndex + currentButtonInputSide + currentInteractionObjects.Count) % currentInteractionObjects.Count);
         }
 
         public override void OnRegisterInputs()

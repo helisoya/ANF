@@ -1,0 +1,5 @@
+setBackground(TestBackgroundInteraction)
+setInteractionHidden(Test2;true)
+setInteractionScript(Test;ANF/Tests/Interaction_Cube1)
+
+interaction()

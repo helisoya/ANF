@@ -116,6 +116,12 @@ endchoice"],
 		"body": ["if()\n\nelse\n\nendif"],
 		"description": "Checks variables. You can't use both | and & in the same check."
 	},
+	"34_0": {
+		"scope": "ansl",
+		"prefix": "interaction",
+		"body": ["interaction()"],
+		"description": "Starts the interaction mode"
+	},
 	"1_0": {
 		"scope": "ansl",
 		"prefix": "load",
@@ -193,6 +199,18 @@ endchoice"],
 		"prefix": "setFg",
 		"body": ["setFg(Alpha)"],
 		"description": "Sets the Foreground's alpha to a specific value"
+	},
+	"32_0": {
+		"scope": "ansl",
+		"prefix": "setInteractionHidden",
+		"body": ["setInteractionHidden(Id;Hidden)"],
+		"description": "Changes if interactable object is hidden or not"
+	},
+	"33_0": {
+		"scope": "ansl",
+		"prefix": "setInteractionScript",
+		"body": ["setInteractionScript(Id;Script)"],
+		"description": "Changes an interactable object's linked script"
 	},
 	"29_0": {
 		"scope": "ansl",

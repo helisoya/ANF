@@ -65,7 +65,6 @@ namespace ANF.Scene
             {
                 foreach (Material material in renderer.materials)
                 {
-                    DOTween.Kill(material, 0);
                     material.DOFloat(alpha, "_FresnelPower", 0.5f).SetEase(Ease.OutQuad).SetId(0);
                 }
             }
@@ -83,7 +82,6 @@ namespace ANF.Scene
             {
                 foreach (Material material in renderer.materials)
                 {
-                    DOTween.Kill(material, 1);
                     material.DOColor(color, "_FresnelColor", 0.5f).SetEase(Ease.OutQuad).SetId(1);
                 }
             }
@@ -134,7 +132,7 @@ namespace ANF.Scene
         /// <param name="script">The new script</param>
         public void SetNextScript(string script)
         {
-            nextScript = new string(script);
+            nextScript = script;
         }
 
         /// <summary>

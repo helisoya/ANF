@@ -1,0 +1,85 @@
+using ANF.ANSL;
+using ANF.GUI;
+using ANF.Locals;
+using ANF.Persistent;
+using ANF.Scene;
+using ANF.Utils;
+using Leguar.TotalJSON;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+
+namespace ANF.ANSL
+{
+    /// <summary>
+    /// The Interaction Function can be used to start an interaction sequence
+    /// </summary>
+    [ANSLFunctionAttribute(
+        functionId: 34,
+        functionBody: "interaction",
+        functionAutoComplete: new string[] {
+            "interaction()"
+        },
+        functionDesc: "Starts the interaction mode")]
+    public class InteractionFunction : ANSLFunction
+    {
+        private InteractionMode interactionMode;
+        private bool waitingForInteraction;
+
+        public override FunctionParameterType[][] GetParametersTemplates()
+        {
+            return new FunctionParameterType[][] {
+                new FunctionParameterType[]{}
+            };
+        }
+
+        protected override void OnStartProcess()
+        {
+
+            if (manager.GetWorld().GetComponent<InteractionMode>(out interactionMode))
+            {
+                interactionMode.StartInteractionMode();
+
+                waitingForInteraction = true;
+            }
+
+            if (!waitingForInteraction)
+                EndProcess();
+        }
+
+        protected override void OnUpdate()
+        {
+            if (interactionMode == null)
+                manager.GetWorld().GetComponent<InteractionMode>(out interactionMode);
+
+            if (interactionMode != null && waitingForInteraction &&
+                !interactionMode.inInteractionMode)
+            {
+                waitingForInteraction = false;
+
+                EndProcess();
+
+                context.LoadScript(interactionMode.selectedScript);
+            }
+        }
+
+        protected override void OnCleanup()
+        {
+            // Unused
+        }
+
+        protected override void OnSave(JSON json)
+        {
+            if (waitingForInteraction)
+                json.Add("waitingForInteraction", waitingForInteraction);
+        }
+
+        protected override void OnLoad(JSON json)
+        {
+            if (json.ContainsKey("waitingForInteraction"))
+                waitingForInteraction = json.GetBool("waitingForInteraction");
+        }
+    }
+}
+

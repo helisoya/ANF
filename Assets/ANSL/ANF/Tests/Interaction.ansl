@@ -1,0 +1,5 @@
+setBackground(TestBackgroundInteraction)
+setInteractionScript(Test;ANF/Tests/Interaction_Cube1)
+setInteractionScript(Test2;ANF/Tests/Interaction_Cube2)
+
+interaction()
