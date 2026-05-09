@@ -1,3 +1,4 @@
+setLocation(TestBackground)
 setBackground(TestBackground)
 wait(1)
 setLightDirection(180;30;5)

@@ -1,3 +1,5 @@
+setLocation(TestFade)
+
 fadeBg(1;true;1)
 	
 wait(1)

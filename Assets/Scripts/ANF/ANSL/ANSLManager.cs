@@ -122,6 +122,8 @@ namespace ANF.ANSL
         {
             return new ANSLManager()
             {
+                canBeSaved = canBeSaved,
+                enabledByDefault = enabledByDefault,
                 manager = manager,
                 maxFunctionsPerFrame = maxFunctionsPerFrame,
                 maxContexts = maxContexts,

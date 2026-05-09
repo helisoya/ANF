@@ -1,0 +1,12 @@
+25|TestStatics
+11|false
+28|TestBackground
+35|TestStatic
+37|TestStatic|Test
+35|TestStatic2
+11|true
+38|TestStatic|0|45|0|1|false
+37|TestStatic2|Test2|1|true
+33|TestStatic|ANF/Tests/Statics_1
+33|TestStatic2|ANF/Tests/Statics_2
+34

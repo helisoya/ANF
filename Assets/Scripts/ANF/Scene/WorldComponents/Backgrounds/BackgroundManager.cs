@@ -41,6 +41,8 @@ namespace ANF.Scene
         {
             return new BackgroundManager()
             {
+                canBeSaved = canBeSaved,
+                enabledByDefault = enabledByDefault,
                 asyncLoading = asyncLoading,
                 backgroundType = backgroundType,
                 prefabPath = prefabPath,
@@ -50,15 +52,24 @@ namespace ANF.Scene
         }
 
         /// <summary>
+		/// Gets the currnt background (Read Only)
+		/// </summary>
+		/// <returns>The current background</returns>
+        public Background GetBackground()
+        {
+            return currentBackground;
+        }
+
+        /// <summary>
         /// Changes the current background's skybox
         /// </summary>
         /// <param name="skyboxName">The skybox data's name</param>
         public void SetSkybox(string skyboxName)
         {
-            if(!string.IsNullOrEmpty(skyboxDataPath) && currentBackground != null)
+            if (!string.IsNullOrEmpty(skyboxDataPath) && currentBackground != null)
             {
                 SkyboxData data = Resources.Load<SkyboxData>(skyboxDataPath + skyboxName);
-                if(data != null)
+                if (data != null)
                 {
                     currentCachedData.skyboxData = data;
                     currentBackground.SetSkybox(data.skybox, data.sunColor);
@@ -176,7 +187,7 @@ namespace ANF.Scene
 
             if (currentBackground)
             {
-                currentBackground.OnLoad(manager);
+                currentBackground.OnCreate(manager);
 
                 if (currentCachedData == null)
                 {
@@ -233,7 +244,7 @@ namespace ANF.Scene
 
             AsyncOperation operation = null;
 
-            currentBackground.OnUnLoad(manager);
+            currentBackground.OnRemove(manager);
 
             if (backgroundType == BackgroundType.Scene)
             {
@@ -370,7 +381,7 @@ namespace ANF.Scene
         {
             if (currentBackground != null)
             {
-                currentBackground.OnUnLoad(manager);
+                currentBackground.OnRemove(manager);
                 // Not optimal
                 if (backgroundType == BackgroundType.Scene)
                     SceneManager.UnloadSceneAsync(currentBackgroundID);

@@ -1,3 +1,4 @@
+setLocation(TestChoice)
 setLocals(test)
 dialog(Test_Character;null;Test_Choice_1)
 

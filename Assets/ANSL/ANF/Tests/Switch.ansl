@@ -1,3 +1,5 @@
+setLocation(TestSwitch)
+
 switch(random)
 case 0:
 	log(Log;Is at 0)

@@ -1,4 +1,22 @@
 {
+	"35_0": {
+		"scope": "ansl",
+		"prefix": "addStatic",
+		"body": ["addStatic(Name)"],
+		"description": "Add a new static object (one per type)"
+	},
+	"35_1": {
+		"scope": "ansl",
+		"prefix": "addStatic",
+		"body": ["addStatic(Name;Hidden)"],
+		"description": "Add a new static object (one per type)"
+	},
+	"35_2": {
+		"scope": "ansl",
+		"prefix": "addStatic",
+		"body": ["addStatic(Name;Hidden;StartingMarker)"],
+		"description": "Add a new static object (one per type)"
+	},
 	"19_0": {
 		"scope": "ansl",
 		"prefix": "autosave",
@@ -158,6 +176,12 @@ endchoice"],
 		"body": ["random(Min;Max)"],
 		"description": "Generates a random variable between [Min,Max["
 	},
+	"36_0": {
+		"scope": "ansl",
+		"prefix": "removeStatic",
+		"body": ["removeStatic(Name)"],
+		"description": "Removes a static object"
+	},
 	"9_0": {
 		"scope": "ansl",
 		"prefix": "return",
@@ -235,6 +259,66 @@ endchoice"],
 		"prefix": "setSkybox",
 		"body": ["setSkybox(Skybox)"],
 		"description": "Changes the current background's skybox"
+	},
+	"39_0": {
+		"scope": "ansl",
+		"prefix": "setStaticAlpha",
+		"body": ["setStaticAlpha(Name;Alpha)"],
+		"description": "Fades a static object"
+	},
+	"39_1": {
+		"scope": "ansl",
+		"prefix": "setStaticAlpha",
+		"body": ["setStaticAlpha(Name;Alpha;Duration;WaitForEnd)"],
+		"description": "Fades a static object"
+	},
+	"37_0": {
+		"scope": "ansl",
+		"prefix": "setStaticPosition",
+		"body": ["setStaticPosition(Name;X;Y;Z)"],
+		"description": "Moves a static object"
+	},
+	"37_1": {
+		"scope": "ansl",
+		"prefix": "setStaticPosition",
+		"body": ["setStaticPosition(Name;X;Y;Z;Duration;WaitForEnd)"],
+		"description": "Moves a static object"
+	},
+	"37_2": {
+		"scope": "ansl",
+		"prefix": "setStaticPosition",
+		"body": ["setStaticPosition(Name;Marker)"],
+		"description": "Moves a static object"
+	},
+	"37_3": {
+		"scope": "ansl",
+		"prefix": "setStaticPosition",
+		"body": ["setStaticPosition(Name;Marker;Duration;WaitForEnd)"],
+		"description": "Moves a static object"
+	},
+	"38_0": {
+		"scope": "ansl",
+		"prefix": "setStaticRotation",
+		"body": ["setStaticRotation(Name;X;Y;Z)"],
+		"description": "Rotates a static object"
+	},
+	"38_1": {
+		"scope": "ansl",
+		"prefix": "setStaticRotation",
+		"body": ["setStaticRotation(Name;X;Y;Z;Duration;WaitForEnd)"],
+		"description": "Rotates a static object"
+	},
+	"38_2": {
+		"scope": "ansl",
+		"prefix": "setStaticRotation",
+		"body": ["setStaticRotation(Name;Marker)"],
+		"description": "Rotates a static object"
+	},
+	"38_3": {
+		"scope": "ansl",
+		"prefix": "setStaticRotation",
+		"body": ["setStaticRotation(Name;Marker;Duration;WaitForEnd)"],
+		"description": "Rotates a static object"
 	},
 	"30_0": {
 		"scope": "ansl",

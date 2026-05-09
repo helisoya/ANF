@@ -105,9 +105,9 @@ namespace ANF.Scene
             return Vector3.zero;
         }
 
-        public void OnLoad(ANFManager manager)
+        public void OnCreate(ANFManager manager)
         {
-            if(manager.GetWorld().GetComponent<InteractionMode>(out InteractionMode interactionMode))
+            if (manager.GetWorld().GetComponent<InteractionMode>(out InteractionMode interactionMode))
             {
                 foreach (InteractableObject interactableObject in interactableObjects)
                 {
@@ -116,7 +116,7 @@ namespace ANF.Scene
             }
         }
 
-        public void OnUnLoad(ANFManager manager)
+        public void OnRemove(ANFManager manager)
         {
             manager.GetWorld().GetComponent<InteractionMode>(out InteractionMode interactionMode);
 

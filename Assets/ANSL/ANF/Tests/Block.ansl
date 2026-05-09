@@ -1,3 +1,4 @@
+setLocation(TestBlock)
 block
 log(Log;Log)
 log(Log;Log)

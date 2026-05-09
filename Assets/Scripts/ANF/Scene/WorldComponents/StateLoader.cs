@@ -25,6 +25,8 @@ namespace ANF.Scene
         {
             return new StateLoader()
             {
+                canBeSaved = canBeSaved,
+                enabledByDefault = enabledByDefault,
 #if UNITY_EDITOR
                 startInDebugMode = startInDebugMode,
                 debugModeScript = debugModeScript,

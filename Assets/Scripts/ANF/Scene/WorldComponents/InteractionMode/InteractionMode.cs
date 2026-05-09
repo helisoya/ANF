@@ -44,6 +44,8 @@ namespace ANF.Scene
         {
             return new InteractionMode()
             {
+                canBeSaved = canBeSaved,
+                enabledByDefault = enabledByDefault,
                 useFullHighlight = useFullHighlight,
                 baseColor = baseColor,
                 selectedColor = selectedColor,
@@ -69,7 +71,7 @@ namespace ANF.Scene
             else
             {
                 Debug.LogError($"Trying to add duplicate interactable object : {id}");
-            }   
+            }
         }
 
         /// <summary>
@@ -178,7 +180,7 @@ namespace ANF.Scene
             OnUnRegisterInputs();
 
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            
+
             inInteractionMode = false;
             selectedScript = currentInteractionObjects[index].GetNextScript();
 
@@ -253,19 +255,19 @@ namespace ANF.Scene
                     if (current.GetIsHidden())
                         current = null;
                 }
-                    
-                    
+
+
                 Cursor.SetCursor(current == null ? null : current.GetIcon(), Vector2.zero, CursorMode.Auto);
 
-                if(current != null)
+                if (current != null)
                 {
-                    for (int i = 0; i < currentInteractionObjects.Count;i++)
+                    for (int i = 0; i < currentInteractionObjects.Count; i++)
                     {
                         if (currentInteractionObjects[i] == current)
                         {
                             SelectObject(i);
 
-                            if(canTryMouseClick)
+                            if (canTryMouseClick)
                                 ConfirmObject(i);
                             break;
                         }
@@ -340,7 +342,7 @@ namespace ANF.Scene
                 }
             }
         }
-        
+
         /// <summary>
         /// Increments the current object with the keyboard input
         /// </summary>
@@ -395,7 +397,7 @@ namespace ANF.Scene
             if (loadedDataCache == null)
                 return;
 
-            if(loadedDataCache.ContainsKey(obj.GetID()))
+            if (loadedDataCache.ContainsKey(obj.GetID()))
             {
                 JSON objJSON = loadedDataCache.GetJSON(obj.GetID());
                 obj.SetHidden(objJSON.GetBool("hidden"));
@@ -416,8 +418,8 @@ namespace ANF.Scene
             foreach (InteractableObject obj in registeredObjects.Values)
             {
                 JSON objectJSON = new JSON();
-                if(!string.IsNullOrEmpty(obj.GetNextScript()))
-                    objectJSON.Add("script",obj.GetNextScript());
+                if (!string.IsNullOrEmpty(obj.GetNextScript()))
+                    objectJSON.Add("script", obj.GetNextScript());
                 objectJSON.Add("hidden", obj.GetIsHidden());
                 registeredObjectsJSON.Add(obj.GetID(), objectJSON);
             }
@@ -432,7 +434,7 @@ namespace ANF.Scene
 
         public override void OnLoad(JSON json)
         {
-            if(json.ContainsKey("registeredObjects"))
+            if (json.ContainsKey("registeredObjects"))
             {
                 loadedDataCache = new JSON(json.GetJSON("registeredObjects").AsDictionary());
             }
