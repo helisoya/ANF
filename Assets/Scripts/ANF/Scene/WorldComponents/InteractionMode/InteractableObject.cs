@@ -39,7 +39,7 @@ namespace ANF.Scene
             approximateVisualPosition = Vector3.zero;
             foreach (Renderer renderer in objectRenderers)
             {
-                approximateVisualPosition += renderer.transform.position;
+                approximateVisualPosition += renderer.bounds.center;
             }
             approximateVisualPosition /= objectRenderers.Length;
         }

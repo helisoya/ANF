@@ -10,6 +10,19 @@ using UnityEngine.UI;
 namespace ANF.Scene
 {
     /// <summary>
+    /// Represents the different highlight types for the Interaction Mode.<br></br>
+    /// None : No Highlight<br></br>
+    /// OnlySelected : Only the currently selected object is highlighted<br></br>
+    /// All : All objects are highlighted. The currently selected object is of a different color<br></br>
+    /// </summary>
+    public enum HighlightType
+    {
+        None,
+        OnlySelected,
+        All
+    }
+
+    /// <summary>
     /// Handles the interaction mode
     /// </summary>
     [System.Serializable]
@@ -20,7 +33,7 @@ namespace ANF.Scene
 
         [Header("Highlight")]
         [Tooltip("Full highlight means that every interactable object will glow. Otherwise, only the currently selected object will glow.")]
-        [SerializeField] private bool useFullHighlight;
+        [SerializeField] private HighlightType highlightType = HighlightType.All;
         [ColorUsage(true, true)][SerializeField] private Color baseColor;
         [ColorUsage(true, true)][SerializeField] private Color selectedColor;
 
@@ -46,7 +59,7 @@ namespace ANF.Scene
             {
                 canBeSaved = canBeSaved,
                 enabledByDefault = enabledByDefault,
-                useFullHighlight = useFullHighlight,
+                highlightType = highlightType,
                 baseColor = baseColor,
                 selectedColor = selectedColor,
                 interactablesMask = interactablesMask
@@ -151,7 +164,7 @@ namespace ANF.Scene
                 inInteractionMode = true;
                 currentIndex = 0;
 
-                if (useFullHighlight)
+                if (highlightType == HighlightType.All)
                 {
                     foreach (InteractableObject obj in currentInteractionObjects)
                     {
@@ -160,8 +173,11 @@ namespace ANF.Scene
                     }
                 }
 
-                currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
-                currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+                if(highlightType != HighlightType.None)
+                {
+                    currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
+                    currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+                }
 
                 OnRegisterInputs();
             }
@@ -201,17 +217,19 @@ namespace ANF.Scene
         {
             if (force || index != currentIndex)
             {
-                if (!useFullHighlight)
+                if (highlightType == HighlightType.OnlySelected)
                     currentInteractionObjects[currentIndex].SetHighlightAlpha(0);
 
-                currentInteractionObjects[currentIndex].SetHighlightColor(baseColor);
+                if (highlightType != HighlightType.None)
+                    currentInteractionObjects[currentIndex].SetHighlightColor(baseColor);
 
                 currentIndex = index;
 
-                if (!useFullHighlight)
+                if (highlightType == HighlightType.OnlySelected)
                     currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
 
-                currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+                if (highlightType != HighlightType.None)
+                    currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
             }
         }
 

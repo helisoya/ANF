@@ -15,18 +15,24 @@ namespace ANF.GUI
         [SerializeField] private Image fadeImg;
         [SerializeField] private CanvasGroup canvasGroup;
 
-        private float startAlpha;
-        private float tAlpha;
-        private float targetAlpha;
-        private float currentAlphaTransitionDuration;
+        private LerpInstanceFloat lerpAlpha;
+        private LerpInstanceColor lerpColor;
 
-        private Color startColor;
-        private float tColor;
-        private Color targetColor;
-        private float currentColorTransitionDuration;
+        public bool fadingAlpha 
+        { 
+            get
+            {
+                return lerpAlpha != null && lerpAlpha.lerping;
+            }
+        }
 
-        public bool fadingAlpha { get; private set; }
-        public bool fadingColor { get; private set; }
+        public bool fadingColor
+        {
+            get
+            {
+                return lerpColor != null && lerpColor.lerping;
+            }
+        }
 
         /// <summary>
 		/// Starts an alpha transition
@@ -36,14 +42,17 @@ namespace ANF.GUI
 		/// <param name="transitionDuration">The transition's duration if not immediate</param>
         public void FadeAlphaTo(float target, bool immediate = false, float transitionDuration = 1.0f)
         {
-            startAlpha = canvasGroup.alpha;
-            tAlpha = 0.0f;
-            targetAlpha = target;
-            currentAlphaTransitionDuration = transitionDuration;
             if (immediate)
+            {
                 canvasGroup.alpha = target;
+            }
+            else
+            {
+                if (lerpAlpha == null)
+                    lerpAlpha = new LerpInstanceFloat();
 
-            fadingAlpha = !immediate;
+                lerpAlpha.StartLerp(canvasGroup.alpha, target, transitionDuration);
+            }
         }
 
         /// <summary>
@@ -54,42 +63,36 @@ namespace ANF.GUI
         /// <param name="transitionDuration">The transition's duration if not immediate</param>
         public void FadeColorTo(Color target, bool immediate = false, float transitionDuration = 1.0f)
         {
-            startColor = fadeImg.color;
-            tColor = 0.0f;
-            targetColor = target;
-            currentColorTransitionDuration = transitionDuration;
             if (immediate)
+            {
                 fadeImg.color = target;
+            }
+            else
+            {
+                if (lerpColor == null)
+                    lerpColor = new LerpInstanceColor();
 
-            fadingColor = !immediate;
+                lerpColor.StartLerp(fadeImg.color, target, transitionDuration);
+            }
         }
 
         public override void OnUpdate()
         {
-            if (fadingAlpha)
+            if(lerpAlpha != null && lerpAlpha.lerping)
             {
-                tAlpha += Time.deltaTime / currentAlphaTransitionDuration;
-                canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, tAlpha);
-
-                if (tAlpha >= 1.0f)
-                    fadingAlpha = false;
+                canvasGroup.alpha = lerpAlpha.Update();
             }
 
-            if (fadingColor)
+            if (lerpColor != null && lerpColor.lerping)
             {
-                tColor += Time.deltaTime / currentColorTransitionDuration;
-                fadeImg.color = Color.Lerp(startColor, targetColor, tColor);
-
-                if (tColor >= 1.0f)
-                    fadingColor = false;
+                fadeImg.color = lerpColor.Update();
             }
         }
 
 
         public override void OnInitialize()
         {
-            fadingColor = false;
-            fadingAlpha = false;
+            // Unused
         }
 
         public override void OnStart()
@@ -131,28 +134,19 @@ namespace ANF.GUI
 
         public override void OnLoad(JSON json)
         {
-            if (json.ContainsKey("fadingAlpha"))
-                fadingAlpha = json.GetBool("fadingAlpha");
-            if (json.ContainsKey("fadingColor"))
-                fadingColor = json.GetBool("fadingColor");
+            if (json.ContainsKey("lerpAlpha"))
+            {
+                if (lerpAlpha == null)
+                    lerpAlpha = new LerpInstanceFloat();
+                lerpAlpha.Load(json.GetJSON("lerpAlpha"));
+            }
 
-            if (json.ContainsKey("targetAlpha"))
-                targetAlpha = json.GetFloat("targetAlpha");
-            if (json.ContainsKey("startAlpha"))
-                startAlpha = json.GetFloat("startAlpha");
-            if (json.ContainsKey("tAlpha"))
-                tAlpha = json.GetFloat("tAlpha");
-            if (json.ContainsKey("currentAlphaTransitionDuration"))
-                currentAlphaTransitionDuration = json.GetFloat("currentAlphaTransitionDuration");
-
-            if (json.ContainsKey("targetColor"))
-                targetColor = json.GetJArray("targetColor").AsColor();
-            if (json.ContainsKey("startColor"))
-                startColor = json.GetJArray("startColor").AsColor();
-            if (json.ContainsKey("tColor"))
-                tColor = json.GetFloat("tColor");
-            if (json.ContainsKey("currentColorTransitionDuration"))
-                currentColorTransitionDuration = json.GetFloat("currentColorTransitionDuration");
+            if (json.ContainsKey("lerpColor"))
+            {
+                if (lerpColor == null)
+                    lerpColor = new LerpInstanceColor();
+                lerpColor.Load(json.GetJSON("lerpColor"));
+            }
 
             if (json.ContainsKey("currentAlpha"))
                 canvasGroup.alpha = json.GetFloat("currentAlpha");
@@ -164,22 +158,24 @@ namespace ANF.GUI
         {
             json.Add("fadingAlpha", fadingAlpha);
             json.Add("fadingColor", fadingColor);
+            
+            if(lerpAlpha != null)
+            {
+                JSON lerpJSON = new JSON();
+                lerpAlpha.Save(lerpJSON);
+                json.Add("lerpAlpha", lerpJSON);
+            }
 
-            json.Add("startAlpha", startAlpha);
-            json.Add("tAlpha", tAlpha);
-            json.Add("targetAlpha", targetAlpha);
-            json.Add("currentAlphaTransitionDuration", currentAlphaTransitionDuration);
-
-            json.Add("startColor", startColor);
-            json.Add("tColor", tColor);
-            json.Add("currentColorTransitionDuration", currentColorTransitionDuration);
-            json.Add("targetColor", targetColor);
+            if (lerpColor != null)
+            {
+                JSON lerpJSON = new JSON();
+                lerpColor.Save(lerpJSON);
+                json.Add("lerpColor", lerpJSON);
+            }
 
             json.Add("currentAlpha", canvasGroup.alpha);
             json.Add("currentColor", fadeImg.color);
         }
-
-
     }
 }
 
