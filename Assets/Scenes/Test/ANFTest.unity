@@ -897,28 +897,6 @@ Transform:
   - {fileID: 1710353883701172107}
   m_Father: {fileID: 3929955991963814455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1274575621333462470
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3310274114702821537}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ff995a76ecd01d949aad7dfc058bf740, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1405791914748909958
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,7 +923,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4760287542043094682}
   - component: {fileID: 5697436418272932309}
-  - component: {fileID: 2539360845075350952}
   m_Layer: 0
   m_Name: Mouth
   m_TagString: Untagged
@@ -1099,28 +1076,6 @@ Transform:
   - {fileID: 2044521556988656148}
   m_Father: {fileID: 1983741062136132529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &2539360845075350952
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489012544783473270}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 957cae410dc8f5249a3533e3b8eadfc1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &2710952269088357355
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,57 +1107,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2779517247019797818
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2808067568728932922}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6329803988849169189}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2808067568728932922
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2779517247019797818}
-  - component: {fileID: 2808067568728932923}
-  m_Layer: 0
-  m_Name: TestCharacter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2808067568728932923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2808067568728932922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f648899a91e167498596f9cba5ea3ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.Character
-  renderers:
-  - {fileID: 5577644073124584825}
-  - {fileID: 450013085696785165}
-  - {fileID: 5697436418272932309}
-  - {fileID: 9177206142602205376}
-  linkedInteraction: {fileID: 4584596946779825182}
 --- !u!4 &2945959855286551880
 Transform:
   m_ObjectHideFlags: 0
@@ -1278,7 +1182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7784005109048300573}
   - component: {fileID: 9177206142602205376}
-  - component: {fileID: 1274575621333462470}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Untagged
@@ -1646,7 +1549,7 @@ Animator:
   m_GameObject: {fileID: 6673256698876316063}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: d75dbcc5b4398a04d8f33243cd923b76, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1cca7b7f6f1a1f64cb20c4dab614dbe8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1777,13 +1680,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1983741062136132529}
   - {fileID: 2710952269088357355}
   - {fileID: 4584596946779825181}
-  m_Father: {fileID: 2779517247019797818}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6353579784956236466
 Transform:
@@ -1811,13 +1714,34 @@ GameObject:
   m_Component:
   - component: {fileID: 6329803988849169189}
   - component: {fileID: 5582968665070359668}
+  - component: {fileID: 6673256698876316064}
   m_Layer: 0
-  m_Name: Harold
+  m_Name: TestCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6673256698876316064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6673256698876316063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f648899a91e167498596f9cba5ea3ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.Character
+  renderers:
+  - {fileID: 5577644073124584825}
+  - {fileID: 450013085696785165}
+  - {fileID: 5697436418272932309}
+  - {fileID: 9177206142602205376}
+  linkedInteraction: {fileID: 4584596946779825182}
+  characterName: TestCharacter
+  animator: {fileID: 5582968665070359668}
 --- !u!1 &6870314697705728708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,7 +1848,7 @@ Transform:
   m_GameObject: {fileID: 3310274114702821537}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0, y: -0.467, z: 0.223}
+  m_LocalPosition: {x: 0, y: -0.476, z: 0.223}
   m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2175,4 +2099,4 @@ SceneRoots:
   - {fileID: 111679908}
   - {fileID: 740851709}
   - {fileID: 1721071595}
-  - {fileID: 2779517247019797818}
+  - {fileID: 6329803988849169189}
