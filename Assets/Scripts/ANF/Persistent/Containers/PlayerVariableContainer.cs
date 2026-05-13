@@ -1,8 +1,9 @@
+using Leguar.TotalJSON;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Leguar.TotalJSON;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace ANF.Persistent
 {
@@ -14,7 +15,7 @@ namespace ANF.Persistent
     public class PlayerVariableContainer : DataContainer
     {
         private string playerName;
-        private List<Variable> variables;
+        private Dictionary<string,Variable> variables;
 
         [Tooltip("Name of the random variable, automatically generated")]
         [SerializeField] private string randomVariableName;
@@ -61,7 +62,7 @@ namespace ANF.Persistent
         public void Reset()
         {
             playerName = "Player";
-            foreach (Variable variable in variables)
+            foreach (Variable variable in variables.Values)
             {
                 variable.value = variable.defaultValue;
             }
@@ -75,7 +76,7 @@ namespace ANF.Persistent
             JArray variableArray = new JArray();
             JSON variableNode;
 
-            foreach (Variable variable in variables)
+            foreach (Variable variable in variables.Values)
             {
                 variableNode = new JSON();
                 variableNode.Add("name", variable.name);
@@ -125,7 +126,7 @@ namespace ANF.Persistent
 		/// Gets all variables
 		/// </summary>
 		/// <returns>All variables</returns>
-        public List<Variable> GetAllVariables()
+        public Dictionary<string, Variable> GetAllVariables()
         {
             return variables;
         }
@@ -137,10 +138,7 @@ namespace ANF.Persistent
 		/// <returns>True if it exists</returns>
         public bool VariableExists(string variableName)
         {
-            foreach (Variable variable in variables)
-                if (variable.name.Equals(variableName))
-                    return true;
-            return false;
+            return variables.ContainsKey(variableName);
         }
 
         /// <summary>
@@ -151,13 +149,10 @@ namespace ANF.Persistent
 		/// <returns>True if the variable was found</returns>
         public bool SetVariable(string variableName, int value)
         {
-            foreach (Variable variable in variables)
+            if (variables.ContainsKey(variableName))
             {
-                if (variable.name.Equals(variableName))
-                {
-                    variable.value = value;
-                    return true;
-                }
+                variables[variableName].value = value;
+                return true;
             }
 
             return false;
@@ -170,13 +165,10 @@ namespace ANF.Persistent
 		/// <returns>True if the variable was found</returns>
         public bool ResetVariable(string variableName)
         {
-            foreach (Variable variable in variables)
+            if (variables.ContainsKey(variableName))
             {
-                if (variable.name.Equals(variableName))
-                {
-                    variable.value = variable.defaultValue;
-                    return true;
-                }
+                variables[variableName].value = variables[variableName].defaultValue;
+                return true;
             }
 
             return false;
@@ -190,13 +182,10 @@ namespace ANF.Persistent
 		/// <returns>True if the variable was found</returns>
         public bool GetVariable(string variableName, out int value)
         {
-            foreach (Variable variable in variables)
+            if (variables.ContainsKey(variableName))
             {
-                if (variable.name.Equals(variableName))
-                {
-                    value = variable.value;
-                    return true;
-                }
+                value = variables[variableName].value;
+                return true;
             }
 
             value = -1;
@@ -230,7 +219,7 @@ namespace ANF.Persistent
 		/// <param name="filePath">The variable's filepath</param>
         private void GenerateVariablesList(string filePath)
         {
-            variables = new List<Variable>();
+            variables = new Dictionary<string, Variable>();
             List<string> lines = FileManager.ReadTextAsset(Resources.Load<TextAsset>(filePath));
             foreach (string line in lines)
             {
@@ -238,12 +227,12 @@ namespace ANF.Persistent
                 {
                     string[] split = line.Split(' ');
                     if (split.Length == 2 && int.TryParse(split[1], out int value))
-                        variables.Add(new Variable(split[0], value));
+                        variables.Add(split[0],new Variable(split[0], value));
                 }
             }
 
             if (!VariableExists(randomVariableName))
-                variables.Add(new Variable(randomVariableName, 0));
+                variables.Add(randomVariableName, new Variable(randomVariableName, 0));
         }
     }
 

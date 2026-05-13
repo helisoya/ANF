@@ -35,6 +35,9 @@ MonoBehaviour:
   - id: maps
     data:
       rid: 3436799647305696213
+  - id: questInfos
+    data:
+      rid: 3493723787287330932
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -93,6 +96,9 @@ MonoBehaviour:
             color: {r: 0, g: 0, b: 0, a: 1}
     - rid: 3436799647305696213
       type: {class: MapContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data: 
+    - rid: 3493723787287330932
+      type: {class: QuestInfosContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}

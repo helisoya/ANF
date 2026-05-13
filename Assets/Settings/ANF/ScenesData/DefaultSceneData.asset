@@ -46,6 +46,8 @@ MonoBehaviour:
     data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
   - id: saveMenu
     data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
+  - id: questsMenu
+    data: {fileID: 8635427533893588802, guid: 2d222088f1bc45841b0d2e567fb9e320, type: 3}
   - id: fadeAll
     data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
   changeSceneUseFading: 1
@@ -67,7 +69,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Statics
+        debugModeScript: ANF/Tests/Quests
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305

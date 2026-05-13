@@ -5,6 +5,7 @@
 PauseMenu_Resume = Resume
 PauseMenu_Save = Save
 PauseMenu_Load = Load
+PauseMenu_Quests = Quests
 PauseMenu_Options = Options
 PauseMenu_MainMenu = Main Menu
 
@@ -14,6 +15,10 @@ SaveMenu_Title_Load = Select a slot to load from
 SaveMenu_Popup_Title = Use this slot ?
 SaveMenu_Popup_Confirm = Confirm
 SaveMenu_Popup_Cancel = Cancel
+
+QuestsMenu_Title = Quests
+QuestsMenu_Objectives = Objectives
+QuestsMenu_Unknown = ???
 
 # ------------------------------------------------------------------------
 # -------------------- Title Screen & Settings ---------------------------

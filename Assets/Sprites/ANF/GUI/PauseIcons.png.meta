@@ -219,6 +219,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PauseIcons_Quests
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367ec0dbfd01abf45ab13b0c54d48c36
+      internalID: 937975036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -239,6 +261,7 @@ TextureImporter:
       PauseIcons_Load: 1542346999
       PauseIcons_MainMenu: 360516080
       PauseIcons_Options: -258718329
+      PauseIcons_Quests: 937975036
       PauseIcons_Resume: -795715281
       PauseIcons_Save: 1942865845
   mipmapLimitGroupName: 

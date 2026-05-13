@@ -140,6 +140,21 @@ namespace ANF.GUI
     }
 
     /// <summary>
+    /// Subclass for the Quest button
+    /// </summary>
+    [System.Serializable]
+    public class PauseMenuButtonDataQuest : PauseMenuButtonData
+    {
+        public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
+        {
+            if (manager.GetGUIManager().GetComponent<QuestsMenuUI>(out QuestsMenuUI questsMenu))
+            {
+                pauseMenu.ChangeSubMenu(questsMenu);
+            }
+        }
+    }
+
+    /// <summary>
     /// Subclass for the options button
     /// </summary>
     [System.Serializable]
