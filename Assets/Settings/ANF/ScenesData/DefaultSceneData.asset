@@ -67,7 +67,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Statics
+        debugModeScript: ANF/Tests/Character
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305
@@ -88,6 +88,8 @@ MonoBehaviour:
         interactablesMask:
           serializedVersion: 2
           m_Bits: 8
+        guiComponentsToDisable:
+        - dialog
         highlightType: 2
         baseColor: {r: 0.34707898, g: 1.1152072, b: 1.218224, a: 0.5921569}
         selectedColor: {r: 0.688111, g: 1.4964385, b: 0.53928256, a: 0.59607846}

@@ -85,7 +85,7 @@ namespace ANF.ANSL
 
             if (currentObject != null && waitingForObject)
             {
-                if (!currentObject.Rotating)
+                if (!currentObject.Fading)
                 {
                     waitingForObject = false;
                     currentObjectName = null;

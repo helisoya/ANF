@@ -42,7 +42,7 @@ namespace ANF.Editor
             GUILayout.Space(50);
 
             ANF.Scene.Character character = target.GetComponent<ANF.Scene.Character>();
-            string pathToAnimations = "Assets/Resources/Animations/Characters/"+character.GetCharacterName()+"/";
+            string pathToAnimations = "Assets/Resources/Animations/Characters/" + character.GetCharacterName() + "/";
 
             if (character.GetAnimator().runtimeAnimatorController &&
                 character.GetAnimator().runtimeAnimatorController is AnimatorController)
@@ -71,16 +71,19 @@ namespace ANF.Editor
         /// <param name="character">The character</param>
         private void CreateDefaultController(ANF.Scene.Character character, string animationFolder)
         {
-            AnimatorController controller = AnimatorController.CreateAnimatorControllerAtPath(animationFolder+character.GetCharacterName()+".controller");
+            AnimatorController controller = AnimatorController.CreateAnimatorControllerAtPath(animationFolder + character.GetCharacterName() + ".controller");
 
             controller.AddParameter("Talking", AnimatorControllerParameterType.Float);
 
             controller.AddLayer("Body");
             controller.AddLayer("Eye");
             controller.AddLayer("Mouth");
-            controller.layers[0].blendingMode = AnimatorLayerBlendingMode.Additive;
-            controller.layers[1].blendingMode = AnimatorLayerBlendingMode.Additive;
-            controller.layers[2].blendingMode = AnimatorLayerBlendingMode.Additive;
+
+            for (int i = 0; i < 3; i++)
+            {
+                controller.layers[i].blendingMode = AnimatorLayerBlendingMode.Override;
+                controller.layers[i].defaultWeight = 1;
+            }
 
             character.GetAnimator().runtimeAnimatorController = controller;
 
@@ -94,7 +97,7 @@ namespace ANF.Editor
         private void OpenAnimatorWindow(AnimationClip clip)
         {
             AnimationWindow window = EditorWindow.GetWindow<AnimationWindow>();
-            if(!window)
+            if (!window)
                 window = EditorWindow.CreateWindow<AnimationWindow>();
 
             window.animationClip = clip;
@@ -170,7 +173,7 @@ namespace ANF.Editor
                 if (state.state.name.Equals(newStateName))
                     return;
 
-            if(clip == null)
+            if (clip == null)
             {
                 clip = new AnimationClip();
                 clip.name = newStateName;
@@ -258,7 +261,7 @@ namespace ANF.Editor
             // Copy Template Animations
             AssetDatabase.CopyAsset("Assets/Settings/ANF/Templates/Animations/Eye/Normal_Idle.anim", pathToAnimations + newStateName + "_Idle.anim");
 
-            
+
             // Change Sprites
             Dictionary<char, Sprite> dicSprites = new Dictionary<char, Sprite>();
             Object[] sprites = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(eyeTexture));
@@ -338,7 +341,7 @@ namespace ANF.Editor
             foldoutBody = EditorGUILayout.Foldout(foldoutBody, "Body Animations");
             if (foldoutBody)
             {
-                if(animator.layers.Length <= layer)
+                if (animator.layers.Length <= layer)
                 {
                     GUILayout.Label("No body layer");
                     return;
@@ -348,8 +351,8 @@ namespace ANF.Editor
                 DrawStateMachine(animator, stateMachine);
 
                 GUILayout.Space(5);
-                foldoutAddBody = EditorGUILayout.Foldout(foldoutAddBody,"Add new state");
-                if(foldoutAddBody)
+                foldoutAddBody = EditorGUILayout.Foldout(foldoutAddBody, "Add new state");
+                if (foldoutAddBody)
                 {
                     bodyStateName = EditorGUILayout.TextField("State name", bodyStateName);
 
@@ -368,7 +371,7 @@ namespace ANF.Editor
 
                     if (GUILayout.Button("Create from template"))
                     {
-                        CreateBodyFromTemplate(animator,stateMachine, pathToAnimations + "Body/", bodyStateName);
+                        CreateBodyFromTemplate(animator, stateMachine, pathToAnimations + "Body/", bodyStateName);
                     }
                 }
             }

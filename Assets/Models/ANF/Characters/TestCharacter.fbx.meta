@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5377d081ff7dff4abb2f24ab9ce7f67
+guid: 015884a72930b3f449ea5c2ba7c4fe2b
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: palettemat
-    second: {fileID: 2100000, guid: 70d35bd4abdad4040804fba16aa1eacd, type: 2}
+    second: {fileID: 2100000, guid: 9ed88355b84e81542b3184bdd4d8944e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,7 +38,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 50
+    globalScale: 75
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -96,7 +96,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 0.75
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

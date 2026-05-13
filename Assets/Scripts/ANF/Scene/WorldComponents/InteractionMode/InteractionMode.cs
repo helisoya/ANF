@@ -1,3 +1,4 @@
+using ANF.GUI;
 using ANF.Persistent;
 using Leguar.TotalJSON;
 using NUnit.Framework;
@@ -30,6 +31,7 @@ namespace ANF.Scene
     {
         [Header("Infos")]
         [SerializeField] private LayerMask interactablesMask;
+        [SerializeField] private string[] guiComponentsToDisable;
 
         [Header("Highlight")]
         [Tooltip("Full highlight means that every interactable object will glow. Otherwise, only the currently selected object will glow.")]
@@ -62,7 +64,8 @@ namespace ANF.Scene
                 highlightType = highlightType,
                 baseColor = baseColor,
                 selectedColor = selectedColor,
-                interactablesMask = interactablesMask
+                interactablesMask = interactablesMask,
+                guiComponentsToDisable = guiComponentsToDisable
             };
         }
 
@@ -151,6 +154,12 @@ namespace ANF.Scene
 		/// </summary>
         public void StartInteractionMode()
         {
+            foreach (string guiComponent in guiComponentsToDisable)
+            {
+                if (manager.GetGUIManager().GetComponent<GUIComponent>(guiComponent, out GUIComponent component))
+                    component.SetEnabled(false);
+            }
+
             RestoreFromCache();
             loadedDataCache = null;
 
@@ -173,7 +182,7 @@ namespace ANF.Scene
                     }
                 }
 
-                if(highlightType != HighlightType.None)
+                if (highlightType != HighlightType.None)
                 {
                     currentInteractionObjects[currentIndex].SetHighlightAlpha(1);
                     currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);

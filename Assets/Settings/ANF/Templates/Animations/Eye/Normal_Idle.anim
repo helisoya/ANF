@@ -33,7 +33,7 @@ AnimationClip:
     - time: 4
       value: {fileID: -1131221858, guid: ae32d599f0822504fb3d2779836f15eb, type: 3}
     attribute: m_Sprite
-    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/mixamorig:HeadTop_End/Eye
+    path: Model/mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:Neck/mixamorig:Head/mixamorig:HeadTop_End/Eye
     classID: 212
     script: {fileID: 0}
     flags: 2

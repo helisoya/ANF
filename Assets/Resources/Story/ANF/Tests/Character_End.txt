@@ -1,0 +1,6 @@
+42|TestCharacter|0|1|true
+43|TestCharacter|0|-2.5|-5
+46|TestCharacter|Surprise
+47|TestCharacter|Sad
+42|TestCharacter|1|1|false
+22|Test_Character|TestCharacter|Test_Character_3

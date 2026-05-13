@@ -1,4 +1,22 @@
 {
+	"40_0": {
+		"scope": "ansl",
+		"prefix": "addCharacter",
+		"body": ["addCharacter(Name)"],
+		"description": "Add a new Character (one per type)"
+	},
+	"40_1": {
+		"scope": "ansl",
+		"prefix": "addCharacter",
+		"body": ["addCharacter(Name;Hidden)"],
+		"description": "Add a new Character (one per type)"
+	},
+	"40_2": {
+		"scope": "ansl",
+		"prefix": "addCharacter",
+		"body": ["addCharacter(Name;Hidden;StartingMarker)"],
+		"description": "Add a new Character (one per type)"
+	},
 	"35_0": {
 		"scope": "ansl",
 		"prefix": "addStatic",
@@ -176,6 +194,12 @@ endchoice"],
 		"body": ["random(Min;Max)"],
 		"description": "Generates a random variable between [Min,Max["
 	},
+	"41_0": {
+		"scope": "ansl",
+		"prefix": "removeCharacter",
+		"body": ["removeCharacter(Name)"],
+		"description": "Removes a character"
+	},
 	"36_0": {
 		"scope": "ansl",
 		"prefix": "removeStatic",
@@ -211,6 +235,102 @@ endchoice"],
 		"prefix": "setBg",
 		"body": ["setBg(Alpha)"],
 		"description": "Sets the Background's alpha to a specific value"
+	},
+	"42_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterAlpha",
+		"body": ["setCharacterAlpha(Name;Alpha)"],
+		"description": "Fades a character"
+	},
+	"42_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterAlpha",
+		"body": ["setCharacterAlpha(Name;Alpha;Duration;WaitForEnd)"],
+		"description": "Fades a character"
+	},
+	"45_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterBody",
+		"body": ["setCharacterBody(Name;Body)"],
+		"description": "Changes a character's body animation"
+	},
+	"45_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterBody",
+		"body": ["setCharacterBody(Name;Body;TransitionDuration)"],
+		"description": "Changes a character's body animation"
+	},
+	"46_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterEye",
+		"body": ["setCharacterEye(Name;Eye)"],
+		"description": "Changes a character's eye animation"
+	},
+	"46_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterEye",
+		"body": ["setCharacterEye(Name;Eye;TransitionDuration)"],
+		"description": "Changes a character's eye animation"
+	},
+	"47_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterMouth",
+		"body": ["setCharacterMouth(Name;Mouth)"],
+		"description": "Changes a character's mouth animation"
+	},
+	"47_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterMouth",
+		"body": ["setCharacterMouth(Name;Mouth;TransitionDuration)"],
+		"description": "Changes a character's mouth animation"
+	},
+	"43_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterPosition",
+		"body": ["setCharacterPosition(Name;X;Y;Z)"],
+		"description": "Moves a character"
+	},
+	"43_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterPosition",
+		"body": ["setCharacterPosition(Name;X;Y;Z;Duration;WaitForEnd)"],
+		"description": "Moves a character"
+	},
+	"43_2": {
+		"scope": "ansl",
+		"prefix": "setCharacterPosition",
+		"body": ["setCharacterPosition(Name;Marker)"],
+		"description": "Moves a character"
+	},
+	"43_3": {
+		"scope": "ansl",
+		"prefix": "setCharacterPosition",
+		"body": ["setCharacterPosition(Name;Marker;Duration;WaitForEnd)"],
+		"description": "Moves a character"
+	},
+	"44_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterRotation",
+		"body": ["setCharacterRotation(Name;X;Y;Z)"],
+		"description": "Rotates a character"
+	},
+	"44_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterRotation",
+		"body": ["setCharacterRotation(Name;X;Y;Z;Duration;WaitForEnd)"],
+		"description": "Rotates a character"
+	},
+	"44_2": {
+		"scope": "ansl",
+		"prefix": "setCharacterRotation",
+		"body": ["setCharacterRotation(Name;Marker)"],
+		"description": "Rotates a character"
+	},
+	"44_3": {
+		"scope": "ansl",
+		"prefix": "setCharacterRotation",
+		"body": ["setCharacterRotation(Name;Marker;Duration;WaitForEnd)"],
+		"description": "Rotates a character"
 	},
 	"15_0": {
 		"scope": "ansl",

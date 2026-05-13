@@ -16,6 +16,11 @@ Test_Choice_Yes_1 = Sorry. It got away...
 Test_Choice_No_1 = Oh, sad...
 Test_Choice_2 = Okay, this is where I get of.
 
+Test_Character_1 = Hello. I am a person.
+Test_Character_2 = Eh Eh Eh.
+
+Test_Character_3 = Oh, hello there, my friend. Do you need help ?
+
 Test_Map_Start = Map test start.
 Test_Map_Village = Welcome to the village.
 Test_Map_Shack = You can now access the deserted Island.

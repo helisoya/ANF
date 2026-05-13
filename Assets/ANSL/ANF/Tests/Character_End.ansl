@@ -1,0 +1,7 @@
+setCharacterAlpha(TestCharacter;0;1;true)
+setCharacterPosition(TestCharacter;0;-2.5;-5)
+setCharacterEye(TestCharacter;Surprise)
+setCharacterMouth(TestCharacter;Sad)
+setCharacterAlpha(TestCharacter;1;1;false)
+
+dialog(Test_Character;TestCharacter;Test_Character_3)

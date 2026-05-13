@@ -65,6 +65,14 @@ namespace ANF.ANSL
                 waitingForEndInput = !noEndUserInput;
 
                 dialogUI.StartDialog(speakerId, dialogId, additive);
+                dialogUI.SetEnabled(true);
+
+                if (characterId != null &&
+                    manager.GetWorld().GetComponent<Scene.CharacterManager>(out Scene.CharacterManager characterManager))
+                {
+                    if (characterManager.GetSceneObject(characterId, out Scene.Character character))
+                        character.SetIsTalking(true);
+                }
             }
             else
             {
@@ -84,6 +92,13 @@ namespace ANF.ANSL
 
             if (!dialogUI.showingDialog)
             {
+                if (characterId != null &&
+                    manager.GetWorld().GetComponent<Scene.CharacterManager>(out Scene.CharacterManager characterManager))
+                {
+                    if (characterManager.GetSceneObject(characterId, out Scene.Character character))
+                        character.SetIsTalking(false);
+                }
+
                 if (inputDetected)
                 {
                     waitingForEndInput = false;

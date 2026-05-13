@@ -1,0 +1,11 @@
+25|TestCharacter
+24|test
+11|false
+28|TestBackground2
+40|TestCharacter|false|Test
+11|true
+22|Test_Character|TestCharacter|Test_Character_1
+46|TestCharacter|Mad
+22|Test_Character|TestCharacter|Test_Character_2
+33|TestCharacter|ANF/Tests/Character_End
+34
