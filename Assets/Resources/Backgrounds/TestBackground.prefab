@@ -32,6 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 125855854359818814}
+  - {fileID: 7709857066999855045}
   m_Father: {fileID: 3168500642445901799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &123109003793234950
@@ -91,6 +92,38 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4497629164240184963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7709857066999855045}
+  m_Layer: 0
+  m_Name: Interactables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7709857066999855045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4497629164240184963}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7372722337989867545}
+  m_Father: {fileID: 7364269299361691800}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6220589500727465606
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +347,8 @@ MonoBehaviour:
       Value: {fileID: 1761714399826642971}
     - Key: Test2
       Value: {fileID: 7885457962746972136}
-  interactableObjects: []
+  interactableObjects:
+  - {fileID: 220967139201490482}
 --- !u!1 &7251544397409527531
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +413,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 125855854359818814}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8051496672724691260
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7372722337989867545}
+  - component: {fileID: 220967139201490482}
+  - component: {fileID: 8114937288668783864}
+  m_Layer: 3
+  m_Name: Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7372722337989867545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051496672724691260}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.4579}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7709857066999855045}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &220967139201490482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051496672724691260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f0183aa5d591544a20c6e7db601fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.InteractableObject
+  ID: Exit
+  icon: {fileID: 2800000, guid: 3e613bb1c0c4b354badb8deec68c7ac8, type: 3}
+  objectRenderers: []
+  interactionCollider: {fileID: 8114937288668783864}
+--- !u!65 &8114937288668783864
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051496672724691260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.23265167, z: 0.07738531}
+  m_Center: {x: 0, y: 1.0933223, z: -0.008304474}
 --- !u!1001 &1989081883118257720
 PrefabInstance:
   m_ObjectHideFlags: 0

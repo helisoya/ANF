@@ -39,6 +39,10 @@ namespace ANF.Scene
         [ColorUsage(true, true)][SerializeField] private Color baseColor;
         [ColorUsage(true, true)][SerializeField] private Color selectedColor;
 
+        [Header("GUI Icon")]
+        [SerializeField] private RawImage prefabIcon;
+        private RawImage currentIcon;
+
         private Dictionary<string, InteractableObject> registeredObjects = new Dictionary<string, InteractableObject>();
         private List<InteractableObject> currentInteractionObjects = new List<InteractableObject>();
         private int currentIndex;
@@ -65,7 +69,8 @@ namespace ANF.Scene
                 baseColor = baseColor,
                 selectedColor = selectedColor,
                 interactablesMask = interactablesMask,
-                guiComponentsToDisable = guiComponentsToDisable
+                guiComponentsToDisable = guiComponentsToDisable,
+                prefabIcon = prefabIcon
             };
         }
 
@@ -129,6 +134,29 @@ namespace ANF.Scene
         }
 
         /// <summary>
+        /// Updates the interactable icon for a specific object
+        /// </summary>
+        /// <param name="obj">The object</param>
+        private void UpdateIconFor(InteractableObject obj)
+        {
+            if (currentIcon)
+            {
+                currentIcon.texture = obj.GetIcon();
+
+                if (RectTransformUtility.ScreenPointToLocalPointInRectangle(manager.GetGUIManager().GetRoot(),
+                    Camera.main.WorldToScreenPoint(obj.GetApproximateVisualPosition()),
+                    null, out Vector2 canvasPos))
+                {
+                    currentIcon.GetComponent<RectTransform>().anchoredPosition = canvasPos;
+                }
+                else
+                {
+                    currentIcon.GetComponent<RectTransform>().anchoredPosition = new Vector2(-50, -50);
+                }
+            }
+        }
+
+        /// <summary>
 		/// Generates a sorted list of non hidden interactable objects
 		/// </summary>
         private void GenerateInteractionList()
@@ -137,10 +165,7 @@ namespace ANF.Scene
             foreach (InteractableObject obj in registeredObjects.Values)
             {
                 if (!obj.GetIsHidden())
-                {
-                    obj.ComputeAppromixateVisualPoisition();
                     currentInteractionObjects.Add(obj);
-                }
             }
 
             currentInteractionObjects.Sort((InteractableObject o1, InteractableObject o2) =>
@@ -166,6 +191,9 @@ namespace ANF.Scene
             canTryMouseClick = false;
             mousePosition = new Vector2(-1, -1);
 
+            if (!currentIcon)
+                currentIcon = GameObject.Instantiate(prefabIcon, manager.GetGUIManager().GetRoot());
+
             GenerateInteractionList();
 
             if (currentInteractionObjects.Count > 0)
@@ -188,6 +216,7 @@ namespace ANF.Scene
                     currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
                 }
 
+                UpdateIconFor(currentInteractionObjects[currentIndex]);
                 OnRegisterInputs();
             }
             else
@@ -214,6 +243,10 @@ namespace ANF.Scene
                 obj.SetHighlightAlpha(0);
             }
 
+
+            if (currentIcon)
+                GameObject.Destroy(currentIcon.gameObject);
+
             currentInteractionObjects.Clear();
         }
 
@@ -239,6 +272,8 @@ namespace ANF.Scene
 
                 if (highlightType != HighlightType.None)
                     currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+
+                UpdateIconFor(currentInteractionObjects[currentIndex]);
             }
         }
 
@@ -279,7 +314,7 @@ namespace ANF.Scene
                 if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(Camera.main.ScreenPointToRay(mousePosition), out hit, 500, interactablesMask))
                 {
                     current = hit.transform.GetComponent<InteractableObject>();
-                    if (current.GetIsHidden())
+                    if (!currentInteractionObjects.Contains(current))
                         current = null;
                 }
 
@@ -288,6 +323,9 @@ namespace ANF.Scene
 
                 if (current != null)
                 {
+                    if (currentIcon)
+                        currentIcon.gameObject.SetActive(false);
+
                     for (int i = 0; i < currentInteractionObjects.Count; i++)
                     {
                         if (currentInteractionObjects[i] == current)
@@ -300,7 +338,10 @@ namespace ANF.Scene
                         }
                     }
                 }
-
+                else
+                {
+                    currentIcon.gameObject.SetActive(true);
+                }
 
                 canTryMouseClick = false;
             }
@@ -316,10 +357,14 @@ namespace ANF.Scene
 
         public override void OnPaused()
         {
+            if (currentIcon && inInteractionMode)
+                currentIcon.gameObject.SetActive(false);
         }
 
         public override void OnUnPaused()
         {
+            if (currentIcon && inInteractionMode)
+                currentIcon.gameObject.SetActive(true);
         }
 
         private void OnNext(InputAction.CallbackContext context)
@@ -398,6 +443,8 @@ namespace ANF.Scene
 
         public override void OnChangeScene()
         {
+            if (currentIcon && inInteractionMode)
+                currentIcon.gameObject.SetActive(false);
             OnUnRegisterInputs();
         }
 

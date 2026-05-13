@@ -17,31 +17,17 @@ namespace ANF.Scene
         [Header("Renderers")]
         [Tooltip("Represents the renderers that will be highlighted when in interaction mode")]
         [SerializeField] private Renderer[] objectRenderers;
-        private Vector3 approximateVisualPosition;
+        [SerializeField] private Collider interactionCollider;
         private bool hidden;
 
         /// <summary>
         /// Initialize the component (Editor Script)
         /// </summary>
-        public void EditorInit(string charID, Texture2D icon, Renderer[] renderers)
+        public void EditorInit(string charID, Texture2D icon, Renderer[] renderers, Collider interactionCollider)
         {
             ID = charID;
             this.icon = icon;
             objectRenderers = renderers;
-        }
-
-        /// <summary>
-		/// Computes the approximate visual position for this object
-        /// (Average of the linked renderer's position)
-		/// </summary>
-        public void ComputeAppromixateVisualPoisition()
-        {
-            approximateVisualPosition = Vector3.zero;
-            foreach (Renderer renderer in objectRenderers)
-            {
-                approximateVisualPosition += renderer.bounds.center;
-            }
-            approximateVisualPosition /= objectRenderers.Length;
         }
 
         /// <summary>
@@ -50,7 +36,7 @@ namespace ANF.Scene
 		/// <returns>Its approximate visual position</returns>
         public Vector3 GetApproximateVisualPosition()
         {
-            return approximateVisualPosition;
+            return interactionCollider.bounds.center;
         }
 
         /// <summary>
@@ -112,27 +98,6 @@ namespace ANF.Scene
         public bool GetIsHidden()
         {
             return hidden;
-        }
-
-        /// <summary>
-        /// Event for interacting with the object
-        /// </summary>
-        public void OnInterraction()
-        {
-            if (!hidden)
-            {
-                if (nextScript.StartsWith("MAP"))
-                {
-                    string[] parameters = nextScript.Split('-');
-                    Map.instance.OpenMap(parameters[1], parameters[2]);
-                }
-                else
-                {
-                    NovelController.instance.EnableLock();
-                    NovelController.instance.LoadChapterFile(nextScript);
-                }
-
-            }
         }
 
         /// <summary>

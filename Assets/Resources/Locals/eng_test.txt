@@ -20,6 +20,11 @@ Test_Character_1 = Hello. I am a person.
 Test_Character_2 = Eh Eh Eh.
 
 Test_Character_3 = Oh, hello there, my friend. Do you need help ?
+Test_Quests_1 = Both quests started
+Test_Quests_2 = Quest 1 to state 1
+Test_Quests_3 = Quest 2 to state 2
+Test_Quests_4 = Quest 1 end
+Test_Quests_5 = Quest 2 failed
 
 Test_Map_Start = Map test start.
 Test_Map_Village = Welcome to the village.
@@ -32,3 +37,21 @@ Map_ANFDemo_PeteShack = Pete's Shack
 Map_ANFDemo_Village = Pirate Village
 Map_ANFDemo_TurtleIsland = Turtle Island
 Map_ANFDemo_DesertedIsland = Deserted Island
+
+questCategory_testQuest = Test Quests
+
+quest_anfTestQuest_1_name = Saving Harold
+quest_anfTestQuest_1_desc = Harold needs my help. He has been attacked by a roaming rabbit.
+quest_anfTestQuest_1_0 = Find Harold.
+quest_anfTestQuest_1_1 = Kill the rabbit.
+quest_anfTestQuest_1_done = I saved Harold from the rabbit.
+quest_anfTestQuest_1_canceled = Harold died.
+
+quest_anfTestQuest_2_name = A long journey
+quest_anfTestQuest_2_desc = I need to get to the promised land of Caribou.
+quest_anfTestQuest_2_0 = Take your car.
+quest_anfTestQuest_2_1 = Go to the A36 highway.
+quest_anfTestQuest_2_2 = Drive a lot.
+quest_anfTestQuest_2_3 = Find a ferry to Canada.
+quest_anfTestQuest_2_done = I managed to find the promised land.
+quest_anfTestQuest_2_canceled = I got lost.

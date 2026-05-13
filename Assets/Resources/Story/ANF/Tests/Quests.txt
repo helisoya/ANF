@@ -1,0 +1,13 @@
+25|TestQuests
+24|test
+6|anfTestQuest_1|=|0
+6|anfTestQuest_2|=|0
+22|Test_Character|null|Test_Quests_1
+6|anfTestQuest_1|=|1
+22|Test_Character|null|Test_Quests_2
+6|anfTestQuest_2|=|2
+22|Test_Character|null|Test_Quests_3
+6|anfTestQuest_1|=|100
+22|Test_Character|null|Test_Quests_4
+6|anfTestQuest_2|=|101
+22|Test_Character|null|Test_Quests_5

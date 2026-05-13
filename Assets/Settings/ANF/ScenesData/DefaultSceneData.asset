@@ -46,6 +46,8 @@ MonoBehaviour:
     data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
   - id: saveMenu
     data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
+  - id: questsMenu
+    data: {fileID: 8635427533893588802, guid: 2d222088f1bc45841b0d2e567fb9e320, type: 3}
   - id: fadeAll
     data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
   changeSceneUseFading: 1
@@ -67,7 +69,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Character
+        debugModeScript: ANF/Tests/Quests
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305
@@ -93,6 +95,7 @@ MonoBehaviour:
         highlightType: 2
         baseColor: {r: 0.34707898, g: 1.1152072, b: 1.218224, a: 0.5921569}
         selectedColor: {r: 0.688111, g: 1.4964385, b: 0.53928256, a: 0.59607846}
+        prefabIcon: {fileID: 1171909878602773229, guid: 41dab6944be8e794d80b4be30237bbb3, type: 3}
     - rid: 3436799780606181458
       type: {class: StaticObjectManager, ns: ANF.Scene, asm: Assembly-CSharp}
       data:
