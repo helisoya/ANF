@@ -1,4 +1,4 @@
-25|Test Map
+25|TestMap
 24|test
 22|Test_Character|null|Test_Map_Start
 27|Map_ANFDemo|TestMap|Village

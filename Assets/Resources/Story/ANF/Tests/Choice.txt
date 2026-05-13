@@ -1,4 +1,4 @@
-25|Test Choice
+25|TestChoice
 24|test
 22|Test_Character|null|Test_Choice_1
 26|Choice_Generic|Choice_Yes|4|Choice_No|6

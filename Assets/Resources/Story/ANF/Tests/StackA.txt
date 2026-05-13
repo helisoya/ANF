@@ -1,4 +1,4 @@
-25|Test Stack
+25|TestStack
 3|Log|Log Message from A
 3|Warning|Warning Message from A
 1|ANF/Tests/StackB

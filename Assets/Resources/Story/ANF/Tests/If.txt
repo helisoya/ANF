@@ -1,4 +1,4 @@
-25|Test If
+25|TestIf
 8|2|4|var == 1 & (var2 == 2)
 3|Log|True1
 0|5

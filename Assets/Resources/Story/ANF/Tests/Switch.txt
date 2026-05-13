@@ -1,4 +1,4 @@
-25|Test Switch
+25|TestSwitch
 10|random|4|0|2|8|6|1|8|5|13
 3|Log|Is at 0
 0|15

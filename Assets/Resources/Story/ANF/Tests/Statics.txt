@@ -9,4 +9,5 @@
 37|TestStatic2|Test2|1|true
 33|TestStatic|ANF/Tests/Statics_1
 33|TestStatic2|ANF/Tests/Statics_2
+33|Exit|ANF/Tests/Statics_Exit
 34
