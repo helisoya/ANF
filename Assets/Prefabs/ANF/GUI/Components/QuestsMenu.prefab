@@ -72,6 +72,7 @@ MonoBehaviour:
   infoDescText: {fileID: 6856663706480661949}
   infoObjectivesRoot: {fileID: 1921596285147450074}
   infoObjectivePrefab: {fileID: 1746658408188748224, guid: 10f0cc7777ef22545ae18984fbd4be89, type: 3}
+  objectivesScrollbar: {fileID: 8528706078998194602}
 --- !u!1 &620667897138566079
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
     m_Left: 5
-    m_Right: 5
+    m_Right: 8
     m_Top: 2
     m_Bottom: 0
   m_ChildAlignment: 0
@@ -1849,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Scrollbar
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

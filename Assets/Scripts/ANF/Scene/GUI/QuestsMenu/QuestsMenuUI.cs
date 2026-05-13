@@ -6,6 +6,7 @@ using Leguar.TotalJSON;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -32,10 +33,12 @@ namespace ANF.GUI
         [SerializeField] private Locals.LocalizedText infoDescText;
         [SerializeField] private Transform infoObjectivesRoot;
         [SerializeField] private Locals.LocalizedText infoObjectivePrefab;
+        [SerializeField] private Scrollbar objectivesScrollbar;
+        private bool onObjectiveScrollbar;
 
         private int currentButtonIdx;
         private List<QuestsMenuUIButton> buttons;
-        private int currentButtonInputSide = 0;
+        private Vector2Int currentButtonInputSide = Vector2Int.zero;
         private float cooldownToNextButtonIncrement = 0;
 
         private Dictionary<string, List<KeyValuePair<Persistent.QuestInfo, int>>> visibleQuests;
@@ -52,7 +55,7 @@ namespace ANF.GUI
 
         public override void OnUpdate()
         {
-            if (currentButtonInputSide != 0)
+            if (currentButtonInputSide.x != 0 || currentButtonInputSide.y != 0)
             {
                 cooldownToNextButtonIncrement -= Time.deltaTime;
                 if (cooldownToNextButtonIncrement <= 0)
@@ -71,8 +74,8 @@ namespace ANF.GUI
         {
             Dictionary<string, List<KeyValuePair<Persistent.QuestInfo, int>>> result = new();
 
-            if(PersistentDataManager.instance.GetGlobalData().GetComponent<QuestInfosContainer>(out QuestInfosContainer questInfos) &&
-                PersistentDataManager.instance.GetGlobalData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer playerVariables))
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<QuestInfosContainer>(out QuestInfosContainer questInfos) &&
+                PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer playerVariables))
             {
                 Dictionary<string, List<Persistent.QuestInfo>> quests = questInfos.GetQuests();
 
@@ -83,15 +86,15 @@ namespace ANF.GUI
                 {
                     tmpList = new();
 
-                    foreach(ANF.Persistent.QuestInfo info in quests[category])
+                    foreach (ANF.Persistent.QuestInfo info in quests[category])
                     {
-                        if(playerVariables.GetVariable(info.variableID, out tmpValue) && tmpValue > -1)
+                        if (playerVariables.GetVariable(info.variableID, out tmpValue) && tmpValue > -1)
                         {
                             tmpList.Add(new(info, tmpValue));
                         }
                     }
 
-                    if(tmpList.Count > 0)
+                    if (tmpList.Count > 0)
                     {
                         result.Add(category, tmpList);
                     }
@@ -104,6 +107,7 @@ namespace ANF.GUI
         public override void OnEnabled()
         {
             visibleQuests = ComputeVisibleQuests();
+            onObjectiveScrollbar = false;
 
             foreach (Transform child in buttonsRoot)
                 Destroy(child.gameObject);
@@ -111,14 +115,14 @@ namespace ANF.GUI
             buttons = new();
 
             int id = 0;
-            foreach(string category in visibleQuests.Keys)
+            foreach (string category in visibleQuests.Keys)
             {
-                Instantiate(categoryPrefab, buttonsRoot).SetLabelKey(category);
+                Instantiate(categoryPrefab, buttonsRoot).SetLabelKey($"questCategory_{category}");
 
-                foreach(KeyValuePair<Persistent.QuestInfo,int> info in visibleQuests[category])
+                foreach (KeyValuePair<Persistent.QuestInfo, int> info in visibleQuests[category])
                 {
                     QuestsMenuUIButton button = Instantiate(buttonPrefab, buttonsRoot);
-                    button.Initialize(id,this,info);
+                    button.Initialize(id, this, info);
                     id++;
                     buttons.Add(button);
                 }
@@ -127,13 +131,15 @@ namespace ANF.GUI
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
-            currentButtonInputSide = 0;
+            currentButtonInputSide.x = 0;
+            currentButtonInputSide.y = 0;
             cooldownToNextButtonIncrement = 0;
 
 
-            if(visibleQuests.Count != 0)
+            if (visibleQuests.Count != 0)
             {
                 SetCurrentButton(0, true);
+                ShowQuest(buttons[currentButtonIdx].GetData());
             }
             else
             {
@@ -145,11 +151,12 @@ namespace ANF.GUI
                 foreach (Transform child in infoObjectivesRoot)
                     Destroy(child.gameObject);
             }
-            
+
         }
 
         public override void OnDisabled()
         {
+            EventSystem.current.SetSelectedGameObject(null);
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
             visibleQuests = null;
@@ -189,13 +196,25 @@ namespace ANF.GUI
 
                 bool noMovement = true;
 
+                if (Mathf.Abs(value.y) >= 0.9f)
+                {
+                    noMovement = false;
+                    if (currentButtonInputSide.y == 0)
+                    {
+                        cooldownToNextButtonIncrement = 0.5f;
+                        currentButtonInputSide.y = value.y < 0 ? 1 : -1;
+
+                        IncrementButtonWithInput();
+                    }
+                }
+
                 if (Mathf.Abs(value.x) >= 0.9f)
                 {
                     noMovement = false;
-                    if (currentButtonInputSide == 0)
+                    if (currentButtonInputSide.x == 0)
                     {
                         cooldownToNextButtonIncrement = 0.5f;
-                        currentButtonInputSide = value.x < 0 ? 1 : -1;
+                        currentButtonInputSide.x = value.y < 0 ? 1 : -1;
 
                         IncrementButtonWithInput();
                     }
@@ -204,7 +223,8 @@ namespace ANF.GUI
                 if (noMovement)
                 {
                     cooldownToNextButtonIncrement = 0.0f;
-                    currentButtonInputSide = 0;
+                    currentButtonInputSide.y = 0;
+                    currentButtonInputSide.x = 0;
                 }
             }
         }
@@ -232,7 +252,14 @@ namespace ANF.GUI
 		/// </summary>
         private void IncrementButtonWithInput()
         {
-            SetCurrentButton((currentButtonIdx + currentButtonInputSide + buttons.Count) % buttons.Count);
+            if (!onObjectiveScrollbar)
+                SetCurrentButton((currentButtonIdx + currentButtonInputSide.y + buttons.Count) % buttons.Count);
+
+            if (currentButtonInputSide.x != 0 && infoObjectivesRoot.childCount > 0)
+            {
+                onObjectiveScrollbar = !onObjectiveScrollbar;
+                EventSystem.current.SetSelectedGameObject(onObjectiveScrollbar ? objectivesScrollbar.gameObject : null);
+            }
         }
 
         /// <summary>
@@ -249,17 +276,21 @@ namespace ANF.GUI
 
             int max = data.Value >= 100 ? data.Key.maxQuestState : data.Value;
 
-            for(int i = 0; i <= max;i++)
+            for (int i = 0; i <= max; i++)
             {
                 Locals.LocalizedText text = Instantiate(infoObjectivePrefab, infoObjectivesRoot);
                 text.SetNewKey(data.Key.GetStateKey(i));
                 text.GetText().fontStyle = (i == max && data.Value < 100) ? TMPro.FontStyles.Normal : TMPro.FontStyles.Strikethrough;
+                text.GetText().ForceMeshUpdate(true, true);
+                LayoutRebuilder.ForceRebuildLayoutImmediate(text.GetComponent<RectTransform>());
             }
 
             if (data.Value == 100)
                 Instantiate(infoObjectivePrefab, infoObjectivesRoot).SetNewKey(data.Key.GetDoneKey());
-            else if(data.Value == 101)
+            else if (data.Value == 101)
                 Instantiate(infoObjectivePrefab, infoObjectivesRoot).SetNewKey(data.Key.GetCanceledKey());
+
+            LayoutRebuilder.ForceRebuildLayoutImmediate(infoObjectivesRoot.GetComponent<RectTransform>());
         }
 
         public override void OnRegisterInputs()

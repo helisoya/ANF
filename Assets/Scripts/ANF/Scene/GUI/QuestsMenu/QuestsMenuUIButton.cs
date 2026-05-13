@@ -1,6 +1,7 @@
 using ANF.Scene;
 using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -31,6 +32,8 @@ namespace ANF.GUI
             this.questsMenuUI = questsMenuUI;
             this.data = data;
 
+            root.localScale = Vector2.one * 0.8f;
+
             label.SetNewKey(data.Key.GetNameKey());
             label.GetText().fontStyle = data.Value >= 100 ? TMPro.FontStyles.Strikethrough : TMPro.FontStyles.Normal;
         }
@@ -46,12 +49,17 @@ namespace ANF.GUI
 
         public void OnEnter()
         {
-            root.DOScale(Vector2.one * 0.8f, 0.5f).SetEase(Ease.OutQuad);
+            if (data.Value < 100)
+                label.GetText().fontStyle = FontStyles.Underline;
+
+            root.DOScale(Vector2.one * 1.0f, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public void OnExit()
         {
-            root.DOScale(Vector2.one * 1.0f, 0.5f).SetEase(Ease.OutQuad);
+            if (data.Value < 100)
+                label.GetText().fontStyle = FontStyles.Normal;
+            root.DOScale(Vector2.one * 0.8f, 0.5f).SetEase(Ease.OutQuad);
         }
 
         public void OnPointerDown(PointerEventData eventData)
