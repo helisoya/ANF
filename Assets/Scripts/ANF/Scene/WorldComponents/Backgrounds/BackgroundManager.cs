@@ -321,7 +321,7 @@ namespace ANF.Scene
                 cacheJson.Add("currentLightDirection", currentCachedData.currentLightDirection);
 
                 if (currentCachedData.skyboxData)
-                    json.Add("currentSkybox", currentCachedData.skyboxData.name);
+                    cacheJson.Add("currentSkybox", currentCachedData.skyboxData.name);
 
                 json.Add("cachedData", cacheJson);
             }

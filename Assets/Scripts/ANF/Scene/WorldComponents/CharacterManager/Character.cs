@@ -1,3 +1,4 @@
+using ANF.Utils;
 using Leguar.TotalJSON;
 using Unity.Collections;
 using UnityEngine;
@@ -12,17 +13,28 @@ namespace ANF.Scene
         [Header("Character")]
         [SerializeField] private string characterName;
         [SerializeField] private Animator animator;
+        [SerializeField] private float talkingTransitionDuration = 0.1f;
+        private float currentTalkingValue = 0.0f;
+        private LerpInstanceFloat talkingLerp;
         private string currentBody = null;
         private string currentEye = null;
         private string currentMouth = null;
-        
+
+        public void EditorInit(string characterName, Animator animator, Renderer[] renderers, InteractableObject interactableObject)
+        {
+            this.characterName = characterName;
+            this.animator = animator;
+            this.renderers = renderers;
+            this.linkedInteraction = interactableObject;
+        }
+
         /// <summary>
         /// Changes if the character is talking or not
         /// </summary>
         /// <param name="isTalking">True if talking</param>
         public void SetIsTalking(bool isTalking)
         {
-            animator.SetFloat("Talking", isTalking ? 1.0f : 0.0f);
+            talkingLerp.StartLerp(currentTalkingValue, isTalking ? 1.0f : 0.0f, talkingTransitionDuration);
         }
 
         /// <summary>
@@ -93,6 +105,8 @@ namespace ANF.Scene
 
         protected override void OnCreate(ANFManager manager)
         {
+            talkingLerp = new LerpInstanceFloat();
+
         }
 
         protected override void OnRemove(ANFManager manager)
@@ -101,12 +115,24 @@ namespace ANF.Scene
 
         protected override void OnUpdate(ANFManager manager)
         {
+            if (talkingLerp.lerping)
+            {
+                currentTalkingValue = talkingLerp.Update();
+                animator.SetFloat("Talking", currentTalkingValue);
+            }
         }
 
 
         protected override void OnSave(JSON json)
         {
-            json.Add("isTalking", animator.GetFloat("Talking"));
+            json.Add("currentTalkingValue", currentTalkingValue);
+
+            if (talkingLerp != null)
+            {
+                JSON jsonLerp = new JSON();
+                talkingLerp.Save(jsonLerp);
+                json.Add("talkingLerp", jsonLerp);
+            }
 
             if (currentBody != null)
                 json.Add("currentBody", currentBody);
@@ -119,11 +145,22 @@ namespace ANF.Scene
 
         protected override void OnLoad(JSON json)
         {
-            if (json.ContainsKey("isTalking"))
-                SetIsTalking(json.GetBool("isTalking"));
+            if (json.ContainsKey("currentTalkingValue"))
+            {
+                currentTalkingValue = json.GetFloat("currentTalkingValue");
+                animator.SetFloat("Talking", currentTalkingValue);
+            }
+
+            if (json.ContainsKey("talkingLerp"))
+            {
+                if (talkingLerp == null)
+                    talkingLerp = new LerpInstanceFloat();
+
+                talkingLerp.Load(json.GetJSON("talkingLerp"));
+            }
 
             if (json.ContainsKey("currentBody"))
-                ChangeBodyAnimation(json.GetString("currentBody"),true);
+                ChangeBodyAnimation(json.GetString("currentBody"), true);
             if (json.ContainsKey("currentMouth"))
                 ChangeMouthAnimation(json.GetString("currentMouth"), true);
             if (json.ContainsKey("currentEye"))

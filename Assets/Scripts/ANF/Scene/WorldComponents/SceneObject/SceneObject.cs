@@ -11,12 +11,12 @@ namespace ANF.Scene
     public abstract class SceneObject : MonoBehaviour, Jsonable
     {
         [Header("Base")]
-        [SerializeField] private Renderer[] renderers;
-        [SerializeField] private InteractableObject linkedInteraction;
+        [SerializeField] protected Renderer[] renderers;
+        [SerializeField] protected InteractableObject linkedInteraction;
 
-        private LerpInstanceVector3 lerpPosition;
-        private LerpInstanceVector3 lerpRotation;
-        private LerpInstanceFloat lerpAlpha;
+        protected LerpInstanceVector3 lerpPosition;
+        protected LerpInstanceVector3 lerpRotation;
+        protected LerpInstanceFloat lerpAlpha;
 
         public bool Moving
         {
@@ -128,7 +128,7 @@ namespace ANF.Scene
         /// Internal function to set the alpha of every material on this object
         /// </summary>
         /// <param name="alpha">The new alpha</param>
-        private void InternalSetAlpha(float alpha)
+        protected void InternalSetAlpha(float alpha)
         {
             foreach (Renderer renderer in renderers)
                 foreach (Material material in renderer.materials)
@@ -139,7 +139,7 @@ namespace ANF.Scene
 		/// Returns the internal Alpha value
 		/// </summary>
 		/// <returns>The internal alpha value</returns>
-        private float InternalFindAlpha()
+        protected float InternalFindAlpha()
         {
             if (renderers.Length > 0 && renderers[0].material && renderers[0].material.HasFloat("_Alpha"))
                 return renderers[0].material.GetFloat("_Alpha");

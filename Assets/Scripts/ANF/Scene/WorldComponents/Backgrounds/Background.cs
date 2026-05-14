@@ -24,6 +24,13 @@ namespace ANF.Scene
         [Tooltip("This list should contain all interactable objects relating to the background. (Doors, ...)")]
         [SerializeField] private InteractableObject[] interactableObjects;
 
+        void Awake()
+        {
+            if (defaultData != null & sunLight)
+            {
+                defaultData.currentLightDirection = sunLight.transform.forward;
+            }
+        }
 
         /// <summary>
 		/// Gets the background's default data

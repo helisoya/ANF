@@ -18,18 +18,18 @@ namespace ANF.Editor
         private bool foldoutEye = true;
         private bool foldoutMouth = true;
 
-        private bool foldoutAddBody = true;
+        private bool foldoutAddBody = false;
         private AnimationClip bodyStateClip1 = null;
         private AnimationClip bodyStateClip2 = null;
         private string bodyStateName = "NewBodyState";
 
-        private bool foldoutAddEye = true;
+        private bool foldoutAddEye = false;
         private Texture2D eyeStateTexture = null;
         private AnimationClip eyeStateClip1 = null;
         private AnimationClip eyeStateClip2 = null;
         private string eyeStateName = "NewEyeState";
 
-        private bool foldoutAddMouth = true;
+        private bool foldoutAddMouth = false;
         private Texture2D mouthStateTexture = null;
         private AnimationClip mouthStateClip1 = null;
         private AnimationClip mouthStateClip2 = null;
@@ -69,20 +69,27 @@ namespace ANF.Editor
         /// Creates a default animation controller for this character
         /// </summary>
         /// <param name="character">The character</param>
-        private void CreateDefaultController(ANF.Scene.Character character, string animationFolder)
+        public static void CreateDefaultController(ANF.Scene.Character character, string animationFolder)
         {
+            string path = animationFolder + character.GetCharacterName() + ".controller";
+            if (AssetDatabase.AssetPathExists(path))
+                AssetDatabase.DeleteAsset(path);
+
             AnimatorController controller = AnimatorController.CreateAnimatorControllerAtPath(animationFolder + character.GetCharacterName() + ".controller");
 
             controller.AddParameter("Talking", AnimatorControllerParameterType.Float);
+            controller.RemoveLayer(0);
 
-            controller.AddLayer("Body");
-            controller.AddLayer("Eye");
-            controller.AddLayer("Mouth");
+            string[] layerNames = { "Body", "Eye", "Mouth" };
 
-            for (int i = 0; i < 3; i++)
+            foreach (string layerName in layerNames)
             {
-                controller.layers[i].blendingMode = AnimatorLayerBlendingMode.Override;
-                controller.layers[i].defaultWeight = 1;
+                controller.AddLayer(new AnimatorControllerLayer
+                {
+                    name = layerName,
+                    defaultWeight = 1f,
+                    stateMachine = new AnimatorStateMachine()
+                });
             }
 
             character.GetAnimator().runtimeAnimatorController = controller;
@@ -112,16 +119,35 @@ namespace ANF.Editor
         {
             foreach (ChildAnimatorState state in stateMachine.states)
             {
-                GUILayout.BeginHorizontal();
+                EditorGUILayout.BeginHorizontal();
+                GUILayout.Space(20f * 1f);
                 GUILayout.Label(state.state.name);
 
                 Motion motion = state.state.motion;
+                List<AnimationClip> clips = new List<AnimationClip>();
 
                 if (motion != null && motion is AnimationClip)
                 {
-                    if (GUILayout.Button("Show clip"))
+                    clips.Add(motion as AnimationClip);
+                }
+                else if (motion != null && motion is BlendTree)
+                {
+                    BlendTree blendTree = motion as BlendTree;
+
+                    foreach (ChildMotion childMotion in blendTree.children)
+                        if (childMotion.motion is AnimationClip)
+                            clips.Add(childMotion.motion as AnimationClip);
+                }
+
+                if (stateMachine.defaultState == state.state)
+                {
+                    GUILayout.Label("Default State");
+                }
+                else
+                {
+                    if (GUILayout.Button("Make Default"))
                     {
-                        OpenAnimatorWindow(motion as AnimationClip);
+                        stateMachine.defaultState = state.state;
                     }
                 }
 
@@ -135,24 +161,20 @@ namespace ANF.Editor
 
                 GUILayout.EndHorizontal();
 
-                if (motion is BlendTree)
+                foreach (AnimationClip clip in clips)
                 {
-                    BlendTree blendTree = motion as BlendTree;
-
-                    foreach (ChildMotion childMotion in blendTree.children)
+                    GUILayout.BeginHorizontal();
+                    GUILayout.Space(20f * 2f);
+                    GUILayout.Label("->");
+                    GUILayout.Label(clip.name);
+                    if (GUILayout.Button("Show Clip"))
                     {
-                        if (childMotion.motion is AnimationClip)
-                        {
-                            GUILayout.BeginHorizontal();
-                            GUILayout.Label("  ->");
-                            if (GUILayout.Button(childMotion.motion.name))
-                            {
-                                OpenAnimatorWindow(childMotion.motion as AnimationClip);
-                            }
-                            GUILayout.EndHorizontal();
-                        }
+                        OpenAnimatorWindow(clip);
                     }
+                    GUILayout.EndHorizontal();
                 }
+
+                GUILayout.Space(10f);
             }
         }
 
@@ -164,7 +186,7 @@ namespace ANF.Editor
         /// <param name="pathToAnimations">The path to the animations</param>
         /// <param name="newStateName">The new state's name</param>
         /// <param name="clip">The linked clip (can be null)</param>
-        private void CreateFromAnimationClip(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, AnimationClip clip)
+        public static void CreateFromAnimationClip(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, AnimationClip clip)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;
@@ -195,7 +217,7 @@ namespace ANF.Editor
         /// <param name="newStateName">The new state's name</param>
         /// <param name="clipNormal">The normal clip (can be null)</param>
         /// <param name="clipTalking">The talking clip (can be null)</param>
-        private void CreateFromBlendTree(AnimatorController animator, AnimatorStateMachine stateMachine, string newStateName, AnimationClip clipNormal, AnimationClip clipTalking)
+        public static void CreateFromBlendTree(AnimatorController animator, AnimatorStateMachine stateMachine, string newStateName, AnimationClip clipNormal, AnimationClip clipTalking)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;
@@ -223,7 +245,7 @@ namespace ANF.Editor
         /// <param name="stateMachine">The state machine</param>
         /// <param name="pathToAnimations">The path to the animations</param>
         /// <param name="newStateName">The new state's name</param>
-        private void CreateBodyFromTemplate(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName)
+        public static void CreateBodyFromTemplate(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;
@@ -249,7 +271,7 @@ namespace ANF.Editor
         /// <param name="pathToAnimations">The path to the animations</param>
         /// <param name="newStateName">The new state's name</param>
         /// <param name="eyeTexture">The eye texture</param>
-        private void CreateEyeFromTemplate(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, Texture2D eyeTexture)
+        public static void CreateEyeFromTemplate(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, Texture2D eyeTexture)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;
@@ -291,7 +313,7 @@ namespace ANF.Editor
         /// <param name="pathToAnimations">The path to the animations</param>
         /// <param name="newStateName">The new state's name</param>
         /// <param name="mouthTexture">The mouth texture</param>
-        private void CreateMouthFromTemplate(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, Texture2D mouthTexture)
+        public static void CreateMouthFromTemplate(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, Texture2D mouthTexture)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;

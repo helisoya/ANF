@@ -27,6 +27,7 @@ namespace ANF.Scene
         {
             ID = charID;
             this.icon = icon;
+            this.interactionCollider = interactionCollider;
             objectRenderers = renderers;
         }
 
@@ -77,7 +78,7 @@ namespace ANF.Scene
                         DOTween.Kill(material, 1);
                         material.DOColor(color, "_HighlightColor", 0.5f).SetEase(Ease.OutQuad).SetId(1);
                     }
-                        
+
                 }
             }
         }

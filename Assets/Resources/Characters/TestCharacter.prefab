@@ -142,6 +142,7 @@ MonoBehaviour:
   - {fileID: 6083177215973830727}
   - {fileID: 8668354657965562050}
   - {fileID: 4003427176701331312}
+  interactionCollider: {fileID: 5776081115727787631}
 --- !u!65 &5776081115727787631
 BoxCollider:
   m_ObjectHideFlags: 0
