@@ -236,6 +236,78 @@ endchoice"],
 		"body": ["setBg(Alpha)"],
 		"description": "Sets the Background's alpha to a specific value"
 	},
+	"48_0": {
+		"scope": "ansl",
+		"prefix": "setCameraPosition",
+		"body": ["setCameraPosition(X;Y;Z)"],
+		"description": "Moves the camera"
+	},
+	"48_1": {
+		"scope": "ansl",
+		"prefix": "setCameraPosition",
+		"body": ["setCameraPosition(X;Y;Z;Duration;WaitForEnd)"],
+		"description": "Moves the camera"
+	},
+	"48_2": {
+		"scope": "ansl",
+		"prefix": "setCameraPosition",
+		"body": ["setCameraPosition(Marker)"],
+		"description": "Moves the camera"
+	},
+	"48_3": {
+		"scope": "ansl",
+		"prefix": "setCameraPosition",
+		"body": ["setCameraPosition(Marker;Duration;WaitForEnd)"],
+		"description": "Moves the camera"
+	},
+	"48_4": {
+		"scope": "ansl",
+		"prefix": "setCameraPosition",
+		"body": ["setCameraPosition(default)"],
+		"description": "Moves the camera"
+	},
+	"48_5": {
+		"scope": "ansl",
+		"prefix": "setCameraPosition",
+		"body": ["setCameraPosition(default;Duration;WaitForEnd)"],
+		"description": "Moves the camera"
+	},
+	"49_0": {
+		"scope": "ansl",
+		"prefix": "setCameraRotation",
+		"body": ["setCameraRotation(X;Y;Z)"],
+		"description": "Rotates the camera"
+	},
+	"49_1": {
+		"scope": "ansl",
+		"prefix": "setCameraRotation",
+		"body": ["setCameraRotation(X;Y;Z;Duration;WaitForEnd)"],
+		"description": "Rotates the camera"
+	},
+	"49_2": {
+		"scope": "ansl",
+		"prefix": "setCameraRotation",
+		"body": ["setCameraRotation(Marker)"],
+		"description": "Rotates the camera"
+	},
+	"49_3": {
+		"scope": "ansl",
+		"prefix": "setCameraRotation",
+		"body": ["setCameraRotation(Marker;Duration;WaitForEnd)"],
+		"description": "Rotates the camera"
+	},
+	"49_4": {
+		"scope": "ansl",
+		"prefix": "setCameraRotation",
+		"body": ["setCameraRotation(default)"],
+		"description": "Rotates the camera"
+	},
+	"49_5": {
+		"scope": "ansl",
+		"prefix": "setCameraRotation",
+		"body": ["setCameraRotation(default;Duration;WaitForEnd)"],
+		"description": "Rotates the camera"
+	},
 	"42_0": {
 		"scope": "ansl",
 		"prefix": "setCharacterAlpha",

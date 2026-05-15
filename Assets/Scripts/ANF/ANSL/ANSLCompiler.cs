@@ -176,7 +176,13 @@ namespace ANF.ANSL
                 cachedCurrentLine = inLines[currentLine];
                 cachedCurrentLineClean = cachedCurrentLine.Replace("\t", "");
                 while (cachedCurrentLineClean.StartsWith(" ") && cachedCurrentLineClean.Length > 0)
-                    cachedCurrentLine = cachedCurrentLineClean.Substring(1);
+                    cachedCurrentLineClean = cachedCurrentLineClean.Substring(1);
+
+                if (cachedCurrentLineClean.StartsWith('#'))
+                {
+                    cachedCurrentLineClean = null;
+                    cachedCurrentLine = null;
+                }
             }
         }
 

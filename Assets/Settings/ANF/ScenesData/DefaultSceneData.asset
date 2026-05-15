@@ -22,6 +22,9 @@ MonoBehaviour:
   - id: staticObjectsManager
     data:
       rid: 3436799780606181458
+  - id: mainCameraController
+    data:
+      rid: 3436799918615298122
   - id: characterManager
     data:
       rid: 3493723745760837703
@@ -69,7 +72,7 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         startInDebugMode: 1
-        debugModeScript: ANF/Tests/Character
+        debugModeScript: ANF/Tests/Camera
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305
@@ -102,6 +105,13 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         prefabsPath: Statics/
+    - rid: 3436799918615298122
+      type: {class: MainCameraController, ns: ANF.Scene, asm: Assembly-CSharp}
+      data:
+        canBeSaved: 1
+        enabledByDefault: 1
+        startPosition: {x: 0, y: 0, z: -10}
+        startRotation: {x: 0, y: 0, z: 0}
     - rid: 3493723745760837703
       type: {class: CharacterManager, ns: ANF.Scene, asm: Assembly-CSharp}
       data:

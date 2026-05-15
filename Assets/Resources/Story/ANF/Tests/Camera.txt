@@ -1,0 +1,6 @@
+25|TestCamera
+28|TestBackground
+48|0|1|0|1|true
+49|-45|0|20|4|true
+48|default|2|false
+49|0|30|0|1|false
