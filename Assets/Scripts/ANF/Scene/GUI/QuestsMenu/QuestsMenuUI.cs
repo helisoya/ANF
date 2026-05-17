@@ -35,6 +35,7 @@ namespace ANF.GUI
         [SerializeField] private Locals.LocalizedText infoObjectivePrefab;
         [SerializeField] private Scrollbar objectivesScrollbar;
         private bool onObjectiveScrollbar;
+        private Persistent.AudioManager audioManager;
 
         private int currentButtonIdx;
         private List<QuestsMenuUIButton> buttons;
@@ -50,7 +51,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
         }
 
         public override void OnUpdate()
@@ -184,6 +185,9 @@ namespace ANF.GUI
         {
             if (isEnabled && !isPaused && context.ReadValueAsButton())
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorCancelSFX();
+
                 SetEnabled(false);
             }
         }
@@ -241,6 +245,9 @@ namespace ANF.GUI
 
             if (force || currentButtonIdx != id)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
+
                 buttons[currentButtonIdx].OnExit();
                 currentButtonIdx = id;
                 buttons[currentButtonIdx].OnEnter();
@@ -268,6 +275,9 @@ namespace ANF.GUI
         /// <param name="data">The quest data</param>
         public void ShowQuest(KeyValuePair<Persistent.QuestInfo, int> data)
         {
+            if (audioManager != null)
+                audioManager.PlayUICursorConfirmSFX();
+
             infoNameText.SetNewKey(data.Key.GetNameKey());
             infoDescText.SetNewKey(data.Key.GetDescKey());
 

@@ -182,11 +182,65 @@ endchoice"],
 		"body": ["map(Map;Def;CurrentLocation)"],
 		"description": "Opens a map using a specific definition. Current player location on map can be null"
 	},
+	"51_0": {
+		"scope": "ansl",
+		"prefix": "pauseContext",
+		"body": ["pauseContext(Id)"],
+		"description": "Pauses an ANSL Context"
+	},
+	"54_0": {
+		"scope": "ansl",
+		"prefix": "playAmbient",
+		"body": ["playAmbient(Ambient)"],
+		"description": "Plays an ambient"
+	},
+	"54_1": {
+		"scope": "ansl",
+		"prefix": "playAmbient",
+		"body": ["playAmbient(Ambient;BaseVolume)"],
+		"description": "Plays an ambient"
+	},
 	"7_0": {
 		"scope": "ansl",
 		"prefix": "playerName",
 		"body": ["playerName(playerName)"],
 		"description": "Changes the player's name"
+	},
+	"55_0": {
+		"scope": "ansl",
+		"prefix": "playMusic",
+		"body": ["playMusic(Music)"],
+		"description": "Plays a music"
+	},
+	"55_1": {
+		"scope": "ansl",
+		"prefix": "playMusic",
+		"body": ["playMusic(Music;BaseVolume)"],
+		"description": "Plays a music"
+	},
+	"52_0": {
+		"scope": "ansl",
+		"prefix": "playSFX",
+		"body": ["playSFX(Sfx)"],
+		"description": "Plays an SFX"
+	},
+	"52_1": {
+		"scope": "ansl",
+		"prefix": "playSFX",
+		"body": ["playSFX(Sfx;BaseVolume)"],
+		"description": "Plays an SFX"
+	},
+	"53_0": {
+		"scope": "ansl",
+		"prefix": "playVoice",
+		"body": ["playVoice(Voice)"],
+		"description": "Plays a Voice"
+	},
+	"53_1": {
+		"scope": "ansl",
+		"prefix": "playVoice",
+		"body": ["playVoice(Voice;BaseVolume)"],
+		"description": "Plays a Voice"
 	},
 	"5_0": {
 		"scope": "ansl",
@@ -523,6 +577,12 @@ endchoice"],
 		"prefix": "showDialogWindow",
 		"body": ["showDialogWindow(Shown)"],
 		"description": "Shows/Hides the dialog window"
+	},
+	"50_0": {
+		"scope": "ansl",
+		"prefix": "stopContext",
+		"body": ["stopContext(Id)"],
+		"description": "Stops an ANSL Context"
 	},
 	"10_0": {
 		"scope": "ansl",

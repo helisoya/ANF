@@ -27,6 +27,7 @@ namespace ANF.ANSL
         private DialogUI dialogUI;
         private bool closeAfterwards;
         private string characterId;
+        private Persistent.AudioManager audioManager;
 
         private bool inputDetected;
         private bool waitingForEndInput;
@@ -45,6 +46,8 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+
             inputDetected = false;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnDialogSkip;
             if (parameters.GetParameter(0, out string speakerId) &&
@@ -139,7 +142,12 @@ namespace ANF.ANSL
         private void OnDialogSkip(InputAction.CallbackContext callbackContext)
         {
             if (!context.isPaused && callbackContext.ReadValueAsButton())
+            {
+                if (audioManager != null)
+                    audioManager.PlayUICursorConfirmSFX();
+
                 OnDialogSkip();
+            }
         }
 
         protected override void OnSave(JSON json)
@@ -151,6 +159,8 @@ namespace ANF.ANSL
 
         protected override void OnLoad(JSON json)
         {
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+
             if (json.ContainsKey("waitingForEndInput"))
                 waitingForEndInput = json.GetBool("waitingForEndInput");
             if (json.ContainsKey("closeAfterwards"))

@@ -25,7 +25,7 @@ namespace ANF.GUI
         [SerializeField] private ChoiceUIButton buttonPrefab;
         private ChoiceUIButton[] buttons;
 
-
+        private Persistent.AudioManager audioManager;
         private ChoiceData currentData;
         private int currentButtonIndex;
         private int currentButtonInputSide;
@@ -41,6 +41,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
+            PersistentDataManager.instance.GetPlayerData().GetComponent<Persistent.AudioManager>(out audioManager);
         }
 
         public override void OnUpdate()
@@ -157,6 +158,9 @@ namespace ANF.GUI
         {
             if (showingChoice && isEnabled && !isPaused)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorConfirmSFX();
+
                 selectedLine = currentData.entries[choiceIndex].linkedLine;
                 SetEnabled(false);
             }
@@ -203,6 +207,9 @@ namespace ANF.GUI
 
             if (force || currentButtonIndex != id)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
+
                 buttons[currentButtonIndex].OnExit();
                 currentButtonIndex = id;
                 buttons[currentButtonIndex].OnEnter();

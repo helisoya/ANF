@@ -43,6 +43,7 @@ namespace ANF.Scene
         [SerializeField] private RawImage prefabIcon;
         private RawImage currentIcon;
 
+        private Persistent.AudioManager audioManager;
         private Dictionary<string, InteractableObject> registeredObjects = new Dictionary<string, InteractableObject>();
         private List<InteractableObject> currentInteractionObjects = new List<InteractableObject>();
         private int currentIndex;
@@ -233,6 +234,9 @@ namespace ANF.Scene
         {
             OnUnRegisterInputs();
 
+            if (audioManager != null)
+                audioManager.PlayUICursorConfirmSFX();
+
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 
             inInteractionMode = false;
@@ -259,6 +263,9 @@ namespace ANF.Scene
         {
             if (force || index != currentIndex)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
+
                 if (highlightType == HighlightType.OnlySelected)
                     currentInteractionObjects[currentIndex].SetHighlightAlpha(0);
 
@@ -283,8 +290,9 @@ namespace ANF.Scene
 
         public override void OnStart()
         {
-
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
         }
+
         public override void OnUpdate()
         {
             if (inInteractionMode)

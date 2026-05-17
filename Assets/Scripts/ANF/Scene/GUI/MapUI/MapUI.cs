@@ -27,6 +27,7 @@ namespace ANF.GUI
         private MapDefs currentMapDefs;
         private ANF.Persistent.MapData currentMap;
         private string currentLocationId;
+        private Persistent.AudioManager audioManager;
 
         private int currentButtonIndex;
         private Vector2Int currentButtonInputSide = new Vector2Int();
@@ -63,6 +64,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
+            PersistentDataManager.instance.GetPlayerData().GetComponent<Persistent.AudioManager>(out audioManager);
         }
 
         public override void OnUpdate()
@@ -181,6 +183,8 @@ namespace ANF.GUI
 		/// <param name="id">The button's index</param>
         public void SelectButton(int id)
         {
+            if (audioManager != null)
+                audioManager.PlayUICursorConfirmSFX();
             selectedScript = buttons[id].GetLinkedScript();
             SetEnabled(false);
         }
@@ -197,6 +201,8 @@ namespace ANF.GUI
 
             if (force || currentButtonIndex != id)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
                 buttons[currentButtonIndex].OnExit();
                 currentButtonIndex = id;
                 buttons[currentButtonIndex].OnEnter();

@@ -38,6 +38,7 @@ namespace ANF.GUI
         private SaveMenuButton[] buttons;
         private Vector2Int currentButtonInputSide = new Vector2Int();
         private float cooldownToNextButtonIncrement = 0;
+        private Persistent.AudioManager audioManager;
 
         private bool onConfirmButton;
         private SaveMenuButtonData currentPopupData;
@@ -53,7 +54,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
         }
 
         public override void OnUpdate()
@@ -151,7 +152,7 @@ namespace ANF.GUI
             currentButtonInputSide.y = 0;
             cooldownToNextButtonIncrement = 0;
 
-            SetCurrentButton(0, true);
+            buttons[currentButtonIdx].OnEnter();
         }
 
         public override void OnDisabled()
@@ -191,7 +192,12 @@ namespace ANF.GUI
                 if (inPopup)
                     CloseConfirmPopup();
                 else
+                {
+                    if (audioManager != null)
+                        audioManager.PlayUICursorCancelSFX();
+
                     SetEnabled(false);
+                }
             }
         }
 
@@ -250,6 +256,9 @@ namespace ANF.GUI
 
             if (force || currentButtonIdx != id)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
+
                 buttons[currentButtonIdx].OnExit();
                 currentButtonIdx = id;
                 buttons[currentButtonIdx].OnEnter();
@@ -317,6 +326,9 @@ namespace ANF.GUI
         {
             if (onConfirmButton)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorConfirmSFX();
+
                 // Save / Load
                 if (inSaveMode)
                 {
@@ -345,6 +357,12 @@ namespace ANF.GUI
                     }
                 }
             }
+            else
+            {
+                if (audioManager != null)
+                    audioManager.PlayUICursorCancelSFX();
+            }
+
             CloseConfirmPopup();
         }
 
@@ -357,6 +375,9 @@ namespace ANF.GUI
         {
             if (onConfirmButton != this.onConfirmButton)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
+
                 this.onConfirmButton = onConfirmButton;
 
                 confirmPopupAcceptButton.DOScale(Vector3.one * (onConfirmButton ? 1.2f : 1.0f), 0.5f).SetEase(Ease.OutBounce);

@@ -25,6 +25,9 @@ MonoBehaviour:
   - id: playerLocals
     data:
       rid: 6964546988055199858
+  - id: audioManager
+    data:
+      rid: 3436799962859700296
   registeredGlobalDataContainers:
   - id: loadState
     data:
@@ -97,6 +100,16 @@ MonoBehaviour:
     - rid: 3436799647305696213
       type: {class: MapContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
+    - rid: 3436799962859700296
+      type: {class: DefaultAudioManager, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data:
+        sfxVolume: 0
+        ambientVolume: 0
+        voiceVolume: 0
+        musicVolume: -20
+        cacheAudioClips: 1
+        pathToAudioResources: Audio/
+        mixer: {fileID: 24100000, guid: 3551b16b330043746990206565e1fa27, type: 2}
     - rid: 3493723787287330932
       type: {class: QuestInfosContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 

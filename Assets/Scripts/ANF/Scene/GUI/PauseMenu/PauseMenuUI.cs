@@ -29,6 +29,7 @@ namespace ANF.GUI
         private int currentButtonInputSide;
         private float cooldownToNextButtonIncrement;
         private PauseMenuButton[] buttons;
+        private Persistent.AudioManager audioManager;
 
         private GUIComponent currentPauseSubmenu;
 
@@ -48,6 +49,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed += OnPauseInput;
         }
 
@@ -143,6 +145,13 @@ namespace ANF.GUI
         {
             if (currentPauseSubmenu == null && context.ReadValueAsButton())
             {
+                if (audioManager != null)
+                {
+                    if (isEnabled)
+                        audioManager.PlayUICursorCancelSFX();
+                    else
+                        audioManager.PlayUICursorConfirmSFX();
+                }
                 SetEnabled(!isEnabled);
             }
         }
@@ -185,6 +194,9 @@ namespace ANF.GUI
         {
             if (currentPauseSubmenu == null && (force || currentButtonIdx != id))
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorMoveSFX();
+
                 buttons[currentButtonIdx].OnExit();
                 currentButtonIdx = id;
                 buttons[currentButtonIdx].OnEnter();
@@ -197,7 +209,12 @@ namespace ANF.GUI
         public void SelectCurrentButton()
         {
             if (isEnabled && !isPaused && currentPauseSubmenu == null)
+            {
+                if (audioManager != null)
+                    audioManager.PlayUICursorConfirmSFX();
+
                 buttons[currentButtonIdx].OnClick();
+            }
         }
 
         /// <summary>

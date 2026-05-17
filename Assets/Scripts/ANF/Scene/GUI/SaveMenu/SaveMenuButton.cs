@@ -1,3 +1,4 @@
+using ANF.Persistent;
 using ANF.Scene;
 using DG.Tweening;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace ANF.GUI
         private SaveMenuUI saveMenuUI;
         private SaveMenuButtonData data;
         private int id;
+        private Persistent.AudioManager audioManager;
 
         /// <summary>
         /// Initialize the button
@@ -28,6 +30,8 @@ namespace ANF.GUI
         /// <param name="data">The button's data</param>
         public void Initialize(int id, SaveMenuUI saveMenu, SaveMenuButtonData data)
         {
+            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+
             this.id = id;
             this.data = data;
             this.saveMenuUI = saveMenu;
@@ -75,10 +79,14 @@ namespace ANF.GUI
         {
             if (data.interactable)
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorConfirmSFX();
                 saveMenuUI.OpenConfirmPopup(data);
             }
             else
             {
+                if (audioManager != null)
+                    audioManager.PlayUICursorCancelSFX();
                 root.DOShakeRotation(0.5f, new Vector3(0, 0, 10f)).SetEase(Ease.InOutElastic).OnComplete(() =>
                 {
                     root.DORotate(Vector3.zero, 0.1f).SetEase(Ease.OutQuad);

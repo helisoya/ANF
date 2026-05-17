@@ -63,6 +63,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: b9538544a7d90484fab5b21248e3f5d3
+    name: Ambient
   - guid: 5b6dcc1e9ee29214ba335295d457ae62
     name: BGM
   - guid: e5331018932798a4994876b6b3062450
@@ -75,6 +77,7 @@ AudioMixerController:
     - ef06b10d3c89dc64bb51474815a31314
     - c453099ca5c08e6428967ec855c13657
     - 25a5e40ca6a103d4fbdc977db5167efc
+    - 379aa93a06522ce46bc2827b43691cc5
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -88,6 +91,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 961de7070821eb844a9536b05792cb3f
   m_Children:
+  - {fileID: 7352089129966950452}
   - {fileID: 3729041703037188525}
   - {fileID: -2352465000426861428}
   - {fileID: 7384359438113970046}
@@ -127,6 +131,20 @@ AudioMixerSnapshotController:
     e5331018932798a4994876b6b3062450: -0.39762527
     5b6dcc1e9ee29214ba335295d457ae62: -19.928473
   m_TransitionOverrides: {}
+--- !u!244 &3483753684659176836
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0ab2ebc1353992e4997b7214bd267119
+  m_EffectName: Attenuation
+  m_MixLevel: 0e41dd1b2068ace4da0a54c8fbdfa3f3
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!243 &3729041703037188525
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -142,6 +160,25 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -572907600708526767}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &7352089129966950452
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ambient
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 379aa93a06522ce46bc2827b43691cc5
+  m_Children: []
+  m_Volume: b9538544a7d90484fab5b21248e3f5d3
+  m_Pitch: f2b755daa38445d429f8532ae7e5b86b
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 3483753684659176836}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
