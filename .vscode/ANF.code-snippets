@@ -590,6 +590,12 @@ endchoice"],
 		"body": ["switch(Variable)\n\tcase default:\n\n\tcase 0:\n\nendswitch"],
 		"description": "Checks a single variables. You can use 'case default:' to check when none of the checks are valid"
 	},
+	"56_0": {
+		"scope": "ansl",
+		"prefix": "unlockLog",
+		"body": ["unlockLog(Log)"],
+		"description": "Unlocks a log"
+	},
 	"6_0": {
 		"scope": "ansl",
 		"prefix": "variable",

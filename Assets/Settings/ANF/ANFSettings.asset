@@ -28,6 +28,9 @@ MonoBehaviour:
   - id: audioManager
     data:
       rid: 3436799962859700296
+  - id: logsContainer
+    data:
+      rid: 3493723905991114824
   registeredGlobalDataContainers:
   - id: loadState
     data:
@@ -113,6 +116,10 @@ MonoBehaviour:
     - rid: 3493723787287330932
       type: {class: QuestInfosContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
+    - rid: 3493723905991114824
+      type: {class: LogsContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data:
+        pathToImagesInResources: Logs/
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
       data: 
