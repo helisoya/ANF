@@ -155,6 +155,21 @@ namespace ANF.GUI
     }
 
     /// <summary>
+    /// Subclass for the Logs button
+    /// </summary>
+    [System.Serializable]
+    public class PauseMenuButtonDataLogs : PauseMenuButtonData
+    {
+        public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
+        {
+            if (manager.GetGUIManager().GetComponent<LogsMenuUI>(out LogsMenuUI logsMenu))
+            {
+                pauseMenu.ChangeSubMenu(logsMenu);
+            }
+        }
+    }
+
+    /// <summary>
     /// Subclass for the options button
     /// </summary>
     [System.Serializable]

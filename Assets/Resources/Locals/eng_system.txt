@@ -6,6 +6,7 @@ PauseMenu_Resume = Resume
 PauseMenu_Save = Save
 PauseMenu_Load = Load
 PauseMenu_Quests = Quests
+PauseMenu_Logs = Logs
 PauseMenu_Options = Options
 PauseMenu_MainMenu = Main Menu
 
@@ -18,7 +19,11 @@ SaveMenu_Popup_Cancel = Cancel
 
 QuestsMenu_Title = Quests
 QuestsMenu_Objectives = Objectives
-QuestsMenu_Unknown = ???
+
+LogsMenu_Title = Logs
+LogsMenu_Popup = New Log
+
+GeneralMenu_Unknown = ???
 
 # ------------------------------------------------------------------------
 # -------------------- Title Screen & Settings ---------------------------

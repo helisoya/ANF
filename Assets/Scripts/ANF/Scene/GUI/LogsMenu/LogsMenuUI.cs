@@ -15,43 +15,45 @@ using UnityEngine.UI;
 namespace ANF.GUI
 {
     /// <summary>
-    /// Represents the quest menu located within the pause menu
+    /// Represents the logs menu
     /// </summary>
-    public class QuestsMenuUI : GUIComponent
+    public class LogsMenuUI : GUIComponent
     {
         [Header("Background")]
         [SerializeField] private RectTransform bgTransform;
         [SerializeField] private float transitionDuration = 0.5f;
 
-        [Header("Quest Buttons")]
+        [Header("Log Buttons")]
         [SerializeField] private Transform buttonsRoot;
-        [SerializeField] private QuestsMenuUIButton buttonPrefab;
-        [SerializeField] private QuestsMenuUICategory categoryPrefab;
+        [SerializeField] private LogsMenuUIButton buttonPrefab;
 
-        [Header("Quest Info")]
-        [SerializeField] private Locals.LocalizedText infoNameText;
-        [SerializeField] private Locals.LocalizedText infoDescText;
-        [SerializeField] private Transform infoObjectivesRoot;
-        [SerializeField] private Locals.LocalizedText infoObjectivePrefab;
-        [SerializeField] private Scrollbar objectivesScrollbar;
-        private bool onObjectiveScrollbar;
+        [Header("Log Info")]
+        [SerializeField] private Locals.LocalizedText logNameText;
+        [SerializeField] private Locals.LocalizedText logDescText;
+        [SerializeField] private Image logSpriteImage;
+        [SerializeField] private Sprite defaultLogSprite;
+
+        [Header("New Log Popup")]
+        [SerializeField] private RectTransform popupTransform;
+
         private Persistent.AudioManager audioManager;
+        private LogsContainer logsContainer;
 
         private int currentButtonIdx;
-        private List<QuestsMenuUIButton> buttons;
+        private List<LogsMenuUIButton> buttons;
         private Vector2Int currentButtonInputSide = Vector2Int.zero;
         private float cooldownToNextButtonIncrement = 0;
-
-        private Dictionary<string, List<KeyValuePair<Persistent.QuestInfo, int>>> visibleQuests;
 
         public override void OnInitialize()
         {
             bgTransform.anchoredPosition = new Vector2(bgTransform.sizeDelta.x / 2f, 0);
+            popupTransform.anchoredPosition = new Vector2(popupTransform.sizeDelta.x / 2f, -popupTransform.sizeDelta.y / 2.0f);
         }
 
         public override void OnStart()
         {
             PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetPlayerData().GetComponent<LogsContainer>(out logsContainer);
         }
 
         public override void OnUpdate()
@@ -67,66 +69,28 @@ namespace ANF.GUI
             }
         }
 
-        /// <summary>
-        /// Computes the list of visible quests by category
-        /// </summary>
-        /// <returns>The list of visible quests</returns>
-        private Dictionary<string, List<KeyValuePair<Persistent.QuestInfo, int>>> ComputeVisibleQuests()
-        {
-            Dictionary<string, List<KeyValuePair<Persistent.QuestInfo, int>>> result = new();
-
-            if (PersistentDataManager.instance.GetGlobalData().GetComponent<QuestInfosContainer>(out QuestInfosContainer questInfos) &&
-                PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer playerVariables))
-            {
-                Dictionary<string, List<Persistent.QuestInfo>> quests = questInfos.GetQuests();
-
-                List<KeyValuePair<Persistent.QuestInfo, int>> tmpList = null;
-                int tmpValue = 0;
-
-                foreach (string category in quests.Keys)
-                {
-                    tmpList = new();
-
-                    foreach (ANF.Persistent.QuestInfo info in quests[category])
-                    {
-                        if (playerVariables.GetVariable(info.variableID, out tmpValue) && tmpValue > -1)
-                        {
-                            tmpList.Add(new(info, tmpValue));
-                        }
-                    }
-
-                    if (tmpList.Count > 0)
-                    {
-                        result.Add(category, tmpList);
-                    }
-                }
-            }
-
-            return result;
-        }
-
         public override void OnEnabled()
         {
-            visibleQuests = ComputeVisibleQuests();
-            onObjectiveScrollbar = false;
-
             foreach (Transform child in buttonsRoot)
                 Destroy(child.gameObject);
 
             buttons = new();
 
-            int id = 0;
-            foreach (string category in visibleQuests.Keys)
-            {
-                Instantiate(categoryPrefab, buttonsRoot).SetLabelKey($"QuestCategory_{category}");
+            List<string> allLogs = new List<string>(logsContainer.GetAllLogs());
+            PersistentDataManager.instance.GetGlobalData().GetComponent<Locals.Locals>(out Locals.Locals locals);
 
-                foreach (KeyValuePair<Persistent.QuestInfo, int> info in visibleQuests[category])
-                {
-                    QuestsMenuUIButton button = Instantiate(buttonPrefab, buttonsRoot);
-                    button.Initialize(id, this, info);
-                    id++;
-                    buttons.Add(button);
-                }
+            allLogs.Sort((string o1, string o2) =>
+            {
+                if (locals != null)
+                    return locals.GetLocal($"Log_{o1}_name").CompareTo(locals.GetLocal($"Log_{o2}_name"));
+                return o1.CompareTo(o2);
+            });
+
+            for(int i = 0; i < allLogs.Count;i++)
+            {
+                LogsMenuUIButton button = Instantiate(buttonPrefab, buttonsRoot);
+                button.Initialize(i, this, allLogs[i], logsContainer.IsUnlocked(allLogs[i]));
+                buttons.Add(button);
             }
 
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
@@ -136,23 +100,15 @@ namespace ANF.GUI
             currentButtonInputSide.y = 0;
             cooldownToNextButtonIncrement = 0;
 
-
-            if (visibleQuests.Count != 0)
+            if(allLogs.Count > 0)
             {
-                SetCurrentButton(0, true);
-                ShowQuest(buttons[currentButtonIdx].GetData());
-            }
-            else
-            {
-                // No visible quests
-
-                infoNameText.SetNewKey("GeneralMenu_Unknown");
-                infoDescText.SetNewKey("GeneralMenu_Unknown");
-
-                foreach (Transform child in infoObjectivesRoot)
-                    Destroy(child.gameObject);
+                currentButtonIdx = 0;
+                buttons[currentButtonIdx].OnEnter();
             }
 
+            logNameText.SetNewKey("GeneralMenu_Unknown");
+            logDescText.SetNewKey("GeneralMenu_Unknown");
+            logSpriteImage.sprite = defaultLogSprite;
         }
 
         public override void OnDisabled()
@@ -160,7 +116,6 @@ namespace ANF.GUI
             EventSystem.current.SetSelectedGameObject(null);
             float halfSizeButtonsRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
-            visibleQuests = null;
         }
 
         public override void OnPaused()
@@ -177,7 +132,8 @@ namespace ANF.GUI
         {
             if (isEnabled && buttons.Count != 0 && !isPaused && context.ReadValueAsButton())
             {
-                ShowQuest(buttons[currentButtonIdx].GetData());
+                if (buttons[currentButtonIdx].IsUnlocked())
+                    ShowLog(buttons[currentButtonIdx].GetData());
             }
         }
 
@@ -259,48 +215,38 @@ namespace ANF.GUI
 		/// </summary>
         private void IncrementButtonWithInput()
         {
-            if (!onObjectiveScrollbar)
-                SetCurrentButton((currentButtonIdx + currentButtonInputSide.y + buttons.Count) % buttons.Count);
-
-            if (currentButtonInputSide.x != 0 && infoObjectivesRoot.childCount > 0)
-            {
-                onObjectiveScrollbar = !onObjectiveScrollbar;
-                EventSystem.current.SetSelectedGameObject(onObjectiveScrollbar ? objectivesScrollbar.gameObject : null);
-            }
+            SetCurrentButton((currentButtonIdx + currentButtonInputSide.y + buttons.Count) % buttons.Count);
         }
 
         /// <summary>
-        /// Shows a quest's infos on screen
+        /// Shows a log's infos on screen
         /// </summary>
-        /// <param name="data">The quest data</param>
-        public void ShowQuest(KeyValuePair<Persistent.QuestInfo, int> data)
+        /// <param name="logId">The log's ID</param>
+        public void ShowLog(string logId)
         {
             if (audioManager != null)
                 audioManager.PlayUICursorConfirmSFX();
 
-            infoNameText.SetNewKey(data.Key.GetNameKey());
-            infoDescText.SetNewKey(data.Key.GetDescKey());
+            logNameText.SetNewKey($"Log_{logId}_name");
+            logDescText.SetNewKey($"Log_{logId}_desc");
 
-            foreach (Transform child in infoObjectivesRoot)
-                Destroy(child.gameObject);
+            Sprite sprite = logsContainer.GetLogSprite(logId);
 
-            int max = data.Value >= 100 ? data.Key.maxQuestState : data.Value;
+            if (sprite == null)
+                sprite = defaultLogSprite;
 
-            for (int i = 0; i <= max; i++)
+            logSpriteImage.sprite = sprite;
+        }
+
+        public void ShowNewLogPopup()
+        {
+            popupTransform.DOComplete(false);
+            popupTransform.anchoredPosition = new Vector2(popupTransform.sizeDelta.x / 2f, -popupTransform.sizeDelta.y / 2.0f);
+
+            popupTransform.DOAnchorPosX(-popupTransform.sizeDelta.x / 2.0f, 0.5f).SetEase(Ease.OutQuad).OnComplete(() =>
             {
-                Locals.LocalizedText text = Instantiate(infoObjectivePrefab, infoObjectivesRoot);
-                text.SetNewKey(data.Key.GetStateKey(i));
-                text.GetText().fontStyle = (i == max && data.Value < 100) ? TMPro.FontStyles.Normal : TMPro.FontStyles.Strikethrough;
-                text.GetText().ForceMeshUpdate(true, true);
-                LayoutRebuilder.ForceRebuildLayoutImmediate(text.GetComponent<RectTransform>());
-            }
-
-            if (data.Value == 100)
-                Instantiate(infoObjectivePrefab, infoObjectivesRoot).SetNewKey(data.Key.GetDoneKey());
-            else if (data.Value == 101)
-                Instantiate(infoObjectivePrefab, infoObjectivesRoot).SetNewKey(data.Key.GetCanceledKey());
-
-            LayoutRebuilder.ForceRebuildLayoutImmediate(infoObjectivesRoot.GetComponent<RectTransform>());
+                popupTransform.DOAnchorPosX(popupTransform.sizeDelta.x / 2.0f, 0.5f).SetEase(Ease.OutQuad).SetDelay(4.0f);
+            });
         }
 
         public override void OnRegisterInputs()

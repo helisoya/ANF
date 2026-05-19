@@ -14,7 +14,7 @@ namespace ANF.Persistent
         /// <returns>Its name's locals key</returns>
         public string GetNameKey()
         {
-            return $"quest_{variableID}_name";
+            return $"Quest_{variableID}_name";
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace ANF.Persistent
         /// <returns>Its description's locals key</returns>
         public string GetDescKey()
         {
-            return $"quest_{variableID}_desc";
+            return $"Quest_{variableID}_desc";
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace ANF.Persistent
         /// <returns>Its done's locals key</returns>
         public string GetDoneKey()
         {
-            return $"quest_{variableID}_done";
+            return $"Quest_{variableID}_done";
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace ANF.Persistent
         /// <returns>The canceled's locals key</returns>
         public string GetCanceledKey()
         {
-            return $"quest_{variableID}_canceled";
+            return $"Quest_{variableID}_canceled";
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace ANF.Persistent
         /// <returns>The state's locals key</returns>
         public string GetStateKey(int state)
         {
-            return $"quest_{variableID}_{state}";
+            return $"Quest_{variableID}_{state}";
         }
     }
 

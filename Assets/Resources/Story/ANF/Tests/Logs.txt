@@ -1,0 +1,5 @@
+25|TestLogs
+24|test
+56|TestLog1|false
+4|5
+56|TestLog2|true

@@ -38,20 +38,26 @@ Map_ANFDemo_Village = Pirate Village
 Map_ANFDemo_TurtleIsland = Turtle Island
 Map_ANFDemo_DesertedIsland = Deserted Island
 
-questCategory_testQuest = Test Quests
+QuestCategory_testQuest = Test Quests
 
-quest_anfTestQuest_1_name = Saving Harold
-quest_anfTestQuest_1_desc = Harold needs my help. He has been attacked by a roaming rabbit.
-quest_anfTestQuest_1_0 = Find Harold.
-quest_anfTestQuest_1_1 = Kill the rabbit.
-quest_anfTestQuest_1_done = I saved Harold from the rabbit.
-quest_anfTestQuest_1_canceled = Harold died.
+Quest_anfTestQuest_1_name = Saving Harold
+Quest_anfTestQuest_1_desc = Harold needs my help. He has been attacked by a roaming rabbit.
+Quest_anfTestQuest_1_0 = Find Harold.
+Quest_anfTestQuest_1_1 = Kill the rabbit.
+Quest_anfTestQuest_1_done = I saved Harold from the rabbit.
+Quest_anfTestQuest_1_canceled = Harold died.
 
-quest_anfTestQuest_2_name = A long journey
-quest_anfTestQuest_2_desc = I need to get to the promised land of Caribou.
-quest_anfTestQuest_2_0 = Take your car.
-quest_anfTestQuest_2_1 = Go to the A36 highway.
-quest_anfTestQuest_2_2 = Drive a lot.
-quest_anfTestQuest_2_3 = Find a ferry to Canada.
-quest_anfTestQuest_2_done = I managed to find the promised land.
-quest_anfTestQuest_2_canceled = I got lost.
+Quest_anfTestQuest_2_name = A long journey
+Quest_anfTestQuest_2_desc = I need to get to the promised land of Caribou.
+Quest_anfTestQuest_2_0 = Take your car.
+Quest_anfTestQuest_2_1 = Go to the A36 highway.
+Quest_anfTestQuest_2_2 = Drive a lot.
+Quest_anfTestQuest_2_3 = Find a ferry to Canada.
+Quest_anfTestQuest_2_done = I managed to find the promised land.
+Quest_anfTestQuest_2_canceled = I got lost.
+
+Log_TestLog1_name = Pirates
+Log_TestLog1_desc = You are a pirate.
+
+Log_TestLog2_name = ANF
+Log_TestLog2_desc = ANF is a framework.

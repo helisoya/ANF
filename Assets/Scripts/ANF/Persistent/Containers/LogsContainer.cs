@@ -55,6 +55,41 @@ namespace ANF.Persistent
         }
 
         /// <summary>
+        /// Gets the list of all logs (known and unknown)
+        /// </summary>
+        /// <returns>The list of logs</returns>
+        public List<string> GetAllLogs()
+        {
+            return allLogs;
+        }
+
+        /// <summary>
+        /// Check if a log is unlocked
+        /// </summary>
+        /// <param name="logID">The log's ID</param>
+        /// <returns>True if unlocked</returns>
+        public bool IsUnlocked(string logID)
+        {
+            int idx = allLogs.IndexOf(logID);
+            if (idx != -1)
+                return IsUnlocked(idx);
+
+            return false;
+        }
+
+        /// <summary>
+        /// Checks if a log is unlocked
+        /// </summary>
+        /// <param name="logIndex">The log's index</param>
+        /// <returns>True if unlocked</returns>
+        public bool IsUnlocked(int logIndex)
+        {
+            if(logIndex >= 0 && logIndex < knownLogs.Length)
+                return knownLogs[logIndex];
+            return false;
+        }
+
+        /// <summary>
         /// Loads the known logs
         /// <paramref name="settings"/>The ANF Settings</param>
         /// </summary>
