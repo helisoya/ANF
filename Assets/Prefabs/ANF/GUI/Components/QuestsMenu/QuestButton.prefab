@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: 
   channel: 0
+  type: 1
   text: {fileID: 2779736328284020150}
   canResize: 1
   canRecolor: 1

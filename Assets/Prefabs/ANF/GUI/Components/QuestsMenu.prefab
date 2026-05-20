@@ -68,6 +68,7 @@ MonoBehaviour:
   buttonsRoot: {fileID: 7516669204722928194}
   buttonPrefab: {fileID: 4865006711262181940, guid: 4d48e31bd8680ac41a8984df28276daf, type: 3}
   categoryPrefab: {fileID: 8128576294265283570, guid: 0af66d00fe04ad24798a6f309f3599ba, type: 3}
+  questsScrollbar: {fileID: 7737794763788010400}
   infoNameText: {fileID: 1261473684536994353}
   infoDescText: {fileID: 6856663706480661949}
   infoObjectivesRoot: {fileID: 1921596285147450074}
@@ -300,6 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: QuestsMenu_Objectives
   channel: 0
+  type: 1
   text: {fileID: 1211020336643215614}
   canResize: 1
   canRecolor: 1
@@ -717,6 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: 
   channel: 0
+  type: 0
   text: {fileID: 7686343492866861852}
   canResize: 1
   canRecolor: 1
@@ -874,6 +877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: QuestsMenu_Title
   channel: 0
+  type: 0
   text: {fileID: 1523319373877739964}
   canResize: 1
   canRecolor: 1
@@ -1755,6 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: 
   channel: 0
+  type: 1
   text: {fileID: 8067713854882888909}
   canResize: 1
   canRecolor: 1

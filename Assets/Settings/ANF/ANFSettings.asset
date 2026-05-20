@@ -31,6 +31,9 @@ MonoBehaviour:
   - id: logsContainer
     data:
       rid: 3493723905991114824
+  - id: historyContainer
+    data:
+      rid: 3493723950410629203
   registeredGlobalDataContainers:
   - id: loadState
     data:
@@ -67,13 +70,20 @@ MonoBehaviour:
           - fra
           fonts:
           - {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
-          sizes: 12000000180000001c000000
+          sizes:
+          - sizes: 0a0000000800000006000000
+          - sizes: 0e0000000c0000000a000000
+          - sizes: 12000000100000000e000000
+          - sizes: 140000001200000010000000
+          - sizes: 160000001400000012000000
+          - sizes: 180000001600000014000000
+          - sizes: 1a0000001800000016000000
           defaultLanguage: eng
           defaultData:
-          - sizeIndex: 1
+          - sizeIndex: 3
             fontIndex: 0
             color: {r: 1, g: 1, b: 1, a: 1}
-          - sizeIndex: 1
+          - sizeIndex: 3
             fontIndex: 0
             color: {r: 1, g: 1, b: 1, a: 1}
           - sizeIndex: 0
@@ -120,6 +130,10 @@ MonoBehaviour:
       type: {class: LogsContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         pathToImagesInResources: Logs/
+    - rid: 3493723950410629203
+      type: {class: HistoryContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data:
+        maxDialogs: 50
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
       data: 

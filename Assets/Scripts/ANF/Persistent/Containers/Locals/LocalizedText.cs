@@ -11,12 +11,20 @@ namespace ANF.Locals
 	/// </summary>
 	public class LocalizedText : MonoBehaviour
 	{
+		[Header("Base")]
 		[SerializeField] protected string localKey;
 		[SerializeField] protected Locals.Channel channel;
+		[SerializeField] protected Locals.TextType type;
 		[SerializeField] protected TMP_Text text;
+
+		[Header("Checks")]
+		[Tooltip("True if the text is affected by the size system")]
 		[SerializeField] protected bool canResize = true;
+		[Tooltip("True if the text is affected by the color system")]
 		[SerializeField] protected bool canRecolor = true;
+		[Tooltip("True if the text should not be reloaded in any way (no localization AND no injection)")]
 		[SerializeField] protected bool noReload = false;
+		[Tooltip("True if the text should not be localized (It will still be subject to injection)")]
 		[SerializeField] protected bool disableLocalization = false;
 		protected object[] injectors;
 		protected Locals locals;
@@ -72,11 +80,14 @@ namespace ANF.Locals
 			if (locals != null && !disableLocalization)
 				txt = locals.GetLocal(localKey);
 
-			if (injectors != null && injectors.Length > 0)
+			if(PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer playerVariableContainer))
+				txt = txt.Replace("{MC}", playerVariableContainer.GetPlayerName());
+
+            if (injectors != null && injectors.Length > 0)
 			{
 				for (int i = 0; i < injectors.Length; i++)
 				{
-					txt = txt.Replace(string.Concat("[", i, "]"), injectors[i].ToString());
+					txt = txt.Replace(string.Concat("{", i, "}"), injectors[i].ToString());
 				}
 			}
 			text.text = txt;
@@ -158,5 +169,6 @@ namespace ANF.Locals
 
 		public string Key { get { return localKey; } }
 		public Locals.Channel Channel { get { return channel; } }
+		public Locals.TextType Type { get { return type; } }
 	}
 }

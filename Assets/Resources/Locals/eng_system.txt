@@ -3,6 +3,7 @@
 # ------------------------------------------------------------------------
 
 PauseMenu_Resume = Resume
+PauseMenu_History = History
 PauseMenu_Save = Save
 PauseMenu_Load = Load
 PauseMenu_Quests = Quests
@@ -22,6 +23,8 @@ QuestsMenu_Objectives = Objectives
 
 LogsMenu_Title = Logs
 LogsMenu_Popup = New Log
+
+HistoryMenu_Title = History
 
 GeneralMenu_Unknown = ???
 

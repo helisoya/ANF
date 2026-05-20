@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using ANF.Persistent;
+using AYellowpaper.SerializedCollections;
 using Leguar.TotalJSON;
 using TMPro;
 using UnityEngine;
@@ -30,6 +31,13 @@ namespace ANF.Locals
 			CHANNEL9
 		}
 
+		public enum TextType
+		{
+			TITLE,
+            STANDARD,
+			SMALL
+		}
+
 		[SerializeField] private LocalsData staticData;
 
 		private string currentLanguage = null;
@@ -51,12 +59,12 @@ namespace ANF.Locals
 			onChangeLocal.AddListener(text.ReloadText);
 
 			LocalChannel linkedChannel = channels[(int)channel];
-			channels[(int)channel].onChangeSize.AddListener(text.SetSize);
+			channels[(int)channel].onChangeSize[(int)text.Type].AddListener(text.SetSize);
 			channels[(int)channel].onChangeFont.AddListener(text.SetFont);
 			channels[(int)channel].onChangeColor.AddListener(text.SetColor);
 			text.SetColor(linkedChannel.data.color);
 			text.SetFont(staticData.fonts[linkedChannel.data.fontIndex]);
-			text.SetSize(staticData.sizes[linkedChannel.data.sizeIndex]);
+			text.SetSize(staticData.sizes[linkedChannel.data.sizeIndex].sizes[(int)text.Type]);
 		}
 
 		/// <summary>
@@ -68,7 +76,7 @@ namespace ANF.Locals
 		{
 			onChangeLocal.RemoveListener(text.ReloadText);
 
-			channels[(int)channel].onChangeSize.RemoveListener(text.SetSize);
+			channels[(int)channel].onChangeSize[(int)text.Type].RemoveListener(text.SetSize);
 			channels[(int)channel].onChangeFont.RemoveListener(text.SetFont);
 			channels[(int)channel].onChangeColor.RemoveListener(text.SetColor);
 		}
@@ -78,7 +86,7 @@ namespace ANF.Locals
 		/// </summary>
 		/// <param name="channel">The channel</param>
 		/// <returns>Its font size</returns>
-		public int GetFontSize(Locals.Channel channel)
+		public SizeData GetFontSize(Locals.Channel channel)
 		{
 			return staticData.sizes[channels[(int)channel].data.sizeIndex];
 		}
@@ -208,7 +216,13 @@ namespace ANF.Locals
 		public void ChangeSize(Locals.Channel channel, int sizeIndex)
 		{
 			channels[(int)channel].data.sizeIndex = sizeIndex;
-			channels[(int)channel].onChangeSize.Invoke(staticData.sizes[sizeIndex]);
+
+            SizeData sizes = staticData.sizes[sizeIndex];
+			UnityEvent<int>[] events = channels[(int)channel].onChangeSize;
+
+			for (int i = 0; i < events.Length; i++)
+				if(i < sizes.sizes.Length)
+					events[i].Invoke(sizes.sizes[i]);
 		}
 
 		/// <summary>
@@ -257,7 +271,7 @@ namespace ANF.Locals
 		/// Gets all available text sizes
 		/// </summary>
 		/// <returns>The available text sizes</returns>
-		public int[] GetSizes()
+		public SizeData[] GetSizes()
 		{
 			return staticData.sizes;
 		}
@@ -266,7 +280,7 @@ namespace ANF.Locals
 		/// Gets a text size
 		/// </summary>
 		/// <returns>The text size's index</returns>
-		public int GetSize(int index)
+		public SizeData GetSize(int index)
 		{
 			return staticData.sizes[index];
 		}
@@ -337,7 +351,12 @@ namespace ANF.Locals
 				};
 				channels[i].onChangeColor = new UnityEvent<Color>();
 				channels[i].onChangeFont = new UnityEvent<TMP_FontAsset>();
-				channels[i].onChangeSize = new UnityEvent<int>();
+
+				channels[i].onChangeSize = new UnityEvent<int>[Enum.GetValues(typeof(TextType)).Length];
+				for(int j = 0; j < channels[i].onChangeSize.Length;j++)
+				{
+					channels[i].onChangeSize[j] = new UnityEvent<int>();
+                }
 			}
 
 			currentLanguage = null;

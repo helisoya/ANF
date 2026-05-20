@@ -1,6 +1,8 @@
 using System;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 
 namespace ANF.Locals
 {
@@ -13,10 +15,20 @@ namespace ANF.Locals
 		[Header("General")]
 		public string[] languages = new string[] { "eng" };
 		public TMP_FontAsset[] fonts;
-		public int[] sizes = new int[] { 16, 18, 20 };
+		[Tooltip("A size entry should contains one size for each type of text (Title, Standard, ...)")]
+		public SizeData[] sizes;
 
 		[Header("Default Settings")]
 		public string defaultLanguage = "eng";
 		public LocalChannelData[] defaultData = new LocalChannelData[Enum.GetValues(typeof(Locals.Channel)).Length];
+	}
+
+	/// <summary>
+	/// Represents the size data for a size entry
+	/// </summary>
+	[System.Serializable]
+	public struct SizeData
+	{
+		public int[] sizes;
 	}
 }

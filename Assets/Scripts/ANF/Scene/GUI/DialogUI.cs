@@ -87,13 +87,6 @@ namespace ANF.GUI
             speakerRoot.SetActive(speakerID != null);
             if (speakerID != null)
             {
-                bool speakerIsMC = speakerID.Equals("[MC]");
-                if (speakerIsMC &&
-                PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer container))
-                {
-                    speakerID = container.GetPlayerName();
-                }
-                speakerText.SetLocalizationEnabled(!speakerIsMC, false);
                 speakerText.SetNewKey(speakerID);
             }
 
@@ -118,6 +111,7 @@ namespace ANF.GUI
             DialogSegment currentSegment;
 
             PersistentDataManager.instance.GetGlobalData().GetComponent<Locals.Locals>(out Locals.Locals locals);
+            PersistentDataManager.instance.GetPlayerData().GetComponent<PlayerVariableContainer>(out PlayerVariableContainer playerVariables);
 
             string result = "";
             string tmp;
@@ -130,6 +124,9 @@ namespace ANF.GUI
 
                 for (int j = 0; j < split.Length; j += 2)
                 {
+                    if (playerVariables != null)
+                        split[j] = split[j].Replace("{MC}", playerVariables.GetPlayerName());
+
                     currentSegment = new DialogSegment
                     {
                         dialogText = split[j],

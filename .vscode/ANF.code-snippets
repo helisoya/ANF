@@ -593,7 +593,7 @@ endchoice"],
 	"56_0": {
 		"scope": "ansl",
 		"prefix": "unlockLog",
-		"body": ["unlockLog(Log)"],
+		"body": ["unlockLog(Log;ShowPopup)"],
 		"description": "Unlocks a log"
 	},
 	"6_0": {

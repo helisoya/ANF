@@ -55,6 +55,9 @@ namespace ANF.ANSL
                 parameters.GetParameter(2, out string dialogId) &&
                 manager.GetGUIManager().GetComponent<DialogUI>(out dialogUI))
             {
+                if (PersistentDataManager.instance.GetPlayerData().GetComponent<HistoryContainer>(out HistoryContainer historyContainer))
+                    historyContainer.AddDialog(dialogId, speakerId);
+
                 dialogUI.GetSkipButton().onClick.AddListener(OnDialogSkip);
                 bool additive;
                 bool noEndUserInput;

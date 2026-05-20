@@ -24,7 +24,7 @@ namespace ANF.Locals
 	{
 		public LocalChannelData data;
 		public UnityEvent<TMP_FontAsset> onChangeFont;
-		public UnityEvent<int> onChangeSize;
+		public UnityEvent<int>[] onChangeSize;
 		public UnityEvent<Color> onChangeColor;
 	}
 }

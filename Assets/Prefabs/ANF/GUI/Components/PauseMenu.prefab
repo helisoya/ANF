@@ -175,6 +175,7 @@ MonoBehaviour:
   buttonsRoot: {fileID: 5197445996823678283}
   buttonDatas:
   - rid: 6964546897533993293
+  - rid: 3493723950410629207
   - rid: 1438066124900532298
   - rid: 1438066124900532299
   - rid: 3493723787287330930
@@ -215,6 +216,11 @@ MonoBehaviour:
       data:
         iconSprite: {fileID: 2028330327, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
         labelKey: PauseMenu_Logs
+    - rid: 3493723950410629207
+      type: {class: PauseMenuButtonDataHistory, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: -857843388, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_History
     - rid: 6964546897533993293
       type: {class: PauseMenuButtonDataResume, ns: ANF.GUI, asm: Assembly-CSharp}
       data:

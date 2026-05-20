@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: PauseMenu_Resume
   channel: 0
+  type: 0
   text: {fileID: 7820964766357261517}
   canResize: 1
   canRecolor: 1

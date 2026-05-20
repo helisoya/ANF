@@ -26,6 +26,7 @@ namespace ANF.GUI
         [Header("Log Buttons")]
         [SerializeField] private Transform buttonsRoot;
         [SerializeField] private LogsMenuUIButton buttonPrefab;
+        [SerializeField] private Scrollbar buttonsScrollbar;
 
         [Header("Log Info")]
         [SerializeField] private Locals.LocalizedText logNameText;
@@ -109,6 +110,8 @@ namespace ANF.GUI
             logNameText.SetNewKey("GeneralMenu_Unknown");
             logDescText.SetNewKey("GeneralMenu_Unknown");
             logSpriteImage.sprite = defaultLogSprite;
+
+            buttonsScrollbar.value = 1.0f;
         }
 
         public override void OnDisabled()
@@ -207,6 +210,8 @@ namespace ANF.GUI
                 buttons[currentButtonIdx].OnExit();
                 currentButtonIdx = id;
                 buttons[currentButtonIdx].OnEnter();
+
+                buttonsScrollbar.value = 1.0f - currentButtonIdx / ((float)buttons.Count - 1);
             }
         }
 

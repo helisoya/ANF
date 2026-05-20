@@ -27,6 +27,7 @@ namespace ANF.GUI
         [SerializeField] private Transform buttonsRoot;
         [SerializeField] private QuestsMenuUIButton buttonPrefab;
         [SerializeField] private QuestsMenuUICategory categoryPrefab;
+        [SerializeField] private Scrollbar questsScrollbar;
 
         [Header("Quest Info")]
         [SerializeField] private Locals.LocalizedText infoNameText;
@@ -34,6 +35,7 @@ namespace ANF.GUI
         [SerializeField] private Transform infoObjectivesRoot;
         [SerializeField] private Locals.LocalizedText infoObjectivePrefab;
         [SerializeField] private Scrollbar objectivesScrollbar;
+        
         private bool onObjectiveScrollbar;
         private Persistent.AudioManager audioManager;
 
@@ -152,7 +154,7 @@ namespace ANF.GUI
                 foreach (Transform child in infoObjectivesRoot)
                     Destroy(child.gameObject);
             }
-
+            questsScrollbar.value = 1.0f;
         }
 
         public override void OnDisabled()
@@ -245,6 +247,8 @@ namespace ANF.GUI
 
             if (force || currentButtonIdx != id)
             {
+                questsScrollbar.value = currentButtonIdx / ((float)buttons.Count - 1);
+
                 if (audioManager != null)
                     audioManager.PlayUICursorMoveSFX();
 
@@ -301,6 +305,8 @@ namespace ANF.GUI
                 Instantiate(infoObjectivePrefab, infoObjectivesRoot).SetNewKey(data.Key.GetCanceledKey());
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(infoObjectivesRoot.GetComponent<RectTransform>());
+
+            objectivesScrollbar.value = 1.0f;
         }
 
         public override void OnRegisterInputs()

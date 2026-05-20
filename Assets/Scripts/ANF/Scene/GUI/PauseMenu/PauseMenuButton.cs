@@ -170,6 +170,21 @@ namespace ANF.GUI
     }
 
     /// <summary>
+    /// Subclass for the History button
+    /// </summary>
+    [System.Serializable]
+    public class PauseMenuButtonDataHistory : PauseMenuButtonData
+    {
+        public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
+        {
+            if (manager.GetGUIManager().GetComponent<HistoryMenuUI>(out HistoryMenuUI historyMenuUI))
+            {
+                pauseMenu.ChangeSubMenu(historyMenuUI);
+            }
+        }
+    }
+
+    /// <summary>
     /// Subclass for the options button
     /// </summary>
     [System.Serializable]

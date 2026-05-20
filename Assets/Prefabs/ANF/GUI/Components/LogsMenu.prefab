@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: LogsMenu_Popup
   channel: 0
+  type: 1
   text: {fileID: 4578170079902255235}
   canResize: 1
   canRecolor: 1
@@ -628,6 +629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: 
   channel: 0
+  type: 0
   text: {fileID: 7166109993900942408}
   canResize: 1
   canRecolor: 1
@@ -1055,6 +1057,7 @@ MonoBehaviour:
   transitionDuration: 0.5
   buttonsRoot: {fileID: 4562602923932314695}
   buttonPrefab: {fileID: 8412439276748219419, guid: 584ec851dfb197a44b8001f033206276, type: 3}
+  buttonsScrollbar: {fileID: 5962966714219315610}
   logNameText: {fileID: 1610631881369975755}
   logDescText: {fileID: 4249962976001079666}
   logSpriteImage: {fileID: 8631529419087433708}
@@ -1365,6 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: LogsMenu_Title
   channel: 0
+  type: 0
   text: {fileID: 4560273960185732798}
   canResize: 1
   canRecolor: 1
@@ -1522,6 +1526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Locals.LocalizedText
   localKey: 
   channel: 0
+  type: 1
   text: {fileID: 7177900789395244326}
   canResize: 1
   canRecolor: 1
