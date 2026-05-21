@@ -55,6 +55,8 @@ MonoBehaviour:
     data: {fileID: 1991131649640259627, guid: 7df1e050de8c718409d4605bb62ee2ad, type: 3}
   - id: historyMenu
     data: {fileID: 5462081781506776728, guid: edc56737f42790e40819bcb973af9e17, type: 3}
+  - id: settingsMenu
+    data: {fileID: 6123419753822969047, guid: 69357696a595c4647ac53d368488e61b, type: 3}
   - id: fadeAll
     data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
   changeSceneUseFading: 1

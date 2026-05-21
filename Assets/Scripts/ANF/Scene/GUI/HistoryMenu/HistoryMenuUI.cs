@@ -1,16 +1,11 @@
-using ANF.Locals;
 using ANF.Persistent;
-using ANF.Utils;
 using DG.Tweening;
 using Leguar.TotalJSON;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Rendering.MaterialUpgrader;
 
 
 namespace ANF.GUI
@@ -100,7 +95,7 @@ namespace ANF.GUI
                     text.GetText().verticalAlignment = TMPro.VerticalAlignmentOptions.Top;
                 }
             }
-            scrollbar.value = 0;
+            scrollbar.value = 1;
             EventSystem.current.SetSelectedGameObject(scrollbar.gameObject);
 
             float halfSizeRoot = bgTransform.sizeDelta.x / 2f;

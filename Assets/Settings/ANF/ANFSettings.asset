@@ -47,6 +47,9 @@ MonoBehaviour:
   - id: questInfos
     data:
       rid: 3493723787287330932
+  - id: settingsContainer
+    data:
+      rid: 3493723972757356621
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -134,6 +137,14 @@ MonoBehaviour:
       type: {class: HistoryContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         maxDialogs: 50
+    - rid: 3493723972757356621
+      type: {class: SettingsContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data:
+        tabs:
+        - rid: 3493723972757356622
+    - rid: 3493723972757356622
+      type: {class: SettingsGraphicsTab, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data: 
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
       data: 

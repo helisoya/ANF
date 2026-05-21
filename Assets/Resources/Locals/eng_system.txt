@@ -8,7 +8,7 @@ PauseMenu_Save = Save
 PauseMenu_Load = Load
 PauseMenu_Quests = Quests
 PauseMenu_Logs = Logs
-PauseMenu_Options = Options
+PauseMenu_Options = Settings
 PauseMenu_MainMenu = Main Menu
 
 SaveMenu_Title_Save = Select a slot to save to
@@ -25,6 +25,12 @@ LogsMenu_Title = Logs
 LogsMenu_Popup = New Log
 
 HistoryMenu_Title = History
+
+SettingsMenu_Title = Settings
+
+SettingsMenu_Graphics = Graphics
+SettingsMenu_Graphics_Fullscreen = Fullscreen
+SettingsMenu_Graphics_Resolution = Resolution
 
 GeneralMenu_Unknown = ???
 

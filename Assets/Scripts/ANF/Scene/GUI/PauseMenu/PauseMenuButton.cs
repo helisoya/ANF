@@ -192,7 +192,10 @@ namespace ANF.GUI
     {
         public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
         {
-
+            if (manager.GetGUIManager().GetComponent<SettingsMenuUI>(out SettingsMenuUI settingsMenu))
+            {
+                pauseMenu.ChangeSubMenu(settingsMenu);
+            }
         }
     }
 
