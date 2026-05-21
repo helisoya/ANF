@@ -53,7 +53,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
             PersistentDataManager.instance.GetPlayerData().GetComponent<LogsContainer>(out logsContainer);
         }
 
@@ -87,7 +87,7 @@ namespace ANF.GUI
                 return o1.CompareTo(o2);
             });
 
-            for(int i = 0; i < allLogs.Count;i++)
+            for (int i = 0; i < allLogs.Count; i++)
             {
                 LogsMenuUIButton button = Instantiate(buttonPrefab, buttonsRoot);
                 button.Initialize(i, this, allLogs[i], logsContainer.IsUnlocked(allLogs[i]));
@@ -101,7 +101,7 @@ namespace ANF.GUI
             currentButtonInputSide.y = 0;
             cooldownToNextButtonIncrement = 0;
 
-            if(allLogs.Count > 0)
+            if (allLogs.Count > 0)
             {
                 currentButtonIdx = 0;
                 buttons[currentButtonIdx].OnEnter();

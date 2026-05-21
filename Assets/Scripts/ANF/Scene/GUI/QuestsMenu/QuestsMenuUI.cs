@@ -35,7 +35,7 @@ namespace ANF.GUI
         [SerializeField] private Transform infoObjectivesRoot;
         [SerializeField] private Locals.LocalizedText infoObjectivePrefab;
         [SerializeField] private Scrollbar objectivesScrollbar;
-        
+
         private bool onObjectiveScrollbar;
         private Persistent.AudioManager audioManager;
 
@@ -53,7 +53,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
         }
 
         public override void OnUpdate()

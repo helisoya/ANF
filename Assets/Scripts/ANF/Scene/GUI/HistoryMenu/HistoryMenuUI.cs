@@ -34,7 +34,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
         }
 
         public override void OnUpdate()
@@ -51,10 +51,10 @@ namespace ANF.GUI
             if (PersistentDataManager.instance.GetPlayerData().GetComponent<HistoryContainer>(out HistoryContainer historyContainer))
                 data = historyContainer.GetHistory();
 
-            if(data != null)
+            if (data != null)
             {
                 string currentSpeaker = null;
-                foreach(HistoryData entry in data)
+                foreach (HistoryData entry in data)
                 {
                     Locals.LocalizedText text;
                     if (entry.speakerKey != currentSpeaker)
@@ -68,8 +68,8 @@ namespace ANF.GUI
                         text.GetText().horizontalAlignment = TMPro.HorizontalAlignmentOptions.Center;
                         text.GetText().verticalAlignment = TMPro.VerticalAlignmentOptions.Middle;
                         text.GetText().fontStyle = TMPro.FontStyles.Bold;
-                        
-                        if(currentSpeaker == null)
+
+                        if (currentSpeaker == null)
                         {
                             text.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                             text.GetComponent<RectTransform>().sizeDelta = new Vector2(text.GetComponent<RectTransform>().sizeDelta.x, noSpeakerSize);

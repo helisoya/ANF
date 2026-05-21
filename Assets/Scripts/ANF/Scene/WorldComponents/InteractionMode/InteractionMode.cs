@@ -290,7 +290,7 @@ namespace ANF.Scene
 
         public override void OnStart()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
         }
 
         public override void OnUpdate()

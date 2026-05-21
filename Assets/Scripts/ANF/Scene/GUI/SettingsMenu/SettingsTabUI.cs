@@ -2,6 +2,7 @@ using ANF.Locals;
 using ANF.Persistent;
 using ANF.Scene;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ANF.GUI
 {
@@ -28,16 +29,18 @@ namespace ANF.GUI
             this.menu = menu;
 
             tabNameText.SetNewKey(tab.GetName());
-            tab.PopulateTab(manager,menu, root);
+            tab.PopulateTab(manager, menu, root);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(root);
+            LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         }
-        
+
         /// <summary>
         /// Redraws the tab's content
         /// </summary>
         /// <param name="manager">The ANF Manager</param>
         public void RedrawLocalizedElements(ANFManager manager)
         {
-            tab.RedrawLocalizedEntries(manager,menu, root);
+            tab.RedrawLocalizedEntries(manager, menu, root);
         }
     }
 

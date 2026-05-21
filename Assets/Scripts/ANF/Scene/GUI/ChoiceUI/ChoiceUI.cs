@@ -41,7 +41,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent<Persistent.AudioManager>(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent<Persistent.AudioManager>(out audioManager);
         }
 
         public override void OnUpdate()

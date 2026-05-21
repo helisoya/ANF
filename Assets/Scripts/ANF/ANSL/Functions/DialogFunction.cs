@@ -46,7 +46,7 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
 
             inputDetected = false;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnDialogSkip;
@@ -162,7 +162,7 @@ namespace ANF.ANSL
 
         protected override void OnLoad(JSON json)
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
 
             if (json.ContainsKey("waitingForEndInput"))
                 waitingForEndInput = json.GetBool("waitingForEndInput");

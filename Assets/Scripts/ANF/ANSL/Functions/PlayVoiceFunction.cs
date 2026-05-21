@@ -28,7 +28,7 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
-            if (PersistentDataManager.instance.GetPlayerData().GetComponent<Persistent.AudioManager>(out Persistent.AudioManager audioManager) &&
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<Persistent.AudioManager>(out Persistent.AudioManager audioManager) &&
                 parameters.GetParameter(0, out string name))
             {
                 float baseVolume;

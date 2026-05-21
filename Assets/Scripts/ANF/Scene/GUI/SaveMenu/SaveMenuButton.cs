@@ -30,7 +30,7 @@ namespace ANF.GUI
         /// <param name="data">The button's data</param>
         public void Initialize(int id, SaveMenuUI saveMenu, SaveMenuButtonData data)
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
 
             this.id = id;
             this.data = data;

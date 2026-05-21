@@ -1,6 +1,7 @@
 using ANF.GUI;
 using ANF.Scene;
 using Leguar.TotalJSON;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,7 +20,7 @@ namespace ANF.Persistent
 
         public string GetName()
         {
-            return "SettingsTab_Graphics";
+            return "SettingsMenu_Graphics";
         }
 
         public void Initialize()
@@ -40,17 +41,17 @@ namespace ANF.Persistent
             fullscreenToggle.onValueChanged.AddListener(OnFullScreenChange);
 
             Resolution[] resolutions = Screen.resolutions;
-            List<string> resolutionsLabels = new List<string>(resolutions.Length);
+            List<string> resolutionsLabels = new List<string>();
             int currentIdx = -1;
 
-            for (int i = 0; i < resolutions.Length;i++)
+            for (int i = 0; i < resolutions.Length; i++)
             {
-                resolutionsLabels[i] = $"{resolutions[i].width}/{resolutions[i].height}({resolutions[i].refreshRateRatio.value})";
-                if(currentIdx == -1 && resolutions[i].width == currentResolution.width && 
+                resolutionsLabels.Add($"{resolutions[i].width}/{resolutions[i].height}({Math.Round(resolutions[i].refreshRateRatio.value, 2)})");
+                if (currentIdx == -1 && resolutions[i].width == currentResolution.width &&
                     resolutions[i].height == currentResolution.height && resolutions[i].refreshRateRatio.value == currentResolution.refreshRateRatio.value)
                 {
                     currentIdx = i;
-                }    
+                }
             }
 
             if (currentIdx == -1)
@@ -60,6 +61,7 @@ namespace ANF.Persistent
             dropdown.ClearOptions();
             dropdown.AddOptions(resolutionsLabels);
             dropdown.SetValueWithoutNotify(currentIdx);
+            dropdown.onValueChanged.AddListener(OnResolutionChange);
         }
 
         public void RedrawLocalizedEntries(ANFManager manager, SettingsMenuUI menu, RectTransform root)
@@ -100,10 +102,11 @@ namespace ANF.Persistent
             if (json.ContainsKey("refreshRateNumerator"))
                 numerator = json.GetJNumber("refreshRateNumerator").AsUInt();
 
-            OnResolutionChange(new Resolution() { 
-                height=height, 
-                width = width, 
-                refreshRateRatio = new(){denominator = denominator, numerator = numerator}  
+            OnResolutionChange(new Resolution()
+            {
+                height = height,
+                width = width,
+                refreshRateRatio = new() { denominator = denominator, numerator = numerator }
             });
             OnFullScreenChange(fullscreen);
         }

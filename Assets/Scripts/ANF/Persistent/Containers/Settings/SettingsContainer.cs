@@ -30,7 +30,7 @@ namespace ANF.Persistent
 
         public void Initialize(ANFSettings settings)
         {
-            foreach(SettingsTab tab in tabs)
+            foreach (SettingsTab tab in tabs)
             {
                 tab.Initialize();
             }

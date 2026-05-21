@@ -25,9 +25,6 @@ MonoBehaviour:
   - id: playerLocals
     data:
       rid: 6964546988055199858
-  - id: audioManager
-    data:
-      rid: 3436799962859700296
   - id: logsContainer
     data:
       rid: 3493723905991114824
@@ -47,6 +44,9 @@ MonoBehaviour:
   - id: questInfos
     data:
       rid: 3493723787287330932
+  - id: audioManager
+    data:
+      rid: 3436800060691054669
   - id: settingsContainer
     data:
       rid: 3493723972757356621
@@ -116,7 +116,7 @@ MonoBehaviour:
     - rid: 3436799647305696213
       type: {class: MapContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
-    - rid: 3436799962859700296
+    - rid: 3436800060691054669
       type: {class: DefaultAudioManager, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         sfxVolume: 0

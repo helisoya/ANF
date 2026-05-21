@@ -33,6 +33,7 @@ namespace ANF.GUI
         [SerializeField] private SettingsEntryUIColorPicker prefabToggleColorPicker;
 
         private Persistent.AudioManager audioManager;
+        private bool foundFirstObject = false;
 
         public override void OnInitialize()
         {
@@ -41,7 +42,7 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
-            PersistentDataManager.instance.GetPlayerData().GetComponent(out audioManager);
+            PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
         }
 
         public override void OnUpdate()
@@ -51,16 +52,19 @@ namespace ANF.GUI
 
         public override void OnEnabled()
         {
+            foundFirstObject = false;
+
             foreach (Transform child in tabsRoot)
                 Destroy(child.gameObject);
 
             tabs = null;
-            if (PersistentDataManager.instance.GetPlayerData().GetComponent<SettingsContainer>(out SettingsContainer settingsContainer))
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<SettingsContainer>(out SettingsContainer settingsContainer))
             {
                 SettingsTab[] dataTabs = settingsContainer.GetTabs();
 
+
                 tabs = new SettingsTabUI[dataTabs.Length];
-                for(int i = 0; i < dataTabs.Length;i++)
+                for (int i = 0; i < dataTabs.Length; i++)
                 {
                     tabs[i] = Instantiate(prefabTab, tabsRoot);
                     tabs[i].Initialize(this, manager, dataTabs[i]);
@@ -69,7 +73,6 @@ namespace ANF.GUI
 
 
             scrollbar.value = 1;
-            EventSystem.current.SetSelectedGameObject(scrollbar.gameObject);
 
             float halfSizeRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(-halfSizeRoot, transitionDuration).SetEase(Ease.OutQuad);
@@ -140,6 +143,13 @@ namespace ANF.GUI
         {
             SettingsEntryUIToggle toggle = Instantiate(prefabToggleToggle, root);
             toggle.SetLabel(labelKey);
+
+            if (!foundFirstObject)
+            {
+                EventSystem.current.SetSelectedGameObject(toggle.GetItem().gameObject);
+                foundFirstObject = true;
+            }
+
             return toggle.GetItem();
         }
 
@@ -151,9 +161,16 @@ namespace ANF.GUI
         /// <returns>The slider</returns>
         public Slider CreateSlider(string labelKey, RectTransform root)
         {
-            SettingsEntryUISlider toggle = Instantiate(prefabToggleSlider, root);
-            toggle.SetLabel(labelKey);
-            return toggle.GetItem();
+            SettingsEntryUISlider slider = Instantiate(prefabToggleSlider, root);
+            slider.SetLabel(labelKey);
+
+            if (!foundFirstObject)
+            {
+                EventSystem.current.SetSelectedGameObject(slider.GetItem().gameObject);
+                foundFirstObject = true;
+            }
+
+            return slider.GetItem();
         }
 
         /// <summary>
@@ -166,6 +183,13 @@ namespace ANF.GUI
         {
             SettingsEntryUIColorPicker colorPicker = Instantiate(prefabToggleColorPicker, root);
             colorPicker.SetLabel(labelKey);
+
+            if (!foundFirstObject)
+            {
+                EventSystem.current.SetSelectedGameObject(colorPicker.GetItem().gameObject);
+                foundFirstObject = true;
+            }
+
             return colorPicker.GetItem();
         }
 
@@ -179,6 +203,13 @@ namespace ANF.GUI
         {
             SettingsEntryUIDropdown dropdown = Instantiate(prefabToggleDropdown, root);
             dropdown.SetLabel(labelKey);
+
+            if (!foundFirstObject)
+            {
+                EventSystem.current.SetSelectedGameObject(dropdown.GetItem().gameObject);
+                foundFirstObject = true;
+            }
+
             return dropdown.GetItem();
         }
     }

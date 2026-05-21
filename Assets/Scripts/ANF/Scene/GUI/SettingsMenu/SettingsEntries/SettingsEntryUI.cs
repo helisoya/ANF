@@ -1,5 +1,7 @@
+using ANF.Persistent;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ANF.GUI
@@ -11,7 +13,7 @@ namespace ANF.GUI
     {
         [SerializeField] protected Locals.LocalizedText label;
         [SerializeField] protected T item;
-        
+
         /// <summary>
         /// Sets the entry's label
         /// </summary>
@@ -27,8 +29,10 @@ namespace ANF.GUI
         /// <returns></returns>
         public T GetItem()
         {
-            return item; 
+            return item;
         }
+
+
     }
 }
 
