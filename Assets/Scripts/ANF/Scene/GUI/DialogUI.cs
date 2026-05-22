@@ -102,6 +102,14 @@ namespace ANF.GUI
         }
 
         /// <summary>
+        /// Refreshs the dialog due to changes in languages
+        /// </summary>
+        public void RefreshDialogLocals()
+        {
+            RegenerateDialogFromStack(true);
+        }
+
+        /// <summary>
 		/// Regenerates the dialog from the text stack and recompute the reveal Index
 		/// </summary>
         /// <param name="lastTextCompleted">True if the last text was completed</param>

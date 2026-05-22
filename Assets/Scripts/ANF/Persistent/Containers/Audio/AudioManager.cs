@@ -16,6 +16,54 @@ namespace ANF.Persistent
         public abstract void Reset();
 
         /// <summary>
+        /// Sets the volume for the music
+        /// </summary>
+        /// <param name="newVolume">The new volume</param>
+        public abstract void SetMusicVolume(float newVolume);
+
+        /// <summary>
+        /// Sets the volume for the Sfx
+        /// </summary>
+        /// <param name="newVolume">The new volume</param>
+        public abstract void SetSfxVolume(float newVolume);
+
+        /// <summary>
+        /// Sets the volume for the Ambient
+        /// </summary>
+        /// <param name="newVolume">The new volume</param>
+        public abstract void SetAmbientVolume(float newVolume);
+
+        /// <summary>
+        /// Sets the volume for the voices
+        /// </summary>
+        /// <param name="newVolume">The new volume</param>
+        public abstract void SetVoiceVolume(float newVolume);
+
+        /// <summary>
+        /// Gets the music volume
+        /// </summary>
+        /// <returns>Its volume</returns>
+        public abstract float GetMusicVolume();
+
+        /// <summary>
+        /// Gets the ambient volume
+        /// </summary>
+        /// <returns>Its volume</returns>
+        public abstract float GetAmbientVolume();
+
+        /// <summary>
+        /// Gets the sfx volume
+        /// </summary>
+        /// <returns>Its volume</returns>
+        public abstract float GetSfxVolume();
+
+        /// <summary>
+        /// Gets the voices volume
+        /// </summary>
+        /// <returns>Its volume</returns>
+        public abstract float GetVoiceVolume();
+
+        /// <summary>
 		/// Plays a sound effect
 		/// </summary>
 		/// <param name="sfxName">The SFX's name</param>

@@ -259,6 +259,27 @@ namespace ANF.Locals
 		}
 
 		/// <summary>
+		/// Gets the current language
+		/// </summary>
+		/// <returns>Its key</returns>
+		public string GetCurrentLanguage()
+		{
+			return currentLanguage;
+		}
+
+		/// <summary>
+		/// Gets the current language's index in the list of languages
+		/// </summary>
+		/// <returns>Its index</returns>
+		public int GetCurrentLanguageIndex()
+		{
+			for (int i = 0; i < staticData.languages.Length; i++)
+				if (staticData.languages[i].Equals(currentLanguage))
+					return i;
+			return 0;
+		}
+
+		/// <summary>
 		/// Gets all available fonts
 		/// </summary>
 		/// <returns>The available fonts</returns>
@@ -324,7 +345,7 @@ namespace ANF.Locals
 				while (split[1].StartsWith(" "))
 					split[1] = split[1].Substring(1);
 
-				locals.Add(split[0], split[1]);
+				locals.TryAdd(split[0], split[1]);
 			}
 		}
 

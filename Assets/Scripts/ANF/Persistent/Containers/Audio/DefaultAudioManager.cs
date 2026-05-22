@@ -42,7 +42,10 @@ namespace ANF.Persistent
                 pathToAudioResources = pathToAudioResources,
                 cacheAudioClips = cacheAudioClips,
                 mixer = mixer,
-                sfxVolume = sfxVolume
+                sfxVolume = sfxVolume,
+                musicVolume = musicVolume,
+                voiceVolume = voiceVolume,
+                ambientVolume = ambientVolume,
             };
         }
 
@@ -278,6 +281,50 @@ namespace ANF.Persistent
             }
 
             return clip;
+        }
+
+        public override void SetMusicVolume(float newVolume)
+        {
+            musicVolume = newVolume;
+            mixer.SetFloat("BGM", newVolume);
+        }
+
+        public override void SetSfxVolume(float newVolume)
+        {
+            sfxVolume = newVolume;
+            mixer.SetFloat("SFX", newVolume);
+        }
+
+        public override void SetAmbientVolume(float newVolume)
+        {
+            ambientVolume = newVolume;
+            mixer.SetFloat("Ambient", newVolume);
+        }
+
+        public override void SetVoiceVolume(float newVolume)
+        {
+            voiceVolume = newVolume;
+            mixer.SetFloat("Voice", newVolume);
+        }
+
+        public override float GetMusicVolume()
+        {
+            return musicVolume;
+        }
+
+        public override float GetAmbientVolume()
+        {
+            return ambientVolume;
+        }
+
+        public override float GetSfxVolume()
+        {
+            return sfxVolume;
+        }
+
+        public override float GetVoiceVolume()
+        {
+            return voiceVolume;
         }
     }
 

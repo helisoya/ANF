@@ -9,7 +9,7 @@ namespace ANF.GUI
     /// <summary>
     /// Represents a entry in the settings menu
     /// </summary>
-    public class SettingsEntryUI<T> : MonoBehaviour
+    public class SettingsEntryUI<T> : MonoBehaviour where T : Selectable 
     {
         [SerializeField] protected Locals.LocalizedText label;
         [SerializeField] protected T item;

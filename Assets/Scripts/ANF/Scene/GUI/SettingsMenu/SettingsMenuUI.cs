@@ -1,8 +1,12 @@
 using ANF.Persistent;
+using ANF.Utils;
 using DG.Tweening;
 using Leguar.TotalJSON;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using TMPro;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -22,18 +26,19 @@ namespace ANF.GUI
 
         [Header("Tabs")]
         [SerializeField] private Transform tabsRoot;
-        [SerializeField] private SettingsTabUI prefabTab;
         [SerializeField] private Scrollbar scrollbar;
+        [SerializeField] private SettingsTabUI[] tabsPrefabs;
         private SettingsTabUI[] tabs;
 
         [Header("Components")]
+        [SerializeField] private ColorPicker colorPicker;
         [SerializeField] private SettingsEntryUIToggle prefabToggleToggle;
         [SerializeField] private SettingsEntryUISlider prefabToggleSlider;
         [SerializeField] private SettingsEntryUIDropdown prefabToggleDropdown;
         [SerializeField] private SettingsEntryUIColorPicker prefabToggleColorPicker;
 
         private Persistent.AudioManager audioManager;
-        private bool foundFirstObject = false;
+        private Selectable lastObject = null;
 
         public override void OnInitialize()
         {
@@ -52,25 +57,17 @@ namespace ANF.GUI
 
         public override void OnEnabled()
         {
-            foundFirstObject = false;
+            lastObject = null;
 
             foreach (Transform child in tabsRoot)
                 Destroy(child.gameObject);
 
-            tabs = null;
-            if (PersistentDataManager.instance.GetGlobalData().GetComponent<SettingsContainer>(out SettingsContainer settingsContainer))
+            tabs = new SettingsTabUI[tabsPrefabs.Length];
+            for(int i = 0; i < tabsPrefabs.Length; i++)
             {
-                SettingsTab[] dataTabs = settingsContainer.GetTabs();
-
-
-                tabs = new SettingsTabUI[dataTabs.Length];
-                for (int i = 0; i < dataTabs.Length; i++)
-                {
-                    tabs[i] = Instantiate(prefabTab, tabsRoot);
-                    tabs[i].Initialize(this, manager, dataTabs[i]);
-                }
+                tabs[i] = Instantiate(tabsPrefabs[i], tabsRoot);
+                tabs[i].Initialize(this, manager);
             }
-
 
             scrollbar.value = 1;
 
@@ -81,9 +78,15 @@ namespace ANF.GUI
 
         public override void OnDisabled()
         {
+            if (colorPicker.IsOpen)
+                colorPicker.Close();
+
             EventSystem.current.SetSelectedGameObject(null);
             float halfSizeRoot = bgTransform.sizeDelta.x / 2f;
             bgTransform.DOAnchorPosX(halfSizeRoot, transitionDuration).SetEase(Ease.OutQuad);
+
+            string globalDataSaveFile = FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder + "global.json";
+            SaveUtils.SaveGlobalData(PersistentDataManager.instance.GetGlobalData(), globalDataSaveFile);
         }
 
         public override void OnPaused()
@@ -103,7 +106,10 @@ namespace ANF.GUI
                 if (audioManager != null)
                     audioManager.PlayUICursorCancelSFX();
 
-                SetEnabled(false);
+                if (colorPicker.IsOpen)
+                    colorPicker.Close();
+                else
+                    SetEnabled(false);
             }
         }
 
@@ -132,6 +138,26 @@ namespace ANF.GUI
 
         }
 
+        /// <summary>
+        /// Redraws the localized elements
+        /// </summary>
+        public void RedrawLocalizedElements()
+        {
+            foreach (SettingsTabUI tab in tabs)
+                tab.RedrawLocalizedElements();
+        }
+
+        /// <summary>
+        /// Opens the color picker
+        /// </summary>
+        /// <param name="startColor">The color picker</param>
+        /// <param name="initiator">The initiator</param>
+        /// <param name="callback">The callback once the color is selected</param>
+        public void OpenColorPicker(Color startColor, Selectable initiator, Action<Color> callback)
+        {
+            colorPicker.Open(startColor, initiator, callback);
+        }
+
 
         /// <summary>
         /// Creates a new toggle in the settings menu
@@ -141,16 +167,7 @@ namespace ANF.GUI
         /// <returns>The toggle</returns>
         public Toggle CreateToggle(string labelKey, RectTransform root)
         {
-            SettingsEntryUIToggle toggle = Instantiate(prefabToggleToggle, root);
-            toggle.SetLabel(labelKey);
-
-            if (!foundFirstObject)
-            {
-                EventSystem.current.SetSelectedGameObject(toggle.GetItem().gameObject);
-                foundFirstObject = true;
-            }
-
-            return toggle.GetItem();
+            return CreateEntryInstance(labelKey, root, prefabToggleToggle);
         }
 
         /// <summary>
@@ -161,16 +178,7 @@ namespace ANF.GUI
         /// <returns>The slider</returns>
         public Slider CreateSlider(string labelKey, RectTransform root)
         {
-            SettingsEntryUISlider slider = Instantiate(prefabToggleSlider, root);
-            slider.SetLabel(labelKey);
-
-            if (!foundFirstObject)
-            {
-                EventSystem.current.SetSelectedGameObject(slider.GetItem().gameObject);
-                foundFirstObject = true;
-            }
-
-            return slider.GetItem();
+            return CreateEntryInstance(labelKey, root, prefabToggleSlider);
         }
 
         /// <summary>
@@ -181,16 +189,7 @@ namespace ANF.GUI
         /// <returns>The color picker</returns>
         public Button CreateColorPicker(string labelKey, RectTransform root)
         {
-            SettingsEntryUIColorPicker colorPicker = Instantiate(prefabToggleColorPicker, root);
-            colorPicker.SetLabel(labelKey);
-
-            if (!foundFirstObject)
-            {
-                EventSystem.current.SetSelectedGameObject(colorPicker.GetItem().gameObject);
-                foundFirstObject = true;
-            }
-
-            return colorPicker.GetItem();
+            return CreateEntryInstance(labelKey, root, prefabToggleColorPicker);
         }
 
         /// <summary>
@@ -201,16 +200,52 @@ namespace ANF.GUI
         /// <returns>The dropdown</returns>
         public TMP_Dropdown CreateDropdown(string labelKey, RectTransform root)
         {
-            SettingsEntryUIDropdown dropdown = Instantiate(prefabToggleDropdown, root);
-            dropdown.SetLabel(labelKey);
+            return CreateEntryInstance(labelKey,root,prefabToggleDropdown);
+        }
 
-            if (!foundFirstObject)
+        /// <summary>
+        /// Creates an instance of an entry prefab
+        /// </summary>
+        /// <typeparam name="T">The item type</typeparam>
+        /// <param name="labelKey">The label's key</param>
+        /// <param name="root">The root</param>
+        /// <param name="prefab">The prefab</param>
+        /// <returns>The item created</returns>
+        private T CreateEntryInstance<T>(string labelKey, RectTransform root, SettingsEntryUI<T> prefab) where T : Selectable
+        {
+            SettingsEntryUI<T> instance = Instantiate(prefab, root);
+            instance.SetLabel(labelKey);
+
+            if (lastObject == null)
             {
-                EventSystem.current.SetSelectedGameObject(dropdown.GetItem().gameObject);
-                foundFirstObject = true;
+                EventSystem.current.SetSelectedGameObject(instance.GetItem().gameObject);
             }
+            else
+            {
+                Navigation navigationTop = new Navigation()
+                {
+                    mode = Navigation.Mode.Explicit,
+                    wrapAround = true,
+                    selectOnDown = instance.GetItem(), 
+                    selectOnUp = lastObject.navigation.selectOnUp
+                };
 
-            return dropdown.GetItem();
+                Navigation navigationDown = new Navigation()
+                {
+                    mode = Navigation.Mode.Explicit,
+                    wrapAround = true,
+                    selectOnDown = null,
+                    selectOnUp = lastObject
+                };
+
+                lastObject.navigation = navigationTop;
+                instance.GetItem().navigation = navigationDown;
+
+            }
+               
+            lastObject = instance.GetItem();
+
+            return instance.GetItem();
         }
     }
 }

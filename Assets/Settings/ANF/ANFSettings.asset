@@ -47,9 +47,9 @@ MonoBehaviour:
   - id: audioManager
     data:
       rid: 3436800060691054669
-  - id: settingsContainer
+  - id: screenSettings
     data:
-      rid: 3493723972757356621
+      rid: 3493723991565926477
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -76,11 +76,10 @@ MonoBehaviour:
           sizes:
           - sizes: 0a0000000800000006000000
           - sizes: 0e0000000c0000000a000000
-          - sizes: 12000000100000000e000000
           - sizes: 140000001200000010000000
           - sizes: 160000001400000012000000
-          - sizes: 180000001600000014000000
           - sizes: 1a0000001800000016000000
+          - sizes: 1c0000001a00000018000000
           defaultLanguage: eng
           defaultData:
           - sizeIndex: 3
@@ -137,14 +136,13 @@ MonoBehaviour:
       type: {class: HistoryContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
         maxDialogs: 50
-    - rid: 3493723972757356621
-      type: {class: SettingsContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+    - rid: 3493723991565926477
+      type: {class: ScreenSettingsContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data:
-        tabs:
-        - rid: 3493723972757356622
-    - rid: 3493723972757356622
-      type: {class: SettingsGraphicsTab, ns: ANF.Persistent, asm: Assembly-CSharp}
-      data: 
+        useScreenSettings: 1
+        defaultFullscreen: 1
+        defaultWidth: 800
+        defaultHeight: 600
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
       data: 

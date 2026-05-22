@@ -18,9 +18,13 @@ namespace ANF.Persistent
             foreach (ComponentRegisterEntry<DataContainer> entry in containers)
             {
                 DataContainer copy = entry.data.CloneContainer();
-                copy.Initialize(settings);
 
                 this.components.Add(entry.id, copy);
+            }
+
+            foreach (DataContainer container in components.Values)
+            {
+                container.Initialize(settings);
             }
         }
     }

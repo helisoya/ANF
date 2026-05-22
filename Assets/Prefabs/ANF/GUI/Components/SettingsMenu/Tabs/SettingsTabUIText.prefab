@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5442097718284342906}
   - component: {fileID: 8571251347080674349}
   - component: {fileID: 8471451949346570980}
-  - component: {fileID: 7175956547536368574}
   - component: {fileID: 4273471367094738686}
+  - component: {fileID: 7631552148434347104}
   m_Layer: 5
-  m_Name: SettingsTabUI
+  m_Name: SettingsTabUIText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,20 +106,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &7175956547536368574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4229412584120169451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c21ffe777ac204fad5721a3fd077d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.SettingsTabUI
-  tabNameText: {fileID: 4724513267944181111}
-  root: {fileID: 3577961916149276497}
 --- !u!114 &4273471367094738686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +120,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &7631552148434347104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229412584120169451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a93c2ce5762864f9c7a3d8efc98d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.SettingsTabUIText
+  tabNameText: {fileID: 4724513267944181111}
+  root: {fileID: 3577961916149276497}
+  channelsToShow:
+    _serializedList:
+    - Key: 0
+      Value: 1
+    - Key: 1
+      Value: 1
+    - Key: 2
+      Value: 0
+    - Key: 3
+      Value: 0
+    - Key: 4
+      Value: 0
+    - Key: 5
+      Value: 0
+    - Key: 6
+      Value: 0
+    - Key: 7
+      Value: 0
+    - Key: 8
+      Value: 0
+    - Key: 9
+      Value: 0
 --- !u!1 &6542265787603616310
 GameObject:
   m_ObjectHideFlags: 0
