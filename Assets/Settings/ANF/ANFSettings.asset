@@ -50,6 +50,9 @@ MonoBehaviour:
   - id: screenSettings
     data:
       rid: 3493723991565926477
+  - id: settings
+    data:
+      rid: 3436800145698848844
   anslSourceFolder: Assets/ANSL/
   anslDestinationFolder: Story/
   anslVSCodeSnippetsPath: .vscode/
@@ -125,6 +128,9 @@ MonoBehaviour:
         cacheAudioClips: 1
         pathToAudioResources: Audio/
         mixer: {fileID: 24100000, guid: 3551b16b330043746990206565e1fa27, type: 2}
+    - rid: 3436800145698848844
+      type: {class: SettingsContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
+      data: 
     - rid: 3493723787287330932
       type: {class: QuestInfosContainer, ns: ANF.Persistent, asm: Assembly-CSharp}
       data: 
