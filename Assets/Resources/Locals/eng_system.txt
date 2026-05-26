@@ -59,6 +59,15 @@ SettingsMenu_Text_Sizes_3 = 20
 SettingsMenu_Text_Sizes_4 = 24
 SettingsMenu_Text_Sizes_5 = 26
 
+SettingsMenu_Game = Game
+
+SettingsMenu_Game_InteractionMode_HighlightType = Interaction highlight
+SettingsMenu_Game_InteractionMode_HighlightType_None = None
+SettingsMenu_Game_InteractionMode_HighlightType_Selected = Only Selected
+SettingsMenu_Game_InteractionMode_HighlightType_All = All
+SettingsMenu_Game_InteractionMode_HighlightColor = Interaction highlight color
+SettingsMenu_Game_InteractionMode_SelectionColor = Interaction selection color
+
 SettingsMenu_ColorPicker_H = H
 SettingsMenu_ColorPicker_S = S
 SettingsMenu_ColorPicker_V = V

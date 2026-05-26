@@ -925,6 +925,7 @@ MonoBehaviour:
   - {fileID: 1794370385720517845, guid: 39c4f2a194f704f49806ed7ee4b9640c, type: 3}
   - {fileID: 473491550487651806, guid: d7c7ea4099e17b8498013e6d051dc312, type: 3}
   - {fileID: 7631552148434347104, guid: 3c99266aa4873af49a0dc3242dff6508, type: 3}
+  - {fileID: 702902006624206173, guid: 597a0963a05464e45bf6b3f7f8a39689, type: 3}
   colorPicker: {fileID: 3584449837077450068}
   prefabToggleToggle: {fileID: 5493446886807369921, guid: 22f20b1273d316d47b1d1f84868bff1f, type: 3}
   prefabToggleSlider: {fileID: 3795005142811798980, guid: b635ceb6f8f368d4aba728f75409e5e7, type: 3}

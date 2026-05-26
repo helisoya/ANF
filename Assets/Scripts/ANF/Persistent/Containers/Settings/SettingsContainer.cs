@@ -241,7 +241,7 @@ namespace ANF.Persistent
                     if (drawJSON.ContainsKey("sliderMaxValue"))
                         parameters.sliderMaxValue = drawJSON.GetFloat("sliderMaxValue");
                     if (drawJSON.ContainsKey("dropdownLabels"))
-                        parameters.dropdownLabels = new List<string>(drawJSON.GetJArray("dropdownLabels").AsStringArray());
+                        parameters.dropdownLabels = drawJSON.GetJArray("dropdownLabels").AsStringArray();
 
                     value.drawParameters = parameters;
 
@@ -273,7 +273,7 @@ namespace ANF.Persistent
         /// <summary>
         /// Represents a settings object's data
         /// </summary>
-        public struct SettingsObjectData
+        public class SettingsObjectData
         {
             public UnityEvent<object> onValueChange;
             public SettingsDataType type;
@@ -287,10 +287,10 @@ namespace ANF.Persistent
         public struct SettingsObjectDrawParameters
         {
             public string label;
-            public List<string> dropdownLabels;
+            public string[] dropdownLabels;
             public float sliderMinValue;
             public float sliderMaxValue;
-            public SettingsObjectDrawParameters(string label, List<string> dropdownLabels = null,
+            public SettingsObjectDrawParameters(string label, string[] dropdownLabels = null,
                 float sliderMinValue = 0, float sliderMaxValue = 1)
             {
                 this.label = label;

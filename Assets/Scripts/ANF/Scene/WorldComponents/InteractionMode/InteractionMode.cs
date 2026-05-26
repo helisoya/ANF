@@ -284,8 +284,72 @@ namespace ANF.Scene
             }
         }
 
+        public void OnHighlightTypeChange(object value)
+        {
+            highlightType = (HighlightType)value;
+
+            if (inInteractionMode)
+            {
+                for (int i = 0; i < currentInteractionObjects.Count; i++)
+                {
+                    currentInteractionObjects[i].SetHighlightAlpha(highlightType == HighlightType.All || 
+                        (highlightType == HighlightType.OnlySelected && i == currentIndex) ? 1 : 0);
+                }
+            }
+        }
+
+        public void OnHighlightColorChange(object value)
+        {
+            baseColor = (Color)value;
+
+            if(inInteractionMode && highlightType != HighlightType.None)
+            {
+                for(int i = 0; i < currentInteractionObjects.Count;i++)
+                {
+                    if (i != currentIndex)
+                        currentInteractionObjects[i].SetHighlightColor(baseColor);
+                }
+            }
+        }
+
+        public void OnSelectedColorChange(object value)
+        {
+            selectedColor = (Color)value;
+
+
+            if (inInteractionMode && highlightType != HighlightType.None)
+            {
+                currentInteractionObjects[currentIndex].SetHighlightColor(selectedColor);
+            }
+        }
+
         public override void OnInitialize()
         {
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
+            {
+                highlightType = (HighlightType)settings.RegisterOrCreate("InteractionMode_HighlightType",
+                    (int)highlightType,
+                    SettingsContainer.SettingsDataType.Int,
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightType",
+                        new string[]{
+                            "SettingsMenu_Game_InteractionMode_HighlightType_None",
+                            "SettingsMenu_Game_InteractionMode_HighlightType_Selected",
+                            "SettingsMenu_Game_InteractionMode_HighlightType_All"
+                        }),
+                    OnHighlightTypeChange);
+
+                baseColor = (Color)settings.RegisterOrCreate("InteractionMode_HighlightColor",
+                    baseColor,
+                    SettingsContainer.SettingsDataType.Color,
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightColor"),
+                    OnHighlightColorChange);
+
+                selectedColor = (Color)settings.RegisterOrCreate("InteractionMode_SelectedColor",
+                    selectedColor,
+                    SettingsContainer.SettingsDataType.Color,
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_SelectionColor"),
+                    OnSelectedColorChange);
+            }
         }
 
         public override void OnStart()
@@ -454,6 +518,13 @@ namespace ANF.Scene
             if (currentIcon && inInteractionMode)
                 currentIcon.gameObject.SetActive(false);
             OnUnRegisterInputs();
+
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
+            {
+                settings.Unregister("InteractionMode_HighlightType", OnHighlightTypeChange);
+                settings.Unregister("InteractionMode_HighlightColor", OnHighlightColorChange);
+                settings.Unregister("InteractionMode_SelectedColor", OnSelectedColorChange);
+            }
         }
 
         /// <summary>

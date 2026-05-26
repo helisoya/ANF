@@ -129,6 +129,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 38fd9c7c7d4aa564583362fa11ed3278, type: 3}
   objectRenderers:
   - {fileID: 409530101141209408}
+  interactionCollider: {fileID: 4847738675139090366}
 --- !u!1 &4456264178351418994
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +350,7 @@ MonoBehaviour:
   icon: {fileID: 2800000, guid: 34b3ce022b8c98540ae69d05679eea3a, type: 3}
   objectRenderers:
   - {fileID: 2402489601902660205}
+  interactionCollider: {fileID: 3010924189945115170}
 --- !u!1 &7132294023933413831
 GameObject:
   m_ObjectHideFlags: 0
