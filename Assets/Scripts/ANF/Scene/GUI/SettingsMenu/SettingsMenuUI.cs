@@ -38,10 +38,13 @@ namespace ANF.GUI
         [SerializeField] private SettingsEntryUIColorPicker prefabToggleColorPicker;
 
         private Persistent.AudioManager audioManager;
-        private Selectable lastObject = null;
+        private List<Selectable> objects;
+        private GameObject lastSelectedObject;
+        private bool selectFirstObject;
 
         public override void OnInitialize()
         {
+            objects = new List<Selectable>();
             bgTransform.anchoredPosition = new Vector2(bgTransform.sizeDelta.x / 2f, 0);
         }
 
@@ -52,18 +55,42 @@ namespace ANF.GUI
 
         public override void OnUpdate()
         {
+            if (selectFirstObject)
+            {
+                selectFirstObject = false;
+                if (objects.Count != 0)
+                    EventSystem.current.SetSelectedGameObject(objects[0].gameObject);
+            }
+
+            if (EventSystem.current.currentSelectedGameObject && lastSelectedObject != EventSystem.current.currentSelectedGameObject)
+            {
+                lastSelectedObject = EventSystem.current.currentSelectedGameObject;
+                Selectable selectable = lastSelectedObject.GetComponent<Selectable>();
+
+                if (selectable != null)
+                {
+                    int index = objects.IndexOf(selectable);
+
+                    if (index != -1)
+                    {
+                        scrollbar.value = 1.0f - (float)index / (objects.Count - 1);
+                    }
+                }
+            }
         }
 
 
         public override void OnEnabled()
         {
-            lastObject = null;
+            objects.Clear();
+
+            selectFirstObject = true;
 
             foreach (Transform child in tabsRoot)
                 Destroy(child.gameObject);
 
             tabs = new SettingsTabUI[tabsPrefabs.Length];
-            for(int i = 0; i < tabsPrefabs.Length; i++)
+            for (int i = 0; i < tabsPrefabs.Length; i++)
             {
                 tabs[i] = Instantiate(tabsPrefabs[i], tabsRoot);
                 tabs[i].Initialize(this, manager);
@@ -200,7 +227,7 @@ namespace ANF.GUI
         /// <returns>The dropdown</returns>
         public TMP_Dropdown CreateDropdown(string labelKey, RectTransform root)
         {
-            return CreateEntryInstance(labelKey,root,prefabToggleDropdown);
+            return CreateEntryInstance(labelKey, root, prefabToggleDropdown);
         }
 
         /// <summary>
@@ -216,17 +243,14 @@ namespace ANF.GUI
             SettingsEntryUI<T> instance = Instantiate(prefab, root);
             instance.SetLabel(labelKey);
 
-            if (lastObject == null)
+            if (objects.Count != 0)
             {
-                EventSystem.current.SetSelectedGameObject(instance.GetItem().gameObject);
-            }
-            else
-            {
+                Selectable lastObject = objects[objects.Count - 1];
                 Navigation navigationTop = new Navigation()
                 {
                     mode = Navigation.Mode.Explicit,
                     wrapAround = true,
-                    selectOnDown = instance.GetItem(), 
+                    selectOnDown = instance.GetItem(),
                     selectOnUp = lastObject.navigation.selectOnUp
                 };
 
@@ -240,10 +264,10 @@ namespace ANF.GUI
 
                 lastObject.navigation = navigationTop;
                 instance.GetItem().navigation = navigationDown;
-
             }
-               
-            lastObject = instance.GetItem();
+
+            objects.Add(instance.GetItem());
+
 
             return instance.GetItem();
         }

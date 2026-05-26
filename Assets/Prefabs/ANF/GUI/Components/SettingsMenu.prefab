@@ -1261,7 +1261,6 @@ GameObject:
   - component: {fileID: 7522952599135753043}
   - component: {fileID: 7069140908261226175}
   - component: {fileID: 2270440828577987919}
-  - component: {fileID: 3300644159216673412}
   m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
@@ -1358,19 +1357,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3300644159216673412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5580111554138756734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2504f80f180855248acf2d7df7685d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ANF.Utils.ScrollRectAutoScroll
-  navigateAction: {fileID: -8784545083839296357, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &5756941531344870732
 GameObject:
   m_ObjectHideFlags: 0

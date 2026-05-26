@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using UnityEngine.UI;
 
 namespace ANF.Scene
@@ -247,7 +248,6 @@ namespace ANF.Scene
                 obj.SetHighlightAlpha(0);
             }
 
-
             if (currentIcon)
                 GameObject.Destroy(currentIcon.gameObject);
 
@@ -292,7 +292,7 @@ namespace ANF.Scene
             {
                 for (int i = 0; i < currentInteractionObjects.Count; i++)
                 {
-                    currentInteractionObjects[i].SetHighlightAlpha(highlightType == HighlightType.All || 
+                    currentInteractionObjects[i].SetHighlightAlpha(highlightType == HighlightType.All ||
                         (highlightType == HighlightType.OnlySelected && i == currentIndex) ? 1 : 0);
                 }
             }
@@ -302,9 +302,9 @@ namespace ANF.Scene
         {
             baseColor = (Color)value;
 
-            if(inInteractionMode && highlightType != HighlightType.None)
+            if (inInteractionMode && highlightType != HighlightType.None)
             {
-                for(int i = 0; i < currentInteractionObjects.Count;i++)
+                for (int i = 0; i < currentInteractionObjects.Count; i++)
                 {
                     if (i != currentIndex)
                         currentInteractionObjects[i].SetHighlightColor(baseColor);
@@ -412,7 +412,8 @@ namespace ANF.Scene
                 }
                 else
                 {
-                    currentIcon.gameObject.SetActive(true);
+                    if (currentIcon)
+                        currentIcon.gameObject.SetActive(true);
                 }
 
                 canTryMouseClick = false;
