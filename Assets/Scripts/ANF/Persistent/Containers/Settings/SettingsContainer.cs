@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Leguar.TotalJSON;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance;
@@ -49,10 +50,12 @@ namespace ANF.Persistent
         /// </summary>
         /// <param name="key">The value's key</param>
         /// <param name="defaultValue">The default value if the key wasn't found</param>
-        /// <param name="type">The </param>
+        /// <param name="type">The value's type</param>
+        /// <param name="drawParameters">The draw parameters for this value (if created)</param>
         /// <param name="onValueChange">The callback when a value changed</param>
         /// <returns>The current value</returns>
-        public object RegisterOrCreate(string key, object defaultValue, SettingsDataType type, UnityAction<object> onValueChange)
+        public object RegisterOrCreate(string key, object defaultValue, SettingsDataType type
+        , SettingsObjectDrawParameters drawParameters, UnityAction<object> onValueChange)
         {
             if (!TypeGood(defaultValue, type))
                 return default;
@@ -63,6 +66,7 @@ namespace ANF.Persistent
                 value.onValueChange = new UnityEvent<object>();
                 value.value = defaultValue;
                 value.type = type;
+                value.drawParameters = drawParameters;
                 savedObjects.Add(key, value);
             }
             else if (!TypeGood(value.value, type))
@@ -173,7 +177,7 @@ namespace ANF.Persistent
             foreach (string key in json.Keys)
             {
                 JSON valueJSON = json.GetJSON(key);
-                if (valueJSON.ContainsKey("type") && valueJSON.ContainsKey("value"))
+                if (valueJSON.ContainsKey("type") && valueJSON.ContainsKey("value") && valueJSON.ContainsKey("drawParameters"))
                 {
                     SettingsObjectData value = new SettingsObjectData();
                     value.onValueChange = new UnityEvent<object>();
@@ -226,6 +230,21 @@ namespace ANF.Persistent
                                 break;
                             }
                     }
+
+                    JSON drawJSON = valueJSON.GetJSON("drawParameters");
+
+                    SettingsObjectDrawParameters parameters = new SettingsObjectDrawParameters();
+                    if (drawJSON.ContainsKey("label"))
+                        parameters.label = drawJSON.GetString("label");
+                    if (drawJSON.ContainsKey("sliderMinValue"))
+                        parameters.sliderMinValue = drawJSON.GetFloat("sliderMinValue");
+                    if (drawJSON.ContainsKey("sliderMaxValue"))
+                        parameters.sliderMaxValue = drawJSON.GetFloat("sliderMaxValue");
+                    if (drawJSON.ContainsKey("dropdownLabels"))
+                        parameters.dropdownLabels = new List<string>(drawJSON.GetJArray("dropdownLabels").AsStringArray());
+
+                    value.drawParameters = parameters;
+
                     savedObjects.Add(key, value);
                 }
 
@@ -239,6 +258,14 @@ namespace ANF.Persistent
                 JSON valueJSON = new JSON();
                 valueJSON.Add("value", savedObjects[key].value);
                 valueJSON.Add("type", (int)savedObjects[key].type);
+                JSON drawJSON = new JSON();
+                drawJSON.Add("label", savedObjects[key].drawParameters.label);
+                drawJSON.Add("sliderMinValue", savedObjects[key].drawParameters.sliderMinValue);
+                drawJSON.Add("sliderMaxValue", savedObjects[key].drawParameters.sliderMaxValue);
+                if (savedObjects[key].drawParameters.dropdownLabels != null)
+                    drawJSON.Add("dropdownLabels", savedObjects[key].drawParameters.dropdownLabels.ToArray());
+                valueJSON.Add("drawParameters", drawJSON);
+
                 json.Add(key, valueJSON);
             }
         }
@@ -251,6 +278,26 @@ namespace ANF.Persistent
             public UnityEvent<object> onValueChange;
             public SettingsDataType type;
             public object value;
+            public SettingsObjectDrawParameters drawParameters;
+        }
+
+        /// <summary>
+		/// Represents a setting's object draw parameters
+		/// </summary>
+        public struct SettingsObjectDrawParameters
+        {
+            public string label;
+            public List<string> dropdownLabels;
+            public float sliderMinValue;
+            public float sliderMaxValue;
+            public SettingsObjectDrawParameters(string label, List<string> dropdownLabels = null,
+                float sliderMinValue = 0, float sliderMaxValue = 1)
+            {
+                this.label = label;
+                this.dropdownLabels = dropdownLabels;
+                this.sliderMaxValue = sliderMaxValue;
+                this.sliderMinValue = sliderMinValue;
+            }
         }
     }
 }
