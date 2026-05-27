@@ -210,4 +210,16 @@ namespace ANF.GUI
             manager.ChangeScene(PersistentDataManager.instance.GetANFSettings().mainMenuScene);
         }
     }
+
+    /// <summary>
+    /// Subclass for the Quit Game button
+    /// </summary>
+    [System.Serializable]
+    public class PauseMenuButtonDataQuitGame : PauseMenuButtonData
+    {
+        public override void OnClick(PauseMenuUI pauseMenu, ANFManager manager)
+        {
+            Application.Quit();
+        }
+    }
 }

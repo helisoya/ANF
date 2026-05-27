@@ -12,6 +12,8 @@ namespace ANF.Scene
     [System.Serializable]
     public class StateLoader : WorldComponent
     {
+        [SerializeField] private string fadeAllName = "fadeAll";
+
 #if UNITY_EDITOR
         [Header("Debug Mode")]
         [SerializeField] private bool startInDebugMode;
@@ -27,6 +29,7 @@ namespace ANF.Scene
             {
                 canBeSaved = canBeSaved,
                 enabledByDefault = enabledByDefault,
+                fadeAllName = fadeAllName,
 #if UNITY_EDITOR
                 startInDebugMode = startInDebugMode,
                 debugModeScript = debugModeScript,
@@ -55,6 +58,13 @@ namespace ANF.Scene
                 }
                 else
                 {
+                    if (manager.GetGUIManager().GetComponent<GUI.Fade>(fadeAllName, out GUI.Fade fade))
+                    {
+                        fade.FadeAlphaTo(1, true);
+                        fade.FadeAlphaTo(0, false, 1f);
+                    }
+
+
 #if UNITY_EDITOR
                     if (autoLoadSaveFile)
                     {
@@ -70,7 +80,6 @@ namespace ANF.Scene
                         return;
                     }
 #endif
-
                     if (anslManager != null)
                         anslManager.StartNewContext(container.GetScriptToLoad());
                 }

@@ -19,8 +19,11 @@ namespace ANF.GUI
     {
         [Header("Base UI")]
         [SerializeField] private string[] guiComponentsToPause = { "fadeBg", "fadeFg", "dialog" };
+        [Tooltip("True to use the pause menu as a main menu (Enabled by default and cannot be closed")]
+        [SerializeField] private bool mainMenuMode = false;
         [SerializeField] private float transitionDuration = 0.5f;
         [SerializeField] private RectTransform buttonsRoot;
+        [SerializeField] private RectTransform bgRoot;
 
         [Header("Buttons")]
         [SerializeReference, SubclassSelector(AllowNull = false)] private PauseMenuButtonData[] buttonDatas;
@@ -37,7 +40,7 @@ namespace ANF.GUI
         public override void OnInitialize()
         {
             currentPauseSubmenu = null;
-            buttonsRoot.anchoredPosition = new Vector2(-buttonsRoot.sizeDelta.x / 2f, 0);
+            bgRoot.anchoredPosition = new Vector2(-bgRoot.sizeDelta.x / 2f, 0);
 
             buttons = new PauseMenuButton[buttonDatas.Length];
             for (int i = 0; i < buttonDatas.Length; i++)
@@ -51,6 +54,11 @@ namespace ANF.GUI
         {
             PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed += OnPauseInput;
+
+            if (mainMenuMode)
+            {
+                SetEnabled(true);
+            }
         }
 
         public override void OnUpdate()
@@ -74,8 +82,8 @@ namespace ANF.GUI
             if (currentPauseSubmenu != null)
                 ChangeSubMenu(null);
 
-            float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
-            buttonsRoot.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
+            float halfSizeButtonsRoot = bgRoot.sizeDelta.x / 2f;
+            bgRoot.DOAnchorPosX(-halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
             gui.SetComponentsPaused(guiComponentsToPause, false);
             manager.GetWorld().SetPausedAll(false);
@@ -93,8 +101,8 @@ namespace ANF.GUI
             currentButtonInputSide = 0;
             cooldownToNextButtonIncrement = 0;
 
-            float halfSizeButtonsRoot = buttonsRoot.sizeDelta.x / 2f;
-            buttonsRoot.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
+            float halfSizeButtonsRoot = bgRoot.sizeDelta.x / 2f;
+            bgRoot.DOAnchorPosX(halfSizeButtonsRoot, transitionDuration).SetEase(Ease.OutQuad);
 
             gui.SetComponentsPaused(guiComponentsToPause, true);
             manager.GetWorld().SetPausedAll(true);
@@ -143,7 +151,7 @@ namespace ANF.GUI
 
         private void OnPauseInput(InputAction.CallbackContext context)
         {
-            if (currentPauseSubmenu == null && context.ReadValueAsButton())
+            if (currentPauseSubmenu == null && context.ReadValueAsButton() && !mainMenuMode)
             {
                 if (audioManager != null)
                 {

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ANFSettings
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Persistent.ANFSettings
   startingScript: ANF/Tests/If2
-  mainMenuScene: 
-  gameScene: ANFTest
+  mainMenuScene: ANFMainMenu
+  gameScene: ANFGame
   saveFolder: Saves/
   saveSlotsAmount: 11
   generalDataPath: General/
