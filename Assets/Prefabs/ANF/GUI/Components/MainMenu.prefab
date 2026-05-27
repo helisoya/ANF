@@ -283,6 +283,7 @@ MonoBehaviour:
   buttonsRoot: {fileID: 2752175258711624528}
   bgRoot: {fileID: 5197445996823678283}
   buttonDatas:
+  - rid: 3436800196703420493
   - rid: 1438066124900532299
   - rid: 1438066124900532300
   - rid: 3493724107434098823
@@ -300,6 +301,11 @@ MonoBehaviour:
       data:
         iconSprite: {fileID: -258718329, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
         labelKey: PauseMenu_Options
+    - rid: 3436800196703420493
+      type: {class: PauseMenuButtonDataNewGame, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        iconSprite: {fileID: -795715281, guid: 454ac537d39c71c42819f7faf396c469, type: 3}
+        labelKey: PauseMenu_NewGame
     - rid: 3493724107434098823
       type: {class: PauseMenuButtonDataQuitGame, ns: ANF.GUI, asm: Assembly-CSharp}
       data:

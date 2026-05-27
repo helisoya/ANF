@@ -27,5 +27,16 @@ namespace ANF.Persistent
                 container.Initialize(settings);
             }
         }
+
+        /// <summary>
+		/// Resets all components
+		/// </summary>
+        public void ResetAll()
+        {
+            foreach (DataContainer container in components.Values)
+            {
+                container.Reset();
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ PauseMenu_Quests = Quests
 PauseMenu_Logs = Logs
 PauseMenu_Options = Settings
 PauseMenu_MainMenu = Main Menu
+PauseMenu_NewGame = New Game
 PauseMenu_Quit = Quit
 
 SaveMenu_Title_Save = Select a slot to save to
@@ -77,6 +78,10 @@ SettingsMenu_ColorPicker_Confirm = Confirm
 SettingsMenu_ColorPicker_Cancel = Cancel
 
 SettingsMenu_Reset = Reset
+
+NewGameMenu_Title = New Game
+NewGameMenu_Desc = Enter your name
+NewGameMenu_Confirm = Confirm
 
 GeneralMenu_Unknown = ???
 
