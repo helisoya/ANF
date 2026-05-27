@@ -1,13 +1,14 @@
+using ANF.Persistent;
+using AYellowpaper.SerializedCollections;
+using Leguar.TotalJSON;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
-using ANF.Persistent;
-using AYellowpaper.SerializedCollections;
-using Leguar.TotalJSON;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace ANF.Locals
 {
@@ -351,37 +352,41 @@ namespace ANF.Locals
 
 		public void Initialize(ANFSettings settings)
 		{
-			Reset();
-		}
+            onChangeLocal = new UnityEvent();
 
-		public void Reset()
-		{
-			onChangeLocal = new UnityEvent();
-
-			Array values = Enum.GetValues(typeof(Channel));
-			channels = new LocalChannel[values.Length];
+            Array values = Enum.GetValues(typeof(Channel));
+            channels = new LocalChannel[values.Length];
 
 			for (int i = 0; i < values.Length; i++)
 			{
 				channels[i] = new LocalChannel();
-				channels[i].data = new LocalChannelData()
-				{
-					fontIndex = staticData.defaultData.Length > i ? staticData.defaultData[i].fontIndex : 0,
-					sizeIndex = staticData.defaultData.Length > i ? staticData.defaultData[i].sizeIndex : 0,
-					color = staticData.defaultData.Length > i ? staticData.defaultData[i].color : Color.black
-				};
+				channels[i].data = new LocalChannelData();
 				channels[i].onChangeColor = new UnityEvent<Color>();
 				channels[i].onChangeFont = new UnityEvent<TMP_FontAsset>();
 
 				channels[i].onChangeSize = new UnityEvent<int>[Enum.GetValues(typeof(TextType)).Length];
-				for(int j = 0; j < channels[i].onChangeSize.Length;j++)
+				for (int j = 0; j < channels[i].onChangeSize.Length; j++)
 				{
 					channels[i].onChangeSize[j] = new UnityEvent<int>();
-                }
+				}
 			}
 
-			currentLanguage = null;
-			locals = new Dictionary<string, string>();
+            currentLanguage = null;
+            locals = new Dictionary<string, string>();
+
+            Reset();
+		}
+
+		public void Reset()
+		{
+			Array values = Enum.GetValues(typeof(Channel));
+
+			for (int i = 0; i < values.Length; i++)
+			{
+				ChangeColor((Channel)i, staticData.defaultData.Length > i ? staticData.defaultData[i].color : Color.black);
+				ChangeFont((Channel)i, staticData.defaultData.Length > i ? staticData.defaultData[i].fontIndex : 0);
+                ChangeSize((Channel)i, staticData.defaultData.Length > i ? staticData.defaultData[i].sizeIndex : 0);
+			}
 			ChangeLanguage(staticData.defaultLanguage);
 		}
 

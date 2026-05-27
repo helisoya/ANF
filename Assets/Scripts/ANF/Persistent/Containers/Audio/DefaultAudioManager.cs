@@ -35,6 +35,11 @@ namespace ANF.Persistent
         private string currentMusic;
         private float currentMusicVolume;
 
+        private float defaultMusicVolume;
+        private float defaultSFXVolume;
+        private float defaultAmbientVolume;
+        private float defaultVoiceVolume;
+
         public override DataContainer CloneContainer()
         {
             return new DefaultAudioManager()
@@ -61,6 +66,11 @@ namespace ANF.Persistent
                     new()
                 };
             }
+
+            defaultMusicVolume = musicVolume;
+            defaultSFXVolume = sfxVolume;
+            defaultAmbientVolume = ambientVolume;
+            defaultVoiceVolume = voiceVolume;
 
             currentAmbient = null;
             currentMusic = null;
@@ -139,7 +149,10 @@ namespace ANF.Persistent
 
         public override void Reset()
         {
-
+            SetAmbientVolume(defaultAmbientVolume);
+            SetVoiceVolume(defaultVoiceVolume);
+            SetSfxVolume(defaultSFXVolume);
+            SetMusicVolume(defaultMusicVolume);
         }
 
         public override void PlayAmbient(string ambientName, float baseVolume)

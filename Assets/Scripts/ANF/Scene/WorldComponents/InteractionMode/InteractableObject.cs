@@ -60,6 +60,26 @@ namespace ANF.Scene
                 }
             }
         }
+        
+        /// <summary>
+        /// Sets the renderer's highlight strength
+        /// </summary>
+        /// <param name="strength">The new strength</param>
+        public void SetHighlightStrength(float strength)
+        {
+            if (hidden) return;
+
+            foreach (Renderer renderer in objectRenderers)
+            {
+                foreach (Material material in renderer.materials)
+                {
+                    if (material.HasFloat("_HighlightStrength"))
+                    {
+                        material.SetFloat("_HighlightStrength", strength);
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Changes the renderer's highlight color

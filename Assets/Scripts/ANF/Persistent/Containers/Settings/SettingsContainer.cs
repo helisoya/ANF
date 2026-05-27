@@ -1,13 +1,15 @@
+using ANF.Utils;
+using Leguar.TotalJSON;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Leguar.TotalJSON;
-using NUnit.Framework;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace ANF.Persistent
 {
@@ -65,6 +67,7 @@ namespace ANF.Persistent
                 value = new SettingsObjectData();
                 value.onValueChange = new UnityEvent<object>();
                 value.value = defaultValue;
+                value.defaultValue = defaultValue;
                 value.type = type;
                 value.drawParameters = drawParameters;
                 savedObjects.Add(key, value);
@@ -106,8 +109,7 @@ namespace ANF.Persistent
             if (savedObjects.TryGetValue(key, out SettingsObjectData obj) &&
                 TypeGood(obj.value, type) && TypeGood(value, type))
             {
-                obj.value = value;
-                obj.onValueChange.Invoke(obj.value);
+                obj.SetValue(value);
             }
         }
 
@@ -168,7 +170,8 @@ namespace ANF.Persistent
 
         public void Reset()
         {
-            savedObjects.Clear();
+            foreach (SettingsObjectData data in savedObjects.Values)
+                data.ResetValue();
         }
 
         public void Load(JSON json)
@@ -180,71 +183,7 @@ namespace ANF.Persistent
                 if (valueJSON.ContainsKey("type") && valueJSON.ContainsKey("value") && valueJSON.ContainsKey("drawParameters"))
                 {
                     SettingsObjectData value = new SettingsObjectData();
-                    value.onValueChange = new UnityEvent<object>();
-                    value.type = (SettingsDataType)valueJSON.GetInt("type");
-                    switch (value.type)
-                    {
-                        case SettingsDataType.Bool:
-                            {
-                                value.value = valueJSON.GetBool("value");
-                                break;
-                            }
-                        case SettingsDataType.String:
-                            {
-                                value.value = valueJSON.GetString("value");
-                                break;
-                            }
-                        case SettingsDataType.Int:
-                            {
-                                value.value = valueJSON.GetInt("value");
-                                break;
-                            }
-                        case SettingsDataType.UInt:
-                            {
-                                value.value = valueJSON.GetJNumber("value").AsUInt();
-                                break;
-                            }
-                        case SettingsDataType.Float:
-                            {
-                                value.value = valueJSON.GetFloat("value");
-                                break;
-                            }
-                        case SettingsDataType.Color:
-                            {
-                                value.value = valueJSON.GetJArray("value").AsColor();
-                                break;
-                            }
-                        case SettingsDataType.Vector2:
-                            {
-                                value.value = valueJSON.GetJArray("value").AsVector2();
-                                break;
-                            }
-                        case SettingsDataType.Vector3:
-                            {
-                                value.value = valueJSON.GetJArray("value").AsVector3();
-                                break;
-                            }
-                        case SettingsDataType.Vector4:
-                            {
-                                value.value = valueJSON.GetJArray("value").AsVector4();
-                                break;
-                            }
-                    }
-
-                    JSON drawJSON = valueJSON.GetJSON("drawParameters");
-
-                    SettingsObjectDrawParameters parameters = new SettingsObjectDrawParameters();
-                    if (drawJSON.ContainsKey("label"))
-                        parameters.label = drawJSON.GetString("label");
-                    if (drawJSON.ContainsKey("sliderMinValue"))
-                        parameters.sliderMinValue = drawJSON.GetFloat("sliderMinValue");
-                    if (drawJSON.ContainsKey("sliderMaxValue"))
-                        parameters.sliderMaxValue = drawJSON.GetFloat("sliderMaxValue");
-                    if (drawJSON.ContainsKey("dropdownLabels"))
-                        parameters.dropdownLabels = drawJSON.GetJArray("dropdownLabels").AsStringArray();
-
-                    value.drawParameters = parameters;
-
+                    value.Load(valueJSON);
                     savedObjects.Add(key, value);
                 }
 
@@ -256,16 +195,7 @@ namespace ANF.Persistent
             foreach (string key in savedObjects.Keys)
             {
                 JSON valueJSON = new JSON();
-                valueJSON.Add("value", savedObjects[key].value);
-                valueJSON.Add("type", (int)savedObjects[key].type);
-                JSON drawJSON = new JSON();
-                drawJSON.Add("label", savedObjects[key].drawParameters.label);
-                drawJSON.Add("sliderMinValue", savedObjects[key].drawParameters.sliderMinValue);
-                drawJSON.Add("sliderMaxValue", savedObjects[key].drawParameters.sliderMaxValue);
-                if (savedObjects[key].drawParameters.dropdownLabels != null)
-                    drawJSON.Add("dropdownLabels", savedObjects[key].drawParameters.dropdownLabels.ToArray());
-                valueJSON.Add("drawParameters", drawJSON);
-
+                savedObjects[key].Save(valueJSON);
                 json.Add(key, valueJSON);
             }
         }
@@ -273,12 +203,120 @@ namespace ANF.Persistent
         /// <summary>
         /// Represents a settings object's data
         /// </summary>
-        public class SettingsObjectData
+        public class SettingsObjectData : Jsonable
         {
             public UnityEvent<object> onValueChange;
             public SettingsDataType type;
             public object value;
+            public object defaultValue;
             public SettingsObjectDrawParameters drawParameters;
+
+            public void SetValue(object newValue)
+            {
+                value = newValue;
+                onValueChange.Invoke(newValue);
+            }
+
+            /// <summary>
+            /// Resets the object's value
+            /// </summary>
+            public void ResetValue()
+            {
+                value = defaultValue;
+                onValueChange.Invoke(value);
+            }
+
+            public void Save(JSON json)
+            {
+                json.Add("value", value);
+                json.Add("defaultValue", defaultValue);
+                json.Add("type", (int)type);
+                JSON drawJSON = new JSON();
+                drawJSON.Add("label", drawParameters.label);
+                drawJSON.Add("sliderMinValue", drawParameters.sliderMinValue);
+                drawJSON.Add("sliderMaxValue", drawParameters.sliderMaxValue);
+                if (drawParameters.dropdownLabels != null)
+                    drawJSON.Add("dropdownLabels", drawParameters.dropdownLabels.ToArray());
+                json.Add("drawParameters", drawJSON);
+            }
+
+            public void Load(JSON json)
+            {
+                if (!json.ContainsKey("type") || !json.ContainsKey("value") || !json.ContainsKey("drawParameters") || !json.ContainsKey("defaultValue"))
+                    return;
+
+                onValueChange = new UnityEvent<object>();
+                type = (SettingsDataType)json.GetInt("type");
+                switch (type)
+                {
+                    case SettingsDataType.Bool:
+                        {
+                            defaultValue = json.GetBool("defaultValue");
+                            value = json.GetBool("value");
+                            break;
+                        }
+                    case SettingsDataType.String:
+                        {
+                            defaultValue = json.GetString("defaultValue");
+                            value = json.GetString("value");
+                            break;
+                        }
+                    case SettingsDataType.Int:
+                        {
+                            defaultValue = json.GetInt("defaultValue");
+                            value = json.GetInt("value");
+                            break;
+                        }
+                    case SettingsDataType.UInt:
+                        {
+                            defaultValue = json.GetJNumber("defaultValue").AsUInt();
+                            value = json.GetJNumber("value").AsUInt();
+                            break;
+                        }
+                    case SettingsDataType.Float:
+                        {
+                            defaultValue = json.GetFloat("defaultValue");
+                            value = json.GetFloat("value");
+                            break;
+                        }
+                    case SettingsDataType.Color:
+                        {
+                            defaultValue = json.GetJArray("defaultValue").AsColor();
+                            value = json.GetJArray("value").AsColor();
+                            break;
+                        }
+                    case SettingsDataType.Vector2:
+                        {
+                            defaultValue = json.GetJArray("defaultValue").AsVector2();
+                            value = json.GetJArray("value").AsVector2();
+                            break;
+                        }
+                    case SettingsDataType.Vector3:
+                        {
+                            defaultValue = json.GetJArray("defaultValue").AsVector3();
+                            value = json.GetJArray("value").AsVector3();
+                            break;
+                        }
+                    case SettingsDataType.Vector4:
+                        {
+                            defaultValue = json.GetJArray("defaultValue").AsVector4();
+                            value = json.GetJArray("value").AsVector4();
+                            break;
+                        }
+                }
+
+                JSON drawJSON = json.GetJSON("drawParameters");
+
+                drawParameters = new SettingsObjectDrawParameters();
+                if (drawJSON.ContainsKey("label"))
+                    drawParameters.label = drawJSON.GetString("label");
+                if (drawJSON.ContainsKey("sliderMinValue"))
+                    drawParameters.sliderMinValue = drawJSON.GetFloat("sliderMinValue");
+                if (drawJSON.ContainsKey("sliderMaxValue"))
+                    drawParameters.sliderMaxValue = drawJSON.GetFloat("sliderMaxValue");
+                if (drawJSON.ContainsKey("dropdownLabels"))
+                    drawParameters.dropdownLabels = drawJSON.GetJArray("dropdownLabels").AsStringArray();
+            }
         }
 
         /// <summary>

@@ -8,7 +8,7 @@ namespace ANF.GUI
     /// <summary>
 	/// Handles audio / visual events for settings buttons
 	/// </summary>
-    public class SettingsEntryUIInputsButton : MonoBehaviour, ISelectHandler, ISubmitHandler, IDeselectHandler, IPointerEnterHandler
+    public class SettingsEntryUIInputsButton : MonoBehaviour, ISelectHandler, ISubmitHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public void OnDeselect(BaseEventData eventData)
         {
@@ -18,6 +18,11 @@ namespace ANF.GUI
         public void OnPointerEnter(PointerEventData eventData)
         {
             OnSelect(null);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            OnDeselect(null);
         }
 
         public void OnSelect(BaseEventData eventData)

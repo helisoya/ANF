@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static ANF.Locals.Locals;
 
 namespace ANF.GUI
 {
@@ -33,6 +34,7 @@ namespace ANF.GUI
         private TMP_Dropdown[] dropdownsFont;
         private TMP_Dropdown[] dropdownsSize;
         private Button[] buttonsColor;
+        private Button resetButton;
 
         public override string GetLabelKey()
         {
@@ -114,9 +116,44 @@ namespace ANF.GUI
                         }
                     }
                 }
+
+                resetButton = menu.CreateButton($"SettingsMenu_Reset", root);
+                resetButton.onClick.AddListener(() =>
+                {
+                    Reset();
+                });
             }
+        }
 
+        /// <summary>
+        /// Resets the parameters to their default values
+        /// </summary>
+        private void Reset()
+        {
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Locals.Locals locals))
+            {
+                locals.Reset();
 
+                RedrawLocalizedElements();
+
+                int channelCount = Enum.GetValues(typeof(Locals.Locals.Channel)).Length;
+
+                using (var it = Enumerable.Range(0, channelCount).GetEnumerator())
+                {
+                    while (it.MoveNext())
+                    {
+                        int value = it.Current;
+                        Locals.Locals.Channel channel = (Locals.Locals.Channel)value;
+
+                        if (channelsToShow.TryGetValue(channel, out bool shouldShow) && shouldShow)
+                        {
+                            dropdownsFont[value].SetValueWithoutNotify(locals.GetFontIndex(channel));
+                            dropdownsSize[value].SetValueWithoutNotify(locals.GetFontSizeIndex(channel));
+                            buttonsColor[value].GetComponent<Image>().color = locals.GetColor(channel);
+                        }
+                    }
+                }
+            }
         }
 
         public override void RedrawLocalizedElements()

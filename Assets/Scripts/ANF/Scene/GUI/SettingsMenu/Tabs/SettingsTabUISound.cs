@@ -1,7 +1,4 @@
 using ANF.Persistent;
-using System;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +16,7 @@ namespace ANF.GUI
         private Slider ambientSlider;
         private Slider sfxSlider;
         private Slider voiceSlider;
+        private Button resetButton;
 
         public override string GetLabelKey()
         {
@@ -66,7 +64,27 @@ namespace ANF.GUI
                 });
             }
 
+            resetButton = menu.CreateButton($"SettingsMenu_Reset", root);
+            resetButton.onClick.AddListener(() =>
+            {
+                Reset();
+            });
+        }
 
+        /// <summary>
+        /// Resets the parameters to their default value
+        /// </summary>
+        private void Reset()
+        {
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Persistent.AudioManager audioManager))
+            {
+                audioManager.Reset();
+
+                musicSlider.SetValueWithoutNotify(audioManager.GetMusicVolume());
+                ambientSlider.SetValueWithoutNotify(audioManager.GetAmbientVolume());
+                sfxSlider.SetValueWithoutNotify(audioManager.GetSfxVolume());
+                voiceSlider.SetValueWithoutNotify(audioManager.GetVoiceVolume());
+            }
         }
 
         public override void RedrawLocalizedElements()

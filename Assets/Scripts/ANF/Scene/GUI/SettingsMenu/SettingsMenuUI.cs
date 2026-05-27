@@ -31,21 +31,27 @@ namespace ANF.GUI
         private SettingsTabUI[] tabs;
 
         [Header("Components")]
+        [Tooltip("The UI/Navigate action used by controller and keyboard to use menus")]
+        [SerializeField] InputActionReference navigateAction;
         [SerializeField] private ColorPicker colorPicker;
         [SerializeField] private SettingsEntryUIToggle prefabToggleToggle;
         [SerializeField] private SettingsEntryUISlider prefabToggleSlider;
         [SerializeField] private SettingsEntryUIDropdown prefabToggleDropdown;
         [SerializeField] private SettingsEntryUIColorPicker prefabToggleColorPicker;
+        [SerializeField] private SettingsEntryUIButton prefabToggleButton;
 
         private Persistent.AudioManager audioManager;
         private List<Selectable> objects;
         private GameObject lastSelectedObject;
         private bool selectFirstObject;
 
+        private bool movingWithInput;
+
         public override void OnInitialize()
         {
             objects = new List<Selectable>();
             bgTransform.anchoredPosition = new Vector2(bgTransform.sizeDelta.x / 2f, 0);
+            movingWithInput = false;
         }
 
         public override void OnStart()
@@ -61,6 +67,12 @@ namespace ANF.GUI
                 if (objects.Count != 0)
                     EventSystem.current.SetSelectedGameObject(objects[0].gameObject);
             }
+
+            if (navigateAction.action.triggered)
+                movingWithInput = !movingWithInput;
+
+            if (!movingWithInput)
+                return;
 
             if (EventSystem.current.currentSelectedGameObject && lastSelectedObject != EventSystem.current.currentSelectedGameObject)
             {
@@ -217,6 +229,17 @@ namespace ANF.GUI
         public Button CreateColorPicker(string labelKey, RectTransform root)
         {
             return CreateEntryInstance(labelKey, root, prefabToggleColorPicker);
+        }
+
+        /// <summary>
+        /// Creates a new button in the settings menu
+        /// </summary>
+        /// <param name="labelKey">The button's label</param>
+        /// <param name="root">The button's root</param>
+        /// <returns>The button</returns>
+        public Button CreateButton(string labelKey, RectTransform root)
+        {
+            return CreateEntryInstance(labelKey, root, prefabToggleButton);
         }
 
         /// <summary>

@@ -37,6 +37,8 @@ namespace ANF.Scene
         [Header("Highlight")]
         [Tooltip("Full highlight means that every interactable object will glow. Otherwise, only the currently selected object will glow.")]
         [SerializeField] private HighlightType highlightType = HighlightType.All;
+        [Tooltip("0 means invisible highlight. 1 Means the highlight will replace the base model's color")]
+        [SerializeField] private float highlightStrength = 0.5f;
         [ColorUsage(true, true)][SerializeField] private Color baseColor;
         [ColorUsage(true, true)][SerializeField] private Color selectedColor;
 
@@ -193,24 +195,28 @@ namespace ANF.Scene
             canTryMouseClick = false;
             mousePosition = new Vector2(-1, -1);
 
-            if (!currentIcon)
-                currentIcon = GameObject.Instantiate(prefabIcon, manager.GetGUIManager().GetRoot());
-
             GenerateInteractionList();
 
             if (currentInteractionObjects.Count > 0)
             {
+                if (!currentIcon)
+                    currentIcon = GameObject.Instantiate(prefabIcon, manager.GetGUIManager().GetRoot());
+
                 inInteractionMode = true;
                 currentIndex = 0;
 
-                if (highlightType == HighlightType.All)
+                foreach (InteractableObject obj in currentInteractionObjects)
                 {
-                    foreach (InteractableObject obj in currentInteractionObjects)
+                    obj.SetHighlightStrength(highlightStrength);
+
+                    if (highlightType == HighlightType.All)
                     {
                         obj.SetHighlightAlpha(1);
                         obj.SetHighlightColor(baseColor);
                     }
                 }
+
+
 
                 if (highlightType != HighlightType.None)
                 {
@@ -298,6 +304,16 @@ namespace ANF.Scene
             }
         }
 
+        public void OnHighlightStrengthChange(object value)
+        {
+            highlightStrength = (float)value;
+
+            for (int i = 0; i < currentInteractionObjects.Count; i++)
+            {
+                currentInteractionObjects[i].SetHighlightStrength(highlightStrength);
+            }
+        }
+
         public void OnHighlightColorChange(object value)
         {
             baseColor = (Color)value;
@@ -337,6 +353,12 @@ namespace ANF.Scene
                             "SettingsMenu_Game_InteractionMode_HighlightType_All"
                         }),
                     OnHighlightTypeChange);
+
+                highlightStrength = (float)settings.RegisterOrCreate("InteractionMode_HighlightStrength",
+                    highlightStrength,
+                    SettingsContainer.SettingsDataType.Float,
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightStrength", null, 0,  1),
+                    OnHighlightStrengthChange);
 
                 baseColor = (Color)settings.RegisterOrCreate("InteractionMode_HighlightColor",
                     baseColor,
