@@ -60,7 +60,7 @@ namespace ANF.Scene
                 }
             }
         }
-        
+
         /// <summary>
         /// Sets the renderer's highlight strength
         /// </summary>

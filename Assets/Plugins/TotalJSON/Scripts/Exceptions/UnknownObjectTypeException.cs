@@ -3,23 +3,28 @@
 
 using Leguar.TotalJSON.Internal;
 
-namespace Leguar.TotalJSON {
+namespace Leguar.TotalJSON
+{
 
-	/// <summary>
-	/// Exception that is thrown if object added to JSON or JArray is type that can't be converted to any JValue.
-	/// </summary>
-	public class UnknownObjectTypeException : JArgumentException {
+    /// <summary>
+    /// Exception that is thrown if object added to JSON or JArray is type that can't be converted to any JValue.
+    /// </summary>
+    public class UnknownObjectTypeException : JArgumentException
+    {
 
-		internal UnknownObjectTypeException(object unknownValue, string paramName)
-			: base("Parameter object is unknown type '"+unknownValue.GetType()+"'",paramName) {
-		}
+        internal UnknownObjectTypeException(object unknownValue, string paramName)
+            : base("Parameter object is unknown type '" + unknownValue.GetType() + "'", paramName)
+        {
+        }
 
-		public override string StackTrace {
-			get {
-				return InternalTools.getCleanedStackTrace(base.StackTrace);
-			}
-		}
+        public override string StackTrace
+        {
+            get
+            {
+                return InternalTools.getCleanedStackTrace(base.StackTrace);
+            }
+        }
 
-	}
+    }
 
 }

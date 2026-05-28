@@ -1,8 +1,4 @@
-using ANF.Utils;
 using AYellowpaper.SerializedCollections;
-using DG.Tweening;
-using Leguar.TotalJSON;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace ANF.Scene

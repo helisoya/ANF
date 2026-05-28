@@ -1,2 +1,0 @@
-clearStack()
-map(City_Iberty;City_Iberty_ToRegion)

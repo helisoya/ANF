@@ -1,9 +1,7 @@
+using ANF.Utils;
 using Leguar.TotalJSON;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace ANF.Persistent
 {
@@ -15,7 +13,7 @@ namespace ANF.Persistent
     public class PlayerVariableContainer : DataContainer
     {
         private string playerName;
-        private Dictionary<string,Variable> variables;
+        private Dictionary<string, Variable> variables;
 
         [Tooltip("Name of the random variable, automatically generated")]
         [SerializeField] private string randomVariableName;
@@ -227,7 +225,7 @@ namespace ANF.Persistent
                 {
                     string[] split = line.Split(' ');
                     if (split.Length == 2 && int.TryParse(split[1], out int value))
-                        variables.Add(split[0],new Variable(split[0], value));
+                        variables.Add(split[0], new Variable(split[0], value));
                 }
             }
 

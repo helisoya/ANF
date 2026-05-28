@@ -1,5 +1,4 @@
 using ANF.Persistent;
-using ANF.Scene;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;

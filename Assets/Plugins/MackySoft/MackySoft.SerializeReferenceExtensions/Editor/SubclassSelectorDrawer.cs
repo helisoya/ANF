@@ -15,7 +15,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
         {
             public AdvancedTypePopup TypePopup { get; }
             public AdvancedDropdownState State { get; }
-            public TypePopupCache (AdvancedTypePopup typePopup, AdvancedDropdownState state)
+            public TypePopupCache(AdvancedTypePopup typePopup, AdvancedDropdownState state)
             {
                 TypePopup = typePopup;
                 State = state;
@@ -33,7 +33,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         private SerializedProperty targetProperty;
 
-        public override void OnGUI (Rect position, SerializedProperty property, GUIContent label)
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             EditorGUI.BeginProperty(position, label, property);
 
@@ -135,7 +135,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             EditorGUI.EndProperty();
         }
 
-        private PropertyDrawer GetCustomPropertyDrawer (SerializedProperty property)
+        private PropertyDrawer GetCustomPropertyDrawer(SerializedProperty property)
         {
             Type propertyType = ManagedReferenceUtility.GetType(property.managedReferenceFullTypename);
             if (propertyType != null && PropertyDrawerCache.TryGetPropertyDrawer(propertyType, out PropertyDrawer drawer))
@@ -145,7 +145,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return null;
         }
 
-        private TypePopupCache GetTypePopup (SerializedProperty property, bool allowNull)
+        private TypePopupCache GetTypePopup(SerializedProperty property, bool allowNull)
         {
             // Cache this string. This property internally call Assembly.GetName, which result in a large allocation.
             string managedReferenceFieldTypename = property.managedReferenceFieldTypename;
@@ -185,7 +185,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return result;
         }
 
-        private GUIContent GetTypeName (SerializedProperty property)
+        private GUIContent GetTypeName(SerializedProperty property)
         {
             // Cache this string.
             string managedReferenceFullTypename = property.managedReferenceFullTypename;
@@ -222,7 +222,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return result;
         }
 
-        public override float GetPropertyHeight (SerializedProperty property, GUIContent label)
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             if (property.propertyType != SerializedPropertyType.ManagedReference)
             {
@@ -248,7 +248,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return height;
         }
 
-        private static float GetChildrenHeight (SerializedProperty property)
+        private static float GetChildrenHeight(SerializedProperty property)
         {
             float height = 0f;
             bool first = true;

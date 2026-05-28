@@ -1,2 +1,0 @@
-clearStack()
-map(Region_MirageIsland;Region_MirageIsland_HopeHarbor)

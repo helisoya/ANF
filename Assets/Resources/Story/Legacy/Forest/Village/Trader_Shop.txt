@@ -1,3 +1,0 @@
-shop(NorthVillageSalesman)
-
-load(Forest/Village/Trader)

@@ -1,3 +1,0 @@
-dialog(Soldier;OrkvaSoldier;false;Vorlan_Checkpoint_Soldier_Default_1)
-
-load(Orkva/Vorlan/Checkpoint/Soldier_Exit)

@@ -1,4 +1,3 @@
-using ANF.Locals;
 using ANF.Persistent;
 using AYellowpaper.SerializedCollections;
 using System;
@@ -7,7 +6,6 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static ANF.Locals.Locals;
 
 namespace ANF.GUI
 {
@@ -16,7 +14,8 @@ namespace ANF.GUI
     /// </summary>
     public class SettingsTabUIText : SettingsTabUI
     {
-        [SerializeField] private SerializedDictionary<Locals.Locals.Channel, bool> channelsToShow = new SerializedDictionary<Locals.Locals.Channel, bool>()
+        [SerializeField]
+        private SerializedDictionary<Locals.Locals.Channel, bool> channelsToShow = new SerializedDictionary<Locals.Locals.Channel, bool>()
         {
             { Locals.Locals.Channel.CHANNEL0, true },
             { Locals.Locals.Channel.CHANNEL1, true },
@@ -43,7 +42,7 @@ namespace ANF.GUI
 
         public override void PopulateTab()
         {
-            if(PersistentDataManager.instance.GetGlobalData().GetComponent(out Locals.Locals locals))
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Locals.Locals locals))
             {
                 int channelCount = Enum.GetValues(typeof(Locals.Locals.Channel)).Length;
 
@@ -65,7 +64,7 @@ namespace ANF.GUI
                 });
 
                 List<string> sizeLabels = new List<string>();
-                for (int i = 0; i < locals.GetSizes().Length;i++)
+                for (int i = 0; i < locals.GetSizes().Length; i++)
                     sizeLabels.Add(locals.GetLocal($"SettingsMenu_Text_Sizes_{i}"));
 
                 List<string> fontLabels = new List<string>();

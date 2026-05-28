@@ -1,6 +1,0 @@
-setCharacterAlpha(MayorIberty;0;true)
-setCharacterPosition(MayorIberty;Mayor)
-setCharacterRotation(MayorIberty;Mayor)
-setCharacterAlpha(MayorIberty;1;false)
-
-load(Orkva/Tolau/CityHall/Interaction)

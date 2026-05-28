@@ -1,6 +1,5 @@
+using ANF.Utils;
 using Leguar.TotalJSON;
-using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -84,7 +83,7 @@ namespace ANF.Persistent
         /// <returns>True if unlocked</returns>
         public bool IsUnlocked(int logIndex)
         {
-            if(logIndex >= 0 && logIndex < knownLogs.Length)
+            if (logIndex >= 0 && logIndex < knownLogs.Length)
                 return knownLogs[logIndex];
             return false;
         }
@@ -112,14 +111,14 @@ namespace ANF.Persistent
 
         public void Reset()
         {
-            for(int i = 0; i < knownLogs.Length;i++)
+            for (int i = 0; i < knownLogs.Length; i++)
                 knownLogs[i] = false;
         }
 
         public void Save(JSON json)
         {
             JSON array = new JSON();
-            for(int i = 0; i < allLogs.Count;i++)
+            for (int i = 0; i < allLogs.Count; i++)
                 array.Add(allLogs[i], knownLogs[i]);
 
             json.Add("knownLogs", array);
@@ -127,7 +126,7 @@ namespace ANF.Persistent
 
         public void Load(JSON json)
         {
-            if(json.ContainsKey("knownLogs"))
+            if (json.ContainsKey("knownLogs"))
             {
                 JSON array = json.GetJSON("knownLogs");
                 Reset();

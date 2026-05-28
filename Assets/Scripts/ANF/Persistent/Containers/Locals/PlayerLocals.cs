@@ -1,7 +1,5 @@
-using ANF.Locals;
 using ANF.Persistent;
 using Leguar.TotalJSON;
-using UnityEngine;
 
 namespace ANF.Locals
 {
@@ -25,7 +23,7 @@ namespace ANF.Locals
         public void Reset()
         {
             currentAdditionalFiles = null;
-            if(PersistentDataManager.instance.GetGlobalData().GetComponent<Locals>(out Locals locals))
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<Locals>(out Locals locals))
             {
                 locals.ChangeAdditionalFiles(currentAdditionalFiles);
             }

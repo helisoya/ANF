@@ -1,3 +1,0 @@
-dialog(Keeper;LighthouseKeeper;false;HopeHarbor_Lighthouse_Keeper_DuringQuest_1)
-
-load(MirageIsland/HopeHarbor/Lighthouse/Keeper)

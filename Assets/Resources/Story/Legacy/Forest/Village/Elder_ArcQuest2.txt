@@ -1,3 +1,0 @@
-dialog(Elder;Northman1;false;NorthVillage_Elder_ReminderQuest2_1)
-
-load(Forest/Village/Elder)

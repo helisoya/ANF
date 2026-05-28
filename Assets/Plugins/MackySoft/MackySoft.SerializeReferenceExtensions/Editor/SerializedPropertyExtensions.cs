@@ -5,7 +5,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 {
     public static class SerializedPropertyExtensions
     {
-        public static IEnumerable<SerializedProperty> GetChildProperties (this SerializedProperty parent, int depth = 1)
+        public static IEnumerable<SerializedProperty> GetChildProperties(this SerializedProperty parent, int depth = 1)
         {
             parent = parent.Copy();
 

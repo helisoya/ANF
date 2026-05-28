@@ -1,3 +1,0 @@
-dialog(Doctor;DoctorIberty;false;Iberty_Doctor_SideQuest_Done_1)
-
-load(Kalia/Iberty/Doctor/Doctor)

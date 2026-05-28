@@ -1,5 +1,3 @@
-using UnityEngine;
-using Leguar.TotalJSON;
 using ANF.Utils;
 
 namespace ANF.Persistent

@@ -1,6 +1,0 @@
-setCharacterAlpha(KalibuPriest;0;true)
-setCharacterPosition(KalibuPriest;PriestSpot)
-setCharacterRotation(KalibuPriest;PriestSpot)
-setCharacterAlpha(KalibuPriest;1;false)
-
-load(Kalia/Shrine/Interaction)

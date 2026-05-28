@@ -17,12 +17,12 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
         private static readonly GUIContent ResetAndNewInstanceContent = new GUIContent("Reset and New Instance");
 
         [InitializeOnLoadMethod]
-        private static void Initialize ()
+        private static void Initialize()
         {
             EditorApplication.contextualPropertyMenu += OnContextualPropertyMenu;
         }
 
-        private static void OnContextualPropertyMenu (GenericMenu menu, SerializedProperty property)
+        private static void OnContextualPropertyMenu(GenericMenu menu, SerializedProperty property)
         {
             if (property.propertyType == SerializedPropertyType.ManagedReference)
             {
@@ -58,7 +58,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             }
         }
 
-        private static void Copy (object customData)
+        private static void Copy(object customData)
         {
             SerializedProperty property = (SerializedProperty)customData;
             string json = JsonUtility.ToJson(property.managedReferenceValue);
@@ -66,7 +66,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             SessionState.SetString(ClipboardKey, json);
         }
 
-        private static void Paste (object customData)
+        private static void Paste(object customData)
         {
             SerializedProperty property = (SerializedProperty)customData;
             string json = SessionState.GetString(ClipboardKey, string.Empty);
@@ -80,7 +80,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             property.serializedObject.ApplyModifiedProperties();
         }
 
-        private static void NewInstance (object customData)
+        private static void NewInstance(object customData)
         {
             SerializedProperty property = (SerializedProperty)customData;
             string json = JsonUtility.ToJson(property.managedReferenceValue);
@@ -92,7 +92,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             Debug.Log($"Create new instance of \"{property.propertyPath}\".");
         }
 
-        private static void ResetAndNewInstance (object customData)
+        private static void ResetAndNewInstance(object customData)
         {
             SerializedProperty property = (SerializedProperty)customData;
 

@@ -13,14 +13,14 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         private readonly Dictionary<Type, Type[]> typeCache = new Dictionary<Type, Type[]>();
 
-        public TypeCandiateService (ITypeCandiateProvider typeCandiateProvider, IIntrinsicTypePolicy intrinsicTypePolicy, ITypeCompatibilityPolicy typeCompatibilityPolicy)
+        public TypeCandiateService(ITypeCandiateProvider typeCandiateProvider, IIntrinsicTypePolicy intrinsicTypePolicy, ITypeCompatibilityPolicy typeCompatibilityPolicy)
         {
             this.typeCandiateProvider = typeCandiateProvider ?? throw new ArgumentNullException(nameof(typeCandiateProvider));
             this.intrinsicTypePolicy = intrinsicTypePolicy ?? throw new ArgumentNullException(nameof(intrinsicTypePolicy));
             this.typeCompatibilityPolicy = typeCompatibilityPolicy ?? throw new ArgumentNullException(nameof(typeCompatibilityPolicy));
         }
 
-        public IReadOnlyList<Type> GetDisplayableTypes (Type baseType)
+        public IReadOnlyList<Type> GetDisplayableTypes(Type baseType)
         {
             if (baseType == null)
             {

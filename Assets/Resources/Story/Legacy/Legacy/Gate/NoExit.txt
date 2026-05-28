@@ -1,3 +1,0 @@
-dialog(narrator;_;false;Gate_NoExit_1)
-
-load(Gate/Interaction)

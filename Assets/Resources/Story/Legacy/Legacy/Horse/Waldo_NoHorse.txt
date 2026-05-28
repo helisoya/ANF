@@ -1,3 +1,0 @@
-dialog(Waldo;Waldo;false;Horse_Waldo_NoHorse_1)
-
-load(Horse/Waldo_Default)

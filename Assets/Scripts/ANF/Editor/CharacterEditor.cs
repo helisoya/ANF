@@ -1,10 +1,8 @@
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace ANF.Editor
 {

@@ -1,12 +1,7 @@
 using ANF.Persistent;
-using ANF.Utils;
 using DG.Tweening;
 using Leguar.TotalJSON;
-using System;
-using System.Collections.Generic;
-using System.Data;
 using TMPro;
-using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;

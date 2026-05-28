@@ -1,6 +1,6 @@
-using System.Linq;
 using MackySoft.SerializeReferenceExtensions.Editor;
 using NUnit.Framework;
+using System.Linq;
 
 namespace MackySoft.SerializeReferenceExtensions.Tests
 {
@@ -8,7 +8,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
     public sealed class TypeCandidateService_BaseTypeSelfTests
     {
         [Test]
-        public void ConcreteBaseType_IsIncluded ()
+        public void ConcreteBaseType_IsIncluded()
         {
             var set = TypeSearchService.TypeCandiateService.GetDisplayableTypes(typeof(ConcreteBaseType)).ToHashSet();
 

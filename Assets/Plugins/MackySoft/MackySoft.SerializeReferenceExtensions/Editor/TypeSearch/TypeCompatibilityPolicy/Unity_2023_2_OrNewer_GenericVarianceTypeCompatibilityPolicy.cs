@@ -9,7 +9,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         public static readonly Unity_2023_2_OrNewer_GenericVarianceTypeCompatibilityPolicy Instance = new Unity_2023_2_OrNewer_GenericVarianceTypeCompatibilityPolicy();
 
-        public bool IsCompatible (Type baseType, Type candiateType)
+        public bool IsCompatible(Type baseType, Type candiateType)
         {
             if (baseType == null)
             {
@@ -77,7 +77,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return false;
         }
 
-        private static bool AreAllGenericArgumentsCompatible (Type[] genericTypeParameters, Type[] targetTypeArguments, Type[] sourceTypeArguments)
+        private static bool AreAllGenericArgumentsCompatible(Type[] genericTypeParameters, Type[] targetTypeArguments, Type[] sourceTypeArguments)
         {
             if (genericTypeParameters.Length != targetTypeArguments.Length)
             {

@@ -1,7 +1,7 @@
 #if UNITY_2023_2_OR_NEWER
-using System.Linq;
 using MackySoft.SerializeReferenceExtensions.Editor;
 using NUnit.Framework;
+using System.Linq;
 
 namespace MackySoft.SerializeReferenceExtensions.Tests
 {
@@ -9,7 +9,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
     public sealed class TypeCandidateService_GenericVarianceTests
     {
         [Test]
-        public void Contravariance_IsSupported ()
+        public void Contravariance_IsSupported()
         {
             // baseType: IContravariance<INetworkActor>
             var set = TypeSearchService.TypeCandiateService.GetDisplayableTypes(typeof(IContravariant<INetworkActor>)).ToHashSet();
@@ -20,7 +20,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
         }
 
         [Test]
-        public void Covariance_IsSupported ()
+        public void Covariance_IsSupported()
         {
             // baseType: ICovariant<IActor>
             var set = TypeSearchService.TypeCandiateService.GetDisplayableTypes(typeof(ICovariant<IActor>)).ToHashSet();
@@ -31,7 +31,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
         }
 
         [Test]
-        public void Invariance_RemainsStrict ()
+        public void Invariance_RemainsStrict()
         {
             // baseType: IInvariant<IActor>
             var set = TypeSearchService.TypeCandiateService.GetDisplayableTypes(typeof(IInvariant<IActor>)).ToHashSet();

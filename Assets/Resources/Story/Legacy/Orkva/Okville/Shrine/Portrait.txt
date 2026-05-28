@@ -1,4 +1,0 @@
-dialog(narrator;_;false;Okville_Shrine_Portrait_1)
-dialog(narrator;_;false;Okville_Shrine_Portrait_2)
-
-load(Orkva/Okville/Shrine/Interaction)

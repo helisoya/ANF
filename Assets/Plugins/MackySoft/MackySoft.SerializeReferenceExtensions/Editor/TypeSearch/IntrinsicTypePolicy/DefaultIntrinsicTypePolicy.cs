@@ -7,7 +7,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         public static readonly DefaultIntrinsicTypePolicy Instance = new DefaultIntrinsicTypePolicy();
 
-        public bool IsAllowed (Type candiateType)
+        public bool IsAllowed(Type candiateType)
         {
             return
                 (candiateType.IsPublic || candiateType.IsNestedPublic || candiateType.IsNestedPrivate) &&

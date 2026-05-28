@@ -1,4 +1,4 @@
-using ANF.Persistent;
+using ANF.Utils;
 using Leguar.TotalJSON;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ namespace ANF.Persistent
     [System.Serializable]
     public class QuestInfosContainer : DataContainer
     {
-        private Dictionary<string,List<QuestInfo>> quests;
+        private Dictionary<string, List<QuestInfo>> quests;
 
         public DataContainer CloneContainer()
         {
@@ -33,7 +33,7 @@ namespace ANF.Persistent
 
         public void Initialize(ANFSettings settings)
         {
-            quests = new Dictionary<string,List<QuestInfo>>();
+            quests = new Dictionary<string, List<QuestInfo>>();
 
             string currentCategory = null;
             List<QuestInfo> currentList = null;

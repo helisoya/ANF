@@ -1,4 +1,0 @@
-choice Choice_Chat
-	Choice_AboutYou SouvenirShop/Waldo_AboutYou
-	Choice_AboutRickey SouvenirShop/Waldo_AboutRickey
-	Choice_Nothing SouvenirShop/Waldo_Exit

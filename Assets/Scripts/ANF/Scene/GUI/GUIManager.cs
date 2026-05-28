@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using ANF.Persistent;
-using ANF.Utils;
 using ANF.Scene;
-using Leguar.TotalJSON;
+using ANF.Utils;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ANF.GUI

@@ -1,6 +1,0 @@
-setCharacterAlpha(Salesman1;0;true)
-setCharacterPosition(Salesman1;SalesmanSpot)
-setCharacterRotation(Salesman1;SalesmanSpot)
-setCharacterAlpha(Salesman1;1;false)
-
-load(Kalia/Iberty/Shop/Interaction)

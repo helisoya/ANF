@@ -1,7 +1,4 @@
-using ANF.Persistent;
-using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ANF.GUI
@@ -9,7 +6,7 @@ namespace ANF.GUI
     /// <summary>
     /// Represents a entry in the settings menu
     /// </summary>
-    public class SettingsEntryUI<T> : MonoBehaviour where T : Selectable 
+    public class SettingsEntryUI<T> : MonoBehaviour where T : Selectable
     {
         [SerializeField] protected Locals.LocalizedText label;
         [SerializeField] protected T item;

@@ -1,6 +1,3 @@
-using ANF.ANSL;
-using ANF.GUI;
-using Leguar.TotalJSON;
 using UnityEngine;
 
 
@@ -32,7 +29,7 @@ namespace ANF.ANSL
                 parameters.GetParameter(3, out float a) &&
                 manager.GetGUIManager().GetComponent<GUI.Fade>("fadeBg", out GUI.Fade currentFade))
             {
-                currentFade.FadeColorTo(new Color(r, g, b, a),true);
+                currentFade.FadeColorTo(new Color(r, g, b, a), true);
             }
             EndProcess();
         }

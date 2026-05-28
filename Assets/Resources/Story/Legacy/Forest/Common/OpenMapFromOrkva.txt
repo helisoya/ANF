@@ -1,2 +1,0 @@
-clearStack()
-map(Region_Forest;Region_Forest_ToOrkva)

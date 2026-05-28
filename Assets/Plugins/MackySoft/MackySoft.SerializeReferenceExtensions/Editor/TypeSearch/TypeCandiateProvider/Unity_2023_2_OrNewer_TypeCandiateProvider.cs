@@ -18,7 +18,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
         private readonly IIntrinsicTypePolicy intrinsicTypePolicy;
         private readonly ITypeCompatibilityPolicy typeCompatibilityPolicy;
 
-        private Unity_2023_2_OrNewer_TypeCandiateProvider (
+        private Unity_2023_2_OrNewer_TypeCandiateProvider(
             IIntrinsicTypePolicy intrinsicTypePolicy,
             ITypeCompatibilityPolicy typeCompatibilityPolicy
         )
@@ -27,7 +27,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             this.typeCompatibilityPolicy = typeCompatibilityPolicy ?? throw new ArgumentNullException(nameof(typeCompatibilityPolicy));
         }
 
-        public IEnumerable<Type> GetTypeCandidates (Type baseType)
+        public IEnumerable<Type> GetTypeCandidates(Type baseType)
         {
             if (!baseType.IsGenericType)
             {
@@ -37,7 +37,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return GetTypesWithGeneric(baseType);
         }
 
-        private IEnumerable<Type> GetTypesWithGeneric (Type baseType)
+        private IEnumerable<Type> GetTypesWithGeneric(Type baseType)
         {
             if (typeCache.TryGetValue(baseType, out List<Type> result))
             {
@@ -71,7 +71,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return result;
         }
 
-        private static IEnumerable<Type> EnumerateAllTypesSafely ()
+        private static IEnumerable<Type> EnumerateAllTypesSafely()
         {
             foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
             {

@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using System;
-using System.Linq;
-using Leguar.TotalJSON;
 using ANF.Persistent;
 using DG.Tweening;
+using Leguar.TotalJSON;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 
 namespace ANF.GUI

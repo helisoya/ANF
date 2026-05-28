@@ -11,7 +11,7 @@ public sealed class AddTypeMenuAttribute : Attribute
 
     public int Order { get; }
 
-    public AddTypeMenuAttribute (string menuName, int order = 0)
+    public AddTypeMenuAttribute(string menuName, int order = 0)
     {
         MenuName = menuName;
         Order = order;
@@ -22,7 +22,7 @@ public sealed class AddTypeMenuAttribute : Attribute
     /// <summary>
     /// Returns the menu name split by the '/' separator.
     /// </summary>
-    public string[] GetSplittedMenuName ()
+    public string[] GetSplittedMenuName()
     {
         return !string.IsNullOrWhiteSpace(MenuName) ? MenuName.Split(k_Separeters, StringSplitOptions.RemoveEmptyEntries) : Array.Empty<string>();
     }
@@ -30,7 +30,7 @@ public sealed class AddTypeMenuAttribute : Attribute
     /// <summary>
     /// Returns the display name without the path.
     /// </summary>
-    public string GetTypeNameWithoutPath ()
+    public string GetTypeNameWithoutPath()
     {
         string[] splittedDisplayName = GetSplittedMenuName();
         return (splittedDisplayName.Length != 0) ? splittedDisplayName[splittedDisplayName.Length - 1] : null;

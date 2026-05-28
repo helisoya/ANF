@@ -1,3 +1,0 @@
-clearStack()
-unlockLog(Log_MirageIsland;true)
-map(Region_MirageIsland;Region_MirageIsland_ToOrkva)

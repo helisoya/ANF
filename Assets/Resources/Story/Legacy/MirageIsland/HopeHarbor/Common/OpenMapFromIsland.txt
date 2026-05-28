@@ -1,2 +1,0 @@
-clearStack()
-map(City_HopeHarbor;City_HopeHarbor_ToIsland)

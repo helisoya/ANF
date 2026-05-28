@@ -1,7 +1,3 @@
-using ANF.ANSL;
-using UnityEngine;
-
-
 namespace ANF.ANSL
 {
     /// <summary>

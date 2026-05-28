@@ -58,7 +58,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
     public interface IDerivedNetworkActor : INetworkActor { }
 
     public interface IContravariant<in T> { }
-    public interface ICovariant<out T> { T Create (); }
+    public interface ICovariant<out T> { T Create(); }
     public interface IInvariant<T> { }
 
     [Serializable]
@@ -73,19 +73,19 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
     [Serializable]
     public sealed class Covariant_Actor : ICovariant<IActor>
     {
-        public IActor Create () => null;
+        public IActor Create() => null;
     }
 
     [Serializable]
     public sealed class Covariant_NetworkActor : ICovariant<INetworkActor>
     {
-        public INetworkActor Create () => null;
+        public INetworkActor Create() => null;
     }
 
     [Serializable]
     public sealed class Covariant_Object : ICovariant<object>
     {
-        public object Create () => null;
+        public object Create() => null;
     }
 
     [Serializable]

@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
 using MackySoft.SerializeReferenceExtensions.Editor;
 using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 
 namespace MackySoft.SerializeReferenceExtensions.Tests
 {
     public sealed class DefaultIntrinsicTypePolicyTests
     {
-        public static IEnumerable<TestCaseData> Cases ()
+        public static IEnumerable<TestCaseData> Cases()
         {
             yield return new TestCaseData(typeof(PublicSerializableClass), true).SetName("Intrinsic_PublicSerializableClass_OK");
             yield return new TestCaseData(typeof(SerializableStruct), true).SetName("Intrinsic_ValueTypeStruct_OK");
@@ -24,7 +24,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
         }
 
         [TestCaseSource(nameof(Cases))]
-        public void IsAllowed_MatchesExpected (Type type, bool expected)
+        public void IsAllowed_MatchesExpected(Type type, bool expected)
         {
             bool actual = DefaultIntrinsicTypePolicy.Instance.IsAllowed(type);
             Assert.That(actual, Is.EqualTo(expected), type.FullName);

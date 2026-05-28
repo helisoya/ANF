@@ -1,5 +1,0 @@
-if(mainQuest = 5) load(Gate/NoExit)
-
-fadeBg(1;true)
-fadeBg(0;false)
-load(RickeyLandEntrance/Arrive)

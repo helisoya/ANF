@@ -1,6 +1,5 @@
 
 using Leguar.TotalJSON;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace ANF.Persistent
@@ -109,14 +108,14 @@ namespace ANF.Persistent
             this.fullscreen = fullscreen;
             Screen.fullScreen = fullscreen;
         }
-        
+
         /// <summary>
         /// Gets if the game is in fullscreen or not
         /// </summary>
         /// <returns>True if in fullscreen</returns>
         public bool IsFullscreen()
         {
-            return fullscreen; 
+            return fullscreen;
         }
 
         /// <summary>

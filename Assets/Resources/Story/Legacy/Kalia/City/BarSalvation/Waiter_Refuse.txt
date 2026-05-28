@@ -1,3 +1,0 @@
-dialog(Waitress;AnnaDisguise;false;Kalia_BarSalvation_Waiter_Refuse_1)
-
-load(Kalia/City/BarSalvation/Waiter)

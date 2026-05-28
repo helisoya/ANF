@@ -1,6 +1,0 @@
-setCharacterAlpha(SoldierKalia2;0;true)
-setCharacterPosition(SoldierKalia2;SoldierSpot)
-setCharacterRotation(SoldierKalia2;SoldierSpot)
-setCharacterAlpha(SoldierKalia2;1;false)
-
-load(Kalia/Iberty/CityHall/Interaction)

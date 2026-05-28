@@ -1,12 +1,8 @@
-using ANF.GUI;
 using ANF.Persistent;
 using DG.Tweening;
 using Leguar.TotalJSON;
-using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 
 namespace ANF.GUI

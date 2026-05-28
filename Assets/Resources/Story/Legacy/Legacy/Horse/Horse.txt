@@ -1,3 +1,0 @@
-dialog(narrator;_;false;Horse_Horse_1)
-
-load(Horse/Interaction)

@@ -18,8 +18,8 @@ namespace ANF.GUI
         private LerpInstanceFloat lerpAlpha;
         private LerpInstanceColor lerpColor;
 
-        public bool fadingAlpha 
-        { 
+        public bool fadingAlpha
+        {
             get
             {
                 return lerpAlpha != null && lerpAlpha.lerping;
@@ -78,7 +78,7 @@ namespace ANF.GUI
 
         public override void OnUpdate()
         {
-            if(lerpAlpha != null && lerpAlpha.lerping)
+            if (lerpAlpha != null && lerpAlpha.lerping)
             {
                 canvasGroup.alpha = lerpAlpha.Update();
             }
@@ -158,8 +158,8 @@ namespace ANF.GUI
         {
             json.Add("fadingAlpha", fadingAlpha);
             json.Add("fadingColor", fadingColor);
-            
-            if(lerpAlpha != null)
+
+            if (lerpAlpha != null)
             {
                 JSON lerpJSON = new JSON();
                 lerpAlpha.Save(lerpJSON);

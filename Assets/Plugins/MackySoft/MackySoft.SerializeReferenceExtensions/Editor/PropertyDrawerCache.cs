@@ -10,7 +10,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         private static readonly Dictionary<Type, PropertyDrawer> Caches = new Dictionary<Type, PropertyDrawer>();
 
-        public static bool TryGetPropertyDrawer (Type type, out PropertyDrawer drawer)
+        public static bool TryGetPropertyDrawer(Type type, out PropertyDrawer drawer)
         {
             if (!Caches.TryGetValue(type, out drawer))
             {
@@ -22,7 +22,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             return (drawer != null);
         }
 
-        private static Type GetCustomPropertyDrawerType (Type type)
+        private static Type GetCustomPropertyDrawerType(Type type)
         {
             Type[] interfaceTypes = type.GetInterfaces();
 

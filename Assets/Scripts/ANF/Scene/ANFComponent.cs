@@ -1,7 +1,5 @@
 using ANF.Utils;
 using Leguar.TotalJSON;
-using System.Security.Authentication.ExtendedProtection;
-using UnityEngine;
 
 namespace ANF.Scene
 {

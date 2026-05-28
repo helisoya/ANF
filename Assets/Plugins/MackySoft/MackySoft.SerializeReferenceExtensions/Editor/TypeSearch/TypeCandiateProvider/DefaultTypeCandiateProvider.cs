@@ -12,12 +12,12 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         private readonly IIntrinsicTypePolicy intrinsicTypePolicy;
 
-        public DefaultTypeCandiateProvider (IIntrinsicTypePolicy intrinsicTypePolicy)
+        public DefaultTypeCandiateProvider(IIntrinsicTypePolicy intrinsicTypePolicy)
         {
             this.intrinsicTypePolicy = intrinsicTypePolicy ?? throw new ArgumentNullException(nameof(intrinsicTypePolicy));
         }
 
-        public IEnumerable<Type> GetTypeCandidates (Type baseType)
+        public IEnumerable<Type> GetTypeCandidates(Type baseType)
         {
             return TypeCache.GetTypesDerivedFrom(baseType)
                 .Append(baseType)

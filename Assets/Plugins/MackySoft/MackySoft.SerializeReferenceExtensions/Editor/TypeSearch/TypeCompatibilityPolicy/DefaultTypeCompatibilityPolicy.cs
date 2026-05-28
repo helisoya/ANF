@@ -7,7 +7,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         public static readonly DefaultTypeCompatibilityPolicy Instance = new DefaultTypeCompatibilityPolicy();
 
-        public bool IsCompatible (Type baseType, Type candiateType)
+        public bool IsCompatible(Type baseType, Type candiateType)
         {
             if (baseType == null)
             {

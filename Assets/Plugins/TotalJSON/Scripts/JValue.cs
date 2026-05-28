@@ -1,45 +1,50 @@
 ﻿//  JValue
 
 
-using System;
 using Leguar.TotalJSON.Internal;
+using System;
 
-namespace Leguar.TotalJSON {
-	
-	/// <summary>
-	/// Abstract base class for all JSON objects: JSON, JArray, JNumber, JBoolean, JString and JNull.
-	/// </summary>
-	public abstract class JValue {
+namespace Leguar.TotalJSON
+{
 
-		protected JValue() {
-		}
+    /// <summary>
+    /// Abstract base class for all JSON objects: JSON, JArray, JNumber, JBoolean, JString and JNull.
+    /// </summary>
+    public abstract class JValue
+    {
 
-		/// <summary>
-		/// Turns this object to JSON formatted string.
-		/// </summary>
-		/// <returns>
-		/// This object as JSON formatted string, containing only basic ascii characters between [32..126] without line feeds.
-		/// </returns>
-		public virtual string CreateString() {
-			return CreateString(new CreateStringSettings());
-		}
+        protected JValue()
+        {
+        }
 
-		/// <summary>
-		/// Turns this object to JSON formatted string using specified settings.
-		/// </summary>
-		/// <returns>
-		/// This object as JSON formatted string.
-		/// </returns>
-		public virtual string CreateString(CreateStringSettings settings) {
-			CreateStringRunner createStringRunner = new CreateStringRunner(settings);
-			zCreate(createStringRunner);
-			return createStringRunner.getFinalString();
-		}
+        /// <summary>
+        /// Turns this object to JSON formatted string.
+        /// </summary>
+        /// <returns>
+        /// This object as JSON formatted string, containing only basic ascii characters between [32..126] without line feeds.
+        /// </returns>
+        public virtual string CreateString()
+        {
+            return CreateString(new CreateStringSettings());
+        }
 
-		internal abstract void zCreate(CreateStringRunner createStringRunner);
+        /// <summary>
+        /// Turns this object to JSON formatted string using specified settings.
+        /// </summary>
+        /// <returns>
+        /// This object as JSON formatted string.
+        /// </returns>
+        public virtual string CreateString(CreateStringSettings settings)
+        {
+            CreateStringRunner createStringRunner = new CreateStringRunner(settings);
+            zCreate(createStringRunner);
+            return createStringRunner.getFinalString();
+        }
 
-		internal abstract object zDeserialize(Type type, string toFieldName, DeserializeSettings deserializeSettings);
+        internal abstract void zCreate(CreateStringRunner createStringRunner);
 
-	}
+        internal abstract object zDeserialize(Type type, string toFieldName, DeserializeSettings deserializeSettings);
+
+    }
 
 }

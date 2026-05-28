@@ -1,3 +1,0 @@
-dialog(narrator;_;false;OrkvaMilitaryBase_Entrance_Dont_1)
-
-load(Orkva/MilitaryBase/Interaction)

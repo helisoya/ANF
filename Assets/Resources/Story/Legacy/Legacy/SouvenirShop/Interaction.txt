@@ -1,4 +1,0 @@
-setInteractionChapter(Exit;MAP-RickeyLand-SouvenirShop)
-setInteractionChapter(Waldo;SouvenirShop/Waldo_Enter)
-
-interact

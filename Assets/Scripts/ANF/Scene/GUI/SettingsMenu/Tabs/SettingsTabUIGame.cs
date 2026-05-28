@@ -1,9 +1,5 @@
-using ANF.Locals;
 using ANF.Persistent;
-using AYellowpaper.SerializedCollections;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,7 +27,7 @@ namespace ANF.GUI
 
             if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
             {
-                foreach(string key in settings.GetValues().Keys)
+                foreach (string key in settings.GetValues().Keys)
                 {
                     SettingsContainer.SettingsObjectData data = settings.GetValues()[key];
                     switch (data.type)
@@ -56,7 +52,7 @@ namespace ANF.GUI
                                     dropdown.ClearOptions();
 
                                     List<string> labels = new List<string>();
-                                    foreach(string labelKey in data.drawParameters.dropdownLabels)
+                                    foreach (string labelKey in data.drawParameters.dropdownLabels)
                                     {
                                         labels.Add(locals != null ? locals.GetLocal(labelKey) : labelKey);
                                     }
@@ -85,7 +81,7 @@ namespace ANF.GUI
                                 slider.SetValueWithoutNotify((float)data.value);
                                 slider.onValueChanged.AddListener((float value) =>
                                 {
-                                    if(data.type == SettingsContainer.SettingsDataType.Float)
+                                    if (data.type == SettingsContainer.SettingsDataType.Float)
                                         settings.SetValue(key, data.type, value);
                                 });
                                 selectables.Add(key, slider);

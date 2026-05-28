@@ -1,3 +1,0 @@
-clearStack()
-unlockLog(Log_Marklicht;true)
-map(Region_Marklicht;Region_Marklicht_ToForest)

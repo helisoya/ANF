@@ -1,8 +1,6 @@
 using Leguar.TotalJSON;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Scripting;
 
 namespace ANF.Scene
 {

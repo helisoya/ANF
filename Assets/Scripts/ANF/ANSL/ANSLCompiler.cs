@@ -1,10 +1,7 @@
 using ANF.Utils;
 using System.Collections.Generic;
 using System.IO;
-using Unity.VisualScripting;
-using UnityEngine;
 using static ANF.Utils.ANSLUtils;
-using static Unity.Cinemachine.IInputAxisOwner.AxisDescriptor;
 
 namespace ANF.ANSL
 {

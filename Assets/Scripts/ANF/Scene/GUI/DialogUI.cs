@@ -1,4 +1,3 @@
-using ANF.GUI;
 using ANF.Persistent;
 using DG.Tweening;
 using Leguar.TotalJSON;
@@ -6,9 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.HableCurve;
 
 namespace ANF.GUI
 {

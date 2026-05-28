@@ -9,7 +9,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
     public static class ManagedReferenceUtility
     {
 
-        public static object SetManagedReference (this SerializedProperty property, Type type)
+        public static object SetManagedReference(this SerializedProperty property, Type type)
         {
             object result = null;
 
@@ -33,7 +33,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         }
 
-        public static Type GetType (string typeName)
+        public static Type GetType(string typeName)
         {
             if (string.IsNullOrEmpty(typeName))
             {

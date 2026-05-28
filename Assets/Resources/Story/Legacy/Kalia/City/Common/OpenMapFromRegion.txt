@@ -1,3 +1,0 @@
-clearStack()
-unlockLog(Log_Kalia;true)
-map(City_Kalia;City_Kalia_ToRegion)

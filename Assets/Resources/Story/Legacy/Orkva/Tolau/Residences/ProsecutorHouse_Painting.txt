@@ -1,3 +1,0 @@
-dialog(narrator;_;false;Tolau_Residences_Door2_Painting_1)
-
-load(Orkva/Tolau/Residences/ProsecutorHouse)

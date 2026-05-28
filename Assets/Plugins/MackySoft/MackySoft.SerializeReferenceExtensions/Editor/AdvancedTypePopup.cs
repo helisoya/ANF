@@ -13,7 +13,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         public Type Type { get; }
 
-        public AdvancedTypePopupItem (Type type, string name) : base(name)
+        public AdvancedTypePopupItem(Type type, string name) : base(name)
         {
             Type = type;
         }
@@ -28,11 +28,11 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         private const int MaxNamespaceNestCount = 16;
 
-        public static void AddTo (AdvancedDropdownItem root, IEnumerable<Type> types, bool allowNull)
+        public static void AddTo(AdvancedDropdownItem root, IEnumerable<Type> types, bool allowNull)
         {
             int itemCount = 0;
 
-            if(allowNull)
+            if (allowNull)
             {
                 // Add null item.
                 var nullItem = new AdvancedTypePopupItem(null, TypeMenuUtility.NullDisplayName)
@@ -122,7 +122,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             }
         }
 
-        private static AdvancedDropdownItem GetItem (AdvancedDropdownItem parent, string name)
+        private static AdvancedDropdownItem GetItem(AdvancedDropdownItem parent, string name)
         {
             foreach (AdvancedDropdownItem item in parent.children)
             {
@@ -141,26 +141,26 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         public event Action<AdvancedTypePopupItem> OnItemSelected;
 
-        public AdvancedTypePopup (IEnumerable<Type> types, int maxLineCount, AdvancedDropdownState state, bool allowNull) : base(state)
+        public AdvancedTypePopup(IEnumerable<Type> types, int maxLineCount, AdvancedDropdownState state, bool allowNull) : base(state)
         {
             this.allowNull = allowNull;
             SetTypes(types);
             minimumSize = new Vector2(minimumSize.x, EditorGUIUtility.singleLineHeight * maxLineCount + HeaderHeight);
         }
 
-        public void SetTypes (IEnumerable<Type> types)
+        public void SetTypes(IEnumerable<Type> types)
         {
             this.types = types.ToArray();
         }
 
-        protected override AdvancedDropdownItem BuildRoot ()
+        protected override AdvancedDropdownItem BuildRoot()
         {
             var root = new AdvancedDropdownItem("Select Type");
             AddTo(root, types, allowNull);
             return root;
         }
 
-        protected override void ItemSelected (AdvancedDropdownItem item)
+        protected override void ItemSelected(AdvancedDropdownItem item)
         {
             base.ItemSelected(item);
             if (item is AdvancedTypePopupItem typePopupItem)

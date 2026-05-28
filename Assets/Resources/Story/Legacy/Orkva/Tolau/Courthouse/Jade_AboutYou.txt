@@ -1,5 +1,0 @@
-dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutYou_1)
-dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutYou_2)
-dialog(Prosecutor;Jade;false;Tolau_Courthouse_Jade_AboutYou_3)
-
-load(Orkva/Tolau/Courthouse/Jade)

@@ -22,7 +22,7 @@ namespace ANF.GUI
 
         public override void PopulateTab()
         {
-            if(PersistentDataManager.instance.GetGlobalData().GetComponent(out ScreenSettingsContainer screenSettings))
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out ScreenSettingsContainer screenSettings))
             {
                 fullscreenToggle = menu.CreateToggle("SettingsMenu_Graphics_Fullscreen", root);
                 fullscreenToggle.SetIsOnWithoutNotify(screenSettings.IsFullscreen());

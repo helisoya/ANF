@@ -25,7 +25,7 @@ namespace ANF.GUI
 
         public override void PopulateTab()
         {
-            if(PersistentDataManager.instance.GetGlobalData().GetComponent(out Persistent.AudioManager audioManager))
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Persistent.AudioManager audioManager))
             {
                 musicSlider = menu.CreateSlider("SettingsMenu_Sound_Music", root);
                 musicSlider.minValue = sliderMinValue;

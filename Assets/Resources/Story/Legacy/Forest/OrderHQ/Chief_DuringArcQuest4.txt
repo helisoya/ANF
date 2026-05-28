@@ -1,3 +1,0 @@
-dialog(Chief;OrderChief;false;OrderHQ_Chief_ArcQuest4During_1)
-
-load(Forest/OrderHQ/Chief)

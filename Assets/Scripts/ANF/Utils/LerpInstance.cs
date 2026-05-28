@@ -1,6 +1,4 @@
 using Leguar.TotalJSON;
-using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace ANF.Utils

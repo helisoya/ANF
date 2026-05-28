@@ -1,6 +1,0 @@
-setCharacterAlpha(Jackwell;0;true)
-setCharacterPosition(Jackwell;Bookshelf)
-setCharacterRotation(Jackwell;Bookshelf)
-setCharacterAlpha(Jackwell;1;false)
-
-load(Kalia/City/Library/Interaction)

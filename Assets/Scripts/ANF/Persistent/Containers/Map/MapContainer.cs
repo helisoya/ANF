@@ -1,9 +1,8 @@
+using ANF.Utils;
+using Leguar.TotalJSON;
 using System;
 using System.Collections.Generic;
-using ANF.Persistent;
-using Leguar.TotalJSON;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ANF.Persistent
 {

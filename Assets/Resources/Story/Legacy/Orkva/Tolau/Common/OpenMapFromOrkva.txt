@@ -1,5 +1,0 @@
-clearStack()
-unlockLog(Log_Tolau;true)
-random(0;2)
-if(random = 0) map(City_Tolau;City_Tolau_ToOrkva1)
-if(random = 1) map(City_Tolau;City_Tolau_ToOrkva2)

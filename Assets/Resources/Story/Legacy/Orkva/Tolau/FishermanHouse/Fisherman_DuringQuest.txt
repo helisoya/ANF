@@ -1,3 +1,0 @@
-dialog(Fisherman;Fisherman2;false;Tolau_FishermanHouse_Fisherman_DuringQuest_1)
-
-load(Orkva/Tolau/FishermanHouse/Fisherman)

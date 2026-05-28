@@ -1,3 +1,0 @@
-clearStack()
-dialog(narrator;_;false;Map_1)
-map(Test1;Location)

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace ANF.Persistent
 {
     public struct QuestInfo

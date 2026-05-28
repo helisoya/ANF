@@ -38,9 +38,10 @@ namespace ANF.Persistent
         /// <param name="speakerKey">The speaker's key</param>
         public void AddDialog(string dialogKey, string speakerKey)
         {
-            data.Insert(0, new HistoryData {
-                dialogKey=dialogKey,
-                speakerKey=speakerKey
+            data.Insert(0, new HistoryData
+            {
+                dialogKey = dialogKey,
+                speakerKey = speakerKey
             });
 
             if (data.Count > maxDialogs)
@@ -60,7 +61,7 @@ namespace ANF.Persistent
         {
             JArray array = new JArray();
             JSON tmpJson;
-            foreach(HistoryData dialog in data)
+            foreach (HistoryData dialog in data)
             {
                 tmpJson = new JSON();
                 tmpJson.Add("speakerKey", dialog.speakerKey);
@@ -72,11 +73,11 @@ namespace ANF.Persistent
 
         public void Load(JSON json)
         {
-            if(json.ContainsKey("data"))
+            if (json.ContainsKey("data"))
             {
                 data.Clear();
                 JArray array = json.GetJArray("data");
-                for(int i = 0; i < array.Length;i++)
+                for (int i = 0; i < array.Length; i++)
                 {
                     JSON tmpJSON = array.GetJSON(i);
                     string speakerKey = null;

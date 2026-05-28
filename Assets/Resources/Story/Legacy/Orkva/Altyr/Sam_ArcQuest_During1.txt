@@ -1,3 +1,0 @@
-dialog(Sam;Sam;false;Altyr_Sam_ArcQuest_During1_1)
-
-load(Orkva/Altyr/Sam)

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace ANF.Scene
 {
     /// <summary>

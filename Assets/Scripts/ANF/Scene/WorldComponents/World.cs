@@ -1,6 +1,4 @@
 using ANF.Utils;
-using ANF.Scene;
-using UnityEngine;
 
 namespace ANF.Scene
 {

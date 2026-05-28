@@ -8,7 +8,7 @@
         public static readonly ITypeCandiateProvider TypeCandiateProvider;
         public static readonly TypeCandiateService TypeCandiateService;
 
-        static TypeSearchService ()
+        static TypeSearchService()
         {
             IntrinsicTypePolicy = DefaultIntrinsicTypePolicy.Instance;
 

@@ -1,10 +1,8 @@
-using ANF.Scene;
 using DG.Tweening;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace ANF.GUI
 {

@@ -1,5 +1,3 @@
-using ANF.Locals;
-using ANF.Persistent;
 using ANF.Scene;
 using UnityEngine;
 using UnityEngine.UI;

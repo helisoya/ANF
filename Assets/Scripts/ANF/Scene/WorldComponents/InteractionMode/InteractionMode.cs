@@ -1,12 +1,10 @@
 using ANF.GUI;
 using ANF.Persistent;
 using Leguar.TotalJSON;
-using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
 using UnityEngine.UI;
 
 namespace ANF.Scene
@@ -256,6 +254,7 @@ namespace ANF.Scene
 
             if (currentIcon)
                 GameObject.Destroy(currentIcon.gameObject);
+            currentIcon = null;
 
             currentInteractionObjects.Clear();
         }
@@ -357,7 +356,7 @@ namespace ANF.Scene
                 highlightStrength = (float)settings.RegisterOrCreate("InteractionMode_HighlightStrength",
                     highlightStrength,
                     SettingsContainer.SettingsDataType.Float,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightStrength", null, 0,  1),
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightStrength", null, 0, 1),
                     OnHighlightStrengthChange);
 
                 baseColor = (Color)settings.RegisterOrCreate("InteractionMode_HighlightColor",

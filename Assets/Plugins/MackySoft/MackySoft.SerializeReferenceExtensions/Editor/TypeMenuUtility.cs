@@ -10,12 +10,12 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
 
         public const string NullDisplayName = "<null>";
 
-        public static AddTypeMenuAttribute GetAttribute (Type type)
+        public static AddTypeMenuAttribute GetAttribute(Type type)
         {
             return Attribute.GetCustomAttribute(type, typeof(AddTypeMenuAttribute)) as AddTypeMenuAttribute;
         }
 
-        public static string[] GetSplittedTypePath (Type type)
+        public static string[] GetSplittedTypePath(Type type)
         {
             AddTypeMenuAttribute typeMenu = GetAttribute(type);
             if (typeMenu != null)
@@ -36,7 +36,7 @@ namespace MackySoft.SerializeReferenceExtensions.Editor
             }
         }
 
-        public static IEnumerable<Type> OrderByType (this IEnumerable<Type> source)
+        public static IEnumerable<Type> OrderByType(this IEnumerable<Type> source)
         {
             return source.OrderBy(type =>
             {

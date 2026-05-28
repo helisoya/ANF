@@ -1,10 +1,7 @@
-using ANF.Scene;
 using DG.Tweening;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace ANF.GUI
 {
@@ -37,7 +34,7 @@ namespace ANF.GUI
 
             root.localScale = Vector2.one * 0.8f;
 
-            if(isUnlocked)
+            if (isUnlocked)
                 label.SetNewKey($"Log_{data}_name");
             else
                 label.SetNewKey("GeneralMenu_Unknown");
@@ -58,7 +55,7 @@ namespace ANF.GUI
         /// <returns>True if unlocked</returns>
         public bool IsUnlocked()
         {
-            return isUnlocked; 
+            return isUnlocked;
         }
 
         public void OnEnter()

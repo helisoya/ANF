@@ -1,8 +1,8 @@
+using MackySoft.SerializeReferenceExtensions.Editor;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MackySoft.SerializeReferenceExtensions.Editor;
-using NUnit.Framework;
 
 namespace MackySoft.SerializeReferenceExtensions.Tests
 {
@@ -12,12 +12,12 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
         private HashSet<Type> candidates;
 
         [OneTimeSetUp]
-        public void OneTimeSetUp ()
+        public void OneTimeSetUp()
         {
             candidates = TypeSearchService.TypeCandiateService.GetDisplayableTypes(typeof(ITestBase)).ToHashSet();
         }
 
-        public static IEnumerable<TestCaseData> Cases ()
+        public static IEnumerable<TestCaseData> Cases()
         {
             yield return new TestCaseData(typeof(PublicSerializableClass), true).SetName("Candidates_ITestBase_PublicSerializable_OK");
             yield return new TestCaseData(typeof(SerializableStruct), true).SetName("Candidates_ITestBase_ValueTypeStruct_OK");
@@ -33,7 +33,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
         }
 
         [TestCaseSource(nameof(Cases))]
-        public void CandidatesContainment_IsExpected (Type type, bool expected)
+        public void CandidatesContainment_IsExpected(Type type, bool expected)
         {
             if (expected)
             {
@@ -46,7 +46,7 @@ namespace MackySoft.SerializeReferenceExtensions.Tests
         }
 
         [Test]
-        public void Candidates_HaveNoDuplicates ()
+        public void Candidates_HaveNoDuplicates()
         {
             var list = TypeSearchService.TypeCandiateService.GetDisplayableTypes(typeof(ITestBase)).ToList();
             Assert.That(list.Count, Is.EqualTo(list.Distinct().Count()));

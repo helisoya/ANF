@@ -1,3 +1,0 @@
-dialog(Waldo;Waldo;false;HauntedHouse_Waldo_Play_1)
-
-loadScene(HH)

@@ -1,4 +1,0 @@
-dialog(Sam;Sam;false;Altyr_Sam_AboutRegion_1)
-dialog(Sam;Sam;false;Altyr_Sam_AboutRegion_2)
-
-load(Orkva/Altyr/Sam)

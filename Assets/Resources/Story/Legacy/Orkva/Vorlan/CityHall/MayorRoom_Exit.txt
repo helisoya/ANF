@@ -1,8 +1,0 @@
-fadeBg(1;true)
-
-removeAllCharacters()
-setBackground(Orkva/Vorlan/CityHall)
-
-fadeBg(0;false)
-
-load(Orkva/Vorlan/CityHall/Interaction)
