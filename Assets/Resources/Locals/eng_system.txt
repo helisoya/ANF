@@ -30,7 +30,7 @@ HistoryMenu_Title = History
 
 SettingsMenu_Title = Settings
 
-SettingsMenu_Graphics = Graphics
+SettingsMenu_Graphics = Screen
 SettingsMenu_Graphics_Fullscreen = Fullscreen
 SettingsMenu_Graphics_Resolution = Resolution
 
@@ -70,6 +70,8 @@ SettingsMenu_Game_InteractionMode_HighlightType_All = All
 SettingsMenu_Game_InteractionMode_HighlightStrength = Interaction highlight strength
 SettingsMenu_Game_InteractionMode_HighlightColor = Interaction highlight color
 SettingsMenu_Game_InteractionMode_SelectionColor = Interaction selection color
+
+SettingsMenu_Game_InteractionMode_Weather = Weather effects
 
 SettingsMenu_ColorPicker_H = H
 SettingsMenu_ColorPicker_S = S

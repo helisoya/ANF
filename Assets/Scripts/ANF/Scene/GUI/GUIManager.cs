@@ -27,13 +27,18 @@ namespace ANF.GUI
             components = new Dictionary<string, GUIComponent>();
             foreach (GUIRegisterEntry<GUIComponent> entry in componentsToCopy)
             {
+                if (!entry.data)
+                    continue;
+
+                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().FullName : entry.id;
+
                 GUIComponent instance = Object.Instantiate(entry.data, uiRoot);
                 RectTransform rectTransform = instance.GetComponent<RectTransform>();
                 rectTransform.anchoredPosition = Vector2.zero;
                 rectTransform.sizeDelta = Vector2.zero;
-                instance.name = entry.id;
+                instance.name = finalId;
                 instance.Initialize(manager, this);
-                components.Add(entry.id, instance);
+                components.Add(finalId, instance);
             }
         }
 

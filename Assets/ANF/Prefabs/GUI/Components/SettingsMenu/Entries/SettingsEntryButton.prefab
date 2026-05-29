@@ -147,8 +147,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
-  m_sharedMaterial: {fileID: -3481345414680880985, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+  m_sharedMaterial: {fileID: 7415795266122915290, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 404241657311573214}
   - component: {fileID: 7894088187270363560}
   - component: {fileID: 6277667657399812352}
+  - component: {fileID: 8469784201879488868}
   m_Layer: 5
   m_Name: TabName
   m_TagString: Untagged
@@ -305,8 +306,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
-  m_sharedMaterial: {fileID: -3481345414680880985, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+  m_sharedMaterial: {fileID: 7415795266122915290, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -395,6 +396,26 @@ MonoBehaviour:
   canRecolor: 1
   noReload: 0
   disableLocalization: 0
+--- !u!114 &8469784201879488868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800241565967968617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 0
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &5790318591726852421
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +428,7 @@ GameObject:
   - component: {fileID: 592409195922746229}
   - component: {fileID: 6762277131401046671}
   - component: {fileID: 6653436425876268049}
+  - component: {fileID: 3827811192005177833}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -516,3 +538,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3827811192005177833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790318591726852421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 0
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1

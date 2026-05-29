@@ -19,6 +19,9 @@ namespace ANF.Utils
 		/// <returns>True if the component was found</returns>
         public bool GetComponent<P>(out P result) where P : T
         {
+            if (GetComponent<P>(typeof(P).FullName,out result))
+                return true;
+
             foreach (T component in components.Values)
             {
                 if (component.GetType().IsSubclassOf(typeof(P)) || component.GetType() == typeof(P))

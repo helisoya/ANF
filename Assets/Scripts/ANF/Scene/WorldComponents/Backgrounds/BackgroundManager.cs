@@ -1,3 +1,4 @@
+using ANF.Persistent;
 using Leguar.TotalJSON;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,6 +29,7 @@ namespace ANF.Scene
         private Background currentBackground;
         private string currentBackgroundID;
         private BackgroundData currentCachedData = null;
+        private bool enableWeatherEffects = true;
 
 
         private AsyncOperation currentOperation;
@@ -46,11 +48,12 @@ namespace ANF.Scene
                 prefabPath = prefabPath,
                 skyboxDataPath = skyboxDataPath,
                 defaultSkybox = defaultSkybox,
+                enableWeatherEffects = enableWeatherEffects
             };
         }
 
         /// <summary>
-		/// Gets the currnt background (Read Only)
+		/// Gets the current background (Read Only)
 		/// </summary>
 		/// <returns>The current background</returns>
         public Background GetBackground()
@@ -84,7 +87,7 @@ namespace ANF.Scene
             if (currentBackground != null)
             {
                 currentCachedData.currentWeatherEffect = weatherEffect;
-                currentBackground.SetWeatherEffect(weatherEffect);
+                currentBackground.SetWeatherEffect(enableWeatherEffects ? weatherEffect : null);
             }
         }
 
@@ -256,9 +259,27 @@ namespace ANF.Scene
             return operation;
         }
 
+        /// <summary>
+        /// Callback for changing if the weather effects are enabled in the settings
+        /// </summary>
+        /// <param name="value">true</param>
+        private void OnEnableWeatherEffectsChange(object value)
+        {
+            enableWeatherEffects = (bool)value;
+
+            if (currentBackground != null)
+            {
+                currentBackground.SetWeatherEffect(enableWeatherEffects ? currentCachedData.currentWeatherEffect : null);
+            }
+        }
+
         public override void OnInitialize()
         {
-
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
+                enableWeatherEffects = (bool)settings.RegisterOrCreate("BackgroundManager_EnableWeatherEffects", enableWeatherEffects,
+                    SettingsContainer.SettingsDataType.Bool,
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_Weather"),
+                    OnEnableWeatherEffectsChange);
         }
 
         public override void OnStart()

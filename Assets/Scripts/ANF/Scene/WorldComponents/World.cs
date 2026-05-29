@@ -16,9 +16,14 @@ namespace ANF.Scene
             components = new System.Collections.Generic.Dictionary<string, WorldComponent>();
             foreach (ComponentRegisterEntry<WorldComponent> entry in registeredComponents)
             {
+                if (entry.data == null)
+                    continue;
+
+                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().FullName : entry.id;
+
                 WorldComponent copy = entry.data.CloneComponent();
                 copy.Initialize(manager);
-                components.Add(entry.id, copy);
+                components.Add(finalId, copy);
             }
         }
 

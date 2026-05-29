@@ -16,9 +16,14 @@ namespace ANF.Persistent
 
             foreach (ComponentRegisterEntry<DataContainer> entry in containers)
             {
+                if (entry.data == null)
+                    continue;
+
+                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().FullName : entry.id;
+
                 DataContainer copy = entry.data.CloneContainer();
 
-                this.components.Add(entry.id, copy);
+                this.components.Add(finalId, copy);
             }
 
             foreach (DataContainer container in components.Values)

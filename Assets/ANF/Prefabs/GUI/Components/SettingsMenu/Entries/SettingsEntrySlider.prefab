@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 1219121829341148578}
   - component: {fileID: 3450392942646366699}
   - component: {fileID: 1564624350441370800}
+  - component: {fileID: 201487492428126273}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -178,6 +179,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d568be79125aac945a44531c1515eed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.SettingsEntryUIInputs
+--- !u!114 &201487492428126273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560127080843047367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 0
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &4815235118868826624
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +211,7 @@ GameObject:
   - component: {fileID: 2604604181218234045}
   - component: {fileID: 6132983161221027716}
   - component: {fileID: 9074630686143844065}
+  - component: {fileID: 629284885066770314}
   m_Layer: 5
   m_Name: TabName
   m_TagString: Untagged
@@ -246,8 +268,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Label
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
-  m_sharedMaterial: {fileID: -3481345414680880985, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+  m_sharedMaterial: {fileID: 7415795266122915290, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -271,7 +293,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -336,6 +358,26 @@ MonoBehaviour:
   canRecolor: 1
   noReload: 0
   disableLocalization: 0
+--- !u!114 &629284885066770314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4815235118868826624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 0
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &5074500040478454450
 GameObject:
   m_ObjectHideFlags: 0

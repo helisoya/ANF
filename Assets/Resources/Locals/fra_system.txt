@@ -46,9 +46,9 @@ SettingsMenu_Text_Channel_0_Font = Police UI
 SettingsMenu_Text_Channel_0_Size = Taille UI
 SettingsMenu_Text_Channel_0_Color = Couleur UI
 
-SettingsMenu_Text_Channel_1_Font = Police Dialogue
-SettingsMenu_Text_Channel_1_Size = Taille Dialogue
-SettingsMenu_Text_Channel_1_Color = Couleur Dialogue
+SettingsMenu_Text_Channel_1_Font = Police dialogue
+SettingsMenu_Text_Channel_1_Size = Taille dialogue
+SettingsMenu_Text_Channel_1_Color = Couleur dialogue
 
 SettingsMenu_Text_Language = Langues
 SettingsMenu_Text_Language_eng = English
@@ -67,9 +67,11 @@ SettingsMenu_Game_InteractionMode_HighlightType = Surbrillance intéraction
 SettingsMenu_Game_InteractionMode_HighlightType_None = Aucune
 SettingsMenu_Game_InteractionMode_HighlightType_Selected = Sélectionné uniquement
 SettingsMenu_Game_InteractionMode_HighlightType_All = Tout
-SettingsMenu_Game_InteractionMode_HighlightStrength = Force Surbrillance intéraction
-SettingsMenu_Game_InteractionMode_HighlightColor = Couleur Surbrillance Base
-SettingsMenu_Game_InteractionMode_SelectionColor = Couleur Surbrillance Sélectionné
+SettingsMenu_Game_InteractionMode_HighlightStrength = Force surbrillance intéraction
+SettingsMenu_Game_InteractionMode_HighlightColor = Couleur surbrillance base
+SettingsMenu_Game_InteractionMode_SelectionColor = Couleur surbrillance sélectionné
+
+SettingsMenu_Game_InteractionMode_Weather = Effet météo
 
 SettingsMenu_ColorPicker_H = H
 SettingsMenu_ColorPicker_S = S
