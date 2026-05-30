@@ -33,6 +33,13 @@ SettingsMenu_Title = Options
 SettingsMenu_Graphics = Ecran
 SettingsMenu_Graphics_Fullscreen = Plein écran
 SettingsMenu_Graphics_Resolution = Résolution
+SettingsMenu_Graphics_VSync = VSync
+SettingsMenu_Graphics_AntiAliasing = AntiAliasing
+SettingsMenu_Graphics_Shadows = Ombres
+SettingsMenu_Graphics_Shadows_1 = Très basse
+SettingsMenu_Graphics_Shadows_2 = Basse
+SettingsMenu_Graphics_Shadows_3 = Moyenne
+SettingsMenu_Graphics_Shadows_4 = Haute
 
 SettingsMenu_Sound = Son
 SettingsMenu_Sound_Music = Musique
