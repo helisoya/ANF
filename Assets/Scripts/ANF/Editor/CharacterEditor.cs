@@ -186,7 +186,8 @@ namespace ANF.Editor
         /// <param name="pathToAnimations">The path to the animations</param>
         /// <param name="newStateName">The new state's name</param>
         /// <param name="clip">The linked clip (can be null)</param>
-        public static void CreateFromAnimationClip(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, AnimationClip clip)
+        /// <param name="createIfNull">True if a clip should be created if the provided one is null</param>
+        public static void CreateFromAnimationClip(AnimatorController animator, AnimatorStateMachine stateMachine, string pathToAnimations, string newStateName, AnimationClip clip, bool createIfNull)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;
@@ -195,7 +196,7 @@ namespace ANF.Editor
                 if (state.state.name.Equals(newStateName))
                     return;
 
-            if (clip == null)
+            if (clip == null && createIfNull)
             {
                 clip = new AnimationClip();
                 clip.name = newStateName;
@@ -222,7 +223,8 @@ namespace ANF.Editor
         /// <param name="newStateName">The new state's name</param>
         /// <param name="clipNormal">The normal clip (can be null)</param>
         /// <param name="clipTalking">The talking clip (can be null)</param>
-        public static void CreateFromBlendTree(AnimatorController animator, AnimatorStateMachine stateMachine, int layer, string newStateName, AnimationClip clipNormal, AnimationClip clipTalking)
+        /// <param name="createIfNull">True if clips should be created if null</param>
+        public static void CreateFromBlendTree(AnimatorController animator, AnimatorStateMachine stateMachine, int layer, string pathToAnimations, string newStateName, AnimationClip clipNormal, AnimationClip clipTalking, bool createIfNull)
         {
             if (string.IsNullOrEmpty(newStateName))
                 return;
@@ -230,6 +232,21 @@ namespace ANF.Editor
             foreach (ChildAnimatorState state in stateMachine.states)
                 if (state.state.name.Equals(newStateName))
                     return;
+
+            if (clipNormal == null && createIfNull)
+            {
+                clipNormal = new AnimationClip();
+                clipNormal.name = newStateName+"_Idle";
+                AssetDatabase.CreateAsset(clipNormal, pathToAnimations + newStateName + "_Idle.anim");
+            }
+
+
+            if (clipTalking == null && createIfNull)
+            {
+                clipTalking = new AnimationClip();
+                clipTalking.name = newStateName + "_Speak";
+                AssetDatabase.CreateAsset(clipTalking, pathToAnimations + newStateName + "_Speak.anim");
+            }
 
             animator.CreateBlendTreeInController(newStateName, out BlendTree blendTree, layer);
             blendTree.blendParameter = "Talking";
@@ -272,9 +289,9 @@ namespace ANF.Editor
             AssetDatabase.CopyAsset("Assets/Settings/ANF/Templates/Animations/Body/Normal_Idle.anim", pathToAnimations + newStateName + "_Idle.anim");
             AssetDatabase.CopyAsset("Assets/Settings/ANF/Templates/Animations/Body/Normal_Speak.anim", pathToAnimations + newStateName + "_Speak.anim");
 
-            CreateFromBlendTree(animator, stateMachine, 0, newStateName,
+            CreateFromBlendTree(animator, stateMachine, 0, pathToAnimations, newStateName,
                 AssetDatabase.LoadAssetAtPath<AnimationClip>(pathToAnimations + newStateName + "_Idle.anim"),
-                AssetDatabase.LoadAssetAtPath<AnimationClip>(pathToAnimations + newStateName + "_Speak.anim"));
+                AssetDatabase.LoadAssetAtPath<AnimationClip>(pathToAnimations + newStateName + "_Speak.anim"), false);
         }
 
         /// <summary>
@@ -316,7 +333,7 @@ namespace ANF.Editor
             AssetDatabase.SaveAssetIfDirty(eyeNormalClip);
 
 
-            CreateFromAnimationClip(animator, stateMachine, pathToAnimations, newStateName, eyeNormalClip);
+            CreateFromAnimationClip(animator, stateMachine, pathToAnimations, newStateName, eyeNormalClip,false);
         }
 
         /// <summary>
@@ -361,9 +378,9 @@ namespace ANF.Editor
                 AssetDatabase.SaveAssetIfDirty(clip);
             }
 
-            CreateFromBlendTree(animator, stateMachine, 2, newStateName,
+            CreateFromBlendTree(animator, stateMachine, 2, pathToAnimations, newStateName,
                 AssetDatabase.LoadAssetAtPath<AnimationClip>(pathToAnimations + newStateName + "_Idle.anim"),
-                AssetDatabase.LoadAssetAtPath<AnimationClip>(pathToAnimations + newStateName + "_Speak.anim"));
+                AssetDatabase.LoadAssetAtPath<AnimationClip>(pathToAnimations + newStateName + "_Speak.anim"), false);
         }
 
         /// <summary>
@@ -395,14 +412,24 @@ namespace ANF.Editor
                     bodyStateClip1 = EditorGUILayout.ObjectField("Clip1", bodyStateClip1, typeof(AnimationClip), false) as AnimationClip;
                     bodyStateClip2 = EditorGUILayout.ObjectField("Clip2", bodyStateClip2, typeof(AnimationClip), false) as AnimationClip;
 
-                    if (GUILayout.Button("Create Empty (Animation Clip)"))
+                    if (GUILayout.Button("Create New (Animation Clip)"))
                     {
-                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Body/", bodyStateName, bodyStateClip1);
+                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Body/", bodyStateName, null, true);
                     }
 
-                    if (GUILayout.Button("Create Empty (Talking Blend Tree)"))
+                    if (GUILayout.Button("Create New (Talking Blend Tree)"))
                     {
-                        CreateFromBlendTree(animator, stateMachine, layer, bodyStateName, bodyStateClip1, bodyStateClip2);
+                        CreateFromBlendTree(animator, stateMachine, layer, pathToAnimations + "Body/", bodyStateName, null, null, true);
+                    }
+
+                    if (GUILayout.Button("Create from clip (Animation Clip)"))
+                    {
+                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Body/", bodyStateName, bodyStateClip1, false);
+                    }
+
+                    if (GUILayout.Button("Create from clips (Talking Blend Tree)"))
+                    {
+                        CreateFromBlendTree(animator, stateMachine, layer, pathToAnimations + "Body/", bodyStateName, bodyStateClip1, bodyStateClip2,false);
                     }
 
                     if (GUILayout.Button("Create from template"))
@@ -443,14 +470,24 @@ namespace ANF.Editor
                     eyeStateClip2 = EditorGUILayout.ObjectField("Clip2", eyeStateClip2, typeof(AnimationClip), false) as AnimationClip;
                     eyeStateTexture = EditorGUILayout.ObjectField("Texture (for Template)", eyeStateTexture, typeof(Texture2D), false) as Texture2D;
 
-                    if (GUILayout.Button("Create Empty (Animation Clip)"))
+                    if (GUILayout.Button("Create New (Animation Clip)"))
                     {
-                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Eye/", eyeStateName, eyeStateClip1);
+                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Eye/", eyeStateName, null, true);
                     }
 
-                    if (GUILayout.Button("Create Empty (Talking Blend Tree)"))
+                    if (GUILayout.Button("Create New (Talking Blend Tree)"))
                     {
-                        CreateFromBlendTree(animator, stateMachine, layer, eyeStateName, eyeStateClip1, eyeStateClip2);
+                        CreateFromBlendTree(animator, stateMachine, layer, pathToAnimations + "Eye/", eyeStateName, null, null, true);
+                    }
+
+                    if (GUILayout.Button("Create from clip (Animation Clip)"))
+                    {
+                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Eye/", eyeStateName, eyeStateClip1,false);
+                    }
+
+                    if (GUILayout.Button("Create from clips (Talking Blend Tree)"))
+                    {
+                        CreateFromBlendTree(animator, stateMachine, layer, pathToAnimations + "Eye/", eyeStateName, eyeStateClip1, eyeStateClip2,false);
                     }
 
                     if (GUILayout.Button("Create from template"))
@@ -491,14 +528,24 @@ namespace ANF.Editor
                     mouthStateClip2 = EditorGUILayout.ObjectField("Clip2", mouthStateClip2, typeof(AnimationClip), false) as AnimationClip;
                     mouthStateTexture = EditorGUILayout.ObjectField("Texture (for Template)", mouthStateTexture, typeof(Texture2D), false) as Texture2D;
 
-                    if (GUILayout.Button("Create Empty (Animation Clip)"))
+                    if (GUILayout.Button("Create New (Animation Clip)"))
                     {
-                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Mouth/", mouthStateName, mouthStateClip1);
+                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Mouth/", mouthStateName, null, true);
                     }
 
-                    if (GUILayout.Button("Create Empty (Talking Blend Tree)"))
+                    if (GUILayout.Button("Create New (Talking Blend Tree)"))
                     {
-                        CreateFromBlendTree(animator, stateMachine,layer, mouthStateName, mouthStateClip1, mouthStateClip2);
+                        CreateFromBlendTree(animator, stateMachine,layer, pathToAnimations + "Mouth/", mouthStateName, null, null, true);
+                    }
+
+                    if (GUILayout.Button("Create from clip (Animation Clip)"))
+                    {
+                        CreateFromAnimationClip(animator, stateMachine, pathToAnimations + "Mouth/", mouthStateName, mouthStateClip1, false);
+                    }
+
+                    if (GUILayout.Button("Create from clips (Talking Blend Tree)"))
+                    {
+                        CreateFromBlendTree(animator, stateMachine, layer, pathToAnimations + "Mouth/", mouthStateName, mouthStateClip1, mouthStateClip2,false);
                     }
 
                     if (GUILayout.Button("Create from template"))

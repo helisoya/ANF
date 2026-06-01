@@ -7,7 +7,8 @@ namespace ANF.GUI
     /// <summary>
     /// Represents the sound tab in the settings
     /// </summary>
-    public class SettingsTabUISound : SettingsTabUI
+    [System.Serializable]
+    public class SettingsHandlerUISound : SettingsHandlerUI
     {
         [SerializeField] private float sliderMaxValue = 20;
         [SerializeField] private float sliderMinValue = -80;
@@ -16,18 +17,14 @@ namespace ANF.GUI
         private Slider ambientSlider;
         private Slider sfxSlider;
         private Slider voiceSlider;
-        private Button resetButton;
-
-        public override string GetLabelKey()
-        {
-            return "SettingsMenu_Sound";
-        }
 
         public override void PopulateTab()
         {
+            RectTransform soundMenu = menu.GetTab("SettingsMenu_Sound");
+
             if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Persistent.AudioManager audioManager))
             {
-                musicSlider = menu.CreateSlider("SettingsMenu_Sound_Music", root);
+                musicSlider = menu.CreateSlider("SettingsMenu_Sound_Music", soundMenu);
                 musicSlider.minValue = sliderMinValue;
                 musicSlider.maxValue = sliderMaxValue;
                 musicSlider.SetValueWithoutNotify(audioManager.GetMusicVolume());
@@ -36,7 +33,7 @@ namespace ANF.GUI
                     audioManager.SetMusicVolume(newVolume);
                 });
 
-                ambientSlider = menu.CreateSlider("SettingsMenu_Sound_Ambient", root);
+                ambientSlider = menu.CreateSlider("SettingsMenu_Sound_Ambient", soundMenu);
                 ambientSlider.minValue = sliderMinValue;
                 ambientSlider.maxValue = sliderMaxValue;
                 ambientSlider.SetValueWithoutNotify(audioManager.GetAmbientVolume());
@@ -45,7 +42,7 @@ namespace ANF.GUI
                     audioManager.SetAmbientVolume(newVolume);
                 });
 
-                sfxSlider = menu.CreateSlider("SettingsMenu_Sound_Sfx", root);
+                sfxSlider = menu.CreateSlider("SettingsMenu_Sound_Sfx", soundMenu);
                 sfxSlider.minValue = sliderMinValue;
                 sfxSlider.maxValue = sliderMaxValue;
                 sfxSlider.SetValueWithoutNotify(audioManager.GetSfxVolume());
@@ -54,7 +51,7 @@ namespace ANF.GUI
                     audioManager.SetSfxVolume(newVolume);
                 });
 
-                voiceSlider = menu.CreateSlider("SettingsMenu_Sound_Voice", root);
+                voiceSlider = menu.CreateSlider("SettingsMenu_Sound_Voice", soundMenu);
                 voiceSlider.minValue = sliderMinValue;
                 voiceSlider.maxValue = sliderMaxValue;
                 voiceSlider.SetValueWithoutNotify(audioManager.GetVoiceVolume());
@@ -64,15 +61,11 @@ namespace ANF.GUI
                 });
             }
 
-            resetButton = menu.CreateButton($"SettingsMenu_Reset", root);
-            resetButton.onClick.AddListener(() =>
-            {
-                Reset();
-            });
+            menu.RegisterResetAction("SettingsMenu_Sound", Reset);
         }
 
         /// <summary>
-        /// Resets the parameters to their default value
+        /// Resets the values
         /// </summary>
         private void Reset()
         {
