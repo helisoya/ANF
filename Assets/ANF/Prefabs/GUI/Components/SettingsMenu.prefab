@@ -289,8 +289,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cancel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
-  m_sharedMaterial: {fileID: -3481345414680880985, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+  m_sharedMaterial: {fileID: 7415795266122915290, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -528,8 +528,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Settings
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
-  m_sharedMaterial: {fileID: -3481345414680880985, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+  m_sharedMaterial: {fileID: 7415795266122915290, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -686,8 +686,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Confirm
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
-  m_sharedMaterial: {fileID: -3481345414680880985, guid: 20d0c435cdcccb449b85124b701f19ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
+  m_sharedMaterial: {fileID: 7415795266122915290, guid: 7d934e7fb84582a4d872923bcd7be0ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -921,11 +921,12 @@ MonoBehaviour:
   transitionDuration: 0.5
   tabsRoot: {fileID: 61886245017418505}
   scrollbar: {fileID: 5579723004105552287}
-  tabsPrefabs:
-  - {fileID: 1794370385720517845, guid: 39c4f2a194f704f49806ed7ee4b9640c, type: 3}
-  - {fileID: 473491550487651806, guid: d7c7ea4099e17b8498013e6d051dc312, type: 3}
-  - {fileID: 7631552148434347104, guid: 3c99266aa4873af49a0dc3242dff6508, type: 3}
-  - {fileID: 702902006624206173, guid: 597a0963a05464e45bf6b3f7f8a39689, type: 3}
+  tabPrefab: {fileID: 2234017033866888896, guid: 597a0963a05464e45bf6b3f7f8a39689, type: 3}
+  handlers:
+  - rid: 6627816543662899283
+  - rid: 6627816543662899284
+  - rid: 6627816543662899285
+  - rid: 6627816543662899282
   navigateAction: {fileID: -8784545083839296357, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   colorPicker: {fileID: 3584449837077450068}
   prefabToggleToggle: {fileID: 5493446886807369921, guid: 22f20b1273d316d47b1d1f84868bff1f, type: 3}
@@ -933,6 +934,45 @@ MonoBehaviour:
   prefabToggleDropdown: {fileID: 8232339374138388199, guid: 4c9550669833b8949a68417485870c52, type: 3}
   prefabToggleColorPicker: {fileID: 5238993898686413137, guid: 0382ed0087e73104ca15aae23c7d786e, type: 3}
   prefabToggleButton: {fileID: 5148879127545654300, guid: d2707948cdbb8f0489e372ec13791593, type: 3}
+  references:
+    version: 2
+    RefIds:
+    - rid: 6627816543662899282
+      type: {class: SettingsHandlerUIGame, ns: ANF.GUI, asm: Assembly-CSharp}
+      data: 
+    - rid: 6627816543662899283
+      type: {class: SettingsHandlerUIGraphics, ns: ANF.GUI, asm: Assembly-CSharp}
+      data: 
+    - rid: 6627816543662899284
+      type: {class: SettingsHandlerUISound, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        sliderMaxValue: 20
+        sliderMinValue: -80
+    - rid: 6627816543662899285
+      type: {class: SettingsHandlerUIText, ns: ANF.GUI, asm: Assembly-CSharp}
+      data:
+        channelsToShow:
+          _serializedList:
+          - Key: 0
+            Value: 1
+          - Key: 1
+            Value: 1
+          - Key: 2
+            Value: 0
+          - Key: 3
+            Value: 0
+          - Key: 4
+            Value: 0
+          - Key: 5
+            Value: 0
+          - Key: 6
+            Value: 0
+          - Key: 7
+            Value: 0
+          - Key: 8
+            Value: 0
+          - Key: 9
+            Value: 0
 --- !u!1 &3098268969277042611
 GameObject:
   m_ObjectHideFlags: 0

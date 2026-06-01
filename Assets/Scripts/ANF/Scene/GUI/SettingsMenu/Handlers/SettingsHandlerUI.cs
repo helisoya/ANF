@@ -7,19 +7,12 @@ namespace ANF.GUI
     /// <summary>
     /// Represents a visual tab in the settings menu
     /// </summary>
-    public abstract class SettingsTabUI : MonoBehaviour
+    [System.Serializable]
+    public abstract class SettingsHandlerUI
     {
-        [SerializeField] protected Locals.LocalizedText tabNameText;
-        [SerializeField] protected RectTransform root;
-
         protected SettingsMenuUI menu;
         protected ANFManager manager;
 
-        /// <summary>
-        /// Gets the tab's label
-        /// </summary>
-        /// <returns>The label's key</returns>
-        public abstract string GetLabelKey();
 
         /// <summary>
         /// Initialize the component
@@ -32,10 +25,7 @@ namespace ANF.GUI
             this.menu = menu;
             this.manager = manager;
 
-            tabNameText.SetNewKey(GetLabelKey());
             PopulateTab();
-            LayoutRebuilder.ForceRebuildLayoutImmediate(root);
-            LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
         }
 
         /// <summary>

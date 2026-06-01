@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -25,8 +26,9 @@ namespace ANF.GUI
         [Header("Tabs")]
         [SerializeField] private Transform tabsRoot;
         [SerializeField] private Scrollbar scrollbar;
-        [SerializeField] private SettingsTabUI[] tabsPrefabs;
-        private SettingsTabUI[] tabs;
+        [SerializeField] private SettingsTabUI tabPrefab;
+        [SerializeField, SerializeReference, SubclassSelector(AllowNull = false)] private SettingsHandlerUI[] handlers;
+        private Dictionary<string, SettingsTabUI> tabs;
 
         [Header("Components")]
         [Tooltip("The UI/Navigate action used by controller and keyboard to use menus")]
@@ -38,7 +40,7 @@ namespace ANF.GUI
         [SerializeField] private SettingsEntryUIColorPicker prefabToggleColorPicker;
         [SerializeField] private SettingsEntryUIButton prefabToggleButton;
 
-        private Persistent.AudioManager audioManager;
+        private AudioManager audioManager;
         private List<Selectable> objects;
         private GameObject lastSelectedObject;
         private bool selectFirstObject;
@@ -48,6 +50,7 @@ namespace ANF.GUI
         public override void OnInitialize()
         {
             objects = new List<Selectable>();
+            tabs = new Dictionary<string, SettingsTabUI>();
             bgTransform.anchoredPosition = new Vector2(bgTransform.sizeDelta.x / 2f, 0);
             movingWithInput = false;
         }
@@ -95,16 +98,24 @@ namespace ANF.GUI
             objects.Clear();
 
             selectFirstObject = true;
+            tabs.Clear();
 
             foreach (Transform child in tabsRoot)
                 Destroy(child.gameObject);
 
-            tabs = new SettingsTabUI[tabsPrefabs.Length];
-            for (int i = 0; i < tabsPrefabs.Length; i++)
+            for(int i = 0;i < handlers.Length;i++)
             {
-                tabs[i] = Instantiate(tabsPrefabs[i], tabsRoot);
-                tabs[i].Initialize(this, manager);
+                handlers[i].Initialize(this, manager);
+
+                foreach (SettingsTabUI tab in tabs.Values)
+                    tab.Rebuild();
+
+                LayoutRebuilder.ForceRebuildLayoutImmediate(tabsRoot.GetComponent<RectTransform>());
             }
+
+            objects.Sort((Selectable s1, Selectable s2) => { return s2.transform.position.y.CompareTo(s1.transform.position.y); });
+
+            RegenerateObjectsNavigation();
 
             scrollbar.value = 1;
 
@@ -175,13 +186,41 @@ namespace ANF.GUI
 
         }
 
+        private void RegenerateObjectsNavigation()
+        {
+            if (objects.Count > 1)
+            {
+                for(int i = 0; i < objects.Count-1; i++)
+                {
+                    Navigation navigationTop = new Navigation()
+                    {
+                        mode = Navigation.Mode.Explicit,
+                        wrapAround = true,
+                        selectOnDown = objects[i+1],
+                        selectOnUp = objects[i].navigation.selectOnUp
+                    };
+
+                    Navigation navigationDown = new Navigation()
+                    {
+                        mode = Navigation.Mode.Explicit,
+                        wrapAround = true,
+                        selectOnDown = null,
+                        selectOnUp = objects[i]
+                    };
+
+                    objects[i].navigation = navigationTop;
+                    objects[i + 1].navigation = navigationDown;
+                }
+            }
+        }
+
         /// <summary>
         /// Redraws the localized elements
         /// </summary>
         public void RedrawLocalizedElements()
         {
-            foreach (SettingsTabUI tab in tabs)
-                tab.RedrawLocalizedElements();
+            foreach (SettingsHandlerUI handler in handlers)
+                handler.RedrawLocalizedElements();
         }
 
         /// <summary>
@@ -195,6 +234,36 @@ namespace ANF.GUI
             colorPicker.Open(startColor, initiator, callback);
         }
 
+        /// <summary>
+        /// Gets or create a tab from the settings
+        /// </summary>
+        /// <param name="tabKey">The tab's key</param>
+        /// <returns>The tab's content root</returns>
+        public RectTransform GetTab(string tabKey)
+        {
+            if (tabs.TryGetValue(tabKey, out SettingsTabUI tab))
+                return tab.GetRoot();
+
+            SettingsTabUI instance = Instantiate(tabPrefab, tabsRoot);
+            instance.SetLabelKey(tabKey);
+            tabs.Add(tabKey, instance);
+            return instance.GetRoot();
+        }
+
+        /// <summary>
+        /// Registers a new reset action for a button
+        /// </summary>
+        /// <param name="tabKey">The tab's key</param>
+        /// <param name="action">The reset action</param>
+        public void RegisterResetAction(string tabKey, UnityAction action)
+        {
+            if (tabs.TryGetValue(tabKey, out SettingsTabUI tab))
+            {
+                tab.RegisterResetAction(action);
+                if (!objects.Contains(tab.GetResetButton()))
+                    objects.Add(tab.GetResetButton());
+            }
+        }
 
         /// <summary>
         /// Creates a new toggle in the settings menu
@@ -263,29 +332,6 @@ namespace ANF.GUI
         {
             SettingsEntryUI<T> instance = Instantiate(prefab, root);
             instance.SetLabel(labelKey);
-
-            if (objects.Count != 0)
-            {
-                Selectable lastObject = objects[objects.Count - 1];
-                Navigation navigationTop = new Navigation()
-                {
-                    mode = Navigation.Mode.Explicit,
-                    wrapAround = true,
-                    selectOnDown = instance.GetItem(),
-                    selectOnUp = lastObject.navigation.selectOnUp
-                };
-
-                Navigation navigationDown = new Navigation()
-                {
-                    mode = Navigation.Mode.Explicit,
-                    wrapAround = true,
-                    selectOnDown = null,
-                    selectOnUp = lastObject
-                };
-
-                lastObject.navigation = navigationTop;
-                instance.GetItem().navigation = navigationDown;
-            }
 
             objects.Add(instance.GetItem());
 

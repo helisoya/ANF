@@ -12,7 +12,8 @@ namespace ANF.GUI
     /// <summary>
     /// Represents the text tab in the settings
     /// </summary>
-    public class SettingsTabUIText : SettingsTabUI
+    [System.Serializable] 
+    public class SettingsHandlerUIText : SettingsHandlerUI
     {
         [SerializeField]
         private SerializedDictionary<Locals.Locals.Channel, bool> channelsToShow = new SerializedDictionary<Locals.Locals.Channel, bool>()
@@ -33,15 +34,11 @@ namespace ANF.GUI
         private TMP_Dropdown[] dropdownsFont;
         private TMP_Dropdown[] dropdownsSize;
         private Button[] buttonsColor;
-        private Button resetButton;
-
-        public override string GetLabelKey()
-        {
-            return "SettingsMenu_Text";
-        }
 
         public override void PopulateTab()
         {
+            RectTransform textMenu = menu.GetTab("SettingsMenu_Text");
+
             if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Locals.Locals locals))
             {
                 int channelCount = Enum.GetValues(typeof(Locals.Locals.Channel)).Length;
@@ -49,7 +46,7 @@ namespace ANF.GUI
                 List<string> languages = GetLanguageLabels(locals);
                 int currentIdx = locals.GetCurrentLanguageIndex();
 
-                dropdownLanguage = menu.CreateDropdown("SettingsMenu_Text_Language", root);
+                dropdownLanguage = menu.CreateDropdown("SettingsMenu_Text_Language", textMenu);
                 dropdownLanguage.ClearOptions();
                 dropdownLanguage.AddOptions(languages);
                 dropdownLanguage.SetValueWithoutNotify(currentIdx);
@@ -84,7 +81,7 @@ namespace ANF.GUI
 
                         if (channelsToShow.TryGetValue(channel, out bool shouldShow) && shouldShow)
                         {
-                            dropdownsFont[value] = menu.CreateDropdown($"SettingsMenu_Text_Channel_{value}_Font", root);
+                            dropdownsFont[value] = menu.CreateDropdown($"SettingsMenu_Text_Channel_{value}_Font", textMenu);
                             dropdownsFont[value].ClearOptions();
                             dropdownsFont[value].AddOptions(fontLabels);
                             dropdownsFont[value].SetValueWithoutNotify(locals.GetFontIndex(channel));
@@ -93,7 +90,7 @@ namespace ANF.GUI
                                 locals.ChangeFont(channel, newIndex);
                             });
 
-                            dropdownsSize[value] = menu.CreateDropdown($"SettingsMenu_Text_Channel_{value}_Size", root);
+                            dropdownsSize[value] = menu.CreateDropdown($"SettingsMenu_Text_Channel_{value}_Size", textMenu);
                             dropdownsSize[value].ClearOptions();
                             dropdownsSize[value].AddOptions(sizeLabels);
                             dropdownsSize[value].SetValueWithoutNotify(locals.GetFontSizeIndex(channel));
@@ -102,7 +99,7 @@ namespace ANF.GUI
                                 locals.ChangeSize(channel, newIndex);
                             });
 
-                            buttonsColor[value] = menu.CreateColorPicker($"SettingsMenu_Text_Channel_{value}_Color", root);
+                            buttonsColor[value] = menu.CreateColorPicker($"SettingsMenu_Text_Channel_{value}_Color", textMenu);
                             buttonsColor[value].GetComponent<Image>().color = locals.GetColor(channel);
                             buttonsColor[value].onClick.AddListener(() =>
                             {
@@ -116,16 +113,12 @@ namespace ANF.GUI
                     }
                 }
 
-                resetButton = menu.CreateButton($"SettingsMenu_Reset", root);
-                resetButton.onClick.AddListener(() =>
-                {
-                    Reset();
-                });
+                menu.RegisterResetAction("SettingsMenu_Text", Reset);
             }
         }
 
         /// <summary>
-        /// Resets the parameters to their default values
+        /// Resets the text settings
         /// </summary>
         private void Reset()
         {

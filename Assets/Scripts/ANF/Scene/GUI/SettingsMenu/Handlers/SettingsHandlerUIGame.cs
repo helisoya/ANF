@@ -9,19 +9,22 @@ namespace ANF.GUI
     /// <summary>
     /// Represents the game tab in the settings
     /// </summary>
-    public class SettingsTabUIGame : SettingsTabUI
+    [System.Serializable]
+    public class SettingsHandlerUIGame : SettingsHandlerUI
     {
         private Dictionary<string, Selectable> selectables;
         private Button resetButton;
 
-        public override string GetLabelKey()
+        private struct TabEntries
         {
-            return "SettingsMenu_Game";
+            private List<string> linkedKeys;
         }
 
         public override void PopulateTab()
         {
             selectables = new Dictionary<string, Selectable>();
+
+            RectTransform gameMenu = menu.GetTab("SettingsMenu_Game");
 
             PersistentDataManager.instance.GetGlobalData().GetComponent(out Locals.Locals locals);
 
@@ -34,7 +37,7 @@ namespace ANF.GUI
                     {
                         case SettingsContainer.SettingsDataType.Bool:
                             {
-                                Toggle toggle = menu.CreateToggle(data.drawParameters.label, root);
+                                Toggle toggle = menu.CreateToggle(data.drawParameters.label, gameMenu);
                                 toggle.SetIsOnWithoutNotify((bool)data.value);
                                 toggle.onValueChanged.AddListener((bool value) =>
                                 {
@@ -48,7 +51,7 @@ namespace ANF.GUI
                             {
                                 if (data.drawParameters.dropdownLabels != null)
                                 {
-                                    TMP_Dropdown dropdown = menu.CreateDropdown(data.drawParameters.label, root);
+                                    TMP_Dropdown dropdown = menu.CreateDropdown(data.drawParameters.label, gameMenu);
                                     dropdown.ClearOptions();
 
                                     List<string> labels = new List<string>();
@@ -75,7 +78,7 @@ namespace ANF.GUI
                             }
                         case SettingsContainer.SettingsDataType.Float:
                             {
-                                Slider slider = menu.CreateSlider(data.drawParameters.label, root);
+                                Slider slider = menu.CreateSlider(data.drawParameters.label, gameMenu);
                                 slider.maxValue = data.drawParameters.sliderMaxValue;
                                 slider.minValue = data.drawParameters.sliderMinValue;
                                 slider.SetValueWithoutNotify((float)data.value);
@@ -89,7 +92,7 @@ namespace ANF.GUI
                             }
                         case SettingsContainer.SettingsDataType.Color:
                             {
-                                Button button = menu.CreateColorPicker(data.drawParameters.label, root);
+                                Button button = menu.CreateColorPicker(data.drawParameters.label, gameMenu);
                                 button.GetComponent<Image>().color = (Color)data.value;
                                 button.onClick.AddListener(() =>
                                 {
@@ -111,11 +114,7 @@ namespace ANF.GUI
                     }
                 }
 
-                resetButton = menu.CreateButton($"SettingsMenu_Reset", root);
-                resetButton.onClick.AddListener(() =>
-                {
-                    Reset();
-                });
+                menu.RegisterResetAction("SettingsMenu_Game", Reset);
             }
         }
 
