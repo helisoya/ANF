@@ -346,6 +346,7 @@ namespace ANF.Scene
                     (int)highlightType,
                     SettingsContainer.SettingsDataType.Int,
                     new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightType",
+                        "SettingsMenu_Game",
                         new string[]{
                             "SettingsMenu_Game_InteractionMode_HighlightType_None",
                             "SettingsMenu_Game_InteractionMode_HighlightType_Selected",
@@ -356,19 +357,19 @@ namespace ANF.Scene
                 highlightStrength = (float)settings.RegisterOrCreate("InteractionMode_HighlightStrength",
                     highlightStrength,
                     SettingsContainer.SettingsDataType.Float,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightStrength", null, 0, 1),
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightStrength", "SettingsMenu_Game", null, 0, 1),
                     OnHighlightStrengthChange);
 
                 baseColor = (Color)settings.RegisterOrCreate("InteractionMode_HighlightColor",
                     baseColor,
                     SettingsContainer.SettingsDataType.Color,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightColor"),
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightColor", "SettingsMenu_Game"),
                     OnHighlightColorChange);
 
                 selectedColor = (Color)settings.RegisterOrCreate("InteractionMode_SelectedColor",
                     selectedColor,
                     SettingsContainer.SettingsDataType.Color,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_SelectionColor"),
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_SelectionColor", "SettingsMenu_Game"),
                     OnSelectedColorChange);
             }
         }

@@ -30,7 +30,7 @@ HistoryMenu_Title = History
 
 SettingsMenu_Title = Settings
 
-SettingsMenu_Graphics = Screen
+SettingsMenu_Graphics = Graphics
 SettingsMenu_Graphics_Fullscreen = Fullscreen
 SettingsMenu_Graphics_Resolution = Resolution
 SettingsMenu_Graphics_VSync = VSync

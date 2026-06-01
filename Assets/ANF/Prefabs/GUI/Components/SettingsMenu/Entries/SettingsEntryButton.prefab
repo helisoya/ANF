@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 6762277131401046671}
   - component: {fileID: 6653436425876268049}
   - component: {fileID: 3827811192005177833}
+  - component: {fileID: 3810722794265060784}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -558,3 +559,15 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3810722794265060784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790318591726852421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d568be79125aac945a44531c1515eed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ANF.GUI.SettingsEntryUIInputs

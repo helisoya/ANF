@@ -276,9 +276,10 @@ namespace ANF.Scene
         public override void OnInitialize()
         {
             if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
-                enableWeatherEffects = (bool)settings.RegisterOrCreate("BackgroundManager_EnableWeatherEffects", enableWeatherEffects,
+                enableWeatherEffects = (bool)settings.RegisterOrCreate("BackgroundManager_EnableWeatherEffects",
+                    enableWeatherEffects,
                     SettingsContainer.SettingsDataType.Bool,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_Weather"),
+                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_Weather", "SettingsMenu_Graphics"),
                     OnEnableWeatherEffectsChange);
         }
 

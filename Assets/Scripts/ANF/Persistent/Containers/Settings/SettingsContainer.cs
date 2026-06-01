@@ -168,6 +168,16 @@ namespace ANF.Persistent
                 data.ResetValue();
         }
 
+        /// <summary>
+		/// Resets a specific parameter
+		/// </summary>
+		/// <param name="key">The parameter's key</param>
+        public void Reset(string key)
+        {
+            if (savedObjects.TryGetValue(key, out SettingsObjectData data))
+                data.ResetValue();
+        }
+
         public void Load(JSON json)
         {
             Reset();
@@ -231,6 +241,7 @@ namespace ANF.Persistent
                 drawJSON.Add("sliderMaxValue", drawParameters.sliderMaxValue);
                 if (drawParameters.dropdownLabels != null)
                     drawJSON.Add("dropdownLabels", drawParameters.dropdownLabels.ToArray());
+                drawJSON.Add("tabKey", drawParameters.tabKey);
                 json.Add("drawParameters", drawJSON);
             }
 
@@ -304,6 +315,10 @@ namespace ANF.Persistent
                 drawParameters = new SettingsObjectDrawParameters();
                 if (drawJSON.ContainsKey("label"))
                     drawParameters.label = drawJSON.GetString("label");
+                if (drawJSON.ContainsKey("tabKey"))
+                    drawParameters.tabKey = drawJSON.GetString("tabKey");
+                else
+                    drawParameters.tabKey = "";
                 if (drawJSON.ContainsKey("sliderMinValue"))
                     drawParameters.sliderMinValue = drawJSON.GetFloat("sliderMinValue");
                 if (drawJSON.ContainsKey("sliderMaxValue"))
@@ -319,13 +334,15 @@ namespace ANF.Persistent
         public struct SettingsObjectDrawParameters
         {
             public string label;
+            public string tabKey;
             public string[] dropdownLabels;
             public float sliderMinValue;
             public float sliderMaxValue;
-            public SettingsObjectDrawParameters(string label, string[] dropdownLabels = null,
+            public SettingsObjectDrawParameters(string label, string tabKey, string[] dropdownLabels = null,
                 float sliderMinValue = 0, float sliderMaxValue = 1)
             {
                 this.label = label;
+                this.tabKey = tabKey;
                 this.dropdownLabels = dropdownLabels;
                 this.sliderMaxValue = sliderMaxValue;
                 this.sliderMinValue = sliderMinValue;
