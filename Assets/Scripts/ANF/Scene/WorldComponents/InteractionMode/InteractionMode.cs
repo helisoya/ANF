@@ -342,34 +342,20 @@ namespace ANF.Scene
         {
             if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
             {
-                highlightType = (HighlightType)settings.RegisterOrCreate("InteractionMode_HighlightType",
-                    (int)highlightType,
+                highlightType = (HighlightType)settings.Register("InteractionMode_HighlightType",
                     SettingsContainer.SettingsDataType.Int,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightType",
-                        "SettingsMenu_Game",
-                        new string[]{
-                            "SettingsMenu_Game_InteractionMode_HighlightType_None",
-                            "SettingsMenu_Game_InteractionMode_HighlightType_Selected",
-                            "SettingsMenu_Game_InteractionMode_HighlightType_All"
-                        }),
                     OnHighlightTypeChange);
 
-                highlightStrength = (float)settings.RegisterOrCreate("InteractionMode_HighlightStrength",
-                    highlightStrength,
+                highlightStrength = (float)settings.Register("InteractionMode_HighlightStrength",
                     SettingsContainer.SettingsDataType.Float,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightStrength", "SettingsMenu_Game", null, 0, 1),
                     OnHighlightStrengthChange);
 
-                baseColor = (Color)settings.RegisterOrCreate("InteractionMode_HighlightColor",
-                    baseColor,
+                baseColor = (Color)settings.Register("InteractionMode_HighlightColor",
                     SettingsContainer.SettingsDataType.Color,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_HighlightColor", "SettingsMenu_Game"),
                     OnHighlightColorChange);
 
-                selectedColor = (Color)settings.RegisterOrCreate("InteractionMode_SelectedColor",
-                    selectedColor,
+                selectedColor = (Color)settings.Register("InteractionMode_SelectedColor",
                     SettingsContainer.SettingsDataType.Color,
-                    new SettingsContainer.SettingsObjectDrawParameters("SettingsMenu_Game_InteractionMode_SelectionColor", "SettingsMenu_Game"),
                     OnSelectedColorChange);
             }
         }
