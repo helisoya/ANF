@@ -13,8 +13,6 @@ namespace ANF.ANSL
         functionDesc: "Generates a random variable between [Min,Max[")]
     public class RandomFunction : ANSLFunction
     {
-
-
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {

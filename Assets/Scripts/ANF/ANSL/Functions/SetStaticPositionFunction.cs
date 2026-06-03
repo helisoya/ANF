@@ -128,7 +128,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            currentObject = null;
         }
 
         protected override void OnSave(JSON json)

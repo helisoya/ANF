@@ -53,12 +53,13 @@ namespace ANF.ANSL
                 EndProcess();
 
                 context.LoadScript(interactionMode.selectedScript);
+                interactionMode = null;
             }
         }
 
         protected override void OnCleanup()
         {
-            // Unused
+            
         }
 
         protected override void OnSave(JSON json)

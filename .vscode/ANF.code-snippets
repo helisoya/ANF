@@ -386,6 +386,12 @@ endchoice"],
 		"body": ["setCharacterBody(Name;Body;TransitionDuration)"],
 		"description": "Changes a character's body animation"
 	},
+	"58_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterBool",
+		"body": ["setCharacterBool(Name;ParameterName;Value)"],
+		"description": "Sets a character's animator bool"
+	},
 	"46_0": {
 		"scope": "ansl",
 		"prefix": "setCharacterEye",
@@ -397,6 +403,24 @@ endchoice"],
 		"prefix": "setCharacterEye",
 		"body": ["setCharacterEye(Name;Eye;TransitionDuration)"],
 		"description": "Changes a character's eye animation"
+	},
+	"60_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterFloat",
+		"body": ["setCharacterFloat(Name;ParameterName;Value)"],
+		"description": "Sets a character's animator float"
+	},
+	"60_1": {
+		"scope": "ansl",
+		"prefix": "setCharacterFloat",
+		"body": ["setCharacterFloat(Name;ParameterName;Value;TransitionDuration;WaitForEnd)"],
+		"description": "Sets a character's animator float"
+	},
+	"59_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterInt",
+		"body": ["setCharacterInt(Name;ParameterName;Value)"],
+		"description": "Sets a character's animator int"
 	},
 	"47_0": {
 		"scope": "ansl",
@@ -457,6 +481,12 @@ endchoice"],
 		"prefix": "setCharacterRotation",
 		"body": ["setCharacterRotation(Name;Marker;Duration;WaitForEnd)"],
 		"description": "Rotates a character"
+	},
+	"57_0": {
+		"scope": "ansl",
+		"prefix": "setCharacterTrigger",
+		"body": ["setCharacterTrigger(Name;Trigger)"],
+		"description": "Sets a character's animator trigger"
 	},
 	"15_0": {
 		"scope": "ansl",

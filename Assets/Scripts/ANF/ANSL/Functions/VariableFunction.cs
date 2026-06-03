@@ -13,8 +13,6 @@ namespace ANF.ANSL
         functionDesc: "Changes a variable's value. Operator can be +, -, and default")]
     public class VariableFunction : ANSLFunction
     {
-
-
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {

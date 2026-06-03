@@ -78,7 +78,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            mapUI = null;
         }
 
         protected override void OnSave(JSON json)

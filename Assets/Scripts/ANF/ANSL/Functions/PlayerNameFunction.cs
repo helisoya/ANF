@@ -13,8 +13,6 @@ namespace ANF.ANSL
         functionDesc: "Changes the player's name")]
     public class PlayerNameFunction : ANSLFunction
     {
-
-
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {

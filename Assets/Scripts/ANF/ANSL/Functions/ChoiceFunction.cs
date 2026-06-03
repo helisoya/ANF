@@ -262,7 +262,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            choiceUI = null;
         }
 
         protected override void OnSave(JSON json)

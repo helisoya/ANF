@@ -1,5 +1,5 @@
 using Leguar.TotalJSON;
-
+using ANF.GUI;
 
 namespace ANF.ANSL
 {
@@ -16,7 +16,7 @@ namespace ANF.ANSL
     public class FadeFgFunction : ANSLFunction
     {
         private bool waitingForFading;
-        private GUI.Fade currentFade;
+        private Fade currentFade;
 
         public override FunctionParameterType[][] GetParametersTemplates()
         {
@@ -36,7 +36,7 @@ namespace ANF.ANSL
                 if (!parameters.GetParameter(2, out duration))
                     duration = 1.0f;
 
-                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out currentFade);
+                manager.GetGUIManager().GetComponent<Fade>("fadeFg", out currentFade);
 
                 if (currentFade != null)
                     currentFade.FadeAlphaTo(target, false, duration);
@@ -49,7 +49,7 @@ namespace ANF.ANSL
         protected override void OnUpdate()
         {
             if (currentFade == null)
-                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out currentFade);
+                manager.GetGUIManager().GetComponent<Fade>("fadeFg", out currentFade);
 
             if (currentFade != null && !currentFade.fadingAlpha)
             {
@@ -60,7 +60,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            currentFade = null;
         }
 
         protected override void OnSave(JSON json)

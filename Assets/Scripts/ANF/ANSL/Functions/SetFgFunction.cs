@@ -1,3 +1,5 @@
+using ANF.GUI;
+
 namespace ANF.ANSL
 {
     /// <summary>
@@ -22,7 +24,7 @@ namespace ANF.ANSL
         protected override void OnStartProcess()
         {
             if (parameters.GetParameter(0, out float target) &&
-                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out GUI.Fade currentFade))
+                manager.GetGUIManager().GetComponent<Fade>("fadeFg", out Fade currentFade))
             {
                 currentFade.FadeAlphaTo(target, true);
             }

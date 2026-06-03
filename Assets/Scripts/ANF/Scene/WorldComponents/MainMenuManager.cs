@@ -2,6 +2,7 @@ using ANF.Persistent;
 using ANF.Utils;
 using Leguar.TotalJSON;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace ANF.Scene
 {
@@ -61,7 +62,7 @@ namespace ANF.Scene
                     {
                         try
                         {
-                            JSON backgroundJSON = loadedJSON.GetJSON("worldData").GetJSON("world").GetJSON("backgroundManager");
+                            JSON backgroundJSON = loadedJSON.GetJSON("worldData").GetJSON("world").GetJSON(typeof(BackgroundManager).FullName);
                             selectedBackground = backgroundJSON.GetString("backgroundID");
                             selectedSkybox = backgroundJSON.GetString("currentSkybox");
                             selectedWeather = backgroundJSON.GetJSON("cachedData").GetString("currentWeather");

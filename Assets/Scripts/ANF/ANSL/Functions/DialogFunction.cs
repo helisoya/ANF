@@ -24,7 +24,7 @@ namespace ANF.ANSL
         private DialogUI dialogUI;
         private bool closeAfterwards;
         private string characterId;
-        private Persistent.AudioManager audioManager;
+        private AudioManager audioManager;
 
         private bool inputDetected;
         private bool waitingForEndInput;
@@ -130,6 +130,8 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
+            dialogUI = null;
+            audioManager = null;
             PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnDialogSkip;
         }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using ANF.GUI;
 
 namespace ANF.ANSL
 {
@@ -27,7 +27,7 @@ namespace ANF.ANSL
                 parameters.GetParameter(1, out float g) &&
                 parameters.GetParameter(2, out float b) &&
                 parameters.GetParameter(3, out float a) &&
-                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeFg", out GUI.Fade currentFade))
+                manager.GetGUIManager().GetComponent<Fade>("fadeFg", out Fade currentFade))
             {
                 currentFade.FadeColorTo(new Color(r, g, b, a), true);
             }

@@ -1,4 +1,5 @@
 using ANF.Persistent;
+using ANF.Scene;
 using ANF.Utils;
 using DG.Tweening;
 using Leguar.TotalJSON;
@@ -470,7 +471,7 @@ namespace ANF.GUI
                     PersistentDataManager.instance.GetGlobalData().GetComponent<Locals.Locals>(out locals);
 
                     string result = "";
-                    JSON playerVariableJson = saveFile.GetJSON("playerData").GetJSON("playerVariableContainer");
+                    JSON playerVariableJson = saveFile.GetJSON("playerData").GetJSON(typeof(PlayerVariableContainer).FullName);
                     if (playerVariableJson.ContainsKey("playerName"))
                         result += playerVariableJson.GetString("playerName");
 

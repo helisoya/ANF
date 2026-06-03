@@ -16,7 +16,6 @@ namespace ANF.ANSL
     {
         private float timeToWait;
 
-
         public override FunctionParameterType[][] GetParametersTemplates()
         {
             return new FunctionParameterType[][] {

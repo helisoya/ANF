@@ -68,7 +68,7 @@ namespace ANF.ANSL
                 else
                 {
                     // Marker
-                    if (manager.GetWorld().GetComponent<Scene.BackgroundManager>(out Scene.BackgroundManager backgroundManager) &&
+                    if (manager.GetWorld().GetComponent<BackgroundManager>(out BackgroundManager backgroundManager) &&
                         parameters.GetParameter(0, out string marker))
                     {
                         if (marker.Equals("default"))
@@ -77,7 +77,7 @@ namespace ANF.ANSL
                         }
                         else
                         {
-                            ANF.Scene.Background currentBackground = backgroundManager.GetBackground();
+                            Background currentBackground = backgroundManager.GetBackground();
 
                             if (currentBackground != null && marker != null)
                             {
@@ -127,7 +127,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            cameraController = null;
         }
 
         protected override void OnSave(JSON json)

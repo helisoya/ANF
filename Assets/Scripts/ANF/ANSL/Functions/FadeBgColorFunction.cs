@@ -1,5 +1,6 @@
 using Leguar.TotalJSON;
 using UnityEngine;
+using ANF.GUI;
 
 
 namespace ANF.ANSL
@@ -18,7 +19,7 @@ namespace ANF.ANSL
     public class FadeBgColorFunction : ANSLFunction
     {
         private bool waitingForFading;
-        private GUI.Fade currentFade;
+        private Fade currentFade;
 
         public override FunctionParameterType[][] GetParametersTemplates()
         {
@@ -37,7 +38,7 @@ namespace ANF.ANSL
                 parameters.GetParameter(2, out float b) &&
                 parameters.GetParameter(3, out float a) &&
                 parameters.GetParameter(4, out waitingForFading) &&
-                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeBg", out currentFade))
+                manager.GetGUIManager().GetComponent<Fade>("fadeBg", out currentFade))
             {
                 float duration;
                 if (!parameters.GetParameter(5, out duration))
@@ -53,7 +54,7 @@ namespace ANF.ANSL
         protected override void OnUpdate()
         {
             if (currentFade == null)
-                manager.GetGUIManager().GetComponent<GUI.Fade>("fadeBg", out currentFade);
+                manager.GetGUIManager().GetComponent<Fade>("fadeBg", out currentFade);
 
             if (currentFade != null && !currentFade.fadingColor)
             {
@@ -64,7 +65,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            currentFade = null;
         }
 
         protected override void OnSave(JSON json)

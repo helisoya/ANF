@@ -1,5 +1,5 @@
 using Leguar.TotalJSON;
-
+using ANF.Scene;
 
 namespace ANF.ANSL
 {
@@ -17,7 +17,7 @@ namespace ANF.ANSL
     public class SetBackgroundFunction : ANSLFunction
     {
         private bool waitingForLoading = false;
-        private ANF.Scene.BackgroundManager backgroundManager;
+        private BackgroundManager backgroundManager;
 
         public override FunctionParameterType[][] GetParametersTemplates()
         {
@@ -31,7 +31,7 @@ namespace ANF.ANSL
         {
             waitingForLoading = false;
             if (parameters.GetParameter(0, out string background) &&
-                manager.GetWorld().GetComponent<ANF.Scene.BackgroundManager>(out backgroundManager))
+                manager.GetWorld().GetComponent<BackgroundManager>(out backgroundManager))
             {
                 bool useDefaultData = false;
 
@@ -55,7 +55,7 @@ namespace ANF.ANSL
         protected override void OnUpdate()
         {
             if (backgroundManager == null)
-                manager.GetWorld().GetComponent<ANF.Scene.BackgroundManager>(out backgroundManager);
+                manager.GetWorld().GetComponent<BackgroundManager>(out backgroundManager);
 
             if (backgroundManager != null && (backgroundManager.loadingBackground || backgroundManager.loadingBackground))
                 return;
@@ -67,7 +67,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            backgroundManager = null;
         }
 
         protected override void OnSave(JSON json)

@@ -1,5 +1,5 @@
 using Leguar.TotalJSON;
-
+using ANF.Scene;
 
 namespace ANF.ANSL
 {
@@ -18,7 +18,7 @@ namespace ANF.ANSL
     {
         private bool waitingForObject = false;
         private string currentObjectName;
-        private ANF.Scene.Character currentObject;
+        private Character currentObject;
 
         public override FunctionParameterType[][] GetParametersTemplates()
         {
@@ -34,7 +34,7 @@ namespace ANF.ANSL
             bool endProcess = true;
             if (parameters.GetParameter(0, out currentObjectName) &&
                 parameters.GetParameter(1, out float alpha) &&
-                manager.GetWorld().GetComponent<ANF.Scene.CharacterManager>(out ANF.Scene.CharacterManager characterManager))
+                manager.GetWorld().GetComponent<CharacterManager>(out CharacterManager characterManager))
             {
                 if (characterManager.GetSceneObject(currentObjectName, out currentObject))
                 {
@@ -68,7 +68,7 @@ namespace ANF.ANSL
         {
             if (currentObject == null)
             {
-                if (!manager.GetWorld().GetComponent<ANF.Scene.CharacterManager>(out ANF.Scene.CharacterManager characterManager))
+                if (!manager.GetWorld().GetComponent<CharacterManager>(out CharacterManager characterManager))
                     return;
                 if (!characterManager.GetSceneObject(currentObjectName, out currentObject))
                     return;
@@ -88,7 +88,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            // Unused
+            currentObject = null;
         }
 
         protected override void OnSave(JSON json)

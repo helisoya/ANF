@@ -1,19 +1,19 @@
-using ANF.Scene;
 using Leguar.TotalJSON;
+
 
 namespace ANF.ANSL
 {
     /// <summary>
-    /// The Set Interaction Script can be used to change an interactable object's linked script
+    /// The Set Character Trigger Function can be used to set a character's animator trigger
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 33,
-        functionBody: "setInteractionScript",
+        functionId: 57,
+        functionBody: "setCharacterTrigger",
         functionAutoComplete: new string[] {
-            "setInteractionScript(Id;Script)"
+            "setCharacterTrigger(Name;Trigger)"
         },
-        functionDesc: "Changes an interactable object's linked script")]
-    public class SetInteractionScriptFunction : ANSLFunction
+        functionDesc: "Sets a character's animator trigger")]
+    public class SetCharacterTriggerFunction : ANSLFunction
     {
         public override FunctionParameterType[][] GetParametersTemplates()
         {
@@ -24,11 +24,14 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
-            if (parameters.GetParameter(0, out string id) &&
-                parameters.GetParameter(1, out string script) &&
-                manager.GetWorld().GetComponent<InteractionMode>(out InteractionMode interactionMode))
+            if (parameters.GetParameter(0, out string characterName) &&
+                parameters.GetParameter(1, out string triggerName) &&
+                manager.GetWorld().GetComponent<ANF.Scene.CharacterManager>(out ANF.Scene.CharacterManager characterManager))
             {
-                interactionMode.SetInteractableObjectNextScript(id, script);
+                if (characterManager.GetSceneObject(characterName, out ANF.Scene.Character character))
+                {
+                    character.SetTrigger(triggerName);
+                }
             }
 
             EndProcess();
@@ -36,7 +39,7 @@ namespace ANF.ANSL
 
         protected override void OnUpdate()
         {
-
+            // Unused
         }
 
         protected override void OnCleanup()
@@ -46,12 +49,12 @@ namespace ANF.ANSL
 
         protected override void OnSave(JSON json)
         {
-
+            // Unused
         }
 
         protected override void OnLoad(JSON json)
         {
-
+            // Unused
         }
     }
 }

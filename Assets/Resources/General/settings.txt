@@ -1,6 +1,7 @@
 # Settings
 # This file contains additional settings that can be queried with the settings container
 # It does not contain all settings (not the locals, nor the screen settings for instance)
+# Usually, this is for parameters in WorldComponents and GUIComponents that you want to save globaly (The highlight's parameters for instance)
 # These settings are automatically shown in the settings if possible. Currently, only Color, Int/UInt set as dropdown, Bool and Float are supported.
 
 # To add a setting

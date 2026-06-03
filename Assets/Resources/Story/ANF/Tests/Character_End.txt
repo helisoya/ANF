@@ -4,3 +4,6 @@
 47|TestCharacter|Sad
 42|TestCharacter|1|1|false
 22|Test_Character|TestCharacter|Test_Character_3
+60|TestCharacter|Talking|1|5|true
+4|2.0
+60|TestCharacter|Talking|0|1|false

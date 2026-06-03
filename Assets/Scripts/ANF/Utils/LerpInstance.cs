@@ -30,6 +30,14 @@ namespace ANF.Utils
             transitionDuration = duration;
         }
 
+        /// <summary>
+        /// Stops the lerp
+        /// </summary>
+        public void StopLerp()
+        {
+            lerping = false;
+        }
+
         public abstract Type Update();
 
         public void Save(JSON json)
