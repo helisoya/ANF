@@ -20,6 +20,7 @@ namespace ANF.GUI
         [Header("Components")]
         [SerializeField] private CanvasGroup canvasGroup;
         [SerializeField] private GameObject speakerRoot;
+        [SerializeField] private Image[] dialogBackgrounds;
         [SerializeField] private Locals.LocalizedText speakerText;
         [SerializeField] private Locals.LocalizedText dialogText;
         [SerializeField] private Button skipButton;
@@ -51,10 +52,20 @@ namespace ANF.GUI
             dialogText.SetCanReload(false, false);
 
             canvasGroup.alpha = 0;
+
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<SettingsContainer>(out SettingsContainer settings))
+                OnBackgroundOpacityChange(settings.Register("DialogUI_BackgroundOpacity", SettingsContainer.SettingsDataType.Float, OnBackgroundOpacityChange));
         }
 
         public override void OnStart()
         {
+        }
+
+        private void OnBackgroundOpacityChange(object obj)
+        {
+            float opacity = (float)obj;
+            foreach(Image background in dialogBackgrounds)
+                background.color = new Color(background.color.r,background.color.g,background.color.b,opacity);
         }
 
         /// <summary>
@@ -339,6 +350,8 @@ namespace ANF.GUI
 
         public override void OnChangeScene()
         {
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent<SettingsContainer>(out SettingsContainer settings))
+                settings.Unregister("DialogUI_BackgroundOpacity", OnBackgroundOpacityChange);
         }
 
         /// <summary>

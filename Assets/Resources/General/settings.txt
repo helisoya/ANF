@@ -25,3 +25,5 @@ InteractionMode_HighlightType Int 2 SettingsMenu_Game SettingsMenu_Game_Interact
 InteractionMode_HighlightStrength Float 0.5 SettingsMenu_Game SettingsMenu_Game_InteractionMode_HighlightStrength (0,1)
 InteractionMode_HighlightColor Color (0.21,0.68,0.74,1) SettingsMenu_Game SettingsMenu_Game_InteractionMode_HighlightColor
 InteractionMode_SelectedColor Color (0.34,0.74,0.27,1) SettingsMenu_Game SettingsMenu_Game_InteractionMode_SelectionColor
+
+DialogUI_BackgroundOpacity Float 1 SettingsMenu_Game SettingsMenu_Game_DialogUI_BackgroundOpacity (0.1,1)

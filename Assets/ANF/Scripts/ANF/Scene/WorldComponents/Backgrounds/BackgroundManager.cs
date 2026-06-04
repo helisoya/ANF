@@ -397,6 +397,9 @@ namespace ANF.Scene
 
         public override void OnChangeScene()
         {
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
+                settings.Unregister("BackgroundManager_EnableWeatherEffects", OnEnableWeatherEffectsChange);
+
             if (currentBackground != null)
             {
                 currentBackground.OnRemove(manager);

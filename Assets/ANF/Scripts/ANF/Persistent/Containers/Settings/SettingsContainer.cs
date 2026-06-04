@@ -253,8 +253,6 @@ namespace ANF.Persistent
 
                     correctIdx += 2;
 
-                    obj.drawParameters = drawParameters;
-
                     if (correctIdx < split.Length && (obj.type == SettingsDataType.Float || obj.type == SettingsDataType.Int ||
                         obj.type == SettingsDataType.UInt))
                     {
@@ -293,6 +291,8 @@ namespace ANF.Persistent
                             }
                         }
                     }
+
+                    obj.drawParameters = drawParameters;
 
                     savedObjects.Add(key, obj);
                 }

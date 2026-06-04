@@ -80,6 +80,8 @@ SettingsMenu_Game_InteractionMode_SelectionColor = Couleur surbrillance sélecti
 
 SettingsMenu_Game_InteractionMode_Weather = Effet météo
 
+SettingsMenu_Game_DialogUI_BackgroundOpacity = Opacité boite dialogue
+
 SettingsMenu_ColorPicker_H = H
 SettingsMenu_ColorPicker_S = S
 SettingsMenu_ColorPicker_V = V
