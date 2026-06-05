@@ -1,5 +1,8 @@
 using Leguar.TotalJSON;
 using System.Collections.Generic;
+using System.Reflection;
+using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 namespace ANF.Utils
 {
@@ -83,6 +86,38 @@ namespace ANF.Utils
 
                 if (individualDataJson.Count != 0)
                     json.Add(containerId, individualDataJson);
+            }
+        }
+
+        /// <summary>
+        /// Invokes a method on all components
+        /// </summary>
+        /// <param name="methodName">The method's name</param>
+        /// <param name="data">The method's parameter</param>
+        public void Invoke(string methodName)
+        {
+            Invoke<Null>(methodName, null);
+        }
+
+        /// <summary>
+        /// Invokes a method on all components
+        /// </summary>
+        /// <typeparam name="ValueType">The method's parameter's type</typeparam>
+        /// <param name="methodName">The method's name</param>
+        /// <param name="data">The method's parameter</param>
+        public void Invoke<ValueType>(string methodName, ValueType data)
+        {
+            foreach (T component in components.Values)
+            {
+                MethodInfo info = component.GetType().GetMethod(methodName);
+                if(info != null)
+                {
+                    ParameterInfo[] parameters = info.GetParameters();
+                    if (data == null && parameters.Length == 0)
+                        info.Invoke(component, null);
+                    else if (parameters.Length == 1) // Disabled tpye check, Boolean / bool
+                        info.Invoke(component, new object[] { data });
+                }
             }
         }
     }

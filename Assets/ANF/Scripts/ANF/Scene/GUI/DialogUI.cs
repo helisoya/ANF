@@ -1,4 +1,5 @@
 using ANF.Persistent;
+using ANF.Scene;
 using DG.Tweening;
 using Leguar.TotalJSON;
 using System.Collections.Generic;
@@ -23,7 +24,14 @@ namespace ANF.GUI
         [SerializeField] private Image[] dialogBackgrounds;
         [SerializeField] private Locals.LocalizedText speakerText;
         [SerializeField] private Locals.LocalizedText dialogText;
-        [SerializeField] private Button skipButton;
+        [SerializeField] private Button continueButton;
+
+        [Header("Flow State")]
+        [SerializeField] private Button autoPlayButton;
+        [SerializeField] private Button skipModeButton;
+        [SerializeField] private Sprite buttonDisabledSprite;
+        [SerializeField] private Sprite buttonEnabledSprite;
+        private bool skipModeEnabled;
 
         [Header("Infos")]
         [SerializeField] private float punctuationSpeedFactor = 3;
@@ -45,6 +53,10 @@ namespace ANF.GUI
 
         public override void OnInitialize()
         {
+            skipModeEnabled = false;
+            autoPlayButton.image.sprite = buttonDisabledSprite;
+            skipModeButton.image.sprite = buttonDisabledSprite;
+
             textIds = new List<string>();
 
             speakerText.SetCanReload(true, false);
@@ -59,6 +71,35 @@ namespace ANF.GUI
 
         public override void OnStart()
         {
+        }
+
+        /// <summary>
+        /// Event for toggling the auto play
+        /// </summary>
+        public void ToggleAutoPlay()
+        {
+            if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
+                flowState.ToggleAutoPlay();
+        }
+
+        /// <summary>
+        /// Event for toggling the skip mode
+        /// </summary>
+        public void ToggleSkipMode()
+        {
+            if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
+                flowState.ToggleSkipMode();
+        }
+
+        public void OnAutoPlayToggle(bool enabled)
+        {
+            autoPlayButton.image.sprite = enabled ? buttonEnabledSprite : buttonDisabledSprite;
+        }
+
+        public void OnSkipModeToggle(bool enabled)
+        {
+            skipModeButton.image.sprite = enabled ? buttonEnabledSprite : buttonDisabledSprite;
+            skipModeEnabled = enabled;
         }
 
         private void OnBackgroundOpacityChange(object obj)
@@ -303,7 +344,7 @@ namespace ANF.GUI
 		/// <returns>The skip button</returns>
         public Button GetSkipButton()
         {
-            return skipButton;
+            return continueButton;
         }
 
         /// <summary>

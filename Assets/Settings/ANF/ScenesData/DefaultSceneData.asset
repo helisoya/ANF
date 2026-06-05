@@ -13,49 +13,52 @@ MonoBehaviour:
   m_Name: DefaultSceneData
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.ANFSceneData
   registeredWorldComponents:
-  - id: anslManager
+  - id: 
     data:
       rid: 3436799676236169289
-  - id: backgroundManager
+  - id: 
     data:
       rid: 3436799676236169305
-  - id: staticObjectsManager
+  - id: 
     data:
       rid: 3436799780606181458
-  - id: mainCameraController
+  - id: 
     data:
       rid: 3436799918615298122
-  - id: characterManager
+  - id: 
     data:
       rid: 3493723745760837703
-  - id: interactionMode
+  - id: 
     data:
       rid: 3436799734139322441
-  - id: stateLoader
+  - id: 
+    data:
+      rid: 6627816634044907602
+  - id: 
     data:
       rid: 3436799676236169291
   registeredGUIComponents:
   - id: fadeBg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
-  - id: dialog
+  - id: 
     data: {fileID: 5724826130367448010, guid: 022905ec658687a479fc48d91f16fa39, type: 3}
-  - id: choiceUI
+  - id: 
     data: {fileID: 237637143809057935, guid: 6cf9e0c16fec62f4d9fca3a93dc77fe6, type: 3}
-  - id: mapUI
+  - id: 
     data: {fileID: 7502116054405208522, guid: e70c0214d98967445badb02e7039cadc, type: 3}
   - id: fadeFg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
-  - id: pauseMenu
+  - id: 
     data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
-  - id: saveMenu
+  - id: 
     data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
-  - id: questsMenu
+  - id: 
     data: {fileID: 8635427533893588802, guid: 2d222088f1bc45841b0d2e567fb9e320, type: 3}
-  - id: logsMenu
+  - id: 
     data: {fileID: 1991131649640259627, guid: 7df1e050de8c718409d4605bb62ee2ad, type: 3}
-  - id: historyMenu
+  - id: 
     data: {fileID: 5462081781506776728, guid: edc56737f42790e40819bcb973af9e17, type: 3}
-  - id: settingsMenu
+  - id: 
     data: {fileID: 6123419753822969047, guid: 69357696a595c4647ac53d368488e61b, type: 3}
   - id: fadeAll
     data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
@@ -77,6 +80,7 @@ MonoBehaviour:
       data:
         canBeSaved: 1
         enabledByDefault: 1
+        fadeAllName: fadeAll
         startInDebugMode: 0
         debugModeScript: ANF/Tests/Interaction
         autoLoadSaveFile: 0
@@ -125,3 +129,8 @@ MonoBehaviour:
         canBeSaved: 1
         enabledByDefault: 1
         prefabsPath: Characters/
+    - rid: 6627816634044907602
+      type: {class: FlowStateHandler, ns: ANF.Scene, asm: Assembly-CSharp}
+      data:
+        canBeSaved: 0
+        enabledByDefault: 1

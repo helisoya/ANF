@@ -13,6 +13,9 @@ PauseMenu_MainMenu = Ecran Titre
 PauseMenu_NewGame = Nouvelle Partie
 PauseMenu_Quit = Quitter
 
+DialogMenu_AutoPlay = Automatique
+DialogMenu_SkipMode = Passer
+
 SaveMenu_Title_Save = Sélectionnez un slot ou sauvegarder
 SaveMenu_Title_Load = Sélectionnez un slot à charger
 

@@ -13,6 +13,9 @@ PauseMenu_MainMenu = Main Menu
 PauseMenu_NewGame = New Game
 PauseMenu_Quit = Quit
 
+DialogMenu_AutoPlay = Autoplay
+DialogMenu_SkipMode = Skip
+
 SaveMenu_Title_Save = Select a slot to save to
 SaveMenu_Title_Load = Select a slot to load from
 

@@ -2,8 +2,6 @@ using ANF.Utils;
 using Leguar.TotalJSON;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -221,8 +219,9 @@ namespace ANF.Persistent
                     correctIdx = 2;
 
                     string fullStr = "";
+
                     if (obj.type == SettingsDataType.Vector2 || obj.type == SettingsDataType.Vector3 ||
-                        obj.type == SettingsDataType.Vector4 || obj.type == SettingsDataType.Color)
+                        obj.type == SettingsDataType.Vector4 || (obj.type == SettingsDataType.Color && !split[correctIdx].StartsWith('#')))
                     {
                         while(!fullStr.EndsWith(')') && correctIdx < split.Length)
                         {
@@ -363,6 +362,18 @@ namespace ANF.Persistent
                         return floatVal;
                     break;
                 case SettingsDataType.Color:
+                    if (str.StartsWith("#"))
+                    {
+                        if (ColorUtility.TryParseHtmlString(str, out Color color))
+                        {
+                            color.a = 1;
+                            return color;
+                        }
+                            
+                        break;
+                    }
+                    else
+                        goto case SettingsDataType.Vector4;
                 case SettingsDataType.Vector4:
                     if (vectorSplit.Length != 4 || !float.TryParse(vectorSplit[3], NumberStyles.Float, CultureInfo.InvariantCulture, out w))
                         break;

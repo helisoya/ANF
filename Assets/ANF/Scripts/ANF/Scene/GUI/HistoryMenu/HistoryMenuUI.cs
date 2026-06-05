@@ -25,7 +25,7 @@ namespace ANF.GUI
         [SerializeField] private Scrollbar scrollbar;
         [SerializeField] private float noSpeakerSize;
 
-        private Persistent.AudioManager audioManager;
+        private AudioManager audioManager;
 
         public override void OnInitialize()
         {

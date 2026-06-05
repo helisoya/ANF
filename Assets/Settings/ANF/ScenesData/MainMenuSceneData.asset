@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: MainMenuSceneData
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.ANFSceneData
   registeredWorldComponents:
-  - id: backgroundManager
+  - id: 
     data:
       rid: 3436799676236169305
-  - id: mainMenuManager
+  - id: 
     data:
       rid: 3436800196703420487
   registeredGUIComponents:
-  - id: mainMenu
+  - id: 
     data: {fileID: 4893906188555742882, guid: 91fd80666418069449b5fee8544d7f69, type: 3}
-  - id: newGameMenu
+  - id: 
     data: {fileID: 4727138861313631858, guid: 256ff9eeed830394fb71bc4b01ea0e28, type: 3}
-  - id: saveMenu
+  - id: 
     data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
-  - id: settingsMenu
+  - id: 
     data: {fileID: 6123419753822969047, guid: 69357696a595c4647ac53d368488e61b, type: 3}
   - id: fadeAll
     data: {fileID: 1331905330795673416, guid: 9299cd766ec312648ad187dbaab961ff, type: 3}
