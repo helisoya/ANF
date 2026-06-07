@@ -16,6 +16,7 @@ namespace ANF.Scene
         protected LerpInstanceVector3 lerpPosition;
         protected LerpInstanceVector3 lerpRotation;
         protected LerpInstanceFloat lerpAlpha;
+        protected bool skipModeEnabled;
 
         public bool Moving
         {
@@ -30,6 +31,17 @@ namespace ANF.Scene
         public bool Fading
         {
             get { return lerpAlpha != null && lerpAlpha.lerping; }
+        }
+
+        public virtual void OnSkipModeToggle(bool enabled)
+        {
+            skipModeEnabled = enabled;
+            if (lerpPosition != null && lerpPosition.lerping)
+                lerpPosition.ChangeDuration(0.1f);
+            if (lerpRotation != null && lerpRotation.lerping)
+                lerpRotation.ChangeDuration(0.1f);
+            if (lerpAlpha != null && lerpAlpha.lerping)
+                lerpAlpha.ChangeDuration(0.1f);
         }
 
         /// <summary>
@@ -77,7 +89,7 @@ namespace ANF.Scene
                 if (lerpAlpha == null)
                     lerpAlpha = new LerpInstanceFloat();
 
-                lerpAlpha.StartLerp(InternalFindAlpha(), alpha, duration);
+                lerpAlpha.StartLerp(InternalFindAlpha(), alpha, skipModeEnabled ? 0.1f : duration);
             }
         }
 
@@ -98,7 +110,7 @@ namespace ANF.Scene
                 if (lerpPosition == null)
                     lerpPosition = new LerpInstanceVector3();
 
-                lerpPosition.StartLerp(transform.position, position, duration);
+                lerpPosition.StartLerp(transform.position, position, skipModeEnabled ? 0.1f : duration);
             }
         }
 
@@ -119,7 +131,7 @@ namespace ANF.Scene
                 if (lerpRotation == null)
                     lerpRotation = new LerpInstanceVector3();
 
-                lerpRotation.StartLerp(transform.eulerAngles, eulerAngles, duration);
+                lerpRotation.StartLerp(transform.eulerAngles, eulerAngles, skipModeEnabled ? 0.1f : duration);
             }
         }
 

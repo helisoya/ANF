@@ -22,7 +22,7 @@ namespace ANF.Utils
 		/// <returns>True if the component was found</returns>
         public bool GetComponent<P>(out P result) where P : T
         {
-            if (GetComponent<P>(typeof(P).FullName,out result))
+            if (GetComponent<P>(typeof(P).Name, out result))
                 return true;
 
             foreach (T component in components.Values)
@@ -110,7 +110,7 @@ namespace ANF.Utils
             foreach (T component in components.Values)
             {
                 MethodInfo info = component.GetType().GetMethod(methodName);
-                if(info != null)
+                if (info != null)
                 {
                     ParameterInfo[] parameters = info.GetParameters();
                     if (data == null && parameters.Length == 0)

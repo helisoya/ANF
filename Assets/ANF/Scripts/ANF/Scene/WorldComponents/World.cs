@@ -19,7 +19,7 @@ namespace ANF.Scene
                 if (entry.data == null)
                     continue;
 
-                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().FullName : entry.id;
+                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().Name : entry.id;
 
                 WorldComponent copy = entry.data.CloneComponent();
                 copy.Initialize(manager);

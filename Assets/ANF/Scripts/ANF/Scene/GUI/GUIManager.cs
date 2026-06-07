@@ -30,7 +30,7 @@ namespace ANF.GUI
                 if (!entry.data)
                     continue;
 
-                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().FullName : entry.id;
+                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().Name : entry.id;
 
                 GUIComponent instance = Object.Instantiate(entry.data, uiRoot);
                 RectTransform rectTransform = instance.GetComponent<RectTransform>();

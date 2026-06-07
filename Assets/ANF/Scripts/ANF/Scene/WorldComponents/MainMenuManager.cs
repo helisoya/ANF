@@ -62,7 +62,7 @@ namespace ANF.Scene
                     {
                         try
                         {
-                            JSON backgroundJSON = loadedJSON.GetJSON("worldData").GetJSON("world").GetJSON(typeof(BackgroundManager).FullName);
+                            JSON backgroundJSON = loadedJSON.GetJSON("worldData").GetJSON("world").GetJSON(typeof(BackgroundManager).Name);
                             selectedBackground = backgroundJSON.GetString("backgroundID");
                             selectedSkybox = backgroundJSON.GetString("currentSkybox");
                             selectedWeather = backgroundJSON.GetJSON("cachedData").GetString("currentWeather");

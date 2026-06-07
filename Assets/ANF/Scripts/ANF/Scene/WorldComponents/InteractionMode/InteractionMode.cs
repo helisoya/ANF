@@ -506,20 +506,20 @@ namespace ANF.Scene
 
         public override void OnRegisterInputs()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MousePosition").performed += OnMousePosition;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MouseClick").performed += OnMouseClick;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Next").performed += OnNext;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").performed += OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").canceled += OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("MousePosition").performed += OnMousePosition;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("MouseClick").performed += OnMouseClick;
         }
 
         public override void OnUnRegisterInputs()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MousePosition").performed -= OnMousePosition;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("MouseClick").performed -= OnMouseClick;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Next").performed -= OnNext;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").performed -= OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").canceled -= OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("MousePosition").performed -= OnMousePosition;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("MouseClick").performed -= OnMouseClick;
         }
 
         public override void OnChangeScene()

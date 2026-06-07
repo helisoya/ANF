@@ -196,6 +196,25 @@ namespace ANF.ANSL
             if (json.ContainsKey("isProcessing"))
                 isProcessing = json.GetBool("isProcessing");
         }
+
+        /// <summary>
+        /// Invokes a method on this function
+        /// </summary>
+        /// <typeparam name="ValueType">The method's parameter's type</typeparam>
+        /// <param name="methodName">The method's name</param>
+        /// <param name="data">The method's parameter</param>
+        public void Invoke<ValueType>(string methodName, ValueType data)
+        {
+            MethodInfo info = GetType().GetMethod(methodName);
+            if (info != null)
+            {
+                ParameterInfo[] parameters = info.GetParameters();
+                if (data == null && parameters.Length == 0)
+                    info.Invoke(this, null);
+                else if (parameters.Length == 1) // Disabled type check, Boolean / bool
+                    info.Invoke(this, new object[] { data });
+            }
+        }
     }
 }
 

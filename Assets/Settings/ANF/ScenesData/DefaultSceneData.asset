@@ -49,6 +49,8 @@ MonoBehaviour:
   - id: fadeFg
     data: {fileID: 1331905330795673416, guid: 0ad70345a8ff7dd468003a14eec462be, type: 3}
   - id: 
+    data: {fileID: 9078231338013344640, guid: 0d738e11342e94440830eb4f5fe17177, type: 3}
+  - id: 
     data: {fileID: 4893906188555742882, guid: 5e9406e5045fab749aceee05976bcd15, type: 3}
   - id: 
     data: {fileID: 4813586622291847291, guid: 8059e479ea9479f479ea903f59b46f8f, type: 3}
@@ -82,7 +84,7 @@ MonoBehaviour:
         enabledByDefault: 1
         fadeAllName: fadeAll
         startInDebugMode: 0
-        debugModeScript: ANF/Tests/Interaction
+        debugModeScript: ANF/Tests/Dialog
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305

@@ -500,6 +500,18 @@ endchoice"],
 		"body": ["setFg(Alpha)"],
 		"description": "Sets the Foreground's alpha to a specific value"
 	},
+	"63_0": {
+		"scope": "ansl",
+		"prefix": "setGamepadVibration",
+		"body": ["setGamepadVibration(Both)"],
+		"description": "Sets the gamepad's vibration"
+	},
+	"63_1": {
+		"scope": "ansl",
+		"prefix": "setGamepadVibration",
+		"body": ["setGamepadVibration(Left;Right)"],
+		"description": "Sets the gamepad's vibration"
+	},
 	"32_0": {
 		"scope": "ansl",
 		"prefix": "setInteractionHidden",
@@ -608,6 +620,12 @@ endchoice"],
 		"body": ["showDialogWindow(Shown)"],
 		"description": "Shows/Hides the dialog window"
 	},
+	"61_0": {
+		"scope": "ansl",
+		"prefix": "showInputReminder",
+		"body": ["showInputReminder(Id;Enabled)"],
+		"description": "Shows/Hides an input reminder"
+	},
 	"50_0": {
 		"scope": "ansl",
 		"prefix": "stopContext",
@@ -643,6 +661,12 @@ endchoice"],
 		"prefix": "variable",
 		"body": ["variable(Name;default)"],
 		"description": "Changes a variable's value. Operator can be +, -, and default"
+	},
+	"62_0": {
+		"scope": "ansl",
+		"prefix": "waitForContextEnd",
+		"body": ["waitForContextEnd(contextId)"],
+		"description": "Waits for the end of a context"
 	},
 	"4_0": {
 		"scope": "ansl",

@@ -33,6 +33,8 @@ public class ANSLContext : Jsonable
     private uint ignoreCheckDepthInternalValue;
     private bool ignoreDepthCheck { get { return ignoreCheckDepthInternalValue != 0; } }
 
+    private bool skipModeEnabled;
+    private bool autoplayEnabled;
     private ANFManager manager;
 
     public ANSLContext(Dictionary<uint, ANSLFunction> functions, uint contextStackLength, uint maxFunctionsPerFrame, ANFManager manager)
@@ -47,6 +49,41 @@ public class ANSLContext : Jsonable
 
         foreach (ANSLFunction function in functions.Values)
             function.Initialize(this, manager);
+    }
+
+    /// <summary>
+	/// Enables the autoplay for this context
+	/// </summary>
+	/// <param name="enabled">True if enabled</param>
+    public void SetAutoPlay(bool enabled)
+    {
+        if (autoplayEnabled != enabled)
+        {
+            autoplayEnabled = enabled;
+
+            if (isRunning && waitingForFunction)
+            {
+                functions[currentFunctionId].Invoke("OnAutoPlayToggle", autoplayEnabled);
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// Enables the skip mode for this context
+    /// </summary>
+    /// <param name="enabled">True if enabled</param>
+    public void SetSkipMode(bool enabled)
+    {
+        if (skipModeEnabled != enabled)
+        {
+            skipModeEnabled = enabled;
+
+            if (isRunning && waitingForFunction)
+            {
+                functions[currentFunctionId].Invoke("OnSkipModeToggle", skipModeEnabled);
+            }
+        }
     }
 
     /// <summary>
@@ -139,6 +176,8 @@ public class ANSLContext : Jsonable
                     // Needs to wait until the function is finished
                     currentFunctionId = functionId;
                     waitingForFunction = true;
+                    functions[currentFunctionId].Invoke("OnAutoPlayToggle", autoplayEnabled);
+                    functions[currentFunctionId].Invoke("OnSkipModeToggle", skipModeEnabled);
                 }
                 else
                 {

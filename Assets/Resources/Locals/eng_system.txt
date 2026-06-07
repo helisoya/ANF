@@ -13,9 +13,6 @@ PauseMenu_MainMenu = Main Menu
 PauseMenu_NewGame = New Game
 PauseMenu_Quit = Quit
 
-DialogMenu_AutoPlay = Autoplay
-DialogMenu_SkipMode = Skip
-
 SaveMenu_Title_Save = Select a slot to save to
 SaveMenu_Title_Load = Select a slot to load from
 
@@ -30,6 +27,10 @@ LogsMenu_Title = Logs
 LogsMenu_Popup = New Log
 
 HistoryMenu_Title = History
+
+InputReminder_Autoplay = Autoplay
+InputReminder_SkipMode = Skip
+InputReminder_PauseMenu = Pause
 
 SettingsMenu_Title = Settings
 
@@ -71,6 +72,14 @@ SettingsMenu_Text_Sizes_3 = 20
 SettingsMenu_Text_Sizes_4 = 24
 SettingsMenu_Text_Sizes_5 = 26
 
+SettingsMenu_Keyboard = Keyboard inputs
+SettingsMenu_Gamepad = Gamepad inputs
+SettingsMenu_Rebinding = Input key for : {0}
+
+SettingsMenu_Inputs_Autoplay = Autoplay
+SettingsMenu_Inputs_SkipMode = Skip
+SettingsMenu_Inputs_PauseMenu = Pause
+
 SettingsMenu_Game = Game
 
 SettingsMenu_Game_InteractionMode_HighlightType = Interaction highlight
@@ -85,6 +94,7 @@ SettingsMenu_Game_InteractionMode_Weather = Weather effects
 
 SettingsMenu_Game_DialogUI_BackgroundOpacity = Dialog box opacity
 
+SettingsMenu_Game_ANSLManager_AutoplayTimer = Autoplay timer
 
 SettingsMenu_ColorPicker_H = H
 SettingsMenu_ColorPicker_S = S

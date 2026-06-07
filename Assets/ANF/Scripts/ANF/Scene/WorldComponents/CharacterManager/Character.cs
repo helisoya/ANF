@@ -24,6 +24,23 @@ namespace ANF.Scene
             this.linkedInteraction = interactableObject;
         }
 
+        public override void OnSkipModeToggle(bool enabled)
+        {
+            if (skipModeEnabled != enabled)
+            {
+                skipModeEnabled = enabled;
+                if (lerpPosition != null && lerpPosition.lerping)
+                    lerpPosition.ChangeDuration(0.1f);
+                if (lerpRotation != null && lerpRotation.lerping)
+                    lerpRotation.ChangeDuration(0.1f);
+                if (lerpAlpha != null && lerpAlpha.lerping)
+                    lerpAlpha.ChangeDuration(0.1f);
+                foreach (LerpInstanceFloat lerp in lerps)
+                    if (lerp != null && lerp.lerping)
+                        lerp.ChangeDuration(0.1f);
+            }
+        }
+
         /// <summary>
         /// Checks if a parameter is in a transition or not (only available for Float parameters)
         /// </summary>
@@ -93,7 +110,7 @@ namespace ANF.Scene
             if (index == -1)
                 return;
 
-            if(immediate)
+            if (immediate)
             {
                 animator.SetFloat(parameterName, value);
 
@@ -102,7 +119,7 @@ namespace ANF.Scene
             }
             else
             {
-                lerps[index].StartLerp(animator.GetFloat(parameterName), value, transitionDuration);
+                lerps[index].StartLerp(animator.GetFloat(parameterName), value, skipModeEnabled ? 0.1f : transitionDuration);
             }
         }
 
@@ -178,7 +195,7 @@ namespace ANF.Scene
         protected override void OnCreate(ANFManager manager)
         {
             lerps = new LerpInstanceFloat[animator.parameterCount];
-            for(int i = 0; i < animator.parameterCount;i++)
+            for (int i = 0; i < animator.parameterCount; i++)
             {
                 if (animator.parameters[i].type == AnimatorControllerParameterType.Float)
                     lerps[i] = new LerpInstanceFloat();
@@ -191,7 +208,7 @@ namespace ANF.Scene
 
         protected override void OnUpdate(ANFManager manager)
         {
-            for(int i = 0; i < lerps.Length;i++)
+            for (int i = 0; i < lerps.Length; i++)
             {
                 if (lerps[i] != null && lerps[i].lerping)
                 {
@@ -204,14 +221,14 @@ namespace ANF.Scene
         protected override void OnSave(JSON json)
         {
             JArray lerpsJSON = new JArray();
-            for(int i = 0; i <  lerps.Length; i++)
+            for (int i = 0; i < lerps.Length; i++)
             {
                 if (lerps[i] != null)
                 {
                     JSON jsonLerp = new JSON();
                     lerps[i].Save(jsonLerp);
                     lerpsJSON.Add(jsonLerp);
-                } 
+                }
                 else
                 {
                     lerpsJSON.Add(false); // To preserve length
@@ -219,7 +236,7 @@ namespace ANF.Scene
             }
             json.Add("lerps", lerpsJSON);
 
-            if(animator.IsInTransition(0))
+            if (animator.IsInTransition(0))
                 json.Add("currentBody", animator.GetNextAnimatorStateInfo(0).shortNameHash);
             else
                 json.Add("currentBody", animator.GetCurrentAnimatorStateInfo(0).shortNameHash);
@@ -235,7 +252,7 @@ namespace ANF.Scene
                 json.Add("currentMouth", animator.GetCurrentAnimatorStateInfo(2).shortNameHash);
 
             JArray parametersArray = new JArray();
-            foreach(AnimatorControllerParameter parameter in animator.parameters)
+            foreach (AnimatorControllerParameter parameter in animator.parameters)
             {
                 if (parameter.type == AnimatorControllerParameterType.Float)
                     parametersArray.Add(animator.GetFloat(parameter.nameHash));
@@ -251,7 +268,7 @@ namespace ANF.Scene
 
         protected override void OnLoad(JSON json)
         {
-            if(json.ContainsKey("parameters"))
+            if (json.ContainsKey("parameters"))
             {
                 JArray parametersArray = json.GetJArray("parameters");
 
@@ -271,7 +288,7 @@ namespace ANF.Scene
             {
                 JArray lerpsArray = json.GetJArray("lerps");
 
-                for(int i = 0; i < lerps.Length; i++)
+                for (int i = 0; i < lerps.Length; i++)
                 {
                     if (lerpsArray.Length <= i)
                         break;

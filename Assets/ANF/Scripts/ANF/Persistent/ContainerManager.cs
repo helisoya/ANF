@@ -19,7 +19,7 @@ namespace ANF.Persistent
                 if (entry.data == null)
                     continue;
 
-                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().FullName : entry.id;
+                string finalId = string.IsNullOrEmpty(entry.id) ? entry.data.GetType().Name : entry.id;
 
                 DataContainer copy = entry.data.CloneContainer();
 

@@ -22,6 +22,8 @@ namespace ANF.ANSL
         [SerializeField] private uint maxContexts = 20;
         [Tooltip("How large the script stack can be (per context)")]
         [SerializeField] private uint contextStackLength = 10;
+        private bool autoplayEnabled;
+        private bool skipModeEnabled;
 
         /// <summary>
         /// Initialize the manager
@@ -34,6 +36,18 @@ namespace ANF.ANSL
         public override void OnStart()
         {
             // Unused
+        }
+
+        public void OnAutoPlayToggle(bool enabled)
+        {
+            foreach (ANSLContext context in contexts)
+                context.SetAutoPlay(enabled);
+        }
+
+        public void OnSkipModeToggle(bool enabled)
+        {
+            foreach (ANSLContext context in contexts)
+                context.SetSkipMode(enabled);
         }
 
         /// <summary>

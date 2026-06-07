@@ -38,8 +38,8 @@ namespace ANF.Scene
         public void ToggleAutoPlay()
         {
             autoPlay = !autoPlay;
-            manager.GetWorld().Invoke<Boolean>("OnAutoPlayToggle", autoPlay);
-            manager.GetGUIManager().Invoke<Boolean>("OnAutoPlayToggle", autoPlay);
+            manager.GetWorld().Invoke("OnAutoPlayToggle", autoPlay);
+            manager.GetGUIManager().Invoke("OnAutoPlayToggle", autoPlay);
         }
 
         /// <summary>
@@ -115,14 +115,14 @@ namespace ANF.Scene
 
         public override void OnRegisterInputs()
         {
-            PlayerInput playerInput = PersistentDataManager.instance.GetPlayerInput();
+            PlayerInput playerInput = PersistentDataManager.instance.GetANFInput().GetInput();
             playerInput.actions.FindAction("AutoPlay").performed += OnAutoPlayInput;
             playerInput.actions.FindAction("SkipMode").performed += OnSkipModeInput;
         }
 
         public override void OnUnRegisterInputs()
         {
-            PlayerInput playerInput = PersistentDataManager.instance.GetPlayerInput();
+            PlayerInput playerInput = PersistentDataManager.instance.GetANFInput().GetInput();
             playerInput.actions.FindAction("AutoPlay").performed -= OnAutoPlayInput;
             playerInput.actions.FindAction("SkipMode").performed -= OnSkipModeInput;
         }

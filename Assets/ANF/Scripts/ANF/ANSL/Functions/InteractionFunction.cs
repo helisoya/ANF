@@ -1,3 +1,4 @@
+using ANF.GUI;
 using ANF.Scene;
 using Leguar.TotalJSON;
 
@@ -28,6 +29,8 @@ namespace ANF.ANSL
 
         protected override void OnStartProcess()
         {
+            if (manager.GetGUIManager().GetComponent<DialogUI>(out DialogUI dialogUI))
+                dialogUI.SetEnabled(false);
 
             if (manager.GetWorld().GetComponent<InteractionMode>(out interactionMode))
             {
@@ -59,7 +62,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            
+
         }
 
         protected override void OnSave(JSON json)

@@ -49,7 +49,7 @@ namespace ANF.GUI
         public override void OnStart()
         {
             PersistentDataManager.instance.GetGlobalData().GetComponent(out audioManager);
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed += OnPauseInput;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Pause").performed += OnPauseInput;
 
             if (mainMenuMode)
             {
@@ -127,22 +127,22 @@ namespace ANF.GUI
 
         public override void OnChangeScene()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed -= OnPauseInput;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Pause").performed -= OnPauseInput;
             OnUnRegisterInputs();
         }
 
         public override void OnRegisterInputs()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed += OnNext;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed += OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled += OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Next").performed += OnNext;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").performed += OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").canceled += OnMove;
         }
 
         public override void OnUnRegisterInputs()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Next").performed -= OnNext;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").performed -= OnMove;
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Move").canceled -= OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Next").performed -= OnNext;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").performed -= OnMove;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Move").canceled -= OnMove;
         }
 
         private void OnPauseInput(InputAction.CallbackContext context)

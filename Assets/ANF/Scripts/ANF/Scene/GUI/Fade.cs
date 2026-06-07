@@ -18,6 +18,8 @@ namespace ANF.GUI
         private LerpInstanceFloat lerpAlpha;
         private LerpInstanceColor lerpColor;
 
+        private bool skipModeEnabled;
+
         public bool fadingAlpha
         {
             get
@@ -31,6 +33,20 @@ namespace ANF.GUI
             get
             {
                 return lerpColor != null && lerpColor.lerping;
+            }
+        }
+
+        public void OnSkipModeToggle(bool enabled)
+        {
+            skipModeEnabled = enabled;
+
+            if (enabled)
+            {
+                if (lerpAlpha != null && lerpAlpha.lerping)
+                    lerpAlpha.ChangeDuration(0.1f);
+
+                if (lerpColor != null && lerpColor.lerping)
+                    lerpColor.ChangeDuration(0.1f);
             }
         }
 
@@ -51,7 +67,7 @@ namespace ANF.GUI
                 if (lerpAlpha == null)
                     lerpAlpha = new LerpInstanceFloat();
 
-                lerpAlpha.StartLerp(canvasGroup.alpha, target, transitionDuration);
+                lerpAlpha.StartLerp(canvasGroup.alpha, target, skipModeEnabled ? 0.1f : transitionDuration);
             }
         }
 
@@ -72,7 +88,7 @@ namespace ANF.GUI
                 if (lerpColor == null)
                     lerpColor = new LerpInstanceColor();
 
-                lerpColor.StartLerp(fadeImg.color, target, transitionDuration);
+                lerpColor.StartLerp(fadeImg.color, target, skipModeEnabled ? 0.1f : transitionDuration);
             }
         }
 

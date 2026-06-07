@@ -16,6 +16,7 @@ namespace ANF.Scene
         private Transform cameraTransform;
         private LerpInstanceVector3 lerpRotation;
         private LerpInstanceVector3 lerpPosition;
+        private bool skipModeEnabled;
 
         public bool Rotating
         {
@@ -31,6 +32,15 @@ namespace ANF.Scene
             {
                 return lerpPosition != null && lerpPosition.lerping;
             }
+        }
+
+        public void OnSkipModeToggle(bool enabled)
+        {
+            skipModeEnabled = enabled;
+            if (lerpPosition != null && lerpPosition.lerping)
+                lerpPosition.ChangeDuration(0.1f);
+            if (lerpRotation != null && lerpRotation.lerping)
+                lerpRotation.ChangeDuration(0.1f);
         }
 
         public override WorldComponent CloneComponent()
@@ -100,7 +110,7 @@ namespace ANF.Scene
                 if (lerpPosition == null)
                     lerpPosition = new LerpInstanceVector3();
 
-                lerpPosition.StartLerp(cameraTransform.position, position, duration);
+                lerpPosition.StartLerp(cameraTransform.position, position, skipModeEnabled ? 0.1f : duration);
             }
         }
 
@@ -121,7 +131,7 @@ namespace ANF.Scene
                 if (lerpRotation == null)
                     lerpRotation = new LerpInstanceVector3();
 
-                lerpRotation.StartLerp(cameraTransform.eulerAngles, eulerAngles, duration);
+                lerpRotation.StartLerp(cameraTransform.eulerAngles, eulerAngles, skipModeEnabled ? 0.1f : duration);
             }
         }
 

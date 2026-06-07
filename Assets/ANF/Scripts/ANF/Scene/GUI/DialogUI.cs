@@ -26,13 +26,6 @@ namespace ANF.GUI
         [SerializeField] private Locals.LocalizedText dialogText;
         [SerializeField] private Button continueButton;
 
-        [Header("Flow State")]
-        [SerializeField] private Button autoPlayButton;
-        [SerializeField] private Button skipModeButton;
-        [SerializeField] private Sprite buttonDisabledSprite;
-        [SerializeField] private Sprite buttonEnabledSprite;
-        private bool skipModeEnabled;
-
         [Header("Infos")]
         [SerializeField] private float punctuationSpeedFactor = 3;
 
@@ -50,12 +43,11 @@ namespace ANF.GUI
         public bool showingDialog { get; private set; }
 
         private char[] punctuations = { '.', ',', '?', '!', ';', ':' };
+        private bool skipModeEnabled;
 
         public override void OnInitialize()
         {
             skipModeEnabled = false;
-            autoPlayButton.image.sprite = buttonDisabledSprite;
-            skipModeButton.image.sprite = buttonDisabledSprite;
 
             textIds = new List<string>();
 
@@ -73,40 +65,16 @@ namespace ANF.GUI
         {
         }
 
-        /// <summary>
-        /// Event for toggling the auto play
-        /// </summary>
-        public void ToggleAutoPlay()
-        {
-            if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
-                flowState.ToggleAutoPlay();
-        }
-
-        /// <summary>
-        /// Event for toggling the skip mode
-        /// </summary>
-        public void ToggleSkipMode()
-        {
-            if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
-                flowState.ToggleSkipMode();
-        }
-
-        public void OnAutoPlayToggle(bool enabled)
-        {
-            autoPlayButton.image.sprite = enabled ? buttonEnabledSprite : buttonDisabledSprite;
-        }
-
         public void OnSkipModeToggle(bool enabled)
         {
-            skipModeButton.image.sprite = enabled ? buttonEnabledSprite : buttonDisabledSprite;
             skipModeEnabled = enabled;
         }
 
         private void OnBackgroundOpacityChange(object obj)
         {
             float opacity = (float)obj;
-            foreach(Image background in dialogBackgrounds)
-                background.color = new Color(background.color.r,background.color.g,background.color.b,opacity);
+            foreach (Image background in dialogBackgrounds)
+                background.color = new Color(background.color.r, background.color.g, background.color.b, opacity);
         }
 
         /// <summary>
@@ -211,6 +179,14 @@ namespace ANF.GUI
             if (showingDialog)
             {
                 TMP_Text text = dialogText.GetText();
+
+                if (skipModeEnabled)
+                {
+                    revealIndex = text.textInfo.characterCount;
+                    text.maxVisibleCharacters = revealIndex;
+                    currentWaitTime = 0;
+                }
+
                 bool stillCharactersToReveal = revealIndex < text.textInfo.characterCount;
 
                 if (!stillCharactersToReveal && currentSegmentIdx < textSegments.Count)

@@ -1,3 +1,4 @@
+using ANF.Locals;
 using ANF.Persistent;
 using ANF.Utils;
 using DG.Tweening;
@@ -33,12 +34,15 @@ namespace ANF.GUI
         [Header("Components")]
         [Tooltip("The UI/Navigate action used by controller and keyboard to use menus")]
         [SerializeField] InputActionReference navigateAction;
+        [SerializeField] private GameObject rebindRoot;
+        [SerializeField] private LocalizedText rebindText;
         [SerializeField] private ColorPicker colorPicker;
         [SerializeField] private SettingsEntryUIToggle prefabToggleToggle;
         [SerializeField] private SettingsEntryUISlider prefabToggleSlider;
         [SerializeField] private SettingsEntryUIDropdown prefabToggleDropdown;
         [SerializeField] private SettingsEntryUIColorPicker prefabToggleColorPicker;
         [SerializeField] private SettingsEntryUIButton prefabToggleButton;
+        [SerializeField] private SettingsEntryUIInputBinder prefabToggleInputBinder;
 
         private AudioManager audioManager;
         private List<Selectable> objects;
@@ -46,6 +50,7 @@ namespace ANF.GUI
         private bool selectFirstObject;
 
         private bool movingWithInput;
+        private bool rebinding;
 
         public override void OnInitialize()
         {
@@ -95,6 +100,7 @@ namespace ANF.GUI
 
         public override void OnEnabled()
         {
+            rebinding = false;
             objects.Clear();
 
             selectFirstObject = true;
@@ -103,7 +109,7 @@ namespace ANF.GUI
             foreach (Transform child in tabsRoot)
                 Destroy(child.gameObject);
 
-            for(int i = 0;i < handlers.Length;i++)
+            for (int i = 0; i < handlers.Length; i++)
             {
                 handlers[i].Initialize(this, manager);
 
@@ -134,7 +140,10 @@ namespace ANF.GUI
             bgTransform.DOAnchorPosX(halfSizeRoot, transitionDuration).SetEase(Ease.OutQuad);
 
             string globalDataSaveFile = FileManager.savPath + PersistentDataManager.instance.GetANFSettings().saveFolder + "global.json";
-            SaveUtils.SaveGlobalData(PersistentDataManager.instance.GetGlobalData(), globalDataSaveFile);
+            SaveUtils.SaveGlobalData(PersistentDataManager.instance.GetGlobalData(),
+                PersistentDataManager.instance.GetANFInput(), globalDataSaveFile);
+
+            PersistentDataManager.instance.GetANFInput().TriggerSchemeChange();
         }
 
         public override void OnPaused()
@@ -149,7 +158,7 @@ namespace ANF.GUI
 
         private void OnPauseInput(InputAction.CallbackContext context)
         {
-            if (isEnabled && !isPaused && context.ReadValueAsButton())
+            if (isEnabled && !isPaused && !rebinding && context.ReadValueAsButton())
             {
                 if (audioManager != null)
                     audioManager.PlayUICursorCancelSFX();
@@ -163,12 +172,14 @@ namespace ANF.GUI
 
         public override void OnRegisterInputs()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed += OnPauseInput;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Pause").performed += OnPauseInput;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Back").performed += OnPauseInput;
         }
 
         public override void OnUnRegisterInputs()
         {
-            PersistentDataManager.instance.GetPlayerInput().actions.FindAction("Pause").performed -= OnPauseInput;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Pause").performed -= OnPauseInput;
+            PersistentDataManager.instance.GetANFInput().GetInput().actions.FindAction("Back").performed -= OnPauseInput;
         }
 
         public override void OnChangeScene()
@@ -186,17 +197,67 @@ namespace ANF.GUI
 
         }
 
+        public void StartRebindingProcess(InputAction action, int bindingIndex, string labelKey, Image inputImage)
+        {
+            rebinding = true;
+
+            GameObject previousObj = EventSystem.current.currentSelectedGameObject;
+            EventSystem.current.SetSelectedGameObject(null);
+
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out Locals.Locals locals))
+                labelKey = locals.GetLocal(labelKey);
+
+            rebindRoot.SetActive(true);
+            rebindText.SetInjectors(new object[] { labelKey });
+
+            action.Disable();
+
+            InputActionRebindingExtensions.RebindingOperation operation = action.PerformInteractiveRebinding(bindingIndex);
+            operation.OnCancel(
+                    operation =>
+                    {
+                        action.Enable();
+                        rebinding = false;
+                        rebindRoot.SetActive(false);
+                        EventSystem.current.SetSelectedGameObject(previousObj);
+                    })
+                .OnComplete(
+                    operation =>
+                    {
+                        action.Enable();
+                        InputBinding binding = action.bindings[bindingIndex];
+
+                        string groups = binding.groups;
+                        if (groups.StartsWith(';'))
+                            groups = groups.Substring(1);
+
+                        inputImage.sprite = PersistentDataManager.instance.GetANFInput().GetIcon(
+                            groups.Split(";")[0],
+                            binding.effectivePath.Split("/", 2)[1]
+                        );
+
+                        rebinding = false;
+                        rebindRoot.SetActive(false);
+                        EventSystem.current.SetSelectedGameObject(previousObj);
+                    });
+
+            operation.Start();
+        }
+
+        /// <summary>
+		/// Regenerates the current object's navigation manually
+		/// </summary>
         private void RegenerateObjectsNavigation()
         {
             if (objects.Count > 1)
             {
-                for(int i = 0; i < objects.Count-1; i++)
+                for (int i = 0; i < objects.Count - 1; i++)
                 {
                     Navigation navigationTop = new Navigation()
                     {
                         mode = Navigation.Mode.Explicit,
                         wrapAround = true,
-                        selectOnDown = objects[i+1],
+                        selectOnDown = objects[i + 1],
                         selectOnUp = objects[i].navigation.selectOnUp
                     };
 
@@ -296,6 +357,17 @@ namespace ANF.GUI
         public Button CreateColorPicker(string labelKey, RectTransform root)
         {
             return CreateEntryInstance(labelKey, root, prefabToggleColorPicker);
+        }
+
+        /// <summary>
+        /// Creates a new input binder in the settings menu
+        /// </summary>
+        /// <param name="labelKey">The input binder's label</param>
+        /// <param name="root">The input binder's root</param>
+        /// <returns>The input binder</returns>
+        public Button CreateInputBinder(string labelKey, RectTransform root)
+        {
+            return CreateEntryInstance(labelKey, root, prefabToggleInputBinder);
         }
 
         /// <summary>

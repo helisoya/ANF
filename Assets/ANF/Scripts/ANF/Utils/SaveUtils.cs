@@ -63,13 +63,20 @@ namespace ANF.Utils
         /// Saves the global data to disk
         /// </summary>
         /// <param name="globalData">The global data manager</param>
+        /// <param name="anfInput">The ANF Input System</parama>
         /// <param name="savePath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool SaveGlobalData(ContainerManager globalData, string savePath)
+        public static bool SaveGlobalData(ContainerManager globalData, ANFInput anfInput, string savePath)
         {
             JSON json = new JSON();
 
-            globalData.Save(json);
+            JSON globalDataJson = new JSON();
+            globalData.Save(globalDataJson);
+            json.Add("globalData", globalDataJson);
+
+            JSON inputDataJson = new JSON();
+            anfInput.Save(inputDataJson);
+            json.Add("inputData", inputDataJson);
 
             FileManager.SaveFile(savePath, json.CreateString());
 
@@ -80,15 +87,20 @@ namespace ANF.Utils
         /// Loads the global data from disk
         /// </summary>
         /// <param name="globalData">The global data manager</param>
+        /// <param name="anfInput">The ANF Input System</parama>
         /// <param name="loadPath">The save's filepath</param>
         /// <returns>True if the operation was a success</returns>
-        public static bool LoadGlobalData(ContainerManager globalData, string loadPath)
+        public static bool LoadGlobalData(ContainerManager globalData, ANFInput anfInput, string loadPath)
         {
             JSON loadedJSON = LoadJSON(loadPath);
             if (loadedJSON == null)
                 return false;
 
-            globalData.Load(loadedJSON);
+            if (loadedJSON.ContainsKey("globalData"))
+                globalData.Load(loadedJSON.GetJSON("globalData"));
+
+            if (loadedJSON.ContainsKey("inputData"))
+                anfInput.Load(loadedJSON.GetJSON("inputData"));
 
             return true;
         }

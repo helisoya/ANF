@@ -31,6 +31,15 @@ namespace ANF.Utils
         }
 
         /// <summary>
+		/// Changes the duration of the lerp (not recommanded)
+		/// </summary>
+		/// <param name="duration">The new duration</param>
+        public void ChangeDuration(float duration)
+        {
+            transitionDuration = duration;
+        }
+
+        /// <summary>
         /// Stops the lerp
         /// </summary>
         public void StopLerp()

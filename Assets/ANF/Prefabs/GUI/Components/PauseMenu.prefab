@@ -204,9 +204,10 @@ MonoBehaviour:
   guiComponentsToPause:
   - fadeBg
   - fadeFg
-  - dialog
-  - choiceUI
-  - mapUI
+  - DialogUI
+  - ChoiceUI
+  - MapUI
+  - InputReminderUI
   mainMenuMode: 0
   transitionDuration: 0.5
   buttonsRoot: {fileID: 2752175258711624528}

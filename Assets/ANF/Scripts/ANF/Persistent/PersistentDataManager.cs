@@ -13,7 +13,7 @@ namespace ANF.Persistent
 
         [Header("Data")]
         [SerializeField] private ANFSettings anfSettings;
-        [SerializeField] private PlayerInput playerInput;
+        [SerializeField] private ANFInput anfInput;
         [SerializeField] private ContainerManager playerData;
         [SerializeField] private ContainerManager globalData;
 
@@ -22,14 +22,17 @@ namespace ANF.Persistent
             if (!instance)
             {
                 instance = this;
+
+                anfInput.Initialize();
+
                 playerData = new ContainerManager(anfSettings.registeredPlayerDataContainers, anfSettings);
                 globalData = new ContainerManager(anfSettings.registeredGlobalDataContainers, anfSettings);
 
                 string globalDataSaveFile = FileManager.savPath + anfSettings.saveFolder + "global.json";
                 if (SaveUtils.FileExists(globalDataSaveFile))
-                    SaveUtils.LoadGlobalData(globalData, globalDataSaveFile);
+                    SaveUtils.LoadGlobalData(globalData, anfInput, globalDataSaveFile);
                 else
-                    SaveUtils.SaveGlobalData(globalData, globalDataSaveFile);
+                    SaveUtils.SaveGlobalData(globalData, anfInput, globalDataSaveFile);
 
                 DontDestroyOnLoad(gameObject);
             }
@@ -43,9 +46,9 @@ namespace ANF.Persistent
 		/// Gets the player input
 		/// </summary>
 		/// <returns>The player input</returns>
-        public PlayerInput GetPlayerInput()
+        public ANFInput GetANFInput()
         {
-            return playerInput;
+            return anfInput;
         }
 
         /// <summary>

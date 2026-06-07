@@ -9,10 +9,21 @@ namespace ANF.Scene
         [Header("Infos")]
         [SerializeField] protected string prefabsPath;
         private Dictionary<string, Type> objects;
+        private bool skipModeEnabled;
 
         public override void OnInitialize()
         {
             objects = new Dictionary<string, Type>();
+        }
+
+        public void OnSkipModeToggle(bool enabled)
+        {
+            if (skipModeEnabled != enabled)
+            {
+                skipModeEnabled = enabled;
+                foreach (Type obj in objects.Values)
+                    obj.OnSkipModeToggle(enabled);
+            }
         }
 
         public override void OnStart()
@@ -53,6 +64,7 @@ namespace ANF.Scene
 
                 obj = Object.Instantiate(resource, manager.transform);
                 obj.Create(manager);
+                obj.OnSkipModeToggle(skipModeEnabled);
                 objects.Add(name, obj);
                 return true;
             }

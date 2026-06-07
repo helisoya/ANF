@@ -31,6 +31,12 @@ namespace ANF.ANSL
                 EndProcess();
         }
 
+        public void OnSkipModeToggle(bool enabled)
+        {
+            if (enabled && timeToWait > 0.1f)
+                timeToWait = 0.1f;
+        }
+
         protected override void OnUpdate()
         {
             timeToWait -= Time.deltaTime;
