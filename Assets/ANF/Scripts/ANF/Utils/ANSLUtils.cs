@@ -208,8 +208,8 @@ namespace ANF.Utils
                     errors.Add(new ANSLError()
                     {
                         type = ANSLErrorType.FUNCTION,
-                        filePath = function.Name,
-                        errorMessage = $"Failed to retrieve {function.Name}'s class Attribute."
+                        filePath = function.FullName,
+                        errorMessage = $"Failed to retrieve {function.FullName}'s class Attribute."
                     });
                     errorFound = true;
                 }

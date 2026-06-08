@@ -28,7 +28,7 @@ namespace ANF.Editor
             }
             else if (data.managedReferenceValue is DataContainer && data.managedReferenceValue != null)
             {
-                label = new GUIContent(data.managedReferenceValue.GetType().Name);
+                label = new GUIContent(data.managedReferenceValue.GetType().FullName);
             }
             else
             {
@@ -59,7 +59,7 @@ namespace ANF.Editor
             }
             else if (data.managedReferenceValue is WorldComponent && data.managedReferenceValue != null)
             {
-                label = new GUIContent(data.managedReferenceValue.GetType().Name);
+                label = new GUIContent(data.managedReferenceValue.GetType().FullName);
             }
             else
             {
@@ -91,7 +91,7 @@ namespace ANF.Editor
             }
             else if (data.objectReferenceValue is GUIComponent && data.objectReferenceValue != null)
             {
-                label = new GUIContent(data.objectReferenceValue.GetType().Name);
+                label = new GUIContent(data.objectReferenceValue.GetType().FullName);
             }
             else
             {

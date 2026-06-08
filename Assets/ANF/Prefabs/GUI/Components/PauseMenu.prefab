@@ -204,10 +204,10 @@ MonoBehaviour:
   guiComponentsToPause:
   - fadeBg
   - fadeFg
-  - DialogUI
-  - ChoiceUI
-  - MapUI
-  - InputReminderUI
+  - ANF.GUI.DialogUI
+  - ANF.GUI.ChoiceUI
+  - ANF.GUI.MapUI
+  - ANF.GUI.InputReminderUI
   mainMenuMode: 0
   transitionDuration: 0.5
   buttonsRoot: {fileID: 2752175258711624528}
