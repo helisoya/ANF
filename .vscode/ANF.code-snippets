@@ -548,6 +548,12 @@ endchoice"],
 		"body": ["setSkybox(Skybox)"],
 		"description": "Changes the current background's skybox"
 	},
+	"31_1": {
+		"scope": "ansl",
+		"prefix": "setSkybox",
+		"body": ["setSkybox(Skybox;Duration;WaitForEnd)"],
+		"description": "Changes the current background's skybox"
+	},
 	"39_0": {
 		"scope": "ansl",
 		"prefix": "setStaticAlpha",

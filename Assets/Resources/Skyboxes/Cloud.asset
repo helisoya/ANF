@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eac46962755b34f9cde13540a99af4, type: 3}
   m_Name: Cloud
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.SkyboxData
-  skybox: {fileID: 2100000, guid: 9919b7135bef1224ca6073aa4193f01d, type: 2}
+  skybox: {fileID: 8900000, guid: e43fb6feca39f3348b240a58c817542b, type: 3}
   sunColor: {r: 0.6156863, g: 0.5921569, b: 0.50980395, a: 1}

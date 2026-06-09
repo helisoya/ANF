@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773bfc7de97ad5247b9061be4feb35ce, type: 3}
   m_Name: ANFSettings
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Persistent.ANFSettings
-  startingScript: ANF/Tests/Character
+  startingScript: ANF/Tests/Background
   mainMenuScene: ANFMainMenu
   gameScene: ANFGame
   saveFolder: Saves/
@@ -149,6 +149,9 @@ MonoBehaviour:
         defaultFullscreen: 1
         defaultWidth: 800
         defaultHeight: 600
+        defaultVSyncCount: 1
+        defaultAntiAliasing: 2
+        defaultShadowCascadeCount: 4
     - rid: 6964546988055199858
       type: {class: PlayerLocals, ns: ANF.Locals, asm: Assembly-CSharp}
       data: 

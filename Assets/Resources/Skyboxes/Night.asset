@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eac46962755b34f9cde13540a99af4, type: 3}
   m_Name: Night
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.SkyboxData
-  skybox: {fileID: 2100000, guid: c829fc47a30aab24daa97e149e03b411, type: 2}
+  skybox: {fileID: 8900000, guid: 596fdd1c15b9bda4cab8ab25089edd10, type: 3}
   sunColor: {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}

@@ -38,13 +38,11 @@ namespace ANF.Scene
         }
 
         /// <summary>
-        /// Changes the skybox for this background
+        /// Sets the sunlight's color
         /// </summary>
-        /// <param name="skyboxMaterial">The skybox's material</param>
-        /// <param name="sunColor">The sun's color</param>
-        public void SetSkybox(Material skyboxMaterial, Color sunColor)
+        /// <param name="sunColor">The new color</param>
+        public void SetSunColor(Color sunColor)
         {
-            RenderSettings.skybox = skyboxMaterial;
             sunLight.color = sunColor;
         }
 

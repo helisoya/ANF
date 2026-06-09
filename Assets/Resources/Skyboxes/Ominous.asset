@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22eac46962755b34f9cde13540a99af4, type: 3}
   m_Name: Ominous
   m_EditorClassIdentifier: Assembly-CSharp::ANF.Scene.SkyboxData
-  skybox: {fileID: 2100000, guid: 60bec3b0e27e7e64b8aad62a0ccef7d7, type: 2}
+  skybox: {fileID: 8900000, guid: 7300bd2c53a58714cbad61147ad2d6ce, type: 3}
   sunColor: {r: 0.42352942, g: 0.47843137, b: 0.43137255, a: 1}

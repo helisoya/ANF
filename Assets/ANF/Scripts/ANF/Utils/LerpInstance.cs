@@ -47,6 +47,16 @@ namespace ANF.Utils
             lerping = false;
         }
 
+        /// <summary>
+        /// Gets the current value
+        /// </summary>
+        /// <returns>The current value</returns>
+        public abstract Type Get();
+
+        /// <summary>
+        /// Updates the lerp
+        /// </summary>
+        /// <returns>The updated value</returns>
         public abstract Type Update();
 
         public void Save(JSON json)
@@ -81,13 +91,18 @@ namespace ANF.Utils
                 transitionDuration = json.GetFloat("transitionDuration");
         }
 
+        public override float Get()
+        {
+            return Mathf.Lerp(start, target, t);
+        }
+
         public override float Update()
         {
             float result = 1.0f;
             if (lerping)
             {
                 t += Time.deltaTime / transitionDuration;
-                result = Mathf.Lerp(start, target, t);
+                result = Get();
 
                 if (t >= 1.0f)
                     lerping = false;
@@ -116,13 +131,18 @@ namespace ANF.Utils
                 transitionDuration = json.GetFloat("transitionDuration");
         }
 
+        public override Vector2 Get()
+        {
+            return Vector2.Lerp(start, target, t);
+        }
+
         public override Vector2 Update()
         {
             Vector2 result = Vector2.one;
             if (lerping)
             {
                 t += Time.deltaTime / transitionDuration;
-                result = Vector2.Lerp(start, target, t);
+                result = Get();
 
                 if (t >= 1.0f)
                     lerping = false;
@@ -151,13 +171,18 @@ namespace ANF.Utils
                 transitionDuration = json.GetFloat("transitionDuration");
         }
 
+        public override Vector3 Get()
+        {
+            return Vector3.Lerp(start, target, t);
+        }
+
         public override Vector3 Update()
         {
             Vector3 result = Vector3.one;
             if (lerping)
             {
                 t += Time.deltaTime / transitionDuration;
-                result = Vector3.Lerp(start, target, t);
+                result = Get();
 
                 if (t >= 1.0f)
                     lerping = false;
@@ -186,13 +211,18 @@ namespace ANF.Utils
                 transitionDuration = json.GetFloat("transitionDuration");
         }
 
+        public override Color Get()
+        {
+            return Color.Lerp(start, target, t);
+        }
+
         public override Color Update()
         {
             Color result = Color.white;
             if (lerping)
             {
                 t += Time.deltaTime / transitionDuration;
-                result = Color.Lerp(start, target, t);
+                result = Get();
 
                 if (t >= 1.0f)
                     lerping = false;

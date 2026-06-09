@@ -8,7 +8,7 @@ namespace ANF.Scene
     [CreateAssetMenu(fileName = "SkyboxData", menuName = "ANF/SkyboxData")]
     public class SkyboxData : ScriptableObject
     {
-        public Material skybox;
+        public Cubemap skybox;
         public Color sunColor;
     }
 }
