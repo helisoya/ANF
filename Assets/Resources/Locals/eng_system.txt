@@ -96,6 +96,9 @@ SettingsMenu_Game_DialogUI_BackgroundOpacity = Dialog box opacity
 
 SettingsMenu_Game_ANSLManager_AutoplayTimer = Autoplay timer
 
+SettingsMenu_Game_FlowStateHandler_ToggleAutoplay = Toggle (Autoplay)
+SettingsMenu_Game_FlowStateHandler_ToggleSkipMode = Toggle (Skip Mode)
+
 SettingsMenu_ColorPicker_H = H
 SettingsMenu_ColorPicker_S = S
 SettingsMenu_ColorPicker_V = V

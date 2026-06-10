@@ -75,7 +75,7 @@
                     "id": "b2dd17fd-6195-4dac-b12c-2cb2a4980874",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -84,7 +84,7 @@
                     "id": "64536c5f-4e02-4e1d-91ba-09313a850ed2",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 }
             ],

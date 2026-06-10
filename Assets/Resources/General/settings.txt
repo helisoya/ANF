@@ -29,3 +29,6 @@ InteractionMode_SelectedColor Color #57bf45 SettingsMenu_Game SettingsMenu_Game_
 DialogUI_BackgroundOpacity Float 1 SettingsMenu_Game SettingsMenu_Game_DialogUI_BackgroundOpacity (0.1,1)
 
 ANSLManager_AutoplayTimer Float 4 SettingsMenu_Game SettingsMenu_Game_ANSLManager_AutoplayTimer (0.1,10)
+
+FlowStateHandler_ToggleAutoplay Bool true SettingsMenu_Game SettingsMenu_Game_FlowStateHandler_ToggleAutoplay
+FlowStateHandler_ToggleSkipMode Bool false SettingsMenu_Game SettingsMenu_Game_FlowStateHandler_ToggleSkipMode

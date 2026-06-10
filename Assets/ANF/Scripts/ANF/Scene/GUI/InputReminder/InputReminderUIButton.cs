@@ -13,7 +13,7 @@ namespace ANF.Persistent
     /// <summary>
 	/// Represents an input reminder in the Input reminder UI
 	/// </summary>
-    public class InputReminderUIButton : MonoBehaviour, IPointerDownHandler
+    public class InputReminderUIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private LocalizedText label;
         [SerializeField] private AutomaticIcon icon;
@@ -53,7 +53,12 @@ namespace ANF.Persistent
             if (PersistentDataManager.instance.GetGlobalData().GetComponent(out AudioManager audioManager))
                 audioManager.PlayUICursorConfirmSFX();
 
-            action.OnClick(manager);
+            action.OnDown(manager);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            action.OnUp(manager);
         }
     }
 
@@ -63,7 +68,8 @@ namespace ANF.Persistent
     [System.Serializable]
     public abstract class InputReminderAction
     {
-        public abstract void OnClick(ANFManager manager);
+        public abstract void OnDown(ANFManager manager);
+        public abstract void OnUp(ANFManager manager);
     }
 
     /// <summary>
@@ -72,7 +78,12 @@ namespace ANF.Persistent
     [System.Serializable]
     public class InputReminderActionNone : InputReminderAction
     {
-        public override void OnClick(ANFManager manager)
+        public override void OnDown(ANFManager manager)
+        {
+
+        }
+
+        public override void OnUp(ANFManager manager)
         {
 
         }
@@ -84,10 +95,15 @@ namespace ANF.Persistent
     [System.Serializable]
     public class InputReminderActionPauseMenu : InputReminderAction
     {
-        public override void OnClick(ANFManager manager)
+        public override void OnDown(ANFManager manager)
         {
             if (manager.GetGUIManager().GetComponent<PauseMenuUI>(out PauseMenuUI pauseMenu))
                 pauseMenu.SetEnabled(true);
+        }
+
+        public override void OnUp(ANFManager manager)
+        {
+
         }
     }
 
@@ -97,7 +113,13 @@ namespace ANF.Persistent
     [System.Serializable]
     public class InputReminderActionAutoPlay : InputReminderAction
     {
-        public override void OnClick(ANFManager manager)
+        public override void OnDown(ANFManager manager)
+        {
+            if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
+                flowState.ToggleAutoPlay();
+        }
+
+        public override void OnUp(ANFManager manager)
         {
             if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
                 flowState.ToggleAutoPlay();
@@ -110,7 +132,13 @@ namespace ANF.Persistent
     [System.Serializable]
     public class InputReminderActionSkipMode : InputReminderAction
     {
-        public override void OnClick(ANFManager manager)
+        public override void OnDown(ANFManager manager)
+        {
+            if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
+                flowState.ToggleSkipMode();
+        }
+
+        public override void OnUp(ANFManager manager)
         {
             if (manager.GetWorld().GetComponent<FlowStateHandler>(out FlowStateHandler flowState))
                 flowState.ToggleSkipMode();

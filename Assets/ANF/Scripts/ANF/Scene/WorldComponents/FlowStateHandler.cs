@@ -1,6 +1,6 @@
 using ANF.Persistent;
 using Leguar.TotalJSON;
-using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ANF.Scene
@@ -13,6 +13,9 @@ namespace ANF.Scene
     {
         private bool autoPlay;
         private bool skipMode;
+
+        private bool autoplayToggle;
+        private bool skipModeToggle;
 
         /// <summary>
         /// True if auto play is enabled
@@ -54,12 +57,28 @@ namespace ANF.Scene
 
         private void OnAutoPlayInput(InputAction.CallbackContext context)
         {
-            ToggleAutoPlay();
+            if(!autoplayToggle || context.ReadValueAsButton())
+                ToggleAutoPlay();
         }
 
         private void OnSkipModeInput(InputAction.CallbackContext context)
         {
-            ToggleSkipMode();
+            if (!skipModeToggle || context.ReadValueAsButton())
+                ToggleSkipMode();
+        }
+
+        private void OnAutoPlayToggleChange(object value)
+        {
+            autoplayToggle = (bool)value;
+            if (autoplayToggle)
+                ToggleAutoPlay();
+        }
+
+        private void OnSkipModeToggleChange(object value)
+        {
+            skipModeToggle = (bool)value;
+            if (autoplayToggle)
+                ToggleAutoPlay();
         }
 
         public override WorldComponent CloneComponent()
@@ -71,6 +90,12 @@ namespace ANF.Scene
         {
             autoPlay = false;
             skipMode = false;
+
+            if(PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
+            {
+                autoplayToggle = (bool)settings.Register("FlowStateHandler_ToggleAutoplay", SettingsContainer.SettingsDataType.Bool, OnAutoPlayToggleChange);
+                skipModeToggle = (bool)settings.Register("FlowStateHandler_ToggleSkipMode", SettingsContainer.SettingsDataType.Bool, OnSkipModeToggleChange);
+            }
         }
 
         public override void OnStart()
@@ -130,6 +155,12 @@ namespace ANF.Scene
         public override void OnChangeScene()
         {
             OnUnRegisterInputs();
+
+            if (PersistentDataManager.instance.GetGlobalData().GetComponent(out SettingsContainer settings))
+            {
+                settings.Unregister("FlowStateHandler_ToggleAutoplay", OnAutoPlayToggleChange);
+                settings.Unregister("FlowStateHandler_ToggleSkipMode", OnSkipModeToggleChange);
+            }
         }
     }
 }

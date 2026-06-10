@@ -48,7 +48,7 @@ namespace ANF.ANSL
 
             string[] split = cleanedLine.Split(new char[] { '(', ')' });
 
-            if (split.Length > 3 || split[2].Length != 0)
+            if (split.Length != 3 || split[2].Length != 0)
             {
                 // More than one pair of () found
                 errors.Add(new ANSLUtils.ANSLError()

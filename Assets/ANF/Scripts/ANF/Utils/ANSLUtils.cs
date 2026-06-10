@@ -147,22 +147,25 @@ namespace ANF.Utils
                     }
                 }
 
-                Stack<string> directories = new Stack<string>();
-                directories.Push(settings.anslSourceFolder);
-
-                while (directories.Count > 0)
+                if(compiler.CompileANSLMacros($"{settings.anslSourceFolder}Macros.defines", errors))
                 {
-                    string directory = directories.Pop();
+                    Stack<string> directories = new Stack<string>();
+                    directories.Push(settings.anslSourceFolder);
 
-                    foreach (string subDir in Directory.GetDirectories(directory))
-                        directories.Push(subDir);
-
-                    foreach (string file in Directory.GetFiles(directory))
+                    while (directories.Count > 0)
                     {
-                        if (file.EndsWith(".ansl"))
+                        string directory = directories.Pop();
+
+                        foreach (string subDir in Directory.GetDirectories(directory))
+                            directories.Push(subDir);
+
+                        foreach (string file in Directory.GetFiles(directory))
                         {
-                            string destPath = "Assets/Resources/" + settings.anslDestinationFolder + file.Substring(settings.anslSourceFolder.Length).Replace(".ansl", ".txt");
-                            compiler.Compile(file, destPath, functionInstances, errors);
+                            if (file.EndsWith(".ansl"))
+                            {
+                                string destPath = "Assets/Resources/" + settings.anslDestinationFolder + file.Substring(settings.anslSourceFolder.Length).Replace(".ansl", ".txt");
+                                compiler.Compile(file, destPath, functionInstances, errors);
+                            }
                         }
                     }
                 }

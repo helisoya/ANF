@@ -1,6 +1,8 @@
 using ANF.Utils;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using static ANF.Utils.ANSLUtils;
 
 namespace ANF.ANSL
@@ -19,10 +21,174 @@ namespace ANF.ANSL
         private string cachedCurrentLineClean;
 
         private StreamWriter outStream;
-        private string[] inLines;
+        private List<string> inLines;
         private Dictionary<string, ANSLFunction> functions;
         private List<ANSLUtils.ANSLError> errors;
+        private List<ANSLMacroData> macros;
 
+        /// <summary>
+        /// Compiles a file composed of ANSL macros
+        /// </summary>
+        /// <param name="sourceFile">The source file</param>
+        /// <param name="errors">The error list</param>
+        /// <returns>True if there was no errors</returns>
+        public bool CompileANSLMacros(string sourceFile, List<ANSLUtils.ANSLError> errors)
+        {
+            macros = new List<ANSLMacroData>();
+
+
+            if(!File.Exists(sourceFile))
+            {
+                errors.Add(new ANSLError()
+                {
+                    type = ANSLErrorType.WARNING,
+                    filePath = sourceFile,
+                    line = 0,
+                    errorMessage = $"Could not open file ANSL Macro file (not required)"
+                });
+                return false;
+            }
+
+            string[] inLines = File.ReadAllLines(sourceFile);
+
+            if (inLines == null)
+            {
+                errors.Add(new ANSLError()
+                {
+                    type = ANSLErrorType.ERROR,
+                    filePath = sourceFile,
+                    line = 0,
+                    errorMessage = $"Could not open file."
+                });
+                return false;
+            }
+
+            ANSLMacroData macroData = null;
+            string currentLine;
+
+
+            for(int i = 0; i < inLines.Length; i++)
+            {
+                currentLine = inLines[i];
+                if (currentLine.StartsWith('#') || string.IsNullOrEmpty(currentLine) || string.IsNullOrWhiteSpace(currentLine))
+                    continue;
+
+                if(currentLine.StartsWith("Define "))
+                {
+                    if(macroData != null)
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"Cannot declare a macro inside a macro. EndDefine missing ?"
+                        });
+                        return false;
+                    }
+
+                    currentLine = currentLine.Substring("Define ".Length).Replace(" ","").Replace("\t","");
+                    int idxStart = currentLine.IndexOf('(');
+                    int idxEnd = currentLine.IndexOf(')');
+
+
+                    if (idxStart == -1 || idxEnd == -1)
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"Missing () in macro declaration"
+                        });
+                    }
+
+                    if(idxEnd != currentLine.Length-1)
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"Unknown character at the end of line"
+                        });
+                    }
+
+                    if(idxStart == 0)
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"No Macro name detected"
+                        });
+                    }
+                    
+                    macroData = new ANSLMacroData(currentLine.Substring(0, idxStart));
+
+                    if(idxStart +1 != idxEnd)
+                    {
+                        string[] parameterSplit = currentLine.Substring(idxStart + 1, currentLine.Length - idxStart - 2).Split(';');
+
+                        if (parameterSplit != null || parameterSplit.Length > 0)
+                        {
+                            foreach (string parameter in parameterSplit)
+                                if (!string.IsNullOrEmpty(parameter))
+                                    macroData.parameters.Add(parameter);
+                        }
+                    }
+                }
+                else if(currentLine.StartsWith("EndDefine"))
+                {
+                    if(macroData == null)
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"Missing macro declaration"
+                        });
+                    }
+
+                    macros.Add(macroData);
+                    macroData = null;
+                }
+                else
+                {
+                    if(macroData != null)
+                    {
+                        macroData.content.Add(currentLine);
+                    }
+                    else
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"Out of place function"
+                        });
+                        return false;
+                    }
+                }
+            }
+
+            if(macroData != null)
+            {
+                errors.Add(new ANSLError()
+                {
+                    type = ANSLErrorType.ERROR,
+                    filePath = sourceFile,
+                    line = 0,
+                    errorMessage = $"Missing EndDefine detected"
+                });
+                return false;
+            }
+
+            return true;
+        }
 
         /// <summary>
         /// Starts compiling a new ANSL file
@@ -40,7 +206,7 @@ namespace ANF.ANSL
             currentLineInOutput = 0;
             isfirstLine = true;
 
-            inLines = File.ReadAllLines(sourceFile);
+            inLines = new List<string>(File.ReadAllLines(sourceFile));
 
             if (inLines == null)
             {
@@ -52,6 +218,74 @@ namespace ANF.ANSL
                     errorMessage = $"Could not open file."
                 });
                 return false;
+            }
+
+            for(int i = 0; i < inLines.Count;i++)
+            {
+                string line = inLines[i].Replace("\t", "").Replace(" ","");
+
+                if(!string.IsNullOrEmpty(line) && line.StartsWith(':'))
+                {
+                    line = line.Substring(1);
+                    int startIdx = line.IndexOf('(');
+                    int endIdx = line.IndexOf(')');
+
+                    if (startIdx <= 0 || endIdx == -1 || endIdx != line.Length - 1)
+                    {
+                        errors.Add(new ANSLError()
+                        {
+                            type = ANSLErrorType.ERROR,
+                            filePath = sourceFile,
+                            line = i,
+                            errorMessage = $"Bad macro usage : {line}."
+                        });
+                        return false;
+                    }
+
+                    string name = line.Substring(0,startIdx);
+
+                    foreach (ANSLMacroData macroData in macros)
+                    {
+                        if(name.Equals(macroData.name))
+                        {
+                            string[] parameters = new string[] { };
+
+                            if(startIdx + 1 != endIdx)
+                                parameters = line.Substring(startIdx + 1, line.Length - startIdx - 2).Split(';');
+
+                            if (macroData.parameters.Count != parameters.Length)
+                            {
+                                errors.Add(new ANSLError()
+                                {
+                                    type = ANSLErrorType.ERROR,
+                                    filePath = sourceFile,
+                                    line = i,
+                                    errorMessage = $"Unknown parameters count : {line}."
+                                });
+                                return false;
+                            }
+                            int newLineIndex = i;
+                            foreach(string macroLine in macroData.content)
+                            {
+                                string processedLine = new string(macroLine);
+
+                                for(int j = 0; j < parameters.Length;j++)
+                                {
+                                    if (string.IsNullOrEmpty(macroData.parameters[j]))
+                                        continue;
+
+                                    processedLine = processedLine.Replace($"{{{macroData.parameters[j]}}}", parameters[j]);
+                                }
+
+                                inLines.Insert(newLineIndex, processedLine);
+                                newLineIndex++;
+                            }
+                            inLines.RemoveAt(newLineIndex);
+
+                            continue;
+                        }
+                    }
+                }
             }
 
             new FileInfo(destinationFile).Directory.Create();
@@ -72,7 +306,7 @@ namespace ANF.ANSL
 		/// <returns>True if the compiling failed</returns>
         private bool ContinueCompiling()
         {
-            if (currentLine >= inLines.Length)
+            if (currentLine >= inLines.Count)
             {
                 // End of File
                 Clean();
@@ -162,7 +396,7 @@ namespace ANF.ANSL
         public void CheckNextLine()
         {
             currentLine++;
-            if (currentLine >= inLines.Length)
+            if (currentLine >= inLines.Count)
             {
                 // End of file
                 cachedCurrentLine = null;
@@ -263,6 +497,23 @@ namespace ANF.ANSL
             }
 
             inLines = null;
+        }
+    }
+    
+    /// <summary>
+    /// Represents the data of an ANSL macro
+    /// </summary>
+    public class ANSLMacroData
+    {
+        public string name;
+        public List<string> parameters;
+        public List<string> content;
+
+        public ANSLMacroData(string name)
+        {
+            this.name = name;
+            this.parameters = new List<string>();
+            this.content = new List<string>();
         }
     }
 }
