@@ -84,7 +84,7 @@ MonoBehaviour:
         enabledByDefault: 1
         fadeAllName: fadeAll
         startInDebugMode: 0
-        debugModeScript: ANF/Tests/Background
+        debugModeScript: /ANF/Tests/Background
         autoLoadSaveFile: 0
         saveFileToAutoLoad: autosave
     - rid: 3436799676236169305

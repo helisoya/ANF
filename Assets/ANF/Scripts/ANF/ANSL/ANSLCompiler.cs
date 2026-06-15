@@ -34,10 +34,10 @@ namespace ANF.ANSL
         /// <returns>True if there was no errors</returns>
         public bool CompileANSLMacros(string sourceFile, List<ANSLUtils.ANSLError> errors)
         {
-            macros = new List<ANSLMacroData>();
+            if(macros == null)
+                macros = new List<ANSLMacroData>();
 
-
-            if(!File.Exists(sourceFile))
+            if (!File.Exists(sourceFile))
             {
                 errors.Add(new ANSLError()
                 {

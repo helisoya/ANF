@@ -1,2 +1,2 @@
 22|Test_Character|null|Test_Choice_No_1
-1|ANF/Tests/Choice
+1|Choice

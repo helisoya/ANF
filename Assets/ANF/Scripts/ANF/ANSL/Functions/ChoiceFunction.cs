@@ -253,6 +253,7 @@ namespace ANF.ANSL
 
                 EndProcess();
                 context.SetLineCounter(choiceUI.selectedLine);
+                choiceUI = null;
             }
             else
             {
@@ -262,7 +263,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            choiceUI = null;
+            
         }
 
         protected override void OnSave(JSON json)

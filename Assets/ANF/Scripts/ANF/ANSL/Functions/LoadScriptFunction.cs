@@ -1,3 +1,5 @@
+using ANF.Utils;
+
 namespace ANF.ANSL
 {
     /// <summary>
@@ -25,12 +27,17 @@ namespace ANF.ANSL
 
             if (parameters.GetParameter(0, out string scriptFile))
             {
-                uint startLine;
-                if (parameters.GetTemplateId() == 0)
-                    context.LoadScript(scriptFile, 0);
-                else if (parameters.GetTemplateId() == 1 &&
-                parameters.GetParameter(1, out startLine))
-                    context.LoadScript(scriptFile, startLine);
+                string resolvedScript = ANSLUtils.ResolveFilePath(context.GetCurrentFilepath(), scriptFile);
+
+                if (resolvedScript != null)
+                {
+                    uint startLine;
+                    if (parameters.GetTemplateId() == 0)
+                        context.LoadScript(resolvedScript, 0);
+                    else if (parameters.GetTemplateId() == 1 &&
+                    parameters.GetParameter(1, out startLine))
+                        context.LoadScript(resolvedScript, startLine);
+                }
             }
 
         }

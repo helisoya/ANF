@@ -85,6 +85,69 @@ namespace ANF.Utils
         }
 
         /// <summary>
+        /// Resolves the next filepath considering the previous one.
+        /// Use / to force an absolute path instead of a relative one.
+        /// Ex : Previous(ANF/Test/FileA) & Next(Test2/FileB) -> ANF/Test/Test2/FileB
+        /// </summary>
+        /// <param name="currentFilepath">The previous filepath</param>
+        /// <param name="nextFilePath">The next filepath</param>
+        /// <returns></returns>
+        public static string ResolveFilePath(string currentFilepath, string nextFilePath)
+        {
+            if (string.IsNullOrEmpty(nextFilePath))
+                return null;
+
+            List<string> parts = new List<string>();
+            string[] split;
+
+            if (!string.IsNullOrEmpty(currentFilepath) && !nextFilePath.StartsWith('/'))
+            {
+                split = currentFilepath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+                for(int i = 0; i < split.Length - 1;i++) // Skip last part (actual filename)
+                {
+                    if (split[i].Equals(".."))
+                    {
+                        if(parts.Count > 0)
+                            parts.RemoveAt(parts.Count - 1);
+                        else
+                            return null;
+                    }
+                    else
+                    {
+                        parts.Add(split[i]);
+                    }
+                }
+            }
+
+            split = nextFilePath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < split.Length; i++)
+            {
+                if (split[i].Equals(".."))
+                {
+                    if (parts.Count > 0)
+                        parts.RemoveAt(parts.Count - 1);
+                    else
+                        return null;
+                }
+                else
+                {
+                    parts.Add(split[i]);
+                }
+            }
+
+
+            string result = "";
+            for(int i = 0; i < parts.Count;i++)
+            {
+                result += parts[i];
+                if (i < parts.Count - 1)
+                    result += "/";
+            }
+
+            return result;
+        }
+
+        /// <summary>
 		/// Regenerates the VS Code Snippets
 		/// </summary>
         public static void RegenerateVSCodeSnippets(string targetPath)
@@ -147,25 +210,45 @@ namespace ANF.Utils
                     }
                 }
 
-                if(compiler.CompileANSLMacros($"{settings.anslSourceFolder}Macros.defines", errors))
+                // Compile Defines
+                Stack<string> directories = new Stack<string>();
+                directories.Push(settings.anslSourceFolder);
+
+                while (directories.Count > 0)
                 {
-                    Stack<string> directories = new Stack<string>();
-                    directories.Push(settings.anslSourceFolder);
+                    string directory = directories.Pop();
 
-                    while (directories.Count > 0)
+                    foreach (string subDir in Directory.GetDirectories(directory))
+                        directories.Push(subDir);
+
+                    foreach (string file in Directory.GetFiles(directory))
                     {
-                        string directory = directories.Pop();
+                        if (file.EndsWith(".defines"))
+                            compiler.CompileANSLMacros(file, errors);
+                    }
+                }
 
-                        foreach (string subDir in Directory.GetDirectories(directory))
-                            directories.Push(subDir);
+                if (errors.Count > 0)
+                    return errors;
 
-                        foreach (string file in Directory.GetFiles(directory))
+                // Compile regular files
+
+                directories.Clear();
+                directories.Push(settings.anslSourceFolder);
+
+                while (directories.Count > 0)
+                {
+                    string directory = directories.Pop();
+
+                    foreach (string subDir in Directory.GetDirectories(directory))
+                        directories.Push(subDir);
+
+                    foreach (string file in Directory.GetFiles(directory))
+                    {
+                        if (file.EndsWith(".ansl"))
                         {
-                            if (file.EndsWith(".ansl"))
-                            {
-                                string destPath = "Assets/Resources/" + settings.anslDestinationFolder + file.Substring(settings.anslSourceFolder.Length).Replace(".ansl", ".txt");
-                                compiler.Compile(file, destPath, functionInstances, errors);
-                            }
+                            string destPath = "Assets/Resources/" + settings.anslDestinationFolder + file.Substring(settings.anslSourceFolder.Length).Replace(".ansl", ".txt");
+                            compiler.Compile(file, destPath, functionInstances, errors);
                         }
                     }
                 }

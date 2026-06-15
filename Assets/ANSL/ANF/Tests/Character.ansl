@@ -10,5 +10,5 @@ dialog(Test_Character;TestCharacter;Test_Character_1)
 setCharacterEye(TestCharacter;Mad)
 dialog(Test_Character;TestCharacter;Test_Character_2)
 
-setInteractionScript(TestCharacter;ANF/Tests/Character_End)
+setInteractionScript(TestCharacter;Character_End)
 interaction()

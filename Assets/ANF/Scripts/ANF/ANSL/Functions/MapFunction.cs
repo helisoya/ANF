@@ -1,5 +1,6 @@
 using ANF.GUI;
 using ANF.Persistent;
+using ANF.Utils;
 using Leguar.TotalJSON;
 
 
@@ -68,7 +69,14 @@ namespace ANF.ANSL
                     return;
 
                 EndProcess();
-                context.LoadScript(mapUI.selectedScript);
+
+                string selectedScript = mapUI.selectedScript;
+                string resolvedScript = ANSLUtils.ResolveFilePath(context.GetCurrentFilepath(), selectedScript);
+
+                if (resolvedScript != null)
+                    context.LoadScript(resolvedScript);
+
+                mapUI = null;
             }
             else
             {
@@ -78,7 +86,7 @@ namespace ANF.ANSL
 
         protected override void OnCleanup()
         {
-            mapUI = null;
+            
         }
 
         protected override void OnSave(JSON json)

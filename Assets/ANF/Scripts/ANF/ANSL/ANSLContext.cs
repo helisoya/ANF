@@ -52,6 +52,19 @@ public class ANSLContext : Jsonable
     }
 
     /// <summary>
+    /// Gets the current script's filepath
+    /// </summary>
+    /// <param name="cleaned">True if the ANSL directory should be removed from the path (start of path)</param>
+    /// <returns>The current filepath</returns>
+    public string GetCurrentFilepath(bool cleaned = true)
+    {
+        if(cleaned)
+            return currentFilePath.Substring(PersistentDataManager.instance.GetANFSettings().anslDestinationFolder.Length);
+        else
+            return currentFilePath;
+    }
+
+    /// <summary>
 	/// Enables the autoplay for this context
 	/// </summary>
 	/// <param name="enabled">True if enabled</param>

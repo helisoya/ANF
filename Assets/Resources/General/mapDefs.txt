@@ -9,11 +9,11 @@
 # ID VariableToggle NextScript Variable
 
 [TestMap]
-Village Always ANF/Tests/Map_Village
-OldFortress Always ANF/Tests/Map_OldFortress
-PeteShack Always ANF/Tests/Map_PeteShack
-TurtleIsland Variable ANF/Tests/Map_TurtleIsland anfDemoProgress Equals 0
-DesertedIsland VariableToggle ANF/Tests/Map_DesertedIsland anfDemoProgress
+Village Always /ANF/Tests/Map_Village
+OldFortress Always /ANF/Tests/Map_OldFortress
+PeteShack Always /ANF/Tests/Map_PeteShack
+TurtleIsland Variable /ANF/Tests/Map_TurtleIsland anfDemoProgress Equals 0
+DesertedIsland VariableToggle /ANF/Tests/Map_DesertedIsland anfDemoProgress
 
 [DemoMap]
 Village Always TODO

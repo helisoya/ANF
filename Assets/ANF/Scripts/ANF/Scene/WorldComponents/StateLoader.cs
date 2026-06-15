@@ -1,4 +1,5 @@
 using ANF.ANSL;
+using ANF.GUI;
 using ANF.Persistent;
 using ANF.Utils;
 using Leguar.TotalJSON;
@@ -75,13 +76,21 @@ namespace ANF.Scene
                     }
                     else if (startInDebugMode)
                     {
-                        if (anslManager != null)
-                            anslManager.StartNewContext(debugModeScript);
+                        string resolvedScript = ANSLUtils.ResolveFilePath(null, debugModeScript);
+
+                        if (anslManager != null && resolvedScript != null)
+                            anslManager.StartNewContext(resolvedScript);
                         return;
                     }
 #endif
                     if (anslManager != null)
-                        anslManager.StartNewContext(container.GetScriptToLoad());
+                    {
+                        string resolvedScript = ANSLUtils.ResolveFilePath(null, container.GetScriptToLoad());
+
+                        if (anslManager != null && resolvedScript != null)
+                            anslManager.StartNewContext(resolvedScript);
+                    }
+                        
                 }
             }
         }

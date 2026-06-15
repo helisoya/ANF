@@ -1,5 +1,5 @@
 25|TestInteraction
 28|TestBackgroundInteraction
-33|Test|ANF/Tests/Interaction_Cube1
-33|Test2|ANF/Tests/Interaction_Cube2
+33|Test|Interaction_Cube1
+33|Test2|Interaction_Cube2
 34

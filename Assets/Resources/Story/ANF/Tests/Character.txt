@@ -7,5 +7,5 @@
 22|Test_Character|TestCharacter|Test_Character_1
 46|TestCharacter|Mad
 22|Test_Character|TestCharacter|Test_Character_2
-33|TestCharacter|ANF/Tests/Character_End
+33|TestCharacter|Character_End
 34

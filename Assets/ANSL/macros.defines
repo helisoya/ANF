@@ -1,4 +1,5 @@
 # Define macros here
+# Macros can be defined in any .defines file inside the ANSL source folder
 # Macros can be used in any ANSL script to speed up scripting
 # When compiling, the ANSL compiler will replace calls to macros with the macros content 
 

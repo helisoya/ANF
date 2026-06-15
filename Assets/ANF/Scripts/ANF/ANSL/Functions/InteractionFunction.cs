@@ -1,5 +1,6 @@
 using ANF.GUI;
 using ANF.Scene;
+using ANF.Utils;
 using Leguar.TotalJSON;
 
 
@@ -55,7 +56,11 @@ namespace ANF.ANSL
 
                 EndProcess();
 
-                context.LoadScript(interactionMode.selectedScript);
+                string selectedScript = interactionMode.selectedScript;
+                string resolvedScript = ANSLUtils.ResolveFilePath(context.GetCurrentFilepath(), selectedScript);
+
+                if(resolvedScript != null)
+                    context.LoadScript(resolvedScript);
                 interactionMode = null;
             }
         }

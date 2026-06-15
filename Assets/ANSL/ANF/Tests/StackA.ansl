@@ -4,6 +4,6 @@ log(Log;Log Message from A)
 
 log(Warning;Warning Message from A)
 
-loadScript(ANF/Tests/StackB)
+loadScript(StackB)
 
 log(Error;Error Message from A)
