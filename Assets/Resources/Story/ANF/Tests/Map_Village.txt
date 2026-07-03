@@ -1,2 +1,2 @@
-22|Test_Character|null|Test_Map_Village
-27|Map_ANFDemo|TestMap|Village
+6|Test_Character|null|Test_Map_Village
+16|Map_ANFDemo|TestMap|Village

@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Play Ambient function can be used to play a Ambient
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 54,
+        
         functionBody: "playAmbient",
         functionAutoComplete: new string[] {
             "playAmbient(Ambient)",

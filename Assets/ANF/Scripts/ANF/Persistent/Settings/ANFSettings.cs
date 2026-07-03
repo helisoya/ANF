@@ -32,13 +32,29 @@ namespace ANF.Persistent
         [Tooltip("Global datas containers are responsible for datas that are not local to a save file (Ex: settings)")]
         public ComponentRegisterEntry<DataContainer>[] registeredGlobalDataContainers;
 
-        [Header("ANSL")]
-        [Tooltip("ANSL source files location")]
-        public string anslSourceFolder = "Assets/ANSL/";
-        [Tooltip("ANSL destination file location (Is inside Resources/)")]
-        public string anslDestinationFolder = "Story/";
-        [Tooltip("Path to the ANSL .code-snippets file (auto complete for VS code)")]
-        public string anslVSCodeSnippetsPath = ".vscode/";
-    }
+        [Header("Additional")]
+        [Tooltip("You can add additional settings here. Don't add more than one additional part of each type.  (Ex: Only one ANSLSettings)")]
+        [SerializeReference, SubclassSelector(AllowNull = false)] public ANFSettingsAdditionalPart[] additionalParts;
 
+        /// <summary>
+        /// Search for a specific additional part in the settings
+        /// </summary>
+        /// <typeparam name="T">The searched setting's type</typeparam>
+        /// <param name="result">The settings if found</param>
+        /// <returns>True if found</returns>
+        public bool FindAdditionalPart<T>(out T result)
+        {
+            foreach(ANFSettingsAdditionalPart part in additionalParts)
+            {
+                if(part.GetType() == typeof(T) || part.GetType().IsSubclassOf(typeof(T)))
+                {
+                    result = (T)part;
+                    return true;
+                }
+            }
+
+            result = default;
+            return false;
+        }
+    }
 }

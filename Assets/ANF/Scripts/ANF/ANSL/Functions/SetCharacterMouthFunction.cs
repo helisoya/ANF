@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character mouth Function can be used to change a character's mouth animation
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 47,
+        
         functionBody: "setCharacterMouth",
         functionAutoComplete: new string[] {
             "setCharacterMouth(Name;Mouth)",

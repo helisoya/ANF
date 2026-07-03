@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Weather Effect can be used to change the current weather effect
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 30,
+        
         functionBody: "setWeatherEffect",
         functionAutoComplete: new string[] {
             "setWeatherEffect(WeatherEffect)"

@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Wait For Context End Function can be used to wait for the end of a context
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 62,
+        
         functionBody: "waitForContextEnd",
         functionAutoComplete: new string[] {
             "waitForContextEnd(contextId)"

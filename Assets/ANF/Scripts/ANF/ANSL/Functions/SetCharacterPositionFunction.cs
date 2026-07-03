@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Set Character Position Function can be used to move a character
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 43,
+        
         functionBody: "setCharacterPosition",
         functionAutoComplete: new string[] {
             "setCharacterPosition(Name;X;Y;Z)",

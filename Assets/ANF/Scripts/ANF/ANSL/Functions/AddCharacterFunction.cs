@@ -7,7 +7,6 @@ namespace ANF.ANSL
     /// The Add Character Function can be used to add a new character to the scene
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 40,
         functionBody: "addCharacter",
         functionAutoComplete: new string[] {
             "addCharacter(Name)",

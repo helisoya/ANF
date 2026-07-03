@@ -5,7 +5,6 @@ namespace ANF.ANSL
     /// It is only used internaly, and may not be used in ANSL scripts directly
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 2,
         functionBody: "clearStack",
         functionAutoComplete: new string[] { "clearStack()", "clearStack(ContextIndex)" },
         functionDesc: "Clears the context's stack. Can also clear other context's")]

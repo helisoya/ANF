@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The Set Light Direction function can be used to change the current background's light direction
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 29,
+        
         functionBody: "setLightDirection",
         functionAutoComplete: new string[] {
             "setLightDirection(X;Y;Z)"

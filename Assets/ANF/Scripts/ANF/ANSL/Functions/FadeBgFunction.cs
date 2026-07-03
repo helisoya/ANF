@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Fade Bg function can be used to fade the background
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 12,
+        
         functionBody: "fadeBg",
         functionAutoComplete: new string[] {
             "fadeBg(Alpha;WaitForEnd)",

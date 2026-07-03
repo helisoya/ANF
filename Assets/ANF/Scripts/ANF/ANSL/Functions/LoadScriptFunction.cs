@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// If the change is immediate, the script will be loaded instantly. If not, it will wait for the next Update
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 1,
+        
         functionBody: "load",
         functionAutoComplete: new string[] { "load(Script)", "load(Script;StartIndex)" },
         functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]

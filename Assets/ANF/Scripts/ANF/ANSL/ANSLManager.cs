@@ -1,3 +1,4 @@
+using ANF.Persistent;
 using ANF.Scene;
 using ANF.Utils;
 using Leguar.TotalJSON;
@@ -56,18 +57,18 @@ namespace ANF.ANSL
         /// <param name="manager">The ANF Manager</param>
         private void GenerateContexts(ANFManager manager)
         {
-            List<Type> functions = ANSLUtils.GetANSLFunctionsList();
+            List<KeyValuePair<Type,uint>> functions = ANSLUtils.GetValidANSLFunctionsList(PersistentDataManager.instance.GetANFSettings());
 
             contexts = new ANSLContext[maxContexts];
             for (int i = 0; i < contexts.Length; i++)
             {
                 Dictionary<uint, ANSLFunction> instances = new Dictionary<uint, ANSLFunction>();
-                foreach (Type type in functions)
+                foreach (KeyValuePair<Type, uint> type in functions)
                 {
-                    ANSLFunctionAttribute attribute = type.GetAttribute<ANSLFunctionAttribute>();
-                    if (attribute != null && !instances.ContainsKey(attribute.functionId))
+                    ANSLFunctionAttribute attribute = type.Key.GetAttribute<ANSLFunctionAttribute>();
+                    if (attribute != null && !instances.ContainsKey(type.Value))
                     {
-                        instances.Add(attribute.functionId, (ANSLFunction)type.Instantiate());
+                        instances.Add(type.Value, (ANSLFunction)type.Key.Instantiate());
                     }
                 }
 

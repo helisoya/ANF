@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The player name function changes the player's name
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 7,
+        
         functionBody: "playerName",
         functionAutoComplete: new string[] { "playerName(playerName)" },
         functionDesc: "Changes the player's name")]

@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Show Input Reminder Function can be used to show/hide an input reminder
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 61,
+        
         functionBody: "showInputReminder",
         functionAutoComplete: new string[] {
             "showInputReminder(Id;Enabled)"

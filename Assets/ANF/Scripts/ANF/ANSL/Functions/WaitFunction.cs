@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The wait function can be used to wait for a certain number of seconds
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 4,
+        
         functionBody: "wait",
         functionAutoComplete: new string[] { "wait(Seconds)" },
         functionDesc: "Waits for a certain number of seconds")]

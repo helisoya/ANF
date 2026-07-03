@@ -4,7 +4,7 @@ namespace ANF.ANSL
     /// The Set Bg function sets immediately the Background's fade alpha without transition
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 17,
+        
         functionBody: "setBg",
         functionAutoComplete: new string[] {
             "setBg(Alpha)" },

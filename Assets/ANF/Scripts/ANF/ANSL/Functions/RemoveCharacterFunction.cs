@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Remove Character Function can be used to remove a character from the scene
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 41,
+        
         functionBody: "removeCharacter",
         functionAutoComplete: new string[] {
             "removeCharacter(Name)"

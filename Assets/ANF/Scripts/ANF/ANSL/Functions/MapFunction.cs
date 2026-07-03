@@ -10,7 +10,7 @@ namespace ANF.ANSL
     /// The Map function opens the map UI and launches the selected script
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 27,
+        
         functionBody: "map",
         functionAutoComplete: new string[] {
             "map(Map;Def;CurrentLocation)"

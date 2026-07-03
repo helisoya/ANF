@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Set Static rotation Function can be used to rotate a static object
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 38,
+        
         functionBody: "setStaticRotation",
         functionAutoComplete: new string[] {
             "setStaticRotation(Name;X;Y;Z)",

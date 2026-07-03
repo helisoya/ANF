@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character Bool Function can be used to set a character's animator bool
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 58,
+        
         functionBody: "setCharacterBool",
         functionAutoComplete: new string[] {
             "setCharacterBool(Name;ParameterName;Value)"

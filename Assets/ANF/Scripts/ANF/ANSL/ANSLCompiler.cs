@@ -22,9 +22,25 @@ namespace ANF.ANSL
 
         private StreamWriter outStream;
         private List<string> inLines;
-        private Dictionary<string, ANSLFunction> functions;
+        private Dictionary<string, KeyValuePair<ANSLFunction, uint>> functions;
         private List<ANSLUtils.ANSLError> errors;
         private List<ANSLMacroData> macros;
+
+        /// <summary>
+        /// Gets the id of a registered function
+        /// </summary>
+        /// <typeparam name="T">The function's type</typeparam>
+        /// <returns>The function's id</returns>
+        public uint GetRegisteredFunctionId<T>()
+        {
+            foreach(KeyValuePair<ANSLFunction, uint> pair in functions.Values)
+            {
+                if (pair.Key.GetType() == typeof(T))
+                    return pair.Value;
+            }
+
+            return 0;
+        }
 
         /// <summary>
         /// Compiles a file composed of ANSL macros
@@ -197,7 +213,7 @@ namespace ANF.ANSL
         /// <param name="destinationFile">The destination file</param>
         /// <param name="functions">The function list</param>
         /// <param name="errors">The global error list</param>
-        public bool Compile(string sourceFile, string destinationFile, Dictionary<string, ANSLFunction> functions, List<ANSLUtils.ANSLError> errors)
+        public bool Compile(string sourceFile, string destinationFile, Dictionary<string, KeyValuePair<ANSLFunction, uint>> functions, List<ANSLUtils.ANSLError> errors)
         {
             sourceFilepath = sourceFile;
             this.errors = errors;
@@ -361,7 +377,7 @@ namespace ANF.ANSL
                         found = true;
 
                         // Compile with this function
-                        if (functions[body].Compile(out List<string> result, line, this, errors, outputLine))
+                        if (functions[body].Key.Compile(out List<string> result, line, functions[body].Value, this, errors, outputLine))
                         {
                             foreach (string compiledLine in result)
                             {

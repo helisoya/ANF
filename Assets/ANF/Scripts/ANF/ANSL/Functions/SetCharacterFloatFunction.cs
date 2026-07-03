@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Set Character Float Function can be used to set a character's animator int
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 60,
+        
         functionBody: "setCharacterFloat",
         functionAutoComplete: new string[] {
             "setCharacterFloat(Name;ParameterName;Value)",

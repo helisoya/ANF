@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The Unlock Log function can be used to unlock a new log for the player to read
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 56,
+        
         functionBody: "unlockLog",
         functionAutoComplete: new string[] {
             "unlockLog(Log;ShowPopup)"

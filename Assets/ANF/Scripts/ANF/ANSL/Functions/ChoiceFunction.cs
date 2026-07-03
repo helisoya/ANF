@@ -10,7 +10,6 @@ namespace ANF.ANSL
     /// The Choice Function starts a choice sequence, allowing the player to chose between a few options
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 26,
         functionBody: "choice",
         functionAutoComplete: new string[] {
             "choice(Title)\n\t choice Key:\n\nendchoice"
@@ -28,7 +27,7 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public override bool Compile(out List<string> compiledLines, string cleanedLine, uint id, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
@@ -197,15 +196,15 @@ namespace ANF.ANSL
                 startIdx += compiledParts[i].Count + 1;
             }
 
-            uint idFunction = GetAttribute().functionId;
-
-            string compiledSwitchLine = $"{idFunction}|{titleKey}";
+            string compiledSwitchLine = $"{id}|{titleKey}";
             for (int i = 0; i < compiledParts.Count; i++)
             {
                 compiledSwitchLine += $"|{buttonKey[i]}|{starts[i]}";
 
                 compiledLines.AddRange(compiledParts[i]);
-                compiledLines.Add($"0|{startIdx}");
+
+                uint jumpToFunctionId = compiler.GetRegisteredFunctionId<JumpToFunction>();
+                compiledLines.Add($"{jumpToFunctionId}|{startIdx}");
             }
 
             compiledLines.Insert(0, compiledSwitchLine);

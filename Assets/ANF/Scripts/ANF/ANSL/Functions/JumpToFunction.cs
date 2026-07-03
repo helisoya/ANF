@@ -5,7 +5,7 @@ namespace ANF.ANSL
     /// It is only used internaly, and may not be used in ANSL scripts directly
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 0,
+        
         functionBody: "",
         functionAutoComplete: null,
         functionDesc: "Jump to is an internal function. It cannot be called from anywhere")]

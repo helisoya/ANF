@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The Set Static Alpha Function can be used to fade a static object
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 39,
+        
         functionBody: "setStaticAlpha",
         functionAutoComplete: new string[] {
             "setStaticAlpha(Name;Alpha)",

@@ -9,7 +9,6 @@ namespace ANF.ANSL
     /// The autosave function makes an automatic save. The autosave.json file is the default save file, but regular save files can also be autosaved to.
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 19,
         functionBody: "autosave",
         functionAutoComplete: new string[] {
             "autosave()",

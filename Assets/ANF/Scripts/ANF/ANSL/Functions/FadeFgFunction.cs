@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Fade Fg function can be used to fade the foreground
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 13,
+        
         functionBody: "fadeFg",
         functionAutoComplete: new string[] {
             "fadeFg(Alpha;WaitForEnd)",

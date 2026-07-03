@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// Only used in the editor
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 3,
+        
         functionBody: "log",
         functionAutoComplete: new string[] { "log(Type;Message)" },
         functionDesc: "Logs a message to the debug console. (Can be Log, Warning or Error)")]

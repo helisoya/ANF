@@ -4,7 +4,7 @@ namespace ANF.ANSL
     /// The return function stops the current script
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 9,
+        
         functionBody: "return",
         functionAutoComplete: new string[] { "return()" },
         functionDesc: "Stops the current script")]

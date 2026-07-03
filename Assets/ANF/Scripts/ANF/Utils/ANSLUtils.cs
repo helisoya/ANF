@@ -39,6 +39,29 @@ namespace ANF.Utils
         }
 
         /// <summary>
+        /// Find all Valid ANSL Functions (Registered and Enabled)
+        /// </summary>
+        /// <returns>All Valid ANSL Functions</returns>
+        public static List<KeyValuePair<Type,uint>> GetValidANSLFunctionsList(ANFSettings settings)
+        {
+            List<KeyValuePair<Type, uint>> output = new List<KeyValuePair<Type, uint>>();
+
+
+            if(settings.FindAdditionalPart(out ANSLSettings anslSettings))
+            {
+                foreach(ANSLSettings.ANSLFunctionSettingsData data in anslSettings.registeredFunctions)
+                {
+                    if(data.enabled)
+                    {
+                        output.Add(new KeyValuePair<Type, uint>(Type.GetType(data.typeName),data.id));
+                    }
+                }
+            }
+
+            return output;
+        }
+
+        /// <summary>
         /// Finds the correct template for the specified parameters and create an interface for it
         /// Returns null if none found
         /// </summary>
@@ -150,9 +173,12 @@ namespace ANF.Utils
         /// <summary>
 		/// Regenerates the VS Code Snippets
 		/// </summary>
-        public static void RegenerateVSCodeSnippets(string targetPath)
+        public static void RegenerateVSCodeSnippets(ANFSettings settings)
         {
-            string targetFile = targetPath + "/ANF.code-snippets";
+            if (!settings.FindAdditionalPart(out ANSLSettings anslSettings))
+                return;
+
+            string targetFile = anslSettings.anslVSCodeSnippetsPath + "/ANF.code-snippets";
 
             new FileInfo(targetFile).Directory.Create();
 
@@ -161,20 +187,20 @@ namespace ANF.Utils
 
             StreamWriter outStream = new StreamWriter(targetFile, false);
 
-            List<Type> functions = GetANSLFunctionsList();
+            List<KeyValuePair<Type,uint>> functions = GetValidANSLFunctionsList(settings);
 
             outStream.Write("{");
 
-            foreach (Type type in functions)
+            foreach (KeyValuePair<Type, uint> type in functions)
             {
-                ANSLFunctionAttribute attribute = type.GetCustomAttribute<ANSLFunctionAttribute>();
+                ANSLFunctionAttribute attribute = type.Key.GetCustomAttribute<ANSLFunctionAttribute>();
 
                 if (attribute != null && !string.IsNullOrEmpty(attribute.functionBody) && attribute.functionAutoComplete != null)
                 {
                     int idx = 0;
                     foreach (string autoComplete in attribute.functionAutoComplete)
                     {
-                        outStream.Write($"\n\t\"{attribute.functionId}_{idx}\": {{");
+                        outStream.Write($"\n\t\"{type.Value}_{idx}\": {{");
                         outStream.Write($"\n\t\t\"scope\": \"ansl\",");
                         outStream.Write($"\n\t\t\"prefix\": \"{attribute.functionBody}\",");
                         outStream.Write($"\n\t\t\"body\": [\"{autoComplete}\"],");
@@ -195,24 +221,35 @@ namespace ANF.Utils
         public static List<ANSLError> CompileAll(ANFSettings settings)
         {
             List<ANSLError> errors = new List<ANSLError>();
-            List<Type> functions = GetANSLFunctionsList();
+            List<KeyValuePair<Type,uint>> functions = GetValidANSLFunctionsList(settings);
             ANSLCompiler compiler = new ANSLCompiler();
+
+            if (!settings.FindAdditionalPart(out ANSLSettings anslSettings))
+            {
+                errors.Add(new ANSLError()
+                {
+                    type = ANSLErrorType.FUNCTION,
+                    filePath = "Settings",
+                    errorMessage = $"ANSLSetings were not found. Did you forget to register it to the ANFSettings ?"
+                });
+                return errors;
+            }
 
             if (CheckANSLFunctions(functions, errors))
             {
-                Dictionary<string, ANSLFunction> functionInstances = new Dictionary<string, ANSLFunction>();
-                foreach (Type type in functions)
+                Dictionary<string, KeyValuePair<ANSLFunction, uint>> functionInstances = new Dictionary<string, KeyValuePair<ANSLFunction, uint>>();
+                foreach (KeyValuePair<Type, uint> type in functions)
                 {
-                    ANSLFunctionAttribute attribute = type.GetCustomAttribute<ANSLFunctionAttribute>();
+                    ANSLFunctionAttribute attribute = type.Key.GetCustomAttribute<ANSLFunctionAttribute>();
                     if (attribute != null)
                     {
-                        functionInstances.Add(attribute.functionBody, (ANSLFunction)type.Instantiate());
+                        functionInstances.Add(attribute.functionBody, new KeyValuePair<ANSLFunction,uint>((ANSLFunction)type.Key.Instantiate(),type.Value));
                     }
                 }
 
                 // Compile Defines
                 Stack<string> directories = new Stack<string>();
-                directories.Push(settings.anslSourceFolder);
+                directories.Push(anslSettings.anslSourceFolder);
 
                 while (directories.Count > 0)
                 {
@@ -234,7 +271,7 @@ namespace ANF.Utils
                 // Compile regular files
 
                 directories.Clear();
-                directories.Push(settings.anslSourceFolder);
+                directories.Push(anslSettings.anslSourceFolder);
 
                 while (directories.Count > 0)
                 {
@@ -247,7 +284,7 @@ namespace ANF.Utils
                     {
                         if (file.EndsWith(".ansl"))
                         {
-                            string destPath = "Assets/Resources/" + settings.anslDestinationFolder + file.Substring(settings.anslSourceFolder.Length).Replace(".ansl", ".txt");
+                            string destPath = "Assets/Resources/" + anslSettings.anslDestinationFolder + file.Substring(anslSettings.anslSourceFolder.Length).Replace(".ansl", ".txt");
                             compiler.Compile(file, destPath, functionInstances, errors);
                         }
                     }
@@ -263,30 +300,30 @@ namespace ANF.Utils
         /// <param name="types">The functions list</param>
         /// <param name="errors">The global error list</param>
         /// <returns>True if no errors were found</returns>
-        private static bool CheckANSLFunctions(List<Type> functions, List<ANSLError> errors)
+        private static bool CheckANSLFunctions(List<KeyValuePair<Type, uint>> functions, List<ANSLError> errors)
         {
             List<uint> usedIds = new List<uint>();
 
             bool errorFound = false;
 
-            foreach (Type function in functions)
+            foreach (KeyValuePair<Type, uint> function in functions)
             {
-                ANSLFunctionAttribute attribute = function.GetCustomAttribute<ANSLFunctionAttribute>(false);
+                ANSLFunctionAttribute attribute = function.Key.GetCustomAttribute<ANSLFunctionAttribute>(false);
                 if (attribute != null)
                 {
-                    if (usedIds.Contains(attribute.functionId))
+                    if (usedIds.Contains(function.Value))
                     {
                         errors.Add(new ANSLError()
                         {
                             type = ANSLErrorType.FUNCTION,
-                            filePath = function.Name,
-                            errorMessage = $"Id {attribute.functionId} is already used by another function."
+                            filePath = function.Key.FullName,
+                            errorMessage = $"Id {function.Value} is already used by another function."
                         });
                         errorFound = true;
                     }
                     else
                     {
-                        usedIds.Add(attribute.functionId);
+                        usedIds.Add(function.Value);
                     }
                 }
                 else
@@ -294,8 +331,8 @@ namespace ANF.Utils
                     errors.Add(new ANSLError()
                     {
                         type = ANSLErrorType.FUNCTION,
-                        filePath = function.FullName,
-                        errorMessage = $"Failed to retrieve {function.FullName}'s class Attribute."
+                        filePath = function.Key.FullName,
+                        errorMessage = $"Failed to retrieve {function.Key.FullName}'s class Attribute."
                     });
                     errorFound = true;
                 }

@@ -8,7 +8,6 @@ namespace ANF.ANSL
     /// If the check is successful, the true functions will be loaded. If false, the else statement will be loaded
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 11,
         functionBody: "block",
         functionAutoComplete: new string[] { "block\\n\\nendblock" },
         functionDesc: "All functions inside a block will be processed during the same frame, ignoring any depth check.")]
@@ -21,7 +20,7 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public override bool Compile(out List<string> compiledLines, string cleanedLine, uint id, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
@@ -101,11 +100,9 @@ namespace ANF.ANSL
                 return false;
             }
 
-            uint idFunction = GetAttribute().functionId;
-
-            compiledLines.Add($"{idFunction}|false");
+            compiledLines.Add($"{id}|false");
             compiledLines.AddRange(compiledBetween);
-            compiledLines.Add($"{idFunction}|true");
+            compiledLines.Add($"{id}|true");
 
             return true;
         }

@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Play SFX function can be used to play an SFX
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 52,
+        
         functionBody: "playSFX",
         functionAutoComplete: new string[] {
             "playSFX(Sfx)",

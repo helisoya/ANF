@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The Set Interaction Hidden can be used to change if an interactable object should be hidden or not
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 32,
+        
         functionBody: "setInteractionHidden",
         functionAutoComplete: new string[] {
             "setInteractionHidden(Id;Hidden)"

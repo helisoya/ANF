@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Interaction Script can be used to change an interactable object's linked script
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 33,
+        
         functionBody: "setInteractionScript",
         functionAutoComplete: new string[] {
             "setInteractionScript(Id;Script)"

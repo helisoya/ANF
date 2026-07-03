@@ -12,7 +12,7 @@ namespace ANF.ANSL
     /// ! Be wary that this function does not set a duration to the vibration !
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 63,
+        
         functionBody: "setGamepadVibration",
         functionAutoComplete: new string[] {
             "setGamepadVibration(Both)",

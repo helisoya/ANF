@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Fade Color Bg function can be used to change the background's fade color over time
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 20,
+        
         functionBody: "fadeBgColor",
         functionAutoComplete: new string[] {
             "fadeBgColor(R;G;B;A;WaitForEnd)",

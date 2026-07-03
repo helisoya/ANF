@@ -8,7 +8,6 @@ namespace ANF.ANSL
     /// The Add Static Function can be used to add a new static object to the scene
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 35,
         functionBody: "addStatic",
         functionAutoComplete: new string[] {
             "addStatic(Name)",

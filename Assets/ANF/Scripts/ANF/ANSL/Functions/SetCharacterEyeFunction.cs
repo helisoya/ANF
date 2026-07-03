@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character eye Function can be used to change a character's eye animation
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 46,
+        
         functionBody: "setCharacterEye",
         functionAutoComplete: new string[] {
             "setCharacterEye(Name;Eye)",

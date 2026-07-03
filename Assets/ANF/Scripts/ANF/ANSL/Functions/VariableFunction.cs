@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The variable function changes a variable's value
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 6,
+        
         functionBody: "variable",
         functionAutoComplete: new string[] { "variable(Name;Operator;Value)", "variable(Name;Operator;Variable)", "variable(Name;default)" },
         functionDesc: "Changes a variable's value. Operator can be +, -, and default")]

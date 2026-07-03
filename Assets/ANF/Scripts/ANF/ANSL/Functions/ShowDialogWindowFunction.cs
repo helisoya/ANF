@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Show dialog window function can be used to show/hide the dialog window
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 23,
+        
         functionBody: "showDialogWindow",
         functionAutoComplete: new string[] {
             "showDialogWindow(Shown)"

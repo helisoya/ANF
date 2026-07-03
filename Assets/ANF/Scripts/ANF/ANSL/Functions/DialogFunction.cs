@@ -11,7 +11,7 @@ namespace ANF.ANSL
     /// The Dialog function can be used to show a dialog
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 22,
+        
         functionBody: "dialog",
         functionAutoComplete: new string[] {
             "dialog(SpeakerId;CharacterId;DialogId)",

@@ -57,30 +57,36 @@ namespace ANF.Editor
             {
                 if (GUILayout.Button("Regenerate VS Code Snippets"))
                 {
-                    ANSLUtils.RegenerateVSCodeSnippets(settings.anslVSCodeSnippetsPath);
+                    RegenerateVSCodeSnippets();
                 }
 
                 if (GUILayout.Button("Compile ANSL Files"))
                 {
                     CompileANSLFiles();
-                    AssetDatabase.Refresh();
                 }
             }
             EditorGUILayout.EndScrollView();
         }
 
-        /// <summary>
-        /// Compiles the ANSL files of the project
-        /// </summary>
-        private void CompileANSLFiles()
+
+        [MenuItem("ANF/ANSL/Regenerate VS Code Snippets")]
+        private static void RegenerateVSCodeSnippets()
+        {
+            ANFSettings settings = AssetDatabase.LoadAssetAtPath<ANFSettings>("Assets/Settings/ANF/ANFSettings.asset");
+            if(settings != null)
+                ANSLUtils.RegenerateVSCodeSnippets(settings);
+        }
+
+        [MenuItem("ANF/ANSL/Compile ANSL Files")]
+        private static void CompileANSLFiles()
         {
             ANFSettings settings = AssetDatabase.LoadAssetAtPath<ANFSettings>("Assets/Settings/ANF/ANFSettings.asset");
 
             if (settings != null)
             {
                 List<ANSLUtils.ANSLError> errors = ANSLUtils.CompileAll(settings);
-
                 ANSLErrorListPopup.Show(errors);
+                AssetDatabase.Refresh();
             }
         }
     }

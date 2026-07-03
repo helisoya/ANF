@@ -10,7 +10,7 @@ namespace ANF.ANSL
     /// The Interaction Function can be used to start an interaction sequence
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 34,
+        
         functionBody: "interaction",
         functionAutoComplete: new string[] {
             "interaction()"

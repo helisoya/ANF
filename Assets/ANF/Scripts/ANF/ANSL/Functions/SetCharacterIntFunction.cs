@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character Int Function can be used to set a character's animator int
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 59,
+        
         functionBody: "setCharacterInt",
         functionAutoComplete: new string[] {
             "setCharacterInt(Name;ParameterName;Value)"

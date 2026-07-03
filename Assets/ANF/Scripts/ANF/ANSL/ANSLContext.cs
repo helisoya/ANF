@@ -36,9 +36,12 @@ public class ANSLContext : Jsonable
     private bool skipModeEnabled;
     private bool autoplayEnabled;
     private ANFManager manager;
+    private ANSLSettings settings;
 
     public ANSLContext(Dictionary<uint, ANSLFunction> functions, uint contextStackLength, uint maxFunctionsPerFrame, ANFManager manager)
     {
+        PersistentDataManager.instance.GetANFSettings().FindAdditionalPart(out settings);
+
         this.contextStackLength = contextStackLength;
         this.maxFunctionsPerFrame = maxFunctionsPerFrame;
         this.functions = functions;
@@ -59,7 +62,7 @@ public class ANSLContext : Jsonable
     public string GetCurrentFilepath(bool cleaned = true)
     {
         if(cleaned)
-            return currentFilePath.Substring(PersistentDataManager.instance.GetANFSettings().anslDestinationFolder.Length);
+            return currentFilePath.Substring(settings != null ? settings.anslDestinationFolder.Length : 0);
         else
             return currentFilePath;
     }
@@ -108,7 +111,7 @@ public class ANSLContext : Jsonable
     /// <param name="isFullPath">True if the path is already the full path to the script<param>
     public void LoadScript(string scriptFilePath, uint startLine = 0, bool canAddPreviousToStack = true, bool isFullPath = false)
     {
-        string fullPath = (isFullPath ? "" : PersistentDataManager.instance.GetANFSettings().anslDestinationFolder) +
+        string fullPath = (isFullPath || settings == null ? "" : settings.anslDestinationFolder) +
             scriptFilePath;
 
         TextAsset data = Resources.Load<TextAsset>(fullPath);

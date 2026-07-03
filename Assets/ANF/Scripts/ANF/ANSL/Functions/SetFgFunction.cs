@@ -6,7 +6,7 @@ namespace ANF.ANSL
     /// The Set Fg function sets immediately the Foreground's fade alpha without transition
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 16,
+        
         functionBody: "setFg",
         functionAutoComplete: new string[] {
             "setFg(Alpha)" },

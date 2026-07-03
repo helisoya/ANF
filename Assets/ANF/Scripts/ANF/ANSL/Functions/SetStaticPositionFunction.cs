@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Set Static Position Function can be used to move a static object
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 37,
+        
         functionBody: "setStaticPosition",
         functionAutoComplete: new string[] {
             "setStaticPosition(Name;X;Y;Z)",

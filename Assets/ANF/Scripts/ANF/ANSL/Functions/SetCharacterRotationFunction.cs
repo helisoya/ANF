@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Set Character rotation Function can be used to rotate a character
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 44,
+        
         functionBody: "setCharacterRotation",
         functionAutoComplete: new string[] {
             "setCharacterRotation(Name;X;Y;Z)",

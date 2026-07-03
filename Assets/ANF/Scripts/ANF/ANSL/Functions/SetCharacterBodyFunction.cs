@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character body Function can be used to change a character's body animation
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 45,
+        
         functionBody: "setCharacterBody",
         functionAutoComplete: new string[] {
             "setCharacterBody(Name;Body)",

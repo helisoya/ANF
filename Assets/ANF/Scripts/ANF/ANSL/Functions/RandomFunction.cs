@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The random function generates a random value and stores it inside the "random" variable
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 5,
+        
         functionBody: "random",
         functionAutoComplete: new string[] { "random(Min;Max)" },
         functionDesc: "Generates a random variable between [Min,Max[")]

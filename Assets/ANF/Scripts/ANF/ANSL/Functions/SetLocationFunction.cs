@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set location function allows you to change the current player location for the save slot info
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 25,
+        
         functionBody: "setLocation",
         functionAutoComplete: new string[] {
             "setLocation(Location)"

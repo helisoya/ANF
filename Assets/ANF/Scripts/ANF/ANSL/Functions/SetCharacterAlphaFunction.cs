@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character Alpha Function can be used to fade a character
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 42,
+        
         functionBody: "setCharacterAlpha",
         functionAutoComplete: new string[] {
             "setCharacterAlpha(Name;Alpha)",

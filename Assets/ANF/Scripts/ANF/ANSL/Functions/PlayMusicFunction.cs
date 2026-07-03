@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Play Music function can be used to play a music
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 55,
+        
         functionBody: "playMusic",
         functionAutoComplete: new string[] {
             "playMusic(Music)",

@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Skybox function can be used to change the skybox
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 31,
+        
         functionBody: "setSkybox",
         functionAutoComplete: new string[] {
             "setSkybox(Skybox)",

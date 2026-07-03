@@ -9,7 +9,6 @@ namespace ANF.ANSL
     /// If no checks are correct, it will jump to the default marker if it exists
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 10,
         functionBody: "switch",
         functionAutoComplete: new string[] { "switch(Variable)\\n\\tcase default:\\n\\n\\tcase 0:\\n\\nendswitch" },
         functionDesc: "Checks a single variables. You can use 'case default:' to check when none of the checks are valid")]
@@ -22,7 +21,7 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public override bool Compile(out List<string> compiledLines, string cleanedLine, uint id, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
@@ -245,16 +244,16 @@ namespace ANF.ANSL
             if (startDefault == -1)
                 startDefault = startIdx;
 
-            uint idFunction = GetAttribute().functionId;
+            uint jumpToFunctionId = compiler.GetRegisteredFunctionId<JumpToFunction>();
 
-            string compiledSwitchLine = $"{idFunction}|{variable}|{startDefault}";
+            string compiledSwitchLine = $"{id}|{variable}|{startDefault}";
             for (int i = 0; i < compiledParts.Count; i++)
             {
                 if (variables[i] != int.MinValue)
                     compiledSwitchLine += $"|{variables[i]}|{starts[i]}";
 
                 compiledLines.AddRange(compiledParts[i]);
-                compiledLines.Add($"0|{startIdx}");
+                compiledLines.Add($"{jumpToFunctionId}|{startIdx}");
             }
 
             compiledLines.Insert(0, compiledSwitchLine);

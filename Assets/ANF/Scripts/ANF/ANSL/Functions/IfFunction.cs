@@ -9,7 +9,6 @@ namespace ANF.ANSL
     /// If the check is successful, the true functions will be loaded. If false, the else statement will be loaded
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 8,
         functionBody: "if",
         functionAutoComplete: new string[] { "if()\\n\\nelse\\n\\nendif" },
         functionDesc: "Checks variables. You can't use both | and & in the same check.")]
@@ -22,7 +21,7 @@ namespace ANF.ANSL
             };
         }
 
-        public override bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public override bool Compile(out List<string> compiledLines, string cleanedLine, uint id, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
@@ -177,13 +176,13 @@ namespace ANF.ANSL
             int startFalse = startTrue + compiledTrue.Count + 1;
             int endIndex = startFalse + compiledFalse.Count + 1;
 
-            uint idFunction = GetAttribute().functionId;
+            uint jumpToFunctionId = compiler.GetRegisteredFunctionId<JumpToFunction>();
 
-            compiledLines.Add($"{idFunction}|{startTrue}|{startFalse}|{ifContent}");
+            compiledLines.Add($"{id}|{startTrue}|{startFalse}|{ifContent}");
             compiledLines.AddRange(compiledTrue);
-            compiledLines.Add($"0|{endIndex}");
+            compiledLines.Add($"{jumpToFunctionId}|{endIndex}");
             compiledLines.AddRange(compiledFalse);
-            compiledLines.Add($"0|{endIndex}");
+            compiledLines.Add($"{jumpToFunctionId}|{endIndex}");
 
             return true;
         }

@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The Set Locals function allows you to change the additional files for the locals system
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 24,
+        
         functionBody: "setLocals",
         functionAutoComplete: new string[] {
             "setLocals(Locals)"

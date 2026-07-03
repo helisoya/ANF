@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Character Trigger Function can be used to set a character's animator trigger
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 57,
+        
         functionBody: "setCharacterTrigger",
         functionAutoComplete: new string[] {
             "setCharacterTrigger(Name;Trigger)"

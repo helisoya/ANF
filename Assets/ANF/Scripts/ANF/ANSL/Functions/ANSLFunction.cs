@@ -39,10 +39,11 @@ namespace ANF.ANSL
 		/// <param name="compiledLines">The compiled lines of script for this function</param>
 		/// <param name="cleanedLine">The line to compile (cleaned)</param>
         /// <param name="compiler">The compiler</param>
+        /// <param name="id">The function's id</param>
 		/// <param name="errors">The global error list</param>
         /// <param name="outputLine">The output line the function will start in</param>
 		/// <returns>True if the compiling was successful</returns>
-        public virtual bool Compile(out List<string> compiledLines, string cleanedLine, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
+        public virtual bool Compile(out List<string> compiledLines, string cleanedLine, uint id, ANSLCompiler compiler, List<ANSLUtils.ANSLError> errors, int outputLine)
         {
             compiledLines = new List<string>();
 
@@ -78,7 +79,7 @@ namespace ANF.ANSL
                 return false;
             }
 
-            string compiledLine = GetAttribute().functionId.ToString();
+            string compiledLine = id.ToString();
 
             if (parameters != null)
             {

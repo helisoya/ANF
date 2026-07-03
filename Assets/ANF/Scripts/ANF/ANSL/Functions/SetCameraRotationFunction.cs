@@ -9,7 +9,7 @@ namespace ANF.ANSL
     /// The Set Camera Position Function can be used to move the camera
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 49,
+        
         functionBody: "setCameraRotation",
         functionAutoComplete: new string[] {
             "setCameraRotation(X;Y;Z)",

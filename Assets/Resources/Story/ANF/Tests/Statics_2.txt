@@ -1,1 +1,1 @@
-37|TestStatic2|0|-10|0|2|true
+52|TestStatic2|0|-10|0|2|true

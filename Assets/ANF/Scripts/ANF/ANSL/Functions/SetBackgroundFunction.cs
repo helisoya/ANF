@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Set Background function can be used to change the current background
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 28,
+        
         functionBody: "setBackground",
         functionAutoComplete: new string[] {
             "setBackground(Background)",

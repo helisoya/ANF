@@ -7,7 +7,7 @@ namespace ANF.ANSL
     /// The Color Fg function can be used to change the background's fade color
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 15,
+        
         functionBody: "setFgColor",
         functionAutoComplete: new string[] { "setFgColor(R;G;B;A)" },
         functionDesc: "Changes the color of the foreground fade immediately")]

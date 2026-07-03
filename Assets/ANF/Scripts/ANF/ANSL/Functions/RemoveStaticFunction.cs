@@ -8,7 +8,7 @@ namespace ANF.ANSL
     /// The Remove Static Function can be used to remove a static object to the scene
     /// </summary>
     [ANSLFunctionAttribute(
-        functionId: 36,
+        
         functionBody: "removeStatic",
         functionAutoComplete: new string[] {
             "removeStatic(Name)"
